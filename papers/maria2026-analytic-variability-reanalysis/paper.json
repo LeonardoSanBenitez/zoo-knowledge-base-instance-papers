@@ -1,0 +1,746 @@
+{
+  "schema_version": "1.0",
+  "id": "maria2026-analytic-variability-reanalysis",
+  "title": "Analytic decisions determine precision, not conclusions: a reanalysis of the Crowdsourced Replication Initiative",
+  "authors": [
+    "maria"
+  ],
+  "year": 2026,
+  "venue": "zoo internal reanalysis (not submitted anywhere)",
+  "area": [
+    "analytic-variability",
+    "metascience",
+    "measurement-theory"
+  ],
+  "identifiers": {
+    "url": "instance-papers/papers/maria2026-analytic-variability-reanalysis/"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 45,
+    "bytes_downloaded": 959000000,
+    "compute_notes": "11 scripts in ../breznau2022-hidden-universe/reanalysis/, numpy+pandas only except an optional sklearn HistGradientBoosting arm. All simulation-based results use 200-2000 replicates. Longest single run ~6 min wall clock. Peak disk 912 MB (deleted).",
+    "session": "2026-08-12 maria"
+  },
+  "triggers": [
+    "do analytic choices predict the answer or only the precision of the answer",
+    "why do analysts agree on effect size but disagree on significance",
+    "how do I test whether a partition explains heterogeneity",
+    "permutation null destroys the wrong thing what should I permute instead",
+    "grouped cross validation by cluster to avoid leakage",
+    "which tau estimator survives extreme variance heterogeneity",
+    "DerSimonian-Laird bias when effect size scales with standard error",
+    "simulated method of moments to estimate heterogeneity",
+    "calibrate an estimator against the statistic people actually quote",
+    "how much of a variance is carried by a handful of imprecise studies"
+  ],
+  "methods": [
+    "many-analysts-design",
+    "random-effects-meta-analysis",
+    "paule-mandel-heterogeneity",
+    "simulated-method-of-moments-calibration",
+    "grouped-cross-validation-by-cluster",
+    "simulation-null-with-fixed-nuisance-structure",
+    "synthetic-injected-effect-control",
+    "estimator-bias-stress-test",
+    "null-ladder",
+    "inverse-cluster-size-weighting"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "The analysis sample of Breznau et al. 2022 (n = 1,253 models, 71 teams) is recovered from the released cri.csv by dropping the 8 rows with missing standardized AME and the 48 rows with u_teamid == 0; this is not documented anywhere in the paper or repo.",
+      "quantities": [
+        {
+          "name": "n_models",
+          "value": 1253,
+          "n": 1253,
+          "source": "reanalysis/01_dispersion.py"
+        },
+        {
+          "name": "n_teams",
+          "value": 71,
+          "source": "reanalysis/01_dispersion.py",
+          "n": 71
+        },
+        {
+          "name": "reproduced_shares_weighted",
+          "value": "25.40 / 57.69 / 16.92",
+          "unit": "%",
+          "baseline": "published 25.4 / 57.7 / 16.9",
+          "source": "reanalysis/01_dispersion.py",
+          "n": 1253
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Exact match to the published precision on all three percentages.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "The headline percentages are inversely weighted by the number of models per team. Unweighted, per model, they are 19.47 / 64.41 / 16.12.",
+      "quantities": [
+        {
+          "name": "share_significant_negative_unweighted",
+          "value": 19.47,
+          "unit": "%",
+          "n": 1253,
+          "source": "reanalysis/01_dispersion.py"
+        },
+        {
+          "name": "share_null_unweighted",
+          "value": 64.41,
+          "unit": "%",
+          "n": 1253,
+          "source": "reanalysis/01_dispersion.py"
+        },
+        {
+          "name": "share_significant_positive_unweighted",
+          "value": 16.12,
+          "unit": "%",
+          "n": 1253,
+          "source": "reanalysis/01_dispersion.py"
+        },
+        {
+          "name": "share_negative_team_modal",
+          "value": 25.35,
+          "unit": "%",
+          "n": 71,
+          "source": "reanalysis/01_dispersion.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Direct computation. The weighting is disclosed in the figure legend; it is the citing literature, including the Mathur et al. letter, that repeats 25/58/17 without it. Weighting moves the 'supports the hypothesis' share by 5.9 points.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The variance framing of the result is carried by a handful of near-useless models: 13 models (1.0%) with standard errors above the 99th percentile carry 47% of the total sum of squares in the standardized estimates, and the ten largest contributors come from only two of the 71 teams.",
+      "quantities": [
+        {
+          "name": "share_of_SS_from_single_largest_model",
+          "value": 24.9,
+          "unit": "%",
+          "n": 1252,
+          "source": "reanalysis/02_diagnostics.py"
+        },
+        {
+          "name": "share_of_SS_from_top_5_models",
+          "value": 60.6,
+          "unit": "%",
+          "n": 1252,
+          "source": "reanalysis/02_diagnostics.py"
+        },
+        {
+          "name": "SD_untrimmed",
+          "value": 0.0736,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/02_diagnostics.py"
+        },
+        {
+          "name": "SD_after_trimming_top_1pct_by_SE",
+          "value": 0.04,
+          "unit": "SD units",
+          "n": 1239,
+          "source": "reanalysis/02_diagnostics.py"
+        },
+        {
+          "name": "standard_error_range_ratio",
+          "value": 36000,
+          "unit": "max/min",
+          "n": 1252,
+          "source": "reanalysis/02_diagnostics.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The two dominating models are team 13's MLwiN change-in-flow specifications, with standardized estimates of 1.30 and 1.21 and standard errors of 0.95 and 1.43 (p = 0.17 and 0.40). They are not divergent findings; they are non-findings with enormous uncertainty. Any statistic that averages variances rather than precisions is dominated by them: mean(SE^2)/median(SE^2) = 213, and mean(SE^2) exceeds the observed variance of the estimates, which is how our first pass produced an impossible 'sampling error is 102% of the variance'.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Sampling error cannot generate the observed spread of conclusions. A null in which every model estimates one common true effect and keeps its own reported standard error yields 2.2 / 94.7 / 3.1 against the observed 25.4 / 57.7 / 16.9.",
+      "quantities": [
+        {
+          "name": "null_shares_common_effect_own_SE",
+          "value": "2.18 / 94.73 / 3.09",
+          "unit": "%",
+          "n": 2000,
+          "baseline": "observed 25.35 / 57.73 / 16.92",
+          "source": "reanalysis/03_null_model.py"
+        },
+        {
+          "name": "typical_within_model_sampling_SE",
+          "value": 0.00097,
+          "unit": "SD units",
+          "source": "Higgins typical variance",
+          "n": 1252
+        },
+        {
+          "name": "I_squared",
+          "value": 0.934,
+          "n": 1252,
+          "source": "reanalysis/03_null_model.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This was our attempt to dissolve Breznau et al. into an artifact of heteroscedasticity and it failed decisively, which is the reason we now believe their core claim. Positive controls in the same script confirm the test has power: a world with tau = 0.050 gives 37 / 26 / 37 and is rejected just as clearly in the other direction.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "The one-parameter random-effects model is rejected: six different functionals of the same 1,252 models imply between-model heterogeneity SDs from 0.0012 to 0.0160, a 13-fold spread, whereas on data actually generated by that model the same six functionals agree to three decimal places.",
+      "quantities": [
+        {
+          "name": "tau_implied_by_share_negative",
+          "value": 0.016,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/05_calibrate_tau.py"
+        },
+        {
+          "name": "tau_implied_by_share_null",
+          "value": 0.0112,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/05_calibrate_tau.py"
+        },
+        {
+          "name": "tau_implied_by_share_positive",
+          "value": 0.0076,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/05_calibrate_tau.py"
+        },
+        {
+          "name": "tau_implied_by_SD_of_z",
+          "value": 0.0034,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/05_calibrate_tau.py"
+        },
+        {
+          "name": "tau_implied_by_median_abs_z",
+          "value": 0.0074,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/05_calibrate_tau.py"
+        },
+        {
+          "name": "tau_implied_by_slope_of_log_abs_estimate_on_log_SE",
+          "value": 0.0012,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/05_calibrate_tau.py"
+        },
+        {
+          "name": "recovery_check_true_tau_0.012",
+          "value": "0.0117 / 0.0117 / 0.0117 / 0.0090 / 0.0123 / 0.0127",
+          "source": "reanalysis/05_calibrate_tau.py",
+          "n": 1252
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The sanity check in the same script is what licenses this: the calibration pipeline recovers a known tau from all six functionals when the model is true, so their disagreement on the real data is a property of the data, not of the method. Consequence: any single published tau for this dataset -- ours or Mathur et al.'s -- is a summary of a distribution that is not the shape the summary assumes.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c6",
+      "statement": "DerSimonian-Laird underestimates heterogeneity by up to 7x on this data's standard-error distribution when effect magnitude scales with the standard error; Paule-Mandel and REML degrade more gracefully.",
+      "quantities": [
+        {
+          "name": "tau_DL_full_sample",
+          "value": 0.00363,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/04_tau_estimators.py"
+        },
+        {
+          "name": "tau_REML_full_sample",
+          "value": 0.01185,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/04_tau_estimators.py"
+        },
+        {
+          "name": "tau_PauleMandel_full_sample",
+          "value": 0.01868,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "reanalysis/04_tau_estimators.py"
+        },
+        {
+          "name": "DL_recovery_of_true_tau_0.040_under_coupling",
+          "value": 0.006,
+          "unit": "SD units",
+          "n": 300,
+          "source": "reanalysis/04_tau_estimators.py"
+        },
+        {
+          "name": "PM_recovery_of_true_tau_0.040_under_coupling",
+          "value": 0.024,
+          "unit": "SD units",
+          "n": 300,
+          "source": "reanalysis/04_tau_estimators.py"
+        },
+        {
+          "name": "DL_recovery_without_coupling",
+          "value": 0.039,
+          "unit": "SD units",
+          "n": 300,
+          "source": "reanalysis/04_tau_estimators.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Established by simulation on the empirical standard-error distribution, with and without the coupling, so the mechanism is isolated. This is a general warning, not a fact about this dataset: many-analysts corpora will routinely have huge variance heterogeneity, and DL is the default in most software.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c7",
+      "statement": "Analytic decisions predict how precise an analysis will be and predict nothing about what it will find. Out-of-fold, grouped by team, 137 decision indicators reach R^2 = 0.194 (sd 0.024 over 40 random fold assignments; 0.205 leave-one-team-out) for the log standard error, and R^2 = -0.005 (sd 0.002) for the standardized estimate.",
+      "quantities": [
+        {
+          "name": "grouped_CV_R2_log_standard_error",
+          "value": 0.1942,
+          "n": 1252,
+          "ci": "sd 0.0244 over 40 fold assignments; range 0.1324-0.2362; leave-one-team-out 0.2053",
+          "baseline": "permutation null -0.0017",
+          "source": "reanalysis/12_fold_stability.py"
+        },
+        {
+          "name": "grouped_CV_R2_standardized_estimate",
+          "value": -0.0051,
+          "n": 1252,
+          "ci": "sd 0.0018; range -0.0121 to -0.0023; leave-one-team-out -0.0045",
+          "baseline": "permutation null -0.0010",
+          "source": "reanalysis/12_fold_stability.py"
+        },
+        {
+          "name": "grouped_CV_R2_conclusion_is_null",
+          "value": 0.0371,
+          "n": 1252,
+          "ci": "sd 0.0071; leave-one-team-out 0.0386",
+          "source": "reanalysis/12_fold_stability.py"
+        },
+        {
+          "name": "grouped_CV_R2_sign_of_estimate",
+          "value": 0.0198,
+          "n": 1252,
+          "source": "reanalysis/08_power_and_tuning.py"
+        },
+        {
+          "name": "grouped_CV_R2_log_SE_from_researcher_survey_only",
+          "value": -0.0282,
+          "n": 1252,
+          "source": "reanalysis/08_power_and_tuning.py"
+        },
+        {
+          "name": "gbm_CV_R2_log_standard_error",
+          "value": 0.1579,
+          "n": 1252,
+          "source": "reanalysis/07_control_and_predict.py, HistGradientBoosting, GroupKFold by team"
+        },
+        {
+          "name": "max_abs_ridge_coefficient_ratio_logSE_over_estimate",
+          "value": 17,
+          "unit": "x",
+          "n": 1252,
+          "source": "reanalysis/11_what_drives_precision.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This is the finding of the reanalysis, and it got stronger under two attempts to deflate it (see c11 and c12). It reconciles Breznau et al. and Mathur et al. without either being wrong: conclusions are estimate/SE thresholded, so a population of analyses that agree closely about the estimate and differ enormously about precision will disagree loudly about significance while agreeing quietly about magnitude. It also strengthens Breznau et al.'s central number -- out of sample the decisions explain zero of the estimate, not 2.6% -- while making their framing ('a hidden universe of uncertainty about the answer') too generous to itself: the universe that is hidden and predictable is the universe of standard errors. Quote the R^2 as a range, not a point: a single grouped-CV R^2 with 71 clusters is itself an estimate with sd ~0.02.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c8",
+      "statement": "Neither the choices that define the estimand (dependent variable, immigration measure, total/within/between effect, country set) nor team identity absorbs any of the heterogeneity.",
+      "quantities": [
+        {
+          "name": "p_one_sided_team_partition",
+          "value": 0.945,
+          "n": 400,
+          "source": "reanalysis/09_conditioning_correct_null.py"
+        },
+        {
+          "name": "p_one_sided_DV_partition",
+          "value": 0.998,
+          "n": 400,
+          "source": "reanalysis/09_conditioning_correct_null.py"
+        },
+        {
+          "name": "p_one_sided_DV_x_measure_x_effect",
+          "value": 0.512,
+          "n": 400,
+          "source": "reanalysis/09_conditioning_correct_null.py"
+        },
+        {
+          "name": "p_one_sided_DV_x_measure_x_effect_x_countries",
+          "value": 0.853,
+          "n": 400,
+          "source": "reanalysis/09_conditioning_correct_null.py"
+        },
+        {
+          "name": "false_positive_rate_at_nominal_2.5pct",
+          "value": 2.0,
+          "unit": "%",
+          "n": 120,
+          "source": "reanalysis/09_conditioning_correct_null.py"
+        },
+        {
+          "name": "power_at_25pct_between_cell_team_partition",
+          "value": 78,
+          "unit": "%",
+          "n": 120,
+          "source": "reanalysis/09_conditioning_correct_null.py"
+        },
+        {
+          "name": "power_at_50pct_between_cell_team_partition",
+          "value": 92,
+          "unit": "%",
+          "n": 120,
+          "source": "reanalysis/09_conditioning_correct_null.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Calibrated and powered, so it is a real null rather than a blind instrument -- but only against between-cell shares of 25% or more. A 10% between-cell share would be detected in 26% of runs and is not excluded. Narrower reading: the estimand-defining choices account for less than about a quarter of the heterogeneity, not for none of it. This is the result that argues AGAINST the 'they were estimating different things' critique of many-analysts studies, in this dataset.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c9",
+      "statement": "SUPERSEDED AND WRONG. The permutation test in reanalysis/07_control_and_predict.py PART 1, which shuffles cell labels while preserving cell sizes, is miscalibrated for this question and its numbers must not be quoted.",
+      "scope": "07 PART 1 only. PART 2 of the same script stands, and its numbers are superseded by the properly tuned versions in 08.",
+      "quantities": [
+        {
+          "name": "false_positive_rate_of_the_broken_test_at_0pct_between_cell",
+          "value": 100,
+          "unit": "%",
+          "n": 6,
+          "source": "reanalysis/08_power_and_tuning.py CONTROL A, which caught it"
+        }
+      ],
+      "our_assessment": {
+        "status": "refuted",
+        "why": "Shuffling team labels destroys the association between cell membership and STANDARD ERROR as well as the association it was meant to destroy. Teams are internally homogeneous in precision -- a team that used MLwiN on 13 countries produced large standard errors for all of its models -- so a permuted cell mixes precise and imprecise models and the statistic moves for a reason unrelated to the hypothesis. The positive control flagged 'detect' in 6 of 6 scenarios including the 0%-between-cell case. Fix, in 09: keep the real labels and real standard errors and simulate the effects under no between-cell structure. Recorded here rather than deleted because the broken version is the intuitive one and someone will write it again.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c10",
+      "statement": "The comparison between human analyst variability and LLM error correlation is not licensed by this design.",
+      "scope": "Cross-literature; concerns paper:maria2026-marginal-competence and paper:kim2025-correlated-errors.",
+      "quantities": [
+        {
+          "name": "largest_correlation_excluded_by_Breznau_Fig3",
+          "value": 0.36,
+          "n": 71,
+          "source": "reanalysis/10_expertise_power.py"
+        },
+        {
+          "name": "max_abs_r_over_85_team_level_survey_items",
+          "value": 0.314,
+          "n": 71,
+          "source": "reanalysis/10_expertise_power.py"
+        },
+        {
+          "name": "chance_threshold_for_85_tests_at_n71",
+          "value": 0.243,
+          "n": 71,
+          "source": "reanalysis/10_expertise_power.py"
+        },
+        {
+          "name": "LLM_competence_vs_error_agreement_r",
+          "value": 0.84,
+          "baseline": "paper:maria2026-marginal-competence, HELM systems",
+          "source": "different population and unit of analysis",
+          "n": "31 HELM systems"
+        }
+      ],
+      "our_assessment": {
+        "status": "not-identifiable",
+        "why": "In the LLM setting, competence concentrates errors (r = +0.84 across HELM systems). The tempting inference -- 'human experts do not converge, so the LLM finding is a machine-specific pathology' -- has no support here. Breznau et al.'s expertise nulls exclude only |R| > 0.36 at n = 71 teams, and our own scan of 85 team-level survey items produces a maximum |r| of 0.31 against a chance threshold of 0.24. The human study cannot see an effect of the size the LLM study reports, and the units are not commensurable anyway (analyst pairs versus system pairs). The comparison needs a design with far more teams, not more reanalysis of this one.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c11",
+      "statement": "The predictability of the standard error is carried entirely by MODELLING choices, not by how much data a team used. Sample-composition indicators (42 country dummies, 5 wave dummies, country count, listwise/imputation) give out-of-team R^2 = -0.012; modelling choices alone give 0.150; everything except sample composition gives 0.143.",
+      "quantities": [
+        {
+          "name": "R2_log_SE_sample_composition_only",
+          "value": -0.0123,
+          "n": 1252,
+          "source": "reanalysis/11_what_drives_precision.py, 51 predictors"
+        },
+        {
+          "name": "R2_log_SE_num_countries_alone",
+          "value": -0.012,
+          "n": 1252,
+          "source": "reanalysis/11_what_drives_precision.py"
+        },
+        {
+          "name": "R2_log_SE_modelling_choices_only",
+          "value": 0.1504,
+          "n": 1252,
+          "source": "reanalysis/11_what_drives_precision.py, 30 predictors"
+        },
+        {
+          "name": "R2_log_SE_all_except_sample_composition",
+          "value": 0.1431,
+          "n": 1252,
+          "source": "reanalysis/11_what_drives_precision.py, 86 predictors"
+        },
+        {
+          "name": "R2_log_SE_covariate_set_only",
+          "value": -0.0039,
+          "n": 1252,
+          "source": "reanalysis/11_what_drives_precision.py, 36 predictors"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This was a deflation test that failed and left the finding larger. The obvious objection to c7 is that a standard error is sigma/sqrt(N), so predicting it is predicting sample size. It is not: sample composition predicts the standard error no better than chance. What moves it is the model class -- hybrid multilevel (+0.142 standardized), MLwiN (+0.139), country-year random effects (+0.105), any multilevel (+0.103) all inflate it, while two-way fixed effects (-0.075) and dichotomizing the outcome (-0.074) shrink it. So the sentence is: an analyst's choice of model class determines the width of their confidence interval, and therefore whether they will report a finding, while leaving the point estimate alone.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c12",
+      "statement": "The conclusion each team actually WROTE (support / reject / not testable) is not predictable from the coded decisions out-of-team either: R^2 = -0.071, -0.081 and -0.021 for the three categories, all worse than predicting the base rate.",
+      "quantities": [
+        {
+          "name": "R2_wrote_Support",
+          "value": -0.071,
+          "n": 1252,
+          "baseline": "permutation null -0.0022",
+          "source": "reanalysis/11_what_drives_precision.py"
+        },
+        {
+          "name": "R2_wrote_Reject",
+          "value": -0.0809,
+          "n": 1252,
+          "baseline": "permutation null -0.0011",
+          "source": "reanalysis/11_what_drives_precision.py"
+        },
+        {
+          "name": "R2_wrote_NoTest",
+          "value": -0.0212,
+          "n": 1252,
+          "baseline": "permutation null -0.0012",
+          "source": "reanalysis/11_what_drives_precision.py"
+        },
+        {
+          "name": "Hresult_distribution",
+          "value": "Reject 852 / Support 286 / No test 114",
+          "n": 1252,
+          "source": "released data, Hresult column"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The second deflation test, and it also failed. The significance category in c7 is my construction from the confidence intervals; Breznau et al. also collected what each team concluded in words, which is the outcome the paper actually cares about. Out-of-team it is unpredictable from the decisions -- more unpredictable than my constructed category. Note these written conclusions are near-constant within a team, so a random-fold CV would have reported a large R^2 by leakage alone; grouping the folds by team is what makes the number mean anything.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c13",
+      "statement": "The distribution of analyst estimates is heavy-tailed in both corpora, and in CRI the heavy tails are a property of SPECIFICATIONS, not of analysts. Interdecile/interquartile ratio: 1.90 for a Gaussian at any n, 4.07 for #fincap RT-H1, 2.79 for the 1,252 CRI models, and 2.08 for the 71 CRI team medians.",
+      "quantities": [
+        {
+          "name": "interdecile_over_interquartile_ratio",
+          "value": 2.79,
+          "unit": "ratio",
+          "n": 1252,
+          "baseline": "Gaussian 1.90; simulated 95% band at n=1252 is 1.79-2.01",
+          "source": "reanalysis/13_cross_corpus_menkveld.py"
+        },
+        {
+          "name": "interdecile_over_interquartile_ratio_team_level",
+          "value": 2.08,
+          "unit": "ratio",
+          "n": 71,
+          "baseline": "simulated 95% band at n=71 is 1.52-2.43 -- INSIDE",
+          "source": "reanalysis/13_cross_corpus_menkveld.py"
+        },
+        {
+          "name": "interdecile_over_interquartile_ratio_fincap",
+          "value": 4.07,
+          "unit": "ratio",
+          "n": 164,
+          "source": "our arithmetic from Menkveld et al. 2024 p. 2345"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "IDR/IQR is the rare cross-corpus statistic that needs no calibration: it is 1.90 for a Gaussian regardless of sample size, confirmed by simulation at n = 71, 164 and 1252. Both corpora are far above it at the level of individual analyses. The consequence is not decorative: 'percent of variance explained' is the wrong default instrument for many-analysts data, and Breznau et al.'s 95.2% is a correct calculation of a quantity this distribution does not support -- the same fact as our c3 (13 models carrying 47% of the sum of squares), seen from the other side. Menkveld et al. chose the interquartile range at the design stage for exactly this reason; the sociology literature did not. The team-level result is the part that is ours alone: one estimate per team and CRI's distribution becomes ordinary, so the outliers are choices rather than people.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c14",
+      "statement": "Researcher-induced dispersion is of the same order as sampling error in two unrelated fields. Applying Menkveld et al.'s robust recipe -- tau = sqrt((IQR/1.349)^2 - medianSE^2), then tau/medianSE -- gives 1.72 for #fincap RT-H1 (finance, 164 teams) and 1.72 for the CRI models (sociology, 71 teams).",
+      "quantities": [
+        {
+          "name": "researcher_dispersion_over_median_SE_cri",
+          "value": 1.72,
+          "unit": "ratio",
+          "n": 1252,
+          "ci": "estimator-dependent range 0.71 (DerSimonian-Laird) to 3.67 (Paule-Mandel)",
+          "source": "reanalysis/13_cross_corpus_menkveld.py"
+        },
+        {
+          "name": "researcher_dispersion_over_median_SE_fincap",
+          "value": 1.72,
+          "unit": "ratio",
+          "n": 164,
+          "source": "our arithmetic from Menkveld et al. 2024 p. 2345"
+        },
+        {
+          "name": "researcher_dispersion_over_median_SE_cri_per_DV",
+          "value": "0.88 to 2.14 across the 8 dependent variables with n>=20",
+          "n": 1252,
+          "source": "reanalysis/13_cross_corpus_menkveld.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Agreement to three significant figures is luck and must be quoted as such: CRI's ratio is 0.71 to 3.67 depending on the heterogeneity estimator, and the robust IQR-based recipe simply happens to land where finance lands. The defensible statement is the order of magnitude -- researcher-induced dispersion is comparable to, not negligible against, sampling error -- and it now has two instances in fields sharing nothing but the design. Narrowing: this is one hypothesis of six in #fincap (the others are only described as 'similar in magnitude') and the CRI figure pools 11 dependent variables, where the per-DV range is 0.88-2.14.",
+        "by": "maria"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "code",
+      "status": "verified-usable",
+      "local_path": "../breznau2022-hidden-universe/reanalysis/",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "python 00_extract.py <CRI> ; then 01..10 in order",
+        "result": "11 scripts. 00 extract, 01 dispersion, 02 diagnostics, 03 null model, 04 estimator comparison, 05 tau calibration, 06 stratified heterogeneity, 07 (PART 1 SUPERSEDED by 09; PART 2 superseded by 08), 08 power and tuning, 09 corrected conditioning null, 10 expertise power. All re-run end to end after every change."
+      },
+      "derived_from": []
+    },
+    {
+      "id": "a2",
+      "role": "derived-data",
+      "status": "verified-usable",
+      "local_path": "../breznau2022-hidden-universe/data/cri_model_level.csv",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "python 00_extract.py",
+        "result": "1309 x 316, 1.27 MB. Regenerable from the upstream repo at a pinned commit; this is the only input any of the scripts needs."
+      },
+      "bytes": 1268273
+    }
+  ],
+  "relations": [
+    {
+      "type": "zoo:reanalyses",
+      "target": "breznau2022-hidden-universe",
+      "why": "Primary object of the reanalysis."
+    },
+    {
+      "type": "zoo:reanalyses",
+      "target": "mathur2023-effect-sizes",
+      "why": "Both of the letter's numerical claims recomputed from the primary data."
+    },
+    {
+      "type": "cito:confirms",
+      "target": "breznau2022-hidden-universe",
+      "why": "c4 and c8: the idiosyncrasy claim survives a sampling-error null and a calibrated conditioning ladder."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "breznau2022-hidden-universe",
+      "why": "c3 and c7: the variance framing is fragile and the predictable part of the design space is precision, not conclusions."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "mathur2023-effect-sizes",
+      "why": "c6: their prediction interval is estimator-fragile by a factor of 5."
+    },
+    {
+      "type": "cito:disagreesWith",
+      "target": "mathur2023-effect-sizes",
+      "why": "c4 against their c3: the estimate distribution is not mostly statistical error around a common effect."
+    },
+    {
+      "type": "cito:usesMethodIn",
+      "target": "jo2026-subjectivity",
+      "why": "The null ladder -- progressively richer conditioning sets, asking at each rung whether the discrepancy survives -- is theirs. Applied here to a human many-analysts corpus."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "maria2026-marginal-competence",
+      "why": "Both ask whether the competence of an analyst (human or machine) predicts how its errors relate to others'. c10 records why the two cannot yet be compared."
+    }
+  ],
+  "open_questions": [
+    "What structure produces heterogeneity that is real (I^2 = 0.93), not exchangeable (c5), and not organised by team, dependent variable, immigration measure or country set (c8)? Every partition we had was tried. The remaining candidates are inside the model specification itself: estimator family, treatment of the country-year nesting, and the covariate set.",
+    "The precise quintile has tau/SE = 7.3 while the imprecise quintiles have ~2. Is heterogeneity genuinely concentrated among precise models, or is Paule-Mandel absorbing outliers in the imprecise ones? Not resolved.",
+    "Would the same 'decisions predict precision, not conclusions' split hold in NARPS (Botvinik-Nezer et al. 2020, 70 fMRI teams) and in Silberzahn et al. 2018 (29 teams, red cards)? Both have open data. This is the single highest-value next step and it is the test that would turn c7 from a finding about one dataset into a claim about many-analysts studies.",
+    "Breznau et al.'s reply to Mathur et al. (PNAS e2219555120) is unread."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-12",
+    "verified": "2026-08-12",
+    "notes_file": "NOTES.md"
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "schema_version": "1.0",
+  "id": "mazuryk2026-powerless-noise",
+  "title": "The Powerless Noise: How Experimental Settings Shape the Reported Power of Noise",
+  "authors": ["Michal Mazuryk", "Fleur Dolmans", "Louis Gehringer", "Ina Klaric", "Jia-Huei Ju", "Mohammad Aliannejadi"],
+  "year": 2026,
+  "venue": "SIGIR '26",
+  "area": ["rag-and-knowledge-management", "analytic-variability-and-many-analysts"],
+  "identifiers": {
+    "arxiv": "2607.03615v2",
+    "doi": "10.1145/3805712.3808556",
+    "url": "https://arxiv.org/abs/2607.03615"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 34,
+    "bytes_downloaded": 9800000,
+    "compute_notes": "PDF 916 KB read in full (10 pp) via Read + PyMuPDF text extraction; repo cloned twice (5.1 MB shallow, full history for git archaeology); all 7 numeric tables transcribed to CSV; 5 reanalysis scripts, all stdlib+numpy, each runs in under 20 s on CPU. No GPU, no model weights, no LLM inference: the generation pipeline could not be executed and that is recorded as a limit, not glossed.",
+    "session": "2026-08-12 maria"
+  },
+  "triggers": [
+    "does the number of retrieved documents actually help or hurt my RAG pipeline",
+    "how much does changing the prompt template move a RAG benchmark result",
+    "is the power of noise effect real",
+    "how big should my evaluation set be for a retrieval experiment",
+    "someone reported an accuracy difference of two points, should I believe it",
+    "a reproduction study confirmed then refuted an effect, how do I read that",
+    "the released code for a paper I want to build on does not run",
+    "how do I tell whether a benchmark difference is bigger than configuration noise"
+  ],
+  "methods": [
+    "multiverse-analysis",
+    "robust-dispersion-iqr",
+    "random-effects-meta-analysis",
+    "synthetic-injected-effect-control",
+    "grouped-cross-validation-by-cluster",
+    "leaderboard-secondary-analysis",
+    "in-paper-table-transcription",
+    "repository-syntactic-executability-audit",
+    "printed-decimal-denominator-forensics",
+    "benchmark-saturation-size"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "The Power-of-Noise effect of Cuconasu et al. 2024 reproduces under the original experimental setup: with 4-bit quantised Llama-2-7B-chat and MPT-7B, a 15-token generation cap and the original NO-RES extraction prompt, adding random documents to a context whose gold document sits nearest the query does not degrade and often improves accuracy.",
+      "scope": "NQ-open, 10,000-question sample of the train split, Wikipedia Dec-2018 corpus, gold document in the Near position only. Does not hold in the Far or Mid positions, where random documents degrade accuracy.",
+      "quantities": [
+        {"name": "accuracy_gold_only", "value": 0.5647, "unit": "proportion correct", "n": 10000, "baseline": "Llama-2-7B-chat 4-bit, gold document alone", "source": "Table 2, row 0"},
+        {"name": "accuracy_gold_plus_14_random", "value": 0.5871, "unit": "proportion correct", "n": 10000, "baseline": "same model, 14 random documents added, gold Near", "source": "Table 2, Near column, row 14"},
+        {"name": "power_of_noise_effect_accuracy_delta", "value": 0.0224, "unit": "proportion correct", "n": 10000, "baseline": "acc(14 random, Near) - acc(gold only), Llama-2 4-bit", "source": "Table 2, computed by reanalysis/03"},
+        {"name": "reproduction_deviation_from_original_pct", "value": "-0.52 to +0.57", "unit": "percent of the reproduced value", "n": 10000, "baseline": "Delta(%) column, Table 2 Near, Llama2, k>=6", "source": "Table 2"}
+      ],
+      "evidence": ["a1", "a4"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The numbers reproduce and the Delta(%) against the original is under 1% in the Near column, which is a genuine replication. The narrowing: the effect is +0.0224 accuracy at n=10,000, i.e. about 2.1 standard errors, and it exists only in the Near position for one quantisation of one 7B model. Nothing in Table 2 licenses 'random documents improve RAG'."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "The Power-of-Noise effect does not survive modernised inference: with instruction-tuned models, a chat template, a 100-token generation cap and a task instruction that does not demand a NO-RES token, adding random documents no longer improves accuracy and mostly slightly decreases it.",
+      "scope": "Llama-2-7B, Llama-3-8B, Mistral-7B-v0.2, Falcon3-7B, Qwen2.5-7B, Random-Near setup, 0/10/12/14 random documents, configurations FinalP01 and FinalP02.",
+      "quantities": [
+        {"name": "power_of_noise_effect_accuracy_delta", "value": -0.0129, "unit": "proportion correct", "n": 10000, "baseline": "median over 10 (model, preferred-config) cells of acc(14)-acc(0)", "source": "Table 6, computed by reanalysis/03"},
+        {"name": "n_specifications_with_positive_effect", "value": 1, "unit": "count", "n": 10, "baseline": "of 10 preferred-config cells, how many have acc(14) > acc(0) at z>2.58", "source": "reanalysis/04 ladder row 5"}
+      ],
+      "evidence": ["a1", "a5"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Verified by transcribing Table 6 and recomputing. 1 of 10 preferred-config cells is significantly positive, 4 significantly negative, 5 null. The paper's conclusion is the correct reading of its own table."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Llama-3-8B under the Base configuration shows an extreme apparent Power-of-Noise effect (14.62% accuracy with the gold document alone rising to 68.72% with 12 random documents) which is an output-formatting artifact: 73.6% of its Base outputs are the placeholder string '___ (extract max 5 tokens)', and where placeholders appear the error rate is 98.5%.",
+      "scope": "Llama-3-8B-Instruct, Base configuration (original prompt, 15-token cap, no chat template), Random-Near.",
+      "quantities": [
+        {"name": "accuracy_gold_only", "value": 0.1462, "unit": "proportion correct", "n": 10000, "baseline": "Llama-3-8B Base, gold document alone", "source": "Table 4"},
+        {"name": "placeholder_output_rate", "value": 0.736, "unit": "proportion of outputs", "n": 10000, "baseline": "Llama-3-8B Base outputs containing the underscore placeholder", "source": "Sec 4.2 prose"},
+        {"name": "error_rate_given_placeholder", "value": 0.985, "unit": "proportion incorrect", "n": "not reported", "baseline": "conditional on the placeholder being present", "source": "Sec 4.2 prose"}
+      ],
+      "evidence": ["a1", "a3"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The diagnosis is right and important. The narrowing is a provenance finding the paper does not make: the repository at commit d99e9d5 (2025-12-01) contained an output-cleaning block that stripped exactly these underscore placeholder lines, and commit 56dcbda (2025-12-15, message 'final experiments') deleted it. So the flagship anomaly is downstream of an undocumented post-processing choice that the project itself had made the other way a fortnight earlier. Verified by `git diff d99e9d5 56dcbda -- src/generate_answers_llm.py`."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "The migration of the inference pipeline from HuggingFace to vLLM produces negligible differences in evaluation outcomes between the two frameworks.",
+      "scope": "Stated in Sec 3.5 as the justification for changing framework between the reproduction (Tables 1-3, 7) and the extension (Tables 4-6).",
+      "quantities": [
+        {"name": "framework_disagreement_accuracy", "value": 0.0002, "unit": "proportion correct", "n": 10000, "baseline": "|Table 7 Llama2 FP16 - Table 4 Llama2 Base| at 0 random documents", "source": "reanalysis/02"},
+        {"name": "framework_disagreement_accuracy", "value": 0.1251, "unit": "proportion correct", "n": 10000, "baseline": "|Table 7 Llama2 FP16 - Table 4 Llama2 Base| at 10 random documents", "source": "reanalysis/02"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "refuted",
+        "why": "The paper's own appendix contradicts it. Table 7 (HuggingFace, FP16) and Table 4 (the Base column, which Sec 4.2 says uses FP16 in all subsequent experiments) are the same nominal specification. They agree to 2 questions in 10,000 at k=0 and disagree by 1251, 748 and 745 questions at k=10, 12, 14. The Power-of-Noise effect computed from the two tables has opposite signs (+0.0012 vs -0.0731). A further code check makes the comparison unidentified rather than merely wrong: every vLLM job in the repository sets DTYPE=bfloat16, so the 'FP16' of the ablation and the float format of Tables 4-6 are different numeric formats, and framework, dtype, stop-token list and batching all change together.",
+        "by": "maria2026-rag-specification-dispersion"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Restrictive prompt design and low output-length limits, not any general benefit of noisy retrieval, produce the reported effect: as random documents are added, truncation and NO-RES failure modes occur less frequently, creating an illusory performance gain because the baseline setting is artificially disadvantaged.",
+      "scope": "Mechanism claim, argued from error-pattern rates in Figure 2 across Base / Instruct / Instruct+Max / FinalP01.",
+      "quantities": [
+        {"name": "trimmed_output_rate_among_errors", "value": 0.536, "unit": "proportion of incorrect outputs", "n": 10000, "baseline": "Llama-2 Instruct, 0 random documents", "source": "Sec 4.3 prose / Figure 2"},
+        {"name": "trimmed_output_rate_among_errors", "value": 0.688, "unit": "proportion of incorrect outputs", "n": 10000, "baseline": "Llama-2 Instruct, 14 random documents", "source": "Sec 4.3 prose / Figure 2"}
+      ],
+      "evidence": ["a1", "a3"],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "The mechanism is plausible and partly supported, but the paper's own Figure 2 runs against it for the configuration it is invoked to explain: for Llama-2 Instruct the trimmed-output rate RISES from 53.6% to 68.8% as random documents are added, while accuracy also rises from 9.10% to 22.87%. If truncation relief were the mechanism, truncation should fall. The repo's own hallucination report shows the same direction: TRIMMED_RESPONSE rises from 22.6% to 36.6% of errors between 1-DOC and 15-DOC while accuracy rises from 55.42% to 62.33%. What does fall sharply is DUAL_RESPONSE (42.5% -> 1.4%), i.e. the model hedging with NO-RES after a correct answer. The instruction-hedging channel is supported; the truncation channel is not, and the paper conflates them."
+      }
+    },
+    {
+      "id": "c6",
+      "statement": "The code for the reproduction is available at https://github.com/ina0105/The-Power-of-Noise-Reproduction.",
+      "scope": "Abstract and Sec 1.",
+      "quantities": [
+        {"name": "released_python_files_failing_to_parse", "value": 4, "unit": "count", "n": 16, "baseline": "python -m py_compile on every .py in src/ and scripts/ at HEAD f5a482d", "source": "reanalysis, artifact a2"}
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "The repository exists and contains the pipeline, the SLURM job scripts and the prompt construction, which is more than most. But 4 of its 16 Python files raise SyntaxError or IndentationError under py_compile, including both generation entry points (src/generate_answers_llm.py, src/generate_answers_llm_mixed.py) and the vLLM wrapper (src/llm_vllm.py). Three of the four were broken by the single commit named 'final experiments'. The per-question generation results are not in the repository at all; the README points at a Google Drive folder. So the artifact is present-but-insufficient and, at HEAD, not executable."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "arXiv:2607.03615v2, Tables 1-7",
+      "status": "verified-usable",
+      "local_path": "artifacts/",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "python -c \"import fitz; d=fitz.open('2607.03615v2.pdf'); print(d[4].get_text())\" for pages 5,6,7,10; transcribed in reanalysis/01_transcribe_tables.py; `python 01_transcribe_tables.py` runs 33 executable cross-checks against numbers quoted in the paper's running prose",
+        "result": "33/33 prose cross-checks pass. Tables 1, 2, 3 and 7 have NO prose cross-check available because no number from them is quoted in text; their transcription rests on a second reading of the extracted text stream and is flagged as such in the script docstring."
+      },
+      "datasheet": {
+        "composition": "7 tables, 224 accuracy values, every one a proportion over the same fixed n = 10,000 NQ-open questions. Table 1: distracting documents x 3 gold positions x 2 models. Table 2: same for random documents. Table 3: random x retrieved grid, 2 retrievers. Table 4: 5 models, Base. Table 5: inference ablation. Table 6: 5 models x 3 prompt configurations x 4 document counts. Table 7: precision ablation.",
+        "preprocessing": "Values transcribed exactly as printed to 4 decimal places. Delta(%) and Wilcoxon markers recorded where present. '-' (context limit reached) recorded as missing, not as zero.",
+        "caveats": "n = 10,000 is not stated in the paper. It is established forensically in reanalysis/04: across 163 distinct printed accuracies, every value is exactly k/10000, while n = 2889 (the NQ-open test split the paper names for Experiment 3), 5000, 3610 and 1000 are all ruled out by residuals of 1.7e-4 to 5e-4 against a rounding tolerance of 5e-5. This also means Table 3 is on the train sample, not the test split the paper's Sec 3.4.3 describes."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "https://github.com/ina0105/The-Power-of-Noise-Reproduction",
+      "repo_commit": "f5a482d92efcdd7694d0d41f0144794e06a2f83d",
+      "status": "present-but-insufficient",
+      "bytes": 5300000,
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "git clone https://github.com/ina0105/The-Power-of-Noise-Reproduction.git; for f in src/*.py scripts/*.py; do python -m py_compile \"$f\"; done; then git checkout each of the 6 commits and repeat",
+        "result": "4/16 files fail to parse at HEAD: src/generate_answers_llm.py (IndentationError line 216), src/generate_answers_llm_mixed.py (line 253), src/llm_vllm.py (line 221), src/compute_search_results.py (SyntaxError, unclosed paren, line 130). History: compute_search_results.py has been broken since the first commit 50df544; the other three were valid at d99e9d5 (2025-12-01) and were broken by 56dcbda (2025-12-15, 'final experiments'). The same commit deleted the output post-processing block that stripped underscore placeholders. Per-question generation results (data/gen_res*) are not in the repository; the README refers to an external Google Drive folder."
+      },
+      "datasheet": {
+        "caveats": "The break in generate_answers_llm.py is at the exact line where the HuggingFace-vs-vLLM output-parsing branch lives, i.e. at the decision that determines what counts as the model's answer. A reader cannot recover which branch produced the reported numbers."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "derived-data",
+      "locator": "https://github.com/ina0105/The-Power-of-Noise-Reproduction/tree/main/hallucination_report",
+      "repo_commit": "f5a482d92efcdd7694d0d41f0144794e06a2f83d",
+      "status": "verified-usable",
+      "local_path": "artifacts/repo_halluc_llama2_base.csv",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "wc -l hallucination_report/*.md; read llama2_base_hallucination_report.md in full; counts transcribed into reanalysis/01",
+        "result": "5 reports, 1,491 lines. Contain per-error-category counts over n = 10,000 for 1-DOC vs 15-DOC, plus the literal detection regexes. This is the only per-condition COUNT data the repository publishes and it is what makes c5 checkable."
+      },
+      "datasheet": {
+        "composition": "10 error categories x 2 conditions, counts among incorrect answers, n = 10,000 per condition. Categories are not mutually exclusive.",
+        "caveats": "The 1-DOC/15-DOC contrast here (55.42% -> 62.33%) is a different experiment from any table in the paper: Contriever retrieval on the train set, vLLM, unquantized. It cannot be joined to Tables 1-7 by document count."
+      }
+    },
+    {
+      "id": "a4",
+      "role": "benchmark",
+      "locator": "NQ-open (Kwiatkowski et al. 2019) + Wikipedia dump 2018-12-20, 21,035,236 passages, HuggingFace florin-hf/wiki_dump2018_nq_open",
+      "status": "not-checked",
+      "fetch_cmd": "python -c \"from datasets import load_dataset; load_dataset('florin-hf/wiki_dump2018_nq_open')\"",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "not downloaded",
+        "result": "Deliberately not fetched: the corpus is ~21M passages and nothing in this reanalysis needs it. Recorded so the omission is visible rather than implied."
+      }
+    },
+    {
+      "id": "a5",
+      "role": "raw-data",
+      "locator": "Google Drive folder linked from the repo README (per-question generation results, data/gen_res*)",
+      "status": "gated",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "read README.md; the link is a drive.google.com folder id, not a direct file",
+        "result": "Not retrievable without an interactive Drive session. This is the artifact that would allow the paired discordance counts, hence exact McNemar standard errors, hence an exact rather than upper-bounded version of every ratio in the reanalysis. Its absence is the single biggest limit on this record."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:critiques",
+      "target": "cuconasu2024-power-of-noise",
+      "why": "This paper's entire purpose. Not recorded here as a separate record yet -- the original PDF is on disk but unread as of 2026-08-12."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "breznau2022-hidden-universe",
+      "why": "Both take for granted that when equally defensible specifications disagree, the disagreement is a property of the object under study rather than of the measurement apparatus, and both then find that the recorded dimensions of the specification do not predict the disagreement. Neither cites the other; they are in different literatures three years and two disciplines apart. My reanalysis finds the same negative grouped-CV R^2 in both: team identity in CRI (-0.005), model family and prompt configuration here (all negative)."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "menkveld2024-nonstandard-errors",
+      "why": "Menkveld's nonstandard error -- dispersion from the evidence-generating process, measured as the IQR across teams -- is exactly the quantity this paper measures and does not name. Applying their instrument to this paper's Table 6 is what produces the saturation result."
+    },
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-rag-specification-dispersion"
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "kim2025-correlated-errors",
+      "why": "Kim et al. measure whether different LLMs fail on the same items. This paper shows that a single LLM's failure set is not even stable across chat template and token budget: Llama-3-8B on identical items and weights moves from 14.62% to 77.74% accuracy under three configurations all called defensible. Any correlated-error statistic computed from one configuration per model is therefore measuring a harness as much as a model.",
+      "asymmetric_note": "This does not refute Kim et al. Their measurement stands within their fixed harness; what it qualifies is the transfer of their number to any other harness."
+    }
+  ],
+  "open_questions": [
+    "Where does the between-specification variance live, if not in model family or prompt configuration? Grouped-CV says neither predicts the effect out of sample, which is the same negative result I got on CRI's released analytic coding. Two literatures, same shape, no explanation in either.",
+    "Is the benchmark saturation size n* a stable property of a task, or of a task-model pair? n* = 1134 here for NQ-open QA under the preferred configurations. If it is stable across tasks it is the single most useful number an evaluation designer could be given.",
+    "The paired discordance counts would turn every upper-bounded SE in this reanalysis into an exact one. They exist -- they are one join away from the gen_res pickles on the Drive. Worth asking the authors, or reconstructing from a rerun if a GPU is ever available.",
+    "Does the truncation-relief mechanism (c5) survive on any configuration? For Llama-2 Instruct it runs backwards. A regression of accuracy on truncation rate across all Figure 2 cells would settle it, but Figure 2's numbers are only partly quoted in prose and the underlying counts are in the gated artifact.",
+    "The 12-and-14-document rows of Table 2 disagree with Table 7 while rows 0-10 are identical. Which execution is in the paper, and does the Power-of-Noise conclusion depend on the choice? At k=14 the two differ by 0.0143, comparable to the whole effect."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-12",
+    "verified": "2026-08-12",
+    "notes_file": "NOTES.md"
+  }
+}

@@ -1,0 +1,15 @@
+# Tool invocation logs. These live at ../.kb-logs/ (outside this repo) and are
+# never committed anywhere. Listed here anyway in case anyone ever relocates the
+# log root into the repo by mistake -- see ../tools/README.md.
+.kb-logs/
+*.kblog.jsonl
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Heavy assets are registered with ../tools/assets.py, never stored here.
+*.zip
+*.tar.gz
+*.parquet
+*.sqlite

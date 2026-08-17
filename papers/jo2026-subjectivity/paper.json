@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "id": "jo2026-subjectivity",
+  "title": "The Subjectivity of Monoculture",
+  "authors": [
+    "Nathanael Jo",
+    "Nikhil Garg",
+    "Manish Raghavan"
+  ],
+  "year": 2026,
+  "venue": "preprint (MIT, Cornell Tech), 27 Feb 2026",
+  "area": [
+    "llm-monoculture",
+    "measurement-theory",
+    "multi-agent-systems"
+  ],
+  "identifiers": {
+    "arxiv": "2602.24086",
+    "url": "https://arxiv.org/abs/2602.24086"
+  },
+  "record_status": "active",
+  "read_depth": "read-full-text",
+  "cost": {
+    "tool_calls": 3,
+    "bytes_downloaded": 947800,
+    "compute_notes": "PDF read directly (pages 1-7) after the summariser's paraphrase proved generic and partly wrong; no artifacts run",
+    "session": "2026-08-07 maria"
+  },
+  "triggers": [
+    "is monoculture even measurable",
+    "how do I choose a null model for agreement",
+    "two models agree more than chance -- than WHICH chance",
+    "item difficulty confound in model comparison",
+    "why did the correlation disappear when I controlled for difficulty",
+    "does my correlation result depend on which models I included"
+  ],
+  "methods": [
+    "multidimensional-item-response-theory",
+    "null-ladder",
+    "residual-correlation-matrix",
+    "controlled-model-family-experiment",
+    "leaderboard-secondary-analysis"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "For any joint distribution of binary outcomes across m models there exists a latent variable given which the models are conditionally independent Bernoulli with the observed marginals; consequently a sufficiently expressive null model can always reinterpret cross-model correlation as latent item/model structure.",
+      "scope": "Theorem 1, with a discrete mixing measure supported on at most 2^m points; de Finetti-style representation. Formal, not empirical.",
+      "quantities": [
+        {
+          "name": "null_ladder_minimal_excess_monotone",
+          "value": "E_min(K) non-increasing in K",
+          "n": "Prop 2",
+          "source": "sec 3.1"
+        },
+        {
+          "name": "residual_cross_model_covariance_limit",
+          "value": 0,
+          "n": "K -> infinity",
+          "source": "Thm 3"
+        }
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The theorem is correct and its consequence is the single most important fact in this literature: monoculture is not an identifiable property of a dataset, it is a discrepancy from a baseline the analyst chooses and must defend. We demonstrated it accidentally and concretely: a natural nonparametric per-item null we built has algebraically ZERO expected excess on any dataset, which is their asymptotic result appearing exactly at n=1 item.",
+        "by": "maria2026-marginal-competence"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Adding item difficulty to the null substantially attenuates inferred cross-model correlation relative to nulls that adjust only for model capability; some pairwise correlations flip from strongly positive to slightly negative, while the pairwise ordering remains relatively stable.",
+      "scope": "HELM (n=14042 items, m=72 models) and HuggingFace Open LLM Leaderboard (n=11994, m=451), binary correctness only; IRT-0.5 (ability only, ~= Kim25/Goel25 implicit null) vs IRT-1 (ability + item difficulty), probit link, L2 penalties.",
+      "quantities": [
+        {
+          "name": "HELM_dimensions",
+          "value": "14042 items x 72 models",
+          "n": "HELM",
+          "source": "sec 3.2"
+        },
+        {
+          "name": "HF_dimensions",
+          "value": "11994 items x 451 models",
+          "n": "HuggingFace",
+          "source": "sec 3.2"
+        },
+        {
+          "name": "MIRT_K_sweep",
+          "value": "MSE and mean|residual corr| decrease monotonically, log-linear in K",
+          "n": "K in {1,2,4,8,16,32,36..64}",
+          "source": "Figure 1"
+        }
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Independently corroborated here by a different route: a nonparametric distractor-level null rather than IRT on binary correctness. We find over a third of pairs (35.5%) go negative, which is stronger than their wording ('some even flipping') suggests. Convergent evidence from a different method is worth more than agreement from the same method."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Inferences about excess correlation depend on the population of models and items analysed, and are least identifiable exactly when that population is homogeneous.",
+      "scope": "Prop 4 (population relativity of the null fit) and Thm 5 (a heterogeneity measure h(I,J) = min eigenvalue of the fitted factor covariances bounds how well the latent representation is identified). Demonstrated on HELM and on ACSIncome with controlled RF/LR/MLP populations.",
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Structurally important and rarely stated: the measurement degrades precisely in the regime the field cares about (a homogeneous ecosystem). It also implies our own numbers are population-relative -- our 22-model sample is a choice, not a view from nowhere."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "On the HuggingFace leaderboard, residual model clusters after fitting a 2-D IRT null track contributor/provenance (who fine-tuned or merged the model), not question-type specialisation.",
+      "scope": "K=2 MIRT on HF; PCA of accuracy stratified by question type as the competing explanation.",
+      "quantities": [
+        {
+          "name": "PCA_variance_explained_PC1_accuracy_by_question_type",
+          "value": "~1.0",
+          "n": "HF",
+          "baseline": "if specialisation existed, several PCs would matter",
+          "source": "Figure 3 top-right"
+        }
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Compelling and directly relevant to the twins-vs-co-trained-raters question: what residual structure survives a good null is shared PIPELINE, not shared skill profile. Narrower scope because HF is dominated by community merges/fine-tunes of a few bases, an ecosystem whose provenance structure is unusually strong; HELM (closed models) collapses to ~1 dimension instead. They say so themselves."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "code",
+      "locator": "none found in v1",
+      "status": "absent",
+      "checked": {
+        "on": "2026-08-07",
+        "by": "maria",
+        "how": "read arXiv abs page + full PDF pages 1-7 looking for a repository or data-availability statement",
+        "result": "No code or data link in v1. Ironic given that the paper's whole argument is that the null-model choice must be inspectable: the null-fitting code is precisely what a reader would need to check. Datasets used are public (HELM, HF leaderboard, ACSIncome) so the inputs are recoverable; the IRT fitting is not."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "benchmark",
+      "locator": "https://huggingface.co/open-llm-leaderboard",
+      "status": "gated",
+      "checked": {
+        "on": "2026-08-07",
+        "by": "maria",
+        "how": "noted from kim2025 repo README",
+        "result": "Per-model detail files require accepting repository terms per model, which is why kim2025 could not ship a single tall dataframe for HF. Practical barrier to any reanalysis of the HF half."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:qualifies",
+      "target": "kim2025-correlated-errors#c1",
+      "why": "Does not dispute the measured 0.60; disputes that it licenses an inference about dependence, by showing the baseline it is measured against is a free choice.",
+      "asymmetric_note": "Not cito:refutes. The reciprocal edge on kim2025 is NOT 'refuted-by' -- the number stands, the interpretation does not. Recording this as refutation would be the commonest way this pair gets miscited later."
+    },
+    {
+      "type": "cito:critiques",
+      "target": "kim2025-correlated-errors",
+      "why": "Explicitly names Kim et al.'s implicit null as one that 'does not incorporate item-level heterogeneity'."
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "kim2025-correlated-errors",
+      "why": "Nikhil Garg on both. Weight this as self-correction."
+    },
+    {
+      "type": "cito:usesDataFrom",
+      "target": "kim2025-correlated-errors",
+      "why": "Reuses the same HELM and HF response matrices."
+    },
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-marginal-competence",
+      "why": "We tested c1 and c2 by a distractor-level route they explicitly set aside (they work on binary correctness only)."
+    }
+  ],
+  "open_questions": [
+    "They state their null uses binary correctness and that answer-choice identity 'indeed provides additional information about cross-model agreement'. That gap is exactly where we found the ability-graded concentration effect. Does a nominal-response IRT model (Bock 1972), which models attraction to each distractor, close it?",
+    "If monoculture is only defined relative to a defended null, what null should a REGULATOR use? The paper reframes the problem elegantly and leaves the normative question open, and that question is the reason anyone measures this.",
+    "Their heterogeneity measure h(I,J) suggests a practical protocol: deliberately include maximally diverse models/items to make the null identifiable. Nobody has operationalised that as a benchmark-design rule."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-07",
+    "verified": "2026-08-07",
+    "notes_file": "NOTES.md"
+  }
+}

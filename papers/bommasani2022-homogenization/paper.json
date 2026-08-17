@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "id": "bommasani2022-homogenization",
+  "title": "Picking on the Same Person: Does Algorithmic Monoculture lead to Outcome Homogenization?",
+  "authors": [
+    "Rishi Bommasani",
+    "Kathleen A. Creel",
+    "Ananya Kumar",
+    "Dan Jurafsky",
+    "Percy Liang"
+  ],
+  "year": 2022,
+  "venue": "NeurIPS 2022",
+  "area": [
+    "llm-monoculture",
+    "algorithmic-fairness"
+  ],
+  "identifiers": {
+    "arxiv": "2211.13972",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/17a234c91f746d9625a75cf8a8731ee2-Abstract-Conference.html"
+  },
+  "record_status": "active",
+  "read_depth": "read-full-text",
+  "cost": {
+    "tool_calls": 3,
+    "bytes_downloaded": 1300000,
+    "compute_notes": "PDF read directly pages 1-6 after the summariser failed to parse it at all; no artifacts run",
+    "session": "2026-08-07 maria"
+  },
+  "triggers": [
+    "who gets rejected by every system",
+    "systemic exclusion",
+    "component sharing hypothesis",
+    "does sharing a foundation model determine outcomes",
+    "outcome homogenization metric",
+    "how do I normalise a correlated-failure metric",
+    "metric for whether the same people are failed by everyone",
+    "does linear probing homogenise more than finetuning",
+    "construct validity of a homogenization metric"
+  ],
+  "methods": [
+    "systemic-failure-rate",
+    "independence-normalised-homogenization-metric",
+    "fairness-benchmark-replication",
+    "foundation-model-adaptation-comparison"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Outcome homogenization can be formalised as the observed rate of SYSTEMIC FAILURE (an individual failed by every decision-maker) normalised by the product of the decision-makers' marginal failure rates; H = 1 means outcomes match what independent failure would produce, H > 1 means homogenization beyond it.",
+      "scope": "Eq. 3 for individuals, Eq. 5 for groups (with average / uniform / worst weightings). Presented as the first mathematical formalism for outcome homogenization.",
+      "quantities": [
+        {
+          "name": "H_individual_definition",
+          "value": "E_j[prod_i F^i(x_j)] / prod_i E_j[F^i(x_j)]",
+          "n": "k decision-makers",
+          "baseline": "denominator IS the independence baseline",
+          "source": "Eq. 3"
+        },
+        {
+          "name": "H_range",
+          "value": "[0, inf)",
+          "n": "-",
+          "baseline": "0 = no systemic failures, 1 = matches expected rate, >1 = homogeneous beyond underlying failure rates",
+          "source": "sec 3.3"
+        }
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Read in full. The metric is explicitly normalised by independence and they state the reason: SYSTEMIC FAILURE alone 'will in general be higher for less accurate systems independent of a specific tendency to pick on the same person'. That is the accuracy confound I rediscovered in the 2025 MCQ literature, anticipated and handled in 2022. Sec 3.4 further discusses convergent/divergent validity of the metric explicitly (Campbell & Fiske 1959, Messick 1987, Jacobs & Wallach 2021)."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Sharing training data reliably increases outcome homogenization, with individual-level effects generally exceeding group-level effects.",
+      "scope": "German Credit (n=1000, 2 tasks) and ACS PUMS (3.6M individuals, 3 tasks); LSAC in appendix.",
+      "our_assessment": {
+        "status": "unverified",
+        "why": "Read the claim and the setup; did not open sec 4's numbers table in detail and ran nothing. Artifacts not located."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Sharing a foundation model does NOT reliably homogenize outcomes; the method used to adapt it to the downstream task significantly does, with linear probing consistently producing more homogeneous outcomes than finetuning, in both vision and language.",
+      "scope": "CLIP (vision) and RoBERTa (language) across downstream tasks. The authors flag this as a surprise: 'to our surprise, we find the use of foundation models does not always exacerbate outcome homogenization'.",
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "This is the half that gets dropped in citation and it is the half that matters for us: shared components are not destiny, the ADAPTATION is. Narrower scope because it is two backbones and a fixed set of tasks, and I did not verify the numbers. It sits well with the 2026 finding that residual model clusters track fine-tuning provenance rather than shared base."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "code",
+      "locator": "unknown",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-08-07",
+        "by": "maria",
+        "how": "not attempted",
+        "result": "Not attempted. Paper read from the arXiv PDF (2211.13972v1). No data-availability statement seen in pages 1-6."
+      }
+    }
+  ],
+  "relations": [],
+  "open_questions": [
+    "Their null is the product of MARGINAL FAILURE RATES across decision-makers. That handles heterogeneity across MODELS but not across INDIVIDUALS: if some applicants are genuinely weak, every screener rejects them and H > 1 with no component sharing at all. The individual plays exactly the role that item difficulty plays in the MCQ setting, so Jo, Garg & Raghavan's (2026) critique of capability-only nulls applies directly to Eq. 3. Nobody appears to have said this. THIS IS THE THING TO WRITE UP.",
+    "They half-see it themselves in footnote 4 ('some individuals can be justifiably rejected from all opportunities, e.g. those attempting to become lawyers without passing the bar exam') but the acknowledgement stays in prose and never enters the metric.",
+    "Locate and check artifacts - not attempted. Claims c2 and c3 stay unverified until then.",
+    "Sec 3.4 does convergent/divergent validity explicitly. Cross-link with instance-general/philosophy-of-science/construct-validity-and-formalization.md, which is about exactly this and does not cite it."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-07",
+    "verified": "2026-08-07",
+    "notes_file": "NOTES.md"
+  }
+}

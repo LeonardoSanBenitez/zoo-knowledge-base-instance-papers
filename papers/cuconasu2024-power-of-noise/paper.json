@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.0",
+  "id": "cuconasu2024-power-of-noise",
+  "title": "The Power of Noise: Redefining Retrieval for RAG Systems",
+  "authors": [
+    "Florin Cuconasu",
+    "Giovanni Trappolini",
+    "Federico Siciliano",
+    "Simone Filice",
+    "Cesare Campagnano",
+    "Yoelle Maarek",
+    "Nicola Tonellotto",
+    "Fabrizio Silvestri"
+  ],
+  "year": 2024,
+  "venue": "SIGIR '24",
+  "area": [
+    "rag-and-knowledge-management"
+  ],
+  "identifiers": {
+    "arxiv": "2401.14887v4",
+    "doi": "10.1145/3626772.3657834"
+  },
+  "record_status": "active",
+  "read_depth": "read-full-text",
+  "cost": {
+    "tool_calls": 4,
+    "bytes_downloaded": 727462,
+    "compute_notes": "11-page PDF; pp. 1-8 read as rendered pages, pp. 9-11 via PyMuPDF text extraction. Tables 1, 2, 3 and 4 transcribed for the columns the reproduction covers (Llama2, MPT); Phi-2 and Falcon columns read but not transcribed. Artifacts not fetched: this record exists to anchor the reproduction, and the reanalysis budget went to mazuryk2026-powerless-noise.",
+    "session": "2026-08-12 maria"
+  },
+  "triggers": [
+    "does adding irrelevant documents to a RAG prompt help",
+    "power of noise RAG random documents improve accuracy",
+    "where should the gold document go in a RAG context window",
+    "how bad are semantically similar but answer-less passages for RAG",
+    "what is the original source of the claim that noise helps retrieval"
+  ],
+  "methods": [
+    "controlled-context-composition",
+    "oracle-gold-document-placement",
+    "attention-entropy-inspection",
+    "wilcoxon-paired-significance"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Distracting documents -- semantically similar to the query but not containing the answer -- sharply degrade RAG accuracy, and a single one is enough to cause a large drop.",
+      "scope": "NQ-open, 10,000 train queries, Wikipedia Dec-2018 corpus, Llama2-7B / MPT-7B / Phi-2 / Falcon-7B, all 4-bit, 15-token generation cap, gold document present.",
+      "quantities": [
+        {
+          "name": "accuracy_gold_only",
+          "value": 0.5642,
+          "unit": "proportion correct",
+          "n": 10000,
+          "baseline": "Llama2-7B, gold document alone",
+          "source": "Table 1 row 0"
+        },
+        {
+          "name": "accuracy_drop_one_distracting",
+          "value": 0.24,
+          "unit": "proportion correct",
+          "n": 10000,
+          "baseline": "peak drop across models from 0 to 1 distracting document, ~-25% relative",
+          "source": "Sec 5.1"
+        },
+        {
+          "name": "accuracy_drop_max_distracting",
+          "value": 0.38,
+          "unit": "proportion correct",
+          "n": 10000,
+          "baseline": "largest observed degradation, -67% relative",
+          "source": "Sec 5.1"
+        },
+        {
+          "name": "closed_book_accuracy",
+          "value": 0.1123,
+          "unit": "proportion correct",
+          "n": 10000,
+          "baseline": "Llama2-7B with no documents at all",
+          "source": "Table 1 caption"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Transcribed and recomputed in mazuryk2026-powerless-noise/reanalysis/06. The reproduction matches Llama2 to a mean gap of +0.0001 over 63 cells. This part of the paper is solid and is not what anyone disputes."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Adding random documents -- drawn uniformly from the corpus, unrelated to the query -- IMPROVES LLM accuracy, by up to 35%.",
+      "scope": "Same setup. The improvement is claimed most strongly for the Near placement, where the gold document sits adjacent to the query, and is also reported in the realistic retrieval setting of Table 3.",
+      "quantities": [
+        {
+          "name": "power_of_noise_effect_accuracy_delta",
+          "value": 0.0217,
+          "unit": "proportion correct",
+          "n": 10000,
+          "baseline": "Llama2 Near, acc(14 random) 0.5859 - acc(gold only) 0.5642",
+          "source": "Table 2, computed in mazuryk2026-powerless-noise/reanalysis/06"
+        },
+        {
+          "name": "power_of_noise_effect_relative_pct",
+          "value": 36,
+          "unit": "percent",
+          "n": 10000,
+          "baseline": "Sec 5.3, 'improvement of 0.08 (+36%)' in the best-performing Near setting, MPT",
+          "source": "Sec 5.3"
+        },
+        {
+          "name": "power_of_noise_effect_realistic_pct",
+          "value": 35,
+          "unit": "percent",
+          "n": "not determined; the paper says the 2,889-item test split, the printed decimals do not fit k/2889",
+          "baseline": "Sec 5.4, gains up to 0.07 (+35%) with 4 retrieved documents",
+          "source": "Sec 5.4 / Table 3"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The numbers are real and reproduce. Two narrowings, both established in mazuryk2026-powerless-noise and its reanalysis. (i) The headline '+35%' and '+36%' are relative changes on small bases -- the absolute deltas are 0.07 and 0.08 accuracy -- and the abstract's 'up to 35%' does not carry the base. (ii) The effect is confined to the original inference regime: 4-bit weights, a 15-token cap and an instruction demanding a NO-RES token. Under a chat template, a 100-token cap and an instruction without NO-RES, 1 of 10 model-configuration cells shows it and 4 show the opposite sign.",
+        "by": "mazuryk2026-powerless-noise"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Gold document position matters and follows a consistent order: accuracy is highest when the gold document is adjacent to the query (Near), lower when it is farthest (Far), and lowest when it is in the middle (Mid).",
+      "scope": "All four models, both distracting and random document types -- but all of them 7B-class, 4-bit quantised, with a 15-token generation cap. Does NOT extend to unquantised 8-12B 2025-generation models; see gabin2026-lost-in-the-evidence#c3.",
+      "quantities": [
+        {
+          "name": "accuracy_gold_near_18_distracting",
+          "value": 0.3781,
+          "unit": "proportion correct",
+          "n": 10000,
+          "baseline": "Llama2, 18 distracting documents, gold Near",
+          "source": "Table 1"
+        },
+        {
+          "name": "accuracy_gold_far_18_distracting",
+          "value": 0.2348,
+          "unit": "proportion correct",
+          "n": 10000,
+          "baseline": "same, gold Far",
+          "source": "Table 1"
+        },
+        {
+          "name": "accuracy_gold_mid_18_distracting",
+          "value": 0.1795,
+          "unit": "proportion correct",
+          "n": 10000,
+          "baseline": "same, gold Mid",
+          "source": "Table 1"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Large, monotone and independently reproduced WITHIN ITS POPULATION -- 7B models at 4-bit with a 15-token cap, 2023 generation. Scope cut on 2026-08-13: Gabin, Perez & Parapar 2026 sweep gold position on LLaMA-3.1:8B and Mistral-NeMo:12B unquantised and find flat curves with no U shape, on AmbigQA and on standard NQ/HotpotQA. An effect of this size (0.3781 Near vs 0.1795 Mid) does not vanish through noise, so the right reading is that the position effect is indexed to an inference regime rather than being a property of RAG. I had called this 'the most durable finding in the paper' one day earlier; that sentence was too strong.",
+        "by": "gabin2026-lost-in-the-evidence"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "The benefit of random documents is not an artifact of them coming from the same corpus: it persists when random documents are drawn from Reddit (Webis-TLDR-17) and even when they are nonsensical sentences of random words.",
+      "scope": "Llama2-7B, realistic retrieval setting, Table 4.",
+      "quantities": [
+        {
+          "name": "accuracy_random_reddit_10_added",
+          "value": 0.2658,
+          "unit": "proportion correct",
+          "n": "see c2 caveat",
+          "baseline": "8 retrieved + 10 Reddit random, vs 0.2198 with 8 retrieved alone",
+          "source": "Table 4 left"
+        },
+        {
+          "name": "accuracy_random_words_10_added",
+          "value": 0.2499,
+          "unit": "proportion correct",
+          "n": "see c2 caveat",
+          "baseline": "8 retrieved + 10 random-word documents, vs 0.2198 with 8 retrieved alone",
+          "source": "Table 4 right"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "Not reproduced by anyone I have read and not checked here. It is the most interesting claim in the paper and the one that most needs the check: if literal word salad raises accuracy, the mechanism cannot be about information at all, which is precisely what Mazuryk et al. later argue -- the gain is the baseline being penalised by output-format failures. Table 4 was never in the reproduction's scope."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "The mechanism is entropy collapse: by adding random documents to the context, the conditioned distribution p(y|.,d) is better conditioned, avoiding pathologically low attention entropy that causes degenerate outputs.",
+      "scope": "Offered as a hypothesis in Sec 5.5 ('On The Unreasonable Effectiveness Of Random Documents'), supported by an attention heatmap for one example (Fig. 3) and by citation.",
+      "our_assessment": {
+        "status": "not-identifiable",
+        "why": "The claim has no truth value as stated. No entropy is measured anywhere in the paper -- Fig. 3 is a mean-attention heatmap for a single hand-picked query, not an entropy statistic over any sample -- and no alternative to entropy collapse is specified against which it could fail. Mazuryk et al. later supply a competing mechanism (output-format failures in the low-document baseline) that predicts the same accuracy pattern, and the two are not distinguished by anything in this paper. Stronger than 'disputed', which is why the status exists."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "arXiv:2401.14887v4, Tables 1-5",
+      "status": "verified-usable",
+      "local_path": "../mazuryk2026-powerless-noise/reanalysis/06_original_vs_reproduction.py",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "PyMuPDF text extraction of all 11 pages; Tables 1, 2, 3 (Llama2/MPT columns) transcribed into ORIG1/ORIG2/ORIG3_CONTRIEVER in mazuryk2026-powerless-noise/reanalysis/06; validated by recomputing the reproduction's printed Delta(%) column against them",
+        "result": "93/97 overlapping cells reproduce the printed Delta exactly; 2 more match in magnitude with the paper's sign wrong; 2 differ at the second decimal of a percent. The transcription of both papers is verified by this cross-check."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "github.com/florin-git/The-Power-of-Noise",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "not fetched; the URL is recorded from the paper's footnote 1. A neighbouring guess (florin-hf/rag_gen_effects) 404s and is NOT this repository -- recorded so nobody repeats the mistake.",
+        "result": "unknown. The reproduction's repository, which is a fork of it, IS audited: see mazuryk2026-powerless-noise artifact a2."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "benchmark",
+      "locator": "NQ-open + Wikipedia 2018-12-20, 21,035,236 passages, 72,209 train / 2,889 test queries",
+      "status": "not-checked",
+      "fetch_cmd": "python -c \"from datasets import load_dataset; load_dataset('florin-hf/wiki_dump2018_nq_open')\"",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "not downloaded",
+        "result": "deliberately skipped, ~21M passages, nothing here needs it"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:critiques",
+      "target": "mazuryk2026-powerless-noise",
+      "why": "Reciprocal of the reproduction's edge. Recorded from this side too so the graph is traversable in both directions.",
+      "asymmetric_note": "The reproduction does not refute this paper. c1 and c3 stand entirely; c2 survives with its scope cut to the original inference regime; only c5 is destroyed, and by being unfalsifiable rather than by being contradicted."
+    },
+    {
+      "type": "cito:disagreesWith",
+      "target": "gabin2026-lost-in-the-evidence#c3",
+      "why": "Reciprocal edge. They sweep the same variable on modern models and find no position effect.",
+      "asymmetric_note": "The disagreement is about populations, not about either measurement. Both stand within their own inference regime; what fails is the generalisation from one to the other."
+    },
+    {
+      "type": "cito:obtainsBackgroundFrom",
+      "target": "liu2024-lost-in-the-middle",
+      "why": "The Near/Mid/Far design of c3 is Liu et al.'s position sweep; cited there as [30]/[14]."
+    }
+  ],
+  "open_questions": [
+    "c4 -- random WORD SALAD improving accuracy -- has never been reproduced. It is the cheapest decisive experiment in this literature: if nonsense helps, no information-theoretic account of the effect can be right.",
+    "The abstract's 'up to 35%' is a relative gain on an absolute base of 0.07 accuracy. How much of the RAG literature's belief that noise helps rests on relative deltas over small bases? A survey of citing papers would answer it and would be a genuinely useful piece of bibliometrics."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-12",
+    "verified": "2026-08-12",
+    "notes_file": "NOTES.md"
+  }
+}

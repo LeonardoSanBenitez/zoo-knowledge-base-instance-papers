@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "id": "liu2024-lost-in-the-middle",
+  "title": "Lost in the Middle: How Language Models Use Long Contexts",
+  "authors": ["Nelson F. Liu", "Kevin Lin", "John Hewitt", "Ashwin Paranjape", "Michele Bevilacqua", "Fabio Petroni", "Percy Liang"],
+  "year": 2024,
+  "venue": "TACL 12:157-173",
+  "area": ["rag-and-knowledge-management"],
+  "identifiers": {
+    "arxiv": "2307.03172",
+    "doi": "10.1162/tacl_a_00638"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-ran-artifacts",
+  "cost": {
+    "tool_calls": 7,
+    "bytes_downloaded": 538000000,
+    "compute_notes": "18-page PDF, pp. 1-7 read as rendered pages plus full text extraction. Repository cloned (513 MB including 257 MB of git history and 246 MB of prompt data), all 16 QA data files opened and counted, design verified, then DELETED per the 50 MB rule -- only the two files that define the metric were kept locally. One reanalysis script, numpy only, runs instantly. No model inference: the paper's own footnote says evaluating GPT-4 on the full experiments would cost upwards of $6,000, and the 2023 API endpoints it uses (gpt-3.5-turbo-0613, claude-1.3) are retired.",
+    "session": "2026-08-13 maria"
+  },
+  "triggers": [
+    "lost in the middle where to put the relevant document",
+    "does a language model use the middle of its context window",
+    "is a longer context window actually better",
+    "should I retrieve more documents or fewer",
+    "primacy and recency bias in long context LLMs",
+    "why did the position effect disappear on modern models",
+    "how many retrieved documents before performance saturates"
+  ],
+  "methods": [
+    "oracle-gold-document-placement",
+    "controlled-context-composition",
+    "synthetic-key-value-retrieval-probe",
+    "closed-book-and-oracle-bracketing",
+    "train-test-length-mismatch-ablation"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Performance on multi-document question answering follows a U-shaped curve in the position of the answer-bearing document: highest when it is at the very beginning or the very end of the input context, and significantly degraded when it must be accessed from the middle.",
+      "scope": "NQ-Open, 2,655 queries whose annotated long answer is a paragraph, 10/20/30 total documents (~2K/4K/6K tokens), Contriever-selected distractors in order of decreasing relevance, greedy decoding. Models: GPT-3.5-Turbo (0613) and its 16K variant, Claude-1.3 and its 100K variant, MPT-30B-Instruct, LongChat-13B (16K). All 2023-generation.",
+      "quantities": [
+        {"name": "gold_position_accuracy_spread", "value": 0.202, "unit": "accuracy", "n": 2655, "baseline": "GPT-3.5-Turbo, best position (~0.763, Fig. 5) minus worst (at or below closed-book 0.561)", "source": "Fig. 5 + Sec 2.3, computed in reanalysis/08"},
+        {"name": "closed_book_accuracy", "value": 0.561, "unit": "accuracy", "n": 2655, "baseline": "GPT-3.5-Turbo with no documents at all", "source": "Table 1"},
+        {"name": "oracle_accuracy", "value": 0.883, "unit": "accuracy", "n": 2655, "baseline": "GPT-3.5-Turbo given only the answer-bearing document", "source": "Table 1"},
+        {"name": "closed_book_accuracy", "value": 0.350, "unit": "accuracy", "n": 2655, "baseline": "LongChat-13B (16K), no documents", "source": "Table 1"},
+        {"name": "oracle_accuracy", "value": 0.834, "unit": "accuracy", "n": 2655, "baseline": "LongChat-13B (16K), single gold document", "source": "Table 1"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The effect is real, enormous and cleanly designed -- resolved at 15.9 standard errors on 2,655 items, when 69 items would have sufficed at p<0.01 (reanalysis/08). The scope narrowing is not a criticism of this paper but a fact established after it: Gabin, Perez & Parapar 2026 sweep gold position on LLaMA-3.1:8B and Mistral-NeMo:12B and find flat curves. See c3 -- this paper's own Section 4.1 PREDICTS that.",
+        "by": "gabin2026-lost-in-the-evidence"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "In the worst case, giving the model 20 or 30 documents produces LOWER accuracy than giving it no documents at all.",
+      "scope": "GPT-3.5-Turbo, NQ-Open multi-document QA, answer-bearing document in a middle position.",
+      "quantities": [
+        {"name": "closed_book_accuracy", "value": 0.561, "unit": "accuracy", "n": 2655, "baseline": "the bar that the 20- and 30-document settings fall below", "source": "Sec 2.3"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Directly readable from Table 1 against Figure 5 and stated by the authors. It is the most useful sentence in the paper for anyone building a pipeline, because it converts an abstract position effect into a decision: retrieving more can be worse than retrieving nothing."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Flan-UL2 is relatively robust to the position of relevant information when evaluated within its 2048-token training-time context window (1.9% absolute difference between best and worst case), and begins to degrade in the middle only on sequences longer than 2048 tokens.",
+      "scope": "One paragraph of Section 4.1, offered as part of a comparison between decoder-only and encoder-decoder architectures.",
+      "quantities": [
+        {"name": "gold_position_accuracy_spread", "value": 0.019, "unit": "accuracy", "n": 2655, "baseline": "Flan-UL2 evaluated inside its 2048-token training window", "source": "Sec 4.1"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "This is the most consequential paragraph in the paper and it is three sentences long inside a section about architecture. It is a TRAIN/TEST LENGTH-MISMATCH account of the U-shape, given by the authors of the U-shape, and it predicts that the effect should vanish as training sequence lengths grow -- which is what Gabin et al. observe in 2026 on models trained at 128K. Neither paper says so. Two narrowings of my own: (i) the paper attributes the contrast to encoder-decoder architecture, and the length-mismatch reading is mine, not theirs -- both are consistent with the one datapoint; (ii) at n=2,655 a 1.9-point difference is |E|/SE = 1.4, so 'relatively robust' is a claim of NOT SEEING an effect, and distinguishing it from a real 1.9-point effect would need 9,184 items (reanalysis/08). The claim is safe because the burden runs the other way for a robustness claim, but the flat curves reported in 2026 have exactly the same statistical standing: 'the effect is gone' and 'we cannot see it' are the same data."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "In practical retriever-reader open-domain QA, reader performance saturates long before retriever recall does: going from 20 to 50 retrieved documents improves accuracy by only about 1.5% for GPT-3.5-Turbo and about 1% for Claude-1.3.",
+      "scope": "NQ-Open with Contriever retrieval over Wikipedia, Section 5 case study.",
+      "quantities": [
+        {"name": "accuracy_gain_20_to_50_documents", "value": 0.015, "unit": "accuracy", "n": 2655, "baseline": "GPT-3.5-Turbo, retriever-reader setting", "source": "Sec 1 / Sec 5"},
+        {"name": "accuracy_gain_20_to_50_documents", "value": 0.010, "unit": "accuracy", "n": 2655, "baseline": "Claude-1.3, same", "source": "Sec 1 / Sec 5"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This is a saturation result of a different kind from the one I derived in maria2026-rag-specification-dispersion -- saturation in the number of RETRIEVED DOCUMENTS rather than in the number of evaluation items -- and it is the strand of this paper the RAG literature actually acted on. Worth keeping the two straight: k saturates because the reader stops using more evidence; n saturates because the specification stops being fixed."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Extended-context model variants are not better at using their input context: when the input fits in both, performance as a function of relevant-information position is nearly superimposed between a model and its extended-context counterpart.",
+      "scope": "GPT-3.5-Turbo vs GPT-3.5-Turbo (16K), Claude-1.3 vs Claude-1.3 (100K), 10- and 20-document settings.",
+      "quantities": [
+        {"name": "closed_book_accuracy", "value": 0.560, "unit": "accuracy", "n": 2655, "baseline": "GPT-3.5-Turbo (16K) -- against 0.561 for the 4K version, i.e. indistinguishable", "source": "Table 1"},
+        {"name": "oracle_accuracy", "value": 0.886, "unit": "accuracy", "n": 2655, "baseline": "GPT-3.5-Turbo (16K) -- against 0.883 for the 4K version", "source": "Table 1"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Table 1 shows the pairs agreeing to within 0.1 and 0.3 accuracy points, well inside a standard error of 1.2 points at n=2,655. A negative result that has aged well and is still routinely ignored by anyone quoting a context-window length as a capability."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "arXiv:2307.03172, Table 1 and Figures 5, 7, 8",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-13",
+        "by": "maria",
+        "how": "pp. 1-7 read as rendered pages; full text extracted with PyMuPDF; Table 1 transcribed into reanalysis/08",
+        "result": "Table 1 is the only numeric table; the position results are figures. Values from figures are marked as read-off in every `source` field."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "raw-data",
+      "locator": "https://github.com/nelson-liu/lost-in-the-middle",
+      "status": "verified-usable",
+      "bytes": 538000000,
+      "fetch_cmd": "git clone --depth 1 https://github.com/nelson-liu/lost-in-the-middle.git",
+      "checked": {
+        "on": "2026-08-13",
+        "by": "maria",
+        "how": "cloned, then a script gunzipping every qa_data/*/*.jsonl.gz, counting lines, and checking that the question lists are identical across position files and that ctxs[i].isgold sits at the index named in the filename",
+        "result": "16 QA files, EVERY ONE exactly 2,655 lines. Questions identical across position files (verified for gold_at_0 vs gold_at_19 at 20 documents). Each ctx carries title/text/hasanswer/isgold and the gold document sits precisely where the filename says. The design is exactly as described -- a genuinely well-made artifact, which is rarer than it should be. Three key-value files at 75/140/300 keys are also present. DELETED after checking (513 MB, over the 50 MB rule); regenerate with fetch_cmd."
+      },
+      "datasheet": {
+        "composition": "2,655 NQ-Open questions x {10,20,30} documents x gold at each of several positions, plus an oracle file with a single gold context. One record = one question with its full prompt context.",
+        "collection": "Distractors retrieved with Contriever fine-tuned on MS-MARCO, filtered to exclude any passage containing an annotated answer.",
+        "caveats": "The paper's own footnote 2: ambiguity in NQ-Open means some distractor passages may contain a reasonable answer, so 'hasanswer' is not a perfect label. They rerun on an unambiguous subset in Appendix A and report the same conclusions. What the repository does NOT contain is model outputs, so the paired discordance counts needed for exact standard errors are absent here as in every other paper in this area."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "code",
+      "locator": "https://github.com/nelson-liu/lost-in-the-middle scripts/ and src/lost_in_the_middle/",
+      "status": "verified-usable",
+      "local_path": "artifacts/",
+      "checked": {
+        "on": "2026-08-13",
+        "by": "maria",
+        "how": "listed and copied scripts/evaluate_qa_responses.py and src/lost_in_the_middle/metrics.py before deleting the clone",
+        "result": "9 scripts covering data construction, response generation per model family, and evaluation. The metric definition is kept locally because it is the load-bearing piece: 'accuracy' here means any gold answer string appears in the output, the same best-subspan convention Cuconasu et al. later inherit."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:disagreesWith",
+      "target": "gabin2026-lost-in-the-evidence#c3",
+      "why": "Reciprocal of their failed reproduction.",
+      "asymmetric_note": "Almost certainly not a real disagreement. This paper's own c3 -- Flan-UL2 robust inside its training window, degrading outside it -- predicts that models trained at the lengths they are used at will not show the effect. Gabin et al.'s models are trained at 128K and evaluated far inside it. The 2026 null is better read as a confirmation of this paper's Section 4.1 than as a contradiction of its Section 2.3. Neither paper draws the connection."
+    },
+    {
+      "type": "cito:citesAsAuthority",
+      "target": "cuconasu2024-power-of-noise",
+      "why": "Reverse direction: Cuconasu et al. cite this paper as [30] and their Near/Mid/Far design is this paper's position sweep. Recorded from this side so the edge is traversable.",
+      "asymmetric_note": "The temporal direction is the other way -- this paper is the source. The edge exists here so that a reader arriving at the source can find who built on it."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-rag-specification-dispersion#c2",
+      "why": "c4 is a saturation result of a different kind -- saturation in retrieved documents k rather than in evaluation items n -- and it is the strand the field acted on. The two should be kept distinct: k saturates because the reader stops using more evidence, n saturates because the specification stops being fixed."
+    }
+  ],
+  "open_questions": [
+    "THE TEST THAT WOULD SETTLE THE AREA: sweep gold position for one model family across checkpoints with increasing training sequence length, holding architecture, data and evaluation fixed. If the U-shape is length extrapolation, it should shrink monotonically. Nobody has done it; both the 2023 and the 2026 papers vary model generation and training length together.",
+    "This repository ships 2,655 x 16 fully-constructed prompts and no model outputs. Running one 8B model over them would produce the per-question outputs that every reanalysis in this area lacks -- including the discordance counts that turn every unpaired SE bound into an exact McNemar figure. It is the single highest-value compute purchase in this whole area and it is small: 42,480 generations at 15 tokens.",
+    "Their accuracy metric is 'any gold answer string appears in the output', which Cuconasu et al. and everyone since inherited. How much of the noise effect and the position effect is a property of that metric rather than of the models? Cuconasu et al. acknowledge the limitation ('Roosevelt' vs 'President Roosevelt') and nobody has measured it."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-13",
+    "verified": "2026-08-13",
+    "notes_file": "NOTES.md"
+  }
+}

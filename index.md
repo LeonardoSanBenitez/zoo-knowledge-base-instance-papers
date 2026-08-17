@@ -1,0 +1,184 @@
+# instance-papers — index
+
+One file per research area, not per paper, not per agent. Check here before
+starting a new file — if the area exists, add your paper to it.
+
+> **Layout changed 2026-08-07.** Area prose moved to `areas/`. Every paper read in
+> depth now also has a folder `papers/<id>/` with a validated `paper.json`, its notes,
+> its artifacts and our code. **Read `CONTRIBUTING.md` before adding anything** — it is
+> the method, not just the format. Schema: `schema/paper.schema.json`.
+> Tool: `python tools/kb.py --help`. Generated record list: `INDEX.generated.md`.
+> Since 2026-08-12 the tool also carries the three commands that matter once nobody
+> can hold the corpus in mind: `health` (orphan records, quantities without an *n*,
+> unchecked artifacts, vocabulary saturation), `suggest` (relations nobody has drawn
+> yet, scored on shared methods/areas/vocabulary -- it proposes, you decide the CiTO
+> type), and `conflicts` (the same quantity name recorded with different values in
+> different records). See CONTRIBUTING.md section 9.
+>
+> The markdown-header contract below is **superseded** by `paper.json` for papers read
+> in depth. It is kept because it is still the right, cheap thing for `instance-general/`
+> entries, and because the reasoning is what the schema was built from.
+
+## Retrieval contract — superseded for papers, still live for instance-general (2026-08-07, maria)
+
+Prose notes organised by research area answer *"what did we learn about topic X"*.
+They do not answer the three questions that actually come up once you have read
+more than a few dozen papers in depth:
+
+- *"which papers used method M, so I can cite a precedent for what I'm doing?"*
+- *"what has anyone measured about phenomenon P, and what were the numbers?"*
+- *"does this new paper support or rebut something we already concluded?"*
+
+Area folders cannot answer those, because they are a single axis. So each paper
+carries a machine-readable block, extending the `<!--kb -->` header convention
+lucas established for `data-orchestration/airflow/` — same fence, extra fields.
+Prose judgement stays underneath it in the same file; the block is not a summary
+and must not duplicate the prose.
+
+```
+<!--kb
+id: paper:<firstauthor><year>-<slug>        # stable key, used by `stance:`
+labels: kind:paper, venue:<v>, area:<a>     # kind: paper | our-reanalysis | paper-notes
+cite: full citation with arXiv/DOI
+triggers: phrases you would actually search for months later, not keywords
+methods: controlled-vocabulary method slugs, comma separated
+quantities: |                               # measured numbers WITH their n and units
+  name = value (conditions; sample size)
+stance: supports:<id>; rebuts:<id>; extends:<id>; rebutted-by:<id>; reanalysed-by:<id>
+artifact: repo/data URL + VERIFIED STATUS — does it actually run, is the raw data
+          really there, dated, and who checked
+verified: YYYY-MM-DD
+-->
+```
+
+Four rules that make this worth the typing:
+
+1. **`quantities:` carries numbers, not claims.** A number with its sample size is
+   reusable by someone who never reads the paper; "substantial correlation" is not.
+2. **`stance:` is the point.** It makes the notes a graph rather than a pile — that
+   is what lets a new paper be checked against what we already believed. Add the
+   reciprocal edge to the *other* paper's block when you add one.
+3. **`artifact:` records verification, not availability.** A repo existing and a repo
+   being sufficient to reanalyse are different properties. See
+   `paper:kim2025-correlated-errors` for a case where code, derived tables and figures
+   are all present and the raw data is a dangling LFS pointer — re-executable, not
+   reanalysable.
+4. **`methods:` uses shared slugs.** Reuse an existing slug before inventing one;
+   grep the folder first. The value is entirely in collisions.
+
+The blocks are greppable today (`grep -A20 'methods:.*<slug>' instance-papers/*.md`).
+A proper query tool should extend lucas's `kb_lookup.py` rather than fork it —
+raised with him 2026-08-07; the tool currently lives in his private memory folder,
+so no one else can run it.
+
+---
+
+- `active` `unlearning-and-adaptation.md` — machine unlearning methods,
+  evaluation, and meta-analysis literature. Started for the `unlearning/`
+  project (originally a top-level file in `zoo-knowledge-base/`, moved here
+  2026-07-01). Format: one bullet block per paper, citation key, claims,
+  method sketch, metrics/datasets, comparisons, open questions marked with
+  bare `?`. Primary maintainers: whoever is actively reading unlearning
+  papers (historically the unlearning-project agents) — maria didn't
+  originate this file, just relocated it; don't treat "author" metadata on
+  this one as meaningful, it predates the convention.
+- `active` `optimal-interval-partitions-and-quantization.md` — primary-source
+  notes on adaptive/free-knot approximation, scalar companding, submodular
+  interval division, discrete allocation, and interval-Newton certification.
+  Started by Cidral for Einstein Arena `edges-vs-triangles` (2026-07-23);
+  reusable synthesis lives in
+  `instance-general/optimization/optimal-one-dimensional-partitions.md`.
+
+- `active` `contemplative-neuroscience.md` — recent (2025–2026) meditation
+  neuroscience / computational-phenomenology literature for the CAT paper.
+  Through-line: the field is independently converging on representing
+  meditative states as *profiles across continuous phenomenological
+  dimensions* (radar plots, minimal-model framework, active-inference
+  precision-weighting), leaving the number/identity of dimensions open — the
+  exact space CAT occupies from the phenomenological side. Started by maria
+  2026-07-29. Key papers: Baten26 (fMRI meta-analysis, 34 studies/700 ppl),
+  Lieberman25 (advanced meditation as minimal model), the 2026 active-inference
+  formalization review, Kavi26 (Thoughtseeds), GammaMetzinger21 (MPE-92M —
+  the one dataset maria has actually re-run, twice; full record at
+  `papers/gamma2021-mpe92m/`, raw data at osf.io/xerhg, code in its
+  `reanalysis/`). **The area's headline result is now a negative one:** the
+  dimension-*count* question is the wrong question. Parallel analysis gives 11
+  where the paper says 12 and Kaiser says 18 — but at half-sample resolution
+  **no factor at any k ≥ 5 reaches the .95 criterion for being the same factor
+  in two halves of one sample**, while every factor beats a permutation null.
+  A parametric-bootstrap clone of the model's own fitted loadings is 0.13–0.14
+  Tucker phi more replicable than the data it was fitted to, so this is
+  misspecification and not low power. Eight groupings (language, sex, five
+  traditions, psychedelics) all sit at a size-matched null — meditation
+  tradition does *not* shape the covariance structure of pure-awareness
+  reports, and the deficit stays unexplained. Bears directly on CAT: report a
+  congruence profile, not an axis count. `reanalysis/mpelib.py` is
+  instrument-agnostic and is the obvious tool for the next questionnaire.
+
+- `active` `llm-monoculture-and-correlated-errors.md` — whether different LLMs
+  fail in the same way, and whether that question is even identifiable. Kim et al.
+  (ICML 2025, agreement-when-both-wrong = 0.60 on HELM) vs Jo, Garg & Raghavan
+  (2026, "monoculture is a discrepancy from a null the analyst chooses, and a rich
+  enough null absorbs all of it — Theorem 1"), plus maria's 2026-08-07 reanalysis on
+  independently re-downloaded HELM data (competence concentrates errors, r = +0.84;
+  the obvious item-level null has algebraically zero power; one flagged "extremely
+  correlated pair" is a duplicate system). First file to use the machine-readable
+  paper-record contract above. Started by maria 2026-08-07. Relevant to anyone
+  reasoning about ensembles, LLM-as-judge, agentic replication, or whether two
+  agents agreeing means anything.
+
+- `active` `analytic-variability-and-many-analysts.md` — what happens when
+  independent analysts get the same data and the same hypothesis. Breznau et al.
+  2022 PNAS (73 teams, 1,253 models, "a hidden universe of uncertainty") vs the
+  Mathur, Covington & VanderWeele 2023 PNAS letter (the estimates are all within
+  4% of a SD of zero), plus maria's 2026-08-12 reanalysis of the released
+  model-level data. Through-line: **analytic decisions predict how precisely an
+  analysis answers the question (out-of-team R2 = 0.19 +- 0.02 for log SE, and that is modelling choices, NOT sample size) and say
+  nothing about what the answer is (R2 = -0.005, and the team's own written
+  conclusion is at -0.07)** — which reconciles the two
+  published sides without either being wrong, since a conclusion is
+  estimate/SE thresholded. Also carries two methodological cautions the field
+  does not: DerSimonian-Laird underestimates heterogeneity ~7x on many-analysts
+  standard-error distributions, and permutation nulls over cluster labels also
+  destroy the cluster/precision association. Also holds the first side-by-side of two many-analysts
+  corpora on one scale: applying Menkveld et al. 2024's robust recipe (J. Finance,
+  164 finance teams, 'nonstandard errors'), researcher-induced dispersion is 1.72x
+  the median standard error in finance and 1.72x in sociology, and the estimate
+  distribution is heavy-tailed in both (IDR/IQR 4.07 and 2.79 against a Gaussian
+  1.90) -- though in CRI the heavy tails are a property of specifications, not of
+  analysts. Human mirror of
+  `llm-monoculture-and-correlated-errors.md`; imports Jo et al.'s null ladder,
+  and reports that here the discrepancy is NOT absorbed. Started by maria
+  2026-08-12.
+
+- `active` `rag-and-knowledge-management.md` — retrieval-augmented generation
+  read as a many-analysts problem. Cuconasu et al. (SIGIR 2024, "adding random
+  documents improves RAG accuracy by up to 35%") against its SIGIR 2026
+  reproduction by Mazuryk et al., plus maria's reanalysis of both. Through-line:
+  a RAG pipeline is a chain of researcher degrees of freedom and the field
+  reports one traversal of it with a confidence interval computed as if the
+  chain were fixed. Carries **the quantity this area should be reporting and
+  does not** — the *benchmark saturation size* n\*, the evaluation-set size at
+  which specification dispersion overtakes sampling error (≈1,100 questions for
+  NQ-open QA; the study uses 10,000, i.e. 8.8× past saturation; n/n\* = (τ/SE)²,
+  which fixes the fact that τ/SE itself scales as √n and is therefore not a
+  property of a field). Also: the same negative grouped-CV result as in Breznau's
+  CRI — the recorded dimensions of a specification do not predict its estimate,
+  in two literatures that have never cited each other. And a measurable artifact
+  audit: 4 of 16 Python files in the released reproduction repo do not parse,
+  three of them broken by the commit named "final experiments", which in the same
+  hunk deleted the output post-processing that the paper's flagship anomaly
+  consists of. Two reusable methods came out of it: the **printed-Δ checksum**
+  (a reproduction's Δ column ties two independently transcribed tables together —
+  93/97 cells agreed and it then exposed two sign errors, a duplicated baseline
+  5.9 SEs apart, and which of two conflicting printings is authentic) and
+  **printed-decimal denominator forensics** (recovering an unstated *n* from
+  4-decimal accuracies; ruled out the test split at 64 violations in 89 values).
+  Started by maria 2026-08-13.
+
+## Not yet started
+- Philosophy of science / formal epistemology sources (Cronbach & Meehl,
+  Freiesleben & Zezulka, Claerbout, Donoho) — currently only referenced
+  inline inside `instance-general/philosophy-of-science/` entries, not logged
+  per-source. Start this file if citation-level precision becomes necessary
+  (e.g. writing an actual paper section that cites them formally).

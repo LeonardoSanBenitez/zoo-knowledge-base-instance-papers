@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0",
+  "id": "gabin2026-lost-in-the-evidence",
+  "title": "Lost in the Evidence? Reproducing Document Position and Context Size Effects in RAG",
+  "authors": ["Jorge Gabin", "Anxo Perez", "Javier Parapar"],
+  "year": 2026,
+  "venue": "SIGIR '26",
+  "area": ["rag-and-knowledge-management", "analytic-variability-and-many-analysts"],
+  "identifiers": {
+    "arxiv": "2605.27105v2",
+    "doi": "10.1145/3805712.3808569"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 8,
+    "bytes_downloaded": 6300000,
+    "compute_notes": "10-page PDF read in full as rendered pages. Virtual-appendix repository cloned (4.4 MB) and all 10 notebooks audited programmatically for outputs. One reanalysis script, stdlib + numpy, 20,000-replicate simulation, runs in about 8 s on CPU. Their own reported cost, which they state and almost nobody does: 160 A100-80GB hours, 22.6 kgCO2eq.",
+    "session": "2026-08-13 maria"
+  },
+  "triggers": [
+    "how many topics or questions do I need for a stable RAG comparison",
+    "adequate topic budget calibration retrieval evaluation",
+    "does lost in the middle still happen with modern LLMs",
+    "does document ordering in the context matter for RAG",
+    "my RAG ablation flipped sign when I changed the evaluation subset",
+    "is 500 queries enough to compare two retrieval configurations",
+    "zero crossings criterion evaluation set size"
+  ],
+  "methods": [
+    "repeated-subset-sampling-calibration",
+    "zero-crossing-stability-criterion",
+    "multiverse-analysis",
+    "controlled-context-composition",
+    "oracle-gold-document-placement",
+    "benchmark-saturation-size"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Topic sampling is a major source of variance in RAG ordering and context-size experiments: with 500 topics the apparent winner among ordering strategies can change across random subsets, so small topic sets can mask or exaggerate ordering effects.",
+      "scope": "NQ and HotpotQA, LLaMA-3.1:8B, BM25 top-k for k in {5,10,25,50,75,100}, three orderings (standard/reverse/random), 10 random subsets per topic-set size.",
+      "quantities": [
+        {"name": "evaluation_subset_size_common_in_field", "value": 500, "unit": "topics", "n": 10, "baseline": "the budget used by Cao et al.'s industry study and much recent RAG work; shown here to be unstable", "source": "Sec 3.1, Figure 1"},
+        {"name": "ordering_effect_delta_f1", "value": 0.02, "unit": "F1-token", "n": "1000 topics x 10 subsets", "baseline": "reverse minus random ordering, HotpotQA, large context sizes", "source": "Figure 2a, read off the plot"},
+        {"name": "ordering_effect_delta_f1", "value": 0.01, "unit": "F1-token", "n": "2000 topics x 10 subsets", "baseline": "reverse minus random ordering, NQ, large context sizes", "source": "Figure 2b, read off the plot"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The design is right and the demonstration is direct: repeated subset sampling with the full-topic run as the reference line. It is the same phenomenon as the sampling half of a specification curve, done deliberately."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "An adequate topic budget can be calibrated by finding the smallest topic-set size at which the performance delta between ordering strategies stops crossing zero across random seeds; this yields 1,000 topics for HotpotQA and 2,000 for NQ.",
+      "scope": "The criterion is defined per dataset for the ordering comparisons studied, with LLaMA-3.1:8B, and is then used as a fixed evaluation setting for the rest of the paper.",
+      "quantities": [
+        {"name": "calibrated_evaluation_set_size", "value": 1000, "unit": "topics", "n": "10 subsets x 6 sizes x 6 context sizes", "baseline": "HotpotQA, zero-crossing criterion on dF1 between ordering strategies", "source": "Sec 3.2"},
+        {"name": "calibrated_evaluation_set_size", "value": 2000, "unit": "topics", "n": "10 subsets x 6 sizes x 6 context sizes", "baseline": "NQ, same criterion", "source": "Sec 3.2"},
+        {"name": "benchmark_saturation_size", "value": 1134, "unit": "questions", "n": 10, "baseline": "MY criterion (sampling error = specification dispersion) on a DIFFERENT corpus, NQ-open accuracy, Mazuryk grid -- recorded here because it is the number this claim should be compared against", "source": "maria2026-rag-specification-dispersion"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The procedure is sound and I reconstructed it from first principles in reanalysis/07: simulating 10 subsets at their sizes, a clean run of same-signed estimates first becomes probable near n = 1,000 for dF1 = 0.020 and needs 3,000-5,000 for dF1 = 0.010 at a plausible per-item SD of 0.30. Their HotpotQA budget lands exactly there. The narrowing is important and they do not state it: this is a POWER calculation, so the budget is a property of the specific comparison and diverges as the effect shrinks. It must be redone for every comparison, and it can demand an arbitrarily large evaluation set to resolve a difference that the next configuration change would overturn. It is complementary to, not a substitute for, the saturation size."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The lost-in-the-middle position effect does not reproduce with contemporary LLMs: accuracy is comparatively flat across gold-document positions, with no clear U-shaped curve.",
+      "scope": "AmbigQA with NQ-corpus distractors, LLaMA-3.1:8B and Mistral-NeMo:12B, gold position swept across 20 slots; and standard NQ (top-5, top-10) and HotpotQA (top-8, top-13) for the follow-up 'lost but not only in the middle' claim.",
+      "quantities": [
+        {"name": "gold_position_accuracy_range", "value": "approximately 0.33 to 0.37", "unit": "accuracy", "n": "AmbigQA, 20 positions", "baseline": "Mistral-NeMo:12B and LLaMA-3.1:8B sweeping gold position; a flat band with a slight upward trend, not a U", "source": "Figure 3, read off the plot"},
+        {"name": "gold_position_accuracy_range", "value": "approximately 0.53 to 0.60", "unit": "accuracy", "n": "NQ top-5 and top-10, HotpotQA top-8 and top-13", "baseline": "same two models, 'nearly flat across placements'", "source": "Figure 4, read off the plot"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Believable and important, and the scope must travel with it. They also flag their own deviation honestly: AmbigQA provides no passage-level annotations, so they construct gold and distractor passages themselves, and absolute scores differ from Liu et al. The narrowing is that this is a claim about 8-12B unquantised 2025-generation models, and the effect it fails to find was measured on 7B 4-bit 2023-generation models under a 15-token cap. An effect of Cuconasu et al.'s size (0.3781 Near vs 0.1795 Mid) does not vanish through noise; it vanishes through the population changing."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Contrary to a recent industry study reporting that RAG performance is only weakly sensitive to retrieval depth and passage ordering, both factors have measurable effects that grow with context size, and the discrepancy traces to evaluation choices -- limited topic coverage and reliance on LLM-based judges.",
+      "scope": "Reproduction of Cao et al. 2025 on NQ and HotpotQA, 500 topics each to match their protocol, LLaMA-3.1:8B, k in {5,10,25,50,75,100}, three orderings, F1-token rather than an LLM judge.",
+      "quantities": [
+        {"name": "ordering_f1_spread_at_large_k", "value": 0.06, "unit": "F1-token", "n": "500 topics", "baseline": "reverse vs standard ordering, NQ at k=100 (about 0.51 vs 0.45)", "source": "Figure 5b, read off the plot"},
+        {"name": "judge_metric_agreement_check_size", "value": 250, "unit": "topics", "n": 250, "baseline": "pilot comparing F1-token against an LLM judge; the authors report near-identical ordering gaps", "source": "Sec 4.2"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The reproduction is careful and the metric-substitution worry is addressed by their own 250-topic pilot, which is the right check. The narrowing: they attribute the discrepancy to topic coverage AND to LLM judges, but their own pilot found the judge made no difference to the ordering conclusions, so their evidence supports the topic-coverage explanation and not the judge explanation. Their Section 4.2 states both as if equally supported."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Ordering sensitivity is dataset- and model-dependent rather than a function of model size alone: mid-sized models show the largest positive dF1 from reversing the order at high k on multi-hop data, larger models are smoother and closer to zero, and on single-hop NQ dF1 is small across all six architectures and scales.",
+      "scope": "Gemma-3:4B, Gemma-3:27B, LLaMA-3.1:8B, LLaMA-3.1:70B, Mistral-NeMo:12B, BM25 retrieval, HotpotQA at 1000 topics and NQ at 2000 topics.",
+      "quantities": [
+        {"name": "reverse_minus_standard_delta_f1", "value": "0.00 to 0.10", "unit": "F1-token", "n": "1000 topics, 6 model configurations x 6 context sizes", "baseline": "HotpotQA, spread across model families and sizes -- this spread IS the specification dispersion tau for their setting", "source": "Figure 9a, read off the plot"},
+        {"name": "reverse_minus_standard_delta_f1", "value": "0.00 to 0.05", "unit": "F1-token", "n": "2000 topics, same grid", "baseline": "NQ, same statistic", "source": "Figure 9b, read off the plot"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Descriptively accurate. The narrowing is that Figure 9 is a specification grid and can carry a quantity they do not compute: the spread of dF1 across model configurations is exactly the tau of a saturation analysis. Taking tau ~ 0.025 from that figure gives n* in the hundreds to low thousands for their own setting, overlapping their calibrated budget -- so their two halves are consistent, which they had no way to check because they never wrote tau down."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "arXiv:2605.27105v2, Figures 1-9",
+      "status": "present-but-insufficient",
+      "checked": {
+        "on": "2026-08-13",
+        "by": "maria",
+        "how": "all 10 pages read as rendered images; values quoted in claims are read off plots and are labelled as such in every `source` field",
+        "result": "This paper reports ALL of its results as figures. There is not one numeric table in it. Every quantity above is therefore an eyeball estimate with roughly one significant figure, and no amount of care changes that. Recorded as present-but-insufficient rather than verified-usable for exactly this reason: the results are visible and not re-analysable."
+      },
+      "datasheet": {
+        "caveats": "A figure-only results section is the single most common way a rigorous paper becomes unusable to a later reanalyst. This one is careful, honest about its deviations, and reports its own carbon cost -- and I still cannot get a number out of it better than +-0.005."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "analysis-notebook",
+      "locator": "https://github.com/IRLab-UDC/Lost-in-the-Evidence-in-RAG-Virtual-Appendix",
+      "repo_commit": "cloned at HEAD 2026-08-13, depth 1",
+      "status": "present-but-insufficient",
+      "bytes": 4600000,
+      "checked": {
+        "on": "2026-08-13",
+        "by": "maria",
+        "how": "git clone --depth 1 ...; then a script walking every .ipynb counting cells and outputs by type (image/png, text/plain, text/html)",
+        "result": "10 notebooks, 76 cells, 48 outputs, 26 PNG figures, ZERO dataframe or table outputs. The README states it: 'Due to their large size we do not upload all experiment results files to this repository ... we can provide them on demand'. So the appendix contains the pipeline and the pictures and none of the numbers. Re-executable in principle -- if you have an A100, an Ollama server, and BM25 indices for NQ and HotpotQA -- and not re-analysable at all."
+      },
+      "datasheet": {
+        "composition": "rq1-rq4 notebooks, three reproduction notebooks (lost-in-the-middle, lost-but-not-only-in-the-middle x2, Cao et al.), two calibration notebooks, an indexing script, and a patch registering an augmented HotpotQA dataset in pyterrier_rag.",
+        "caveats": "The calibration notebook hard-codes /nfs/indices/hotpotqa and an LLM endpoint at 'http://your_url:port/v1'. The random-ordering seed is fixed at 1234 for every run, so the 'random' ordering strategy is ONE permutation, not an average over permutations -- a detail invisible in the paper and material to c1, since part of the reported ordering spread could be a property of that single draw."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "benchmark",
+      "locator": "NQ and HotpotQA via pyterrier `rag:nq` / `rag:hotpotqa`; AmbigQA with Natural Questions corpus distractors",
+      "status": "not-checked",
+      "checked": {"on": "2026-08-13", "by": "maria", "how": "not downloaded; indices require a Terrier build", "result": "deliberately skipped"}
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:disagreesWith",
+      "target": "cuconasu2024-power-of-noise#c3",
+      "why": "Cuconasu et al. report a large monotone gold-position effect (Near 0.3781 > Far 0.2348 > Mid 0.1795 at 18 distracting documents); Gabin et al. find flat curves across positions.",
+      "asymmetric_note": "Not a refutation. Different populations: 7B 4-bit 2023-generation models with a 15-token cap versus 8-12B unquantised 2025-generation models. An effect that size does not vanish through noise, so the right reading is that the position effect is indexed to an inference regime. Cuconasu#c3 has been moved from `accepted` to `accepted-narrower-scope` on the strength of this."
+    },
+    {
+      "type": "cito:critiques",
+      "target": "liu2024-lost-in-the-middle",
+      "why": "Section 4.1 is an explicit failed reproduction of it. No record here yet; it is the outstanding gap in this area."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "menkveld2024-nonstandard-errors",
+      "why": "Their zero-crossing calibration and Menkveld's nonstandard error are both attempts to stop a reported number from being a property of the evidence-generating process. Neither cites anything like the other; one is IR, one is finance. Gabin et al. handle the sampling half and never name the specification half, which their own Figure 9 measures."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-rag-specification-dispersion#c2",
+      "why": "Independent arrival at the same decade for the same task family by a different criterion: 1,000 and 2,000 topics against my n* = 1,134 questions. reanalysis/07 shows the two criteria are provably different quantities (theirs is a power calculation and diverges as the effect shrinks; mine is a variance threshold and is bounded), so the agreement is evidence about open-domain QA and not an algebraic identity."
+    }
+  ],
+  "open_questions": [
+    "The random ordering uses a single fixed seed (1234) in the released notebook rather than averaging over permutations. How much of the reported ordering spread is a property of that one draw? Cheap to check with the code they released and impossible to check from the paper.",
+    "They attribute the disagreement with Cao et al. to topic coverage AND to LLM judges, but their own 250-topic pilot found the judge made no difference. Is there any evidence left for the judge half of that explanation?",
+    "Both n* and the zero-crossing budget need a per-item variance sigma, and neither paper reports one. A single number -- the SD of the per-query metric -- would let any reader compute both for any published RAG result. Why does nobody print it?",
+    "Their Figure 9 is a specification grid with tau visible in it. Getting the underlying numbers (they offer results on request) would give a second direct measurement of n* rather than my estimate from a plot. That is one email and it is the cheapest outstanding item in this area."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-13",
+    "verified": "2026-08-13",
+    "notes_file": "NOTES.md"
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "schema_version": "1.0",
+  "id": "maria2026-marginal-competence",
+  "title": "Competence concentrates error: agreement among LLMs on multiple-choice items is a marginal effect, not evidence of dependence",
+  "authors": [
+    "maria"
+  ],
+  "year": 2026,
+  "venue": "internal reanalysis (zoo), not submitted anywhere",
+  "area": [
+    "llm-monoculture",
+    "multi-agent-systems"
+  ],
+  "identifiers": {
+    "url": "zoo-knowledge-base/instance-papers/papers/kim2025-correlated-errors/reanalysis/FINDINGS.md"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 26,
+    "bytes_downloaded": 7600000,
+    "compute_notes": "220 HELM scenario fetches; 4 scripts; heaviest is anchored.py at ~3min (231 pairs x 2918 items, pure python)",
+    "session": "2026-08-07 maria"
+  },
+  "triggers": [
+    "why do two good models make the same mistake",
+    "does agreement between agents mean anything",
+    "my robustness check returned exactly the same number every time",
+    "how do I know my null model has any power",
+    "should I use a different model or different context for a second opinion",
+    "duplicate models in a leaderboard",
+    "capable models are more correlated -- is that real"
+  ],
+  "methods": [
+    "leave-pair-out-nonparametric-item-null",
+    "anchored-null-disjoint-population",
+    "modal-distractor-concentration",
+    "synthetic-injected-effect-control",
+    "pairwise-agreement-conditional-on-both-wrong",
+    "duplicate-system-detection",
+    "calibrated-conditional-independence-null",
+    "tidy-artifact-repair"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "The leave-pair-out nonparametric per-item null has exactly zero expected excess agreement on any dataset whatsoever, and therefore no power to detect monoculture.",
+      "scope": "Any item with w>=4 wrong-answering models. Algebraic identity: each concordant pair is disjoint from exactly C(w-2,2) pairs, so the mean over pairs of the leave-pair-out null equals the mean observed collision rate.",
+      "quantities": [
+        {
+          "name": "excess_under_injected_monoculture",
+          "value": 0.0,
+          "n": "400 synthetic items x 20 models, 99% forced onto one trap",
+          "baseline": "observed 0.9790, null 0.9790",
+          "source": "anchored.py part A"
+        },
+        {
+          "name": "strata_returning_exactly_1.0000",
+          "value": 10,
+          "n": "5 robustness cuts + 10 subjects",
+          "source": "followup.py"
+        }
+      ],
+      "evidence": [
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Proved algebraically and confirmed numerically on synthetic data with the effect forced in. This is what exposed the error: ten robustness strata agreeing to four decimal places."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "The better a model is, the more its errors concentrate on a single distractor; agreement among strong models when both are wrong is therefore what conditional independence predicts, not evidence against it.",
+      "scope": "22 HELM models, 2918 MMLU items across 10 subjects, independently re-downloaded from the HELM public GCS bucket.",
+      "quantities": [
+        {
+          "name": "corr_accuracy_vs_P_modal_distractor_given_wrong",
+          "value": 0.835,
+          "n": "22 models",
+          "baseline": "0 if error direction were independent of competence",
+          "source": "marginal.py Test 1"
+        },
+        {
+          "name": "corr_accuracy_vs_P_modal_distractor_excl_duplicate",
+          "value": 0.841,
+          "n": "20 models",
+          "source": "marginal.py Test 1"
+        },
+        {
+          "name": "P_modal_distractor_olmo7b",
+          "value": 0.267,
+          "n": "970 wrong items",
+          "baseline": "accuracy 0.290",
+          "source": "marginal.py Test 1"
+        },
+        {
+          "name": "P_modal_distractor_llama31_405b",
+          "value": 0.778,
+          "n": "383 wrong items",
+          "baseline": "accuracy 0.853",
+          "source": "marginal.py Test 1"
+        },
+        {
+          "name": "agreement_when_both_wrong_our_sample",
+          "value": 0.5528,
+          "n": "22 models x 2918 items",
+          "baseline": "1/3 uniform; replicates kim2025's 0.60 in magnitude and direction",
+          "source": "analyze.py"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The correlation is strong and the mechanism is a per-model marginal quantity with no pairwise content, so it cannot be an artifact of pair selection. The decomposition that was missing has since been done (calibrated.py, claim c5): 77.4% of the excess over the uniform baseline is reproduced with zero dependence between models. Narrower scope now for one reason only: this is multiple-choice error structure and our agents do open-ended work."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Roughly three quarters of the excess agreement-on-errors reported in the literature is reproduced by a model with no dependence between models at all; the remaining quarter is genuine dependence and is concentrated in same-provider pairs.",
+      "scope": "22 HELM models, 2918 4-option MMLU items. Calibrated conditional-independence null: when wrong, model m picks the item's modal wrong answer with probability s_m, else uniformly among the 3 wrong options; s_m identified by its leave-self-out measured P(modal|wrong). Pair agreement then exact in closed form, no simulation.",
+      "quantities": [
+        {
+          "name": "observed_agreement_when_both_wrong",
+          "value": 0.5634,
+          "n": "230 pairs",
+          "source": "calibrated.py"
+        },
+        {
+          "name": "predicted_under_conditional_independence",
+          "value": 0.5115,
+          "n": "230 pairs",
+          "baseline": "uniform-over-wrong 0.3333",
+          "source": "calibrated.py"
+        },
+        {
+          "name": "share_of_excess_needing_no_dependence",
+          "value": 0.774,
+          "unit": "fraction",
+          "n": "230 pairs",
+          "baseline": "excess over uniform = +0.2301",
+          "source": "calibrated.py"
+        },
+        {
+          "name": "residual_requiring_dependence",
+          "value": 0.052,
+          "n": "230 pairs",
+          "baseline": "22.6% of the excess; 80% of pairs positive, sd 0.064",
+          "source": "calibrated.py"
+        },
+        {
+          "name": "same_provider_residual",
+          "value": 0.0981,
+          "n": "12 pairs",
+          "baseline": "cross-provider +0.0494 (218 pairs)",
+          "source": "calibrated.py"
+        },
+        {
+          "name": "cohens_d_same_provider_on_residual",
+          "value": 0.789,
+          "n": "12 vs 218 pairs",
+          "baseline": "on raw agreement it is +0.447",
+          "source": "calibrated.py"
+        },
+        {
+          "name": "corr_min_accuracy_vs_predicted_independent_agreement",
+          "value": 0.863,
+          "n": "230 pairs",
+          "source": "calibrated.py"
+        },
+        {
+          "name": "corr_min_accuracy_vs_residual",
+          "value": 0.353,
+          "n": "230 pairs",
+          "baseline": "vs +0.820 against observed agreement",
+          "source": "calibrated.py"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This is the properly calibrated replacement for the failed marginal.py Test 2. The null uses only marginal per-model quantities plus the item's modal structure, and s_m is identified rather than tuned, so the 77.4% is not fitted to the answer. It also partly REVERSES our own retraction in c3: with a legitimate null the provenance signal does sharpen (Cohen's d 0.447 -> 0.789), though the earlier 'six-fold' figure remains wrong. Kim et al.'s capability claim is mostly but not wholly artifact: the marginal model fully accounts for the ability gradient (+0.863 vs +0.820 observed) while a smaller capability-linked dependence survives in the residual (+0.353)."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Nulls estimated from a disjoint anchor population measure the capability gap between anchor and target rather than kinship, so the widely-cited finding that more capable models have more correlated errors is largely an artifact of that design.",
+      "scope": "22 HELM models split by accuracy; leave-provider-out variant over all 231 pairs.",
+      "quantities": [
+        {
+          "name": "excess_weak_anchor_strong_target",
+          "value": 0.212,
+          "n": "28 pairs",
+          "baseline": "100% of pairs positive",
+          "source": "anchored.py part B"
+        },
+        {
+          "name": "excess_strong_anchor_weak_target",
+          "value": -0.206,
+          "n": "28 pairs",
+          "baseline": "0% of pairs positive",
+          "source": "anchored.py part B"
+        },
+        {
+          "name": "corr_min_pair_accuracy_vs_anchored_excess",
+          "value": 0.801,
+          "n": "230 pairs",
+          "source": "anchored.py B2"
+        },
+        {
+          "name": "same_provider_residual",
+          "value": 0.066,
+          "n": "12 pairs",
+          "baseline": "cross-provider +0.0066 (218 pairs)",
+          "source": "anchored.py B2"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "Our own claim and we dispute part of it. The antisymmetry (+0.212 / -0.206) is a solid observation. But the inference that kim2025's accuracy finding is 'largely artifact' is not established: Cohen's d for the same-provider contrast barely moves under correction (+0.447 -> +0.482) on only 12 same-provider pairs, and our earlier reading that correction 'sharpens the provenance signal six-fold' was a ratio of two near-zero quantities and is RETRACTED. Family kinship is real (llama-405b/llama-70b, +0.274). Recorded at 'disputed' rather than 'accepted' deliberately. UPDATE same session: claim c5 partly reverses this. Under a properly calibrated conditional-independence null the same-provider contrast reaches Cohen's d = +0.789 on the residual (vs +0.447 raw), so the correction does sharpen provenance discrimination -- the direction of the retracted claim was right, its magnitude and its statistic were wrong. The antisymmetry observation stands."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "At least one model pair treated by the literature as an extreme of the correlation continuum is a duplicate system rather than two correlated models.",
+      "scope": "google/text-unicorn@001 and writer/palmyra-x-v3 in HELM MMLU.",
+      "quantities": [
+        {
+          "name": "identical_answer_rate_overall",
+          "value": 0.99966,
+          "n": "2918 items (2917 identical)",
+          "baseline": "next-highest pair 0.8705",
+          "source": "followup.py part 1"
+        },
+        {
+          "name": "accuracy_gap",
+          "value": 0.00028,
+          "n": "2918 items",
+          "baseline": "0.70966 vs 0.70938",
+          "source": "followup.py part 1"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Two models from unrelated companies differing on exactly one item out of 2918 is not correlation. Kim et al. flagged the pair as anomalous (0.9987 when both wrong) but retained it in aggregates; it supplies their most dramatic single data point. Correlation statistics computed over public leaderboards need a duplicate-detection pass before anything else. Whether it is a serving arrangement or a benchmark provenance error, we cannot tell from outside."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "https://storage.googleapis.com/crfm-helm-public/mmlu/benchmark_output/runs/",
+      "status": "regenerated-from-upstream",
+      "bytes": 7600000,
+      "local_path": "(regenerable; tidy form kept at ../kim2025-correlated-errors/data/helm_mmlu_responses.csv.gz)",
+      "fetch_cmd": "python ../kim2025-correlated-errors/reanalysis/fetch_helm.py && python ../kim2025-correlated-errors/reanalysis/build_tidy.py",
+      "checked": {
+        "on": "2026-08-07",
+        "by": "maria",
+        "how": "python fetch_helm.py -- 22 models x 10 subjects, 440 JSON files, 0 misses",
+        "result": "Complete. Resumable and idempotent (skips existing). This is the recovery path for kim2025#a1, which is dangling."
+      },
+      "license": "HELM public data"
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "zoo-knowledge-base/instance-papers/papers/kim2025-correlated-errors/reanalysis/",
+      "status": "verified-usable",
+      "local_path": "(../kim2025-correlated-errors/reanalysis/)",
+      "checked": {
+        "on": "2026-08-07",
+        "by": "maria",
+        "how": "all four scripts run end to end on the fetched data",
+        "result": "fetch_helm.py, analyze.py, followup.py, anchored.py, marginal.py + results/*.csv + FINDINGS.md. Stdlib + pandas/numpy. marginal.py Test 2 is knowingly miscalibrated and says so in its own output section of FINDINGS."
+      },
+      "derived_from": [
+        "a1"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "zoo:reanalyses",
+      "target": "kim2025-correlated-errors",
+      "why": "Rebuilt their item-level data from upstream after their LFS object proved dangling."
+    },
+    {
+      "type": "cito:confirms",
+      "target": "jo2026-subjectivity#c1",
+      "why": "Independent concrete instance of their Theorem 1: our nonparametric null absorbs correlation exactly and algebraically, not merely asymptotically in K."
+    },
+    {
+      "type": "cito:confirms",
+      "target": "jo2026-subjectivity#c2",
+      "why": "Same conclusion by a different route -- distractor identity rather than IRT on binary correctness -- and a stronger version (35.5% of pairs go negative)."
+    },
+    {
+      "type": "cito:extends",
+      "target": "jo2026-subjectivity",
+      "why": "Supplies the mechanism their binary-correctness null cannot see: the wrong-answer distribution concentrates with ability."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "kim2025-correlated-errors#c2",
+      "why": "Provider/architecture effects survive; the accuracy effect is confounded with anchor-population ability."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "bommasani2022-homogenization",
+      "why": "CORRECTED 2026-08-07 after actually reading bommasani2022. My original claim was WRONG: I asserted both literatures assume output SIMILARITY measures loss of independence. Bommasani et al. do no such thing - their Eq. 3 normalises systemic failure by the PRODUCT OF MARGINAL FAILURE RATES, i.e. an explicit independence baseline, and they state they do it precisely so that less accurate systems do not look homogeneous. They anticipated my confound in 2022. The real shared assumption is narrower and sharper: BOTH literatures use a null that models heterogeneity across MODELS (marginal accuracy / failure rate) but not across the things being judged. Bommasani's H>1 can be produced by genuinely weak applicants with zero component sharing, exactly as Kim's 0.60 can be produced by one seductive distractor with zero dependence. The individual plays the role of the item. Jo, Garg & Raghavan's critique of capability-only nulls applies directly to Eq. 3 and nobody has said so.",
+      "asymmetric_note": "The edge survives but its content is replaced. Recorded rather than silently fixed: this is the second time this session that a claim of mine was strongest exactly where I had checked least."
+    }
+  ],
+  "open_questions": [
+    "DONE 2026-08-07 (claim c5). Remaining from it: two model-level anomalies unexplained -- llama-3.1-8b has q=0.388 at accuracy 0.509, far below the +0.823 trend line, and olmo-7b has s<0 (it picks the popular trap LESS often than random, i.e. its errors are anti-correlated with the population). Both deviate in the same direction and neither is accounted for.",
+    "Does 'one seductive wrong answer' survive into open-ended generation? Testable: take a set of open-ended questions with a known common misconception, sample many models, cluster answers semantically, and measure whether cluster concentration rises with model quality.",
+    "Split MMLU into items where wrongness is STRUCTURED (a designed near-miss distractor) versus UNSTRUCTURED (arithmetic slips). The mechanism predicts capability raises agreement only in the first class. Cheap and decisive.",
+    "Extend to all 71 HELM models and 57 subjects. Nothing here needs the dangling LFS file."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-07",
+    "verified": "2026-08-07",
+    "notes_file": "NOTES.md"
+  }
+}

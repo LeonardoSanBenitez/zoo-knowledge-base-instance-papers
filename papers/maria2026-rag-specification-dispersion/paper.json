@@ -1,0 +1,509 @@
+{
+  "schema_version": "1.0",
+  "id": "maria2026-rag-specification-dispersion",
+  "title": "Specification dispersion in RAG evaluation: nonstandard errors, benchmark saturation, and an artifact audit of a SIGIR reproduction",
+  "authors": [
+    "maria"
+  ],
+  "year": 2026,
+  "venue": "zoo internal reanalysis",
+  "area": [
+    "rag-and-knowledge-management",
+    "analytic-variability-and-many-analysts"
+  ],
+  "identifiers": {
+    "url": "instance-papers/papers/mazuryk2026-powerless-noise/reanalysis/"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 41,
+    "bytes_downloaded": 14200000,
+    "compute_notes": "Two PDFs read in full (10 + 11 pp). One repository cloned twice (shallow + full history, 5.3 MB) and compile-checked at all 6 commits. Seven numeric tables from two papers transcribed to CSV and cross-validated against each other. Six analysis scripts, stdlib + numpy only, whole suite runs in under 60 s on CPU. NO GPU, NO model weights, NO LLM inference at any point -- every number is derived from published tables, the repository's aggregate counts, and source code read as text.",
+    "session": "2026-08-12 maria"
+  },
+  "triggers": [
+    "how big should my evaluation set be before adding questions stops helping",
+    "benchmark saturation size n star",
+    "how many standard errors wide is the disagreement between defensible pipeline configurations",
+    "nonstandard error of a machine learning benchmark",
+    "is this two-point accuracy improvement bigger than configuration noise",
+    "do many-analysts results transfer to computational experiments",
+    "why do multiverse studies in social science produce nulls and in ML produce contradictions",
+    "how to audit whether a paper's released code actually runs",
+    "using a printed delta column as a checksum on a transcribed table",
+    "forensic recovery of a sample size from printed decimals"
+  ],
+  "methods": [
+    "multiverse-analysis",
+    "robust-dispersion-iqr",
+    "random-effects-meta-analysis",
+    "synthetic-injected-effect-control",
+    "grouped-cross-validation-by-cluster",
+    "in-paper-table-transcription",
+    "repository-syntactic-executability-audit",
+    "printed-decimal-denominator-forensics",
+    "benchmark-saturation-size",
+    "cross-table-checksum-reconciliation"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Across the specifications Mazuryk et al. themselves report as defensible, the between-specification dispersion of the Power-of-Noise effect is several times larger than the sampling standard error of any one specification, and the ratio is highly sensitive to which specifications are admitted.",
+      "scope": "19 (model, configuration) cells from Tables 5 and 6, all on the same fixed 10,000 NQ-open questions, estimand E = acc(14 random docs) - acc(0 random docs). SEs are unpaired upper bounds because the paper publishes no discordance counts; the true ratios are therefore larger than reported.",
+      "quantities": [
+        {
+          "name": "tau_over_median_se",
+          "value": 25.29,
+          "unit": "ratio",
+          "n": 19,
+          "baseline": "all 19 specifications, DerSimonian-Laird tau over median SE",
+          "source": "reanalysis/03"
+        },
+        {
+          "name": "tau_over_median_se",
+          "value": 2.97,
+          "unit": "ratio",
+          "n": 10,
+          "baseline": "only the authors' preferred configurations FinalP01/FinalP02, 5 models",
+          "source": "reanalysis/04 ladder"
+        },
+        {
+          "name": "nonstandard_error_iqr",
+          "value": 0.0177,
+          "unit": "proportion correct",
+          "n": 10,
+          "baseline": "IQR of E across the 10 preferred-configuration cells (Menkveld's definition)",
+          "source": "reanalysis/04"
+        },
+        {
+          "name": "specification_effect_range",
+          "value": 0.857,
+          "unit": "proportion correct",
+          "n": 19,
+          "baseline": "max E minus min E over all 19 specifications",
+          "source": "reanalysis/03"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Established by the robustness ladder rather than by the headline. The 25.29 figure is carried by one cell (llama3/Base) that the paper itself diagnoses as an output-formatting artifact, and I will not quote it as the result. The number that survives every exclusion a reasonable person would make is 2.97, against 1.72 for both Menkveld's 164 finance teams and Breznau's 71 sociology teams. The synthetic null in reanalysis/04 returns 0.00 at the median and 0.85 at the 95th percentile on 15 specifications at n=10,000, so 2.97 is not manufactured by the estimator."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "The ratio of specification dispersion to standard error is not a property of a field: it grows as sqrt(n). The invariant reformulation is the benchmark saturation size n*, the evaluation-set size at which the two dispersions are equal; for this task and these models n* is about 1,100 questions, and the study evaluates on 10,000.",
+      "scope": "NQ-open open-domain QA, 7-8B instruction-tuned models, the Power-of-Noise contrast. n* = median[p0(1-p0) + p14(1-p14)] / tau^2, and n/n* = (tau/median SE)^2 exactly.",
+      "quantities": [
+        {
+          "name": "benchmark_saturation_size",
+          "value": 1134,
+          "unit": "questions",
+          "n": 10,
+          "baseline": "preferred configurations only, NQ-open QA, 5 models x 2 prompt configs",
+          "source": "reanalysis/05"
+        },
+        {
+          "name": "benchmark_saturation_size",
+          "value": 811,
+          "unit": "questions",
+          "n": 14,
+          "baseline": "Table 6 balanced set minus the anomalous llama3/Base cell",
+          "source": "reanalysis/05"
+        },
+        {
+          "name": "benchmark_saturation_factor",
+          "value": 8.8,
+          "unit": "ratio n/n*",
+          "n": 10,
+          "baseline": "Mazuryk et al. 2026, preferred configurations, n=10,000",
+          "source": "reanalysis/05"
+        },
+        {
+          "name": "benchmark_saturation_factor",
+          "value": 2.96,
+          "unit": "ratio n/n*",
+          "n": "164 teams / 71 teams",
+          "baseline": "Menkveld 2024 fincap and Breznau 2022 CRI, both at tau/SE = 1.72",
+          "source": "reanalysis/05, from the 2026-08-12 records"
+        },
+        {
+          "name": "ci_to_spread_ratio",
+          "value": 3.3,
+          "unit": "ratio",
+          "n": 10,
+          "baseline": "spread of E across preferred configurations divided by the width of a single 95% CI at n=10,000",
+          "source": "reanalysis/05"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Algebraically exact given tau and the binomial variance; the only estimated input is tau, and the ladder in reanalysis/04 bounds it. This is the quantity I would hand to somebody designing a RAG evaluation, and computing it requires running more than one defensible configuration -- which is precisely the cost a large n is usually chosen to avoid."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Neither model family nor prompt configuration predicts the Power-of-Noise effect for a held-out level: every grouped cross-validated R-squared is negative, although the effects range over 0.86 in accuracy. This is the same negative result as in Breznau's sociology multiverse, in a literature that has never cited it.",
+      "scope": "Leave-one-group-out prediction of E from the grand mean of the other levels, across four specification subsets, 5 model levels and 2-5 configuration levels.",
+      "quantities": [
+        {
+          "name": "grouped_cv_r2_of_specification_on_estimate",
+          "value": -0.025,
+          "unit": "R^2",
+          "n": 19,
+          "baseline": "model family, all 19 specifications",
+          "source": "reanalysis/05"
+        },
+        {
+          "name": "grouped_cv_r2_of_specification_on_estimate",
+          "value": -0.101,
+          "unit": "R^2",
+          "n": 10,
+          "baseline": "prompt configuration, preferred configurations only",
+          "source": "reanalysis/05"
+        },
+        {
+          "name": "grouped_cv_r2_of_specification_on_estimate",
+          "value": -0.005,
+          "unit": "R^2",
+          "n": 1253,
+          "baseline": "team identity on the estimate, Breznau CRI, for comparison",
+          "source": "maria2026-analytic-variability-reanalysis"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Robust in sign across all four subsets, and the estimator is the same one used on CRI. The narrowing is a power caveat that must travel with it: with 19 points and 5 levels, a grouped CV R^2 near zero is also what a modest true effect would produce. The claim is that the recorded dimensions do not predict WELL, not that they have no effect. The synthetic controls in reanalysis/04 show the machinery does attribute an injected 0.02-sd configuration effect correctly, so the negative result is not blindness."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "The RAG specification curve and the sociology many-analysts study are structurally complementary rather than similar: in CRI analytic choice could move only precision, here it can move only the estimate, because every specification is scored on the identical items and the standard error is pinned to sqrt(p(1-p)/n).",
+      "scope": "Comparison of Breznau et al. 2022 CRI (1,253 models, teams choosing their own samples) with Mazuryk et al. 2026 (19 specifications, fixed 10,000 items).",
+      "quantities": [
+        {
+          "name": "se_range_ratio_across_specifications",
+          "value": 1.47,
+          "unit": "ratio max/min",
+          "n": 19,
+          "baseline": "standard error across RAG specifications, driven only by the p(1-p) parabola",
+          "source": "reanalysis/03"
+        },
+        {
+          "name": "grouped_cv_r2_of_specification_on_log_se",
+          "value": 0.194,
+          "unit": "R^2",
+          "n": 1253,
+          "baseline": "team identity on log SE, Breznau CRI, for contrast",
+          "source": "maria2026-analytic-variability-reanalysis"
+        },
+        {
+          "name": "conclusion_split_sig_neg_null_sig_pos",
+          "value": "42.1 / 31.6 / 26.3",
+          "unit": "percent of specifications",
+          "n": 19,
+          "baseline": "RAG, z-test at p<0.01 on E",
+          "source": "reanalysis/03"
+        },
+        {
+          "name": "conclusion_split_sig_neg_null_sig_pos",
+          "value": "25.4 / 57.7 / 16.9",
+          "unit": "percent of models",
+          "n": 1253,
+          "baseline": "Breznau CRI unweighted, for comparison",
+          "source": "breznau2022-hidden-universe"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Follows from the designs, not from an estimate. The consequence is worth stating because it dissolves an easy misreading: the RAG multiverse is not 'worse' than the sociology one. Both are situations where the specification determines the answer; large n makes it surface as confident contradictions and small n as an epidemic of nulls."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Four of the sixteen Python files in the reproduction's released repository do not parse, including both generation entry points and the vLLM wrapper. Three were broken by the single commit named 'final experiments', which in the same hunk deleted the output post-processing that stripped the placeholder text constituting the paper's flagship anomaly.",
+      "scope": "github.com/ina0105/The-Power-of-Noise-Reproduction, all 6 commits, checked with python -m py_compile.",
+      "quantities": [
+        {
+          "name": "released_python_files_failing_to_parse",
+          "value": 4,
+          "unit": "count",
+          "n": 16,
+          "baseline": "py_compile at HEAD f5a482d",
+          "source": "reanalysis, artifact a2"
+        },
+        {
+          "name": "commits_in_released_repository",
+          "value": 6,
+          "unit": "count",
+          "n": 6,
+          "baseline": "full clone, git rev-list --count HEAD",
+          "source": "reanalysis"
+        }
+      ],
+      "evidence": [
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Mechanically verified, one command, reproducible by anyone: `for f in src/*.py scripts/*.py; do python -m py_compile \"$f\"; done`. The provenance is from `git diff d99e9d5 56dcbda`. Nothing here is inference."
+      }
+    },
+    {
+      "id": "c6",
+      "statement": "The reproduction's own Delta(%) column, used as a checksum against the original paper's tables, resolves three inconsistencies its readers could not otherwise see: which of two conflicting printings of Table 2/Table 7 is authentic, that MPT's gold-only baseline is printed as two different numbers 5.9 standard errors apart, and that MPT failed to reproduce by an order of magnitude more than Llama2 while the paper reports a successful reproduction.",
+      "scope": "97 cells with both a printed Delta and a matching original value.",
+      "quantities": [
+        {
+          "name": "checksum_cells_agreeing",
+          "value": 93,
+          "unit": "count",
+          "n": 97,
+          "baseline": "recomputed Delta within 0.011 pp of printed Delta",
+          "source": "reanalysis/06"
+        },
+        {
+          "name": "printed_delta_sign_errors",
+          "value": 2,
+          "unit": "count",
+          "n": 97,
+          "baseline": "cells whose printed Delta matches in magnitude and is wrong in sign",
+          "source": "reanalysis/06"
+        },
+        {
+          "name": "duplicate_baseline_disagreement",
+          "value": 0.0352,
+          "unit": "proportion correct",
+          "n": 10000,
+          "baseline": "MPT gold-only, Table 1 row 0 (0.2165) vs Table 2 row 0 (0.1813), the same condition",
+          "source": "reanalysis/06"
+        },
+        {
+          "name": "reproduction_gap_mean_abs_over_se",
+          "value": 0.2,
+          "unit": "ratio",
+          "n": 63,
+          "baseline": "Llama2 cells, mean |reproduced - original| over a typical SE",
+          "source": "reanalysis/06"
+        },
+        {
+          "name": "reproduction_gap_mean_abs_over_se",
+          "value": 2.37,
+          "unit": "ratio",
+          "n": 34,
+          "baseline": "MPT cells, same statistic",
+          "source": "reanalysis/06"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The checksum is self-validating: 93 of 97 cells reproducing a 2-decimal quantity from two independently transcribed 4-decimal tables cannot happen by accident, so the two transcriptions are verified and the residual disagreements are the paper's."
+      }
+    },
+    {
+      "id": "c7",
+      "statement": "The tables of Mazuryk et al. 2026 are computed on exactly 10,000 items; the 2,889-item NQ-open test split is ruled out by the printed decimals alone.",
+      "scope": "163 distinct printed accuracies from Tables 1, 2 and 4-7. Test logic: a value that is k/n rounded to 4 decimals lies within 5e-5 of some k/n by construction, so a larger residual is a proof of exclusion. The test has no false positives and can only rule out.",
+      "quantities": [
+        {
+          "name": "denominator_forensics_violations",
+          "value": 0,
+          "unit": "count",
+          "n": 163,
+          "baseline": "n = 10,000",
+          "source": "reanalysis/04"
+        },
+        {
+          "name": "denominator_forensics_violations",
+          "value": 64,
+          "unit": "count",
+          "n": 89,
+          "baseline": "n = 2,889, Tables 1+2 only",
+          "source": "reanalysis/06"
+        },
+        {
+          "name": "denominator_forensics_violations",
+          "value": 7,
+          "unit": "count",
+          "n": 58,
+          "baseline": "n = 2,889, reproduction Table 3a, which its source describes as the test-split experiment",
+          "source": "reanalysis/06"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Conclusive for Tables 1, 2 and 4-7. Narrower for Table 3: the reproduction's Table 3a violates the k/2889 grid at 7 of 58 values, which is real; the ORIGINAL's Table 3 violates at 2 of 58, which a single typo would produce, so I do not assert it for the original. An earlier version of reanalysis/04 asserted the Table 3 result without ever having fed Table 3 into the test. That overclaim is annotated in place in 04 and superseded in 06 rather than deleted."
+      }
+    },
+    {
+      "id": "c8",
+      "statement": "The truncation-relief mechanism Mazuryk et al. propose for the Power-of-Noise effect runs backwards on their own data; the instruction-hedging channel is the one that is supported.",
+      "scope": "Llama-2 under the Instruct configuration (Figure 2), and the repository's Llama-2 Base hallucination report at 1-DOC vs 15-DOC.",
+      "quantities": [
+        {
+          "name": "trimmed_output_rate_among_errors",
+          "value": 0.536,
+          "unit": "proportion of incorrect outputs",
+          "n": 10000,
+          "baseline": "Llama-2 Instruct, 0 random documents (paper Sec 4.3 / Fig 2)",
+          "source": "Sec 4.3 of the paper"
+        },
+        {
+          "name": "trimmed_output_rate_among_errors",
+          "value": 0.688,
+          "unit": "proportion of incorrect outputs",
+          "n": 10000,
+          "baseline": "Llama-2 Instruct, 14 random documents -- truncation RISES while accuracy rises 0.0910 -> 0.2287",
+          "source": "Sec 4.3 of the paper"
+        },
+        {
+          "name": "trimmed_output_rate_among_errors",
+          "value": 0.226,
+          "unit": "proportion of incorrect outputs",
+          "n": 10000,
+          "baseline": "repo hallucination report, Llama-2 Base, 1 retrieved document",
+          "source": "artifact a3"
+        },
+        {
+          "name": "trimmed_output_rate_among_errors",
+          "value": 0.366,
+          "unit": "proportion of incorrect outputs",
+          "n": 10000,
+          "baseline": "repo hallucination report, Llama-2 Base, 15 retrieved documents -- rises while accuracy rises 0.5542 -> 0.6233",
+          "source": "artifact a3"
+        },
+        {
+          "name": "dual_response_rate_among_errors",
+          "value": 0.425,
+          "unit": "proportion of incorrect outputs",
+          "n": 10000,
+          "baseline": "repo hallucination report, Llama-2 Base, 1 retrieved document: correct answer followed by NO-RES",
+          "source": "artifact a3"
+        },
+        {
+          "name": "dual_response_rate_among_errors",
+          "value": 0.014,
+          "unit": "proportion of incorrect outputs",
+          "n": 10000,
+          "baseline": "repo hallucination report, Llama-2 Base, 15 retrieved documents -- this is the channel that actually collapses",
+          "source": "artifact a3"
+        }
+      ],
+      "evidence": [
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Two independent sources point the same way, which is why I record it rather than filing it as a doubt. The narrowing: this refutes the truncation channel as the explanation for those specific configurations, not for every configuration in the paper -- Figure 2's underlying counts are only partly quoted in prose and the per-question outputs are in a gated artifact, so a regression of accuracy on truncation rate across all cells cannot be run."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "derived-data",
+      "locator": "instance-papers/papers/mazuryk2026-powerless-noise/artifacts/*.csv",
+      "status": "verified-usable",
+      "local_path": "../mazuryk2026-powerless-noise/artifacts/",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "python 01_transcribe_tables.py (33 executable cross-checks against the paper's prose) then python 06_original_vs_reproduction.py (97-cell checksum against Cuconasu et al. 2024 through the printed Delta column)",
+        "result": "33/33 prose checks pass; 93/97 checksum cells agree, 2 are sign errors in the paper, 2 are rounding."
+      },
+      "datasheet": {
+        "composition": "7 CSVs, 234 rows: accuracy by document count / gold position / model / configuration / precision, plus the repository's 10 error-category counts.",
+        "caveats": "Every accuracy is over the same fixed 10,000 questions, so cells within a table are PAIRED and the standard errors used throughout are unpaired upper bounds. The discordance counts that would give exact McNemar SEs are in a gated artifact."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "instance-papers/papers/mazuryk2026-powerless-noise/reanalysis/",
+      "status": "verified-usable",
+      "local_path": "../mazuryk2026-powerless-noise/reanalysis/",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "for f in 0*.py; do python $f; done",
+        "result": "6 scripts, all run clean on stdlib + numpy in under 60 s total. 01 fails loudly if a transcription drifts. 04 is a robustness ladder plus synthetic calibration. 06 corrects an overclaim in 04 rather than editing it away."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "derived-data",
+      "locator": "github.com/ina0105/The-Power-of-Noise-Reproduction/hallucination_report",
+      "repo_commit": "f5a482d92efcdd7694d0d41f0144794e06a2f83d",
+      "status": "verified-usable",
+      "derived_from": [
+        "a1"
+      ],
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "read llama2_base_hallucination_report.md in full; counts transcribed into 01_transcribe_tables.py::HALLUC_BASE_LLAMA2",
+        "result": "10 error categories x 2 conditions at n=10,000, with the literal detection regexes. Independent of the paper's Figure 2 and pointing the same way on c8."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "zoo:reanalyses",
+      "target": "mazuryk2026-powerless-noise"
+    },
+    {
+      "type": "cito:extends",
+      "target": "menkveld2024-nonstandard-errors",
+      "why": "Applies the nonstandard-error construct to a third corpus and a third field, and replaces tau/median-SE with the saturation size n*, which is invariant to the evaluation-set size the ratio silently depends on. That defect was invisible in the two social-science corpora because their n was not a free parameter; in ML it is chosen."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-analytic-variability-reanalysis",
+      "why": "Independently reproduces the negative grouped-CV result -- the recorded dimensions of a specification do not predict its estimate -- in a different field, a different decade and a different data type."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "cuconasu2024-power-of-noise",
+      "why": "Quantifies the scope loss: the Power-of-Noise effect is 1 significantly positive cell out of 10 under the authors' own preferred modern configurations, and the specification-to-specification spread is 3.3x the width of the confidence interval anyone would report for one of them."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "jo2026-subjectivity",
+      "why": "Jo, Garg & Raghavan argue that monoculture is a discrepancy from a null the analyst chooses, and that a rich enough null absorbs it. The RAG case is the same argument in a place where the null is the pipeline configuration: the effect exists relative to Base and vanishes relative to FinalP01. Here, unlike in their Theorem 1 setting, the choice set is finite and enumerable, so the discrepancy can be MEASURED across it rather than argued about.",
+      "asymmetric_note": "This is not evidence for or against their theorem. It is an instance where their unidentifiability has a practical resolution -- report the whole set -- which their formal setting does not admit."
+    }
+  ],
+  "open_questions": [
+    "Is n* stable across tasks, or is it a property of a task-model-metric triple? One number from one corpus. Two more corpora would make it a quantity; the cheapest candidates are any paper reporting a full model x prompt grid on a fixed evaluation set.",
+    "Where does the between-specification variance live, in either literature? Model family and prompt configuration both fail here; the released analytic coding failed on CRI. Two instances, no explanation. The next thing I would try is whether the variance is concentrated on a small subset of ITEMS rather than being spread over them -- which is checkable the moment anyone releases per-question outputs.",
+    "Does the saturation argument change how a zoo of agents should evaluate anything? If n* is ~1,000 for a QA task, then an agent running a 10,000-item benchmark to compare two prompts is spending 90% of its compute on the wrong axis and should be running 10 configurations on 1,000 items instead. That is a testable claim about our own practice.",
+    "The two sign errors in the reproduction's Delta column were found by a checksum nobody ran. How many published tables carry a column that could be checked against another paper and never is? A tool that does this automatically for any pair of papers sharing a baseline would be small and would find things."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-12",
+    "verified": "2026-08-12",
+    "notes_file": "../mazuryk2026-powerless-noise/NOTES.md"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0",
+  "id": "mathur2023-effect-sizes",
+  "title": "Variation across analysts in statistical significance, yet consistently small effect sizes",
+  "authors": [
+    "Maya B. Mathur",
+    "Christian Covington",
+    "Tyler J. VanderWeele"
+  ],
+  "year": 2023,
+  "venue": "PNAS 120(3) e2218957120 (Letter)",
+  "area": [
+    "analytic-variability",
+    "metascience",
+    "measurement-theory"
+  ],
+  "identifiers": {
+    "doi": "10.1073/pnas.2218957120",
+    "pmid": "36623183",
+    "url": "https://www.pnas.org/doi/10.1073/pnas.2218957120"
+  },
+  "record_status": "active",
+  "read_depth": "read-full-text",
+  "cost": {
+    "tool_calls": 3,
+    "bytes_downloaded": 14209,
+    "compute_notes": "PNAS blocked direct PDF fetch (returned a 5.5 kB HTML challenge page); obtained the complete JATS full text from the EuropePMC REST endpoint for PMC9933094 instead. Their numbers were then recomputed independently from Breznau's released data rather than taken on trust.",
+    "session": "2026-08-12 maria"
+  },
+  "triggers": [
+    "variation in significance versus variation in effect size",
+    "is analyst disagreement substantively large or just significance flipping",
+    "how do I tell real heterogeneity from statistical error across analysts",
+    "prediction interval for population effects across many analysts",
+    "why does a huge dataset make every analysis significant",
+    "dichotomania significant versus not significant critique"
+  ],
+  "methods": [
+    "random-effects-meta-analysis",
+    "prediction-interval-for-population-effects",
+    "many-analysts-design"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "90% of the standardized estimates in Breznau et al. lie within [-0.037, 0.037], i.e. a one-unit change in immigration is associated with a change in public support of less than 4% of a standard deviation.",
+      "scope": "The 1,253 converged models of Breznau et al. 2022, standardized AMEs.",
+      "quantities": [
+        {
+          "name": "range_containing_90pct_of_estimates",
+          "value": "[-0.037, +0.037]",
+          "unit": "SD of outcome per unit of immigration",
+          "n": 1253,
+          "source": "letter, para 2"
+        },
+        {
+          "name": "reproduced_90th_pct_of_absolute_estimate",
+          "value": 0.0373,
+          "unit": "SD units",
+          "n": 1252,
+          "source": "our reanalysis/01_dispersion.py"
+        },
+        {
+          "name": "reproduced_5th_and_95th_percentile",
+          "value": "[-0.0420, +0.0300]",
+          "unit": "SD units",
+          "n": 1252,
+          "source": "our reanalysis/01_dispersion.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Reproduced independently from the released data: the 90th percentile of |standardized estimate| is 0.0373, matching their 0.037 to the precision they report. Worth noting for anyone quoting it that their interval is symmetric-by-construction; the actual 5th and 95th percentiles are [-0.0420, +0.0300], i.e. the left tail is longer.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Meta-analytic methods that separate statistical error from true heterogeneity imply 90% of standardized POPULATION effects lie in the even narrower range [-0.014, 0.014]; variation due to statistical error is not a hidden universe of decisions but is fully captured by the individual confidence intervals.",
+      "scope": "Random-effects meta-analysis over the same 1,253 estimates; Wang & Lee prediction-interval machinery cited.",
+      "quantities": [
+        {
+          "name": "range_containing_90pct_of_population_effects",
+          "value": "[-0.014, +0.014]",
+          "unit": "SD units",
+          "n": 1253,
+          "source": "letter, para 4"
+        },
+        {
+          "name": "implied_tau",
+          "value": 0.0085,
+          "unit": "SD units",
+          "source": "our arithmetic: 0.014 / 1.645",
+          "n": 1253
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The substantive point holds and we confirmed it by a completely different route: restricting to the most precise quintile of models (n = 251, median SE 0.00116), where sampling error contributes least, gives tau = 0.0084 and a 90% interval of [-0.0138, +0.0138] -- their number, from a different estimator on a different subset. But the number itself is estimator-fragile in a way the letter does not disclose. On the full set the between-model heterogeneity SD is 0.0036 by DerSimonian-Laird, 0.0119 by REML and 0.0187 by Paule-Mandel, a 5x spread, because the standard errors span a factor of ~36,000 and DL-family estimators collapse when effect magnitude scales with the standard error (in our simulation on the empirical SE distribution, a true tau of 0.040 is recovered by DL as 0.0060, a 7x underestimate). Their [-0.014, 0.014] corresponds to tau = 0.0085, near the low end of that spread; Paule-Mandel implies [-0.031, +0.031]. The conclusion 'all the effects are small' is robust; the specific interval should be quoted with a range.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Given the minimal variation in the estimates, it is unsurprising that little of the variation could be systematically explained by identifiable analytic decisions.",
+      "scope": "Interpretive claim in the letter's para 3-4.",
+      "our_assessment": {
+        "status": "disputed",
+        "why": "This is the one step of the letter that our reanalysis does not support, and it is the step that would let a reader dismiss Breznau et al. entirely. If the estimate distribution were mostly statistical error around a common effect, a null in which every model draws from one true effect with its OWN reported standard error would reproduce the observed spread of conclusions. It does not, and not narrowly: it gives 2.2% significant-negative / 94.7% null / 3.1% significant-positive against the observed 25.4 / 57.7 / 16.9. Real between-model heterogeneity in the true effects is present and is roughly 3.75x the typical sampling standard error (Higgins I^2 = 0.93), and is 7.3x it among the most precise quintile. Small in absolute terms is not the same as attributable to statistical error, and the letter slides between the two.",
+        "by": "maria"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "code",
+      "locator": "https://github.com/ctcovington/MCV_BRWN-22_comment",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "not cloned -- their claims were recomputed from the primary Breznau data instead, which is the stronger check",
+        "result": "Advertised in the letter's Reproducibility section. Unverified; if a future reader needs their exact estimator (which matters, see c2) this repo is where it is and it should be checked then."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "supplement",
+      "status": "verified-usable",
+      "local_path": "artifacts/mathur2023_pnas_fulltext.xml",
+      "locator": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9933094/fullTextXML",
+      "checked": {
+        "on": "2026-08-12",
+        "by": "maria",
+        "how": "urllib GET of the EuropePMC REST fullTextXML endpoint; 14,209 bytes of JATS",
+        "result": "Complete letter text including all six references. Kept locally because it is 14 kB and because the PNAS HTML route is blocked, so this is the reproducible way back to the primary source."
+      },
+      "bytes": 14209
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:critiques",
+      "target": "breznau2022-hidden-universe",
+      "why": "Argues the reported 'massive variation' is variation in statistical significance, not in effect size."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "breznau2022-hidden-universe",
+      "why": "Recorded separately from the critique edge because the two are different acts: no number of Breznau et al. is disputed, only the adjective attached to it.",
+      "asymmetric_note": "Do not cite this pair as a refutation. Breznau et al. replied in PNAS e2219555120, not yet read."
+    },
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-analytic-variability-reanalysis",
+      "why": "Both of its numerical claims were independently recomputed from the primary data; c1 reproduced, c2 confirmed by an independent route but shown to be estimator-fragile, c3 disputed by simulation."
+    }
+  ],
+  "open_questions": [
+    "Which heterogeneity estimator did they actually use? The letter cites Mathur & VanderWeele 2020 and Wang & Lee 2019 but does not name the tau estimator, and on this data the choice moves the answer by 5x. The repo would settle it.",
+    "Breznau et al.'s reply (PNAS e2219555120) is unread and is the other half of this exchange."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-12",
+    "verified": "2026-08-12",
+    "notes_file": "NOTES.md"
+  }
+}
