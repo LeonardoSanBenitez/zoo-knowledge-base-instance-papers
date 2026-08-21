@@ -1,0 +1,118 @@
+{
+ "n": 1403,
+ "n_splits": 30,
+ "self_items": [
+  "mpe28_sense_self",
+  "mpe30_impers_observer",
+  "mpe31_passive_observer",
+  "mpe58_center",
+  "mpe59_boundaries",
+  "mpe91_dissolving_boundary"
+ ],
+ "by_k": {
+  "5": {
+   "self_factor_phi_median": 0.761016044953728,
+   "self_factor_phi_iqr": [
+    0.7230324024147752,
+    0.9274047361877166
+   ],
+   "self_factor_rank_median": 3.0,
+   "self_factor_rank_distribution": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    5,
+    5,
+    5
+   ],
+   "population_median_of_medians_phi": 0.8643935553479442
+  },
+  "7": {
+   "self_factor_phi_median": 0.801142229502189,
+   "self_factor_phi_iqr": [
+    0.662717599454564,
+    0.8600698595447841
+   ],
+   "self_factor_rank_median": 5.0,
+   "self_factor_rank_distribution": [
+    2,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    7,
+    7,
+    7
+   ],
+   "population_median_of_medians_phi": 0.8113533165558255
+  }
+ },
+ "permutation_null_k7": {
+  "median": 0.14394342100171967,
+  "max": 0.3563689822133146,
+  "values": [
+   0.2121220534146541,
+   0.11412757078678804,
+   0.3563689822133146,
+   0.1794224900695286,
+   0.16976585968633506,
+   0.10910655937639618,
+   0.1029073618145689,
+   0.22628890903365192,
+   0.212556965905466,
+   0.12361812741676298,
+   0.20771477912015832,
+   0.109686563569015,
+   0.14394342100171967,
+   0.11846410381717701,
+   0.12772955952720727
+  ],
+  "note": "per-column numpy shuffle of half B, destroys covariance, preserves marginals"
+ }
+}

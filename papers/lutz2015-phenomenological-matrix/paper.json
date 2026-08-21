@@ -1,0 +1,75 @@
+{
+ "schema_version": "1.0",
+ "id": "lutz2015-phenomenological-matrix",
+ "title": "Investigating the Phenomenological Matrix of Mindfulness-Related Practices From a Neurocognitive Perspective",
+ "authors": ["Antoine Lutz", "Amishi P. Jha", "John D. Dunne", "Clifford D. Saron"],
+ "year": 2015,
+ "venue": "American Psychologist 70(7):632-658",
+ "area": ["psychology-of-meditation", "measurement-theory"],
+ "identifiers": {
+  "doi": "10.1037/a0039585",
+  "url": "https://doi.org/10.1037/a0039585"
+ },
+ "record_status": "active",
+ "read_depth": "read-full-text",
+ "cost": {
+  "tool_calls": 6,
+  "bytes_downloaded": 764935,
+  "compute_notes": "No computation performed on this paper's own data -- it proposes no dataset, only a conceptual/heuristic model. All cost is retrieval + reading. Full 27-page PDF read directly, two passes: pp.632-645 (the matrix definitions, session 1), pp.646-658 (empirical review + limitations + summary, session 2, same day).",
+  "session": "2026-08-21, resuming a debt owed since 2026-08-13 (cat_lutz_crosswalk.md)"
+ },
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Mindfulness-related practices are better represented as points in a continuous, multidimensional phenomenological space (three primary/functional axes -- object orientation, dereification, meta-awareness -- plus four secondary/qualitative axes -- aperture, clarity, stability, effort) than as a small number of categorical types (e.g. focused-attention vs. open-monitoring).",
+   "scope": "A conceptual/heuristic model, not an empirical result. The authors explicitly say the plotted points in their own Figure 1 are 'hypothetical' -- expert-placed illustrations, not measurements from any actual first-person data collection. No phenomenological data were gathered for this paper.",
+   "quantities": [],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The authors' own caveat (p.637: 'this framework would be greatly enhanced by gathering first-person data ... and its collection remains an important desideratum ... such data are not yet available') is decisive and I am simply repeating it, not adding to it. Accept the dimensional-over-categorical argument; do not treat any plotted position as evidence of anything beyond the authors' judgment.",
+    "by": "maria 2026-08-13 (first pass, from own notes), re-verified against primary source 2026-08-21"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "Dereification is defined as the degree to which thoughts, feelings and perceptions are phenomenally interpreted as mental processes rather than as accurate depictions of reality; at its highest magnitude thoughts lose their representational integrity and are experienced simply as mental events. It is functionally distinct from reappraisal: reappraisal replaces the content of a thought with different content ('I may fail my exam' -> 'my grade doesn't depend on this exam'); dereification changes the status of the SAME content from represented-reality to mental-event, without replacing it.",
+   "scope": "Definitional claim, pp.639-640 and p.648 (reappraisal/dereification contrast). Not an empirical measurement.",
+   "quantities": [],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Read verbatim from the primary source (p.639, p.648), not recalled. This is the definition CAT's D11 dimension is built on; getting it right matters more than usual because CAT's own rubric-writing depends on it, and reappraisal/dereification is exactly the distinction a naive rubric would blur.",
+    "by": "maria 2026-08-21"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Self-disidentification (Holzel et al. 2011's 'disidentification with the static sense of self') is a SPECIES of the more general capacity for dereification, not an independent phenomenon and not the same axis. Dereification can occur without any change to one's sense of being a static self (worked example: dereifying the memory of a stressful argument as 'a series of thoughts' removes the stress response without touching self-identity).",
+   "scope": "p.640, a direct textual answer to a question raised independently in our own CAT project (is dereification the same axis as self/subject-object structure? -- cat_lutz_crosswalk.md, blocking since 2026-08-13). The authors are responding to Holzel et al. 2011, not proposing an original claim of their own -- this is their gloss on someone else's construct, worth noting because it means the general/specific relation is Lutz et al.'s interpretive move, not something Holzel et al. themselves asserted in those words.",
+   "quantities": [],
+   "our_assessment": {
+    "status": "disputed",
+    "why": "Textually accepted as what Lutz et al. say. But see relation to gamma2021-mpe92m#c... (self/subject-object factor): if self-disidentification is purely a downstream consequence of dereifying self-constructing THOUGHTS, its variance should shrink in a population whose discursive-thought content is already minimized by selection. Our own reanalysis of Gamma & Metzinger (2021) MPE-92M data finds the opposite -- the self/subject-object factor is one of the MORE split-half-stable factors in exactly that population (non-dual 'pure awareness' meditators, selected for low discursive content). A construct purely parasitic on dereifiable thought-content should have gone slack there; it did not. This is a real, if modest (n=1403, one instrument, one self-selected population), tension between Lutz et al.'s content-based reductive account and an independent data point -- not a refutation, a qualification. See relations.",
+    "by": "maria 2026-08-21"
+   }
+  }
+ ],
+ "methods": [],
+ "artifacts": [],
+ "relations": [],
+ "open_questions": [
+  "Whether the tension in c3 survives a primary-source reading of the embodied-self lineage (Ataria, Dor-Ziderman & Berkovich-Ohana, Brain Sciences 11(6):819, 2021; Dor-Ziderman, J Neurosci 44(26), 2024) -- do they anticipate or independently argue against Lutz's species-of-dereification reduction, or is the MPE-92M stability argument a genuinely new angle on the question? Not yet read at primary-source depth.",
+  "Lutz et al. themselves flag (p.652) that the dereification dimension 'could be subdivided and extended into aspects related to the content of subjective experience from aspects related to the nature of subjective experience itself' -- which is close to, possibly identical to, the content/structure distinction this record's c3 assessment turns on. Worth checking whether this footnote is the seed of exactly the split CAT needs (D11 content-dereification vs D-self structure-dereification) rather than something CAT invents independently."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-08-21",
+  "verified": "2026-08-21",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "is CAT's dimensional model of meditation instructions novel against Lutz's phenomenological matrix",
+  "what exactly does dereification mean and how does it differ from reappraisal",
+  "is self-disidentification the same construct as dereification",
+  "which Lutz paper defines aperture, clarity, stability, effort as secondary mindfulness dimensions"
+ ]
+}

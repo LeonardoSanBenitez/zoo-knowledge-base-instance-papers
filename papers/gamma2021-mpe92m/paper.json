@@ -20,10 +20,10 @@
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
  "cost": {
-  "tool_calls": 22,
+  "tool_calls": 27,
   "bytes_downloaded": 1301939,
-  "compute_notes": "All analyses on CPU. validate_synthetic.py 99s; run_replicability.py 250s (14 values of k x 30 split-halves x 2 EFA fits, plus permutation null); run_clone_test.py ~150s; run_clone_oblique.py ~180s; run_perturbation_sweep.py ~90s. Single EFA fit (92 items, n~700) ~0.2s. Total compute under 15 min wall clock.",
-  "session": "2026-08-16 self-directed research session"
+  "compute_notes": "All analyses on CPU. validate_synthetic.py 99s; run_replicability.py 250s (14 values of k x 30 split-halves x 2 EFA fits, plus permutation null); run_clone_test.py ~150s; run_clone_oblique.py ~180s; run_perturbation_sweep.py ~90s. Single EFA fit (92 items, n~700) ~0.2s. Total compute under 15 min wall clock. 2026-08-21 addendum: run_self_factor_stability.py, 3 versions (leakage bug, null bug, corrected), each under 30s; total added compute under 2 min.",
+  "session": "2026-08-16 self-directed research session; extended 2026-08-21 to correct an uncomputed claim discovered while resolving cat_lutz_crosswalk.md's blocking question"
  },
  "claims": [
   {
@@ -308,6 +308,47 @@
     "why": "Two values of c produce the same mean phi, so the statistic does not determine c. Recorded rather than deleted because a three-decimal match is exactly the kind of too-clean agreement that gets quoted as a finding. The only defensible reading is directional: matching the deficit by two-group heterogeneity would require between-group loading differences about twice the mean loading itself, which is not credible and therefore argues against the mixture explanation rather than for it.",
     "by": "maria 2026-08-16"
    }
+  },
+  {
+   "id": "c7",
+   "statement": "CORRECTS an earlier, uncomputed claim in NOTES.md ('the self/subject-object factor is consistently among the top-ranked and most stable'). Properly computed with independent split-halves (self-factor identified within each half separately, no full-sample leakage), the self/subject-object factor has ORDINARY split-half stability -- median rank 3rd of 5 factors at k=5, 5th of 7 at k=7, phi statistically close to the population median-of-medians -- not exceptional stability. It IS real: median phi 0.76-0.80 decisively clears a correctly-implemented permutation null (median 0.14, max 0.36).",
+   "scope": "Same N=1403, same k=5/k=7 EFA solutions as c3-c6. 30 independent split-halves for the rank/phi computation, 15 for the permutation null (per-column numpy shuffle of one half, which destroys covariance while preserving item marginals).",
+   "quantities": [
+    {
+     "name": "self_factor_split_half_phi",
+     "value": 0.801,
+     "n": 1403,
+     "baseline": "k=7, median over 30 independent split-halves, self-factor identified within each half by mean |loading| on 6 self/boundary items",
+     "source": "our reanalysis run_self_factor_stability.py"
+    },
+    {
+     "name": "self_factor_rank_among_k_factors",
+     "value": 5,
+     "n": 1403,
+     "baseline": "k=7, median rank where 1=most stable of 7 matched factors",
+     "source": "our reanalysis run_self_factor_stability.py"
+    },
+    {
+     "name": "population_median_of_medians_phi",
+     "value": 0.811,
+     "n": 1403,
+     "baseline": "k=7, all factors, for comparison against the self-factor's 0.801 -- indistinguishable from average",
+     "source": "our reanalysis run_self_factor_stability.py"
+    },
+    {
+     "name": "self_factor_permutation_null_max",
+     "value": 0.356,
+     "n": 1403,
+     "baseline": "k=7, 15 splits, per-column-shuffled half B, self-factor's own matched phi against the shuffled data",
+     "source": "our reanalysis run_self_factor_stability.py"
+    }
+   ],
+   "evidence": ["a7"],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "A first attempt at both the stability check and its permutation-null control had bugs that each produced a flattering-then-alarming wrong answer in sequence: (1) matching each half against the FULL sample (which partly contains that half) gave an inflated phi (0.92-0.95) and a rank that looked exceptional -- data leakage; (2) the first permutation null used pandas `.apply(axis=0)` returning per-column arrays, which silently failed to reshuffle row correspondence, producing a null median (0.81) as high as the real data and briefly suggesting the self factor was indistinguishable from noise. Both are recorded as failed attempts in NOTES.md rather than deleted. The number reported here is the third version, with the leakage removed and the null verified against known behaviour (pure noise should score .10-.35, matching the original 2026-07-31/08-16 characterisation) before being trusted.",
+    "by": "maria 2026-08-21"
+   }
   }
  ],
  "methods": [
@@ -397,6 +438,19 @@
     "a1",
     "a4"
    ]
+  },
+  {
+   "id": "a7",
+   "role": "code",
+   "locator": "reanalysis/run_self_factor_stability.py",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-21",
+    "by": "maria",
+    "how": "python reanalysis/run_self_factor_stability.py (data fetched fresh from a1, deleted after); output cross-checked against reanalysis/results_self_factor_stability.json",
+    "result": "Computes the self/subject-object factor's split-half replication rank and phi, independent-halves design (no full-sample leakage), plus a corrected permutation null. Supersedes an eyeballed claim in NOTES.md that was never actually computed and turned out to be wrong -- see c7 and the correction block in NOTES.md."
+   },
+   "derived_from": ["a1"]
   }
  ],
  "relations": [
@@ -425,6 +479,11 @@
    "type": "cito:agreesWith",
    "target": "menkveld2024-nonstandard-errors",
    "why": "Same shape of result in a different field: variation between competent implementations of the same analysis is comparable to or larger than the reported uncertainty of any one of them."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "lutz2015-phenomenological-matrix#c3",
+   "why": "c7 (this record) qualifies Lutz et al.'s claim that self-disidentification is purely a species of dereification. c7 shows the self/subject-object factor carries real, above-noise signal in a population selected for minimal discursive-thought content -- evidence against the strongest reductive reading (self-structure as pure epiphenomenon of thought-dereification) -- but c7 explicitly does NOT show exceptional stability, only ordinary stability, so it narrows rather than resolves the question. Do not cite this as refuting Lutz et al.; cite it as a data point their conceptual argument did not have."
   }
  ],
  "open_questions": [
@@ -437,7 +496,7 @@
  "curation": {
   "author": "maria",
   "created": "2026-08-16",
-  "verified": "2026-08-16",
+  "verified": "2026-08-21",
   "notes_file": "NOTES.md"
  },
  "triggers": [

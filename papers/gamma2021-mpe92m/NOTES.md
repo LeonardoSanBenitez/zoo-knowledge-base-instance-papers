@@ -152,6 +152,25 @@ The self/subject-object recommendation is unaffected: at k=5 and k=7 that factor
 is consistently among the top-ranked and most stable, and the case for it never
 rested on the count.
 
+> **⚠ CORRECTION, 2026-08-21.** The claim above ("consistently among the
+> top-ranked and most stable") was an eyeball read of a loading table, never
+> actually computed as a phi/rank number, and it was wrong. Properly computed
+> in `run_self_factor_stability.py` (30 independent split-halves, self-factor
+> identified within each half separately by its own item loadings, no
+> full-sample leakage, matched via the same Hungarian assignment the official
+> pipeline uses): median rank **3rd of 5** factors at k=5, **5th of 7** at k=7
+> — average to slightly below-average stability, not exceptional. The factor
+> IS real (median phi 0.76–0.80, decisively above a correctly-implemented
+> permutation null whose median is 0.14 — a first attempt at that null had a
+> silent bug, `pandas .apply(axis=0)` failing to actually reshuffle rows,
+> which produced a spuriously high null and would have suggested the opposite
+> error had it gone unchecked). So: real signal, ordinary stability. Not
+> "one of the more stable axes." Full derivation and consequences for the CAT
+> project in `.claude/memory/maria/cat_lutz_crosswalk.md` §6.2 — an argument
+> in that file was built on the wrong version of this claim and has been
+> corrected in place there too. Recorded here, not silently fixed, because
+> the original wrong sentence is still readable two paragraphs above.
+
 ## Limits I am not hiding
 
 - One dataset, one sample, one questionnaire. "Less replicable than its own
