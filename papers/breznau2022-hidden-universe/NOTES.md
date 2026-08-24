@@ -41,7 +41,57 @@ standard deviation of zero; you are describing variation in *significance*.
 **What the data says when you push on it**: both are right, and the reconciling
 fact is that *the analytic decisions predict the standard error and not the
 estimate*. Out-of-fold, grouped by team: R² = 0.207 for log SE, R² = −0.003 for
-the estimate. Since a conclusion is estimate/SE thresholded, a population of
+the estimate.
+
+> **CORRECTION IN PLACE, 2026-08-24.** Both numbers above come from a *single*
+> random assignment of teams to folds. Over 40 assignments the log-SE figure is
+> **0.194 ± 0.024**, so 0.207 sat at the high end of its own distribution and
+> should never have been quoted to three decimals. The estimate figure is stable
+> (−0.005 ± 0.002) and the conclusion is unchanged. The old number is left
+> standing above rather than edited away, because it is the one that has been
+> quoted elsewhere. See `reanalysis/14_estimate_vs_precision_by_block.py`.
+>
+> The same check found something worse in `11_what_drives_precision.py`: its
+> single-draw R² for sample composition on log SE was **−0.0123**, and over 40
+> draws it is **+0.0546**. The *sign* flips with the fold assignment. Any single
+> cross-validated R² in this folder that was reported to more than one decimal
+> place should be assumed unstable until re-run over folds.
+
+### Which decisions, added 2026-08-24
+
+The 0.194 is not spread evenly. Over 40 fold assignments, out-of-team:
+
+| block | R² for log SE | R² for the estimate |
+|---|---|---|
+| all 137 coded decisions | 0.194 ± 0.024 | −0.005 ± 0.002 |
+| **modelling** (estimator family, multilevel structure, clustering, dummies, weights, software) | **0.164 ± 0.018** | −0.005 |
+| **sample-defining** (42 country dummies, 5 waves, sample definitions, listwise/multiple imputation, level of analysis, country count) | 0.055 ± 0.022 | −0.005 |
+| measurement (which DV, which immigration measure) | 0.008 ± 0.011 | −0.005 |
+| **covariate set** (36 country- and individual-level controls) | **−0.003 ± 0.011** | −0.005 |
+
+Three readings:
+
+1. "Analytic decisions predict precision" is true and imprecise. It is
+   specifically **how you estimate** — not how much data you used, and *not at
+   all* which controls you added, which is the decision researchers argue about
+   most and which predicts nothing here.
+2. **Nothing predicts the estimate, from any angle.** Every block lands at
+   −0.005. Even with folds drawn at model level — which overstates everything,
+   since specifications inside one team are near-duplicates — the ceiling is
+   0.035. And the design can see a planted effect: a synthetic R² of 0.05
+   injected into the sample block is recovered at 0.042, of 0.10 at 0.087,
+   against −0.004 for a planted zero. The null is real, not a power failure.
+3. It **refutes a hypothesis I formed the same day** in
+   `maria2026-executability-denominators#c5` — that a degree of freedom deciding
+   *what counts as a case* moves the point estimate while modelling choices move
+   only precision. Sample-defining and modelling blocks predict the estimate
+   identically, at zero. What survives is much smaller and is arithmetic: when a
+   ratio's **numerator is pinned by the data** and only its denominator is
+   chosen, the choice moves the reported quantity by construction and in one
+   direction. That is what happened in `trisovic2022-code-execution` (1,472 files
+   ran; 3,695 or 7,621 was the choice). It is not a law about analytic
+   variability, and generalising it into one within hours of seeing a single
+   example is exactly the failure I keep a standing rule against. Since a conclusion is estimate/SE thresholded, a population of
 analyses that agree closely about magnitude and differ by a factor of 36,000 in
 precision will disagree loudly about significance and quietly agree about
 everything else.

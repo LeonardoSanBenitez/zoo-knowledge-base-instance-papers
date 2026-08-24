@@ -1,0 +1,81 @@
+====================================================================================
+A. THE TEST OF maria2026-executability-denominators#c5
+====================================================================================
+   1252 models, 71 teams, out-of-TEAM 10-fold ridge, max over 17 lambdas,
+   averaged over 40 random fold assignments (mean +- SD).
+
+   block                                        p R2 for the ESTIMATE      R2 for log SE
+   SAMPLE-DEFINING (what counts as a case)     55   -0.0049 +- 0.0019   +0.0546 +- 0.0215
+   MODELLING (fixed cases, different model)    28   -0.0050 +- 0.0018   +0.1644 +- 0.0181
+   MEASUREMENT (which DV / which IV form)      11   -0.0050 +- 0.0018   +0.0082 +- 0.0114
+   COVARIATE SET                               36   -0.0051 +- 0.0018   -0.0027 +- 0.0109
+   all coded decisions                        137   -0.0051 +- 0.0018   +0.1942 +- 0.0244
+
+   HYPOTHESIS PREDICTED: R2(estimate | sample-defining) > R2(estimate | modelling)
+   OBSERVED:             -0.0049 vs -0.0050  -> NOT SUPPORTED
+   Both are at or below zero. Nothing predicts the estimate, including
+   the block the hypothesis singled out.
+
+====================================================================================
+B. BEFORE BELIEVING A NULL: DOES THE TEST HAVE POWER?
+====================================================================================
+   Grouped CV holds out whole TEAMS. If sample composition barely varies
+   inside a team, team-grouping removes exactly the variation the sample
+   block needs, and the null above is about the design, not the world.
+
+   mean share of a column's variance that is WITHIN team:
+      SAMPLE-DEFINING columns  0.171   (55 columns)
+      MODELLING columns        0.060   (28 columns)
+
+   The worry was that low within-team variation makes the sample block
+   unlearnable under team-grouped folds. It does not, and the internal
+   control settles it: the MODELLING block has LESS within-team variation
+   (0.060 vs 0.171) and still reaches R2 = 0.164 on log SE. Whatever stops the
+   sample block from predicting the ESTIMATE, it is not team-grouping.
+   (I wrote the opposite conclusion first, on a 0.25 threshold pulled from
+    nowhere, and the control contradicted it. Left here as the correction.)
+
+   Same table with folds drawn at MODEL level (ignoring team). This
+   OVERSTATES everything -- models inside a team are near-duplicates -- and
+   is shown only to bound how much signal exists at all:
+   block                                           R2 estimate          R2 log SE
+   SAMPLE-DEFINING (what counts as a case)              0.0135             0.4214
+   MODELLING (fixed cases, different model)             0.0352             0.4035
+   MEASUREMENT (which DV / which IV form)               0.0037             0.0780
+
+====================================================================================
+C. SYNTHETIC POSITIVE CONTROL
+====================================================================================
+   Inject a sample-driven effect of known size into the estimate and check
+   that this machinery finds it. If it cannot see a planted effect, section
+   A says nothing.
+   planted R2 (in-sample)            recovered      on log SE
+   0.00                          -0.0044 +- 0.0018
+   0.05                           0.0418 +- 0.0036
+   0.10                           0.0873 +- 0.0051
+   0.25                           0.2200 +- 0.0097
+   0.50                           0.4505 +- 0.0174
+
+   Read the 0.00 row as the null and the others as sensitivity. If 0.10
+   is recovered well above the 0.00 row, section A's null is real.
+
+====================================================================================
+D. WHAT THE HYPOTHESIS SHOULD HAVE SAID
+====================================================================================
+   Refuted as stated. What actually happened in the artifact-execution case
+   is narrower and mechanical: the numerator was FIXED BY THE DATA (1,472 files
+   ran) and the analyst chose the DENOMINATOR (3,695 or 7,621). A ratio whose
+   numerator is pinned and whose denominator is chosen moves by construction.
+   That is arithmetic, and dressing it as a general law about analytic
+   variability was overreach committed within hours of seeing one example.
+
+   In CRI nothing of the kind is available: changing which countries enter a
+   regression changes numerator and denominator together, and the resulting
+   coefficient is free to move either way, so the choice adds variance without
+   direction -- which is exactly what R2 ~ 0 for the estimate means, and what
+   this record already reported.
+
+   The surviving general statement is a WARNING, not a law: when a reported
+   quantity is a ratio, ask whether its numerator is pinned. If it is, the
+   denominator is a free parameter pointing one way, and no amount of
+   many-analysts intuition about 'decisions cancel out' applies.

@@ -286,40 +286,74 @@
     },
     {
       "id": "c5",
-      "statement": "A researcher degree of freedom that is a modelling choice over a fixed set of cases moves the standard error; a degree of freedom that decides WHAT COUNTS AS A CASE moves the point estimate. Denominator choice is the purest instance of the second kind.",
-      "scope": "Proposed reconciliation between the many-analysts literature (which finds analytic choices predict precision and not the estimate) and the artifact-execution literature (where one exclusion rule moves the estimate by 20 points).",
+      "statement": "REFUTED BY ME, SAME SESSION. As stated: a researcher degree of freedom that is a modelling choice over a fixed set of cases moves the standard error; a degree of freedom that decides WHAT COUNTS AS A CASE moves the point estimate. The second half is false in the one dataset able to test it. What survives is narrower and mechanical: when a reported quantity is a ratio whose NUMERATOR is pinned by the data and whose DENOMINATOR is chosen by the analyst, the choice moves the reported quantity by construction and in one direction.",
+      "scope": "Proposed 2026-08-24 to reconcile the many-analysts literature with the artifact-execution literature; tested the same day against Breznau et al.'s model-level CRI data (1,252 models, 71 teams), which codes both sample composition and estimator per model.",
       "quantities": [
+        {
+          "name": "out_of_team_r2_for_estimate",
+          "value": -0.0049,
+          "unit": "R2",
+          "n": 1252,
+          "baseline": "SAMPLE-DEFINING block (42 country dummies, 5 waves, sample definitions, listwise/multimpute, level of analysis, num_countries) predicting the standardised estimate; mean over 40 random team-fold assignments, SD 0.0019",
+          "source": "breznau2022-hidden-universe/reanalysis/14_estimate_vs_precision_by_block.py"
+        },
         {
           "name": "out_of_team_r2_for_estimate",
           "value": -0.005,
           "unit": "R2",
-          "n": 1253,
-          "baseline": "Breznau 2022 CRI, analytic decisions predicting the point estimate; from maria2026-analytic-variability-reanalysis",
-          "source": "maria2026-analytic-variability-reanalysis"
+          "n": 1252,
+          "baseline": "MODELLING block (estimator family, multilevel structure, clustering, dummies, weights, software) predicting the standardised estimate; SD 0.0018",
+          "source": "breznau2022-hidden-universe/reanalysis/14_estimate_vs_precision_by_block.py"
         },
         {
           "name": "out_of_team_r2_for_log_standard_error",
-          "value": 0.19,
+          "value": 0.1644,
           "unit": "R2",
-          "n": 1253,
-          "baseline": "Breznau 2022 CRI, analytic decisions predicting log SE; from maria2026-analytic-variability-reanalysis",
-          "source": "maria2026-analytic-variability-reanalysis"
+          "n": 1252,
+          "baseline": "MODELLING block predicting log SE; SD 0.0181; mean over 40 fold assignments",
+          "source": "breznau2022-hidden-universe/reanalysis/14_estimate_vs_precision_by_block.py"
+        },
+        {
+          "name": "out_of_team_r2_for_log_standard_error",
+          "value": 0.0546,
+          "unit": "R2",
+          "n": 1252,
+          "baseline": "SAMPLE-DEFINING block predicting log SE; SD 0.0215. A single fold draw in script 11 gave -0.0123 -- the SIGN flips with the fold assignment, which is why this is reported over 40 draws",
+          "source": "breznau2022-hidden-universe/reanalysis/14_estimate_vs_precision_by_block.py"
+        },
+        {
+          "name": "out_of_team_r2_for_log_standard_error",
+          "value": 0.1942,
+          "unit": "R2",
+          "n": 1252,
+          "baseline": "ALL 137 coded decisions predicting log SE; SD 0.0244 over 40 fold assignments. THIS SUPERSEDES the 0.207 recorded on 2026-08-12, which was one fold draw at the high end of its own distribution",
+          "source": "breznau2022-hidden-universe/reanalysis/14_estimate_vs_precision_by_block.py"
+        },
+        {
+          "name": "minimum_detectable_r2_of_this_design",
+          "value": 0.05,
+          "unit": "R2",
+          "n": 1252,
+          "baseline": "synthetic positive control: an effect planted at in-sample R2 = 0.05 in the SAMPLE-DEFINING block is recovered out-of-team at 0.0418 +- 0.0036, against -0.0044 for a planted 0. The observed null is therefore real down to about this size",
+          "source": "breznau2022-hidden-universe/reanalysis/14_estimate_vs_precision_by_block.py"
         },
         {
           "name": "bias_introduced_by_asymmetric_combining_rule",
           "value": 0.205,
-          "unit": "proportion of files",
+          "unit": "difference of two proportions",
           "n": 7621,
-          "baseline": "Trisovic 2022 with cleaning: 39.8% under the authors' exclusion rule minus 19.3% symmetric",
+          "baseline": "Trisovic 2022 with cleaning: 39.8% under the authors' exclusion rule minus 19.3% symmetric. The case that generated the hypothesis, and the case the refutation explains: 1,472 is fixed and only the denominator was chosen -- NOT a proportion: it is 0.398 minus 0.193, so count/denominator do not apply and were removed after kb.py validate correctly rejected them (zoo-paper-record 1.1 section 3, first real catch)",
           "source": "trisovic2022-code-execution"
         }
       ],
       "evidence": [
-        "a1"
+        "a1",
+        "a2"
       ],
       "our_assessment": {
-        "status": "unverified",
-        "why": "This is a hypothesis with two supporting instances, not a finding. It reconciles two literatures that do not cite each other and it makes a testable prediction: in any many-analysts study, the subset of analytic decisions that alter the ANALYSED SAMPLE (exclusion criteria, outlier rules, listwise deletion, which observations count) should predict the point estimate, while the rest should predict only precision. Breznau et al. released the model-level data and I have already re-analysed it once; the decision variables are coded there. TESTING THIS IS THE SINGLE MOST VALUABLE THING ON MY OWN QUEUE and it is not done. Recorded as unverified precisely so that a future session does not find it stated as established."
+        "status": "refuted",
+        "why": "Refuted by me, hours after proposing it, on data already in this corpus. Predicted: R2(estimate | sample-defining) > R2(estimate | modelling). Observed: -0.0049 vs -0.0050, both indistinguishable from zero and from each other, over 40 random team-fold assignments. THE NULL IS REAL, NOT A POWER FAILURE: a synthetic effect planted at R2 = 0.05 in the same block is recovered at 0.042, and at 0.10 recovered at 0.087, against -0.004 for a planted zero. I also wrote down a power WORRY (sample composition is largely a team-level constant, so team-grouped folds might remove the needed variation) and then had to withdraw it in the same script: the MODELLING block has even LESS within-team variation (0.060 vs 0.171) and still reaches R2 = 0.164 on log SE. WHAT SURVIVES, and it is much smaller than what I claimed: in the artifact-execution case the numerator was pinned by the data (1,472 files ran) and the analyst chose only the denominator, so the ratio moves by construction and in one direction. That is arithmetic, not a law about analytic variability, and generalising from one example within hours of seeing it was exactly the failure mode I have a standing rule against. In CRI no such asymmetry exists: changing which countries enter a regression moves numerator and denominator together and the coefficient is free to go either way -- variance without direction, which is what R2 ~ 0 means. THE USABLE RESIDUE IS A CHECK, NOT A LAW: when a reported quantity is a ratio, ask whether its numerator is pinned; if it is, the denominator is a free parameter pointing one way, and many-analysts intuitions about decisions cancelling out do not apply.",
+        "by": "breznau2022-hidden-universe#c5"
       }
     },
     {
