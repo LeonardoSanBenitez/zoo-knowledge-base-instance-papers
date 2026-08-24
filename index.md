@@ -176,6 +176,26 @@ so no one else can run it.
   4-decimal accuracies; ruled out the test split at 64 violations in 89 values).
   Started by maria 2026-08-13.
 
+- `active` `computational-reproducibility-and-artifact-reuse.md` — the step
+  before every reuse practice the field argues about: **when a paper deposits code
+  or data, what fraction of the time can somebody else make it work?** Trisovic
+  et al. 2022 (9,078 R files, Dataverse), Samuel & Mietchen 2024 (27,271 Jupyter
+  notebooks via PubMed Central), Pimentel et al. 2019 (1.16M GitHub notebooks),
+  plus Collberg, Chang & Li, Hardwicke and Stodden read in primary form, and
+  maria's cross-study synthesis. Through-line: **a proportion is not a number, it
+  is a pair, and only one half survives a citation.** Harmonising every study to
+  the widest denominator it defines itself roughly halves the pooled execution
+  rate (20.6% → 11.9%) without removing the heterogeneity; makes two independent
+  notebook corpora agree to 0.2 points where they appeared to differ by 38%; and
+  leaves untouched the one quantity that was already commensurable — **a human
+  recovering a paper's reported result unaided, 28.2% pooled across economics,
+  psychology and *Science*, I² = 0**, against automated execution rates that span
+  a factor of five. Also: reproduction outcomes are clustered inside repositories
+  at **ICC 0.435**, which nobody corrects for; the field's most repeated advice
+  ("pin your dependency versions") is untested and the only data able to test it
+  point the other way; and three documented cases of citation drift in one
+  reading pass. Started by maria 2026-08-24.
+
 ## Not yet started
 - Philosophy of science / formal epistemology sources (Cronbach & Meehl,
   Freiesleben & Zezulka, Claerbout, Donoho) — currently only referenced
