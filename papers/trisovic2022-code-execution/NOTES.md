@@ -287,3 +287,63 @@ and environment is exactly what does not travel.
   `targets` and Rocker had time to diffuse. The paper found `renv` in 2 packages
   out of 2,091. That is the single most valuable follow-up and it is now four
   years overdue.
+
+## 10. Do the paper's own recommendations work? (added 2026-08-24)
+
+The paper closes with six recommendations for researchers. None is tested against
+the outcome the same paper measured, although the released data supports the test:
+`dataset_level.csv` codes, per replication package, whether it ships documentation,
+R Markdown, a Dockerfile, tests, a project file, code in another language, spaces in
+filenames. `reanalysis/do_recommendations_work.py` joins that to the run logs.
+
+**First, the unit of analysis, because it changed the answer.** My first pass used
+"the package has at least one file that ran" and documentation looked overwhelming:
+35.8% against 22.2%, z = 6.66. That is an artifact of my own outcome definition — a
+package with twenty files has twenty chances, and package size is by far the largest
+association in the table (z = +16.8). Switching to the file-level rate within each
+group removes it. And a z on 9 or 22 clusters is arithmetic rather than evidence, so
+the inference below is a bootstrap over **packages**, 4,000 resamples.
+
+**A second, independent ICC.** The per-file outcome within a replication package has
+**ICC = 0.251** (7,557 files in 2,103 packages, mean cluster size 3.59, design effect
+1.65). The Samuel & Mietchen corpus — a different language, a different repository, a
+different research community — gives 0.435 for the same kind of cluster. Two estimates,
+same direction, both large. Every file-level percentage in this literature needs the
+correction and none applies it.
+
+| practice | packages | file rate with | without | difference [95% CI, cluster bootstrap] |
+|---|---|---|---|---|
+| documentation / README present | 1,190 | 20.0% | 17.4% | +2.6 [−1.4, +6.4] |
+| uses R Markdown | 65 | 28.0% | 18.8% | **+9.2 [+0.3, +20.4]** |
+| contains a test file | 108 | 23.4% | 18.8% | +4.6 [−2.6, +12.6] |
+| ships an .Rproj file | 22 | 38.2% | 18.9% | +19.4 [−6.1, +43.1] |
+| filename contains a space (discouraged) | 658 | 20.2% | 18.8% | +1.4 [−2.4, +5.2] |
+| contains other-language code (discouraged) | 661 | 21.5% | 18.2% | +3.3 [−0.9, +7.5] |
+| ships a Dockerfile | **9** | 6.7% | 19.3% | −12.7 [−17.0, −8.1] |
+| Sweave / Rnw | **5** | 4.3% | 19.3% | −14.9 [−20.6, −12.6] |
+
+**Only R Markdown has an interval excluding zero, and its lower bound is +0.3.** The
+Dockerfile and Sweave rows have intervals excluding zero on the wrong side, and they
+are 9 and 5 packages: the interval is narrow because those few packages consistently
+failed, which is a statement about nine packages and not about containerisation.
+
+**How big an effect could this corpus have shown?** A power curve over 20 random
+assignments of a fake practice to 1,190 packages: planting a rescue of 0 / 3 / 6 / 12 /
+20% of failing files gives recovered +0.2 / +2.6 / +5.1 / +9.9 / +16.3 points at
+power 5% / 35% / 75% / 100% / 100%. The 5% false-positive rate at a planted zero says
+the bootstrap is calibrated. So the documentation null is **inconclusive at +2.6, not
+strong** — 35% power — while a real benefit of +5 points would have shown three times
+in four.
+
+**The number I would actually put in front of a repository operator is a denominator.**
+Containerisation, the recommendation with the best theoretical case and the one my
+synthesis names as the only untested intervention that could matter, appears in **9 of
+2,060 packages (0.44%)**. Workflow libraries (drake, targets, workflowr): **zero**.
+Provenance libraries: **zero**. It is not that these were tried and failed. After a
+decade of advice they have never been tried at a scale anyone could measure — and no
+amount of further advice changes that, because advice is what has been tried.
+
+This pairs with `samuel2024-jupyter-pmc` section 4, which tests the *other* universal
+recommendation (pin your dependency versions) on the *other* corpus, in the other
+language, and also fails to find support. Two corpora, two languages, two
+recommendations, no evidence.

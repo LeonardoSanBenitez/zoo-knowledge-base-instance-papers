@@ -1,0 +1,184 @@
+============================================================================================
+0. HOW CLUSTERED IS THIS CORPUS? (a second, independent estimate)
+============================================================================================
+  7557 files in 2103 replication packages, mean cluster size 3.59
+  ICC of the per-file outcome within a package = 0.251
+  design effect 1.65 -> effective n 4577, not 7557
+  For comparison, measured on a completely different corpus (Jupyter
+  notebooks inside GitHub repositories, Samuel & Mietchen 2021 run):
+  ICC = 0.435. Two languages, two repositories, two research communities.
+  Every file-level percentage in this literature needs this correction and
+  none applies it. All z statistics below are divided by sqrt(deff).
+
+============================================================================================
+DOES ANY RECOMMENDED PRACTICE PREDICT RE-EXECUTION?
+Trisovic et al. 2022 corpus. Unit = replication package. Cleaning condition,
+symmetric combining rule. Outcome = the package has >=1 R file that ran.
+============================================================================================
+  2060 packages with at least one classifiable R file; 619 (30.0%) have one that ran.
+  (The file-level rate over the same condition is 19.3%%; a package rate is
+   higher because one success rescues the package. Both are in the record.)
+
+  !! THE 'AT LEAST ONE FILE RAN' OUTCOME IS MECHANICALLY INFLATED BY PACKAGE
+  SIZE: a package with 20 files has twenty chances. Measured below, that
+  artifact is the single largest association in the whole table (z = +16.8),
+  and it is a property of my outcome definition, not of the world. So the
+  PRIMARY outcome here is the FILE-LEVEL rate within each group -- total
+  files that ran over total files -- which cannot be inflated that way, with
+  z divided by sqrt(design effect) for clustering.
+
+  practice                                       n pkgs    FILE rate WITH FILE rate WITHOUT       z*         p
+  a documentation/README file is present           1190     20.0% ( 5082)     17.4% ( 2339)     2.05    0.0408  *
+  uses R Markdown (literate programming)             65     28.0% (  339)     18.8% ( 7082)     3.28    0.0010  **
+  uses Sweave/Rnw                                     5      4.3% (   23)     19.3% ( 7398)    -1.41    0.1584
+  ships an .Rproj project file                       22     38.2% (  136)     18.9% ( 7285)     4.42    0.0000  **
+  contains a test file                              108     23.4% (  683)     18.8% ( 6738)     2.28    0.0226  *
+  ships a Dockerfile                                  9      6.7% (   75)     19.3% ( 7346)    -2.16    0.0310  *
+  uses a workflow library (drake/targets/workflowr)      0                --                --       -- no packages
+  uses a provenance library                           0                --                --       -- no packages
+  a filename contains a space (DISCOURAGED)         658     20.2% ( 2404)     18.8% ( 5017)     1.13    0.2587
+  contains code in another language (DISCOURAGED)    661     21.5% ( 2243)     18.2% ( 5178)     2.60    0.0094  *
+
+  ** p < 0.0050 (Bonferroni for 10 tests)   * p < 0.05 uncorrected
+  z* is the two-proportion z with both counts divided by the design effect
+  1.65, i.e. computed on the effective sample size rather than the file count.
+
+  CLUSTER BOOTSTRAP (4000 resamples of PACKAGES, the independent unit).
+  This is the inference to read where the number of packages is small; a z
+  computed on 9 clusters is arithmetic, not evidence.
+  practice                                         n pkgs  file-rate difference (pp)     95% CI
+  a documentation/README file is present             1190                      +2.6  [-1.4, +6.4]   (crosses 0)
+  uses R Markdown (literate programming)               65                      +9.2  [+0.3, +20.4]
+  uses Sweave/Rnw                                       5                     -14.9  [-20.6, -12.6]
+  ships an .Rproj project file                         22                     +19.4  [-6.1, +43.1]   (crosses 0)
+  contains a test file                                108                      +4.6  [-2.6, +12.6]   (crosses 0)
+  ships a Dockerfile                                    9                     -12.7  [-17.0, -8.1]
+  a filename contains a space (DISCOURAGED)           658                      +1.4  [-2.4, +5.2]   (crosses 0)
+  contains code in another language (DISCOURAGED)      661                      +3.3  [-0.9, +7.5]   (crosses 0)
+
+  The 95%% CI half-width IS the smallest effect this corpus could have
+  detected for that practice. Read it before reading any point estimate:
+  for `docs` (1,190 packages) it is about 4 points, so a real benefit of 6
+  points would have shown; for `.Rproj` (22 packages) it is 25 points, so
+  that row is uninformative whatever its z said.
+
+  SYNTHETIC POSITIVE CONTROL -- a planted practice with a known benefit.
+  Assign a fake practice to a random 1,190 packages (matching `docs`), then
+  flip a share of their failing files to successes, and see it recovered.
+  Repeated over 20 random assignments, because ONE assignment is itself a
+  draw: at a planted benefit of zero the first seed I tried returned -3.5
+  points, purely from which packages happened to land in the treated group.
+  planted benefit                            mean recovered   mean over 0%        power
+  0% of failing files rescued                         +0.2          +0.0           5%
+  3% of failing files rescued                         +2.6          +2.4          35%
+  6% of failing files rescued                         +5.1          +4.9          75%
+  12% of failing files rescued                        +9.9          +9.7         100%
+  20% of failing files rescued                       +16.3         +16.1         100%
+
+  'power' is the share of assignments whose bootstrap interval excluded 0.
+  At a planted zero it is the false-positive rate and should sit near 5%.
+  Read the smallest planted benefit whose power is high: that is the
+  smallest real effect this corpus could have shown, and every recommended
+  practice tested above is below it or barely at it.
+
+  Same table on the package-level outcome ('>=1 file ran'), which is what a
+  reuser experiences but which the size artifact contaminates:
+  practice                                           PKG rate WITH  PKG rate WITHOUT        z
+  a documentation/README file is present             35.8% ( 1190)     22.2% (  870)     6.66
+  uses R Markdown (literate programming)             49.2% (   65)     29.4% ( 1995)     3.43
+  uses Sweave/Rnw                                    20.0% (    5)     30.1% ( 2055)    -0.49
+  ships an .Rproj project file                       40.9% (   22)     29.9% ( 2038)     1.12
+  contains a test file                               51.9% (  108)     28.8% ( 1952)     5.08
+  ships a Dockerfile                                 44.4% (    9)     30.0% ( 2051)     0.94
+  a filename contains a space (DISCOURAGED)          27.8% (  658)     31.1% ( 1402)    -1.52
+  contains code in another language (DISCOURAGED)     30.0% (  661)     30.1% ( 1399)    -0.06
+
+--------------------------------------------------------------------------------------------
+CONTINUOUS PREDICTORS -- the things nobody recommends, for comparison
+--------------------------------------------------------------------------------------------
+  number of distinct libraries the package needs  low  31.3% (686)  mid  27.6% (686)  high  31.2% (688)   z(hi-lo) -0.04  p 0.9710
+  number of R files classified                    low  13.7% (686)  mid  19.2% (686)  high  57.1% (688)   z(hi-lo) +16.82  p 0.0000
+  number of files of any kind                     low  14.0% (686)  mid  29.4% (686)  high  46.7% (688)   z(hi-lo) +13.17  p 0.0000
+  package size in MB                              low  24.5% (686)  mid  29.2% (686)  high  36.5% (688)   z(hi-lo) +4.83  p 0.0000
+  average R file length in lines                  low  32.2% (686)  mid  32.8% (686)  high  25.1% (688)   z(hi-lo) -2.90  p 0.0038
+  total comment lines                             low  22.4% (686)  mid  25.1% (686)  high  42.6% (688)   z(hi-lo) +7.97  p 0.0000
+
+--------------------------------------------------------------------------------------------
+CONFOUND CHECK -- the two associations that survived, stratified
+--------------------------------------------------------------------------------------------
+
+  a documentation/README file is present
+    by dependency count:
+      low  with  37.8% ( 333)   without  24.3% ( 313)   z +3.71
+      mid  with  32.8% ( 403)   without  21.3% ( 296)   z +3.34
+      high with  37.0% ( 454)   without  20.7% ( 261)   z +4.54
+    by number of R files:
+      low  with  17.5% ( 611)   without  12.3% ( 625)   z +2.56
+      mid  with  44.4% ( 331)   without  37.3% ( 153)   z +1.48
+      high with  69.4% ( 248)   without  64.1% (  92)   z +0.92
+
+  uses R Markdown (literate programming)
+    by dependency count:
+      low  with  52.6% (  19)   without  30.6% ( 627)   z +2.04
+      mid  with  38.9% (  18)   without  27.6% ( 681)   z +1.05
+      high with  53.6% (  28)   without  30.1% ( 687)   z +2.63
+    by number of R files:
+      low  with  20.6% (  34)   without  14.7% (1202)   z +0.95
+      mid  with  76.9% (  13)   without  41.2% ( 471)   z +2.57
+      high with  83.3% (  18)   without  67.1% ( 322)   z +1.44
+
+  ships an .Rproj project file
+    by dependency count:
+      low  with  50.0% (   2)   without  31.2% ( 644)   z +0.57
+      mid  with  50.0% (   6)   without  27.7% ( 693)   z +1.21
+      high with  35.7% (  14)   without  31.0% ( 701)   z +0.38
+    by number of R files:
+      low  with   0.0% (   6)   without  15.0% (1230)   z -1.03
+      mid  with  50.0% (   8)   without  42.0% ( 476)   z +0.45
+      high with  62.5% (   8)   without  68.1% ( 332)   z -0.33
+
+  contains a test file
+    by dependency count:
+      low  with  34.6% (  26)   without  31.1% ( 620)   z +0.38
+      mid  with  38.7% (  31)   without  27.4% ( 668)   z +1.37
+      high with  68.6% (  51)   without  28.2% ( 664)   z +6.02
+    by number of R files:
+      low  with  17.1% (  35)   without  14.8% (1201)   z +0.38
+      mid  with  55.2% (  29)   without  41.3% ( 455)   z +1.46
+      high with  77.3% (  44)   without  66.6% ( 296)   z +1.42
+
+  ships a Dockerfile
+    by dependency count:
+      low  with   0.0% (   1)   without  31.3% ( 645)   z -0.68
+      mid  with   0.0% (   1)   without  27.9% ( 698)   z -0.62
+      high with  57.1% (   7)   without  30.8% ( 708)   z +1.50
+    by number of R files:
+      low  with   0.0% (   2)   without  14.9% (1234)   z -0.59
+      mid  with  33.3% (   3)   without  42.2% ( 481)   z -0.31
+      high with  75.0% (   4)   without  67.9% ( 336)   z +0.30
+
+  contains code in another language (DISCOURAGED)
+    by dependency count:
+      low  with  31.6% ( 253)   without  31.0% ( 393)   z +0.15
+      mid  with  27.0% ( 222)   without  28.3% ( 477)   z -0.35
+      high with  31.2% ( 186)   without  31.0% ( 529)   z +0.05
+    by number of R files:
+      low  with  19.0% ( 437)   without  12.6% ( 799)   z +3.00
+      mid  with  37.1% ( 124)   without  43.9% ( 360)   z -1.32
+      high with  69.0% ( 100)   without  67.5% ( 240)   z +0.27
+
+--------------------------------------------------------------------------------------------
+WHAT THE CORPUS CANNOT ANSWER, WITH ITS NUMBERS
+--------------------------------------------------------------------------------------------
+  uses Sweave/Rnw                                      present in    5 of 2060 packages (0.24%)
+  ships an .Rproj project file                         present in   22 of 2060 packages (1.07%)
+  ships a Dockerfile                                   present in    9 of 2060 packages (0.44%)
+  uses a workflow library (drake/targets/workflowr)    present in    0 of 2060 packages (0.00%)
+  uses a provenance library                            present in    0 of 2060 packages (0.00%)
+
+  The recommendation with the strongest theoretical case -- ship a built
+  environment -- is the one the corpus cannot evaluate, because almost
+  nobody does it. That is itself the most policy-relevant number here:
+  it is not that containerisation was tried and failed, it is that after
+  a decade of advice it has never been tried at a scale that could be
+  measured.

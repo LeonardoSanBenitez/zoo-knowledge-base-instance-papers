@@ -442,6 +442,108 @@
         "status": "accepted",
         "why": "Descriptive, computed by a static scan whose code is released, and not affected by the combining rule that damages c1-c5. This is the claim in the paper I would most confidently reuse, and it is the mechanism behind the low execution rate: 4.3 unpinned dependencies per file and essentially zero environment capture is a specification of failure. Not independently recomputed here -- the per-package scan outputs are in rpackage_stats.csv, which I did not open."
       }
+    },
+    {
+      "id": "c8",
+      "statement": "The paper closes with six recommendations for researchers (capture library versions, relative paths, workflow capture such as R Markdown, Docker, test in a clean environment, prefer open-source software). None is tested against the re-execution outcome the same paper measured, although the released data supports the test.",
+      "scope": "2,060 replication packages with at least one classifiable R file, code-cleaning condition, symmetric combining rule. Unit of analysis is the PACKAGE; inference by bootstrap over packages.",
+      "quantities": [
+        {
+          "name": "intraclass_correlation_of_reproduction_within_repository",
+          "value": 0.251,
+          "unit": "ICC (ANOVA, binary outcome)",
+          "n": 7557,
+          "baseline": "per-file re-execution outcome within a replication package; 2,103 packages, mean cluster size 3.59; design effect 1.65",
+          "icc": 0.251,
+          "clusters": 2103,
+          "source": "reanalysis/do_recommendations_work.py section 0"
+        },
+        {
+          "name": "practice_effect_on_execution_rate",
+          "value": 0.026,
+          "unit": "difference in proportion of files",
+          "n": 2060,
+          "ci": "cluster bootstrap 95% CI -0.014 to +0.064, crosses zero",
+          "ci_low": -0.014,
+          "ci_high": 0.064,
+          "ci_kind": "confidence",
+          "baseline": "a documentation/README file present (1,190 packages, 5,082 files) vs not (870 packages, 2,339 files); file-level rates 20.0% vs 17.4%",
+          "source": "reanalysis/do_recommendations_work.py"
+        },
+        {
+          "name": "practice_effect_on_execution_rate",
+          "value": 0.092,
+          "unit": "difference in proportion of files",
+          "n": 2060,
+          "ci": "cluster bootstrap 95% CI +0.003 to +0.204, barely excludes zero",
+          "ci_low": 0.003,
+          "ci_high": 0.204,
+          "ci_kind": "confidence",
+          "baseline": "uses R Markdown (65 packages, 339 files) vs not; file-level rates 28.0% vs 18.8%. The ONLY recommended practice whose interval excludes zero",
+          "source": "reanalysis/do_recommendations_work.py"
+        },
+        {
+          "name": "practice_effect_on_execution_rate",
+          "value": 0.046,
+          "unit": "difference in proportion of files",
+          "n": 2060,
+          "ci": "cluster bootstrap 95% CI -0.026 to +0.126, crosses zero",
+          "ci_low": -0.026,
+          "ci_high": 0.126,
+          "ci_kind": "confidence",
+          "baseline": "contains a test file (108 packages, 683 files) vs not; file-level rates 23.4% vs 18.8%",
+          "source": "reanalysis/do_recommendations_work.py"
+        },
+        {
+          "name": "practice_effect_on_execution_rate",
+          "value": 0.194,
+          "unit": "difference in proportion of files",
+          "n": 2060,
+          "ci": "cluster bootstrap 95% CI -0.061 to +0.431, crosses zero -- 22 packages, uninformative",
+          "ci_low": -0.061,
+          "ci_high": 0.431,
+          "ci_kind": "confidence",
+          "baseline": "ships an .Rproj project file (22 packages, 136 files) vs not; file-level rates 38.2% vs 18.9%. Largest point estimate in the table and NOT a recommendation anyone makes",
+          "source": "reanalysis/do_recommendations_work.py"
+        },
+        {
+          "name": "packages_shipping_a_dockerfile",
+          "value": 0.0044,
+          "unit": "proportion of packages",
+          "n": 2060,
+          "count": 9,
+          "denominator": 2060,
+          "baseline": "Trisovic recommendation #4 is 'use Docker'. 9 of 2,060 packages do",
+          "source": "reanalysis/do_recommendations_work.py"
+        },
+        {
+          "name": "packages_using_workflow_or_provenance_libraries",
+          "value": 0.0,
+          "unit": "proportion of packages",
+          "n": 2060,
+          "count": 0,
+          "denominator": 2060,
+          "baseline": "Trisovic recommendation #3 is 'use drake/targets/workflowr'. Zero packages do, and zero use a provenance library",
+          "source": "reanalysis/do_recommendations_work.py"
+        },
+        {
+          "name": "minimum_detectable_effect_of_this_design",
+          "value": 0.051,
+          "unit": "difference in proportion of files",
+          "n": 2060,
+          "baseline": "synthetic power curve, 20 random assignments of a fake practice to 1,190 packages: planted benefits of 0/3/6/12/20 percent of failing files rescued give recovered +0.2/+2.6/+5.1/+9.9/+16.3 points at power 5/35/75/100/100 percent. The 5 percent false-positive rate at a planted zero shows the bootstrap is calibrated",
+          "source": "reanalysis/do_recommendations_work.py"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a3",
+        "a8"
+      ],
+      "our_assessment": {
+        "status": "not-identifiable",
+        "why": "Not 'the recommendations are wrong' -- the corpus cannot say that -- but 'the recommendations are untested, and where this corpus can test them it finds nothing convincing'. On the correct unit of analysis (packages, by cluster bootstrap) only R Markdown has an interval excluding zero, +9.2 points [+0.3, +20.4], and its lower bound is a rounding error away from nothing. Documentation gives +2.6 [-1.4, +6.4]. Tests give +4.6 [-2.6, +12.6]. TWO CORRECTIONS OF MY OWN FIRST ANALYSIS ARE PART OF THE FINDING. First, at the PACKAGE level with outcome 'at least one file ran', documentation looked overwhelming (35.8% vs 22.2%, z = 6.66) -- an artifact of my own outcome definition, because a package with twenty files has twenty chances, and package size is the largest association in the table (z = +16.8). Second, z statistics on 9 or 22 clusters are arithmetic and not evidence; the cluster bootstrap removed .Rproj's apparent z = 4.42 entirely. THE NULLS ARE HONEST ABOUT THEIR SIZE: a 20-assignment power curve gives 35% power at the observed +2.6 points and 75% at +5.1, with a 5% false-positive rate at a planted zero. So the documentation null is inconclusive, not strong. THE MOST POLICY-RELEVANT NUMBER HERE IS A DENOMINATOR, NOT AN EFFECT: containerisation, the recommendation with the best theoretical case, appears in 9 of 2,060 packages (0.44%), and workflow and provenance libraries in zero. It is not that these were tried and failed. After a decade of advice they have never been tried at a scale anyone could measure."
+      }
     }
   ],
   "artifacts": [
@@ -546,6 +648,22 @@
         "by": "maria",
         "how": "cd reanalysis && python claims.py > claims2.log",
         "result": "Tests the 'no cases of code cleaning breaking working code' universal negative (25/1729 cells break), the policy-strictness correlation under both combining rules with a 200k Monte-Carlo permutation p and full leave-one-out, two confounds from the released metadata, and the marginal value of the second and third R version (+0.4 and +0.8 points)."
+      }
+    },
+    {
+      "id": "a8",
+      "role": "code",
+      "locator": "reanalysis/do_recommendations_work.py",
+      "status": "verified-usable",
+      "local_path": "reanalysis/do_recommendations_work.py",
+      "derived_from": [
+        "a3"
+      ],
+      "checked": {
+        "on": "2026-08-24",
+        "by": "maria",
+        "how": "cd reanalysis && python do_recommendations_work.py > recommendations.log  (4m24s, stdlib only)",
+        "result": "Joins dataset_level.csv (coded practices per package) to the run logs, at the PACKAGE level. Measures the intra-class correlation of the per-file outcome within packages, tests each recommended practice on the file-level rate with a cluster bootstrap over packages, and runs a 20-assignment power curve whose false-positive rate lands at 5% exactly."
       }
     }
   ],
