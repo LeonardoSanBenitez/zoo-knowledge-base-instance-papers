@@ -2,10 +2,18 @@
   "schema_version": "1.0",
   "id": "trisovic2022-code-execution",
   "title": "A large-scale study on research code quality and execution",
-  "authors": ["Ana Trisovic", "Matthew K. Lau", "Thomas Pasquier", "Merce Crosas"],
+  "authors": [
+    "Ana Trisovic",
+    "Matthew K. Lau",
+    "Thomas Pasquier",
+    "Merce Crosas"
+  ],
   "year": 2022,
   "venue": "Scientific Data 9:60",
-  "area": ["computational-reproducibility-and-artifact-reuse", "analytic-variability-and-many-analysts"],
+  "area": [
+    "computational-reproducibility-and-artifact-reuse",
+    "analytic-variability-and-many-analysts"
+  ],
   "identifiers": {
     "arxiv": "2103.12793",
     "doi": "10.1038/s41597-022-01143-6",
@@ -51,15 +59,69 @@
       "statement": "74% of R files failed to complete without error on initial re-execution in a clean environment; 56% failed when automatic code cleaning was applied.",
       "scope": "9,078 R files in 2,109 Harvard Dataverse replication packages published 2010 to July 2020, executed under R 3.2 / 3.6 / 4.0 in a Debian container with r-essentials pre-installed, 1 h per file and 5 h per package.",
       "quantities": [
-        {"name": "artifact_execution_success_rate", "value": 0.249, "unit": "proportion of files", "n": 3830, "baseline": "no code cleaning; authors' combining rule; denominator excludes files missing a result from any R version", "source": "paper RQ4 table; reproduced exactly by reanalysis/denominator.py"},
-        {"name": "artifact_execution_success_rate", "value": 0.398, "unit": "proportion of files", "n": 3695, "baseline": "with code cleaning; authors' combining rule; denominator excludes files missing a result from any R version", "source": "paper RQ4 table; reproduced exactly by reanalysis/denominator.py"},
-        {"name": "artifact_execution_success_rate", "value": 0.119, "unit": "proportion of files", "n": 7985, "baseline": "no code cleaning; symmetric rule over all files seen in >=1 run log; equals the Manski lower bound", "source": "reanalysis/denominator.py"},
-        {"name": "artifact_execution_success_rate", "value": 0.193, "unit": "proportion of files", "n": 7621, "baseline": "with code cleaning; symmetric rule over all files seen in >=1 run log; equals the Manski lower bound", "source": "reanalysis/denominator.py"},
-        {"name": "artifact_execution_success_rate", "value": 0.236, "unit": "proportion of files", "n": 7621, "baseline": "with code cleaning; MAR imputation calibrated on fully-observed files; optimistic", "source": "reanalysis/denominator.py"},
-        {"name": "artifact_execution_success_rate_upper_bound", "value": 0.690, "unit": "proportion of files", "n": 7621, "baseline": "with code cleaning; Manski upper bound, every unobserved cell assumed a success", "source": "reanalysis/denominator.py"},
-        {"name": "excluded_fraction_of_corpus", "value": 0.515, "unit": "proportion of files", "n": 7621, "baseline": "with code cleaning; rows dropped by the authors' notebook rule, 3866 of 7621", "source": "reanalysis/denominator.py"}
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.249,
+          "unit": "proportion of files",
+          "n": 3830,
+          "baseline": "no code cleaning; authors' combining rule; denominator excludes files missing a result from any R version",
+          "source": "paper RQ4 table; reproduced exactly by reanalysis/denominator.py"
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.398,
+          "unit": "proportion of files",
+          "n": 3695,
+          "baseline": "with code cleaning; authors' combining rule; denominator excludes files missing a result from any R version",
+          "source": "paper RQ4 table; reproduced exactly by reanalysis/denominator.py"
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.119,
+          "unit": "proportion of files",
+          "n": 7985,
+          "baseline": "no code cleaning; symmetric rule over all files seen in >=1 run log; equals the Manski lower bound",
+          "source": "reanalysis/denominator.py"
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.193,
+          "unit": "proportion of files",
+          "n": 7621,
+          "baseline": "with code cleaning; symmetric rule over all files seen in >=1 run log; equals the Manski lower bound",
+          "source": "reanalysis/denominator.py"
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.236,
+          "unit": "proportion of files",
+          "n": 7621,
+          "baseline": "with code cleaning; MAR imputation calibrated on fully-observed files; optimistic",
+          "source": "reanalysis/denominator.py"
+        },
+        {
+          "name": "artifact_execution_success_rate_upper_bound",
+          "value": 0.69,
+          "unit": "proportion of files",
+          "n": 7621,
+          "baseline": "with code cleaning; Manski upper bound, every unobserved cell assumed a success",
+          "source": "reanalysis/denominator.py"
+        },
+        {
+          "name": "excluded_fraction_of_corpus",
+          "value": 0.515,
+          "unit": "proportion of files",
+          "n": 7621,
+          "baseline": "with code cleaning; rows dropped by the authors' notebook rule, 3866 of 7621",
+          "source": "reanalysis/denominator.py"
+        }
       ],
-      "evidence": ["a1", "a2", "a3", "a5"],
+      "evidence": [
+        "a1",
+        "a2",
+        "a3",
+        "a5"
+      ],
       "our_assessment": {
         "status": "disputed",
         "why": "Both printed percentages reproduce to the file from the released logs, so this is not a reproduction failure. The dispute is the denominator. The authors' combining rule counts a file as a success if ANY of three R versions succeeded but as a failure only if ALL THREE reported, so a file that one version never reached is deleted rather than counted. That drops 51.5% of the corpus in the cleaning condition and 50.8% without. A symmetric rule over the same logs gives 19.3% and 11.9%; a calibrated MAR imputation gives 23.6% and 12.6%. Manski bounds are [19.3%, 69.0%] and [11.9%, 62.6%], so the quantity is not point-identified by this design and the paper's number is one imputation among several, not the estimate.",
@@ -71,12 +133,44 @@
       "statement": "The files excluded from the analysis were excluded because they exceeded the allocated execution time (TLE); such files may have executed properly given more time, so excluding them avoids misclassifying a slow script as a failure.",
       "scope": "The exclusion bucket reported as 'TLE' in the RQ4 table: 3,829 files without code cleaning and 3,719 with.",
       "quantities": [
-        {"name": "share_of_excluded_bucket_that_is_literally_time_limit_exceeded", "value": 0.014, "unit": "proportion of excluded rows", "n": 4054, "baseline": "no code cleaning; rows dropped by the authors' rule, classified by the raw log strings", "source": "reanalysis/denominator.py"},
-        {"name": "share_of_excluded_bucket_that_is_literally_time_limit_exceeded", "value": 0.238, "unit": "proportion of excluded rows", "n": 3866, "baseline": "with code cleaning; rows dropped by the authors' rule, classified by the raw log strings", "source": "reanalysis/denominator.py"},
-        {"name": "share_of_excluded_bucket_that_is_a_recorded_error", "value": 0.946, "unit": "proportion of excluded rows", "n": 4054, "baseline": "no code cleaning; dropped rows containing no TLE string but at least one recorded execution error", "source": "reanalysis/denominator.py"},
-        {"name": "share_of_excluded_bucket_that_is_a_recorded_error", "value": 0.745, "unit": "proportion of excluded rows", "n": 3866, "baseline": "with code cleaning; dropped rows containing no TLE string but at least one recorded execution error", "source": "reanalysis/denominator.py"}
+        {
+          "name": "share_of_excluded_bucket_that_is_literally_time_limit_exceeded",
+          "value": 0.014,
+          "unit": "proportion of excluded rows",
+          "n": 4054,
+          "baseline": "no code cleaning; rows dropped by the authors' rule, classified by the raw log strings",
+          "source": "reanalysis/denominator.py"
+        },
+        {
+          "name": "share_of_excluded_bucket_that_is_literally_time_limit_exceeded",
+          "value": 0.238,
+          "unit": "proportion of excluded rows",
+          "n": 3866,
+          "baseline": "with code cleaning; rows dropped by the authors' rule, classified by the raw log strings",
+          "source": "reanalysis/denominator.py"
+        },
+        {
+          "name": "share_of_excluded_bucket_that_is_a_recorded_error",
+          "value": 0.946,
+          "unit": "proportion of excluded rows",
+          "n": 4054,
+          "baseline": "no code cleaning; dropped rows containing no TLE string but at least one recorded execution error",
+          "source": "reanalysis/denominator.py"
+        },
+        {
+          "name": "share_of_excluded_bucket_that_is_a_recorded_error",
+          "value": 0.745,
+          "unit": "proportion of excluded rows",
+          "n": 3866,
+          "baseline": "with code cleaning; dropped rows containing no TLE string but at least one recorded execution error",
+          "source": "reanalysis/denominator.py"
+        }
       ],
-      "evidence": ["a1", "a2", "a5"],
+      "evidence": [
+        "a1",
+        "a2",
+        "a5"
+      ],
       "our_assessment": {
         "status": "refuted",
         "why": "Checkable directly against the released logs and false in the direction that matters. Without code cleaning, 98.6% of the bucket labelled TLE contains no 'time limit exceeded' string at all; 94.6% of it consists of files with a recorded execution ERROR that are missing a result from at least one R version. With cleaning the label is right for 23.8% of the bucket. The exclusion is therefore not a conservative handling of slow scripts; it is the removal of observed failures."
@@ -87,12 +181,44 @@
       "statement": "There were no cases of code cleaning breaking previously successful code, so a simple automatic code-cleaning algorithm can only improve code re-execution.",
       "scope": "RQ5, comparing the two runs (as-deposited vs cleaned) over the same corpus.",
       "quantities": [
-        {"name": "code_cleaning_breakage_rate", "value": 0.014, "unit": "proportion of comparable cells", "n": 1729, "baseline": "(doi,file,version) cells where both runs exist and the raw run succeeded; 25 did not succeed after cleaning", "source": "reanalysis/claims.py CLAIM A"},
-        {"name": "code_cleaning_files_broken", "value": 23, "unit": "files", "n": 7621, "baseline": "file level, symmetric combining rule, cleaned run failed where raw run succeeded", "source": "reanalysis/claims.py CLAIM A"},
-        {"name": "code_cleaning_files_fixed", "value": 618, "unit": "files", "n": 7621, "baseline": "file level, symmetric combining rule, cleaned run succeeded where raw run did not", "source": "reanalysis/claims.py CLAIM A"},
-        {"name": "code_cleaning_fixed_to_broken_ratio", "value": 26.9, "unit": "ratio", "n": 7621, "baseline": "618 fixed / 23 broken, symmetric rule, cleaning condition", "source": "reanalysis/claims.py CLAIM A"}
+        {
+          "name": "code_cleaning_breakage_rate",
+          "value": 0.014,
+          "unit": "proportion of comparable cells",
+          "n": 1729,
+          "baseline": "(doi,file,version) cells where both runs exist and the raw run succeeded; 25 did not succeed after cleaning",
+          "source": "reanalysis/claims.py CLAIM A"
+        },
+        {
+          "name": "code_cleaning_files_broken",
+          "value": 23,
+          "unit": "files",
+          "n": 7621,
+          "baseline": "file level, symmetric combining rule, cleaned run failed where raw run succeeded",
+          "source": "reanalysis/claims.py CLAIM A"
+        },
+        {
+          "name": "code_cleaning_files_fixed",
+          "value": 618,
+          "unit": "files",
+          "n": 7621,
+          "baseline": "file level, symmetric combining rule, cleaned run succeeded where raw run did not",
+          "source": "reanalysis/claims.py CLAIM A"
+        },
+        {
+          "name": "code_cleaning_fixed_to_broken_ratio",
+          "value": 26.9,
+          "unit": "ratio",
+          "n": 7621,
+          "baseline": "618 fixed / 23 broken, symmetric rule, cleaning condition",
+          "source": "reanalysis/claims.py CLAIM A"
+        }
       ],
-      "evidence": ["a1", "a2", "a6"],
+      "evidence": [
+        "a1",
+        "a2",
+        "a6"
+      ],
       "our_assessment": {
         "status": "refuted",
         "why": "The universal negative is false: 25 of 1,729 comparable (file, version) cells that succeeded as deposited did not succeed after cleaning, and the modal breakage message is 'Error in file(file, \"rt\") : cannot open the connection' -- exactly what the cleaner's basename() path-flattening does to a package whose data genuinely sits in a subdirectory. Under the authors' own combining rule the breakage count is 0, because the rows that would reveal it are the rows the rule drops; the universal negative is an artifact of the same asymmetry as c1. The practical recommendation survives untouched: 618 fixed against 23 broken is 27:1. What is refuted is the word 'no', which is what licenses running a rewriter over someone else's deposited code unreviewed."
@@ -103,14 +229,61 @@
       "statement": "The strictness of a journal's data sharing policy is positively correlated with the re-execution rate of the code files deposited in its Dataverse collection.",
       "scope": "Journals with more than 30 datasets in a Harvard Dataverse collection; strictness coded 1-5 (no policy / encouraged / required / reviewed / verification) by the authors' own manual survey of 12 journals.",
       "quantities": [
-        {"name": "policy_strictness_execution_rate_spearman", "value": 0.716, "unit": "Spearman rho", "n": 11, "baseline": "journals as units, re-execution rate under the authors' combining rule; two-sided permutation p = 0.014", "source": "reanalysis/claims.py CLAIM B"},
-        {"name": "policy_strictness_execution_rate_spearman", "value": 0.666, "unit": "Spearman rho", "n": 11, "baseline": "journals as units, re-execution rate under the symmetric rule; two-sided permutation p = 0.026", "source": "reanalysis/claims.py CLAIM B"},
-        {"name": "policy_strictness_execution_rate_spearman_loo_min", "value": 0.567, "unit": "Spearman rho", "n": 10, "baseline": "symmetric rule, most influential journal (AJPS) removed", "source": "reanalysis/claims.py CLAIM B"},
-        {"name": "files_per_dataset_execution_rate_spearman", "value": 0.736, "unit": "Spearman rho", "n": 11, "baseline": "mean R files per dataset vs re-execution rate, symmetric rule -- a non-policy covariate in the same released metadata", "source": "reanalysis/claims.py CLAIM B"},
-        {"name": "policy_strictness_execution_rate_partial_spearman", "value": 0.633, "unit": "partial Spearman rho", "n": 11, "baseline": "controlling for mean R files per dataset", "source": "reanalysis/claims.py CLAIM B"},
-        {"name": "artifact_execution_success_rate", "value": 0.291, "unit": "proportion of files", "n": 669, "baseline": "American Journal of Political Science only -- mandatory third-party pre-publication verification since 2016 -- symmetric rule, cleaning condition, 138 datasets", "source": "reanalysis/claims.py CLAIM B"}
+        {
+          "name": "policy_strictness_execution_rate_spearman",
+          "value": 0.716,
+          "unit": "Spearman rho",
+          "n": 11,
+          "baseline": "journals as units, re-execution rate under the authors' combining rule; two-sided permutation p = 0.014",
+          "source": "reanalysis/claims.py CLAIM B"
+        },
+        {
+          "name": "policy_strictness_execution_rate_spearman",
+          "value": 0.666,
+          "unit": "Spearman rho",
+          "n": 11,
+          "baseline": "journals as units, re-execution rate under the symmetric rule; two-sided permutation p = 0.026",
+          "source": "reanalysis/claims.py CLAIM B"
+        },
+        {
+          "name": "policy_strictness_execution_rate_spearman_loo_min",
+          "value": 0.567,
+          "unit": "Spearman rho",
+          "n": 10,
+          "baseline": "symmetric rule, most influential journal (AJPS) removed",
+          "source": "reanalysis/claims.py CLAIM B"
+        },
+        {
+          "name": "files_per_dataset_execution_rate_spearman",
+          "value": 0.736,
+          "unit": "Spearman rho",
+          "n": 11,
+          "baseline": "mean R files per dataset vs re-execution rate, symmetric rule -- a non-policy covariate in the same released metadata",
+          "source": "reanalysis/claims.py CLAIM B"
+        },
+        {
+          "name": "policy_strictness_execution_rate_partial_spearman",
+          "value": 0.633,
+          "unit": "partial Spearman rho",
+          "n": 11,
+          "baseline": "controlling for mean R files per dataset",
+          "source": "reanalysis/claims.py CLAIM B"
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.291,
+          "unit": "proportion of files",
+          "n": 669,
+          "baseline": "American Journal of Political Science only -- mandatory third-party pre-publication verification since 2016 -- symmetric rule, cleaning condition, 138 datasets",
+          "source": "reanalysis/claims.py CLAIM B"
+        }
       ],
-      "evidence": ["a1", "a2", "a4", "a6"],
+      "evidence": [
+        "a1",
+        "a2",
+        "a4",
+        "a6"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
         "why": "The direction is real and survives the denominator change that breaks c1-c3: rho = +0.67 under the symmetric rule, +0.72 under the paper's. But the paper reports no statistic at all, and the inference is n = 11 journals with six tied at level 3, which collapses the permutation space so that p = 0.026 sits near its floor. Leave-one-out: two journals, one at each end, carry most of it. And a covariate the paper never tests -- mean R files per dataset, present in the same released metadata -- correlates with the outcome MORE strongly (rho = +0.736) than policy strictness does; the partial correlation given it is +0.633, so it does not explain the effect away, but at n = 11 nothing separates from anything. One observation with a consistent direction, not a rate."
@@ -121,13 +294,53 @@
       "statement": "Combining results across three R versions identifies a version of R able to re-execute a given file, which is why a success under any one version is counted as a success.",
       "scope": "Table 1 of the paper, the rule that generates every headline number.",
       "quantities": [
-        {"name": "marginal_gain_from_extra_software_versions", "value": 0.004, "unit": "proportion of files", "n": 3490, "baseline": "no code cleaning, fully-observed files: any-of-three (14.5%) minus best single version R 4.0 (14.1%)", "source": "reanalysis/claims.py CLAIM C"},
-        {"name": "marginal_gain_from_extra_software_versions", "value": 0.008, "unit": "proportion of files", "n": 3169, "baseline": "with code cleaning, fully-observed files: any-of-three (25.4%) minus best single version R 3.6 (24.6%)", "source": "reanalysis/claims.py CLAIM C"},
-        {"name": "share_of_successes_succeeding_under_all_three_versions", "value": 0.897, "unit": "proportion of successful files", "n": 505, "baseline": "no code cleaning, fully-observed files: 453 of 505", "source": "reanalysis/claims.py CLAIM C"},
-        {"name": "share_of_successes_succeeding_under_all_three_versions", "value": 0.813, "unit": "proportion of successful files", "n": 806, "baseline": "with code cleaning, fully-observed files: 655 of 806", "source": "reanalysis/claims.py CLAIM C"},
-        {"name": "bias_introduced_by_asymmetric_combining_rule", "value": 0.205, "unit": "proportion of files", "n": 7621, "baseline": "with code cleaning: authors' rate (39.8%) minus symmetric rate (19.3%)", "source": "reanalysis/denominator.py"}
+        {
+          "name": "marginal_gain_from_extra_software_versions",
+          "value": 0.004,
+          "unit": "proportion of files",
+          "n": 3490,
+          "baseline": "no code cleaning, fully-observed files: any-of-three (14.5%) minus best single version R 4.0 (14.1%)",
+          "source": "reanalysis/claims.py CLAIM C"
+        },
+        {
+          "name": "marginal_gain_from_extra_software_versions",
+          "value": 0.008,
+          "unit": "proportion of files",
+          "n": 3169,
+          "baseline": "with code cleaning, fully-observed files: any-of-three (25.4%) minus best single version R 3.6 (24.6%)",
+          "source": "reanalysis/claims.py CLAIM C"
+        },
+        {
+          "name": "share_of_successes_succeeding_under_all_three_versions",
+          "value": 0.897,
+          "unit": "proportion of successful files",
+          "n": 505,
+          "baseline": "no code cleaning, fully-observed files: 453 of 505",
+          "source": "reanalysis/claims.py CLAIM C"
+        },
+        {
+          "name": "share_of_successes_succeeding_under_all_three_versions",
+          "value": 0.813,
+          "unit": "proportion of successful files",
+          "n": 806,
+          "baseline": "with code cleaning, fully-observed files: 655 of 806",
+          "source": "reanalysis/claims.py CLAIM C"
+        },
+        {
+          "name": "bias_introduced_by_asymmetric_combining_rule",
+          "value": 0.205,
+          "unit": "proportion of files",
+          "n": 7621,
+          "baseline": "with code cleaning: authors' rate (39.8%) minus symmetric rate (19.3%)",
+          "source": "reanalysis/denominator.py"
+        }
       ],
-      "evidence": ["a1", "a2", "a5", "a6"],
+      "evidence": [
+        "a1",
+        "a2",
+        "a5",
+        "a6"
+      ],
       "our_assessment": {
         "status": "not-identifiable",
         "why": "Not merely disputed: the premise is measurable on the fully-observed files, where no imputation is needed, and it is nearly empty. Only 13 of 3,490 files (0.4%) without cleaning and 30 of 3,169 (0.9%) with cleaning succeed under exactly one of three versions; per-version single rates are 13.5/14.0/14.1 and 21.4/24.6/24.6. Whether an R script re-executes is a property of the script, not of the interpreter version. So the design feature that justifies the 'success in any' half of the asymmetry rescues under one file in a hundred, while the asymmetry it licenses moves the headline by about twenty points. The claim it is used to support -- that the reported rate is the rate at which deposited R code re-executes -- has no truth value until the exclusion rule is stated as a choice, which the paper does not do."
@@ -138,9 +351,18 @@
       "statement": "Code re-execution is necessary but not sufficient for computational reproducibility; a spot-check of three fully-successful datasets suggests successful re-execution is a good indicator that reproduction will succeed.",
       "scope": "RQ10. Three replication packages sampled from the 127 in which every R file re-executed.",
       "quantities": [
-        {"name": "reproducibility_spot_check_n", "value": 3, "unit": "datasets", "n": 127, "baseline": "sampled from datasets where all R files succeeded", "source": "paper RQ10"}
+        {
+          "name": "reproducibility_spot_check_n",
+          "value": 3,
+          "unit": "datasets",
+          "n": 127,
+          "baseline": "sampled from datasets where all R files succeeded",
+          "source": "paper RQ10"
+        }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
         "status": "unverified",
         "why": "Not checked here and not worth checking as stated. n = 3, sampled from the best-behaved stratum (all files successful), and even within it one of the three produced decimal-level discrepancies traced to a library missing under R 3.6 and another could not save its plot. The paper hedges appropriately. Recorded so that nobody later cites this paper for a reproduction rate: it does not contain one."
@@ -151,11 +373,34 @@
       "statement": "Researchers using Harvard Dataverse almost never use environment- or workflow-capture tooling: renv in 2 of 2,091 packages, no install.R, no packrat, no provenance libraries, no testing libraries, 9 DESCRIPTION files.",
       "scope": "Static scan of 2,091 replication packages and 8,875 R files deposited 2010 to July 2020.",
       "quantities": [
-        {"name": "packages_using_environment_capture_tooling", "value": 2, "unit": "packages", "n": 2091, "baseline": "renv detected; packrat and install.R zero; DESCRIPTION present in 9", "source": "paper RQ3"},
-        {"name": "packages_containing_documentation_file", "value": 0.57, "unit": "proportion of packages", "n": 2091, "baseline": "filename contains readme/codebook/documentation/guide/instruction", "source": "paper RQ2"},
-        {"name": "mean_external_dependencies_per_r_file", "value": 4.3, "unit": "libraries", "n": 8875, "baseline": "detected via library/require/install.packages calls", "source": "paper RQ3"}
+        {
+          "name": "packages_using_environment_capture_tooling",
+          "value": 2,
+          "unit": "packages",
+          "n": 2091,
+          "baseline": "renv detected; packrat and install.R zero; DESCRIPTION present in 9",
+          "source": "paper RQ3"
+        },
+        {
+          "name": "packages_containing_documentation_file",
+          "value": 0.57,
+          "unit": "proportion of packages",
+          "n": 2091,
+          "baseline": "filename contains readme/codebook/documentation/guide/instruction",
+          "source": "paper RQ2"
+        },
+        {
+          "name": "mean_external_dependencies_per_r_file",
+          "value": 4.3,
+          "unit": "libraries",
+          "n": 8875,
+          "baseline": "detected via library/require/install.packages calls",
+          "source": "paper RQ3"
+        }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "Descriptive, computed by a static scan whose code is released, and not affected by the combining rule that damages c1-c5. This is the claim in the paper I would most confidently reuse, and it is the mechanism behind the low execution rate: 4.3 unpinned dependencies per file and essentially zero environment capture is a specification of failure. Not independently recomputed here -- the per-package scan outputs are in rpackage_stats.csv, which I did not open."
@@ -239,7 +484,9 @@
       "locator": "reanalysis/denominator.py",
       "status": "verified-usable",
       "local_path": "reanalysis/denominator.py",
-      "derived_from": ["a3"],
+      "derived_from": [
+        "a3"
+      ],
       "checked": {
         "on": "2026-08-24",
         "by": "maria",
@@ -253,7 +500,10 @@
       "locator": "reanalysis/claims.py",
       "status": "verified-usable",
       "local_path": "reanalysis/claims.py",
-      "derived_from": ["a3", "a4"],
+      "derived_from": [
+        "a3",
+        "a4"
+      ],
       "checked": {
         "on": "2026-08-24",
         "by": "maria",
@@ -283,6 +533,12 @@
       "type": "cito:citesAsEvidence",
       "target": "breznau2022-hidden-universe",
       "why": "Used as the reference case for what a single analytic degree of freedom does to a published estimate, when comparing the size of the denominator effect found here."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "samuel2024-jupyter-pmc",
+      "why": "Reciprocal. Same estimand in Python/GitHub/PubMed Central rather than R/Dataverse, and low in both. Read together they are the pair that shows the numerical agreement in this literature is not real: their funnels are not the same funnel. Samuel & Mietchen also do the thing this record's c1 says was missing here -- they print EVERY stage, so a reader can choose the denominator.",
+      "asymmetric_note": "samuel2024 additionally carries a cito:corrects edge at this record's c1, about practice rather than arithmetic. That edge runs one way only: nothing here corrects anything there."
     }
   ],
   "open_questions": [

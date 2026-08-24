@@ -1,0 +1,90 @@
+==========================================================================
+FUNNEL, 2021 run, recomputed from the shipped database
+==========================================================================
+  attempted executions (reason != skipping) :   4169
+  install-dependency errors                 :   1485  (35.6%)
+  finished with no exception                :    396  (9.5% of attempted)
+  finished AND identical results            :    245  (5.9% of attempted)
+  finished but DIFFERENT results            :    151  (3.6% of attempted)
+  different / (different + identical)       :  0.381
+
+  Paper's printed 2021 values for comparison: attempted 4,169 (43.45%),
+  finished 396 (9.50%), identical 245 (5.88%), different 151 (3.62%),
+  ratio different/(different+identical) = 0.38.
+  Small differences are expected: the archive is a snapshot and the paper
+  applies one further language filter. Report the discrepancy, do not hide it.
+
+==========================================================================
+Q1 -- HOW MUCH DO OUTCOMES CLUSTER BY REPOSITORY?
+==========================================================================
+  outcome = executes without exception                
+     repositories 685, executions 4169, mean cluster size m0 = 6.06
+     ICC = 0.435   design effect = 3.20   effective n = 1302 (not 4169)
+
+  outcome = executes AND matches the recorded output  
+     repositories 685, executions 4169, mean cluster size m0 = 6.06
+     ICC = 0.335   design effect = 2.70   effective n = 1547 (not 4169)
+
+  repositories contributing >= 3 executions: 364
+  of those, repositories where EVERY execution had the same outcome: 281 (77.2%)
+  -> a repository is close to a single Bernoulli trial, not to m independent ones.
+
+==========================================================================
+Q2 -- THE AGE ASSOCIATION AT NOTEBOOK LEVEL AND AT REPOSITORY LEVEL
+==========================================================================
+    year   age |  nb_succ   nb_tot  nb_rate |  rp_succ   rp_tot  rp_rate | top-repo share of cohort successes
+    2010    11 |        5       25    20.0% |        2        3    66.7% |     60% (3 of 5)
+    2011    10 |        2        9    22.2% |        1        3    33.3% |    100% (2 of 2)
+    2012     9 |        0       20     0.0% |        0        3     0.0% |      0% (0 of 0)
+    2013     8 |        6      129     4.7% |        3       16    18.8% |     50% (3 of 6)
+    2014     7 |       16      217     7.4% |        2       24     8.3% |     94% (15 of 16)
+    2015     6 |       38      283    13.4% |        8       50    16.0% |     63% (24 of 38)
+    2016     5 |       22      643     3.4% |       15      109    13.8% |     14% (3 of 22)
+    2017     4 |       37      674     5.5% |       19      124    15.3% |     14% (5 of 37)
+    2018     3 |       69      745     9.3% |       23      122    18.9% |     16% (11 of 69)
+    2019     2 |      146      840    17.4% |       34      132    25.8% |     23% (33 of 146)
+    2020     1 |       55      565     9.7% |       23       98    23.5% |     15% (8 of 55)
+    2021     0 |        0       19     0.0% |        0        1     0.0% |      0% (0 of 0)
+
+  NOTEBOOK level (the authors' unit)       trend z =  -4.40  p = 1.06e-05    OR/year = 0.882
+  REPOSITORY level (the independent unit)  trend z =  -1.87  p = 0.0618      OR/year = 0.906
+
+  If the notebook-level trend is much stronger than the repository-level
+  one, the age association is about which REPOSITORIES are old, not about
+  what happens to code as it ages.
+
+==========================================================================
+Q3 -- THE SAME PIPELINE, TWO YEARS APART, ON OVERLAPPING COHORTS
+==========================================================================
+    year |           2021 run |           2023 run | rate ratio
+    2013 |     6/129   =   4.7% |    69/141   =  48.9% | x10.5
+    2014 |    16/217   =   7.4% |    27/317   =   8.5% | x1.2
+    2015 |    38/283   =  13.4% |    60/235   =  25.5% | x1.9
+    2016 |    22/643   =   3.4% |    51/420   =  12.1% | x3.5
+    2017 |    37/674   =   5.5% |    75/666   =  11.3% | x2.1
+    2018 |    69/745   =   9.3% |   208/1283  =  16.2% | x1.8
+    2019 |   146/840   =  17.4% |   267/1549  =  17.2% | x1.0
+    2020 |    55/565   =   9.7% |   231/3670  =   6.3% | x0.6
+    2021 |     0/19    =   0.0% |   121/1368  =   8.8% | xinf
+
+  Same code, same variable (GitHub repository creation year), same team,
+  overlapping repositories. If a cohort's rate can move by an order of
+  magnitude between two runs of one pipeline, the cohort rate is not a
+  property of the cohort. Neither run's age trend should be believed:
+  the 2021 data give a NEGATIVE age association and the 2023 table a
+  strongly POSITIVE one (age_trend.py: z = +11.7).
+
+==========================================================================
+Q4 -- HOW MANY REPOSITORIES PRODUCE THE SUCCESSES?
+==========================================================================
+  396 successes come from 130 distinct repositories
+     top 1   repositories account for   33 successes ( 8.3%)
+     top 3   repositories account for   79 successes (19.9%)
+     top 5   repositories account for  110 successes (27.8%)
+     top 10  repositories account for  160 successes (40.4%)
+     top 20  repositories account for  224 successes (56.6%)
+     top 50  repositories account for  311 successes (78.5%)
+  Gini of successes across contributing repositories: 0.541
+  -> any per-cohort or per-field rate in this design is a statement about
+     a handful of repositories, reported with a notebook-sized n.
+

@@ -1,0 +1,73 @@
+# THE FUNNELS. One row per stage of one study. Every number is transcribed from a
+# primary source that maria read on 2026-08-24, or computed from released data by
+# the reanalysis scripts in this folder. Nothing here is taken from another paper's
+# summary of a third paper -- that is the failure mode this whole record is about.
+#
+# columns:
+#   study        stable key
+#   stage_order  1 = widest population the study defines, increasing toward the
+#                narrowest denominator the study actually printed a rate against
+#   stage        what this denominator is
+#   n            size of the denominator at this stage
+#   k            how many of them reached the study's success event (blank if the
+#                study does not report the event at this stage)
+#   event        what "success" means at this row
+#   printed      yes if the STUDY ITSELF printed the headline percentage k/n
+#   unit         the thing being counted
+#   cluster_n    number of independent clusters the units sit in (blank = units are
+#                already independent). Used for the design-effect correction.
+#   provenance
+study,stage_order,stage,n,k,event,printed,unit,cluster_n,provenance
+#
+# --- Trisovic et al. 2022, Sci Data 9:60. R code on Harvard Dataverse. -----------
+# Code-cleaning condition. Raw run logs re-analysed in
+# papers/trisovic2022-code-execution/reanalysis/denominator.py
+trisovic2022,1,all R files detected in the corpus,9078,,executes end to end,no,R file,2109,paper Implementation section
+trisovic2022,2,R files appearing in at least one run log,7621,1472,executes end to end,no,R file,2085,recomputed from released logs
+trisovic2022,3,R files with a combined result under the authors' rule,3695,1472,executes end to end,yes,R file,1447,paper RQ4 table; reproduced exactly
+#
+# --- Samuel & Mietchen 2024, GigaScience 13:giad113. Jupyter notebooks from PMC. --
+samuel2024,1,all notebooks found,27271,1203,executes end to end,no,notebook,2660,paper abstract
+samuel2024,2,Python notebooks,22578,1203,executes end to end,no,notebook,2660,paper abstract
+samuel2024,3,Python notebooks with declared dependencies (attempted),15818,1203,executes end to end,yes,notebook,2660,paper Results / shipped notebook
+samuel2024,4,notebooks whose dependencies all installed,10389,1203,executes end to end,no,notebook,2660,paper abstract / shipped notebook
+#
+# Same study, stricter event: output identical to the recorded output.
+samuel2024out,1,all notebooks found,27271,879,executes AND output matches,no,notebook,2660,paper abstract
+samuel2024out,3,Python notebooks with declared dependencies (attempted),15818,879,executes AND output matches,yes,notebook,2660,paper Results
+#
+# --- Pimentel et al. 2019, MSR. Jupyter notebooks from GitHub at large. ----------
+pimentel2019,1,valid notebooks after deduplication,1159166,208323,executes end to end,no,notebook,264023,paper section III-B
+pimentel2019,2,Python notebooks with unambiguous execution order,863878,208323,executes end to end,yes,notebook,264023,paper RQ7
+pimentel2019,3,notebooks actually executed,788781,208323,executes end to end,no,notebook,264023,paper RQ7 arithmetic (208323+570476+9982)
+#
+pimentel2019out,1,valid notebooks after deduplication,1159166,34814,executes AND output matches,no,notebook,264023,computed from the 4.03% of 863878
+pimentel2019out,2,Python notebooks with unambiguous execution order,863878,34814,executes AND output matches,yes,notebook,264023,paper RQ7
+#
+# --- Collberg & Proebsting 2015, TR 14-04 / CACM 2016. ACM systems papers. --------
+# NOTE: event is BUILDING the code, not running it and not reproducing a result.
+collberg2015,1,papers examined,601,130,code obtained and built in under 30 min,no,paper,,TR abstract + arithmetic
+collberg2015,2,papers whose results were backed by code,402,130,code obtained and built in under 30 min,yes,paper,,TR abstract
+#
+collberg2015c,1,papers examined,601,217,built by us OR the author says it would build,no,paper,,TR abstract + arithmetic
+collberg2015c,2,papers whose results were backed by code,402,217,built by us OR the author says it would build,yes,paper,,TR abstract
+#
+# --- Chang & Li 2015, FEDS 2015-083. Economics journals. -------------------------
+changli2015,1,papers attempted,67,22,key qualitative result replicated WITHOUT author contact,yes,paper,,paper abstract
+changli2015aid,1,papers attempted,67,29,key qualitative result replicated WITH author assistance,no,paper,,paper abstract; this is the 43% Trisovic et al. quote
+changli2015aid,2,papers excl. confidential data and unavailable software,59,29,key qualitative result replicated WITH author assistance,yes,paper,,paper abstract; the authors' own 49%
+#
+# --- Hardwicke et al. 2018, R Soc Open Sci 5:180448. Cognition, post-policy. ------
+# A DATA-reuse funnel rather than a code-execution one; same shape.
+hardwicke2018,1,empirical articles published post-policy,174,136,has a data-available statement,yes,article,,paper abstract
+hardwicke2018r,1,empirical articles published post-policy,174,85,data present AND judged in-principle reusable,no,article,,computed from 85/136 of 136/174
+hardwicke2018r,2,articles with a data-available statement,136,85,data present AND judged in-principle reusable,yes,article,,paper abstract
+hardwicke2018p,1,articles with reusable data that were sampled,35,11,every target value reproduced WITHOUT author assistance,yes,article,,paper Results section 3.3 (31%)
+hardwicke2018p2,1,articles with reusable data that were sampled,35,22,every target value reproduced WITH author assistance,yes,article,,paper abstract
+#
+# --- Stodden Seiler & Ma 2018, PNAS 115:2584. Science journal, on-request policy. -
+# ABSTRACT ONLY. PNAS is not open access and I did not obtain the full text, so
+# these are percentages read off the abstract with counts BACK-COMPUTED, not read.
+# Flagged so a sensitivity analysis can drop this study.
+stodden2018,1,randomly sampled Science papers,204,90,artifacts obtained on request,yes,paper,,ABSTRACT ONLY -- 44% of 204; count inferred
+stodden2018r,1,randomly sampled Science papers,204,53,findings reproduced,yes,paper,,ABSTRACT ONLY -- 26% of 204; count inferred

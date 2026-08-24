@@ -1,0 +1,84 @@
+========================================================================
+SAMUEL & MIETCHEN 2024 -- reproduction success vs repository age
+========================================================================
+
+------------------------------------------------------------------------
+A. The ten cohorts the authors' notebook keeps (success_count > 10)
+------------------------------------------------------------------------
+  year        age  success    total     rate
+  2022          1       80      680    11.8%
+  2021          2      121     1368     8.8%
+  2020          3      231     3670     6.3%
+  2019          4      267     1549    17.2%
+  2018          5      208     1283    16.2%
+  2017          6       75      666    11.3%
+  2016          7       51      420    12.1%
+  2015          8       60      235    25.5%
+  2014          9       27      317     8.5%
+  2013         10       69      141    48.9%
+  TOTAL               1189    10329    11.5%
+  Cochran-Armitage trend z = +11.42  (two-sided p = 3.49e-30)
+  logistic slope on age    = +0.1604  (SE 0.0142, z = +11.27)  -> OR per year = 1.174
+  between-cohort heterogeneity chi2 = 427.6 on 9 df (a pure binomial would give ~9)
+  Spearman(age, rate) rho = +0.418  (n=10, unweighted -- shown for shape only)
+
+------------------------------------------------------------------------
+B. All cohorts, including the three the >10 filter deleted (recovered by subtraction: 14 successes in 60 executions, a 23.3% rate)
+------------------------------------------------------------------------
+  year        age  success    total     rate
+  2022          1       80      680    11.8%
+  2021          2      121     1368     8.8%
+  2020          3      231     3670     6.3%
+  2019          4      267     1549    17.2%
+  2018          5      208     1283    16.2%
+  2017          6       75      666    11.3%
+  2016          7       51      420    12.1%
+  2015          8       60      235    25.5%
+  2014          9       27      317     8.5%
+  2013         10       69      141    48.9%
+  2010-2012    12       14       60    23.3%
+  TOTAL               1203    10389    11.6%
+  Cochran-Armitage trend z = +11.72  (two-sided p = 1.03e-31)
+  logistic slope on age    = +0.1539  (SE 0.0133, z = +11.54)  -> OR per year = 1.166
+  between-cohort heterogeneity chi2 = 433.5 on 10 df (a pure binomial would give ~10)
+  Spearman(age, rate) rho = +0.527  (n=11, unweighted -- shown for shape only)
+
+  NOTE ON THE FILTER: the deleted cohorts are the OLDEST and their pooled
+  rate (23.3%) is about twice the corpus rate (11.6%). The authors' filter
+  therefore removes evidence FOR the association their own figure shows,
+  and the trend statistic gets stronger when the filter is undone.
+
+========================================================================
+HOW MUCH CLUSTERING DOES IT TAKE TO KILL THE TREND?
+========================================================================
+  Notebooks are not independent: every notebook in a repository shares
+  one conda environment, and 76.4% of the corpus lives in repositories
+  holding ten or more notebooks. Mean cluster size over the executed set:
+      10389 executed notebooks / 2660 repositories = 3.91
+  (an upper bound on the effective n -- not every repo contributed)
+
+  DEFF = 1 + (mbar - 1) * ICC. Dividing every count by DEFF is the
+  standard first-order correction for a clustered binomial.
+
+     ICC     DEFF        trend z          p
+    0.00     1.00          11.72   1.03e-31
+    0.10     1.29          10.31   6.05e-25
+    0.25     1.73           8.92   4.74e-19
+    0.50     2.45           7.48   7.32e-14
+    0.75     3.18           6.57   4.97e-11
+    1.00     3.91           5.93   3.04e-09
+
+  Even at ICC = 1 -- every notebook in a repository sharing one fate --
+  the trend survives. The direction of this result is not a clustering
+  artifact. What clustering DOES undermine is any confidence interval
+  the authors' notebook-level counts would imply.
+
+========================================================================
+SYNTHETIC CONTROL -- no age effect, clustered like the real corpus
+========================================================================
+  2000 simulations, cohort sizes and overall rate matched to the data.
+  naive |z| > 1.96 in 423/2000 = 21.1% of runs (nominal 5%)
+  simulated |z| 95th percentile = 2.96   (the real data give z = +11.72)
+  -> clustering inflates the naive test badly, and the observed z is still
+     outside the inflated null. The sign is real; the p-value is not.
+

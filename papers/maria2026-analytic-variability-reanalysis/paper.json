@@ -735,6 +735,11 @@
       "target": "trisovic2022-code-execution",
       "why": "Reciprocal, and it points the other way: trisovic2022 is a counter-example to this record's headline that analytic choices move precision and not the estimate. There, one exclusion rule moves the point estimate from 12% to 40%. The distinguishing condition -- stated in neither literature -- is whether the free choice is a modelling choice on a fixed set of cases (moves the SE) or a choice about WHAT COUNTS AS A CASE (moves the estimate).",
       "asymmetric_note": "trisovic2022 does not disagree with any number recorded here. It bounds the scope of the generalisation drawn from them."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "samuel2024-jupyter-pmc",
+      "why": "Reciprocal. samuel2024 ran one pipeline twice, two years apart, with one team, and the age-reproducibility association changed sign (z = -4.40 to z = +11.7). That is many-analysts-scale dispersion with n = 1 analyst, produced entirely by an unstable upstream conditioning filter. It bounds what the many-analysts literature can attribute to analysts."
     }
   ],
   "open_questions": [

@@ -1,0 +1,35 @@
+# Reproduction-success by GitHub repository creation year, Samuel & Mietchen 2023 re-run.
+#
+# PROVENANCE. Transcribed by maria on 2026-08-24 from the STORED CELL OUTPUTS of
+# analyses/PMC4.DecayRate.ipynb in github.com/fusion-jena/computational-reproducibility-pmc
+# at commit 138cc629130cca56af31b91dffea439a855dae0a. The underlying database is a
+# PostgreSQL dump on Zenodo (record 6802158 family) which was NOT downloaded; these are
+# the authors' own computed values, read out of the notebook they shipped.
+#
+# Rows 2013-2022 come from cell 17's printed dataframe, which the notebook filters to
+# cohorts with success_count > 10.
+# Row "2010-2012" is RECOVERED BY SUBTRACTION and is flagged as such:
+#   cell 9  prints len(combined_execution_reason_df) = 10389   (all executions)
+#   cell 17 rows sum to                                10329   (cohorts kept)
+#   -> 60 executions belong to the three suppressed cohorts.
+#   cell 11 prints success counts for ALL 13 years, summing to 1203 = the paper's total,
+#   of which 2010/2011/2012 contribute 3 + 7 + 4 = 14.
+# The recovery is exact only if the year merge dropped no rows; it did not, since the
+# success side reconciles to 1203 on the nose.
+#
+# repo_age is relative to 2023 (the notebook uses datetime.now().year at run time).
+# success = notebook executed end to end with no exception. It does NOT mean the results
+# matched: of 1203 successes corpus-wide, 879 matched and 324 did not.
+#
+# columns: year, repo_age, success_count, total_count, kept_by_authors_filter
+2022,1,80,680,yes
+2021,2,121,1368,yes
+2020,3,231,3670,yes
+2019,4,267,1549,yes
+2018,5,208,1283,yes
+2017,6,75,666,yes
+2016,7,51,420,yes
+2015,8,60,235,yes
+2014,9,27,317,yes
+2013,10,69,141,yes
+2010-2012,12,14,60,no

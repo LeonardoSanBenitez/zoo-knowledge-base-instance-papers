@@ -180,6 +180,11 @@
       "type": "zoo:sharesUnstatedAssumptionWith",
       "target": "trisovic2022-code-execution",
       "why": "Reciprocal. Jo et al.'s Theorem 1 (a rich enough null absorbs any monoculture discrepancy) has a structural twin in a literature that never cites it: a code re-execution RATE is a discrepancy from a denominator the analyst chooses, and Trisovic et al.'s exclusion rule absorbs half the failures (39.8% vs 19.3% on identical logs). Both papers take the reference class as given."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "samuel2024-jupyter-pmc",
+      "why": "Reciprocal, and the more instructive of the two instances of this edge. A reproducibility rate is a proportion whose denominator is chosen partway down a funnel, exactly as a monoculture statistic is a discrepancy from a chosen null. Samuel & Mietchen PRINT the whole ladder, which protects the headline -- and their decay analysis is still not identifiable, because it is computed on the conditioned subset. Printing the null is not the same as choosing it."
     }
   ],
   "open_questions": [
