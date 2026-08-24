@@ -9,7 +9,7 @@ artifact that runs. So the base rate for *running* bounds everything downstream,
 it turns out to be the least stable number in metascience.
 
 Records: `trisovic2022-code-execution`, `samuel2024-jupyter-pmc`,
-`maria2026-executability-denominators`.
+`hardwicke2018-cognition-open-data`, `maria2026-executability-denominators`.
 
 ---
 
@@ -79,6 +79,54 @@ protects the headline number and does not protect what is computed downstream of
 denominator choice of the three — it counts dependency-install failures as failures —
 and is the study most often quoted, at 24.11%.
 
+## The data side: the same funnel, and the same missing thing
+
+`hardwicke2018-cognition-open-data` is the DATA version of all of the above, and it
+is the only study anywhere that codes reproduction outcomes **per reported value and
+per value type**. *Cognition* introduced a mandatory open-data policy in 2015;
+Hardwicke et al. coded all 591 empirical articles over three years and then re-ran
+the reported analyses of 35 of them, checking 1,324 individual values.
+
+Rebuilding their funnel from the raw coding data recovers every printed figure
+exactly and adds two rungs they do not print, and those two rungs say what the
+policy actually did:
+
+| | pre-policy (417) | post-policy (174) |
+|---|---|---|
+| data-availability statement | 25% | 78% |
+| …file downloaded and opened | 99% of statements | 98% |
+| **…ALL needed data present** | **29%** | **78%** |
+| …and understandable = reusable | 22% | 62% |
+
+**Availability was never the binding constraint.** Ninety-nine percent of statements
+already led to a file that opened. What a mandatory policy changed is *completeness*.
+
+**Which kind of published number fails to reproduce.** Not in the paper, not anywhere:
+
+| p-value | SD | F | effect size | df | **mean** |
+|---|---|---|---|---|---|
+| 9.2% | 8.9% | 8.4% | 5.6% | 1.9% | **1.5%** |
+
+Descriptive location survives; inference and dispersion do not, by about a factor of
+six between the two best-measured types (mean 274 values, p-value 185). The
+article-level bootstrap separates the two ends and not the middle. **If you will reuse
+one number from a paper, reuse a mean.**
+
+**And why.** Of the values whose cause was identified: under-specification of the
+analysis 24, data problems 8, an actual analysis error 1, typos 0. The dominant reason
+a published number does not come back out of its own shared data is that *the paper
+did not say precisely enough what was done*. Meanwhile the mandatory open-**data**
+policy moved analysis-script sharing from 8.7% to 6.0% — that is, not at all.
+
+**This is the same finding as the code side wearing different clothes.** There, an
+artifact fails because the *environment* was described rather than preserved. Here, an
+analysis fails because the *procedure* was described rather than preserved. In both
+cases the materials are fine and **the executable specification is missing** — and
+every instrument the open-science movement has built optimises the materials.
+
+End to end: P(reusable) × P(reproduces unaided | reusable) ≈ **15% post-policy**
+against ≈2% before. A ninefold improvement, and still about one article in seven.
+
 ## Two things everyone recommends, and the evidence for them
 
 **"Pin your dependency versions."** Recommendation #1 of Trisovic et al., a conclusion
@@ -96,6 +144,16 @@ A pin is a **provenance** record and a **portability** liability. The guidance
 literature conflates them. What preserves executability is a *built* environment, not
 a list of version numbers.
 
+**"Test the recommendations, not just the outcome."** Trisovic et al.'s own six
+recommendations, tested against Trisovic et al.'s own outcome data at the package
+level with a cluster bootstrap: only R Markdown has an interval excluding zero
+(+9.2 points [+0.3, +20.4]); documentation gives +2.6 [−1.4, +6.4]; tests +4.6
+[−2.6, +12.6]. A power curve puts the detectable effect at about +5 points, so the
+documentation null is inconclusive rather than strong. **Containerisation appears in
+9 of 2,060 packages and workflow or provenance libraries in zero** — the
+recommendation with the best theoretical case has never been tried at a scale anyone
+could measure, and advice is what has been tried.
+
 **"Journals should require artifacts."** The policy-strictness correlation is real and
 survives both denominators (Spearman +0.67 to +0.72, n = 11 journals, six tied at one
 level, and out-predicted by a covariate nobody tests). But the number worth quoting is
@@ -112,8 +170,11 @@ does not travel.
    R² = 0.19 for log SE, ≈0 for the estimate) with what happens here (one exclusion
    rule, twenty points on the estimate). **Recorded as a hypothesis, not a finding** —
    `maria2026-executability-denominators#c5` states the test, on data already held.
-2. **Units are clustered and nobody corrects for it.** Measured ICC for reproduction
-   within a repository: **0.435**; 77% of repositories contributing ≥3 notebooks had a
+2. **Units are clustered and nobody corrects for it.** Measured twice, on two corpora,
+   two languages, two repositories: ICC **0.435** for notebooks within GitHub
+   repositories and **0.251** for R files within Dataverse packages. On the data side
+   the same shape appears as concentration: 63% of Hardwicke's articles have zero
+   major errors and the top 10 hold 95% of them. Also: 77% of repositories contributing ≥3 notebooks had a
    completely homogeneous outcome; all 396 successes of one run came from 130
    repositories, top-20 share 57%, Gini 0.541. Effective *n* is about a third of the
    printed one, and every per-field, per-journal, per-year comparison in this
