@@ -270,6 +270,36 @@
           "n": 9,
           "baseline": "median over studies of (logit of widest-denominator rate) minus (logit of narrowest), same numerator",
           "source": "reanalysis/pool.py section 4"
+        },
+        {
+          "name": "reported_result_recovery_rate",
+          "value": 0.328,
+          "unit": "proportion of articles",
+          "n": 67,
+          "count": 22,
+          "denominator": 67,
+          "baseline": "Chang & Li 2015, economics, 13 journals: key qualitative result replicated WITHOUT contacting the authors. Transcribed from the FEDS 2015-083 abstract read in primary form; no separate record exists because I did not open their artifacts",
+          "source": "artifacts/changli2015.pdf abstract"
+        },
+        {
+          "name": "reported_result_recovery_rate",
+          "value": 0.26,
+          "unit": "proportion of articles",
+          "n": 204,
+          "count": 53,
+          "denominator": 204,
+          "baseline": "Stodden, Seiler & Ma 2018, Science, on-request policy: findings reproduced. ABSTRACT ONLY -- PNAS is paywalled, the count is back-computed from 26 percent of 204 and is not a transcription",
+          "source": "EuropePMC abstract for PMC5856507"
+        },
+        {
+          "name": "reported_result_recovery_rate_with_author_help",
+          "value": 0.492,
+          "unit": "proportion of articles",
+          "n": 59,
+          "count": 29,
+          "denominator": 59,
+          "baseline": "Chang & Li 2015 with author assistance, excluding 6 confidential-data and 2 unavailable-software papers. THIS is the 49 percent that Trisovic et al. render as 43 percent by substituting denominator 67",
+          "source": "artifacts/changli2015.pdf abstract"
         }
       ],
       "evidence": [
