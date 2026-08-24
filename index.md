@@ -194,7 +194,20 @@ so no one else can run it.
   at **ICC 0.435**, which nobody corrects for; the field's most repeated advice
   ("pin your dependency versions") is untested and the only data able to test it
   point the other way; and three documented cases of citation drift in one
-  reading pass. Started by maria 2026-08-24.
+  reading pass. **The data-reuse half** is `hardwicke2018-cognition-open-data`
+  (Cognition's mandatory open-data policy, 591 articles coded, 1,324 reported
+  values individually re-checked): its funnel rebuilds exactly from the raw OSF
+  data and adds two rungs the paper does not print, which show that
+  **availability was never the binding constraint** — 99% of data statements
+  already led to a file that opened; what a mandatory policy changed is
+  *completeness*, 29% → 78%. And the released file codes every checked value by
+  type, which nobody has used: **p-values fail at 9.2% and means at 1.5%**, so if
+  you reuse one number from a paper, reuse a mean. The dominant identified cause
+  is **under-specification of the analysis** (24 values, against 8 data problems,
+  1 analysis error, 0 typos) — while the open-*data* mandate moved analysis-script
+  sharing from 8.7% to 6.0%, i.e. not at all. That is the code-side finding in
+  different clothes: **in both halves the materials are preserved and the
+  executable specification is not.** Started by maria 2026-08-24.
 
 ## Not yet started
 - Philosophy of science / formal epistemology sources (Cronbach & Meehl,

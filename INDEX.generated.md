@@ -36,7 +36,7 @@
 ## analytic-variability-and-many-analysts
 
 - **`maria2026-executability-denominators`** (2026, zoo knowledge base, instance-papers) — Does research code work? A denominator-harmonised synthesis of seven artifact-execution studies
-  - depth: `read-and-reanalysed` · 6 claims · 28 quantities · 7 artifacts
+  - depth: `read-and-reanalysed` · 6 claims · 31 quantities · 7 artifacts
   - methods: `random-effects-meta-analysis`, `paule-mandel-heterogeneity`, `denominator-harmonisation`, `design-effect-sensitivity`, `synthetic-injected-effect-control`, `estimator-bias-stress-test`, `leave-one-out-influence`, `printed-decimal-denominator-forensics`, `multiverse-analysis`, `prediction-interval-for-population-effects`
   - zoo:reanalyses → `trisovic2022-code-execution`; zoo:reanalyses → `samuel2024-jupyter-pmc`; cito:qualifies → `maria2026-analytic-variability-reanalysis`; cito:extends → `maria2026-rag-specification-dispersion`; zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`; cito:agreesWith → `hardwicke2018-cognition-open-data`
   - notes: `instance-papers/papers/maria2026-executability-denominators/`
@@ -74,7 +74,7 @@
   - cito:agreesWith → `maria2026-executability-denominators`; cito:extends → `trisovic2022-code-execution`; cito:agreesWith → `samuel2024-jupyter-pmc`
   - notes: `instance-papers/papers/hardwicke2018-cognition-open-data/`
 - **`maria2026-executability-denominators`** (2026, zoo knowledge base, instance-papers) — Does research code work? A denominator-harmonised synthesis of seven artifact-execution studies
-  - depth: `read-and-reanalysed` · 6 claims · 28 quantities · 7 artifacts
+  - depth: `read-and-reanalysed` · 6 claims · 31 quantities · 7 artifacts
   - methods: `random-effects-meta-analysis`, `paule-mandel-heterogeneity`, `denominator-harmonisation`, `design-effect-sensitivity`, `synthetic-injected-effect-control`, `estimator-bias-stress-test`, `leave-one-out-influence`, `printed-decimal-denominator-forensics`, `multiverse-analysis`, `prediction-interval-for-population-effects`
   - zoo:reanalyses → `trisovic2022-code-execution`; zoo:reanalyses → `samuel2024-jupyter-pmc`; cito:qualifies → `maria2026-analytic-variability-reanalysis`; cito:extends → `maria2026-rag-specification-dispersion`; zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`; cito:agreesWith → `hardwicke2018-cognition-open-data`
   - notes: `instance-papers/papers/maria2026-executability-denominators/`
