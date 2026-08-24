@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "id": "trisovic2022-code-execution",
   "title": "A large-scale study on research code quality and execution",
   "authors": [
@@ -65,7 +65,10 @@
           "unit": "proportion of files",
           "n": 3830,
           "baseline": "no code cleaning; authors' combining rule; denominator excludes files missing a result from any R version",
-          "source": "paper RQ4 table; reproduced exactly by reanalysis/denominator.py"
+          "source": "paper RQ4 table; reproduced exactly by reanalysis/denominator.py",
+          "count": 952,
+          "denominator": 3830,
+          "clusters": 1388
         },
         {
           "name": "artifact_execution_success_rate",
@@ -73,7 +76,10 @@
           "unit": "proportion of files",
           "n": 3695,
           "baseline": "with code cleaning; authors' combining rule; denominator excludes files missing a result from any R version",
-          "source": "paper RQ4 table; reproduced exactly by reanalysis/denominator.py"
+          "source": "paper RQ4 table; reproduced exactly by reanalysis/denominator.py",
+          "count": 1472,
+          "denominator": 3695,
+          "clusters": 1447
         },
         {
           "name": "artifact_execution_success_rate",
@@ -81,7 +87,10 @@
           "unit": "proportion of files",
           "n": 7985,
           "baseline": "no code cleaning; symmetric rule over all files seen in >=1 run log; equals the Manski lower bound",
-          "source": "reanalysis/denominator.py"
+          "source": "reanalysis/denominator.py",
+          "count": 952,
+          "denominator": 7985,
+          "clusters": 2123
         },
         {
           "name": "artifact_execution_success_rate",
@@ -89,7 +98,10 @@
           "unit": "proportion of files",
           "n": 7621,
           "baseline": "with code cleaning; symmetric rule over all files seen in >=1 run log; equals the Manski lower bound",
-          "source": "reanalysis/denominator.py"
+          "source": "reanalysis/denominator.py",
+          "count": 1472,
+          "denominator": 7621,
+          "clusters": 2110
         },
         {
           "name": "artifact_execution_success_rate",
@@ -97,7 +109,9 @@
           "unit": "proportion of files",
           "n": 7621,
           "baseline": "with code cleaning; MAR imputation calibrated on fully-observed files; optimistic",
-          "source": "reanalysis/denominator.py"
+          "source": "reanalysis/denominator.py",
+          "denominator": 7621,
+          "clusters": 2110
         },
         {
           "name": "artifact_execution_success_rate_upper_bound",
@@ -105,7 +119,9 @@
           "unit": "proportion of files",
           "n": 7621,
           "baseline": "with code cleaning; Manski upper bound, every unobserved cell assumed a success",
-          "source": "reanalysis/denominator.py"
+          "source": "reanalysis/denominator.py",
+          "denominator": 7621,
+          "clusters": 2110
         },
         {
           "name": "excluded_fraction_of_corpus",
@@ -113,7 +129,9 @@
           "unit": "proportion of files",
           "n": 7621,
           "baseline": "with code cleaning; rows dropped by the authors' notebook rule, 3866 of 7621",
-          "source": "reanalysis/denominator.py"
+          "source": "reanalysis/denominator.py",
+          "count": 3926,
+          "denominator": 7621
         }
       ],
       "evidence": [
@@ -139,7 +157,9 @@
           "unit": "proportion of excluded rows",
           "n": 4054,
           "baseline": "no code cleaning; rows dropped by the authors' rule, classified by the raw log strings",
-          "source": "reanalysis/denominator.py"
+          "source": "reanalysis/denominator.py",
+          "count": 56,
+          "denominator": 4054
         },
         {
           "name": "share_of_excluded_bucket_that_is_literally_time_limit_exceeded",
@@ -147,7 +167,9 @@
           "unit": "proportion of excluded rows",
           "n": 3866,
           "baseline": "with code cleaning; rows dropped by the authors' rule, classified by the raw log strings",
-          "source": "reanalysis/denominator.py"
+          "source": "reanalysis/denominator.py",
+          "count": 922,
+          "denominator": 3866
         },
         {
           "name": "share_of_excluded_bucket_that_is_a_recorded_error",
@@ -155,7 +177,9 @@
           "unit": "proportion of excluded rows",
           "n": 4054,
           "baseline": "no code cleaning; dropped rows containing no TLE string but at least one recorded execution error",
-          "source": "reanalysis/denominator.py"
+          "source": "reanalysis/denominator.py",
+          "count": 3835,
+          "denominator": 4054
         },
         {
           "name": "share_of_excluded_bucket_that_is_a_recorded_error",
@@ -163,7 +187,9 @@
           "unit": "proportion of excluded rows",
           "n": 3866,
           "baseline": "with code cleaning; dropped rows containing no TLE string but at least one recorded execution error",
-          "source": "reanalysis/denominator.py"
+          "source": "reanalysis/denominator.py",
+          "count": 2880,
+          "denominator": 3866
         }
       ],
       "evidence": [
@@ -187,7 +213,9 @@
           "unit": "proportion of comparable cells",
           "n": 1729,
           "baseline": "(doi,file,version) cells where both runs exist and the raw run succeeded; 25 did not succeed after cleaning",
-          "source": "reanalysis/claims.py CLAIM A"
+          "source": "reanalysis/claims.py CLAIM A",
+          "count": 25,
+          "denominator": 1729
         },
         {
           "name": "code_cleaning_files_broken",
@@ -275,7 +303,10 @@
           "unit": "proportion of files",
           "n": 669,
           "baseline": "American Journal of Political Science only -- mandatory third-party pre-publication verification since 2016 -- symmetric rule, cleaning condition, 138 datasets",
-          "source": "reanalysis/claims.py CLAIM B"
+          "source": "reanalysis/claims.py CLAIM B",
+          "count": 195,
+          "denominator": 669,
+          "clusters": 138
         }
       ],
       "evidence": [
@@ -300,7 +331,8 @@
           "unit": "proportion of files",
           "n": 3490,
           "baseline": "no code cleaning, fully-observed files: any-of-three (14.5%) minus best single version R 4.0 (14.1%)",
-          "source": "reanalysis/claims.py CLAIM C"
+          "source": "reanalysis/claims.py CLAIM C",
+          "denominator": 3490
         },
         {
           "name": "marginal_gain_from_extra_software_versions",
@@ -308,7 +340,8 @@
           "unit": "proportion of files",
           "n": 3169,
           "baseline": "with code cleaning, fully-observed files: any-of-three (25.4%) minus best single version R 3.6 (24.6%)",
-          "source": "reanalysis/claims.py CLAIM C"
+          "source": "reanalysis/claims.py CLAIM C",
+          "denominator": 3169
         },
         {
           "name": "share_of_successes_succeeding_under_all_three_versions",
@@ -316,7 +349,9 @@
           "unit": "proportion of successful files",
           "n": 505,
           "baseline": "no code cleaning, fully-observed files: 453 of 505",
-          "source": "reanalysis/claims.py CLAIM C"
+          "source": "reanalysis/claims.py CLAIM C",
+          "count": 453,
+          "denominator": 505
         },
         {
           "name": "share_of_successes_succeeding_under_all_three_versions",
@@ -324,7 +359,9 @@
           "unit": "proportion of successful files",
           "n": 806,
           "baseline": "with code cleaning, fully-observed files: 655 of 806",
-          "source": "reanalysis/claims.py CLAIM C"
+          "source": "reanalysis/claims.py CLAIM C",
+          "count": 655,
+          "denominator": 806
         },
         {
           "name": "bias_introduced_by_asymmetric_combining_rule",

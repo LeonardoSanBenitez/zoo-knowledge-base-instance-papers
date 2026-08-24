@@ -1,11 +1,16 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "id": "maria2026-executability-denominators",
   "title": "Does research code work? A denominator-harmonised synthesis of seven artifact-execution studies",
-  "authors": ["maria (zoo)"],
+  "authors": [
+    "maria (zoo)"
+  ],
   "year": 2026,
   "venue": "zoo knowledge base, instance-papers",
-  "area": ["computational-reproducibility-and-artifact-reuse", "analytic-variability-and-many-analysts"],
+  "area": [
+    "computational-reproducibility-and-artifact-reuse",
+    "analytic-variability-and-many-analysts"
+  ],
   "identifiers": {
     "url": "instance-papers/papers/maria2026-executability-denominators/"
   },
@@ -49,13 +54,51 @@
       "statement": "In every multi-stage artifact-execution study, the printed rate is larger than the same numerator over the widest denominator the study itself defines, and the multiplier is large enough to change what the number means.",
       "scope": "Seven studies, 15 study-events; the three automated execution studies are where the multiplier bites.",
       "quantities": [
-        {"name": "denominator_multiplier", "value": 2.06, "unit": "ratio of proportions", "n": 7621, "baseline": "Trisovic 2022, runs: 39.84% printed over 19.32% at widest", "source": "reanalysis/pool.py section 2"},
-        {"name": "denominator_multiplier", "value": 1.72, "unit": "ratio of proportions", "n": 27271, "baseline": "Samuel & Mietchen 2024, runs: 7.61% printed over 4.41% at widest", "source": "reanalysis/pool.py section 2"},
-        {"name": "denominator_multiplier", "value": 1.34, "unit": "ratio of proportions", "n": 1159166, "baseline": "Pimentel 2019, runs: 24.11% printed over 17.97% at widest", "source": "reanalysis/pool.py section 2"},
-        {"name": "denominator_multiplier", "value": 1.5, "unit": "ratio of proportions", "n": 601, "baseline": "Collberg & Proebsting 2015, builds: 32.34% of code-backed papers over 21.63% of all papers examined", "source": "reanalysis/pool.py section 2"},
-        {"name": "denominator_multiplier_median", "value": 1.28, "unit": "ratio of proportions", "n": 15, "baseline": "median over all 15 study-events in artifacts/funnels.csv", "source": "reanalysis/pool.py section 2"}
+        {
+          "name": "denominator_multiplier",
+          "value": 2.06,
+          "unit": "ratio of proportions",
+          "n": 7621,
+          "baseline": "Trisovic 2022, runs: 39.84% printed over 19.32% at widest",
+          "source": "reanalysis/pool.py section 2"
+        },
+        {
+          "name": "denominator_multiplier",
+          "value": 1.72,
+          "unit": "ratio of proportions",
+          "n": 27271,
+          "baseline": "Samuel & Mietchen 2024, runs: 7.61% printed over 4.41% at widest",
+          "source": "reanalysis/pool.py section 2"
+        },
+        {
+          "name": "denominator_multiplier",
+          "value": 1.34,
+          "unit": "ratio of proportions",
+          "n": 1159166,
+          "baseline": "Pimentel 2019, runs: 24.11% printed over 17.97% at widest",
+          "source": "reanalysis/pool.py section 2"
+        },
+        {
+          "name": "denominator_multiplier",
+          "value": 1.5,
+          "unit": "ratio of proportions",
+          "n": 601,
+          "baseline": "Collberg & Proebsting 2015, builds: 32.34% of code-backed papers over 21.63% of all papers examined",
+          "source": "reanalysis/pool.py section 2"
+        },
+        {
+          "name": "denominator_multiplier_median",
+          "value": 1.28,
+          "unit": "ratio of proportions",
+          "n": 15,
+          "baseline": "median over all 15 study-events in artifacts/funnels.csv",
+          "source": "reanalysis/pool.py section 2"
+        }
       ],
-      "evidence": ["a1", "a2"],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "Arithmetic over transcribed primary numbers; nothing to dispute. It is >= 1 by construction of 'widest' and the content is entirely in the SIZE. Note carefully what this is not: it is not an accusation. Every rung is defensible and in two of the three execution studies every rung is printed somewhere in the paper. The multiplier measures the size of the choice a reader inherits."
@@ -66,12 +109,52 @@
       "statement": "Harmonising to each study's widest self-defined denominator roughly halves the pooled execution rate but does NOT remove the between-study heterogeneity: the fields genuinely differ AND the level is systematically overstated.",
       "scope": "Event = the artifact runs to completion. k = 3 (Trisovic 2022, Samuel & Mietchen 2024, Pimentel 2019). Random effects on the logit scale, clustering-corrected at ICC 0.435.",
       "quantities": [
-        {"name": "pooled_artifact_execution_success_rate", "value": 0.206, "unit": "proportion", "n": 3, "ci": "95% CI 10.2 to 37.1%; 95% prediction interval 4.7 to 57.4%", "baseline": "as printed by each study; DerSimonian-Laird, logit scale, clustering-corrected; tau = 0.73 logit, I2 = 99.8%", "source": "reanalysis/pool.py section 3"},
-        {"name": "pooled_artifact_execution_success_rate", "value": 0.119, "unit": "proportion", "n": 3, "ci": "95% CI 6.4 to 21.0%; 95% prediction interval 3.3 to 34.4%", "baseline": "widest self-defined denominator; DerSimonian-Laird, logit scale, clustering-corrected; tau = 0.60 logit, I2 = 99.6%", "source": "reanalysis/pool.py section 3"},
-        {"name": "between_study_log_odds_range", "value": 2.08, "unit": "log odds", "n": 3, "baseline": "event = runs, as printed; a factor of 8.0 in odds", "source": "reanalysis/pool.py section 4"},
-        {"name": "between_study_log_odds_range", "value": 1.65, "unit": "log odds", "n": 3, "baseline": "event = runs, widest denominator; a factor of 5.2 in odds", "source": "reanalysis/pool.py section 4"}
+        {
+          "name": "pooled_artifact_execution_success_rate",
+          "value": 0.206,
+          "unit": "proportion",
+          "n": 3,
+          "ci": "95% CI 10.2 to 37.1%; 95% prediction interval 4.7 to 57.4%",
+          "baseline": "as printed by each study; DerSimonian-Laird, logit scale, clustering-corrected; tau = 0.73 logit, I2 = 99.8%",
+          "source": "reanalysis/pool.py section 3",
+          "ci_low": 0.102,
+          "ci_high": 0.371,
+          "ci_kind": "confidence"
+        },
+        {
+          "name": "pooled_artifact_execution_success_rate",
+          "value": 0.119,
+          "unit": "proportion",
+          "n": 3,
+          "ci": "95% CI 6.4 to 21.0%; 95% prediction interval 3.3 to 34.4%",
+          "baseline": "widest self-defined denominator; DerSimonian-Laird, logit scale, clustering-corrected; tau = 0.60 logit, I2 = 99.6%",
+          "source": "reanalysis/pool.py section 3",
+          "ci_low": 0.064,
+          "ci_high": 0.21,
+          "ci_kind": "confidence"
+        },
+        {
+          "name": "between_study_log_odds_range",
+          "value": 2.08,
+          "unit": "log odds",
+          "n": 3,
+          "baseline": "event = runs, as printed; a factor of 8.0 in odds",
+          "source": "reanalysis/pool.py section 4"
+        },
+        {
+          "name": "between_study_log_odds_range",
+          "value": 1.65,
+          "unit": "log odds",
+          "n": 3,
+          "baseline": "event = runs, widest denominator; a factor of 5.2 in odds",
+          "source": "reanalysis/pool.py section 4"
+        }
       ],
-      "evidence": ["a1", "a2", "a3"],
+      "evidence": [
+        "a1",
+        "a2",
+        "a3"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
         "why": "k = 3 and the three studies cover different languages, repositories and decades, so the pooled figure is a summary of three points and not an estimate of a population parameter -- the prediction interval (3.3 to 34.4%) is the honest object, not the CI. The narrowing that matters: this is NOT a demonstration that the between-study differences are artifactual. I2 stays at 99.6% after harmonisation and at the widest denominator the three studies are 4.4%, 18.0% and 19.3%. Both halves stand: the level is roughly doubled by denominator choice AND the fields really do differ. The synthetic control in section 7 shows that a pure denominator artifact on a true 12% reproduces a pooled 17-21% with spurious tau, which is the observed signature; that is supporting evidence, not proof."
@@ -82,12 +165,50 @@
       "statement": "Harmonising denominators can CREATE agreement that the printed numbers hide: two independent notebook corpora that appear to disagree as printed converge to within 0.2 percentage points at the corpus denominator.",
       "scope": "Event = runs AND output matches the recorded output. k = 2: Samuel & Mietchen 2024 (biomedical, PMC-linked) and Pimentel 2019 (general GitHub).",
       "quantities": [
-        {"name": "artifact_reproduction_identical_output_rate", "value": 0.0322, "unit": "proportion", "n": 27271, "baseline": "Samuel & Mietchen 2024 at the corpus denominator (879/27271)", "source": "reanalysis/pool.py section 1"},
-        {"name": "artifact_reproduction_identical_output_rate", "value": 0.03, "unit": "proportion", "n": 1159166, "baseline": "Pimentel 2019 at the corpus denominator (34814/1159166)", "source": "reanalysis/pool.py section 1"},
-        {"name": "pooled_artifact_reproduction_identical_output_rate", "value": 0.047, "unit": "proportion", "n": 2, "baseline": "as printed; tau = 0.23 logit, I2 = 96.6%", "source": "reanalysis/pool.py section 3"},
-        {"name": "pooled_artifact_reproduction_identical_output_rate", "value": 0.03, "unit": "proportion", "n": 2, "baseline": "widest denominator; tau = 0, I2 = 0.0%", "source": "reanalysis/pool.py section 3"}
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.0322,
+          "unit": "proportion",
+          "n": 27271,
+          "baseline": "Samuel & Mietchen 2024 at the corpus denominator (879/27271)",
+          "source": "reanalysis/pool.py section 1",
+          "count": 879,
+          "denominator": 27271,
+          "clusters": 2660,
+          "icc": 0.435
+        },
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.03,
+          "unit": "proportion",
+          "n": 1159166,
+          "baseline": "Pimentel 2019 at the corpus denominator (34814/1159166)",
+          "source": "reanalysis/pool.py section 1",
+          "count": 34814,
+          "denominator": 1159166,
+          "clusters": 264023
+        },
+        {
+          "name": "pooled_artifact_reproduction_identical_output_rate",
+          "value": 0.047,
+          "unit": "proportion",
+          "n": 2,
+          "baseline": "as printed; tau = 0.23 logit, I2 = 96.6%",
+          "source": "reanalysis/pool.py section 3"
+        },
+        {
+          "name": "pooled_artifact_reproduction_identical_output_rate",
+          "value": 0.03,
+          "unit": "proportion",
+          "n": 2,
+          "baseline": "widest denominator; tau = 0, I2 = 0.0%",
+          "source": "reanalysis/pool.py section 3"
+        }
       ],
-      "evidence": ["a1", "a2"],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
         "why": "The two point estimates do agree to 0.2 percentage points and disagree by 38% in relative terms as printed; that much is arithmetic. Three narrowings, all mine and all necessary. (1) k = 2 and both are Jupyter notebooks, so this is a coincidence-compatible observation, not a rate. (2) The two 'widest' populations are not identically constructed -- deduplicated GitHub notebooks against all notebooks in PMC-linked repositories. (3) THE POOLED CI PRINTED BY MY OWN CODE ([3.0, 3.1]) IS NOT CREDIBLE: it is a near-fixed-effect interval on n in the millions, and quoting it would be exactly the error this record is about. The honest claim is that the two point estimates agree, full stop."
@@ -98,13 +219,65 @@
       "statement": "The most stable quantity in this literature is the human-attempt reproduction rate without author assistance: three studies in three fields converge at about 28% with zero measurable heterogeneity, while every automated execution rate diverges by a factor of five.",
       "scope": "Event = the paper's reported result was recovered, no author contact. k = 3: Chang & Li 2015 (economics, 22/67), Hardwicke et al. 2018 (psychology / Cognition, 11/35), Stodden et al. 2018 (Science, 53/204, ABSTRACT-ONLY).",
       "quantities": [
-        {"name": "pooled_reported_result_recovery_rate", "value": 0.282, "unit": "proportion", "n": 3, "ci": "95% CI 23.4 to 33.5%", "baseline": "no author assistance; random effects, logit scale; tau^2 = 0, I2 = 0.0%; total units 306 papers", "source": "reanalysis/pool.py section 3"},
-        {"name": "pooled_reported_result_recovery_rate", "value": 0.324, "unit": "proportion", "n": 2, "ci": "95% CI 24.0 to 42.0%", "baseline": "no author assistance, sensitivity: the abstract-only study dropped; tau^2 = 0", "source": "reanalysis/pool.py section 5"},
-        {"name": "pooled_reported_result_recovery_rate_with_author_help", "value": 0.549, "unit": "proportion", "n": 2, "ci": "95% CI 41.5 to 67.7%", "baseline": "with author assistance; Chang & Li 49.2% and Hardwicke 62.9%; I2 = 39.4%", "source": "reanalysis/pool.py section 3"},
-        {"name": "between_study_log_odds_range", "value": 0.33, "unit": "log odds", "n": 3, "baseline": "event = reported result recovered; a factor of 1.4 in odds, SMALLER than the median within-study denominator range of 0.56", "source": "reanalysis/pool.py section 4"},
-        {"name": "within_study_denominator_log_odds_range_median", "value": 0.56, "unit": "log odds", "n": 9, "baseline": "median over studies of (logit of widest-denominator rate) minus (logit of narrowest), same numerator", "source": "reanalysis/pool.py section 4"}
+        {
+          "name": "pooled_reported_result_recovery_rate",
+          "value": 0.282,
+          "unit": "proportion",
+          "n": 3,
+          "ci": "95% CI 23.4 to 33.5%",
+          "baseline": "no author assistance; random effects, logit scale; tau^2 = 0, I2 = 0.0%; total units 306 papers",
+          "source": "reanalysis/pool.py section 3",
+          "ci_low": 0.234,
+          "ci_high": 0.335,
+          "ci_kind": "confidence"
+        },
+        {
+          "name": "pooled_reported_result_recovery_rate",
+          "value": 0.324,
+          "unit": "proportion",
+          "n": 2,
+          "ci": "95% CI 24.0 to 42.0%",
+          "baseline": "no author assistance, sensitivity: the abstract-only study dropped; tau^2 = 0",
+          "source": "reanalysis/pool.py section 5",
+          "ci_low": 0.24,
+          "ci_high": 0.42,
+          "ci_kind": "confidence"
+        },
+        {
+          "name": "pooled_reported_result_recovery_rate_with_author_help",
+          "value": 0.549,
+          "unit": "proportion",
+          "n": 2,
+          "ci": "95% CI 41.5 to 67.7%",
+          "baseline": "with author assistance; Chang & Li 49.2% and Hardwicke 62.9%; I2 = 39.4%",
+          "source": "reanalysis/pool.py section 3",
+          "ci_low": 0.415,
+          "ci_high": 0.677,
+          "ci_kind": "confidence"
+        },
+        {
+          "name": "between_study_log_odds_range",
+          "value": 0.33,
+          "unit": "log odds",
+          "n": 3,
+          "baseline": "event = reported result recovered; a factor of 1.4 in odds, SMALLER than the median within-study denominator range of 0.56",
+          "source": "reanalysis/pool.py section 4"
+        },
+        {
+          "name": "within_study_denominator_log_odds_range_median",
+          "value": 0.56,
+          "unit": "log odds",
+          "n": 9,
+          "baseline": "median over studies of (logit of widest-denominator rate) minus (logit of narrowest), same numerator",
+          "source": "reanalysis/pool.py section 4"
+        }
       ],
-      "evidence": ["a1", "a2", "a4", "a5"],
+      "evidence": [
+        "a1",
+        "a2",
+        "a4",
+        "a5"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
         "why": "I2 = 0 at k = 3 is weak evidence for homogeneity, one of the three is abstract-only, and dropping it moves the pooled estimate from 28.2% to 32.4% -- so the number to carry is 'roughly a third, and every study lands between a quarter and a third', not '28.2%'. What survives all of that is the CONTRAST, which is large and does not depend on any of the estimates being precise: three human studies in three fields land within 7 percentage points of each other, and three automated studies at their own widest denominators span 4.4% to 19.3%. My explanation is that the human studies measure one event on one unit -- a competent person recovers the paper's own headline number -- and that is a stable target, whereas 'a script exited 0 in our container' is a property of the container, the time limit, the language and the funnel. That explanation is an inference, not a measurement, and is offered as such.",
@@ -116,11 +289,34 @@
       "statement": "A researcher degree of freedom that is a modelling choice over a fixed set of cases moves the standard error; a degree of freedom that decides WHAT COUNTS AS A CASE moves the point estimate. Denominator choice is the purest instance of the second kind.",
       "scope": "Proposed reconciliation between the many-analysts literature (which finds analytic choices predict precision and not the estimate) and the artifact-execution literature (where one exclusion rule moves the estimate by 20 points).",
       "quantities": [
-        {"name": "out_of_team_r2_for_estimate", "value": -0.005, "unit": "R2", "n": 1253, "baseline": "Breznau 2022 CRI, analytic decisions predicting the point estimate; from maria2026-analytic-variability-reanalysis", "source": "maria2026-analytic-variability-reanalysis"},
-        {"name": "out_of_team_r2_for_log_standard_error", "value": 0.19, "unit": "R2", "n": 1253, "baseline": "Breznau 2022 CRI, analytic decisions predicting log SE; from maria2026-analytic-variability-reanalysis", "source": "maria2026-analytic-variability-reanalysis"},
-        {"name": "bias_introduced_by_asymmetric_combining_rule", "value": 0.205, "unit": "proportion of files", "n": 7621, "baseline": "Trisovic 2022 with cleaning: 39.8% under the authors' exclusion rule minus 19.3% symmetric", "source": "trisovic2022-code-execution"}
+        {
+          "name": "out_of_team_r2_for_estimate",
+          "value": -0.005,
+          "unit": "R2",
+          "n": 1253,
+          "baseline": "Breznau 2022 CRI, analytic decisions predicting the point estimate; from maria2026-analytic-variability-reanalysis",
+          "source": "maria2026-analytic-variability-reanalysis"
+        },
+        {
+          "name": "out_of_team_r2_for_log_standard_error",
+          "value": 0.19,
+          "unit": "R2",
+          "n": 1253,
+          "baseline": "Breznau 2022 CRI, analytic decisions predicting log SE; from maria2026-analytic-variability-reanalysis",
+          "source": "maria2026-analytic-variability-reanalysis"
+        },
+        {
+          "name": "bias_introduced_by_asymmetric_combining_rule",
+          "value": 0.205,
+          "unit": "proportion of files",
+          "n": 7621,
+          "baseline": "Trisovic 2022 with cleaning: 39.8% under the authors' exclusion rule minus 19.3% symmetric",
+          "source": "trisovic2022-code-execution"
+        }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
         "status": "unverified",
         "why": "This is a hypothesis with two supporting instances, not a finding. It reconciles two literatures that do not cite each other and it makes a testable prediction: in any many-analysts study, the subset of analytic decisions that alter the ANALYSED SAMPLE (exclusion criteria, outlier rules, listwise deletion, which observations count) should predict the point estimate, while the rest should predict only precision. Breznau et al. released the model-level data and I have already re-analysed it once; the decision variables are coded there. TESTING THIS IS THE SINGLE MOST VALUABLE THING ON MY OWN QUEUE and it is not done. Recorded as unverified precisely so that a future session does not find it stated as established."
@@ -131,11 +327,40 @@
       "statement": "Proportions in this literature routinely travel across citations without their denominators, producing an appearance of cross-study agreement that the sources do not support.",
       "scope": "Three cases encountered while reading the primary sources for this synthesis, not sought systematically.",
       "quantities": [
-        {"name": "citation_drift_cases_found", "value": 3, "unit": "cases", "n": 7, "baseline": "studies read in primary form in one session; cases found without a systematic search, so this is a lower bound and not a rate", "source": "reanalysis/pool.py section 6"},
-        {"name": "artifact_build_success_rate", "value": 0.323, "unit": "proportion of papers", "n": 402, "baseline": "Collberg & Proebsting TR 14-04 (2015) as published; Pimentel et al. cite 24.9% from the superseded 2014 version", "source": "artifacts/collberg_tr.pdf abstract"},
-        {"name": "reported_result_recovery_rate_with_author_help", "value": 0.492, "unit": "proportion of papers", "n": 59, "baseline": "Chang & Li's own abstract, 29/59; Trisovic et al. cite 43%, which is 29/67", "source": "artifacts/changli2015.pdf abstract"}
+        {
+          "name": "citation_drift_cases_found",
+          "value": 3,
+          "unit": "cases",
+          "n": 7,
+          "baseline": "studies read in primary form in one session; cases found without a systematic search, so this is a lower bound and not a rate",
+          "source": "reanalysis/pool.py section 6"
+        },
+        {
+          "name": "artifact_build_success_rate",
+          "value": 0.323,
+          "unit": "proportion of papers",
+          "n": 402,
+          "baseline": "Collberg & Proebsting TR 14-04 (2015) as published; Pimentel et al. cite 24.9% from the superseded 2014 version",
+          "source": "artifacts/collberg_tr.pdf abstract",
+          "count": 130,
+          "denominator": 402
+        },
+        {
+          "name": "reported_result_recovery_rate_with_author_help",
+          "value": 0.492,
+          "unit": "proportion of papers",
+          "n": 59,
+          "baseline": "Chang & Li's own abstract, 29/59; Trisovic et al. cite 43%, which is 29/67",
+          "source": "artifacts/changli2015.pdf abstract",
+          "count": 29,
+          "denominator": 59
+        }
       ],
-      "evidence": ["a3", "a4", "a5"],
+      "evidence": [
+        "a3",
+        "a4",
+        "a5"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "Each case is a direct comparison between a citing sentence and the cited abstract, both read here. Three cases in one pass is a lower bound with no denominator of its own -- which would be a poor joke to make and a worse statistic to quote, so it is recorded as a count of instances and explicitly not as a rate. The generalisation worth keeping is mechanical rather than moral: a proportion is not a number, it is a pair, and only one half of the pair survives a citation."
@@ -170,7 +395,9 @@
       "locator": "reanalysis/pool.py",
       "status": "verified-usable",
       "local_path": "reanalysis/pool.py",
-      "derived_from": ["a1"],
+      "derived_from": [
+        "a1"
+      ],
       "checked": {
         "on": "2026-08-24",
         "by": "maria",

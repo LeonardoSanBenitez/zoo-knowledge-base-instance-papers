@@ -1,11 +1,16 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "id": "samuel2024-jupyter-pmc",
   "title": "Computational reproducibility of Jupyter notebooks from biomedical publications",
-  "authors": ["Sheeba Samuel", "Daniel Mietchen"],
+  "authors": [
+    "Sheeba Samuel",
+    "Daniel Mietchen"
+  ],
   "year": 2024,
   "venue": "GigaScience 13:giad113",
-  "area": ["computational-reproducibility-and-artifact-reuse"],
+  "area": [
+    "computational-reproducibility-and-artifact-reuse"
+  ],
   "identifiers": {
     "arxiv": "2308.07333",
     "doi": "10.1093/gigascience/giad113",
@@ -52,17 +57,114 @@
       "statement": "Of 27,271 Jupyter notebooks from 2,660 GitHub repositories associated with 3,467 PubMed Central publications, 1,203 ran through without any errors, of which 879 produced results identical to those recorded in the original notebook.",
       "scope": "2023 re-run. Only Python notebooks whose dependencies were declared in a standard requirements file were attempted (15,817); only those whose declared dependencies all installed were executed (10,388). Executed in conda environments, per-notebook timeout 300 s.",
       "quantities": [
-        {"name": "artifact_execution_success_rate", "value": 0.116, "unit": "proportion of notebooks", "n": 10388, "baseline": "2023 run; denominator = notebooks whose declared dependencies all installed", "source": "paper abstract, 1203/10388"},
-        {"name": "artifact_execution_success_rate", "value": 0.0761, "unit": "proportion of notebooks", "n": 15818, "baseline": "2023 run; denominator = notebooks attempted, i.e. Python with declared dependencies; THIS is the figure the paper prints", "source": "paper Results, Successful reproductions"},
-        {"name": "artifact_execution_success_rate", "value": 0.0441, "unit": "proportion of notebooks", "n": 27271, "baseline": "2023 run; denominator = all notebooks found in the corpus", "source": "computed, 1203/27271"},
-        {"name": "artifact_reproduction_identical_output_rate", "value": 0.0556, "unit": "proportion of notebooks", "n": 15818, "baseline": "2023 run; identical outputs; denominator = notebooks attempted", "source": "paper Results"},
-        {"name": "artifact_reproduction_identical_output_rate", "value": 0.0322, "unit": "proportion of notebooks", "n": 27271, "baseline": "2023 run; identical outputs; denominator = all notebooks found", "source": "computed, 879/27271"},
-        {"name": "artifact_execution_success_rate", "value": 0.095, "unit": "proportion of notebooks", "n": 4169, "baseline": "2021 run; denominator = notebooks attempted; recomputed from the shipped database and matching the paper to the unit", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "artifact_reproduction_identical_output_rate", "value": 0.0588, "unit": "proportion of notebooks", "n": 4169, "baseline": "2021 run; identical outputs; denominator = notebooks attempted; recomputed", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "dependency_install_failure_rate", "value": 0.3432, "unit": "proportion of attempted notebooks", "n": 15817, "baseline": "2023 run; declared dependencies failed to install", "source": "paper Results"},
-        {"name": "dependency_install_failure_rate", "value": 0.356, "unit": "proportion of attempted notebooks", "n": 4169, "baseline": "2021 run; recomputed from the database", "source": "reanalysis/cluster_and_age.py"}
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.116,
+          "unit": "proportion of notebooks",
+          "n": 10388,
+          "baseline": "2023 run; denominator = notebooks whose declared dependencies all installed",
+          "source": "paper abstract, 1203/10388",
+          "count": 1203,
+          "denominator": 10388,
+          "clusters": 2660
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.0761,
+          "unit": "proportion of notebooks",
+          "n": 15818,
+          "baseline": "2023 run; denominator = notebooks attempted, i.e. Python with declared dependencies; THIS is the figure the paper prints",
+          "source": "paper Results, Successful reproductions",
+          "count": 1203,
+          "denominator": 15818,
+          "clusters": 2660
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.0441,
+          "unit": "proportion of notebooks",
+          "n": 27271,
+          "baseline": "2023 run; denominator = all notebooks found in the corpus",
+          "source": "computed, 1203/27271",
+          "count": 1203,
+          "denominator": 27271,
+          "clusters": 2660
+        },
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.0556,
+          "unit": "proportion of notebooks",
+          "n": 15818,
+          "baseline": "2023 run; identical outputs; denominator = notebooks attempted",
+          "source": "paper Results",
+          "count": 879,
+          "denominator": 15818,
+          "clusters": 2660
+        },
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.0322,
+          "unit": "proportion of notebooks",
+          "n": 27271,
+          "baseline": "2023 run; identical outputs; denominator = all notebooks found",
+          "source": "computed, 879/27271",
+          "count": 879,
+          "denominator": 27271,
+          "clusters": 2660
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.095,
+          "unit": "proportion of notebooks",
+          "n": 4169,
+          "baseline": "2021 run; denominator = notebooks attempted; recomputed from the shipped database and matching the paper to the unit",
+          "source": "reanalysis/cluster_and_age.py",
+          "count": 396,
+          "denominator": 4169,
+          "clusters": 685,
+          "icc": 0.435
+        },
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.0588,
+          "unit": "proportion of notebooks",
+          "n": 4169,
+          "baseline": "2021 run; identical outputs; denominator = notebooks attempted; recomputed",
+          "source": "reanalysis/cluster_and_age.py",
+          "count": 245,
+          "denominator": 4169,
+          "clusters": 685,
+          "icc": 0.335
+        },
+        {
+          "name": "dependency_install_failure_rate",
+          "value": 0.3432,
+          "unit": "proportion of attempted notebooks",
+          "n": 15817,
+          "baseline": "2023 run; declared dependencies failed to install",
+          "source": "paper Results",
+          "count": 5429,
+          "denominator": 15817
+        },
+        {
+          "name": "dependency_install_failure_rate",
+          "value": 0.356,
+          "unit": "proportion of attempted notebooks",
+          "n": 4169,
+          "baseline": "2021 run; recomputed from the database",
+          "source": "reanalysis/cluster_and_age.py",
+          "count": 1485,
+          "denominator": 4169,
+          "clusters": 685
+        }
       ],
-      "evidence": ["a1", "a2", "a3", "a4", "a6"],
+      "evidence": [
+        "a1",
+        "a2",
+        "a3",
+        "a4",
+        "a6"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "The 2021 funnel reproduces to the file from the shipped SQLite database (4,169 attempted / 396 finished / 245 identical / 151 different, against the paper's printed 4,169 / 396 / 245 / 151). Accepted without qualification, and this study is the best-instrumented in this area: it prints EVERY stage of the funnel rather than one ratio, so a reader can choose the denominator instead of inheriting one. The multiple values recorded above are not a criticism of the paper -- they are the paper's own ladder, written down so that a future citation cannot lose which rung it came from."
@@ -73,15 +175,73 @@
       "statement": "Notebooks from newer repositories do not generally perform better than older ones -- the relationship between recency and exceptions is 'a bit more complex'.",
       "scope": "The paper's Figure 27 and the shipped notebook analyses/PMC4.DecayRate.ipynb, titled 'Decay Rate: Replication Success over Repository Age'. Repository age is 2023 minus the GitHub repository creation year.",
       "quantities": [
-        {"name": "reproduction_success_vs_artifact_age_trend_z", "value": 11.72, "unit": "Cochran-Armitage z", "n": 10389, "baseline": "2023 run, notebook level, all 11 age cohorts including the three the authors' filter deletes; POSITIVE = older reproduces better", "source": "reanalysis/age_trend.py"},
-        {"name": "reproduction_success_vs_artifact_age_odds_ratio", "value": 1.166, "unit": "odds ratio per year of repository age", "n": 10389, "baseline": "2023 run, notebook-level logistic regression", "source": "reanalysis/age_trend.py"},
-        {"name": "reproduction_success_vs_artifact_age_trend_z", "value": -4.4, "unit": "Cochran-Armitage z", "n": 4169, "baseline": "2021 run, notebook level, recomputed from the database; NEGATIVE = older reproduces worse", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "reproduction_success_vs_artifact_age_trend_z", "value": -1.87, "unit": "Cochran-Armitage z", "n": 685, "baseline": "2021 run, REPOSITORY level, the independent unit", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "artifact_execution_success_rate", "value": 0.489, "unit": "proportion of notebooks", "n": 141, "baseline": "2023 run, repositories created in 2013 (age 10) -- the oldest cohort surviving the authors' filter", "source": "reanalysis/age_trend.py"},
-        {"name": "artifact_execution_success_rate", "value": 0.047, "unit": "proportion of notebooks", "n": 129, "baseline": "2021 run, repositories created in 2013 -- SAME cohort, same pipeline, two years earlier", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "cohort_rate_ratio_between_two_runs_of_one_pipeline", "value": 10.5, "unit": "ratio of proportions", "n": 270, "baseline": "2013 cohort: 48.9% in the 2023 run over 4.7% in the 2021 run", "source": "reanalysis/cluster_and_age.py"}
+        {
+          "name": "reproduction_success_vs_artifact_age_trend_z",
+          "value": 11.72,
+          "unit": "Cochran-Armitage z",
+          "n": 10389,
+          "baseline": "2023 run, notebook level, all 11 age cohorts including the three the authors' filter deletes; POSITIVE = older reproduces better",
+          "source": "reanalysis/age_trend.py"
+        },
+        {
+          "name": "reproduction_success_vs_artifact_age_odds_ratio",
+          "value": 1.166,
+          "unit": "odds ratio per year of repository age",
+          "n": 10389,
+          "baseline": "2023 run, notebook-level logistic regression",
+          "source": "reanalysis/age_trend.py"
+        },
+        {
+          "name": "reproduction_success_vs_artifact_age_trend_z",
+          "value": -4.4,
+          "unit": "Cochran-Armitage z",
+          "n": 4169,
+          "baseline": "2021 run, notebook level, recomputed from the database; NEGATIVE = older reproduces worse",
+          "source": "reanalysis/cluster_and_age.py"
+        },
+        {
+          "name": "reproduction_success_vs_artifact_age_trend_z",
+          "value": -1.87,
+          "unit": "Cochran-Armitage z",
+          "n": 685,
+          "baseline": "2021 run, REPOSITORY level, the independent unit",
+          "source": "reanalysis/cluster_and_age.py"
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.489,
+          "unit": "proportion of notebooks",
+          "n": 141,
+          "baseline": "2023 run, repositories created in 2013 (age 10) -- the oldest cohort surviving the authors' filter",
+          "source": "reanalysis/age_trend.py",
+          "count": 69,
+          "denominator": 141
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.047,
+          "unit": "proportion of notebooks",
+          "n": 129,
+          "baseline": "2021 run, repositories created in 2013 -- SAME cohort, same pipeline, two years earlier",
+          "source": "reanalysis/cluster_and_age.py",
+          "count": 6,
+          "denominator": 129
+        },
+        {
+          "name": "cohort_rate_ratio_between_two_runs_of_one_pipeline",
+          "value": 10.5,
+          "unit": "ratio of proportions",
+          "n": 270,
+          "baseline": "2013 cohort: 48.9% in the 2023 run over 4.7% in the 2021 run",
+          "source": "reanalysis/cluster_and_age.py"
+        }
       ],
-      "evidence": ["a2", "a4", "a5", "a6"],
+      "evidence": [
+        "a2",
+        "a4",
+        "a5",
+        "a6"
+      ],
       "our_assessment": {
         "status": "not-identifiable",
         "why": "The understatement hides a large effect and the effect changes sign between the study's own two runs. In the 2023 table the association is strongly POSITIVE (older reproduces better; trend z = +11.7, OR 1.166/year, surviving a clustering correction all the way to ICC = 1 and a synthetic clustered null whose 95th percentile |z| is 2.96). In the 2021 database it is NEGATIVE (z = -4.40 at notebook level, -1.87 at repository level). Cohort by cohort the rate ratio between runs reaches 10.5x on a cohort of nearly identical size. The reason is structural and is not anyone's error: the pipeline conditions on the declared dependencies INSTALLING before a notebook is executed, and failing to install is decay's primary mechanism -- so decay removes its own victims upstream of the outcome, and what remains in the old cohorts is survivors. An age effect measured under survivor conditioning carries the sign of the survival filter. The claim has no truth value in this design. NOTE ALSO: the authors' notebook filters to cohorts with more than 10 successes, which deletes 2010-2012, whose pooled rate (14/60 = 23.3%, recovered by subtraction) is roughly twice the corpus rate -- the filter removes evidence FOR the association the figure shows."
@@ -92,14 +252,65 @@
       "statement": "Notebooks are the unit of analysis: rates are reported per notebook, by year, research field, journal and article type.",
       "scope": "Throughout the Results section; 10,388 notebooks in 2,660 repositories.",
       "quantities": [
-        {"name": "intraclass_correlation_of_reproduction_within_repository", "value": 0.435, "unit": "ICC (ANOVA, binary outcome)", "n": 4169, "baseline": "2021 run, outcome = executes without exception, clusters = 685 repositories, mean cluster size 6.06", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "intraclass_correlation_of_reproduction_within_repository", "value": 0.335, "unit": "ICC (ANOVA, binary outcome)", "n": 4169, "baseline": "2021 run, outcome = executes AND matches recorded output", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "design_effect_notebook_level_analysis", "value": 3.2, "unit": "design effect", "n": 4169, "baseline": "1 + (m0-1)*ICC with m0 = 6.06; effective n = 1302 not 4169", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "share_of_repositories_with_homogeneous_outcome", "value": 0.772, "unit": "proportion of repositories", "n": 364, "baseline": "2021 run, repositories contributing >=3 executions in which every execution had the same outcome", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "gini_of_successes_across_repositories", "value": 0.541, "unit": "Gini coefficient", "n": 130, "baseline": "2021 run, distribution of the 396 successes over the 130 repositories that produced any", "source": "reanalysis/cluster_and_age.py"},
-        {"name": "share_of_successes_from_top_20_repositories", "value": 0.566, "unit": "proportion of successes", "n": 396, "baseline": "2021 run", "source": "reanalysis/cluster_and_age.py"}
+        {
+          "name": "intraclass_correlation_of_reproduction_within_repository",
+          "value": 0.435,
+          "unit": "ICC (ANOVA, binary outcome)",
+          "n": 4169,
+          "baseline": "2021 run, outcome = executes without exception, clusters = 685 repositories, mean cluster size 6.06",
+          "source": "reanalysis/cluster_and_age.py",
+          "clusters": 685
+        },
+        {
+          "name": "intraclass_correlation_of_reproduction_within_repository",
+          "value": 0.335,
+          "unit": "ICC (ANOVA, binary outcome)",
+          "n": 4169,
+          "baseline": "2021 run, outcome = executes AND matches recorded output",
+          "source": "reanalysis/cluster_and_age.py",
+          "clusters": 685
+        },
+        {
+          "name": "design_effect_notebook_level_analysis",
+          "value": 3.2,
+          "unit": "design effect",
+          "n": 4169,
+          "baseline": "1 + (m0-1)*ICC with m0 = 6.06; effective n = 1302 not 4169",
+          "source": "reanalysis/cluster_and_age.py"
+        },
+        {
+          "name": "share_of_repositories_with_homogeneous_outcome",
+          "value": 0.772,
+          "unit": "proportion of repositories",
+          "n": 364,
+          "baseline": "2021 run, repositories contributing >=3 executions in which every execution had the same outcome",
+          "source": "reanalysis/cluster_and_age.py",
+          "count": 281,
+          "denominator": 364
+        },
+        {
+          "name": "gini_of_successes_across_repositories",
+          "value": 0.541,
+          "unit": "Gini coefficient",
+          "n": 130,
+          "baseline": "2021 run, distribution of the 396 successes over the 130 repositories that produced any",
+          "source": "reanalysis/cluster_and_age.py"
+        },
+        {
+          "name": "share_of_successes_from_top_20_repositories",
+          "value": 0.566,
+          "unit": "proportion of successes",
+          "n": 396,
+          "baseline": "2021 run",
+          "source": "reanalysis/cluster_and_age.py",
+          "count": 224,
+          "denominator": 396
+        }
       ],
-      "evidence": ["a4", "a6"],
+      "evidence": [
+        "a4",
+        "a6"
+      ],
       "our_assessment": {
         "status": "disputed",
         "why": "Not a claim the paper makes explicitly, which is the problem: it is an unstated design assumption underneath every percentage in the Results. Every notebook in a repository shares one conda environment, one set of data paths and one author, and the measured ICC is 0.435. 77.2% of repositories contributing three or more executions had a completely homogeneous outcome -- a repository is close to one Bernoulli trial. The effective n is about a third of the printed one, and the finer the slice (per journal, per field, per year) the more likely it reports a single repository. All 396 successes of the 2021 run come from 130 repositories, with the top 20 supplying 57%. This does not touch the headline rate, which is a simple proportion; it undermines every comparison built on top of it."
@@ -110,15 +321,77 @@
       "statement": "The large majority of notebooks could not be executed automatically, mostly due to issues with the documentation of dependencies -- so better dependency documentation is the key intervention.",
       "scope": "Key Points and Conclusions; the same recommendation is the first in Trisovic et al. 2022 and a fixture of the reproducibility-guidance literature.",
       "quantities": [
-        {"name": "repository_execution_success_rate_by_pinning", "value": 0.149, "unit": "proportion of repositories with >=1 notebook that ran", "n": 47, "baseline": "2021 run; repositories whose requirements.txt carries NO version constraints at all", "source": "reanalysis/does_pinning_help.py"},
-        {"name": "repository_execution_success_rate_by_pinning", "value": 0.064, "unit": "proportion of repositories with >=1 notebook that ran", "n": 47, "baseline": "2021 run; repositories whose requirements.txt is >=90% exact version pins", "source": "reanalysis/does_pinning_help.py"},
-        {"name": "repository_execution_success_rate_by_pinning", "value": 0.0, "unit": "proportion of repositories with >=1 notebook that ran", "n": 5, "baseline": "2021 run; repositories shipping a Pipfile.lock (fully locked)", "source": "reanalysis/does_pinning_help.py"},
-        {"name": "environment_install_success_rate_by_pinning", "value": 0.404, "unit": "proportion of repositories", "n": 47, "baseline": "2021 run; no version constraints; the declared environment built at least once", "source": "reanalysis/does_pinning_help.py"},
-        {"name": "environment_install_success_rate_by_pinning", "value": 0.234, "unit": "proportion of repositories", "n": 47, "baseline": "2021 run; >=90% exact pins; the declared environment built at least once; z = -1.77 vs unconstrained", "source": "reanalysis/does_pinning_help.py"},
-        {"name": "pinning_execution_odds_ratio", "value": 0.435, "unit": "odds ratio", "n": 191, "baseline": "2021 run; >=90% exact pins vs <90%, outcome = repository has >=1 notebook that ran; Fisher exact two-sided p = 0.29", "source": "reanalysis/does_pinning_help.py"},
-        {"name": "pinning_execution_adjusted_log_odds", "value": -0.392, "unit": "log odds per unit fraction pinned", "n": 191, "baseline": "2021 run; logistic regression adjusted for log dependency count, licence and log stars; SE 0.644, 22 events", "source": "reanalysis/does_pinning_help.py"}
+        {
+          "name": "repository_execution_success_rate_by_pinning",
+          "value": 0.149,
+          "unit": "proportion of repositories with >=1 notebook that ran",
+          "n": 47,
+          "baseline": "2021 run; repositories whose requirements.txt carries NO version constraints at all",
+          "source": "reanalysis/does_pinning_help.py",
+          "count": 7,
+          "denominator": 47
+        },
+        {
+          "name": "repository_execution_success_rate_by_pinning",
+          "value": 0.064,
+          "unit": "proportion of repositories with >=1 notebook that ran",
+          "n": 47,
+          "baseline": "2021 run; repositories whose requirements.txt is >=90% exact version pins",
+          "source": "reanalysis/does_pinning_help.py",
+          "count": 3,
+          "denominator": 47
+        },
+        {
+          "name": "repository_execution_success_rate_by_pinning",
+          "value": 0.0,
+          "unit": "proportion of repositories with >=1 notebook that ran",
+          "n": 5,
+          "baseline": "2021 run; repositories shipping a Pipfile.lock (fully locked)",
+          "source": "reanalysis/does_pinning_help.py",
+          "count": 0,
+          "denominator": 5
+        },
+        {
+          "name": "environment_install_success_rate_by_pinning",
+          "value": 0.404,
+          "unit": "proportion of repositories",
+          "n": 47,
+          "baseline": "2021 run; no version constraints; the declared environment built at least once",
+          "source": "reanalysis/does_pinning_help.py",
+          "count": 19,
+          "denominator": 47
+        },
+        {
+          "name": "environment_install_success_rate_by_pinning",
+          "value": 0.234,
+          "unit": "proportion of repositories",
+          "n": 47,
+          "baseline": "2021 run; >=90% exact pins; the declared environment built at least once; z = -1.77 vs unconstrained",
+          "source": "reanalysis/does_pinning_help.py",
+          "count": 11,
+          "denominator": 47
+        },
+        {
+          "name": "pinning_execution_odds_ratio",
+          "value": 0.435,
+          "unit": "odds ratio",
+          "n": 191,
+          "baseline": "2021 run; >=90% exact pins vs <90%, outcome = repository has >=1 notebook that ran; Fisher exact two-sided p = 0.29",
+          "source": "reanalysis/does_pinning_help.py"
+        },
+        {
+          "name": "pinning_execution_adjusted_log_odds",
+          "value": -0.392,
+          "unit": "log odds per unit fraction pinned",
+          "n": 191,
+          "baseline": "2021 run; logistic regression adjusted for log dependency count, licence and log stars; SE 0.644, 22 events",
+          "source": "reanalysis/does_pinning_help.py"
+        }
       ],
-      "evidence": ["a4", "a7"],
+      "evidence": [
+        "a4",
+        "a7"
+      ],
       "our_assessment": {
         "status": "disputed",
         "why": "The first half is true and reproduces; the recommendation attached to it has never been tested, and this is the dataset that can test it because it ships the verbatim CONTENT of every requirements file next to the outcome. Restricting to the 191 repositories that declared requirements -- repositories with none are not a control, they receive a large default conda environment -- the point estimate runs AGAINST the recommendation at every stratum: OR 0.435 unadjusted (Fisher p = 0.29), adjusted log-odds -0.392 (z = -0.61), and all six pre-specified strata by licence / releases / stars negative (z between -0.99 and -2.08). With 22 events this cannot establish that pinning HURTS and I do not claim it does. It does establish that the field's most repeated recommendation is untested and that the only data able to test it fail to support it. The mechanism is visible at the install stage (23.4% vs 40.4%, z = -1.77) and is not mysterious: 'numpy==1.16.4' instructs a 2023 toolchain to build a 2019 wheel. A pin is a PROVENANCE record and a PORTABILITY liability, and the guidance literature conflates the two. What preserves executability is a built environment, not a list of version numbers."
@@ -129,12 +402,52 @@
       "statement": "The low degree of reproducibility found here agrees with similarly low levels found in earlier domain-generic studies, for Python and for R.",
       "scope": "Discussion, citing Pimentel et al. 2019 and Trisovic et al. 2022 among others.",
       "quantities": [
-        {"name": "artifact_execution_success_rate", "value": 0.2411, "unit": "proportion of notebooks", "n": 863878, "baseline": "Pimentel et al. 2019, GitHub-wide Python notebooks with unambiguous execution order; 208,323 successes", "source": "pimentel2019 RQ7, transcribed"},
-        {"name": "artifact_reproduction_identical_output_rate", "value": 0.0403, "unit": "proportion of notebooks", "n": 863878, "baseline": "Pimentel et al. 2019, notebooks that ran AND produced the same results", "source": "pimentel2019 RQ7, transcribed"},
-        {"name": "artifact_build_success_rate", "value": 0.323, "unit": "proportion of papers", "n": 402, "baseline": "Collberg & Proebsting TR 14-04 (Feb 2015), 'weak repeatability A': code obtained and built within 30 minutes, of ACM papers backed by code", "source": "collberg TR abstract, transcribed"},
-        {"name": "artifact_build_success_rate", "value": 0.54, "unit": "proportion of papers", "n": 402, "baseline": "Collberg & Proebsting, 'weak repeatability C': built by us, or the author states it would build with reasonable effort", "source": "collberg TR abstract, transcribed"}
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.2411,
+          "unit": "proportion of notebooks",
+          "n": 863878,
+          "baseline": "Pimentel et al. 2019, GitHub-wide Python notebooks with unambiguous execution order; 208,323 successes",
+          "source": "pimentel2019 RQ7, transcribed",
+          "count": 208323,
+          "denominator": 863878,
+          "clusters": 264023
+        },
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.0403,
+          "unit": "proportion of notebooks",
+          "n": 863878,
+          "baseline": "Pimentel et al. 2019, notebooks that ran AND produced the same results",
+          "source": "pimentel2019 RQ7, transcribed",
+          "count": 34814,
+          "denominator": 863878,
+          "clusters": 264023
+        },
+        {
+          "name": "artifact_build_success_rate",
+          "value": 0.323,
+          "unit": "proportion of papers",
+          "n": 402,
+          "baseline": "Collberg & Proebsting TR 14-04 (Feb 2015), 'weak repeatability A': code obtained and built within 30 minutes, of ACM papers backed by code",
+          "source": "collberg TR abstract, transcribed",
+          "count": 130,
+          "denominator": 402
+        },
+        {
+          "name": "artifact_build_success_rate",
+          "value": 0.54,
+          "unit": "proportion of papers",
+          "n": 402,
+          "baseline": "Collberg & Proebsting, 'weak repeatability C': built by us, or the author states it would build with reasonable effort",
+          "source": "collberg TR abstract, transcribed",
+          "count": 217,
+          "denominator": 402
+        }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
         "why": "The low rates do agree in the sense that all of them are low. They do not agree numerically, and the appearance that they do is partly manufactured by quoting across incommensurable funnels. Documented instance: Pimentel et al. write that their 24.11% 'is close to the reproducibility rate of 24.9% that Collberg et al. achieved'; the Collberg TR I read reports 32.3% / 48.3% / 54.0% of 402 code-backed papers, and 24.9% comes from the superseded 2014 version they cite. The two events are also not the same event -- a C/C++ project BUILDING versus a notebook RUNNING TO COMPLETION -- on populations that share nothing. Every one of these numbers is a proportion whose denominator was chosen partway down a funnel, and the choices differ between studies. See maria2026-executability-denominators for the pooled version."
@@ -181,7 +494,9 @@
       "status": "verified-usable",
       "local_path": "artifacts/variables.dat",
       "bytes": 34252,
-      "derived_from": ["a4"],
+      "derived_from": [
+        "a4"
+      ],
       "checked": {
         "on": "2026-08-24",
         "by": "maria",
@@ -218,7 +533,9 @@
       "status": "verified-usable",
       "local_path": "artifacts/age_cohorts.csv",
       "bytes": 1500,
-      "derived_from": ["a2"],
+      "derived_from": [
+        "a2"
+      ],
       "checked": {
         "on": "2026-08-24",
         "by": "maria",
@@ -232,7 +549,10 @@
       "locator": "reanalysis/cluster_and_age.py + reanalysis/age_trend.py",
       "status": "verified-usable",
       "local_path": "reanalysis/",
-      "derived_from": ["a4", "a5"],
+      "derived_from": [
+        "a4",
+        "a5"
+      ],
       "checked": {
         "on": "2026-08-24",
         "by": "maria",
@@ -246,7 +566,9 @@
       "locator": "reanalysis/does_pinning_help.py",
       "status": "verified-usable",
       "local_path": "reanalysis/does_pinning_help.py",
-      "derived_from": ["a4"],
+      "derived_from": [
+        "a4"
+      ],
       "checked": {
         "on": "2026-08-24",
         "by": "maria",

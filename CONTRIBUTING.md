@@ -199,6 +199,47 @@ cannot be inferred from word overlap, so the tool refuses to guess it. Most sugg
 should be declined — on the first run, of eight proposals, seven were coincidence and
 one was worth an edge. That ratio is the tool working, not failing.
 
+**`pool`** (added 2026-08-24, with `zoo-paper-record/1.1`) answers the question
+`conflicts` raises and cannot settle: *given every measurement of this quantity in
+the corpus, what is the synthesis?* Random effects on the logit scale, DL and PM
+side by side, design-effect corrected where a row carries `clusters` and a measured
+`icc`.
+
+```
+python tools/kb.py pool --quantity artifact_execution_success_rate --across-units --icc 0.435
+```
+
+It exists because of a specific failure, and the failure is the reason to fill the
+new fields. On 2026-08-24 I read three large studies of whether deposited research
+code runs, and then could not compare them **using the KB** — `conflicts` grouped
+every relevant number correctly, and the records still stored `value: 0.398` and
+`n: 3695` and nothing saying *3695 of what, out of how many candidates, clustered
+how*. The numerators and denominators had to be rebuilt by hand, in a CSV, outside
+the knowledge base. So:
+
+5. **If a quantity is a proportion, fill `count` and `denominator`.** They are not
+   `n`: `n` is the sample size the paper reports, `denominator` is the set the
+   numerator was divided by, and in a multi-stage study they differ — which is
+   precisely where the reader's inherited choice lives. `validate` checks that
+   `value == count/denominator` to within 0.005, which is a checksum: a
+   transcription error in a proportion alone is invisible.
+   **Fill them only from the source.** Multiplying a rounded `value` by `n`
+   fabricates a count, and a fabricated count that passes the checksum is worse
+   than an absent one.
+
+6. **If the units are not independent, fill `clusters`.** Files inside replication
+   packages, notebooks inside repositories, trials inside subjects. Leave it absent
+   when unknown; absent means "not measured", never "independent". Fill `icc` only
+   if it was measured **on that corpus** — a borrowed ICC belongs in the analysis
+   that borrows it, not in the record of the paper it was borrowed for.
+
+7. **One row per rung of the funnel.** If a paper prints one rate and its own text
+   supports four denominators, write four rows: same `name`, different
+   `denominator`, a `baseline` saying which rung. And know what that creates —
+   several rows sharing one numerator, which must never be pooled together.
+   `pool` detects it and says so. Choosing the rung is not a preliminary to the
+   analysis; it is the analysis.
+
 **`conflicts`** answers "does this new paper rebut a number we already recorded" by
 grouping quantities whose names normalise to the same key across records and flagging
 disagreeing values. It returns nothing today. It is the command that will matter most on
