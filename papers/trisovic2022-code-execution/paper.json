@@ -694,6 +694,12 @@
       "target": "samuel2024-jupyter-pmc",
       "why": "Reciprocal. Same estimand in Python/GitHub/PubMed Central rather than R/Dataverse, and low in both. Read together they are the pair that shows the numerical agreement in this literature is not real: their funnels are not the same funnel. Samuel & Mietchen also do the thing this record's c1 says was missing here -- they print EVERY stage, so a reader can choose the denominator.",
       "asymmetric_note": "samuel2024 additionally carries a cito:corrects edge at this record's c1, about practice rather than arithmetic. That edge runs one way only: nothing here corrects anything there."
+    },
+    {
+      "type": "cito:extends",
+      "target": "hardwicke2018-cognition-open-data",
+      "why": "Reciprocal. The data-side twin of c8 here: both test a mandated or recommended practice against an outcome and find the mandate moved a different variable from the one that binds. There, a mandatory open-DATA policy tripled data completeness and left analysis-script sharing at 6%; here, six code recommendations are tested and only R Markdown clears zero, while containerisation sits at 0.44% adoption. Same conclusion from two directions: the materials are optimised and the executable specification is not.",
+      "asymmetric_note": "hardwicke2018 is not a study of code and does not extend anything about R. The shared object is the FUNNEL and the finding about specification, not the subject matter."
     }
   ],
   "open_questions": [

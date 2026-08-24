@@ -1,0 +1,36 @@
+id,valuesChecked,eyeballs,Total_df,Total_p,Total_mean,Total_sd,Total_se,Total_ci,Total_bf,Total_t,Total_F,Total_es,Total_median,Total_irr,Total_r,Total_z,Total_coeff,Total_n,Total_x2,Total_other,Insufficient_Information_Errors,Decision_Errors,Major_Numerical_Errors,Minor_Numerical_Errors,Major_df,Major_p,Major_mean,Major_sd,Major_se,Major_ci,Major_bf,Major_t,Major_F,Major_es,Major_median,Major_irr,Major_r,Major_z,Major_coeff,Major_n,Major_x2,Major_other,affectsConclusion,error_typo,error_specification,error_analysis,error_data,error_unidentified,Author_Assistance,resolved_typo,resolved_specification,resolved_analysis,resolved_data,correctionSuggested,correctionPublished,outcome
+Tbkij,22,3,2,8,5,5,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,4,0,0,no,FALSE,Success with author assistance
+jCSIW,120,1,14,7,35,33,0,0,0,0,7,17,0,0,0,0,0,0,0,7,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+ENIfE,48,0,0,0,12,0,0,24,0,0,0,12,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+IeIFy,24,3,3,3,5,5,0,0,0,0,0,0,0,0,3,0,0,0,0,5,0,0,4,1,0,0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,1,0,0,TRUE,0,0,0,0,yes,FALSE,Failure despite author assistance
+bGRfF,7,1,0,2,0,2,0,0,0,0,0,0,2,0,0,1,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+MbLKW,9,3,1,1,0,0,0,0,0,1,0,0,2,0,0,0,0,4,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+hJiYk,28,9,6,4,6,0,4,0,0,2,2,4,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+ILpNO,31,9,6,6,6,0,4,0,0,0,3,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+IBRbN,99,8,17,8,30,30,0,0,0,0,8,6,0,0,0,0,0,0,0,0,0,0,1,37,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,1,0,0,0,0,TRUE,0,0,0,0,NA,NA,Failure despite author assistance
+RPYAj,48,4,8,4,16,14,0,0,0,0,4,2,0,0,0,0,0,0,0,0,0,0,9,9,0,0,1,6,0,0,0,0,2,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,1,TRUE,0,0,0,0,no,FALSE,Failure despite author assistance
+UYYED,25,2,4,2,6,1,4,0,0,4,0,0,0,0,0,0,0,4,0,0,0,0,5,5,0,2,1,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,1,0,0,TRUE,0,1,0,1,yes,TRUE,Failure despite author assistance
+UAIUi,34,3,0,6,8,8,0,0,0,2,4,6,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,1,0,0,no,FALSE,Success with author assistance
+LcquD,58,18,18,9,8,0,8,0,0,0,9,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+KIUKz,28,4,8,4,6,6,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,5,2,3,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,1,TRUE,0,1,0,0,FALSE,NA,Failure despite author assistance
+Xvfpm,10,0,0,2,1,1,0,0,0,3,0,0,0,0,0,0,1,2,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,2,0,0,no,FALSE,Success with author assistance
+NoMcC,63,8,15,14,12,0,0,12,0,5,5,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,1,0,1,no,NA,Success with author assistance
+leydV,44,3,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,36,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+sDcDq,36,10,10,7,4,0,4,0,0,4,3,4,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+APNGu,8,3,0,3,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+AgnZI,53,4,11,11,9,3,3,0,0,5,3,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,0,0,1,no,NA,Success with author assistance
+OvGDB,24,1,2,4,6,6,0,0,0,2,0,2,0,0,0,0,0,2,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,1,TRUE,0,1,0,0,yes,FALSE,Failure despite author assistance
+crIXN,36,4,5,5,8,0,8,0,2,5,0,2,0,0,0,0,0,0,0,1,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,2,0,0,NA,NA,Success with author assistance
+TvdWP,18,0,0,0,10,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,1,TRUE,0,0,1,0,no,FALSE,Failure despite author assistance
+DvcDF,62,1,10,10,8,8,4,0,0,10,0,6,0,0,0,0,4,0,0,2,0,0,6,27,0,2,0,0,0,0,0,1,0,2,0,0,0,0,0,0,0,1,unlikely,1,1,0,1,1,TRUE,0,0,0,1,NA,NA,Failure despite author assistance
+DRaKS,7,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,2,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unclear,0,1,0,1,1,TRUE,0,0,0,0,FALSE,NA,Failure despite author assistance
+rggwx,53,4,4,4,18,18,0,0,0,4,0,4,0,0,0,0,0,1,0,0,0,0,5,1,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,1,0,0,unlikely,3,0,0,0,1,TRUE,0,1,0,0,no,FALSE,Failure despite author assistance
+DFDwT,31,1,8,5,4,4,0,0,0,2,3,5,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,1,0,0,NA,NA,Success with author assistance
+jjmld,33,0,8,6,5,4,0,0,0,0,4,4,0,0,0,0,0,0,0,2,1,0,13,11,0,5,0,3,0,0,0,0,3,1,0,0,0,0,0,0,0,1,unclear,0,0,0,0,1,TRUE,0,0,0,1,FALSE,NA,Failure despite author assistance
+gIjYG,15,2,6,3,0,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,3,0,0,NA,NA,Success with author assistance
+JcuWB,45,12,0,0,17,0,6,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,1,0,1,NA,NA,Success with author assistance
+COGGV,36,19,5,5,8,0,8,0,0,5,0,5,0,0,0,0,0,0,0,0,0,0,5,3,0,1,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,unlikely,0,1,0,0,1,TRUE,0,1,0,0,no,FALSE,Failure despite author assistance
+htkUz,72,13,14,10,16,16,0,0,0,0,11,5,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,FALSE,0,0,0,0,NA,NA,Success
+Wzqlp,15,0,2,2,4,4,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,2,0,1,no,FALSE,Success with author assistance
+UlhiU,36,4,2,7,0,0,2,0,0,2,0,0,0,0,5,0,0,18,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,unlikely,0,0,0,0,0,TRUE,0,1,0,1,no,FALSE,Success with author assistance
+bPJii,46,2,20,12,1,1,0,0,0,0,9,0,0,0,3,0,0,0,0,0,1,0,4,7,0,2,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,unclear,0,3,0,0,0,TRUE,0,1,0,0,no,FALSE,Failure despite author assistance

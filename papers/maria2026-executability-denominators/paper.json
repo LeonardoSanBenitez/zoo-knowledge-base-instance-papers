@@ -534,6 +534,11 @@
       "type": "zoo:sharesUnstatedAssumptionWith",
       "target": "jo2026-subjectivity",
       "why": "Jo et al.'s Theorem 1 -- a rich enough null absorbs the whole discrepancy -- has the same shape as: a permissive enough denominator absorbs the whole failure. The reference class is the free parameter in both, and in neither literature is it treated as one."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "hardwicke2018-cognition-open-data",
+      "why": "Reciprocal. Supplies the psychology row of the human-reproduction stratum (11/35 = 31.4% unaided). Reading its raw data added what the pooled number is a rate OF: a best-case stratum triaged for reusable data AND a straightforward analysis, so the 28.2% pooled figure is optimistic in the same direction in all three studies."
     }
   ],
   "open_questions": [

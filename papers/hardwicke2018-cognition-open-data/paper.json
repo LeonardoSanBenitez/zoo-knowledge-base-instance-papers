@@ -1,0 +1,261 @@
+{
+  "schema_version": "1.1",
+  "id": "hardwicke2018-cognition-open-data",
+  "title": "Data availability, reusability, and analytic reproducibility: evaluating the impact of a mandatory open data policy at the journal Cognition",
+  "authors": ["Tom E. Hardwicke", "Maya B. Mathur", "Kyle MacDonald", "Gustav Nilsonne", "George C. Banks", "Mallory C. Kidwell", "Alicia Hofelich Mohr", "Elizabeth Clayton", "Erica J. Yoon", "Michael Henry Tessler", "Richie L. Lenne", "Sara Altman", "Bria Long", "Michael C. Frank"],
+  "year": 2018,
+  "venue": "Royal Society Open Science 5:180448",
+  "area": ["computational-reproducibility-and-artifact-reuse"],
+  "identifiers": {
+    "doi": "10.1098/rsos.180448",
+    "url": "https://royalsocietypublishing.org/doi/10.1098/rsos.180448",
+    "pmid": "30225032"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 14,
+    "bytes_downloaded": 320000,
+    "compute_notes": "Publisher PDF blocked; full text obtained as EuropePMC JATS XML (PMC6124055, 188 KB) and de-tagged with a 6-line stdlib script to 12,786 words. Six OSF files downloaded (codingData.csv 96 KB, reproducibilityData.csv 6 KB, statusData.csv 14 KB, two codebooks, excludedFromCoding.csv) totalling 122 KB. One reanalysis script, stdlib only, under 10 s including a 4,000-resample article-level bootstrap and an exact Clopper-Pearson interval implemented from math.lgamma. LESSON RECORDED AGAINST MYSELF: listing the OSF node through its API without a projection dumped about 12,000 tokens of raw JSON into the session for no benefit. Always pipe an API through a filter.",
+    "session": "2026-08-24 maria"
+  },
+  "triggers": [
+    "does a mandatory open data policy actually work",
+    "which kind of published number is most likely to be wrong",
+    "are p-values or means more likely to reproduce",
+    "if I reuse a number from a paper what are the odds it is right",
+    "what fraction of shared psychology datasets are actually usable",
+    "data availability statement but the file has no data in it",
+    "why does an analysis fail to reproduce even when I have the data",
+    "should journals require the analysis script as well as the data",
+    "how often do published statistics fail to recompute from their own data",
+    "how common are present-but-insufficient artifacts",
+    "end to end reproducibility rate for a journal",
+    "reproducibility errors concentrated in a few papers"
+  ],
+  "methods": [
+    "in-paper-table-transcription",
+    "output-diff-reproduction-check",
+    "cluster-bootstrap-over-articles",
+    "clopper-pearson-exact-interval",
+    "printed-decimal-denominator-forensics",
+    "survivorship-conditioning-diagnosis",
+    "multiverse-analysis"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "A mandatory open data policy at Cognition substantially increased data-available statements (104/417 = 25% pre-policy to 136/174 = 78% post-policy) and in-principle reusable data (23/104 = 22% to 85/136 = 62%).",
+      "scope": "All 591 empirical articles published in Cognition March 2014 to March 2017; policy effective 1 March 2015. Reusable = the file downloaded, contained all needed data, and was understandable on brief review.",
+      "quantities": [
+        {"name": "data_availability_statement_rate", "value": 0.249, "unit": "proportion of articles", "n": 417, "count": 104, "denominator": 417, "baseline": "pre-policy", "source": "reanalysis/which_numbers_fail.py, recomputed from codingData.csv"},
+        {"name": "data_availability_statement_rate", "value": 0.782, "unit": "proportion of articles", "n": 174, "count": 136, "denominator": 174, "baseline": "post-policy", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "artifact_reusable_rate", "value": 0.221, "unit": "proportion of articles with a statement", "n": 104, "count": 23, "denominator": 104, "baseline": "pre-policy; downloaded AND all data present AND understandable", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "artifact_reusable_rate", "value": 0.625, "unit": "proportion of articles with a statement", "n": 136, "count": 85, "denominator": 136, "baseline": "post-policy", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "artifact_download_success_rate", "value": 0.99, "unit": "proportion of articles with a statement", "n": 104, "count": 103, "denominator": 104, "baseline": "pre-policy; the file opened. NOT PRINTED IN THE PAPER", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "artifact_download_success_rate", "value": 0.978, "unit": "proportion of articles with a statement", "n": 136, "count": 133, "denominator": 136, "baseline": "post-policy; NOT PRINTED IN THE PAPER", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "artifact_completeness_rate", "value": 0.291, "unit": "proportion of downloaded datasets", "n": 103, "count": 30, "denominator": 103, "baseline": "pre-policy; ALL needed data present. NOT PRINTED IN THE PAPER, and it is where the policy acted", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "artifact_completeness_rate", "value": 0.782, "unit": "proportion of downloaded datasets", "n": 133, "count": 104, "denominator": 133, "baseline": "post-policy; NOT PRINTED IN THE PAPER", "source": "reanalysis/which_numbers_fail.py"}
+      ],
+      "evidence": ["a1", "a2", "a5"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Every printed figure recomputes to the article from the released coding data (104/417, 23/104, 136/174, 85/136), which is as strong a reproduction as this kind of study admits. The addition is the useful part: two intermediate rungs the paper does not print show that AVAILABILITY WAS NEVER THE BINDING CONSTRAINT. Ninety-nine percent of data statements already led to a file that opened, before and after the policy. What the policy changed is COMPLETENESS: of datasets that downloaded, the share containing all needed data went from 30/103 = 29% to 104/133 = 78%. A journal or repository acting on this should check completeness, not availability."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "For 35 articles with reusable data, 1,324 target values were checked; 64 could not be reproduced within a 10% margin. For 22 articles all values reproduced, 11 of those requiring author assistance; 13 articles had at least one value that could not be reproduced despite author assistance. There were no clear indications that original conclusions were seriously impacted.",
+      "scope": "Articles drawn from the reusable pool and triaged further for a substantive finding based on a relatively straightforward analysis.",
+      "quantities": [
+        {"name": "reported_result_recovery_rate", "value": 0.314, "unit": "proportion of articles", "n": 35, "count": 11, "denominator": 35, "baseline": "all target values reproduced WITHOUT author assistance", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "reported_result_recovery_rate_with_author_help", "value": 0.629, "unit": "proportion of articles", "n": 35, "count": 22, "denominator": 35, "baseline": "all target values reproduced, author assistance allowed", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "major_numerical_error_rate", "value": 0.048, "unit": "proportion of checked values", "n": 1324, "count": 64, "denominator": 1324, "clusters": 35, "baseline": "all value types pooled", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "minor_numerical_error_rate", "value": 0.11, "unit": "proportion of checked values", "n": 1324, "count": 146, "denominator": 1324, "clusters": 35, "baseline": "minor numerical errors, i.e. rounding and similar", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "share_of_articles_with_no_major_error", "value": 0.629, "unit": "proportion of articles", "n": 35, "count": 22, "denominator": 35, "baseline": "articles with zero major numerical errors -- errors are concentrated, not spread", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "share_of_errors_in_top_10_articles", "value": 0.953, "unit": "proportion of major errors", "n": 64, "count": 61, "denominator": 64, "baseline": "the 10 worst articles hold 61 of 64 major errors; the single worst holds 13", "source": "reanalysis/which_numbers_fail.py"}
+      ],
+      "evidence": ["a1", "a3", "a5"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Reproduces exactly: 35 articles, 1,324 values, 64 major, 146 minor, 2 insufficient-information, 0 decision errors, and the 11 / 11 / 13 outcome split. The narrowing is about what the sample IS. Checked against the coding data, all 35 were coded as having all needed data and as understandable -- that is the triage criterion -- and 34 of 35 shared no analysis script. So no sharing practice can be tested on this sample; the variables have no variance. What it does establish is stronger than a correlation: this is the friendliest possible stratum and 13 of 35 (37%) could not be reproduced even with the original authors helping. Also 63% of articles had NO major error while the top 10 hold 95% of them, so the value-level rate must never be read as a per-paper hazard."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "NOT A CLAIM OF THE PAPER. The rate at which a reported value fails to reproduce depends strongly on what KIND of value it is, and the released data codes every value by type.",
+      "scope": "1,324 values in 35 articles, eighteen coded types. Types with fewer than 20 values checked are reported but never ranked.",
+      "quantities": [
+        {"name": "major_numerical_error_rate", "value": 0.092, "unit": "proportion of checked values", "n": 185, "count": 17, "denominator": 185, "clusters": 35, "ci": "exact 95% CI 5.4 to 14.3%; article-level bootstrap 2.5 to 17.9%", "ci_low": 0.025, "ci_high": 0.179, "ci_kind": "confidence", "baseline": "p-values", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "major_numerical_error_rate", "value": 0.089, "unit": "proportion of checked values", "n": 169, "count": 15, "denominator": 169, "clusters": 35, "ci": "article-level bootstrap 1.3 to 19.6%", "ci_low": 0.013, "ci_high": 0.196, "ci_kind": "confidence", "baseline": "standard deviations", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "major_numerical_error_rate", "value": 0.084, "unit": "proportion of checked values", "n": 83, "count": 7, "denominator": 83, "clusters": 35, "baseline": "F statistics", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "major_numerical_error_rate", "value": 0.056, "unit": "proportion of checked values", "n": 108, "count": 6, "denominator": 108, "clusters": 35, "baseline": "effect sizes", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "major_numerical_error_rate", "value": 0.019, "unit": "proportion of checked values", "n": 209, "count": 4, "denominator": 209, "clusters": 35, "baseline": "degrees of freedom", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "major_numerical_error_rate", "value": 0.015, "unit": "proportion of checked values", "n": 274, "count": 4, "denominator": 274, "clusters": 35, "ci": "exact 95% CI 0.4 to 3.7%; article-level bootstrap 0.0 to 3.8%", "ci_low": 0.0, "ci_high": 0.038, "ci_kind": "confidence", "baseline": "means -- the most-checked type and the lowest rate", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "error_rate_ratio_inference_over_description", "value": 6.1, "unit": "ratio of proportions", "n": 459, "baseline": "p-value rate 9.2% over mean rate 1.5%, the two best-measured types", "source": "reanalysis/which_numbers_fail.py"}
+      ],
+      "evidence": ["a3", "a5"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Arithmetic over the released per-type counts, so the point estimates are not in doubt; the ORDERING mostly is. The article-level bootstrap intervals overlap heavily and at 35 clusters the middle of the table is not separable. What IS separable is the two ends: means [0.0, 3.8] against p-values [2.5, 17.9]. The pattern -- descriptive location survives, inference and dispersion do not -- has a mechanism: a mean is a near-direct function of the shared data, while a p-value is a function of the whole model specification, and the specification is exactly what was not shared, since 6% of these articles shared an analysis script. It should be repeated on another corpus with per-value coding before being quoted as a rule. If it holds twice it is the single most useful thing in this literature for someone reusing a published number, and it is currently nobody's finding."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "NOT A CLAIM OF THE PAPER. The dominant identified reason a reported value does not come back out of its own shared data is that the analysis was under-specified in the paper -- not a wrong number, not a broken file.",
+      "scope": "Values whose cause was identified and resolved after contacting the original authors: 33 of the 64 major errors.",
+      "quantities": [
+        {"name": "values_resolved_as_underspecification", "value": 24, "unit": "values", "n": 64, "baseline": "of the identified causes, the largest category by far", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "values_resolved_as_data_problem", "value": 8, "unit": "values", "n": 64, "baseline": "a problem with the shared data", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "values_resolved_as_analysis_error", "value": 1, "unit": "values", "n": 64, "baseline": "an actual error in the original analysis", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "values_resolved_as_typo", "value": 0, "unit": "values", "n": 64, "baseline": "a typo in the manuscript", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "articles_with_unidentified_error_cause", "value": 9, "unit": "articles", "n": 35, "baseline": "at least one error whose cause was never identified, WITH author cooperation, in the friendliest sample", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "analysis_script_sharing_rate", "value": 0.087, "unit": "proportion of downloaded datasets", "n": 103, "count": 9, "denominator": 103, "baseline": "pre-policy; the dataset also includes an analysis script", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "analysis_script_sharing_rate", "value": 0.06, "unit": "proportion of downloaded datasets", "n": 133, "count": 8, "denominator": 133, "baseline": "post-policy; a mandatory open DATA policy did not move script sharing at all", "source": "reanalysis/which_numbers_fail.py"}
+      ],
+      "evidence": ["a2", "a3", "a5"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The counts are theirs; the reading is mine and the denominators are small -- 33 resolved values in total. Narrowed accordingly: this is what the resolved subset looks like, and nine articles had causes never identified at all. What survives the smallness is the shape, because it is the same shape as the code-side result. There an artifact fails because the ENVIRONMENT was described rather than preserved; here an analysis fails because the PROCEDURE was described rather than preserved. In both cases the materials are fine and the executable specification is missing, and the whole open-science toolkit optimises the materials. The corroborating number is that a mandatory data policy tripled data completeness (29% to 78%) and moved script sharing from 8.7% to 6.0%, i.e. not at all."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "NOT A CLAIM OF THE PAPER. Composing the two stages gives the end-to-end rate: the share of published articles whose reported numbers a stranger can recover from the shared data without contacting the author.",
+      "scope": "P(reusable) from the full 591-article coding, times P(reproduces unaided | reusable) from the 35-article sample.",
+      "quantities": [
+        {"name": "end_to_end_unaided_reproducibility_rate", "value": 0.154, "unit": "proportion of articles", "n": 174, "baseline": "post-policy Cognition: 85/174 reusable times 11/35 unaided", "source": "reanalysis/which_numbers_fail.py"},
+        {"name": "end_to_end_unaided_reproducibility_rate", "value": 0.017, "unit": "proportion of articles", "n": 417, "baseline": "pre-policy Cognition: 23/417 reusable times the same conditional", "source": "reanalysis/which_numbers_fail.py"}
+      ],
+      "evidence": ["a2", "a3", "a5"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Two load-bearing assumptions, both mine, both printed in the script's own output. The conditional 31.4% is measured on a stratum triaged for reusable data AND a straightforward analysis, so it is optimistic. And applying it to the pre-policy era assumes the conditional did not change, which cannot be checked, so the ninefold ratio is a rough figure. THE POST-POLICY 15% DOES NOT DEPEND ON THE SECOND ASSUMPTION and is the number I would defend: after a mandatory open-data policy, at a good journal, about one article in seven has numbers a stranger can recover unaided. Nobody states this because each stage is reported separately and the composition is left to a reader who never does it."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "supplement",
+      "locator": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6124055/fullTextXML",
+      "status": "verified-usable",
+      "local_path": "artifacts/hardwicke2018_fulltext.txt",
+      "bytes": 90000,
+      "license": "CC BY 4.0",
+      "checked": {
+        "on": "2026-08-24",
+        "by": "maria",
+        "how": "curl the EuropePMC JATS XML (188 KB), strip tags with a 6-line stdlib script, read Results and section 3.3 in full -> 12,786 words",
+        "result": "Full text obtained where the publisher PDF and four mirrors returned HTML. Confirms every funnel figure and the 31% / 63% reproduction rates."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "human-labels",
+      "locator": "https://osf.io/4htkx/",
+      "status": "verified-usable",
+      "local_path": "artifacts/codingData.csv",
+      "bytes": 96433,
+      "fetch_cmd": "curl -sL -o codingData.csv https://osf.io/download/4htkx/",
+      "checked": {
+        "on": "2026-08-24",
+        "by": "maria",
+        "how": "python reanalysis/which_numbers_fail.py -- rebuilds the whole funnel from this file and compares it to the paper",
+        "result": "591 rows, one per article, five coders. Recovers 104/417 and 136/174 statements and 23/104 and 85/136 reusable EXACTLY, plus two rungs the paper does not print. Coder initials are retained, so inter-coder variation is checkable and I did not check it."
+      },
+      "datasheet": {
+        "motivation": "Coding of data availability and in-principle reusability for every empirical Cognition article 2014-2017.",
+        "composition": "One row per article. Timestamp, coder initials, 5-character article ID, date received, then one column per question of the preregistered Google Form (osf.io/qr6e4): is there a statement, how accessible, what does the link lead to, did the file open, is all needed data present, is it understandable, are analysis scripts available, is a licence provided.",
+        "collection": "Five coders, articles randomly assigned, single-coded after a training phase requiring over 90% agreement with a gold standard set by the first author.",
+        "preprocessing": "None.",
+        "caveats": "Single-coded, so there is no per-article reliability. The date column is US format with two-digit years (12/8/14); parsing it day-first silently misclassifies the policy era for most rows, and that is the one place this file can bite a reuser. 'Does all of the data needed... appear to be available' has four levels and only 'Yes, all' should count as complete -- collapsing 'unclear' or 'only some' into yes changes the pre-policy completeness figure substantially."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "human-labels",
+      "locator": "https://osf.io/hvytz/",
+      "status": "verified-usable",
+      "local_path": "artifacts/reproducibilityData.csv",
+      "bytes": 6208,
+      "fetch_cmd": "curl -sL -o reproducibilityData.csv https://osf.io/download/hvytz/",
+      "checked": {
+        "on": "2026-08-24",
+        "by": "maria",
+        "how": "python reanalysis/which_numbers_fail.py -- sums Total_<type> and Major_<type> across 18 types and checks against valuesChecked",
+        "result": "35 rows. The 18 Total_<type> columns sum to exactly 1,324, matching valuesChecked, which is the internal checksum that licenses the per-type table. Also carries the error taxonomy (typo / specification / analysis / data / unidentified) and what was resolved after author contact. THIS IS THE FILE THAT MAKES THE PER-TYPE ANALYSIS POSSIBLE, and the paper's prose never mentions that the per-type breakdown exists."
+      }
+    },
+    {
+      "id": "a4",
+      "role": "human-labels",
+      "locator": "https://osf.io/t23fv/",
+      "status": "verified-usable",
+      "local_path": "artifacts/statusData.csv",
+      "bytes": 13963,
+      "checked": {
+        "on": "2026-08-24",
+        "by": "maria",
+        "how": "read the header and the codebook",
+        "result": "591 rows of workflow status (coded / passed to triage / triage accepted / reproducibility check done). Documents the triage step that makes the 35 a best-case stratum. Not otherwise used."
+      }
+    },
+    {
+      "id": "a5",
+      "role": "code",
+      "locator": "reanalysis/which_numbers_fail.py",
+      "status": "verified-usable",
+      "local_path": "reanalysis/which_numbers_fail.py",
+      "derived_from": ["a2", "a3"],
+      "checked": {
+        "on": "2026-08-24",
+        "by": "maria",
+        "how": "cd reanalysis && python which_numbers_fail.py > which_numbers_fail.log",
+        "result": "Per-type error rates with exact Clopper-Pearson intervals (incomplete beta from math.lgamma, no SciPy) and a 4,000-resample article-level bootstrap; error concentration; the cause taxonomy; the selection check showing the 35 are constant on every sharing practice; the funnel rebuilt from raw coding data; and the composed end-to-end rate with its two assumptions printed next to it."
+      }
+    },
+    {
+      "id": "a6",
+      "role": "preregistration",
+      "locator": "https://osf.io/q4qy3/",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-08-24",
+        "by": "maria",
+        "how": "noted from the full text; not retrieved",
+        "result": "The study protocol (hypotheses, methods, analysis plan) is preregistered and the paper states that all deviations are explicitly acknowledged. NOT VERIFIED BY ME -- I did not fetch it and did not check the deviations. Recorded so the record does not imply that I did."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-executability-denominators",
+      "why": "Supplies the psychology row of the human-reproduction stratum (11/35 = 31.4% unaided) that pools at 28.2% with I2 = 0 across three fields. Reading the raw data has not moved the number and has said what it is a rate OF: a best-case stratum, triaged for reusable data AND a straightforward analysis."
+    },
+    {
+      "type": "cito:extends",
+      "target": "trisovic2022-code-execution",
+      "why": "The data-side twin of that record's c8. There, six recommended code practices are tested against re-execution and only R Markdown clears zero. Here, a mandatory data policy tripled data completeness (29% to 78% of downloaded datasets) and moved analysis-script sharing from 8.7% to 6.0%, i.e. not at all -- while under-specification of the analysis is the dominant identified cause of a value failing to reproduce. Both land in the same place: the materials are optimised and the executable specification is not."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "samuel2024-jupyter-pmc",
+      "why": "Independent confirmation of the concentration result. There, 77% of repositories with three or more notebooks had a homogeneous outcome and 130 repositories produced all 396 successes; here, 63% of articles had zero major errors and the top 10 hold 95% of them. A value-level or file-level rate is not a per-paper hazard in either corpus."
+    }
+  ],
+  "open_questions": [
+    "Repeat the per-type error table on any other corpus with per-value coding. If 'means reproduce, p-values do not' holds twice it is a rule for reusers, and it is currently nobody's finding.",
+    "Nine articles had at least one error whose cause was NEVER identified, with author cooperation, in the friendliest sample. Nobody has asked what those are; the per-article reproducibility reports at osf.io/p7vkj would say.",
+    "The intervention this points at -- require the analysis script, not only the data -- has been tested nowhere. Script sharing here is 6 to 9% and did not respond to a mandatory data policy, so this corpus contains no natural experiment for it.",
+    "codingData.csv retains coder initials and the articles were single-coded. Inter-coder drift is checkable by comparing the five coders' marginal rates, and I did not do it.",
+    "The 71% of pre-policy available datasets that were present-but-insufficient rather than dangling is the first measurement I have of a distinction I put into paper.schema.json on the argument that no badge scheme records it. A second corpus would make that a rate rather than an instance."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-24",
+    "verified": "2026-08-24",
+    "notes_file": "NOTES.md"
+  }
+}

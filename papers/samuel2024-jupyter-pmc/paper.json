@@ -598,6 +598,11 @@
       "type": "cito:qualifies",
       "target": "maria2026-analytic-variability-reanalysis",
       "why": "Two runs of ONE pipeline by ONE team two years apart give opposite signs for the age-reproducibility association (z = -4.40 then z = +11.7). That is many-analysts dispersion with n = 1 analyst: when an estimand is conditioned on an unstable upstream filter, no analyst degrees of freedom are needed to produce the dispersion. Sharpens the Breznau reading rather than contradicting it."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "hardwicke2018-cognition-open-data",
+      "why": "Reciprocal, on concentration. 77% of repositories here with three or more notebooks had a homogeneous outcome and 130 repositories produced all 396 successes; there, 63% of articles had zero major errors and the top 10 hold 95% of them. Two corpora, two units, same shape: a value-level or file-level rate is not a per-paper hazard."
     }
   ],
   "open_questions": [
