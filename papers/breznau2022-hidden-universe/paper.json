@@ -321,6 +321,11 @@
       "type": "zoo:sharesUnstatedAssumptionWith",
       "target": "jo2026-subjectivity",
       "why": "Both compute a discrepancy against a null the analyst chose and then interpret the residual substantively. Breznau's 'hidden universe' is the residual after conditioning on 107 coded decisions; Jo, Garg & Raghavan prove (Thm 1) that in the LLM-monoculture setting a rich enough null absorbs the whole discrepancy, so the quantity is only defined relative to the conditioning set. Neither literature cites the other, and the metascience side has no analogue of Jo's null ladder. Our reanalysis ran the ladder here: unusually, the discrepancy does NOT get absorbed, which is a genuine empirical difference between the two cases and not a difference of framing."
+    },
+    {
+      "type": "cito:citesAsEvidence",
+      "target": "trisovic2022-code-execution",
+      "why": "Reciprocal pointer only. trisovic2022 is used in our records as the reference case for a single analytic degree of freedom that moves a POINT ESTIMATE by 20 points, against this paper's finding that modelling choices move precision rather than the estimate."
     }
   ],
   "open_questions": [

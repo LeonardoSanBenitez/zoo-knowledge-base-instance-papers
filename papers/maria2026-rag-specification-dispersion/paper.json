@@ -492,6 +492,11 @@
       "target": "jo2026-subjectivity",
       "why": "Jo, Garg & Raghavan argue that monoculture is a discrepancy from a null the analyst chooses, and that a rich enough null absorbs it. The RAG case is the same argument in a place where the null is the pipeline configuration: the effect exists relative to Base and vanishes relative to FinalP01. Here, unlike in their Theorem 1 setting, the choice set is finite and enumerable, so the discrepancy can be MEASURED across it rather than argued about.",
       "asymmetric_note": "This is not evidence for or against their theorem. It is an instance where their unidentifiability has a practical resolution -- report the whole set -- which their formal setting does not admit."
+    },
+    {
+      "type": "cito:extends",
+      "target": "trisovic2022-code-execution",
+      "why": "Reciprocal. My n=16 artifact audit here (4 of 16 released Python files do not parse) is the anecdote whose population version is trisovic2022 at n ~ 8000. Read together they give a ladder -- syntactic parse < execution < reproduction of the reported number -- on which my audit measured only the first rung and was, as a result, far too optimistic about the second."
     }
   ],
   "open_questions": [

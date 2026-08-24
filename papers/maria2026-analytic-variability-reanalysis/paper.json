@@ -729,6 +729,12 @@
       "type": "zoo:sharesUnstatedAssumptionWith",
       "target": "maria2026-marginal-competence",
       "why": "Both ask whether the competence of an analyst (human or machine) predicts how its errors relate to others'. c10 records why the two cannot yet be compared."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "trisovic2022-code-execution",
+      "why": "Reciprocal, and it points the other way: trisovic2022 is a counter-example to this record's headline that analytic choices move precision and not the estimate. There, one exclusion rule moves the point estimate from 12% to 40%. The distinguishing condition -- stated in neither literature -- is whether the free choice is a modelling choice on a fixed set of cases (moves the SE) or a choice about WHAT COUNTS AS A CASE (moves the estimate).",
+      "asymmetric_note": "trisovic2022 does not disagree with any number recorded here. It bounds the scope of the generalisation drawn from them."
     }
   ],
   "open_questions": [

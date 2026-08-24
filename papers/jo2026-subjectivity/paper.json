@@ -175,6 +175,11 @@
       "type": "zoo:reanalysedBy",
       "target": "maria2026-marginal-competence",
       "why": "We tested c1 and c2 by a distractor-level route they explicitly set aside (they work on binary correctness only)."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "trisovic2022-code-execution",
+      "why": "Reciprocal. Jo et al.'s Theorem 1 (a rich enough null absorbs any monoculture discrepancy) has a structural twin in a literature that never cites it: a code re-execution RATE is a discrepancy from a denominator the analyst chooses, and Trisovic et al.'s exclusion rule absorbs half the failures (39.8% vs 19.3% on identical logs). Both papers take the reference class as given."
     }
   ],
   "open_questions": [

@@ -1,0 +1,89 @@
+==========================================================================
+CONDITION: no code cleaning  (no_env)
+==========================================================================
+files appearing in >=1 run log (this condition) :  7985
+version coverage: 3 of 3 = 3490, 2 of 3 = 3314, 1 of 3 = 1181
+
+-- the paper's estimate, reproduced --
+  denominator kept by the notebook rule        :  3830
+  successes                                    :   952
+  SUCCESS RATE (paper)                         :  24.9%
+
+-- what the logs actually contain, symmetric rule --
+  success    952
+  error     6824
+  tle         46
+  infra      163
+  any observed outcome                         :  7985
+  SUCCESS / any observed outcome               :  11.9%
+  SUCCESS / all files in >=1 log               :  11.9%
+
+-- composition of the bucket the paper labels 'TLE' (n=4054) --
+  NO tle; has a recorded ERROR, missing >=1 version     3835  (94.6%)
+  NO tle; infra (download/auth), missing >=1 version     163  ( 4.0%)
+  contains a literal 'time limit exceeded'                56  ( 1.4%)
+  additionally dropped by the bad-DOI rule (all non-successes): 101
+
+-- is the missingness informative? (observed cells only) --
+  PER CELL   full coverage: 1450/10470 = 13.8%   partial: 717/7645 = 9.4%
+  PER FILE   full coverage: 505/3490 = 14.5%   partial: 447/4332 = 10.3%
+  per-cell two-proportion z = 9.16  (|z|>1.96 => not ignorable)
+
+-- bounds over the 7985 files seen in >=1 log --
+  all-unobserved-are-failures  (lower) : 11.9%
+  all-unobserved-are-successes (upper) : 14.0%
+  (163 files have no usable outcome in any version)
+
+==========================================================================
+CONDITION: with code cleaning  (env)
+==========================================================================
+files appearing in >=1 run log (this condition) :  7621
+version coverage: 3 of 3 = 3169, 2 of 3 = 2583, 1 of 3 = 1869
+
+-- the paper's estimate, reproduced --
+  denominator kept by the notebook rule        :  3695
+  successes                                    :  1472
+  SUCCESS RATE (paper)                         :  39.8%
+
+-- what the logs actually contain, symmetric rule --
+  success   1472
+  error     5204
+  tle        881
+  infra       64
+  any observed outcome                         :  7621
+  SUCCESS / any observed outcome               :  19.3%
+  SUCCESS / all files in >=1 log               :  19.3%
+
+-- composition of the bucket the paper labels 'TLE' (n=3866) --
+  NO tle; has a recorded ERROR, missing >=1 version     2880  (74.5%)
+  contains a literal 'time limit exceeded'               922  (23.8%)
+  NO tle; infra (download/auth), missing >=1 version      64  ( 1.7%)
+  additionally dropped by the bad-DOI rule (all non-successes): 60
+
+-- is the missingness informative? (observed cells only) --
+  PER CELL   full coverage: 2237/9493 = 23.6%   partial: 985/6906 = 14.3%
+  PER FILE   full coverage: 806/3169 = 25.4%   partial: 666/4388 = 15.2%
+  per-cell two-proportion z = 14.80  (|z|>1.96 => not ignorable)
+
+-- bounds over the 7621 files seen in >=1 log --
+  all-unobserved-are-failures  (lower) : 19.3%
+  all-unobserved-are-successes (upper) : 20.2%
+  (64 files have no usable outcome in any version)
+
+==========================================================================
+SYNTHETIC CHECK -- true answer is known
+==========================================================================
+  ground truth  P(file succeeds under >=1 version) :  65.4%
+  paper's rule                                     :  90.8%  (n kept 5111/8000)
+  symmetric rule / any observed outcome            :  60.9%  (n 7625/8000)
+  symmetric rule / all files                       :  58.0%
+
+==========================================================================
+SYNTHETIC NULL -- missingness completely at random (MCAR)
+==========================================================================
+  ground truth :  66.5%
+  paper's rule :  81.4%  (n kept 5080/8000)
+  -> under MCAR the rule still over-states, because 'success in ANY
+     version' survives missingness and 'error' requires all three.
+     The asymmetry, not the informativeness, is the primary bias.
+
