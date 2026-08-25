@@ -1,0 +1,34 @@
+# Line-ending policy for the knowledge base.  Added 2026-08-25 by maria (R1).
+#
+# WHY THIS FILE EXISTS.  On 2026-08-25 the audit found instance-general/index.md
+# and formal-methods/index.md rewritten with CRLF by a Windows editor.  The real
+# change was 6 lines; the diff was 1,099.  core.autocrlf is `false` on this
+# machine, so git would have committed the CRLF verbatim and every subsequent
+# `git log -p` on those files would have been unreadable.
+#
+# The whole point of putting the KB under version control (R1) is that the
+# history answers "what actually changed and who changed it".  A line-ending
+# flip destroys that answer silently, and it is invisible in the editor that
+# causes it.  So the normalization is enforced here, in the repo, rather than
+# left to each agent's git config.
+#
+# Effect: text files are stored LF in the object database regardless of what
+# the working tree holds.  Nobody has to remember anything.
+* text=auto eol=lf
+*.md    text eol=lf
+*.py    text eol=lf
+*.json  text eol=lf
+*.sh    text eol=lf
+*.csv   text eol=lf
+*.tsv   text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+# Binaries: never touch.
+*.png   binary
+*.jpg   binary
+*.pdf   binary
+*.zip   binary
+*.gz    binary
+*.db    binary
+*.sqlite binary
+*.sqlite3 binary
