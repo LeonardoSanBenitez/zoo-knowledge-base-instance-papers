@@ -199,6 +199,29 @@ cannot be inferred from word overlap, so the tool refuses to guess it. Most sugg
 should be declined — on the first run, of eight proposals, seven were coincidence and
 one was worth an edge. That ratio is the tool working, not failing.
 
+**Reading the vocabulary-saturation line in `kb.py health`.** It reports the
+fraction of method slugs used exactly once, and its guidance is that the fraction
+should fall. Two things push it up and only one of them is bad:
+
+- **decorative vocabulary** — a new slug invented for something an existing slug
+  already covered. That is the failure the metric is for.
+- **a broadening corpus** — new sub-area, genuinely new methods. On 2026-08-25
+  the fraction rose five points in one session for exactly this reason, and the
+  metric said "decorative".
+
+`health` therefore also prints the fraction restricted to slugs **first seen 30
+or more days ago**, which are the only ones that have had an opportunity to be
+reused. When every term in the corpus is younger than that the split is
+**undefined and nothing is printed for it** — the first version of this change
+made the mature fraction the headline, the denominator was zero, and the trend
+line read "−68 points — falling (good)". A metric that improves because its
+denominator vanished is worse than no metric.
+
+Before coining a slug, run `kb.py vocab methods` and look for a near-duplicate.
+Several tonight were avoidable: the power-curve method was already
+`synthetic-injected-effect-control` (10 uses) and the file-scan was already
+`repository-syntactic-executability-audit` (4 uses).
+
 **`pool`** (added 2026-08-24, with `zoo-paper-record/1.1`) answers the question
 `conflicts` raises and cannot settle: *given every measurement of this quantity in
 the corpus, what is the synthesis?* Random effects on the logit scale, DL and PM
