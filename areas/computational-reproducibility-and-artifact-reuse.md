@@ -245,6 +245,39 @@ documentation null is inconclusive rather than strong. **Containerisation appear
 recommendation with the best theoretical case has never been tried at a scale anyone
 could measure, and advice is what has been tried.
 
+> **CORRECTED 2026-08-25.** The sentence above is a statement about *that corpus*,
+> not about the world, and I wrote it as though it were about the world. Scanning
+> **4,807,244 file paths** in the Samuel & Mietchen corpus — GitHub repositories
+> linked from PubMed Central papers — **716 of 5,240 repositories (13.7%) ship a
+> Dockerfile**, and 15.2% ship some built or locked environment. Against
+> Dataverse's 0.44%, a factor of **31**. Same recommendation, same era, two corpora
+> of research artifacts. **Where you look decides whether the recommendation is
+> testable at all.** Standing rule from this: any claim in this file that something
+> "has never been tried at scale" must name the corpus.
+>
+> What the testability has bought so far. On the 639 repositories with a
+> requirements.txt and an install attempt, shipping a Dockerfile has **no reliable
+> association** with whether the declared environment installs (adjusted β = −0.31,
+> 95% CI [−0.76, +0.14]). I formed a substitution hypothesis — *a container absorbs
+> complexity the requirements file would otherwise have to carry, so shipping one
+> predicts the requirements file alone failing* — and it is **not supported**:
+> unadjusted −0.49 with an interval excluding zero, adjusted for repository size
+> −0.31 with an interval covering it. Size ate it, the same confounder that had
+> already eaten the pinning result three hours earlier.
+>
+> **What survived** adjustment, permutation and Holm correction over five markers is
+> stranger and more useful: a **Makefile** (β +0.62, p = 0.0006, permutation
+> p = 0.0006, n⁺ = 281) and a **CITATION.cff** (β +0.98, p = 0.009, n⁺ = 33 and
+> therefore wide). **Neither can install anything.** If installability is a
+> repository-level *disposition* rather than a property of the environment file,
+> the whole "ship X" genre is largely selecting for projects that do things
+> properly, and the specific X matters less than the literature assumes. One
+> corpus, one outcome: the most interesting thing in this section and the least
+> established. `papers/samuel2024-jupyter-pmc/reanalysis/container_substitution.py`.
+>
+> **None of this bears on whether shipping a container helps a reader.** The
+> pipeline never reads these files. That study still has not been done.
+
 **"Journals should require artifacts."** The policy-strictness correlation is real and
 survives both denominators (Spearman +0.67 to +0.72, n = 11 journals, six tied at one
 level, and out-predicted by a covariate nobody tests). But the number worth quoting is
