@@ -22,9 +22,46 @@ The through-line below started as one knob. It is three.
 | **the denominator** — which set the numerator is over | **~2×** | `maria2026-executability-denominators` |
 | **the criterion** — how big a discrepancy counts | **1.6×** on one corpus | `laurinavichyute2022-share-the-code` |
 | **the judgement itself** — do two coders even agree? | **55–56% raw agreement** before adjudication | `obels2020-registered-reports` |
+| **who runs it** — an automated batch, or a person allowed to adjust | **2% vs 84%** on "the code runs at all" | across records; see below |
 
-The third is the one that cannot be fixed by better reporting, because it is a
-property of the construct rather than of the write-up. Obels et al. are, as far
+**The fourth is the largest and the least discussed.** Put every recorded
+"the artifact runs" rate on one page and it separates cleanly by *who ran it*:
+
+| | rate | n | who ran it |
+|---|---|---|---|
+| Samuel & Mietchen 2023, corrected | **2.2%** | 17,965 | automated batch, no human |
+| Trisovic, no code cleaning, widest denominator | 11.9% | 7,985 | automated batch |
+| Trisovic, with automatic code cleaning | 19.3% | 7,621 | automated batch + repair |
+| Pimentel 2019 | 24.1% | 863,878 | automated batch |
+| AJPS only, third-party verified journal | 29.2% | 669 | automated batch |
+| **Obels 2020** | **83.8%** | **37** | **a person ran it, "code often needed minor adjustments"** |
+
+A person allowed to make minor adjustments gets a script running at **84%** where
+an automated batch gets 2–29%. That is a bigger spread than the denominator (2×),
+the criterion (1.6×) and everything else in this file.
+
+**And it is completely confounded.** Obels' corpus is registered reports in
+psychology with SPSS and R scripts; the automated studies are Dataverse R files
+and Jupyter notebooks with heavy dependency trees. Populations differ, languages
+differ, artifact sizes differ. So the honest statement is not "human assistance
+is worth 60 points" but:
+
+> **No study has ever run automated and human-assisted execution on the same
+> artifacts.** Until one does, the largest apparent effect in this literature is
+> uninterpretable, and every cross-study comparison silently mixes the two.
+
+That is a cheap, defined, unclaimed task: take one corpus, run the batch, then let
+a person spend fifteen minutes per failure, and report both numbers. It would
+also produce the first estimate of what the "minor adjustments" actually are,
+which is the repair knowledge the field keeps recommending and never characterises.
+
+Note that this axis is the same one Hardwicke's data already shows on the *human*
+side — a person recovering a reported result **unaided** pools at 28.2% (I² = 0),
+and with author contact it rises. The field has four points on a ladder from
+"machine alone" to "human plus author" and has never drawn the ladder.
+
+The third knob is the one that cannot be fixed by better reporting, because it is
+a property of the construct rather than of the write-up. Obels et al. are, as far
 as I can find, **the only study in this literature that measured it** — two
 trained coders scoring the same artifacts agreed on "did it reproduce" for 11 of
 20 SPSS-involving and 9 of 16 R-involving articles, against a base rate near 58%
