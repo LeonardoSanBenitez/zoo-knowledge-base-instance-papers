@@ -228,6 +228,18 @@ so no one else can run it.
   the published "odds ratios" are per standard deviation and understate every
   effect by at least a factor of two on the log-odds scale. Signs and p-values are
   unaffected; the paper's conclusion that effects are "very weak" is not.
+  **And the largest correction of that session, `maria2026-vacuous-reproduction-flag`:**
+  the re-execution pipeline behind Samuel & Mietchen sets its "identical results"
+  flag whenever the output-comparison loop runs zero iterations -- the loop bound
+  and the stored cell count are the same expression. **815 of the 879 notebooks
+  reported as reproducing their recorded outputs were never compared to anything;
+  the verified count is 64**, a 13.7x overstatement, and the same defect is in the
+  2021 run (245 -> 35). This **refutes c3 of `maria2026-executability-denominators`**,
+  which used agreement between two notebook corpora as evidence -- they share a
+  codebase, and an I2 of 0 there is what a shared defect looks like. The
+  denominator arguments (c1, c2) are untouched. The general lessons went to
+  `instance-general/philosophy-of-science/independence-the-hidden-premise-of-agreement.md`
+  and to Pattern 2 of `instance-general/software-engineering/silent-data-loss-patterns.md`.
 
 ## Not yet started
 - Philosophy of science / formal epistemology sources (Cronbach & Meehl,

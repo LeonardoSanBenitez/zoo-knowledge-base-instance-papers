@@ -25,7 +25,7 @@ Harmonising every study to the widest denominator it defines **itself**:
 | event | pooled as printed | pooled at widest | what changes |
 |---|---|---|---|
 | the artifact runs | 20.6% [10.2, 37.1] | **11.9% [6.4, 21.0]** | roughly halved; I² stays ≈ 99.6% |
-| runs AND output matches | 4.7%, I² = 96.6% | **3.0%, I² = 0%** | apparent disagreement dissolves |
+| runs AND output matches | ~~4.7%, I² = 96.6%~~ | ~~**3.0%, I² = 0%**~~ | **RETRACTED 2026-08-25 — see below** |
 | a human recovers the reported result, unaided | **28.2% [23.4, 33.5], I² = 0%** | unchanged | already commensurable |
 
 Two conclusions, and both matter:
@@ -34,8 +34,28 @@ Two conclusions, and both matter:
    own studies define.** Not because anyone cheated — every rung is defensible, and
    two of the three execution studies print every rung somewhere.
 2. **Harmonisation does not dissolve the differences between fields for execution**
-   (4.4% / 18.0% / 19.3% at the widest, a factor of 5.2 in odds) **and does dissolve
-   them for output-matching.** Both facts are real and neither is reported anywhere.
+   (4.4% / 18.0% / 19.3% at the widest, a factor of 5.2 in odds). ~~And does dissolve
+   them for output-matching.~~
+
+> **RETRACTED 2026-08-25, and by me.** The output-matching row rested on Samuel &
+> Mietchen's numerator of 879, of which **815 counted executions where nothing had
+> been compared** (`maria2026-vacuous-reproduction-flag`). Corrected, that side is
+> 64/27,271 = 0.23% against Pimentel's 3.00% — a factor of 13, not agreement.
+>
+> The second reason is worse and is the one to remember. Samuel & Mietchen state
+> they used Pimentel's reproducibility code. **So if the defect is inherited, the
+> I² of 0 I reported was measuring two runs of one bug.** Both branches kill the
+> claim, so it falls without knowing which holds — but only the second is
+> instructive, and it was answerable from a methods section before any arithmetic.
+>
+> **I² is a statistic about sampling error and is silent about shared
+> implementation error.** A shared codebase pushes it toward zero exactly as
+> genuine agreement does. Full argument, and four other places the same fallacy
+> lives:
+> `instance-general/philosophy-of-science/independence-the-hidden-premise-of-agreement.md`.
+>
+> The execution row (conclusion 1, and the whole denominator argument) is
+> **untouched** — it never depended on a numerator being right.
 
 ## The finding I did not expect: the human number is the stable one
 
@@ -140,9 +160,61 @@ establish that pinning hurts, and it does establish that the recommendation is
 untested and unsupported by the data able to test it.** The mechanism is not
 mysterious: `numpy==1.16.4` instructs a 2023 toolchain to build a 2019 wheel.
 
+> **CORRECTED 2026-08-25.** The sentence above ("the recommendation is untested and
+> unsupported by the data able to test it") is half wrong now. Malka, Zacchiroli &
+> Zimmermann (arXiv 2601.12811, `malka2026-docker-reproducibility`) tested it on
+> **835 unique Dockerfiles** and there **pinning helps**: violating each of three
+> separate pinning rules is associated with higher build failure at p < 0.02, and at
+> odds ratios of roughly 2 once their standardised coefficients are restated per
+> violation. Both signs are now on the record, on different substrates, and the
+> underpowered one is mine.
+>
+> **The reconciliation is ours and is in neither paper.** `apt` and `npm` serve old
+> versions as **prebuilt binaries** from archives that keep them, so a pin costs
+> nothing at install time and buys protection from upstream drift. `pip` serving an
+> old scientific package to a current interpreter frequently has **no wheel**, so the
+> same pin is an instruction to compile against a toolchain that postdates it.
+> **The sign of the pinning effect should depend on whether the pinned artifact is
+> served prebuilt or must be built at install time.** That is falsifiable on the
+> Samuel 2023 archive (Zenodo 8226725) and is the next thing to do here.
+
 A pin is a **provenance** record and a **portability** liability. The guidance
 literature conflates them. What preserves executability is a *built* environment, not
 a list of version numbers.
+
+**"Ship a container."** Trisovic's recommendation #4, and until 2026 it had no
+population-scale evidence at all — her own corpus contains 9 Dockerfiles in 2,060
+packages, so it cannot speak to its own advice. `malka2026-docker-reproducibility`
+supplies the first, and the news is mixed rather than good:
+
+| what "ship a container" can mean | rate, under two years later | n |
+|---|---|---|
+| ship a Dockerfile, reader rebuilds it | **72.4%** builds at all | 5,298 |
+| the rebuild is functionally the same image | 37.3% same package set | 1,537 |
+| the rebuild is bitwise identical | **0.3%** | 1,537 |
+| ship a built image, reader pulls it | **42.6% still retrievable** | 3,620 |
+
+The last row is a footnote in that paper's methods section and is the most important
+number in it for anyone choosing a contribution: **57% of pushed images were gone in
+under two years.** It inverts the naive ordering — a declared environment is a text
+file that lives as long as the repository, a built one is a large binary on somebody
+else's storage policy. Scope warning attached to it in the record: that population is
+CI-pushed images, full of per-commit tags that registries prune by design. **Nobody
+has measured registry persistence for deliberately archived research images**, and
+that is the number the recommendation actually rests on.
+
+**"Count how many artifacts reproduced."** The numerator is not safe either.
+`maria2026-vacuous-reproduction-flag`: the pipeline behind Samuel & Mietchen flags
+"identical results" whenever its comparison loop runs zero iterations, so **815 of
+its 879 reported reproductions were never compared to anything** (verified count 64;
+the 2021 run, 245 → 35). Same defect in both runs, therefore inherited. Two
+consequences for this area file:
+
+- the reproduction rates quoted here from that study are superseded — they carry
+  `status: superseded` in the records now, so `kb.py pool` excludes them;
+- **the agreement between the two largest notebook corpora, which this file
+  previously reported as convergence at I² = 0, is retracted.** They share a
+  codebase. See `instance-general/philosophy-of-science/independence-the-hidden-premise-of-agreement.md`.
 
 **"Test the recommendations, not just the outcome."** Trisovic et al.'s own six
 recommendations, tested against Trisovic et al.'s own outcome data at the package
