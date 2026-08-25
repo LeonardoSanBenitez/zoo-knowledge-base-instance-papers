@@ -218,6 +218,52 @@
         "status": "accepted",
         "why": "Established by reading both criteria in the two primary sources rather than either paper's summary of the other. Obels: 'for each study reported in the article we identified MAIN results ... based on the research question highlighted in the title and abstract', and two small rounding errors were tolerated in articles coded reproducible. Laurinavichyute strict: 'all the reported analyses could be reproduced exactly'. These are not the same event. The comparable Laurinavichyute figure lies between 59% and 81%, so the two studies are further apart than the printed 58-vs-59 suggests, and probably in the direction of the JML papers reproducing BETTER. Nobody is at fault here beyond the field's habit of quoting a rate without its criterion -- which is the same failure as quoting it without its denominator, and this area file now has both."
       }
+    },
+    {
+      "id": "c4",
+      "statement": "OUR ANALYSIS. The widest-denominator rates of this study (21/62) and of Laurinavichyute et al. (20/59) agree to 0.027 percentage points while the standard error of their difference is 8.6 points. That agreement carries no information. More generally, no two by-hand reproduction studies in this literature can detect a difference smaller than about 24 percentage points, which is nearly the entire range the field argues about.",
+      "scope": "Two-proportion comparison and a power calculation at p = 0.34, alpha 0.05, 80% power, equal n. The by-hand studies in this area are n = 36 to 62; the automated corpora are n = 669 to 17,965.",
+      "quantities": [
+        {
+          "name": "agreement_between_two_studies_in_percentage_points",
+          "value": 0.027,
+          "unit": "percentage points",
+          "n": 121,
+          "baseline": "|21/62 - 20/59|; the SE of that difference is 8.6 percentage points, so P(|diff| <= observed) under independent sampling is 0.0025",
+          "source": "reanalysis/resolving_power.py"
+        },
+        {
+          "name": "probability_some_pair_of_recorded_rates_agrees_this_tightly",
+          "value": 0.38,
+          "unit": "probability",
+          "n": 20,
+          "baseline": "with 20 rates on the page there are 190 pairs; the comparison was NOT pre-specified -- I noticed it because it matched",
+          "source": "reanalysis/resolving_power.py"
+        },
+        {
+          "name": "smallest_detectable_difference_in_reproduction_rate",
+          "value": 23.8,
+          "unit": "percentage points",
+          "n": 62,
+          "baseline": "80% power, alpha 0.05, two-sided, equal n, p = 0.34 -- a study of 62 papers against another of 62",
+          "source": "reanalysis/resolving_power.py"
+        },
+        {
+          "name": "smallest_detectable_difference_in_reproduction_rate",
+          "value": 1.4,
+          "unit": "percentage points",
+          "n": 17965,
+          "baseline": "same calculation for an automated notebook corpus",
+          "source": "reanalysis/resolving_power.py"
+        }
+      ],
+      "evidence": [
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Arithmetic, and it corrects me. Two hours before computing it I had written in this record's own notes that 21/62 landing on Laurinavichyute's 34% was 'the third time the harmonised number has come out near a third', with evident satisfaction. It is not convergence; it is a coincidence I selected for by noticing it. THE SECOND HALF IS THE IMPORTANT ONE AND IT IS NOT ABOUT ME: at n = 36-62 the by-hand studies cannot adjudicate anything they disagree about, because the whole disputed range is 30 points and their resolving power is 24-31. This is the BEIR resolving-power finding arriving in a new field, and it would be incoherent to demand resolving power of TREC-COVID and not of a literature I am synthesising. What it does NOT impugn is WITHIN-study contrasts, which are far better powered -- Laurinavichyute's 1/19 against 19/32 survives any reasonable correction. Within-study comparisons are the sound part of this literature; between-study comparisons of headline rates are not."
+      }
     }
   ],
   "artifacts": [
@@ -247,6 +293,19 @@
         "result": "Converts the four reported agreement percentages back to counts, puts exact Clopper-Pearson intervals on them, and partially identifies Cohen's kappa by enumerating every marginal pair that could produce the reported agreement. Its first version printed an equal-marginal kappa of -0.93 for a table that CANNOT EXIST at those marginals; a feasibility check was added and the cell now reads INFEASIBLE, which turns out to be the informative answer."
       },
       "local_path": "reanalysis/irr_bounds.py"
+    },
+    {
+      "id": "a3",
+      "role": "derived-data",
+      "locator": "reanalysis/resolving_power.py",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "python reanalysis/resolving_power.py",
+        "result": "Prints both rates with exact intervals, the difference against its own standard error, the multiple-comparisons correction for not having pre-specified the pair, and a resolving-power table over every sample size in the area file."
+      },
+      "local_path": "reanalysis/resolving_power.py"
     }
   ],
   "relations": [

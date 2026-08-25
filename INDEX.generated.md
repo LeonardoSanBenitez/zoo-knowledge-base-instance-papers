@@ -94,7 +94,7 @@
   - cito:corrects → `samuel2024-jupyter-pmc#c1`; cito:refutes → `maria2026-executability-denominators#c3`; zoo:sharesUnstatedAssumptionWith → `kim2025-correlated-errors`; cito:qualifies → `trisovic2022-code-execution`
   - notes: `instance-papers/papers/maria2026-vacuous-reproduction-flag/`
 - **`obels2020-registered-reports`** (2020, Advances in Methods and Practices in Psychological Science 3(2):229-237) — Analysis of Open Data and Computational Reproducibility in Registered Reports in Psychology
-  - depth: `read-and-reanalysed` · 3 claims · 12 quantities · 2 artifacts
+  - depth: `read-and-reanalysed` · 4 claims · 16 quantities · 3 artifacts
   - methods: `manual-reanalysis-from-shared-materials`, `two-coder-adjudicated-scoring`, `inter-rater-reliability-measurement`, `partial-identification-of-kappa-from-agreement`, `clopper-pearson-exact-interval`, `printed-decimal-denominator-forensics`
   - cito:qualifies → `laurinavichyute2022-share-the-code#c2`; cito:qualifies → `maria2026-executability-denominators`; zoo:sharesUnstatedAssumptionWith → `breznau2022-hidden-universe`; cito:agreesWith → `hardwicke2018-cognition-open-data`
   - notes: `instance-papers/papers/obels2020-registered-reports/`

@@ -1,0 +1,41 @@
+THE TWO RATES
+------------------------------------------------------------------------------
+  Laurinavichyute 2022, strict, all 59 post-policy JML papers    20/59 = 0.3390
+                                                                 SE 0.0616   95% [0.221, 0.474]
+  Obels 2020, main results, all 62 registered reports (computed here) 21/62 = 0.3387
+                                                                 SE 0.0601   95% [0.223, 0.470]
+
+  difference          +0.00027  (0.027 percentage points)
+  SE of the difference 0.0861  (8.6 percentage points)
+  P(|diff| <= observed) under independent sampling = 0.0025, about 1 in 395
+
+  BUT THE COMPARISON WAS NOT PRE-SPECIFIED. With m rates on the page there
+  are m(m-1)/2 pairs, and the chance that SOME pair agrees this tightly is:
+      6 rates ->  15 pairs -> 0.04
+     10 rates ->  45 pairs -> 0.11
+     15 rates -> 105 pairs -> 0.23
+     20 rates -> 190 pairs -> 0.38
+     25 rates -> 300 pairs -> 0.53
+  This area file holds well over twenty rates.
+
+RESOLVING POWER: smallest difference detectable at 80% power, alpha .05
+------------------------------------------------------------------------------
+  n = 36       31.3 points  <- every by-hand reproduction study in this area
+  n = 59       24.4 points  <- every by-hand reproduction study in this area
+  n = 62       23.8 points  <- every by-hand reproduction study in this area
+  n = 100      18.8 points
+  n = 669       7.3 points
+  n = 2060      4.1 points
+  n = 7621      2.1 points  <- automated corpora
+  n = 17965     1.4 points  <- automated corpora
+
+  The field argues about roughly 28% to 58%, a 30-point range. A study
+  of 60 papers cannot detect a 24-point difference. So the manual studies
+  are, individually and pairwise, unable to adjudicate anything they
+  disagree about -- and their agreements are correspondingly uninformative.
+
+  What this does NOT say: that the studies are worthless. Each one's own
+  INTERNAL contrasts are far better powered -- Laurinavichyute's code vs
+  no-code split is 1/19 against 19/32, which is enormous and survives any
+  reasonable correction. Within-study comparisons are the sound part of
+  this literature. BETWEEN-study comparisons of headline rates are not.

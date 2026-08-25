@@ -31,9 +31,14 @@ They are not measuring the same thing. See §3. But that is not the important pa
 
 The paper does not compute the widest-denominator figure. It is **21/62 = 33.9%**,
 which lands within a percentage point of Laurinavichyute's 34% and of Hardwicke's
-psychology numbers. That is `maria2026-executability-denominators` applied to one
-more study, for free, and it is the third time the harmonised number has come out
-near a third.
+psychology numbers.
+
+> **I wrote, here, that this was "the third time the harmonised number has come
+> out near a third", and I was pleased with it. Then I computed it.** (§7.)
+> The two rates differ by 0.027 percentage points; the standard error of that
+> difference is **8.6 points**. The agreement carries no information, and I
+> selected for it by noticing it. Left standing above with the correction
+> attached, because the satisfied sentence is the specimen.
 
 Also worth keeping: a self-selected population with **no mandate at all** (69.4%
 sharing something, 59.7% sharing code) beats *Cognition* under a **mandatory
@@ -158,3 +163,48 @@ nobody does it — because reporting it makes your own headline look softer. Tha
 is not a technical gap. It is an incentive, and it is the same one
 `verification-economics-of-open-science.md` identifies one level up: the party who
 benefits from a claim also produces its evidence.
+
+## 7. The agreement I liked, computed
+
+`reanalysis/resolving_power.py`. Two things, and the second is not about me.
+
+**The agreement is too tight to mean anything.** 20/59 and 21/62 differ by 0.027
+percentage points against a difference-SE of 8.6. Under independent sampling that
+is a 1-in-395 event — and the comparison was **not pre-specified**: I noticed it
+because it matched. With twenty-odd rates in this area file there are ~190 pairs,
+so P(some pair agrees this tightly) ≈ 0.38. It is not a coincidence in need of
+explanation. It is what looking at twenty numbers does.
+
+That is a **second** way agreement fails to be evidence, distinct from the
+shared-implementation failure in
+`independence-the-hidden-premise-of-agreement.md`. The tell is
+**|difference| ≪ SE(difference)**.
+
+**And the finding that matters: this literature cannot resolve its own
+disagreements.** Smallest difference detectable at 80% power, α = .05, p = 0.34:
+
+| n per study | detectable difference | |
+|---|---|---|
+| 36 | 31.3 pts | every by-hand study |
+| 59 | 24.4 pts | " |
+| 62 | 23.8 pts | " |
+| 669 | 7.3 pts | AJPS |
+| 7,621 | 2.1 pts | automated corpora |
+| 17,965 | 1.4 pts | " |
+
+**The range the field argues about is roughly 28% to 58% — thirty points.** A
+study of sixty papers cannot detect a twenty-four-point difference. So the manual
+studies are, pairwise, unable to adjudicate anything they disagree about, and
+their agreements are correspondingly uninformative.
+
+This is the BEIR resolving-power result arriving in a new field. It would be
+incoherent to demand resolving power of TREC-COVID and not of a literature I am
+synthesising.
+
+**What it does not impugn:** *within*-study contrasts, which are far better
+powered. Laurinavichyute's code-vs-no-code split is 1/19 against 19/32 and
+survives any correction one likes. **Within-study comparisons are the sound part
+of this literature; between-study comparisons of headline rates are not.** That
+is also, incidentally, an argument for the design Laurinavichyute chose — the
+contrast drawn inside one policy regime — over every cross-corpus comparison in
+the area, mine included.

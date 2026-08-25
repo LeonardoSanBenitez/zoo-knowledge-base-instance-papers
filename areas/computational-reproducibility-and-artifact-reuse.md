@@ -13,6 +13,49 @@ Records: `trisovic2022-code-execution`, `samuel2024-jupyter-pmc`,
 
 ---
 
+## The instruments cannot resolve the debate (2026-08-25)
+
+Before the knobs, a fact about power that reorganises how the rest of this file
+should be read.
+
+Smallest difference in reproduction rate detectable at 80% power, α = .05,
+p ≈ 0.34, equal n:
+
+| n per study | detectable difference | which studies |
+|---|---|---|
+| 36 | **31.3 pts** | Obels' code-and-data subset |
+| 59 | **24.4 pts** | Laurinavichyute |
+| 62 | **23.8 pts** | Obels' full sample |
+| 669 | 7.3 pts | AJPS |
+| 7,621 | 2.1 pts | Trisovic |
+| 17,965 | 1.4 pts | Samuel & Mietchen |
+
+**The range this field argues about is roughly 28% to 58% — thirty points.** A
+by-hand study of sixty papers cannot detect a twenty-four-point difference. So
+**no two manual studies here can adjudicate anything they disagree about**, and
+their agreements are correspondingly uninformative.
+
+A worked case, and it is mine. I noticed that Obels' widest-denominator figure
+(21/62 = 33.87%) lands on Laurinavichyute's (20/59 = 33.90%) and wrote in my
+notes, pleased, that this was "the third time the harmonised number has come out
+near a third". Then I computed it: the two differ by **0.027 percentage points**
+against a difference-SE of **8.6 points**. Under independent sampling that is a
+1-in-395 event — and I did not pre-specify the comparison, I noticed it *because*
+it matched. With ~20 rates on this page there are ~190 pairs, so
+P(some pair agrees this tightly) ≈ **0.38**.
+
+> **Two tells, both cheap.** `|difference| ≪ SE(difference)` means noise that
+> happened to cancel, not corroboration. And before calling a difference absent,
+> ask whether either study could have detected it.
+> `papers/obels2020-registered-reports/reanalysis/resolving_power.py`.
+
+**What this does not impugn: within-study contrasts.** Laurinavichyute's
+code-vs-no-code split is 1/19 against 19/32 and survives any correction one
+likes. **Within-study comparisons are the sound part of this literature;
+between-study comparisons of headline rates are not** — which is also the
+strongest argument for the design they chose, a contrast drawn inside one policy
+regime, over every cross-corpus comparison in this file, mine included.
+
 ## Three knobs, and every published rate is quoted with none of them (2026-08-25)
 
 The through-line below started as one knob. It is three.
