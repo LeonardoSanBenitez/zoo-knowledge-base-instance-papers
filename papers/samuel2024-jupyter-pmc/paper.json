@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "id": "samuel2024-jupyter-pmc",
   "title": "Computational reproducibility of Jupyter notebooks from biomedical publications",
   "authors": [
@@ -95,22 +95,26 @@
           "value": 0.0556,
           "unit": "proportion of notebooks",
           "n": 15818,
-          "baseline": "2023 run; identical outputs; denominator = notebooks attempted",
+          "baseline": "2023 run; identical outputs; denominator = notebooks attempted -- CORRECTED 2026-08-25 by maria2026-vacuous-reproduction-flag: the numerator counts executions in which ZERO cells were compared. The pipeline sets E_SAME_RESULTS whenever its comparison loop is empty, and the loop bound is the same expression as the stored `count`. 815 of these 879 had count=0. Verified numerator is 64. DO NOT QUOTE THIS VALUE.",
           "source": "paper Results",
           "count": 879,
           "denominator": 15818,
-          "clusters": 2660
+          "clusters": 2660,
+          "status": "superseded",
+          "superseded_by": "maria2026-vacuous-reproduction-flag#c2"
         },
         {
           "name": "artifact_reproduction_identical_output_rate",
           "value": 0.0322,
           "unit": "proportion of notebooks",
           "n": 27271,
-          "baseline": "2023 run; identical outputs; denominator = all notebooks found",
+          "baseline": "2023 run; identical outputs; denominator = all notebooks found -- CORRECTED 2026-08-25 by maria2026-vacuous-reproduction-flag: the numerator counts executions in which ZERO cells were compared. The pipeline sets E_SAME_RESULTS whenever its comparison loop is empty, and the loop bound is the same expression as the stored `count`. 815 of these 879 had count=0. Verified numerator is 64. DO NOT QUOTE THIS VALUE.",
           "source": "computed, 879/27271",
           "count": 879,
           "denominator": 27271,
-          "clusters": 2660
+          "clusters": 2660,
+          "status": "superseded",
+          "superseded_by": "maria2026-vacuous-reproduction-flag#c2"
         },
         {
           "name": "artifact_execution_success_rate",
@@ -129,12 +133,14 @@
           "value": 0.0588,
           "unit": "proportion of notebooks",
           "n": 4169,
-          "baseline": "2021 run; identical outputs; denominator = notebooks attempted; recomputed",
+          "baseline": "2021 run; identical outputs; denominator = notebooks attempted; recomputed -- CORRECTED 2026-08-25, same defect: 210 of these 245 had zero cells compared. Verified numerator is 35. DO NOT QUOTE THIS VALUE.",
           "source": "reanalysis/cluster_and_age.py",
           "count": 245,
           "denominator": 4169,
           "clusters": 685,
-          "icc": 0.335
+          "icc": 0.335,
+          "status": "superseded",
+          "superseded_by": "maria2026-vacuous-reproduction-flag#c3"
         },
         {
           "name": "dependency_install_failure_rate",
@@ -166,8 +172,9 @@
         "a6"
       ],
       "our_assessment": {
-        "status": "accepted",
-        "why": "The 2021 funnel reproduces to the file from the shipped SQLite database (4,169 attempted / 396 finished / 245 identical / 151 different, against the paper's printed 4,169 / 396 / 245 / 151). Accepted without qualification, and this study is the best-instrumented in this area: it prints EVERY stage of the funnel rather than one ratio, so a reader can choose the denominator instead of inheriting one. The multiple values recorded above are not a criticism of the paper -- they are the paper's own ladder, written down so that a future citation cannot lose which rung it came from."
+        "status": "disputed",
+        "why": "The 2021 funnel reproduces to the file from the shipped SQLite database (4,169 attempted / 396 finished / 245 identical / 151 different, against the paper's printed 4,169 / 396 / 245 / 151). Accepted without qualification, and this study is the best-instrumented in this area: it prints EVERY stage of the funnel rather than one ratio, so a reader can choose the denominator instead of inheriting one. The multiple values recorded above are not a criticism of the paper -- they are the paper's own ladder, written down so that a future citation cannot lose which rung it came from. || 2026-08-25: the EXECUTION half of this claim stands; the REPRODUCTION half does not. Of the 879 'identical results', 815 had no cells compared. See maria2026-vacuous-reproduction-flag.",
+        "by": "maria2026-vacuous-reproduction-flag"
       }
     },
     {
@@ -418,11 +425,12 @@
           "value": 0.0403,
           "unit": "proportion of notebooks",
           "n": 863878,
-          "baseline": "Pimentel et al. 2019, notebooks that ran AND produced the same results",
+          "baseline": "Pimentel et al. 2019, notebooks that ran AND produced the same results -- FLAGGED 2026-08-25: Samuel & Mietchen state they used this study's reproducibility code. If that code shares the empty-comparison-loop defect (maria2026-vacuous-reproduction-flag), this numerator is inflated too. UNCHECKED -- the test is one query on its execution table.",
           "source": "pimentel2019 RQ7, transcribed",
           "count": 34814,
           "denominator": 863878,
-          "clusters": 264023
+          "clusters": 264023,
+          "status": "disputed"
         },
         {
           "name": "artifact_build_success_rate",
@@ -609,6 +617,11 @@
       "target": "malka2026-docker-reproducibility",
       "why": "On the sign of the pinning effect. Here pinning is associated with LOWER environment-install and execution success (OR 0.435, Fisher p=0.29, 191 repositories, 22 events). There, violating three pinning rules is associated with HIGHER build failure at p<0.02 on 835 unique Dockerfiles. That corpus is far better powered and this record's original phrasing -- that the recommendation had never been tested -- is corrected in place.",
       "asymmetric_note": "The estimands differ, so neither refutes the other. The reconciling hypothesis is that the sign depends on whether the pinned artifact is served PREBUILT (apt, npm) or must be COMPILED at install time (pip, for old scientific Python). Testable on this corpus's 2023 archive, Zenodo 8226725."
+    },
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-vacuous-reproduction-flag",
+      "why": "That record shows the reproduction numerators here (879 in 2023, 245 in 2021) count executions in which zero cells were compared. Verified numerators are 64 and 35."
     }
   ],
   "open_questions": [

@@ -227,6 +227,24 @@ the knowledge base. So:
    fabricates a count, and a fabricated count that passes the checksum is worse
    than an absent one.
 
+5b. **When a number turns out to be wrong, mark the NUMBER, not just the claim**
+   (`zoo-paper-record/1.2`). Set `status` to `superseded` or `retracted` on that
+   quantity and give `superseded_by` — a record id, or `record#claim`, carrying
+   what replaced it. `validate` refuses a withdrawal with no forwarding address,
+   because a reader who learns only that a value is wrong keeps using it.
+   **Keep writing the prose too.** The field says *that* it was withdrawn; the
+   prose says *why*, and only one of those helps the next reader think.
+
+   Why the number and not the claim: **a claim can be half right.** The claim
+   that provoked this asserted an execution rate and a reproduction rate in one
+   breath; the first survived reanalysis and the second did not. Marking the
+   whole claim `refuted` would have thrown away three good measurements to
+   withdraw two bad ones.
+
+   Do NOT withdraw a number merely because you disagree with it — that is
+   `disputed`, which `pool` still includes and flags at the point of use.
+   Excluding every contested number would let the tidiest corpus win.
+
 6. **If the units are not independent, fill `clusters`.** Files inside replication
    packages, notebooks inside repositories, trials inside subjects. Leave it absent
    when unknown; absent means "not measured", never "independent". Fill `icc` only

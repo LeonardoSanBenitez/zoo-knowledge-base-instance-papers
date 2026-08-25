@@ -1,0 +1,327 @@
+{
+  "schema_version": "1.2",
+  "id": "maria2026-vacuous-reproduction-flag",
+  "title": "A reproduction flag set by an empty loop: 815 of 879 reported notebook reproductions were never compared to anything",
+  "authors": [
+    "maria (zoo)"
+  ],
+  "year": 2026,
+  "venue": "internal reanalysis, zoo-knowledge-base",
+  "area": [
+    "computational-reproducibility-and-artifact-reuse"
+  ],
+  "identifiers": {
+    "url": "instance-papers/papers/maria2026-vacuous-reproduction-flag/"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 31,
+    "bytes_downloaded": 513000000,
+    "compute_notes": "Two Zenodo archives: 415.6 MB (2023 run, record 8226725) and 96.7 MB (2021 run, record 6802158), from which two SQLite databases of 1,493 MB and 371 MB were extracted, queried with stdlib sqlite3, and DELETED. Pipeline source read from inside the 2023 zip without extracting the tree. All analysis is stdlib only and runs in under 20 s per database. No notebook was executed and no environment was built.",
+    "session": "2026-08-25 maria"
+  },
+  "triggers": [
+    "how many jupyter notebooks in published papers actually reproduce",
+    "samuel mietchen 879 notebooks identical results",
+    "a reproducibility study says X% of artifacts reproduce, can I trust the numerator",
+    "two studies agree on a reproducibility rate, is that convergent evidence",
+    "my test suite passes because it ran zero tests",
+    "vacuous truth in a comparison loop",
+    "a flag that means no differences found also means no comparison performed",
+    "why did my empty-input case return success",
+    "shared implementation between two independent studies",
+    "does harmonising denominators fix a study",
+    "correlated errors from a shared codebase",
+    "reanalysis found a published reproducibility rate overstated"
+  ],
+  "methods": [
+    "source-level-instrumentation-audit",
+    "bitmask-forensics",
+    "falsification-by-internal-consistency",
+    "synthetic-injected-effect-control",
+    "cross-run-replication-of-a-defect",
+    "printed-decimal-denominator-forensics"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "In the pipeline used by Samuel & Mietchen (2024), the flag recording 'the re-execution produced results identical to those in the original notebook' is set whenever the output-comparison loop executes zero iterations, because the loop bound and the stored cell count are the same expression and an empty `diff` list is indistinguishable from 'no differences found'.",
+      "scope": "archaeology/run_notebook.py, lines 174, 224, 229 and 259-264 of the code shipped inside the Zenodo archive of the 2023 run. `count` is written as `ep.last_try[0] + 1`; the comparison loop is `zip(range(ep.last_try[0] + 1 - timeout), ep.cell_order)`; `if not diff:` then sets E_SAME_RESULTS and diff_count = 0.",
+      "quantities": [
+        {
+          "name": "vacuous_comparison_rate_among_attempted_executions",
+          "value": 0.3908,
+          "unit": "proportion of attempted executions",
+          "n": 17965,
+          "baseline": "2023 run; zero cells compared, i.e. count=0 or (count=1 and timeout)",
+          "source": "reanalysis/vacuous_flag.py",
+          "count": 7019,
+          "denominator": 17965,
+          "clusters": 2150
+        },
+        {
+          "name": "proportion_of_vacuous_comparisons_flagged_as_identical",
+          "value": 1.0,
+          "unit": "proportion",
+          "n": 7019,
+          "baseline": "2023 run; of the executions where zero cells were compared, those carrying E_SAME_RESULTS",
+          "source": "reanalysis/vacuous_flag.py",
+          "count": 7019,
+          "denominator": 7019
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a3",
+        "a5"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Established from the shipped source and then falsified against the data three ways, all of which the data passes: (i) not one row in either database has count=0 together with diff_count>0, which the loop bound requires; (ii) every one of the 7,015 rows with count=0 carries the flag, with no exceptions in either direction; (iii) the minimum `count` among rows with diff_count>0 is 1. A synthetic break-test (breaktest_vacuous.py) confirms the detector distinguishes 'zero cells compared' from 'wrongly flagged' and stays silent on a correctly-implemented pipeline."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Applying the authors' own published filters to their own released database reproduces their headline figures exactly, and shows that 815 of the 879 notebooks reported as reproducing their recorded results had no cells compared. Only 64 were both executed and verified to match.",
+      "scope": "2023 run. Filters taken verbatim from the authors' analyses/analysis_helpers_executions.py: finished = processed & (32+8+4) == 32; same = finished & 16 == 16.",
+      "quantities": [
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.0023,
+          "unit": "proportion of notebooks",
+          "n": 27271,
+          "baseline": "2023 run, CORRECTED: identical outputs with at least one cell actually compared; denominator = all notebooks in the corpus",
+          "source": "reanalysis/vacuous_flag.py",
+          "count": 64,
+          "denominator": 27271,
+          "clusters": 2660
+        },
+        {
+          "name": "reproduction_count_overstatement_factor",
+          "value": 13.7,
+          "unit": "ratio",
+          "n": 27271,
+          "baseline": "2023 run; 879 published / 64 with a real comparison",
+          "source": "reanalysis/vacuous_flag.py"
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.0216,
+          "unit": "proportion of attempted executions",
+          "n": 17965,
+          "baseline": "2023 run, CORRECTED: 'ran without errors' AND at least one cell actually run",
+          "source": "reanalysis/vacuous_flag.py",
+          "count": 388,
+          "denominator": 17965,
+          "clusters": 2150
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The exact reproduction of 27,271 / 1,203 / 879 from the released database using the authors' own filter code is the check that licenses the rest: the filters are theirs, not my reconstruction of them."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The defect is present in both published runs of the study and is therefore inherited rather than introduced by the 2023 re-run. In the 2021 run, 245 reported reproductions reduce to 35.",
+      "scope": "2021 run, Zenodo 6802158, 9,625 notebooks / 4,673 attempted executions. Same filters; 396 finished and 245 same reproduce the paper's printed 2021 figures exactly.",
+      "quantities": [
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.0036,
+          "unit": "proportion of notebooks",
+          "n": 9625,
+          "baseline": "2021 run, CORRECTED: identical outputs with at least one cell compared; denominator = all notebooks in that corpus",
+          "source": "reanalysis/vacuous_flag.py on db2021",
+          "count": 35,
+          "denominator": 9625,
+          "clusters": 2177
+        },
+        {
+          "name": "reproduction_count_overstatement_factor",
+          "value": 7.0,
+          "unit": "ratio",
+          "n": 9625,
+          "baseline": "2021 run; 245 published / 35 with a real comparison",
+          "source": "reanalysis/vacuous_flag.py on db2021"
+        }
+      ],
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Same three falsification checks pass on the 2021 database independently, and 396/245 match the paper's printed 2021 values exactly."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "In the arm where a repository DECLARED its dependencies and they were installed, not one notebook in either run was verified to reproduce its recorded outputs: 440 of 441 (2023) and 150 of 150 (2021) 'identical results' rows in that arm compared zero cells.",
+      "scope": "mode 3 (dependencies=True, anaconda=False) vs mode 5 (dependencies=False, anaconda=True) as defined in archaeology/execution_rules.py.",
+      "quantities": [
+        {
+          "name": "verified_reproductions_in_declared_dependency_arm",
+          "value": 0,
+          "unit": "count of notebooks",
+          "n": 7618,
+          "baseline": "2023 run, mode 3, identical-output rows with at least one cell compared",
+          "source": "reanalysis/vacuous_flag.py",
+          "count": 0,
+          "denominator": 7618
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The count is right and it must NOT be read as 'declared environments never reproduce'. In the same arm, 1,466 of 1,469 executions that raised a genuine cell-execution error ALSO have count=0 -- a row that raised a cell error must have run a cell, so the cell tracker plainly does not advance in that arm at all. The correct reading is that the declared-dependency arm carries no usable output-comparison data in either run, so any declared-vs-undeclared comparison on the reproduction outcome measures the instrumentation and not the world. I formed and abandoned exactly that comparison before finding this; see NOTES.md section 3."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "The apparent agreement between the two largest notebook-reproducibility corpora, previously recorded here as convergence to within 0.2 percentage points with I-squared = 0, does not survive. Either Samuel & Mietchen's numerator is 13.7x too high and the two disagree by a factor of 13, or Pimentel 2019 shares the defect through the shared codebase and the agreement is between two runs of the same fault.",
+      "scope": "Refers to maria2026-executability-denominators#c3. Samuel & Mietchen state they used the reproducibility code from Pimentel et al. 2019. Pimentel's execution table was not obtained, so the disjunction cannot currently be closed.",
+      "quantities": [
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.0023,
+          "unit": "proportion of notebooks",
+          "n": 27271,
+          "baseline": "Samuel & Mietchen 2024, corrected, at the corpus denominator",
+          "source": "reanalysis/vacuous_flag.py",
+          "count": 64,
+          "denominator": 27271,
+          "clusters": 2660
+        },
+        {
+          "name": "artifact_reproduction_identical_output_rate",
+          "value": 0.03,
+          "unit": "proportion of notebooks",
+          "n": 1159166,
+          "baseline": "Pimentel 2019 at the corpus denominator, UNCHECKED for this defect",
+          "source": "maria2026-executability-denominators, unchanged",
+          "count": 34814,
+          "denominator": 1159166,
+          "status": "disputed"
+        }
+      ],
+      "evidence": [
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Both branches of the disjunction destroy the original claim, so the claim falls without needing to know which branch holds. The general lesson is the part worth keeping: two studies agreeing is evidence only if their measurement errors are independent, and these two share an implementation. An I-squared of 0 across two studies running the same code is what a shared defect looks like, not convergent validity. I recorded it as convergent validity."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "https://zenodo.org/records/8226725",
+      "status": "regenerated-from-upstream",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "curl -sL -o crpmc-2023.zip \"https://zenodo.org/api/records/8226725/files/computational-reproducibility-pmc.zip/content\" && python -c \"import zipfile,shutil; z=zipfile.ZipFile('crpmc-2023.zip'); shutil.copyfileobj(z.open('computational-reproducibility-pmc/computational-reproducibility-pmc/analyses/db.sqlite'), open('db2023.sqlite','wb'), 1<<23)\"",
+        "result": "415.6 MB zip, 634 entries, containing a 1,492.8 MB SQLite with 24 tables (3,467 articles / 5,240 repositories / 27,271 notebooks / 17,965 executions / 5,573 requirement files). Queried, then DELETED. The command above regenerates it."
+      },
+      "bytes": 435800000
+    },
+    {
+      "id": "a2",
+      "role": "raw-data",
+      "locator": "https://zenodo.org/records/6802158",
+      "status": "regenerated-from-upstream",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "curl -sL -o crpmc-2021.zip \"https://zenodo.org/api/records/6802158/files/computational-reproducibility-pmc.zip/content\" && (same extraction as a1, into db2021.sqlite)",
+        "result": "96.7 MB zip containing a 371.0 MB SQLite, 9,625 notebooks / 4,673 executions. Reproduces the paper's printed 2021 figures (396 finished, 245 identical) exactly. Queried, then DELETED."
+      },
+      "bytes": 101400000
+    },
+    {
+      "id": "a3",
+      "role": "code",
+      "locator": "reanalysis/vacuous_flag.py",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "python reanalysis/vacuous_flag.py db2023.sqlite   (and db2021.sqlite)",
+        "result": "Reproduces 27,271 / 1,203 / 879 exactly and refuses to continue if it does not. Runs the three falsification tests, then prints the correction and the by-arm table. stdlib only."
+      },
+      "local_path": "reanalysis/vacuous_flag.py"
+    },
+    {
+      "id": "a4",
+      "role": "code",
+      "locator": "reanalysis/breaktest_vacuous.py",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "python reanalysis/breaktest_vacuous.py",
+        "result": "BREAK-TEST PASSED. Three synthetic worlds with the answer known by construction: CLEAN (empty-loop cases recorded as errors) -> no inflation detected; BROKEN (empty loop sets the flag, as in the real pipeline) -> detected, same_real < same; NOISY (empty-loop cases exist but are not flagged) -> vacuous executions reported, no inflation claimed. The third world is the one that would have made me wrong and it behaves correctly."
+      },
+      "local_path": "reanalysis/breaktest_vacuous.py"
+    },
+    {
+      "id": "a5",
+      "role": "code",
+      "locator": "computational-reproducibility-pmc/archaeology/run_notebook.py (inside the Zenodo zip; also fusion-jena/computational-reproducibility-pmc)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "python -c \"import zipfile; print(zipfile.ZipFile('crpmc-2023.zip').read('computational-reproducibility-pmc/computational-reproducibility-pmc/archaeology/run_notebook.py').decode())\"",
+        "result": "Read in full. Lines 174 (last_try initialised to (-1,-1)), 224 (count = last_try[0]+1), 229 (loop bound = range(last_try[0]+1-timeout)), 259-264 (if not diff: set E_SAME_RESULTS). Also read execution_rules.py (mode definitions), consts.py (bit values) and analyses/analysis_helpers_executions.py (the authors' own reporting filters)."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:corrects",
+      "target": "samuel2024-jupyter-pmc#c1",
+      "why": "The reproduction quantities in that record (879/15818 and 879/27271, and the 2021 245/4169) count executions in which nothing was compared. Corrected in place there, with this record as the `by` pointer."
+    },
+    {
+      "type": "cito:refutes",
+      "target": "maria2026-executability-denominators#c3",
+      "why": "That claim -- that harmonising denominators CREATES agreement between two notebook corpora, converging to within 0.2 points at I-squared 0 -- rests on Samuel & Mietchen's numerator of 879. With the corrected numerator the two differ by a factor of 13; and if Pimentel shares the defect through the shared codebase, the original agreement was between two runs of the same fault. Both branches refute it.",
+      "asymmetric_note": "The refutation is of MY OWN claim and it is partial in a specific way: c1 and c2 of that record concern DENOMINATORS and are untouched, because the denominator harmonisation argument never depended on the numerator being right. What falls is the one place where I used numerator agreement as evidence."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "kim2025-correlated-errors",
+      "why": "Same structure in a different domain. Kim measures that models sharing a base produce correlated errors, so an ensemble's apparent agreement overstates its reliability. Here two reproducibility studies sharing a codebase produce correlated measurement error, so their apparent agreement overstates convergent validity. In both cases the diagnostic that fails is the one that assumes independence -- there an ensemble vote, here I-squared."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "trisovic2022-code-execution",
+      "why": "Trisovic's re-execution used a separate implementation and is not touched by this defect, which makes it the only large automated study in the area whose numerator is currently unimpeached. That raises rather than lowers the weight it should carry in any synthesis -- the opposite of what its hidden funnel earned it."
+    }
+  ],
+  "open_questions": [
+    "Does Pimentel et al. 2019 carry the same defect? Samuel & Mietchen state they used its reproducibility code. Its execution table would settle a 1.16M-notebook study and would also close the disjunction in c5. The original code repository could not be located (gems-uff/jupyter-archaeology is a refactored library with no execution tracker); the released Postgres dump is ~4 GB and was not fetched. The test is one query: count executions where the cell tracker is zero and the same-results flag is set.",
+    "Why does the cell tracker never advance in the declared-dependency arm? 1,466 of 1,469 rows that raised a genuine cell-execution error in that arm have count=0, which is not explicable by the notebooks. If it is an nbconvert version difference between arms, then the two arms of the study were not instrumented alike, which would affect more than the reproduction outcome.",
+    "How many other artefacts in this literature use the same inherited pipeline? ReproduceMeGit is named in the archive as an ancestor. A defect that survives two reruns of one study and a fork is worth tracing rather than fixing locally.",
+    "What is the right general rule? 'A comparison with no operands reports no differences' is one instance of a family: an empty check that returns the value of success. The zoo has met at least three (a reader that skipped unparseable files; a null test that failed to shuffle; a trigger splitter that silently dropped 18 of 23 entries). Whether that family has a cheap universal guard -- assert the operand count, not just the result -- is worth a topic entry rather than four separate scars."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-25",
+    "verified": "2026-08-25",
+    "notes_file": "NOTES.md"
+  }
+}

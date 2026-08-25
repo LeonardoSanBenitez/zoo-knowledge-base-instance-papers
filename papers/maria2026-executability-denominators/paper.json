@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "id": "maria2026-executability-denominators",
   "title": "Does research code work? A denominator-harmonised synthesis of seven artifact-execution studies",
   "authors": [
@@ -170,30 +170,33 @@
           "value": 0.0322,
           "unit": "proportion",
           "n": 27271,
-          "baseline": "Samuel & Mietchen 2024 at the corpus denominator (879/27271)",
+          "baseline": "Samuel & Mietchen 2024 at the corpus denominator (879/27271) [SUPERSEDED -- see our_assessment; do not quote]",
           "source": "reanalysis/pool.py section 1",
           "count": 879,
           "denominator": 27271,
           "clusters": 2660,
-          "icc": 0.435
+          "icc": 0.435,
+          "status": "superseded",
+          "superseded_by": "maria2026-vacuous-reproduction-flag#c2"
         },
         {
           "name": "artifact_reproduction_identical_output_rate",
           "value": 0.03,
           "unit": "proportion",
           "n": 1159166,
-          "baseline": "Pimentel 2019 at the corpus denominator (34814/1159166)",
+          "baseline": "Pimentel 2019 at the corpus denominator (34814/1159166) [SUPERSEDED -- see our_assessment; do not quote]",
           "source": "reanalysis/pool.py section 1",
           "count": 34814,
           "denominator": 1159166,
-          "clusters": 264023
+          "clusters": 264023,
+          "status": "disputed"
         },
         {
           "name": "pooled_artifact_reproduction_identical_output_rate",
           "value": 0.047,
           "unit": "proportion",
           "n": 2,
-          "baseline": "as printed; tau = 0.23 logit, I2 = 96.6%",
+          "baseline": "as printed; tau = 0.23 logit, I2 = 96.6% [SUPERSEDED -- see our_assessment; do not quote]",
           "source": "reanalysis/pool.py section 3"
         },
         {
@@ -201,7 +204,7 @@
           "value": 0.03,
           "unit": "proportion",
           "n": 2,
-          "baseline": "widest denominator; tau = 0, I2 = 0.0%",
+          "baseline": "widest denominator; tau = 0, I2 = 0.0% [SUPERSEDED -- see our_assessment; do not quote]",
           "source": "reanalysis/pool.py section 3"
         }
       ],
@@ -210,8 +213,9 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
-        "why": "The two point estimates do agree to 0.2 percentage points and disagree by 38% in relative terms as printed; that much is arithmetic. Three narrowings, all mine and all necessary. (1) k = 2 and both are Jupyter notebooks, so this is a coincidence-compatible observation, not a rate. (2) The two 'widest' populations are not identically constructed -- deduplicated GitHub notebooks against all notebooks in PMC-linked repositories. (3) THE POOLED CI PRINTED BY MY OWN CODE ([3.0, 3.1]) IS NOT CREDIBLE: it is a near-fixed-effect interval on n in the millions, and quoting it would be exactly the error this record is about. The honest claim is that the two point estimates agree, full stop."
+        "status": "refuted",
+        "why": "REFUTED 2026-08-25 by my own reanalysis. The claimed convergence rests on Samuel & Mietchen's numerator of 879, of which 815 are executions where the output comparison loop ran zero iterations. Corrected, that side is 64/27,271 = 0.23% against Pimentel's 3.00% -- a factor of 13, not agreement to 0.2 points. And the second branch is worse: Samuel & Mietchen state they used Pimentel's reproducibility code, so if the defect is inherited then the I-squared of 0 I reported was measuring two runs of one bug. Both branches refute the claim, so it falls without knowing which holds. THE GENERAL LESSON, which is worth more than the claim was: two studies agreeing is evidence only if their measurement errors are independent. I-squared is a statistic about SAMPLING error and is silent about SHARED IMPLEMENTATION error; a shared codebase drives it toward zero exactly as genuine agreement does. c1 and c2 of this record are untouched -- the denominator argument never depended on the numerator being right.",
+        "by": "maria2026-vacuous-reproduction-flag"
       }
     },
     {
@@ -569,6 +573,11 @@
       "type": "cito:agreesWith",
       "target": "hardwicke2018-cognition-open-data",
       "why": "Reciprocal. Supplies the psychology row of the human-reproduction stratum (11/35 = 31.4% unaided). Reading its raw data added what the pooled number is a rate OF: a best-case stratum triaged for reusable data AND a straightforward analysis, so the 28.2% pooled figure is optimistic in the same direction in all three studies."
+    },
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-vacuous-reproduction-flag",
+      "why": "Refutes c3 of this record. c1 and c2 stand."
     }
   ],
   "open_questions": [

@@ -1,502 +1,517 @@
 {
- "$schema": "https://json-schema.org/draft/2020-12/schema",
- "$id": "https://zoo.local/schema/paper.schema.json",
- "title": "Deep-read paper record",
- "description": "One record per paper we have read IN DEPTH. Not a bibliography entry -- a bibliography entry is cheap and this is not. A record exists only if someone opened the artifacts. Design borrows: CiTO (relation vocabulary), nanopublications (assertion/provenance/publication-info separation -> claims[] with evidence and our_assessment), RO-Crate (artifacts as first-class entities with roles and provenance edges, bulk data referenced not embedded), Datasheets for Datasets (the dataset stub inside an artifact), OBO Foundry (stable ids, textual definitions, versioning, orthogonality: extend a record, never fork it).",
- "type": "object",
- "required": [
-  "id",
-  "schema_version",
-  "title",
-  "year",
-  "area",
-  "record_status",
-  "read_depth",
-  "authors",
-  "identifiers",
-  "curation"
- ],
- "additionalProperties": false,
- "properties": {
-  "schema_version": {
-   "enum": [
-    "1.0",
-    "1.1"
-   ],
-   "description": "Revision of zoo-paper-record this record was written against. 1.1 adds OPTIONAL fields only, so every 1.0 record is also a conforming 1.1 record and there is no migration. See VERSIONING.md: no bulk migration, ever."
-  },
-  "id": {
-   "type": "string",
-   "pattern": "^[a-z0-9]+[0-9]{4}[a-z0-9-]*$",
-   "description": "Stable key: firstauthorYYYY-slug. Never reused, never renamed. Referenced by relations[].target."
-  },
-  "title": {
-   "type": "string"
-  },
-  "authors": {
-   "type": "array",
-   "items": {
-    "type": "string"
-   },
-   "minItems": 1
-  },
-  "year": {
-   "type": "integer",
-   "minimum": 1900
-  },
-  "venue": {
-   "type": "string"
-  },
-  "area": {
-   "type": "array",
-   "items": {
-    "type": "string"
-   },
-   "minItems": 1,
-   "description": "Maps to areas/<area>.md prose files. Multi-valued on purpose."
-  },
-  "identifiers": {
-   "type": "object",
-   "additionalProperties": false,
-   "properties": {
-    "arxiv": {
-     "type": "string"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zoo.local/schema/paper.schema.json",
+  "title": "Deep-read paper record",
+  "description": "One record per paper we have read IN DEPTH. Not a bibliography entry -- a bibliography entry is cheap and this is not. A record exists only if someone opened the artifacts. Design borrows: CiTO (relation vocabulary), nanopublications (assertion/provenance/publication-info separation -> claims[] with evidence and our_assessment), RO-Crate (artifacts as first-class entities with roles and provenance edges, bulk data referenced not embedded), Datasheets for Datasets (the dataset stub inside an artifact), OBO Foundry (stable ids, textual definitions, versioning, orthogonality: extend a record, never fork it).",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "title",
+    "year",
+    "area",
+    "record_status",
+    "read_depth",
+    "authors",
+    "identifiers",
+    "curation"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1.0",
+        "1.1",
+        "1.2"
+      ],
+      "description": "Revision of zoo-paper-record this record was written against. 1.1 adds OPTIONAL fields only, so every 1.0 record is also a conforming 1.1 record and there is no migration. See VERSIONING.md: no bulk migration, ever."
     },
-    "doi": {
-     "type": "string"
-    },
-    "url": {
-     "type": "string"
-    },
-    "pmid": {
-     "type": "string"
-    },
-    "openreview": {
-     "type": "string"
-    }
-   }
-  },
-  "record_status": {
-   "enum": [
-    "draft",
-    "active",
-    "superseded",
-    "retracted-upstream"
-   ],
-   "description": "State of OUR record, not of the paper."
-  },
-  "read_depth": {
-   "enum": [
-    "abstract-only",
-    "skimmed",
-    "read-full-text",
-    "read-and-ran-artifacts",
-    "read-and-reanalysed"
-   ],
-   "description": "Honesty field. 'read-and-reanalysed' means we produced a number the authors did not. Anything below 'read-full-text' should not carry claims[] with assessments."
-  },
-  "cost": {
-   "type": "object",
-   "description": "What this record actually cost to produce, in units that mean something to the agent that spent them. Written so future planning is budgeting rather than vibes. NEVER express effort in human time units.",
-   "additionalProperties": false,
-   "properties": {
-    "tool_calls": {
-     "type": "integer"
-    },
-    "bytes_downloaded": {
-     "type": "integer"
-    },
-    "compute_notes": {
-     "type": "string"
-    },
-    "session": {
-     "type": "string",
-     "description": "date + agent"
-    }
-   }
-  },
-  "claims": {
-   "type": "array",
-   "description": "The paper's assertions, separated from our judgement of them -- the nanopublication assertion/provenance split. A claim is quotable on its own.",
-   "items": {
-    "type": "object",
-    "required": [
-     "id",
-     "statement",
-     "our_assessment"
-    ],
-    "additionalProperties": false,
-    "properties": {
-     "id": {
+    "id": {
       "type": "string",
-      "pattern": "^c[0-9]+$"
-     },
-     "statement": {
-      "type": "string",
-      "description": "What the PAPER asserts. Neutral voice."
-     },
-     "scope": {
-      "type": "string",
-      "description": "Population/conditions under which it is asserted. The commonest way a claim gets misused later is scope loss."
-     },
-     "quantities": {
+      "pattern": "^[a-z0-9]+[0-9]{4}[a-z0-9-]*$",
+      "description": "Stable key: firstauthorYYYY-slug. Never reused, never renamed. Referenced by relations[].target."
+    },
+    "title": {
+      "type": "string"
+    },
+    "authors": {
       "type": "array",
       "items": {
-       "type": "object",
-       "required": [
-        "name",
-        "value"
-       ],
-       "additionalProperties": false,
-       "properties": {
-        "name": {
-         "type": "string"
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1900
+    },
+    "venue": {
+      "type": "string"
+    },
+    "area": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Maps to areas/<area>.md prose files. Multi-valued on purpose."
+    },
+    "identifiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "arxiv": {
+          "type": "string"
         },
-        "value": {
-         "type": [
-          "number",
-          "string"
-         ]
+        "doi": {
+          "type": "string"
         },
-        "unit": {
-         "type": "string"
+        "url": {
+          "type": "string"
         },
-        "n": {
-         "type": [
-          "integer",
-          "string"
-         ],
-         "description": "sample size / dimensions. A number without an n is not reusable."
+        "pmid": {
+          "type": "string"
         },
-        "ci": {
-         "type": "string"
-        },
-        "baseline": {
-         "type": "string",
-         "description": "What it is being compared against. For any agreement/correlation statistic this IS the claim."
-        },
-        "source": {
-         "type": "string",
-         "description": "table/figure/section, or an artifact id if we computed it"
-        },
-        "count": {
-         "type": "integer",
-         "minimum": 0,
-         "description": "Numerator. Present ONLY when the quantity is a proportion or a rate. Added in 1.1 after a synthesis of seven artifact-execution studies could not be done from the records themselves: `value` alone makes a proportion unpoolable and, worse, lets it travel without the denominator that defines it -- the exact failure that synthesis was about. If `count` and `denominator` are both present, `value` MUST equal count/denominator to within 0.005; kb.py validate enforces it."
-        },
-        "denominator": {
-         "type": "integer",
-         "minimum": 1,
-         "description": "Denominator, i.e. the population this proportion is over. NOT the same as `n`: `n` is the sample size the paper reports, `denominator` is the set the numerator was divided by, and in a multi-stage study they routinely differ. Recording both is the point."
-        },
-        "clusters": {
-         "type": "integer",
-         "minimum": 1,
-         "description": "Number of independent clusters the `denominator` units sit in, when they are not independent (files inside replication packages, notebooks inside repositories, trials inside subjects). Enables a design-effect correction downstream. Absent means 'not known', NEVER 'units are independent' -- do not fill it with `denominator` to mean independence."
-        },
-        "icc": {
-         "type": "number",
-         "minimum": 0,
-         "maximum": 1,
-         "description": "Intra-class correlation within `clusters`, if measured. Only fill this if it was MEASURED, on this corpus. A borrowed ICC belongs in the analysis that borrows it, with its source, not in the record of the paper it was borrowed for."
-        },
-        "ci_low": {
-         "type": "number",
-         "description": "Numeric lower bound. The existing free-text `ci` field stays and is still the right place for anything that is not a symmetric numeric interval (a Manski bound, a prediction interval, a one-sided floor)."
-        },
-        "ci_high": {
-         "type": "number",
-         "description": "Numeric upper bound."
-        },
-        "ci_kind": {
-         "enum": [
-          "confidence",
-          "prediction",
-          "credible",
-          "partial-identification-bounds",
-          "range-of-specifications"
-         ],
-         "description": "What kind of interval ci_low/ci_high are. Added because a 95% CI, a prediction interval and a Manski bound were all being written into one free-text field, and they license completely different sentences."
+        "openreview": {
+          "type": "string"
         }
-       }
       }
-     },
-     "evidence": {
-      "type": "array",
-      "items": {
-       "type": "string"
-      },
-      "description": "artifact ids backing this claim"
-     },
-     "our_assessment": {
-      "type": "object",
-      "required": [
-       "status"
+    },
+    "record_status": {
+      "enum": [
+        "draft",
+        "active",
+        "superseded",
+        "retracted-upstream"
       ],
+      "description": "State of OUR record, not of the paper."
+    },
+    "read_depth": {
+      "enum": [
+        "abstract-only",
+        "skimmed",
+        "read-full-text",
+        "read-and-ran-artifacts",
+        "read-and-reanalysed"
+      ],
+      "description": "Honesty field. 'read-and-reanalysed' means we produced a number the authors did not. Anything below 'read-full-text' should not carry claims[] with assessments."
+    },
+    "cost": {
+      "type": "object",
+      "description": "What this record actually cost to produce, in units that mean something to the agent that spent them. Written so future planning is budgeting rather than vibes. NEVER express effort in human time units.",
       "additionalProperties": false,
       "properties": {
-       "status": {
-        "enum": [
-         "accepted",
-         "accepted-narrower-scope",
-         "unverified",
-         "disputed",
-         "refuted",
-         "not-identifiable"
+        "tool_calls": {
+          "type": "integer"
+        },
+        "bytes_downloaded": {
+          "type": "integer"
+        },
+        "compute_notes": {
+          "type": "string"
+        },
+        "session": {
+          "type": "string",
+          "description": "date + agent"
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "description": "The paper's assertions, separated from our judgement of them -- the nanopublication assertion/provenance split. A claim is quotable on its own.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "our_assessment"
         ],
-        "description": "'not-identifiable' = the claim has no truth value without a choice the authors did not make explicit. Rarer than 'disputed' and more damning."
-       },
-       "why": {
-        "type": "string"
-       },
-       "by": {
-        "type": "string",
-        "description": "record id of the work that settles it, incl. our own reanalyses"
-       }
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^c[0-9]+$"
+          },
+          "statement": {
+            "type": "string",
+            "description": "What the PAPER asserts. Neutral voice."
+          },
+          "scope": {
+            "type": "string",
+            "description": "Population/conditions under which it is asserted. The commonest way a claim gets misused later is scope loss."
+          },
+          "quantities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "value"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": [
+                    "number",
+                    "string"
+                  ]
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "n": {
+                  "type": [
+                    "integer",
+                    "string"
+                  ],
+                  "description": "sample size / dimensions. A number without an n is not reusable."
+                },
+                "ci": {
+                  "type": "string"
+                },
+                "baseline": {
+                  "type": "string",
+                  "description": "What it is being compared against. For any agreement/correlation statistic this IS the claim."
+                },
+                "source": {
+                  "type": "string",
+                  "description": "table/figure/section, or an artifact id if we computed it"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "Numerator. Present ONLY when the quantity is a proportion or a rate. Added in 1.1 after a synthesis of seven artifact-execution studies could not be done from the records themselves: `value` alone makes a proportion unpoolable and, worse, lets it travel without the denominator that defines it -- the exact failure that synthesis was about. If `count` and `denominator` are both present, `value` MUST equal count/denominator to within 0.005; kb.py validate enforces it."
+                },
+                "denominator": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "description": "Denominator, i.e. the population this proportion is over. NOT the same as `n`: `n` is the sample size the paper reports, `denominator` is the set the numerator was divided by, and in a multi-stage study they routinely differ. Recording both is the point."
+                },
+                "clusters": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "description": "Number of independent clusters the `denominator` units sit in, when they are not independent (files inside replication packages, notebooks inside repositories, trials inside subjects). Enables a design-effect correction downstream. Absent means 'not known', NEVER 'units are independent' -- do not fill it with `denominator` to mean independence."
+                },
+                "icc": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1,
+                  "description": "Intra-class correlation within `clusters`, if measured. Only fill this if it was MEASURED, on this corpus. A borrowed ICC belongs in the analysis that borrows it, with its source, not in the record of the paper it was borrowed for."
+                },
+                "ci_low": {
+                  "type": "number",
+                  "description": "Numeric lower bound. The existing free-text `ci` field stays and is still the right place for anything that is not a symmetric numeric interval (a Manski bound, a prediction interval, a one-sided floor)."
+                },
+                "ci_high": {
+                  "type": "number",
+                  "description": "Numeric upper bound."
+                },
+                "ci_kind": {
+                  "enum": [
+                    "confidence",
+                    "prediction",
+                    "credible",
+                    "partial-identification-bounds",
+                    "range-of-specifications"
+                  ],
+                  "description": "What kind of interval ci_low/ci_high are. Added because a 95% CI, a prediction interval and a Manski bound were all being written into one free-text field, and they license completely different sentences."
+                },
+                "status": {
+                  "enum": [
+                    "current",
+                    "disputed",
+                    "superseded",
+                    "retracted"
+                  ],
+                  "description": "Lifecycle of THIS NUMBER, not of the claim around it. Absent means `current`. Added in 1.2 after `kb.py pool` cheerfully pooled four quantities that had been refuted in the same session: the refutation was written in prose, and prose is not a surface a tool reads. `superseded` = a better measurement of the same thing exists. `retracted` = the number is wrong and no replacement is offered. `disputed` = contested but still the best available, so it is pooled AND flagged. The distinction between claim status and quantity status is load-bearing: a claim can be half right, and samuel2024#c1 is exactly that -- its execution numbers stand and its reproduction numbers do not."
+                },
+                "superseded_by": {
+                  "type": "string",
+                  "description": "Record id, or `record#claimid`, carrying the number that replaces this one. REQUIRED when status is `superseded` or `retracted`; a number withdrawn without a forwarding address is how a corrected value goes on being quoted."
+                }
+              }
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "artifact ids backing this claim"
+          },
+          "our_assessment": {
+            "type": "object",
+            "required": [
+              "status"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "enum": [
+                  "accepted",
+                  "accepted-narrower-scope",
+                  "unverified",
+                  "disputed",
+                  "refuted",
+                  "not-identifiable"
+                ],
+                "description": "'not-identifiable' = the claim has no truth value without a choice the authors did not make explicit. Rarer than 'disputed' and more damning."
+              },
+              "why": {
+                "type": "string"
+              },
+              "by": {
+                "type": "string",
+                "description": "record id of the work that settles it, incl. our own reanalyses"
+              }
+            }
+          }
+        }
       }
-     }
-    }
-   }
-  },
-  "methods": {
-   "type": "array",
-   "description": "Controlled slugs. Reuse before inventing: `kb.py vocab methods` lists what exists. The entire value is in collisions -- a slug used once is a slug that failed.",
-   "items": {
-    "type": "string",
-    "pattern": "^[a-z0-9-]+$"
-   }
-  },
-  "artifacts": {
-   "type": "array",
-   "description": "Every published artifact, separately. A paper is not one link. Bulk data is REFERENCED and regenerated via fetch_cmd, never committed here.",
-   "items": {
-    "type": "object",
-    "required": [
-     "id",
-     "role",
-     "status"
-    ],
-    "additionalProperties": false,
-    "properties": {
-     "id": {
-      "type": "string",
-      "pattern": "^a[0-9]+$"
-     },
-     "role": {
-      "enum": [
-       "raw-data",
-       "derived-data",
-       "code",
-       "analysis-notebook",
-       "model-weights",
-       "benchmark",
-       "protocol",
-       "preregistration",
-       "proof",
-       "figure-source",
-       "supplement",
-       "human-labels",
-       "prompt-set",
-       "in-paper-table"
-      ],
-      "description": "'in-paper-table' matters: for small-n psychology the data IS a PDF table, and that is a legitimate, fully usable artifact. Transcribe it and mark provenance."
-     },
-     "locator": {
-      "type": "string"
-     },
-     "repo_commit": {
-      "type": "string",
-      "description": "Pin it. An unpinned repo reference is not a reference."
-     },
-     "path_in_repo": {
-      "type": "string"
-     },
-     "status": {
-      "enum": [
-       "verified-usable",
-       "present-but-insufficient",
-       "dangling",
-       "gated",
-       "absent",
-       "regenerated-from-upstream",
-       "not-checked"
-      ],
-      "description": "'present-but-insufficient' = it is there and it does not let you redo the analysis (derived tables only). 'dangling' = advertised and not retrievable. These two are the interesting ones and no badge scheme records either."
-     },
-     "checked": {
-      "type": "object",
-      "required": [
-       "on",
-       "by",
-       "how"
-      ],
-      "additionalProperties": false,
-      "properties": {
-       "on": {
+    },
+    "methods": {
+      "type": "array",
+      "description": "Controlled slugs. Reuse before inventing: `kb.py vocab methods` lists what exists. The entire value is in collisions -- a slug used once is a slug that failed.",
+      "items": {
         "type": "string",
-        "format": "date"
-       },
-       "by": {
-        "type": "string"
-       },
-       "how": {
-        "type": "string",
-        "description": "the literal command run. 'I looked at the repo page' is not a check."
-       },
-       "result": {
-        "type": "string"
-       }
+        "pattern": "^[a-z0-9-]+$"
       }
-     },
-     "bytes": {
-      "type": "integer"
-     },
-     "sha256": {
-      "type": "string"
-     },
-     "license": {
-      "type": "string"
-     },
-     "local_path": {
-      "type": "string",
-      "description": "relative to the paper folder; only for things small enough to keep"
-     },
-     "fetch_cmd": {
-      "type": "string",
-      "description": "the command that regenerates this from upstream. This is what replaces storing it."
-     },
-     "derived_from": {
+    },
+    "artifacts": {
+      "type": "array",
+      "description": "Every published artifact, separately. A paper is not one link. Bulk data is REFERENCED and regenerated via fetch_cmd, never committed here.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "role",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^a[0-9]+$"
+          },
+          "role": {
+            "enum": [
+              "raw-data",
+              "derived-data",
+              "code",
+              "analysis-notebook",
+              "model-weights",
+              "benchmark",
+              "protocol",
+              "preregistration",
+              "proof",
+              "figure-source",
+              "supplement",
+              "human-labels",
+              "prompt-set",
+              "in-paper-table"
+            ],
+            "description": "'in-paper-table' matters: for small-n psychology the data IS a PDF table, and that is a legitimate, fully usable artifact. Transcribe it and mark provenance."
+          },
+          "locator": {
+            "type": "string"
+          },
+          "repo_commit": {
+            "type": "string",
+            "description": "Pin it. An unpinned repo reference is not a reference."
+          },
+          "path_in_repo": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "verified-usable",
+              "present-but-insufficient",
+              "dangling",
+              "gated",
+              "absent",
+              "regenerated-from-upstream",
+              "not-checked"
+            ],
+            "description": "'present-but-insufficient' = it is there and it does not let you redo the analysis (derived tables only). 'dangling' = advertised and not retrievable. These two are the interesting ones and no badge scheme records either."
+          },
+          "checked": {
+            "type": "object",
+            "required": [
+              "on",
+              "by",
+              "how"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "on": {
+                "type": "string",
+                "format": "date"
+              },
+              "by": {
+                "type": "string"
+              },
+              "how": {
+                "type": "string",
+                "description": "the literal command run. 'I looked at the repo page' is not a check."
+              },
+              "result": {
+                "type": "string"
+              }
+            }
+          },
+          "bytes": {
+            "type": "integer"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "local_path": {
+            "type": "string",
+            "description": "relative to the paper folder; only for things small enough to keep"
+          },
+          "fetch_cmd": {
+            "type": "string",
+            "description": "the command that regenerates this from upstream. This is what replaces storing it."
+          },
+          "derived_from": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "artifact ids -- the RO-Crate provenance edge"
+          },
+          "datasheet": {
+            "type": "object",
+            "description": "Compact Datasheets-for-Datasets stub. Only for data artifacts we actually opened. Fill the fields that bite; blank is better than invented.",
+            "additionalProperties": false,
+            "properties": {
+              "motivation": {
+                "type": "string"
+              },
+              "composition": {
+                "type": "string",
+                "description": "rows/cols/units/what one record is"
+              },
+              "collection": {
+                "type": "string"
+              },
+              "preprocessing": {
+                "type": "string"
+              },
+              "caveats": {
+                "type": "string",
+                "description": "the field that earns the whole stub"
+              }
+            }
+          }
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "description": "Typed edges to other records. Vocabulary is the CiTO subset that is actually discriminating for our use, plus three local terms. Two edges (supports/rebuts) is not a vocabulary -- that was the 2026-08-07 mistake this field replaces.",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "target"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "cito:agreesWith",
+              "cito:disagreesWith",
+              "cito:confirms",
+              "cito:supports",
+              "cito:corrects",
+              "cito:qualifies",
+              "cito:updates",
+              "cito:extends",
+              "cito:refutes",
+              "cito:critiques",
+              "cito:repliesTo",
+              "cito:retracts",
+              "cito:usesMethodIn",
+              "cito:usesDataFrom",
+              "cito:usesConclusionsFrom",
+              "cito:obtainsBackgroundFrom",
+              "cito:citesAsAuthority",
+              "cito:citesAsEvidence",
+              "cito:sharesAuthorWith",
+              "cito:documents",
+              "cito:compiles",
+              "cito:reviews",
+              "zoo:reanalysedBy",
+              "zoo:reanalyses",
+              "zoo:sharesUnstatedAssumptionWith",
+              "zoo:supersededForOurPurposesBy"
+            ],
+            "description": "cito:* per the Citation Typing Ontology (SPAR). zoo:sharesUnstatedAssumptionWith has no CiTO equivalent and is the one we needed most: two papers that never cite each other but stand or fall together. zoo:reanalyses points from our own record to the paper we re-ran."
+          },
+          "target": {
+            "type": "string",
+            "description": "record id, or 'record#claimid' to point at ONE claim"
+          },
+          "why": {
+            "type": "string"
+          },
+          "asymmetric_note": {
+            "type": "string",
+            "description": "why the reciprocal edge is not simply the inverse"
+          }
+        }
+      }
+    },
+    "open_questions": {
       "type": "array",
       "items": {
-       "type": "string"
+        "type": "string"
       },
-      "description": "artifact ids -- the RO-Crate provenance edge"
-     },
-     "datasheet": {
+      "description": "What reading this made answerable-but-unanswered. The field that turns a catalogue into a research programme."
+    },
+    "curation": {
       "type": "object",
-      "description": "Compact Datasheets-for-Datasets stub. Only for data artifacts we actually opened. Fill the fields that bite; blank is better than invented.",
+      "required": [
+        "author",
+        "created",
+        "verified"
+      ],
       "additionalProperties": false,
       "properties": {
-       "motivation": {
-        "type": "string"
-       },
-       "composition": {
-        "type": "string",
-        "description": "rows/cols/units/what one record is"
-       },
-       "collection": {
-        "type": "string"
-       },
-       "preprocessing": {
-        "type": "string"
-       },
-       "caveats": {
-        "type": "string",
-        "description": "the field that earns the whole stub"
-       }
+        "author": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string",
+          "format": "date"
+        },
+        "verified": {
+          "type": "string",
+          "format": "date",
+          "description": "when the ARTIFACT statuses were last re-checked. Rots fastest of anything here."
+        },
+        "notes_file": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": "string"
+        }
       }
-     }
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Phrases a future agent would actually type when it needs this, in its own words, months later, not knowing this paper exists. Write questions, not keywords."
     }
-   }
   },
-  "relations": {
-   "type": "array",
-   "description": "Typed edges to other records. Vocabulary is the CiTO subset that is actually discriminating for our use, plus three local terms. Two edges (supports/rebuts) is not a vocabulary -- that was the 2026-08-07 mistake this field replaces.",
-   "items": {
-    "type": "object",
-    "required": [
-     "type",
-     "target"
-    ],
-    "additionalProperties": false,
-    "properties": {
-     "type": {
-      "enum": [
-       "cito:agreesWith",
-       "cito:disagreesWith",
-       "cito:confirms",
-       "cito:supports",
-       "cito:corrects",
-       "cito:qualifies",
-       "cito:updates",
-       "cito:extends",
-       "cito:refutes",
-       "cito:critiques",
-       "cito:repliesTo",
-       "cito:retracts",
-       "cito:usesMethodIn",
-       "cito:usesDataFrom",
-       "cito:usesConclusionsFrom",
-       "cito:obtainsBackgroundFrom",
-       "cito:citesAsAuthority",
-       "cito:citesAsEvidence",
-       "cito:sharesAuthorWith",
-       "cito:documents",
-       "cito:compiles",
-       "cito:reviews",
-       "zoo:reanalysedBy",
-       "zoo:reanalyses",
-       "zoo:sharesUnstatedAssumptionWith",
-       "zoo:supersededForOurPurposesBy"
-      ],
-      "description": "cito:* per the Citation Typing Ontology (SPAR). zoo:sharesUnstatedAssumptionWith has no CiTO equivalent and is the one we needed most: two papers that never cite each other but stand or fall together. zoo:reanalyses points from our own record to the paper we re-ran."
-     },
-     "target": {
-      "type": "string",
-      "description": "record id, or 'record#claimid' to point at ONE claim"
-     },
-     "why": {
-      "type": "string"
-     },
-     "asymmetric_note": {
-      "type": "string",
-      "description": "why the reciprocal edge is not simply the inverse"
-     }
-    }
-   }
-  },
-  "open_questions": {
-   "type": "array",
-   "items": {
-    "type": "string"
-   },
-   "description": "What reading this made answerable-but-unanswered. The field that turns a catalogue into a research programme."
-  },
-  "curation": {
-   "type": "object",
-   "required": [
-    "author",
-    "created",
-    "verified"
-   ],
-   "additionalProperties": false,
-   "properties": {
-    "author": {
-     "type": "string"
-    },
-    "created": {
-     "type": "string",
-     "format": "date"
-    },
-    "verified": {
-     "type": "string",
-     "format": "date",
-     "description": "when the ARTIFACT statuses were last re-checked. Rots fastest of anything here."
-    },
-    "notes_file": {
-     "type": "string"
-    },
-    "supersedes": {
-     "type": "string"
-    }
-   }
-  },
-  "triggers": {
-   "type": "array",
-   "items": {
-    "type": "string"
-   },
-   "description": "Phrases a future agent would actually type when it needs this, in its own words, months later, not knowing this paper exists. Write questions, not keywords."
-  }
- }
+  "$comment": "zoo-paper-record/1.2"
 }
