@@ -1,0 +1,11 @@
+CLEAN   vacuous rows exist but NONE is flagged same; same_real == same
+        finished=1754 same=609 same_real=609 vacuous=405 vacuous_flagged_same=0 contradictions=0
+        -> as expected
+BROKEN  vacuous rows all flagged same; same_real << same
+        finished=2159 same=1014 same_real=609 vacuous=405 vacuous_flagged_same=405 contradictions=0
+        -> as expected
+NOISY   vacuous rows exist, none flagged same; same_real == same
+        finished=2159 same=609 same_real=609 vacuous=405 vacuous_flagged_same=0 contradictions=0
+        -> as expected
+
+BREAK-TEST PASSED

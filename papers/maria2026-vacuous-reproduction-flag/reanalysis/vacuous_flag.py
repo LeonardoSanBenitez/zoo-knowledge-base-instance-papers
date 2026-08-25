@@ -67,11 +67,26 @@ def main(path):
     notebooks = one(c, "select count(*) from notebooks")
     finished = one(c, "select count(*) from executions where %s" % FINISHED)
     same = one(c, "select count(*) from executions where %s and %s" % (FINISHED, SAME))
-    print("  notebooks in corpus                     %6d   (paper: 27,271)" % notebooks)
+    # Published figures for BOTH runs, keyed by corpus size. The first version
+    # hard-coded the 2023 triple and refused the 2021 database, which is the
+    # right instinct pointed at the wrong thing: the check should recognise
+    # which run it was handed, not assume.
+    PUBLISHED = {
+        27271: ("2023 run, GigaScience 13:giad113", 1203, 879),
+        9625:  ("2021 run, Zenodo 6802158", 396, 245),
+    }
+    if notebooks not in PUBLISHED:
+        print("  %d notebooks -- not a corpus size this script knows the published"
+              % notebooks)
+        print("  figures for. Add it to PUBLISHED before trusting anything below.")
+        return 1
+    run, exp_fin, exp_same = PUBLISHED[notebooks]
+    print("  recognised: %s" % run)
+    print("  notebooks in corpus                     %6d" % notebooks)
     print("  executions attempted                    %6d" % attempted)
-    print("  'ran through without any errors'        %6d   (paper: 1,203)" % finished)
-    print("  'results identical to those recorded'   %6d   (paper:   879)" % same)
-    ok = (notebooks, finished, same) == (27271, 1203, 879)
+    print("  'ran through without any errors'        %6d   (paper: %d)" % (finished, exp_fin))
+    print("  'results identical to those recorded'   %6d   (paper: %d)" % (same, exp_same))
+    ok = (finished, same) == (exp_fin, exp_same)
     print("  exact match to the published figures: %s" % ("YES" if ok else "NO -- STOP"))
     if not ok:
         return 1

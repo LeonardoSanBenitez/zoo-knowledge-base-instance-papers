@@ -1,0 +1,44 @@
+REPRODUCING THE PAPER'S OWN NUMBERS, using the authors' own filters
+--------------------------------------------------------------------------
+  recognised: 2023 run, GigaScience 13:giad113
+  notebooks in corpus                      27271
+  executions attempted                     17965
+  'ran through without any errors'          1203   (paper: 1203)
+  'results identical to those recorded'      879   (paper: 879)
+  exact match to the published figures: YES
+
+FALSIFICATION TESTS of the reading of the loop bound
+--------------------------------------------------------------------------
+  rows with count=0 AND diff_count>0             0   must be 0
+  rows with count=0                          7015
+  ...of which flagged SAME_RESULTS           7015   must equal the line above
+  min `count` among rows with diff_count>0      1   must be >= 1
+  reading of the loop bound: CONFIRMED
+
+THE CORRECTION
+--------------------------------------------------------------------------
+  executions where ZERO cells were compared            7019  (39.1% of attempts)
+  ...of which carry the SAME_RESULTS flag              7019  (100.0%)
+
+  'ran without errors'    published  1203  ->  with >=1 cell run        388  (32.3%)
+  'identical results'     published   879  ->  with >=1 cell compared    64  (7.3%)
+  overstatement of the reproduction count: 13.7x
+
+  reproduction rate over all notebooks, published  0.0322  (879/27271)
+  reproduction rate over all notebooks, corrected  0.0023  (64/27271)
+
+BY ARM -- and why the arms must NOT be compared on this outcome
+--------------------------------------------------------------------------
+  mode 3 = repository DECLARED dependencies, they were installed
+  mode 5 = repository declared NOTHING, executed in an anaconda base env
+
+  mode      n   finished  same  same&real   exception-rows  of those count=0
+   3     7618     441     440        0           1469           1466
+   5    10347     762     439       64           7632           4678
+
+  A row that raised a CELL execution error must have run a cell. In mode 3
+  such rows have count=0 almost always, so `count` is not a faithful record
+  of cells executed in that arm -- the tracker does not advance there. That
+  does NOT weaken the correction above (the loop bound is the same variable,
+  so nothing was compared either way) but it does mean the declared-vs-not
+  comparison on this outcome measures the instrumentation, not the world.
