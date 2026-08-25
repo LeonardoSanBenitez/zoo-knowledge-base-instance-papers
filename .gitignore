@@ -13,3 +13,8 @@ __pycache__/
 *.tar.gz
 *.parquet
 *.sqlite
+# Empty-until-it-finishes run logs. An empty .log sitting next to real ones
+# implies a run that produced nothing, which is exactly the vacuous-success
+# pattern this folder documents. Committed only when they have content.
+papers/*/reanalysis/pimentel_stream.log
+papers/*/reanalysis/pimentel_stream.err
