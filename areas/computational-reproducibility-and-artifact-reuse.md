@@ -9,7 +9,63 @@ artifact that runs. So the base rate for *running* bounds everything downstream,
 it turns out to be the least stable number in metascience.
 
 Records: `trisovic2022-code-execution`, `samuel2024-jupyter-pmc`,
-`hardwicke2018-cognition-open-data`, `maria2026-executability-denominators`.
+`hardwicke2018-cognition-open-data`, `maria2026-executability-denominators`,
+`malka2026-docker-reproducibility`, `laurinavichyute2022-share-the-code`,
+`obels2020-registered-reports`, `maria2026-vacuous-reproduction-flag`.
+
+---
+
+## WHERE THIS STANDS — read this screen, then the section you need (2026-08-25)
+
+This file is long and layered with correction blocks, deliberately: nothing is
+edited away. So here is the current position in one page.
+
+**On the substance.**
+
+1. **Sharing the analysis code at all is the intervention with the largest
+   well-estimated effect: +38 percentage points** [19, 60]. Pinning versions is
+   null once dependency count is controlled. Containerisation has no measured
+   association with anything, and its own artifacts are 43% retrievable at two
+   years. A readme is null. **The field has been optimising the environment while
+   the specification was missing.**
+2. **The axis that matters is not built-vs-declared. It is deposited vs
+   pointed-at.** What is archived survives; what is *linked* does not. 57% of
+   registry-pushed container images gone in under two years; a paper called
+   *Share the code, not just the data* whose own code node answers 200 and holds
+   nothing.
+3. **What predicts an environment installing is how many dependencies you
+   declare, not whether you pinned them.** exp(0.364) = 1.44 per e-fold; 5 → 50
+   dependencies roughly doubles the odds of total install failure.
+
+**On the measurements, and this is the part that should change how you read any
+number in this literature.** A published reproduction rate is not a measurement
+until four choices are stated, and they are never all stated:
+
+| knob | how much it moves the number |
+|---|---|
+| the **denominator** | ~2× on the level — **and it doubles the effect size**, 7.4 pts vs 15.0 pts for the same two counts |
+| the **criterion** | 1.6× on one corpus (34% vs 56%) |
+| the **judgement** | two coders agreed 55–56% before adjudication; exactly one study has ever measured this |
+| **who runs it** | automated batch 2–29% vs a person allowed minor adjustments 84%, never run on the same corpus |
+
+And a fifth thing, which is not a knob but a ceiling: **at n = 36–62 no two
+by-hand studies in this field can detect a difference smaller than ~24 points,
+while the range they argue about is ~30.** Their *within*-study contrasts are
+sound; their headline rates cannot adjudicate each other, and their agreements
+are correspondingly uninformative.
+
+**Two corrections to this file's own earlier claims**, both from 2026-08-25 and
+both left visible in place: the "two notebook corpora converge at I² = 0" result
+is **retracted** (one numerator counted 815 comparisons that never happened, and
+the two studies share a codebase); and "containerisation has never been tried at
+a scale anyone could measure" was a statement about one corpus, not the world —
+13.7% of PMC-linked repositories ship a Dockerfile against Dataverse's 0.44%.
+
+**The four cheapest unclaimed measurements**, in value order: registry
+persistence for *deliberately archived* research images; automated vs
+human-assisted execution on the same corpus; double-coding thirty artifacts to
+report inter-rater agreement; and whether Pimentel 2019 inherits the
+vacuous-comparison defect.
 
 ---
 
