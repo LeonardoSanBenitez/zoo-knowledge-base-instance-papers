@@ -173,12 +173,32 @@ environment, which is a different treatment:
   time against 40.4% unconstrained, z = −1.77
 
 **What this does and does not establish.** 191 repositories, 22 events. It cannot
-establish that pinning hurts and I will not say it does. What it does establish is
-that **the field's most repeated recommendation has never been tested, and the one
-dataset that can test it does not support it** — the point estimate is on the wrong
-side, consistently, across every stratum, and the mechanism is not mysterious:
-`numpy==1.16.4` is an instruction to build a 2019 wheel on a 2023 toolchain, and it
-fails where a bare `numpy` succeeds.
+establish that pinning hurts and I will not say it does. What it establishes is that
+on this corpus the point estimate is on the wrong side, consistently, across every
+stratum, and that the mechanism is not mysterious: `numpy==1.16.4` is an instruction
+to build a 2019 wheel on a 2023 toolchain, and it fails where a bare `numpy`
+succeeds.
+
+> **CORRECTION IN PLACE, 2026-08-25.** This paragraph originally continued: *"the
+> field's most repeated recommendation has never been tested, and the one dataset
+> that can test it does not support it."* **The first clause is now false and the
+> second was too broad.** Malka, Zacchiroli & Zimmermann (arXiv 2601.12811, January
+> 2026 — record `malka2026-docker-reproducibility`) test it on 835 unique
+> Dockerfiles: violating each of three separate pinning rules is associated with
+> *higher* build failure at p < 0.02, and once their standardised coefficients are
+> restated per violation the odds ratios are about 2. On that corpus **pinning
+> helps, substantially.** Left standing as written above, corrected here rather
+> than edited away, because a number I published on the strength of 22 events
+> should be visible next to the one that overtook it.
+>
+> The two results need not conflict, and the reconciliation is the interesting
+> part. `apt` and `npm` serve old versions as **prebuilt binaries** from archives
+> that keep them, so a pin costs nothing at install time and buys protection from
+> upstream drift. `pip` serving an old scientific package to a current interpreter
+> frequently has **no wheel**, so the same pin is an instruction to compile. So:
+> **the sign of the pinning effect should depend on whether the pinned artifact is
+> served prebuilt or must be built at install time.** That is a hypothesis, it is
+> in neither paper, and §8 now carries it as the test to run.
 
 A pin is a *provenance* record and a *portability* liability, and the literature
 conflates them. What preserves executability is a **built environment** (a container
@@ -234,6 +254,14 @@ licenses everything else in this file.
 
 - Redo section 4 (pinning) on the 2023 corpus, where n is ~3× larger and the event
   count might reach the point of being informative. 22 events is not.
+  **2026-08-25: the 2023 archive was located — Zenodo record 8226725, 415.6 MB,
+  `computational-reproducibility-pmc.zip`. The note above that I "did not locate a
+  Zenodo record for it" is superseded.** And the redo now has a sharper question
+  than "does pinning help": split each pinned requirement by whether a wheel exists
+  for that exact version on the interpreter used, and test whether the sign of the
+  pinning effect flips between the wheel-available and source-build strata. That is
+  the hypothesis that reconciles this record with
+  `malka2026-docker-reproducibility`, and it is falsifiable on this data.
 - The 2013 anomaly (×10.5 between runs) is one or two repositories. Naming them would
   settle whether the whole "old code reproduces better" pattern is a single artifact.
 - Nobody has measured executability with the *environment* preserved rather than

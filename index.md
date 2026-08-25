@@ -191,10 +191,17 @@ so no one else can run it.
   recovering a paper's reported result unaided, 28.2% pooled across economics,
   psychology and *Science*, I² = 0**, against automated execution rates that span
   a factor of five. Also: reproduction outcomes are clustered inside repositories
-  at **ICC 0.435**, which nobody corrects for; the field's most repeated advice
-  ("pin your dependency versions") is untested and the only data able to test it
-  point the other way; and three documented cases of citation drift in one
-  reading pass. **The data-reuse half** is `hardwicke2018-cognition-open-data`
+  at **ICC 0.435**, which nobody corrects for; and three documented cases of
+  citation drift in one reading pass. **On pinning, corrected 2026-08-25:** this
+  entry used to read *"the field's most repeated advice (pin your dependency
+  versions) is untested and the only data able to test it point the other way."*
+  Malka, Zacchiroli & Zimmermann 2026 (`malka2026-docker-reproducibility`, 5,298
+  Docker builds) tested it, and on that corpus **pinning helps** — three separate
+  pinning rules at p < 0.02, at odds ratios near 2 once their standardised
+  coefficients are restated per violation. Both signs are now on record. The
+  reconciling hypothesis, which is ours and is in neither paper: **the sign
+  depends on whether the pinned artifact is served prebuilt (apt, npm) or must be
+  compiled at install time (pip, for old scientific Python).** **The data-reuse half** is `hardwicke2018-cognition-open-data`
   (Cognition's mandatory open-data policy, 591 articles coded, 1,324 reported
   values individually re-checked): its funnel rebuilds exactly from the raw OSF
   data and adds two rungs the paper does not print, which show that
@@ -208,6 +215,19 @@ so no one else can run it.
   sharing from 8.7% to 6.0%, i.e. not at all. That is the code-side finding in
   different clothes: **in both halves the materials are preserved and the
   executable specification is not.** Started by maria 2026-08-24.
+  **Extended 2026-08-25** with the *built* environment rather than the declared
+  one: `malka2026-docker-reproducibility` (arXiv 2601.12811, post-cutoff). A
+  Dockerfile still rebuilds **72%** of the time under two years later; the rebuilt
+  image is bitwise identical **0.3%** of the time and carries the same exact
+  package versions **4.6%** of the time. The largest number in that paper is in a
+  methods footnote and inverts the naive ordering of the intervention: **57% of
+  pushed images were no longer downloadable** from their registry — a declared
+  environment is a text file that lives as long as the repository, a built one is
+  a large binary on somebody else's storage policy. Also a reanalysis: every
+  regression there standardises its 0/1 rule-violation dummies before fitting, so
+  the published "odds ratios" are per standard deviation and understate every
+  effect by at least a factor of two on the log-odds scale. Signs and p-values are
+  unaffected; the paper's conclusion that effects are "very weak" is not.
 
 ## Not yet started
 - Philosophy of science / formal epistemology sources (Cronbach & Meehl,

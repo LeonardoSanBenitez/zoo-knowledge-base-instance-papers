@@ -394,7 +394,7 @@
       ],
       "our_assessment": {
         "status": "disputed",
-        "why": "The first half is true and reproduces; the recommendation attached to it has never been tested, and this is the dataset that can test it because it ships the verbatim CONTENT of every requirements file next to the outcome. Restricting to the 191 repositories that declared requirements -- repositories with none are not a control, they receive a large default conda environment -- the point estimate runs AGAINST the recommendation at every stratum: OR 0.435 unadjusted (Fisher p = 0.29), adjusted log-odds -0.392 (z = -0.61), and all six pre-specified strata by licence / releases / stars negative (z between -0.99 and -2.08). With 22 events this cannot establish that pinning HURTS and I do not claim it does. It does establish that the field's most repeated recommendation is untested and that the only data able to test it fail to support it. The mechanism is visible at the install stage (23.4% vs 40.4%, z = -1.77) and is not mysterious: 'numpy==1.16.4' instructs a 2023 toolchain to build a 2019 wheel. A pin is a PROVENANCE record and a PORTABILITY liability, and the guidance literature conflates the two. What preserves executability is a built environment, not a list of version numbers."
+        "why": "The first half is true and reproduces; the recommendation attached to it had never been tested when this record was written (CORRECTED 2026-08-25: it has now been, by malka2026-docker-reproducibility, on a different substrate and with the opposite sign -- see that record and NOTES.md section 4), and this is the dataset that can test it because it ships the verbatim CONTENT of every requirements file next to the outcome. Restricting to the 191 repositories that declared requirements -- repositories with none are not a control, they receive a large default conda environment -- the point estimate runs AGAINST the recommendation at every stratum: OR 0.435 unadjusted (Fisher p = 0.29), adjusted log-odds -0.392 (z = -0.61), and all six pre-specified strata by licence / releases / stars negative (z between -0.99 and -2.08). With 22 events this cannot establish that pinning HURTS and I do not claim it does. It does establish that the field's most repeated recommendation is untested and that the only data able to test it fail to support it. The mechanism is visible at the install stage (23.4% vs 40.4%, z = -1.77) and is not mysterious: 'numpy==1.16.4' instructs a 2023 toolchain to build a 2019 wheel. A pin is a PROVENANCE record and a PORTABILITY liability, and the guidance literature conflates the two. What preserves executability is a built environment, not a list of version numbers."
       }
     },
     {
@@ -603,6 +603,12 @@
       "type": "cito:agreesWith",
       "target": "hardwicke2018-cognition-open-data",
       "why": "Reciprocal, on concentration. 77% of repositories here with three or more notebooks had a homogeneous outcome and 130 repositories produced all 396 successes; there, 63% of articles had zero major errors and the top 10 hold 95% of them. Two corpora, two units, same shape: a value-level or file-level rate is not a per-paper hazard."
+    },
+    {
+      "type": "cito:disagreesWith",
+      "target": "malka2026-docker-reproducibility",
+      "why": "On the sign of the pinning effect. Here pinning is associated with LOWER environment-install and execution success (OR 0.435, Fisher p=0.29, 191 repositories, 22 events). There, violating three pinning rules is associated with HIGHER build failure at p<0.02 on 835 unique Dockerfiles. That corpus is far better powered and this record's original phrasing -- that the recommendation had never been tested -- is corrected in place.",
+      "asymmetric_note": "The estimands differ, so neither refutes the other. The reconciling hypothesis is that the sign depends on whether the pinned artifact is served PREBUILT (apt, npm) or must be COMPILED at install time (pip, for old scientific Python). Testable on this corpus's 2023 archive, Zenodo 8226725."
     }
   ],
   "open_questions": [

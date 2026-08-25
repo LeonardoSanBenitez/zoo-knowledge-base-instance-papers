@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.1",
+  "id": "malka2026-docker-reproducibility",
+  "title": "Docker Does Not Guarantee Reproducibility",
+  "authors": [
+    "Julien Malka",
+    "Stefano Zacchiroli",
+    "Théo Zimmermann"
+  ],
+  "year": 2026,
+  "venue": "arXiv preprint (cs.SE), 19 January 2026",
+  "area": [
+    "computational-reproducibility-and-artifact-reuse"
+  ],
+  "identifiers": {
+    "arxiv": "2601.12811",
+    "url": "https://arxiv.org/abs/2601.12811"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 14,
+    "bytes_downloaded": 1300000,
+    "compute_notes": "arXiv PDF 0.77 MB, 9 pages, read as `pdftotext -layout` (1,409 lines) and re-extracted with `pdftotext -raw -f 21 -l 21` because Figure 6's odds ratios and p-values are interleaved into unreadable glyph soup by -layout. Replication package git-cloned from gitlab.telecom-paris.fr (0.5 MB, Results.ipynb 524 KB), read cell by cell INCLUDING stored outputs -- which is where the finding is. Three reanalysis scripts, numpy+scipy only, all under 30 s. No Docker was run and no image was rebuilt.",
+    "session": "2026-08-25 maria"
+  },
+  "triggers": [
+    "does shipping a Dockerfile make my paper reproducible",
+    "should I containerise my research artifact",
+    "how often can an old Docker image be rebuilt",
+    "are Docker images bitwise reproducible",
+    "does pinning versions in a Dockerfile help",
+    "evidence base for the recommendation to use containers in science",
+    "how long do Docker images stay available in a registry",
+    "hadolint rules and whether following them actually helps",
+    "a paper reports odds ratios from standardized binary predictors",
+    "why is my odds ratio so close to 1",
+    "difference between effect size and explained variance",
+    "systematic literature review of Docker reproducibility claims"
+  ],
+  "methods": [
+    "systematic-literature-review",
+    "grounded-theory-coding",
+    "historical-image-rebuild-comparison",
+    "bitwise-artifact-diff",
+    "package-manifest-version-diff",
+    "logistic-regression-on-rule-violations",
+    "standardised-coefficient-back-transformation",
+    "closed-form-fitter-validation",
+    "synthetic-injected-effect-control"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Of 5,298 Docker builds that succeeded on GitHub Actions between July and October 2023, only 3,836 still build successfully less than two years later.",
+      "scope": "Builds invoking docker/build-push-action, x86_64 only, no secrets, filtered to workflows whose pre-build steps the authors could reproduce locally. Rebuilt on the authors' own hardware in a fresh VM per build.",
+      "quantities": [
+        {
+          "name": "docker_image_rebuild_success_rate",
+          "value": 0.7241,
+          "unit": "proportion of builds",
+          "n": 5298,
+          "baseline": "same Dockerfile and build parameters, rebuilt <2 years later",
+          "source": "Section 4.2.1, Rebuildability",
+          "count": 3836,
+          "denominator": 5298
+        },
+        {
+          "name": "docker_image_rebuild_success_rate",
+          "value": 0.88,
+          "unit": "proportion of Dockerfiles",
+          "n": 121,
+          "baseline": "Docker official-library Dockerfiles from 2023, i.e. a high-quality gold set",
+          "source": "Section 4.2.1, final paragraph",
+          "count": 106,
+          "denominator": 121
+        }
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The numbers are internally consistent with the funnel printed in Figure 4 (1,116/1,537 = 72.6% on the downloadable subset vs 3,836/5,298 = 72.4% overall) and the replication package contains the build harness. Not independently re-run: rebuilding 5,298 images is not a thing this house is going to do."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Docker images are essentially never bitwise reproducible, and are functionally reproducible only in a minority of cases: of 1,537 images retrievable from their original registry, 4 had all files bitwise identical to the historical build and 70 had exactly the same package versions.",
+      "scope": "Comparison of historical image against local rebuild, file-by-file and by package manifest extracted with Trivy. Only images whose historical counterpart could still be downloaded.",
+      "quantities": [
+        {
+          "name": "docker_image_bitwise_reproduction_rate",
+          "value": 0.0026,
+          "unit": "proportion of images",
+          "n": 1537,
+          "baseline": "all files identical to historical build",
+          "source": "Figure 4b",
+          "count": 4,
+          "denominator": 1537
+        },
+        {
+          "name": "docker_image_exact_package_version_reproduction_rate",
+          "value": 0.0455,
+          "unit": "proportion of images",
+          "n": 1537,
+          "baseline": "every installed package at the same exact version as the historical build",
+          "source": "Figure 4b",
+          "count": 70,
+          "denominator": 1537
+        },
+        {
+          "name": "docker_image_same_package_set_rate",
+          "value": 0.3728,
+          "unit": "proportion of images",
+          "n": 1537,
+          "baseline": "same set of packages present, versions ignored",
+          "source": "Figure 4b",
+          "count": 573,
+          "denominator": 1537
+        }
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Figure 4b is a printed funnel with every stage's denominator, which is the reporting practice this house has been arguing for. No workflow in the corpus set SOURCE_DATE_EPOCH, so the bitwise result is a statement about practice, not about Docker's ceiling -- the authors say so."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Of 3,620 historical images whose registry location could be recovered from build logs, only 1,541 were still retrievable at analysis time.",
+      "scope": "Images pushed by GitHub Actions workflows July-October 2023, looked up in their original registry roughly two years later. Presented by the authors as a data-collection footnote, not as a finding.",
+      "quantities": [
+        {
+          "name": "container_image_registry_persistence_rate",
+          "value": 0.4257,
+          "unit": "proportion of pushed images",
+          "n": 3620,
+          "baseline": "still downloadable from the registry it was pushed to, <2 years later",
+          "source": "Section 4.1.1, Collection of historical images",
+          "count": 1541,
+          "denominator": 3620
+        }
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The arithmetic is the paper's own and it is the single most important number here for anyone deciding whether to ship a container as a research artifact -- 57% of pushed images were gone in under two years, an availability failure far larger than the 28% rebuild failure the paper foregrounds. BUT the population is CI-pushed images, many of which are per-commit tags that registries prune by design or that projects delete deliberately. It is NOT a persistence rate for deliberately archived research images, and must never be quoted as one. Nobody has measured that."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Following documented Dockerfile best practices has a statistically significant but very weak association with reproducibility outcomes; effect sizes are below 3% and the models have poor explanatory power.",
+      "scope": "One logistic regression on rebuildability (835 unique Dockerfiles, training split) and four OLS regressions on package-level reproducibility rates (876-986). Predictors are binary indicators of hadolint rule violations plus two rules of the authors' own.",
+      "quantities": [
+        {
+          "name": "model_pseudo_r2",
+          "value": 0.0521,
+          "unit": "McFadden pseudo-R^2",
+          "n": 835,
+          "baseline": "logit on is_failure, 16 rule-violation indicators",
+          "source": "Results.ipynb cell 55 stored output"
+        },
+        {
+          "name": "model_r2",
+          "value": 0.275,
+          "unit": "R^2",
+          "n": 876,
+          "baseline": "OLS on bitwise reproducibility rate, 14 rule indicators",
+          "source": "Results.ipynb cell 60 stored output"
+        }
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "Half right, and the half that is wrong is the half the paper's recommendation rests on. The FIT statistics are correct and do support 'poor explanatory power' -- pseudo-R^2 0.052, and on the held-out split the model recalls 5% of failures. But the EFFECT SIZES are misreported, because every regression standardises the 0/1 rule-violation dummies before fitting (`StandardScaler().fit_transform(X)` in cells 55, 60, 62, 64, 66), so the quantities reported as 'Odds Ratio' in Figure 6 are per standard deviation of the dummy, not per violation. Corrected, violating DL3008 multiplies the odds of a failed rebuild by AT LEAST 2.16, not the printed 1.47. Small explained variance and small effect are different things, and standardisation makes the difference invisible. See c5.",
+        "by": "malka2026-docker-reproducibility#c5"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "OUR REANALYSIS. Restated per rule violation rather than per standard deviation of the indicator, the three pinning rules in Figure 6 have odds ratios of at least 2.16, 1.56 and 1.46 for build failure when violated, rather than the printed 1.47, 1.25 and 1.21. Signs, z-statistics and p-values are unchanged.",
+      "scope": "Rebuildability logit only, n=835 unique Dockerfiles (the 70% training split of 1,193). Bound is distribution-free; exact values are computable only for the two rules whose prevalence the notebook prints.",
+      "quantities": [
+        {
+          "name": "odds_ratio_build_failure_per_violation",
+          "value": 2.163,
+          "unit": "odds ratio, lower bound",
+          "n": 835,
+          "baseline": "DL3008 (pin versions in apt-get install) violated vs not; outcome is_failure",
+          "ci": "lower bound only; exp(2*beta_std), attained as prevalence -> 0.5",
+          "source": "reanalysis/correct_figure6.py"
+        },
+        {
+          "name": "odds_ratio_build_failure_per_violation",
+          "value": 2.011,
+          "unit": "odds ratio",
+          "n": 835,
+          "baseline": "CR02 (image not built from an official base) violated vs not; outcome is_failure",
+          "ci": "1.87 to 2.27 as the training-split prevalence varies over 0.11-0.21",
+          "source": "reanalysis/correct_figure6.py, exact from printed prevalence 0.1575"
+        },
+        {
+          "name": "odds_ratio_build_failure_per_violation",
+          "value": 0.61,
+          "unit": "odds ratio",
+          "n": 835,
+          "baseline": "CR01 (image not built in a staged/multi-stage build) violated vs not; outcome is_failure",
+          "ci": "0.604 to 0.613 as the training-split prevalence varies over 0.38-0.48",
+          "source": "reanalysis/correct_figure6.py, exact from printed prevalence 0.4288"
+        }
+      ],
+      "evidence": ["a2", "a3", "a4", "a5"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The mechanism is proved by construction rather than argued: verify_standardisation.py fits both parameterisations on synthetic data with known coefficients and confirms beta_std = beta_raw * sd exactly, z and p bit-identical, and the standardised odds ratio always closer to 1. The distribution-free bound OR_pv >= OR_std^2 follows from sd <= 0.5 for a Bernoulli indicator and is verified against both rows where the exact value is computable (CR02 exact 2.011 >= bound 1.663; CR01 exact 0.610 <= bound 0.613). The fitter itself is validated three ways in validate_fitter.py before any of this is used."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "https://arxiv.org/abs/2601.12811",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "curl -sL -o docker-repro-2601.12811.pdf https://arxiv.org/pdf/2601.12811 && pdftotext -layout docker-repro-2601.12811.pdf docker-repro.txt",
+        "result": "9 pages, 1,409 lines of text. Figure 6's labels are illegible under -layout (glyphs of the OR and p annotations interleave into 'pO=R:01.0.4073'); `pdftotext -raw -f 21 -l 21` separates them cleanly. Anyone quoting Figure 6 from a -layout extraction is quoting noise."
+      },
+      "bytes": 769197,
+      "local_path": "artifacts/malka2026.pdf"
+    },
+    {
+      "id": "a2",
+      "role": "analysis-notebook",
+      "locator": "https://gitlab.telecom-paris.fr/julien.malka/docker-does-not-guarantee-reproducibility",
+      "repo_commit": "swh:1:rev:e9eb238a7f869c8bdc7d031d890ce6b1254536e1 (cited); cloned from gitlab HEAD 2026-08-25",
+      "path_in_repo": "Results.ipynb",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "git clone --depth 1 https://gitlab.telecom-paris.fr/julien.malka/docker-does-not-guarantee-reproducibility.git && python -c 'json.load(open(\"Results.ipynb\"))' then read every cell source AND stored output",
+        "result": "68 cells, clones and parses. The stored OUTPUTS are what make the record possible: cell 55 prints the full statsmodels Logit summary (n=835, pseudo-R^2 0.0521) and two rule prevalences; cell 56 prints the six significant coefficients to six decimal places. Without the stored outputs this would have been unverifiable, since the intermediate data (intermediate-data/, historical-images/, results/) is NOT in the repository."
+      },
+      "license": "not stated in repo root"
+    },
+    {
+      "id": "a3",
+      "role": "derived-data",
+      "locator": "reanalysis/correct_figure6.py",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "python reanalysis/correct_figure6.py",
+        "result": "Restates all six Figure 6 rows per violation. Prints the exact value where prevalence is known, the distribution-free bound otherwise, a prevalence-sensitivity band, and a self-check that the bound holds on both computable rows. It does."
+      },
+      "local_path": "reanalysis/correct_figure6.py"
+    },
+    {
+      "id": "a4",
+      "role": "code",
+      "locator": "reanalysis/verify_standardisation.py",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "python reanalysis/verify_standardisation.py",
+        "result": "ALL CHECKS PASS. Fits both parameterisations on synthetic data with planted coefficients; confirms beta_std = beta_raw*sd to 1e-6, z and p identical to 1e-6, standardised OR strictly closer to 1, and the OR_std^2 bound. Includes a negative control with true coefficients zero."
+      },
+      "local_path": "reanalysis/verify_standardisation.py"
+    },
+    {
+      "id": "a5",
+      "role": "code",
+      "locator": "reanalysis/validate_fitter.py",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "python reanalysis/validate_fitter.py",
+        "result": "FITTER VALIDATED. (A) one binary predictor reproduces the closed-form 2x2 log odds ratio to 8.1e-15; (B) four predictors match a BFGS optimiser on the same likelihood to 1.2e-7; (C) over 40 seeds the mean (fitted-planted)/SE is within 0.16 with sd ~1. Written because an absolute-tolerance check flagged one coefficient 3.5 SE out on a single draw and 'it was probably fine' is not a check."
+      },
+      "local_path": "reanalysis/validate_fitter.py"
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:disagreesWith",
+      "target": "samuel2024-jupyter-pmc",
+      "why": "On the sign of the pinning effect. My reanalysis of Samuel & Mietchen found pinned requirements associated with LOWER environment-install and execution success (OR 0.435, Fisher p=0.29, 191 repositories, 22 events, underpowered). Here, violating three separate pinning rules is associated with substantially HIGHER build failure at p<0.02 on 835 unique Dockerfiles -- i.e. pinning helps. The disagreement is real and this corpus is much better powered.",
+      "asymmetric_note": "Not a refutation, because the estimands differ. Malka pins apt and npm packages, whose archives serve OLD VERSIONS AS PREBUILT BINARIES; the Samuel corpus pins Python packages via pip, where an old scientific package frequently has no wheel for the current interpreter and must be COMPILED FROM SOURCE against a toolchain that postdates it. The reconciling hypothesis -- that the sign of the pinning effect depends on whether the pinned artifact is served prebuilt or must be built at install time -- is mine, is in neither paper, and is testable on the Samuel 2023 corpus."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "trisovic2022-code-execution",
+      "why": "Trisovic's recommendation #4 is 'use Docker'. That recommendation is made on a corpus containing 9 Dockerfiles in 2,060 packages, i.e. on no evidence at all from the study making it. This paper supplies the missing evidence for one half of it and the news is mixed: a Dockerfile rebuilds at 72% after under two years, and a pushed image is still downloadable 43% of the time. Neither number is the near-certainty the recommendation implies."
+    },
+    {
+      "type": "cito:extends",
+      "target": "maria2026-executability-denominators",
+      "why": "Adds a measurement of a stage that synthesis could not see: every study pooled there measures whether a DECLARED environment can be reconstructed. This measures whether a BUILT one can be, and separately whether it is even still there. The registry-persistence number (c3) is a new stage of the funnel, upstream of everything the synthesis covers."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-executability-denominators",
+      "why": "On the meta-point rather than a number: the authors' own SLR concludes that 'few of the assertions promoting Docker as a tool for reproducibility were actually supported by empirical evidence'. That is the same finding as this house's, arrived at independently and by a different method (grounded-theory coding of the literature rather than pooling of measurements)."
+    }
+  ],
+  "open_questions": [
+    "Registry persistence for DELIBERATELY ARCHIVED research images. c3 gives 43% at under two years for CI-pushed images, a population full of prunable per-commit tags. Nobody has measured the number that actually matters: if you attach a container image to a paper, how long can a reader still pull it? Zenodo/Software Heritage archived images are the obvious frame and are enumerable.",
+    "Does the sign of the pinning effect flip with whether the pinned artifact is served prebuilt or must be compiled at install time? This is the reconciling hypothesis for the disagreement with samuel2024-jupyter-pmc and it is directly testable: within the Samuel corpus's declared requirements, classify each pin by whether a wheel exists for that exact version on the interpreter used, and compare install success.",
+    "The paper reports test-set performance for the rebuildability model (failure recall 0.05, AUC printed in the notebook) but no calibration or class-balance discussion. With 26% failures and a 0.5 threshold the model predicts 'success' almost always. Whether the rules carry ANY usable predictive signal is unanswered by an accuracy figure of 0.74 on a 74/26 split.",
+    "Cells 60/62/64/66 fit StandardScaler on the FULL data before train_test_split, while cell 55 splits first and comments that this prevents leakage. The OLS test-R^2 figures are therefore optimistic. The effect is probably tiny for binary dummies with no tuning, but it is unmeasured and the authors clearly knew the rule.",
+    "The four OLS models also standardise, so 'effect size below 3%' in the discussion is also per standard deviation. Correcting those needs per-rule prevalences, which are not printed for the OLS corpora. Asking the authors for one CSV of rule prevalences would settle every remaining magnitude in the paper."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-25",
+    "verified": "2026-08-25",
+    "notes_file": "NOTES.md"
+  }
+}
