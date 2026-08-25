@@ -521,6 +521,83 @@
         "status": "accepted",
         "why": "A bounded null rather than a bare p > 0.05. The power curve is computed on the corpus's OWN covariates, resampled with replacement, with the intercept recalibrated to the observed 65.7% failure rate: a true contrast of 0.30 is detected 95% of the time and 0.20 is detected 75%, while the false-positive rate at a true contrast of zero is 4.2% and the estimator is unbiased across the whole curve. The observed +0.102 sits well below anything that would matter. THE FIRST VERSION OF THAT POWER CURVE WAS WRONG in an instructive way: it added the planted effect to the FITTED pinned coefficient while holding the unpinned one, so its 'null' row secretly planted the observed contrast, recovered it, and reported a 25% false-positive rate. The simulation was right and the label was wrong, which is the more dangerous of the two. Reparameterised by the true contrast."
       }
+    },
+    {
+      "id": "c7",
+      "statement": "OUR REANALYSIS, 2026-08-25. In this corpus 13.7% of repositories ship a Dockerfile, against 0.44% in the Dataverse corpus on which the field concluded containerisation could not be assessed. Shipping one has no reliable association with whether the declared environment installs; two markers with no causal path to installing anything -- a Makefile and a CITATION.cff -- do, and survive multiplicity correction.",
+      "scope": "2023 corpus. Prevalence over all 5,240 repositories, from 4,807,244 file paths. Association on the 639 repositories with a requirements.txt and at least one mode-3 execution; outcome = at least one execution got past `<Install Dependency Error>` (base rate 34.3%, 219 events). Logit adjusted for log1p(declared dependencies) and log1p(files in repository). Permutation p over 5,000 shuffles of the marker with covariates held; Holm-Bonferroni over 5 markers. NOT a treatment effect: the pipeline never uses any of these files.",
+      "quantities": [
+        {
+          "name": "container_recipe_prevalence_in_artifact_corpus",
+          "value": 0.1366,
+          "unit": "proportion of repositories",
+          "n": 5240,
+          "baseline": "repositories containing a file matching (^|/)dockerfile; GitHub repositories linked from PubMed Central papers",
+          "source": "reanalysis/env_markers.py",
+          "count": 716,
+          "denominator": 5240
+        },
+        {
+          "name": "container_recipe_prevalence_in_artifact_corpus",
+          "value": 0.0044,
+          "unit": "proportion of packages",
+          "n": 2060,
+          "baseline": "Trisovic et al. 2022, Harvard Dataverse replication packages -- the corpus on which 'containerisation has never been tried at measurable scale' was concluded",
+          "source": "trisovic2022-code-execution",
+          "count": 9,
+          "denominator": 2060
+        },
+        {
+          "name": "any_built_or_locked_environment_prevalence",
+          "value": 0.1519,
+          "unit": "proportion of repositories",
+          "n": 5240,
+          "baseline": "Dockerfile, docker-compose, Singularity, Pipfile.lock, poetry.lock, renv.lock, nix or devcontainer",
+          "source": "reanalysis/env_markers.py",
+          "count": 796,
+          "denominator": 5240
+        },
+        {
+          "name": "declared_environment_install_log_odds_given_dockerfile",
+          "value": -0.309,
+          "unit": "log odds",
+          "n": 639,
+          "baseline": "Dockerfile present vs absent, adjusted for log1p(deps) and log1p(files); SE 0.231, p = 0.181, permutation p = 0.178",
+          "ci_low": -0.762,
+          "ci_high": 0.144,
+          "ci_kind": "confidence",
+          "source": "reanalysis/container_substitution.py"
+        },
+        {
+          "name": "declared_environment_install_log_odds_given_makefile",
+          "value": 0.619,
+          "unit": "log odds",
+          "n": 639,
+          "baseline": "Makefile present vs absent, same adjustment; SE 0.181, p = 0.0006, permutation p = 0.0006, survives Holm-Bonferroni",
+          "ci_low": 0.264,
+          "ci_high": 0.974,
+          "ci_kind": "confidence",
+          "source": "reanalysis/container_substitution.py"
+        },
+        {
+          "name": "declared_environment_install_log_odds_given_citation_cff",
+          "value": 0.98,
+          "unit": "log odds",
+          "n": 639,
+          "baseline": "CITATION.cff present vs absent, same adjustment; SE 0.373, p = 0.0086, permutation p = 0.0050, survives Holm-Bonferroni. n+ = 33, so wide.",
+          "ci_low": 0.249,
+          "ci_high": 1.711,
+          "ci_kind": "confidence",
+          "source": "reanalysis/container_substitution.py"
+        }
+      ],
+      "evidence": [
+        "a5"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Three separate scope limits, all of which must travel with these numbers. (1) NOT A TREATMENT EFFECT. The pipeline builds its own conda or raw-python environment and never reads a Dockerfile, so nothing here bears on whether shipping a container helps a reader -- that study would have to build the images and has still not been done. (2) The outcome is 'the DECLARED environment installs', not 'the artifact reproduces'; the reproduction outcome in this database is unusable (see maria2026-vacuous-reproduction-flag). (3) One corpus, and the prevalence result is precisely a warning that corpora differ by a factor of 31 on exactly this variable. What IS solid: the substitution hypothesis I formed -- that a container absorbs complexity a requirements file would otherwise carry, so shipping one predicts the requirements file alone failing -- is NOT supported. Unadjusted -0.49 (interval excluding zero), adjusted -0.31 (interval covering zero). It shrank under adjustment for size, the same confounder that had already eaten the pinning result earlier the same day, and I am reporting it as unsupported rather than as a trend."
+      }
     }
   ],
   "artifacts": [
@@ -695,7 +772,8 @@
     "Name the one or two repositories driving the 2013 cohort's 10.5x jump between runs. That would settle whether the entire 'old code reproduces better' pattern is a single artifact.",
     "Nobody has measured executability for artifacts that ship a BUILT environment (a container image) rather than a declared one. If Trisovic's recommendation #4 is right, that rate should be far above 12%, and it is the only version of this measurement that would change anyone's behaviour.",
     "The paper reports exception rates by journal ranging above 50% and below 20%. Given ICC 0.435 and 130 repositories producing all successes, most of those are one-repository differences. Recomputing them at repository level is cheap and would probably delete a table.",
-    "The FAIR Jupyter knowledge graph (arXiv 2404.12935, same authors) is this dataset as RDF with a SPARQL endpoint. Whether querying it is genuinely cheaper than sqlite3 over the dump is an open and directly testable question about whether semantic publishing pays for itself -- and it is a knowledge-management question, not a biomedical one."
+    "The FAIR Jupyter knowledge graph (arXiv 2404.12935, same authors) is this dataset as RDF with a SPARQL endpoint. Whether querying it is genuinely cheaper than sqlite3 over the dump is an open and directly testable question about whether semantic publishing pays for itself -- and it is a knowledge-management question, not a biomedical one.",
+    "A Makefile (OR 1.86) and a CITATION.cff (OR 2.66) predict whether the DECLARED dependencies install, adjusted for repository size, while the environment-specific artifacts do not. Neither can install anything. If installability is a repository-level disposition rather than a property of the environment file, then the whole 'ship X' genre of guidance is mostly selecting for the kind of project that does things properly, and the specific X matters less than the literature assumes. Testable: do these markers predict re-execution in a corpus whose reproduction outcome is trustworthy?"
   ],
   "curation": {
     "author": "maria",

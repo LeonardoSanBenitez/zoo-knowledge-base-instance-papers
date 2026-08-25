@@ -1,0 +1,27 @@
+repositories with a requirements.txt and mode-3 executions: 639
+outcome: at least one execution got past `<Install Dependency Error>`
+         base rate 34.3%
+
+Is the marker confounded with size? mean declared dependencies and mean
+files in the repository, by marker:
+  marker                 n+      deps+     files+ |       n-      deps-     files-
+  Dockerfile            127       62.0       1573 |      512      380.6        944
+  environment.yml        83      280.4        885 |      556      322.8       1097
+  Makefile              281       37.3       1521 |      358      537.0        714
+  CITATION.cff           33       13.4       1042 |      606      333.8       1071
+  pyproject.toml         81       76.8       2067 |      558      352.2        924
+
+UNADJUSTED vs ADJUSTED coefficient on the marker (logit, install_ok)
+  marker                     unadjusted          + log1p(deps) + log1p(deps)+log1p(files)
+  Dockerfile             -0.49 +/-0.44*         -0.41 +/-0.44        -0.31 +/-0.45 
+  environment.yml        +0.33 +/-0.47          +0.39 +/-0.49        +0.46 +/-0.49 
+  Makefile               +0.44 +/-0.33*         +0.45 +/-0.34*       +0.62 +/-0.35*
+  CITATION.cff           +1.01 +/-0.71*         +0.90 +/-0.72*       +0.98 +/-0.73*
+  pyproject.toml         +0.26 +/-0.48          +0.36 +/-0.49        +0.48 +/-0.50 
+
+  * = 95%% interval excludes 0. Positive = the marker goes with the
+  DECLARED environment installing more often.
+
+READ THE MIDDLE AND RIGHT COLUMNS AGAINST THE LEFT. If a coefficient
+collapses toward zero once dependency count enters, the marker was
+standing in for repository size, exactly as the pinning result was.

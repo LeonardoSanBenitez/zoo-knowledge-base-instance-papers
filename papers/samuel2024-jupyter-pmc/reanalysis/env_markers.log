@@ -1,0 +1,65 @@
+PREVALENCE  (4807244 paths over 5240 repositories)
+  marker             repos        %
+  Dockerfile           716   13.66%
+  docker-compose       117    2.23%
+  Singularity           58    1.11%
+  environment.yml      423    8.07%
+  Pipfile.lock          26    0.50%
+  poetry.lock           37    0.71%
+  renv.lock              8    0.15%
+  binder dir            89    1.70%
+  devcontainer          24    0.46%
+  pyproject.toml       374    7.14%
+  Makefile            1281   24.45%
+  nix                    8    0.15%
+  CITATION.cff         167    3.19%
+  ANY built/locked     796   15.19%
+
+  For contrast, Trisovic et al. 2022 on Harvard Dataverse: 9 Dockerfiles
+  in 2,060 packages = 0.44%. Here: 13.66%, a factor of 31.
+  Same recommendation, same era, two corpora of research artifacts.
+  WHERE YOU LOOK DECIDES WHETHER THE RECOMMENDATION IS TESTABLE AT ALL.
+
+ASSOCIATION -- marker present vs absent, per arm.  NOT a treatment effect:
+the pipeline never uses these files. Read as 'is this a marker of an
+artifact that runs by other means'.
+
+  mode 3 (deps declared)  install got past the error   [974 repositories]
+    marker                n+   rate+ |     n-   rate- |   log OR
+    Dockerfile           177   28.8% |    797   37.6% |   -0.39 +/-0.35*
+    docker-compose        26   46.2% |    948   35.8% |   +0.44 +/-0.77 
+    environment.yml      147   44.2% |    827   34.6% |   +0.41 +/-0.35*
+    Pipfile.lock          13    0.0% |    961   36.5% |   -2.74 +/-2.83 
+    binder dir            52   48.1% |    922   35.4% |   +0.53 +/-0.56 
+    pyproject.toml       139   41.7% |    835   35.1% |   +0.28 +/-0.36 
+    Makefile             417   40.3% |    557   32.9% |   +0.32 +/-0.26*
+    CITATION.cff          55   54.5% |    919   34.9% |   +0.80 +/-0.54*
+    ANY built/locked     196   28.6% |    778   37.9% |   -0.42 +/-0.34*
+    * = 95% interval excludes 0.  No multiplicity correction; with 14 markers
+    tested, expect about 0.7 false positives per arm at alpha = 0.05.
+
+  mode 3 (deps declared)  a notebook ran >=1 cell clean   [974 repositories]
+    marker                n+   rate+ |     n-   rate- |   log OR
+    Dockerfile           177    0.0% |    797    0.1% |   +0.40 +/-3.20 
+    docker-compose        26    0.0% |    948    0.1% |   +2.48 +/-3.22 
+    environment.yml      147    0.0% |    827    0.1% |   +0.62 +/-3.21 
+    Pipfile.lock          13    0.0% |    961    0.1% |   +3.17 +/-3.25 
+    binder dir            52    1.9% |    922    0.0% |   +3.98 +/-3.21*
+    pyproject.toml       139    0.0% |    835    0.1% |   +0.69 +/-3.21 
+    Makefile             417    0.0% |    557    0.2% |   -0.81 +/-3.20 
+    CITATION.cff          55    0.0% |    919    0.1% |   +1.71 +/-3.21 
+    ANY built/locked     196    0.0% |    778    0.1% |   +0.28 +/-3.20 
+    * = 95% interval excludes 0.  No multiplicity correction; with 14 markers
+    tested, expect about 0.7 false positives per arm at alpha = 0.05.
+
+  mode 5 (nothing declared) a notebook ran >=1 cell clean   [1176 repositories]
+    marker                n+   rate+ |     n-   rate- |   log OR
+    Dockerfile            55   12.7% |   1121   11.7% |   +0.15 +/-0.79 
+    environment.yml      115   16.5% |   1061   11.2% |   +0.47 +/-0.52 
+    poetry.lock           10    0.0% |   1166   11.8% |   -1.04 +/-2.84 
+    pyproject.toml        23    0.0% |   1153   12.0% |   -1.86 +/-2.81 
+    Makefile              56   14.3% |   1120   11.6% |   +0.29 +/-0.75 
+    CITATION.cff          13    7.7% |   1163   11.8% |   -0.11 +/-1.70 
+    ANY built/locked      68   10.3% |   1108   11.8% |   -0.10 +/-0.78 
+    * = 95% interval excludes 0.  No multiplicity correction; with 14 markers
+    tested, expect about 0.7 false positives per arm at alpha = 0.05.
