@@ -93,7 +93,9 @@
           "denominator": 51
         }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "Counts are printed with their denominators throughout and the reasons for the 8 inaccessible cases are itemised, including one where a repository demanded a stated purpose and the authors declined to say they were running a reproducibility check -- a scruple most such studies do not report."
@@ -166,7 +168,10 @@
           "denominator": 59
         }
       ],
-      "evidence": ["a1", "a3"],
+      "evidence": [
+        "a1",
+        "a3"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "This is the cleanest reproducibility funnel in the area file: every rung printed, both the numerator's own denominator and the widest one, and a criterion ladder at K = 1, 5, 10, 20 rather than a single line drawn where it flatters. The ratio between the strictest and most lenient reading of the SAME attempts is 34% to 56% -- a factor of 1.6 from the criterion alone, before any denominator argument. That is the same lesson as maria2026-executability-denominators from the other direction: there the denominator moved the number by 2x, here the criterion moves it by 1.6x, and neither is visible in a citation."
@@ -211,7 +216,9 @@
           "source": "Table 3 and text"
         }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
         "why": "Observational: papers that share code are plausibly written by more careful people, and the same 'disposition' confound bit our own analysis of the Samuel & Mietchen corpus, where a Makefile and a CITATION.cff predicted installability while the environment files did not. What makes this one more than a care proxy is that the authors ALSO modelled readme and preregistration -- two other care markers -- and both come out indistinguishable from zero while code does not. That is not identification, but it is the right control to have run, and almost nobody in this literature runs it. THE EFFECT SIZE IS THE LARGEST WELL-ESTIMATED ONE IN THIS AREA: +38 points against a pinning effect that is null once dependency count is controlled, and a containerisation effect nobody has measured at all."
@@ -233,7 +240,11 @@
           "denominator": 2
         }
       ],
-      "evidence": ["a2", "a3", "a4"],
+      "evidence": [
+        "a2",
+        "a3",
+        "a4"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "Established by the OSF API (node public, osfstorage empty, provider list shows a github add-on, add-on folder_id 'annlaurin/reproducibility') and the GitHub API (404 on that repository, 404 on annlaurin/images, 0 results for a user-scoped search, 6 unrelated public repositories on a live account). NOT A GOTCHA, and the tone matters: this is evidence FOR the mechanism the authors identified, not against them. Their DATA survived -- the 59 per-paper reproduction attempts are intact in components -- and their CODE did not, because code was shared by LINKING a mutable repository from an archive rather than by DEPOSITING it in one. The paper's own finding, instantiated on the paper. What it adds to their recommendation is a distinction they do not draw: sharing is not depositing. An OSF GitHub add-on is a pointer, and a pointer inherits the lifetime of what it points at."
@@ -253,7 +264,9 @@
           "source": "Discussion, comparison to related work"
         }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
         "status": "unverified",
         "why": "Second-hand and not checked against Artner et al. directly. Recorded anyway because the COST side of verification is nearly absent from this area file and this is the only per-value figure in it. If it survives checking it is the number that decides whether any third-party verification scheme can scale: at 1.2 workdays per reported value, checking one ordinary paper's forty numbers is two person-months."
@@ -337,7 +350,7 @@
     }
   ],
   "open_questions": [
-    "Is Artner et al.'s 280 workdays for 232 values right? It is the only per-value cost figure in this area and it decides whether third-party verification can scale at all. Recorded second-hand and unverified; the paper is Psychological Methods 10.1037/met0000365 and its data location was not found in two attempts.",
+    "Is Artner et al.'s 280 workdays for 232 values right? It is the only per-value cost figure in this area and it decides whether third-party verification can scale at all. Recorded second-hand and unverified; the paper is Psychological Methods 10.1037/met0000365 and its data location was not found in two attempts. ATTEMPTED AND FAILED 2026-08-25: OpenAlex and Unpaywall both report is_oa=true with exactly one location, a KU Leuven bitstream path that returns 404 because the repository migrated to a new discovery interface. The publisher version is APA and paywalled. So the number stays second-hand -- and the failure is itself an instance of the pattern in instance-general/philosophy-of-science/the-specification-execution-gap.md: the SPECIFICATION of openness is indexed and intact while the EXECUTION fails.",
     "How many other papers in this area have lost their own code? The check is cheap and mechanical -- resolve each artifact URL, and where it is an archive node, follow the provider indirection to whatever it actually points at. This corpus's own records would be a fair place to start, and `kb.py links` currently CANNOT do it: it checks the URL and would have scored osf.io/3bzu8 as alive.",
     "Does the code effect survive matching on care? The authors control for readme and preregistration and both come out null, which is the right test and a weak one at n=51. A larger corpus with more care proxies -- the Makefile and CITATION.cff markers that predicted installability in samuel2024#c7 would do -- could separate 'code helps' from 'code marks a careful author'.",
     "The criterion ladder (K = 1, 5, 10, 20) is the best feature of this design and nobody else uses it. Re-scoring an existing corpus at several K would show whether the field's disagreements are about denominators, criteria, or the world."
