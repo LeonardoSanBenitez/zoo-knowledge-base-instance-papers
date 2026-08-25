@@ -71,7 +71,16 @@ def main():
         chunk = src.read(1 << 20)
         if not chunk:
             break
+        prev = read_bytes
         read_bytes += len(chunk)
+        # Progress every 500 MB. WITHOUT THIS a run that dies halfway is
+        # indistinguishable from a run that finished and found nothing, which
+        # is exactly what happened on 2026-08-25: an empty stderr was the only
+        # evidence either way.
+        if read_bytes // (500 << 20) != prev // (500 << 20):
+            sys.stderr.write("... %.1f GB of compressed input read\n"
+                             % (read_bytes / 1e9))
+            sys.stderr.flush()
         try:
             data = dec.decompress(chunk)
         except zlib.error as e:
@@ -131,8 +140,20 @@ def main():
             break
 
     if not stat["total"]:
-        print("NO executions rows parsed. The block was not reached or the format "
-              "differs. Nothing is claimed.")
+        print("NO executions rows parsed after %.2f GB of compressed input."
+              % (read_bytes / 1e9))
+        print("The block was not reached, the transport ended early, or the format")
+        print("differs. NOTHING IS CLAIMED -- and note WHICH WAY this fails: a")
+        print("version that reported its zero counts as findings would have")
+        print("announced a clean corpus. That is Pattern 2 of instance-general/")
+        print("software-engineering/silent-data-loss-patterns.md, and refusing to")
+        print("conclude from zero operands is the whole of the fix.")
+        print("")
+        print("The 2026-08-25 run read ~7 GB of 14.2 in 1h55m at about 1 MB/s and")
+        print("the transport ended there. If you want it to survive a dropped")
+        print("connection, fetch to a local file with `curl --fail --retry 5")
+        print("--retry-all-errors -C -` first; the streaming form trades that")
+        print("robustness for zero disk.")
         return 1
     print("PIMENTEL et al. executions table  (Zenodo 3519618, db2020-09-22)")
     print("-" * 70)
