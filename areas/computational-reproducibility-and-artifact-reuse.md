@@ -147,6 +147,70 @@ every instrument the open-science movement has built optimises the materials.
 End to end: P(reusable) × P(reproduces unaided | reusable) ≈ **15% post-policy**
 against ≈2% before. A ninefold improvement, and still about one article in seven.
 
+## The intervention with the largest well-estimated effect, added 2026-08-25
+
+**Share the analysis code at all.** Laurinavichyute, Yadav & Vasishth 2022
+(`laurinavichyute2022-share-the-code`) compared 59 *Journal of Memory and
+Language* papers before and 59 after the journal's open data-and-code policy, and
+then tried by hand to reproduce every reported analysis in the post-policy set.
+The contrast is **within one policy regime** -- everyone was required to share --
+which removes most of what makes cross-corpus comparison here hopeless.
+
+| | data, no code (19) | data + code (32) | all 59 |
+|---|---|---|---|
+| strict: everything reproduces exactly | **1 (5%)** | **19 (59%)** | 20 (**34%**) |
+| lenient: <=20 discrepancies over 10% | **7 (37%)** | **26 (81%)** | 33 (**56%**) |
+
+Modelled: data only -> **7%** [1, 22]; availability of code -> **+38 points**
+[19, 60]. Under the lenient criterion the intercept rises to 39% and the code
+effect is **unchanged**. Readme (+0.72 log-odds) and preregistration (+0.98) are
+both indistinguishable from zero -- which is the right control against the
+"code just marks a careful author" objection, and almost nobody in this
+literature runs it.
+
+**This reorders the field's advice.** Against +38 points for sharing the code:
+*pin your versions* is null once dependency count is controlled; *ship a
+container* has no measured association with anything and its own artifacts are
+43% retrievable at two years; *write a readme* is null here.
+**The field has been optimising the environment while the specification was
+missing.**
+
+Two further things this paper contributes that nothing else in the area has.
+
+**A criterion ladder.** The same 59 papers score 34% or 56% depending only on how
+many >10% discrepancies are tolerated, at K = 1, 5, 10, 20. The denominator
+argument in `maria2026-executability-denominators` moves these numbers by ~2x;
+the criterion moves them by 1.6x; **neither is visible in a citation.** A
+reproducibility rate is a triple -- numerator, denominator, and the threshold at
+which a difference counts.
+
+**A cost figure, second-hand and unverified but the only one here.** Artner et
+al. 2021 spent **280 workdays reproducing 232 reported values** -- 1.2 workdays
+each -- reaching 70% only by trying analyses that contradicted the reported
+procedure. At that rate, checking one ordinary paper's forty numbers is two
+person-months, which on its own decides whether third-party verification can
+scale.
+
+### And the paper has lost its own code
+
+Audited 2026-08-25. Its Data Availability statement names `osf.io/3bzu8` for
+"the code and anonymized data for regenerating this paper". That node is public,
+has a wiki, and holds **zero files**; its GitHub add-on points at
+`annlaurin/reproducibility`, which is **404**, as is the repository hosting the
+figure the node's own wiki embeds. The *other* node, holding the 59 per-paper
+reproduction attempts, is intact with 59 components.
+
+The **data**, deposited, survived four years. The **code**, linked, did not.
+Which is the paper's own finding, and it sharpens the whole area:
+
+> **Sharing is not depositing.** An archive add-on is a pointer, and a pointer
+> inherits the lifetime of what it points at. The archive keeps serving the node
+> at HTTP 200, with a title and a wiki, long after the target is gone.
+
+Same failure as Malka's 57% of registry images gone in two years, in a different
+technology. **The axis that matters is not built-vs-declared. It is deposited
+vs pointed-at.**
+
 ## Two things everyone recommends, and the evidence for them
 
 **"Pin your dependency versions."** Recommendation #1 of Trisovic et al., a conclusion

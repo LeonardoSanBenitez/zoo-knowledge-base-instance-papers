@@ -1,0 +1,38 @@
+==========================================================================
+OSF node 3bzu8   https://osf.io/3bzu8/
+==========================================================================
+  title    : Share the code, not just the data: A case study of the reproducibility of articles published in 
+  public   : True   modified: 2022-04-18T17:38:35.932097
+  providers: osfstorage, github
+  osfstorage:  0 item(s)
+  github:      0 item(s)
+      add-on target: 'annlaurin/reproducibility:'
+      github.com/annlaurin/reproducibility -> HTTP 404   
+      account annlaurin is LIVE with 6 public repo(s): annlaurin.github.io, dyslexia_classifier, prediction, py-span-task, Rus_dyslex_classification, visitka
+      -> the target is not merely renamed within this account
+  children : 0
+  wiki home     ![River plot summarizing paper's results][1] If you are looking for the individual attempts to reproduce the reported results, please refer to this page instead: https://osf.io/3x2y6/. [1]: https://github.com/annlaurin/i
+
+==========================================================================
+OSF node 3x2y6   https://osf.io/3x2y6/
+==========================================================================
+  title    : Supplementary materials for "Share the code, not just the data: A case study of the reproducibil
+  public   : True   modified: 2025-02-10T13:54:42.298276
+  providers: osfstorage
+  osfstorage:  3 item(s)
+      file   IDs.pdf                                  32652
+      folder Wiki images                              None
+      file   IDs_pre_policy.csv                       5456
+  children : 59
+      u3hy6  Paper13
+      a9tkp  Paper38
+      s5we2  Paper39
+      xw67k  Paper40
+      xfc9g  Paper41
+      bk9va  Paper42
+      ... and 53 more
+  wiki home     In this project, you'll find detailed attempts to reproduce each of 59 surveyed papers. The attempts are anonymized unless the authors of the surveyed manuscript used a CC-BY license. To establish the correspondence betw
+
+READ THE PROVIDER LINE. A node whose only provider is a pointer holds
+nothing of its own, and its web page will answer 200 for as long as OSF
+exists. Sharing is not depositing.

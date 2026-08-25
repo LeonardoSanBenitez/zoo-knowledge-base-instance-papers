@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.2",
+  "id": "laurinavichyute2022-share-the-code",
+  "title": "Share the code, not just the data: A case study of the reproducibility of articles published in the Journal of Memory and Language under the open data policy",
+  "authors": [
+    "Anna Laurinavichyute",
+    "Himanshu Yadav",
+    "Shravan Vasishth"
+  ],
+  "year": 2022,
+  "venue": "Journal of Memory and Language 125:104332",
+  "area": [
+    "computational-reproducibility-and-artifact-reuse"
+  ],
+  "identifiers": {
+    "doi": "10.1016/j.jml.2022.104332",
+    "url": "https://osf.io/hf297/"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-ran-artifacts",
+  "cost": {
+    "tool_calls": 12,
+    "bytes_downloaded": 600000,
+    "compute_notes": "PsyArXiv preprint PDF 517 KB (DOI 10.31234/osf.io/hf297), read as `pdftotext -layout` (1,657 lines), methods and results in full. Published version is Elsevier and paywalled; the preprint is the version read and its Data Availability statement is the one audited. Artifact audit via the OSF API (nodes, files, providers, children, wikis) and the GitHub API. No analysis re-run: the code that would have been re-run is the thing that is missing.",
+    "session": "2026-08-25 maria"
+  },
+  "triggers": [
+    "should I share my analysis code or is data enough",
+    "does an open data policy make papers reproducible",
+    "how much does sharing code improve reproducibility",
+    "reproducibility rate psycholinguistics journal of memory and language",
+    "what fraction of papers with shared data can be reproduced",
+    "is a readme enough to make data reusable",
+    "does preregistration make an analysis more reproducible",
+    "how expensive is it to verify a reported number",
+    "an OSF node is public but empty",
+    "OSF github addon points at a repository that no longer exists",
+    "linking a repository from an archive is not depositing",
+    "the paper about sharing code lost its own code"
+  ],
+  "methods": [
+    "policy-before-after-comparison",
+    "manual-reanalysis-from-shared-materials",
+    "graded-reproducibility-criteria",
+    "bayesian-logistic-regression",
+    "artifact-provider-indirection-audit",
+    "printed-decimal-denominator-forensics"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "The Journal of Memory and Language's 2019 open data and code policy raised the rate of data sharing by more than 50 percentage points, from 20 of 59 papers before to 51 of 59 after; but 8 of the 59 post-policy papers still had inaccessible data, and only 75% of those that were accessible shared all the data needed to reproduce the reported analyses.",
+      "scope": "59 papers immediately before and 59 immediately after the policy took effect. 'Accessible' means at least some subset of the described data was obtainable, deliberately generous.",
+      "quantities": [
+        {
+          "name": "data_sharing_rate",
+          "value": 0.339,
+          "unit": "proportion of papers",
+          "n": 59,
+          "baseline": "pre-policy JML, voluntary sharing",
+          "source": "Descriptive statistics",
+          "count": 20,
+          "denominator": 59
+        },
+        {
+          "name": "data_sharing_rate",
+          "value": 0.864,
+          "unit": "proportion of papers",
+          "n": 59,
+          "baseline": "post-policy JML, sharing required",
+          "source": "Descriptive statistics",
+          "count": 51,
+          "denominator": 59
+        },
+        {
+          "name": "code_sharing_rate_given_data_shared",
+          "value": 0.627,
+          "unit": "proportion of papers with accessible data",
+          "n": 51,
+          "baseline": "post-policy; the policy requires code as a rule",
+          "source": "Descriptive statistics",
+          "count": 32,
+          "denominator": 51
+        },
+        {
+          "name": "complete_data_rate_given_data_shared",
+          "value": 0.745,
+          "unit": "proportion of papers with accessible data",
+          "n": 51,
+          "baseline": "post-policy; all variables reported in the manuscript present in the file",
+          "source": "Descriptive statistics",
+          "count": 38,
+          "denominator": 51
+        }
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Counts are printed with their denominators throughout and the reasons for the 8 inaccessible cases are itemised, including one where a repository demanded a stated purpose and the authors declined to say they were running a reproducibility check -- a scruple most such studies do not report."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Under a strict criterion (every reported analysis reproduces exactly, rounding aside), 1 of 19 papers that shared data but no code reproduced, against 19 of 32 that shared both. Under the most lenient criterion tolerating up to 20 discrepancies over 10%, the figures are 7 of 19 and 26 of 32. Overall reproducibility is 34% to 56% of the 59 surveyed papers depending on the criterion.",
+      "scope": "Post-policy papers only. Authors were deliberately NOT contacted for clarification -- unlike Hardwicke et al. -- on the ground that an analysis step documented only privately is not reproducible for a reader.",
+      "quantities": [
+        {
+          "name": "artifact_reproduction_rate_strict",
+          "value": 0.0526,
+          "unit": "proportion of papers",
+          "n": 19,
+          "baseline": "data shared, NO analysis code; strict criterion",
+          "source": "Results, Strict criterion",
+          "count": 1,
+          "denominator": 19
+        },
+        {
+          "name": "artifact_reproduction_rate_strict",
+          "value": 0.5938,
+          "unit": "proportion of papers",
+          "n": 32,
+          "baseline": "data AND analysis code shared; strict criterion",
+          "ci": "bootstrapped 95% CI [38, 72]%, the authors' own",
+          "source": "Results, Strict criterion",
+          "count": 19,
+          "denominator": 32
+        },
+        {
+          "name": "artifact_reproduction_rate_strict",
+          "value": 0.339,
+          "unit": "proportion of papers",
+          "n": 59,
+          "baseline": "widest denominator the study defines: all 59 surveyed post-policy papers",
+          "source": "Results, Strict criterion",
+          "count": 20,
+          "denominator": 59
+        },
+        {
+          "name": "artifact_reproduction_rate_lenient",
+          "value": 0.3684,
+          "unit": "proportion of papers",
+          "n": 19,
+          "baseline": "data shared, NO code; <=20 discrepancies over 10% tolerated",
+          "source": "Results, Relaxed criteria; Table 1",
+          "count": 7,
+          "denominator": 19
+        },
+        {
+          "name": "artifact_reproduction_rate_lenient",
+          "value": 0.8125,
+          "unit": "proportion of papers",
+          "n": 32,
+          "baseline": "data AND code; <=20 discrepancies over 10% tolerated",
+          "source": "Results, Relaxed criteria; Table 1",
+          "count": 26,
+          "denominator": 32
+        },
+        {
+          "name": "artifact_reproduction_rate_lenient",
+          "value": 0.5593,
+          "unit": "proportion of papers",
+          "n": 59,
+          "baseline": "widest denominator: all 59 surveyed post-policy papers",
+          "source": "Results, Relaxed criteria",
+          "count": 33,
+          "denominator": 59
+        }
+      ],
+      "evidence": ["a1", "a3"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This is the cleanest reproducibility funnel in the area file: every rung printed, both the numerator's own denominator and the widest one, and a criterion ladder at K = 1, 5, 10, 20 rather than a single line drawn where it flatters. The ratio between the strictest and most lenient reading of the SAME attempts is 34% to 56% -- a factor of 1.6 from the criterion alone, before any denominator argument. That is the same lesson as maria2026-executability-denominators from the other direction: there the denominator moved the number by 2x, here the criterion moves it by 1.6x, and neither is visible in a citation."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "In a Bayesian logistic regression, the availability of analysis code raises the probability of reproducing a paper by about 38 percentage points; a readme file and preregistration have effects that are not distinguishable from zero.",
+      "scope": "51 post-policy papers with accessible data. Predictors: code, readme, preregistration, each 0/1. Regularising priors N(0, 1.2) on the intercept and N(0, 1.5) on slopes.",
+      "quantities": [
+        {
+          "name": "reproduction_probability_given_data_only",
+          "value": 0.07,
+          "unit": "probability",
+          "n": 51,
+          "baseline": "intercept: data shared, no code, no readme, no preregistration; strict criterion",
+          "ci_low": 0.01,
+          "ci_high": 0.22,
+          "ci_kind": "credible",
+          "source": "Table 2 (log-odds -2.61, SE 0.76)"
+        },
+        {
+          "name": "reproduction_probability_increase_from_sharing_code",
+          "value": 0.38,
+          "unit": "percentage points, absolute",
+          "n": 51,
+          "baseline": "strict criterion; log-odds 2.49, SE 0.76, 95% CrI [1.11, 4.08], odds ratio 12.1",
+          "ci_low": 0.19,
+          "ci_high": 0.6,
+          "ci_kind": "credible",
+          "source": "Table 2 and text"
+        },
+        {
+          "name": "reproduction_probability_increase_from_sharing_code",
+          "value": 0.39,
+          "unit": "percentage points, absolute",
+          "n": 51,
+          "baseline": "most lenient criterion; intercept rises to 39% but the code effect is unchanged",
+          "ci_low": 0.14,
+          "ci_high": 0.6,
+          "ci_kind": "credible",
+          "source": "Table 3 and text"
+        }
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Observational: papers that share code are plausibly written by more careful people, and the same 'disposition' confound bit our own analysis of the Samuel & Mietchen corpus, where a Makefile and a CITATION.cff predicted installability while the environment files did not. What makes this one more than a care proxy is that the authors ALSO modelled readme and preregistration -- two other care markers -- and both come out indistinguishable from zero while code does not. That is not identification, but it is the right control to have run, and almost nobody in this literature runs it. THE EFFECT SIZE IS THE LARGEST WELL-ESTIMATED ONE IN THIS AREA: +38 points against a pinning effect that is null once dependency count is controlled, and a containerisation effect nobody has measured at all."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "OUR ARTIFACT AUDIT. The analysis code for this paper is not retrievable from the address the paper gives. osf.io/3bzu8, named in the Data Availability statement as holding 'the code and anonymized data for regenerating this paper', is a public node with zero files in OSF storage; its GitHub add-on points at github.com/annlaurin/reproducibility, which returns 404, as does github.com/annlaurin/images, the repository hosting the figure embedded in that node's own wiki.",
+      "scope": "Checked 2026-08-25 against the preprint's Data Availability statement, which is the version read here; the published Elsevier version is paywalled and may name other locations. The author's GitHub account is active and holds six other public repositories, and a GitHub search restricted to that user for 'reproducibility' returns nothing, so this is not a rename that a reader could follow.",
+      "quantities": [
+        {
+          "name": "artifact_locator_resolution_rate",
+          "value": 0.5,
+          "unit": "proportion of the paper's two stated artifact URLs",
+          "n": 2,
+          "baseline": "osf.io/3x2y6 (the 59 reproduction attempts) resolves and is intact in per-paper components; osf.io/3bzu8 (the paper's own code and data) does not lead to any file",
+          "source": "reanalysis/audit_osf_artifacts.log",
+          "count": 1,
+          "denominator": 2
+        }
+      ],
+      "evidence": ["a2", "a3", "a4"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Established by the OSF API (node public, osfstorage empty, provider list shows a github add-on, add-on folder_id 'annlaurin/reproducibility') and the GitHub API (404 on that repository, 404 on annlaurin/images, 0 results for a user-scoped search, 6 unrelated public repositories on a live account). NOT A GOTCHA, and the tone matters: this is evidence FOR the mechanism the authors identified, not against them. Their DATA survived -- the 59 per-paper reproduction attempts are intact in components -- and their CODE did not, because code was shared by LINKING a mutable repository from an archive rather than by DEPOSITING it in one. The paper's own finding, instantiated on the paper. What it adds to their recommendation is a distinction they do not draw: sharing is not depositing. An OSF GitHub add-on is a pointer, and a pointer inherits the lifetime of what it points at."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Reproducing 232 reported values from raw data cost Artner et al. 280 workdays, and even then 70% was reached only by trying analyses that conflicted with the reported procedure.",
+      "scope": "Reported by these authors when comparing their own effort to Artner et al. 2021 (Psychological Methods), not measured here.",
+      "quantities": [
+        {
+          "name": "verification_cost_workdays_per_reported_value",
+          "value": 1.21,
+          "unit": "workdays per value",
+          "n": 232,
+          "baseline": "Artner et al. 2021: 280 workdays for 232 reported values in 46 articles",
+          "source": "Discussion, comparison to related work"
+        }
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "Second-hand and not checked against Artner et al. directly. Recorded anyway because the COST side of verification is nearly absent from this area file and this is the only per-value figure in it. If it survives checking it is the number that decides whether any third-party verification scheme can scale: at 1.2 workdays per reported value, checking one ordinary paper's forty numbers is two person-months."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "https://osf.io/hf297/",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "curl -sL -o jml.pdf https://osf.io/hf297/download && pdftotext -layout jml.pdf jml.txt",
+        "result": "517,439-byte PDF, 1,657 lines of text, read in full for methods and results. NOTE for anyone repeating this: https://osf.io/preprints/psyarxiv/hf297/download returns 200 with a 4,207-byte HTML soft-404; https://osf.io/hf297/download returns the PDF. The same soft-404 signature was independently catalogued today in kb.py links."
+      },
+      "bytes": 517439,
+      "local_path": "artifacts/laurinavichyute2022.pdf"
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "https://osf.io/3bzu8/",
+      "status": "dangling",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "curl -s https://api.osf.io/v2/nodes/3bzu8/ ; .../files/osfstorage/ ; .../files/ ; .../children/ ; .../wikis/ ; .../addons/github/ ; then curl -s https://api.github.com/repos/annlaurin/reproducibility and .../annlaurin/images and /users/annlaurin/repos",
+        "result": "Node is public, titled as the paper, last modified 2022-04-18, has a wiki, and has ZERO files in osfstorage and ZERO children. Its provider list includes a `github` add-on whose folder_id is 'annlaurin/reproducibility:'. That repository returns 404, as does annlaurin/images which hosts the figure the wiki embeds. The account is live with 6 unrelated public repos. This is the address the paper gives for its own analysis code."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "human-labels",
+      "locator": "https://osf.io/3x2y6/",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "curl -s https://api.osf.io/v2/nodes/3x2y6/files/osfstorage/ and .../children/",
+        "result": "Public. osfstorage holds IDs.pdf (32,652 bytes), IDs_pre_policy.csv (5,456 bytes) and a Wiki images folder; the 59 per-paper reproduction attempts are in CHILD COMPONENTS (Paper13, Paper38, Paper39 ... at least 10 on the first page). A listing of osfstorage alone shows 3 items and looks nearly empty -- which is how this artifact would be mis-scored as insufficient by any check that does not follow the component indirection."
+      }
+    },
+    {
+      "id": "a4",
+      "role": "derived-data",
+      "locator": "reanalysis/audit_osf_artifacts.py",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "python reanalysis/audit_osf_artifacts.py",
+        "result": "Re-runs the whole audit from the two OSF node ids and prints every intermediate: node metadata, storage providers, file counts, children, wiki text, the github add-on's folder_id, and the GitHub API's answer for each repository named. Written so the claim can be re-checked in one command rather than eight."
+      },
+      "local_path": "reanalysis/audit_osf_artifacts.py"
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:agreesWith",
+      "target": "hardwicke2018-cognition-open-data",
+      "why": "Independently, and this is the kind of agreement that counts. Hardwicke found that a mandatory open-DATA policy moved availability to ~99% while analysis-script sharing went 8.7% to 6.0%, i.e. not at all, and that the dominant cause of irreproducibility was under-specification of the analysis. This study, on a different journal, a different field, a different team and a manual rather than automated method, finds the executable specification worth +38 points. Different implementations, so the agreement carries information -- see instance-general/philosophy-of-science/independence-the-hidden-premise-of-agreement.md.",
+      "asymmetric_note": "Not directly poolable: Hardwicke contacted authors and this study deliberately did not. Hardwicke's UNAIDED figure is the comparable one."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "malka2026-docker-reproducibility",
+      "why": "Same failure in a different technology, and each is the other's generalisation. Malka: 57% of Docker images pushed to a registry were gone in under two years. Here: the repository backing a published paper's OSF code node is gone in four. In both cases what was archived survived and what was LINKED did not. The distinction that matters is not built-vs-declared, it is DEPOSITED vs POINTED-AT."
+    },
+    {
+      "type": "cito:extends",
+      "target": "maria2026-executability-denominators",
+      "why": "Adds a criterion ladder to a synthesis that only had a denominator ladder. The same 59 papers score 34% or 56% depending on how many >10% discrepancies are tolerated -- a factor of 1.6 from the criterion alone, before any denominator argument. Every rung is printed, which makes this the model of reporting the area file has been asking for."
+    },
+    {
+      "type": "cito:disagreesWith",
+      "target": "trisovic2022-code-execution",
+      "why": "On which recommendation is worth making. Trisovic's list leads with pinning versions and containerisation; on this evidence the intervention with by far the best-estimated effect is simply SHARING THE ANALYSIS CODE AT ALL (+38 points, CrI [19, 60]), against a pinning effect that is null once dependency count is controlled and a containerisation effect nobody has measured. The field has been optimising the environment while the specification was missing."
+    }
+  ],
+  "open_questions": [
+    "Is Artner et al.'s 280 workdays for 232 values right? It is the only per-value cost figure in this area and it decides whether third-party verification can scale at all. Recorded second-hand and unverified; the paper is Psychological Methods 10.1037/met0000365 and its data location was not found in two attempts.",
+    "How many other papers in this area have lost their own code? The check is cheap and mechanical -- resolve each artifact URL, and where it is an archive node, follow the provider indirection to whatever it actually points at. This corpus's own records would be a fair place to start, and `kb.py links` currently CANNOT do it: it checks the URL and would have scored osf.io/3bzu8 as alive.",
+    "Does the code effect survive matching on care? The authors control for readme and preregistration and both come out null, which is the right test and a weak one at n=51. A larger corpus with more care proxies -- the Makefile and CITATION.cff markers that predicted installability in samuel2024#c7 would do -- could separate 'code helps' from 'code marks a careful author'.",
+    "The criterion ladder (K = 1, 5, 10, 20) is the best feature of this design and nobody else uses it. Re-scoring an existing corpus at several K would show whether the field's disagreements are about denominators, criteria, or the world."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-25",
+    "verified": "2026-08-25",
+    "notes_file": "NOTES.md"
+  }
+}
