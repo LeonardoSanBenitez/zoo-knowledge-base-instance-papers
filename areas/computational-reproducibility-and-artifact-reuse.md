@@ -83,7 +83,29 @@ A person allowed to make minor adjustments gets a script running at **84%** wher
 an automated batch gets 2–29%. That is a bigger spread than the denominator (2×),
 the criterion (1.6×) and everything else in this file.
 
-**And it is completely confounded.** Obels' corpus is registered reports in
+**Partially measured, on the machine end.** Trisovic's own with-cleaning /
+without-cleaning contrast is the only *within-corpus* estimate of repair anywhere
+in this literature: automatic code cleaning moves re-execution from **11.92% to
+19.32%**, a gain of **+7.4 points** (SE 0.58, z = 12.8, OR 1.77) at the widest
+denominator. So the ladder is:
+
+| repair | gain | on what evidence |
+|---|---|---|
+| automated cleaning | **+7.4 points**, OR 1.77 | one corpus, n ≈ 15,600, well powered |
+| a person, "minor adjustments" | **84% absolute** | a different corpus, n = 37 |
+| the gap between them | **unmeasured** | nobody has run both |
+
+**And that contrast sharpens this file's own denominator finding.** The same two
+counts give **+7.4 points** at the symmetric denominator and **+15.0 points** at
+the authors' — *the denominator choice doubles the apparent effect size.* On the
+odds scale the same contrast moves only from **1.77 to 2.00**. So:
+
+> **Report an effect in percentage points and the denominator choice can double
+> it. Report it as an odds ratio and it nearly cannot.** The field reports
+> percentage points, and this file had said only that the denominator moves the
+> LEVEL. It moves the effect too.
+
+**And the human/machine comparison is completely confounded.** Obels' corpus is registered reports in
 psychology with SPSS and R scripts; the automated studies are Dataverse R files
 and Jupyter notebooks with heavy dependency trees. Populations differ, languages
 differ, artifact sizes differ. So the honest statement is not "human assistance

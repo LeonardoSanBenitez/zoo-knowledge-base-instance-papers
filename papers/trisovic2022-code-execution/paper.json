@@ -544,6 +544,55 @@
         "status": "not-identifiable",
         "why": "Not 'the recommendations are wrong' -- the corpus cannot say that -- but 'the recommendations are untested, and where this corpus can test them it finds nothing convincing'. On the correct unit of analysis (packages, by cluster bootstrap) only R Markdown has an interval excluding zero, +9.2 points [+0.3, +20.4], and its lower bound is a rounding error away from nothing. Documentation gives +2.6 [-1.4, +6.4]. Tests give +4.6 [-2.6, +12.6]. TWO CORRECTIONS OF MY OWN FIRST ANALYSIS ARE PART OF THE FINDING. First, at the PACKAGE level with outcome 'at least one file ran', documentation looked overwhelming (35.8% vs 22.2%, z = 6.66) -- an artifact of my own outcome definition, because a package with twenty files has twenty chances, and package size is the largest association in the table (z = +16.8). Second, z statistics on 9 or 22 clusters are arithmetic and not evidence; the cluster bootstrap removed .Rproj's apparent z = 4.42 entirely. THE NULLS ARE HONEST ABOUT THEIR SIZE: a 20-assignment power curve gives 35% power at the observed +2.6 points and 75% at +5.1, with a 5% false-positive rate at a planted zero. So the documentation null is inconclusive, not strong. THE MOST POLICY-RELEVANT NUMBER HERE IS A DENOMINATOR, NOT AN EFFECT: containerisation, the recommendation with the best theoretical case, appears in 9 of 2,060 packages (0.44%), and workflow and provenance libraries in zero. It is not that these were tried and failed. After a decade of advice they have never been tried at a scale anyone could measure."
       }
+    },
+    {
+      "id": "c9",
+      "statement": "OUR REANALYSIS, 2026-08-25. This study's own with-cleaning / without-cleaning contrast is the only WITHIN-CORPUS estimate of artifact repair in the literature: automatic code cleaning raises the re-execution rate by 7.4 percentage points at the widest denominator (11.92% -> 19.32%). And the size of that effect is itself denominator-dependent -- the same counts give +15.0 points at the authors' denominator -- while on the ODDS scale it barely moves (1.77 vs 2.00).",
+      "scope": "Two runs of the authors' pipeline over overlapping but NOT identical file sets (7,985 vs 7,621 files seen in at least one run log), so this is not a paired comparison on the same files. Direction is safe; magnitude carries that slack.",
+      "quantities": [
+        {
+          "name": "automated_repair_gain_in_execution_rate",
+          "value": 7.39,
+          "unit": "percentage points",
+          "n": 15606,
+          "baseline": "with automatic code cleaning minus without, both at the symmetric widest denominator; SE 0.58, z = 12.8",
+          "ci_low": 6.25,
+          "ci_high": 8.53,
+          "ci_kind": "confidence",
+          "source": "computed from c1's recorded counts"
+        },
+        {
+          "name": "automated_repair_gain_in_execution_rate",
+          "value": 14.98,
+          "unit": "percentage points",
+          "n": 7525,
+          "baseline": "THE SAME COUNTS at the authors' own denominator; SE 1.07, z = 14.1 -- the denominator choice DOUBLES the apparent effect size",
+          "ci_low": 12.88,
+          "ci_high": 17.08,
+          "ci_kind": "confidence",
+          "source": "computed from c1's recorded counts"
+        },
+        {
+          "name": "automated_repair_odds_ratio",
+          "value": 1.77,
+          "unit": "odds ratio",
+          "n": 15606,
+          "baseline": "symmetric widest denominator",
+          "source": "computed from c1's recorded counts"
+        },
+        {
+          "name": "automated_repair_odds_ratio",
+          "value": 2.0,
+          "unit": "odds ratio",
+          "n": 7525,
+          "baseline": "authors' denominator -- same contrast, and on this scale the denominator choice moves it by 13% rather than 100%",
+          "source": "computed from c1's recorded counts"
+        }
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Arithmetic on counts already in c1, and it yields two things the record did not have. (1) The FOURTH KNOB partially measured: 'who runs it' separates automated batch (2-29%) from a human allowed minor adjustments (Obels, 84%), and this is the only estimate of the machine end of that ladder on one corpus -- automated repair is worth +7.4 points. The human end remains unmeasured on any shared corpus, which is the open question. (2) A sharpening of this house's own denominator finding: the denominator does not only move the LEVEL, it moves the EFFECT SIZE, doubling it here from 7.4 to 15.0 points. On the odds scale the same contrast moves only 1.77 to 2.00. So: report effects in percentage points and the denominator choice can double them; report them as odds ratios and it nearly cannot. That is a practical rule the field does not follow and this file did not state."
+      }
     }
   ],
   "artifacts": [

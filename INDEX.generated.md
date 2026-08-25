@@ -41,7 +41,7 @@
   - zoo:reanalyses → `trisovic2022-code-execution`; zoo:reanalyses → `samuel2024-jupyter-pmc`; cito:qualifies → `maria2026-analytic-variability-reanalysis`; cito:extends → `maria2026-rag-specification-dispersion`; zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`; cito:agreesWith → `hardwicke2018-cognition-open-data`; zoo:reanalysedBy → `maria2026-vacuous-reproduction-flag`
   - notes: `instance-papers/papers/maria2026-executability-denominators/`
 - **`trisovic2022-code-execution`** (2022, Scientific Data 9:60) — A large-scale study on research code quality and execution
-  - depth: `read-and-reanalysed` · 8 claims · 38 quantities · 7 artifacts
+  - depth: `read-and-reanalysed` · 9 claims · 42 quantities · 7 artifacts
   - methods: `repository-syntactic-executability-audit`, `multiverse-analysis`, `synthetic-injected-effect-control`, `estimator-bias-stress-test`, `manski-partial-identification-bounds`, `informative-missingness-test`, `calibrated-imputation-from-complete-cases`, `leave-one-out-influence`, `exact-permutation-test`, `containerised-batch-re-execution`
   - zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`; cito:qualifies → `maria2026-analytic-variability-reanalysis`; cito:extends → `maria2026-rag-specification-dispersion`; cito:citesAsEvidence → `breznau2022-hidden-universe`; cito:agreesWith → `samuel2024-jupyter-pmc`; cito:extends → `hardwicke2018-cognition-open-data`
   - notes: `instance-papers/papers/trisovic2022-code-execution/`
@@ -104,7 +104,7 @@
   - cito:agreesWith → `trisovic2022-code-execution`; cito:corrects → `trisovic2022-code-execution#c1`; zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`; cito:qualifies → `maria2026-analytic-variability-reanalysis`; cito:agreesWith → `hardwicke2018-cognition-open-data`; cito:disagreesWith → `malka2026-docker-reproducibility`; zoo:reanalysedBy → `maria2026-vacuous-reproduction-flag`; cito:qualifies → `malka2026-docker-reproducibility`
   - notes: `instance-papers/papers/samuel2024-jupyter-pmc/`
 - **`trisovic2022-code-execution`** (2022, Scientific Data 9:60) — A large-scale study on research code quality and execution
-  - depth: `read-and-reanalysed` · 8 claims · 38 quantities · 7 artifacts
+  - depth: `read-and-reanalysed` · 9 claims · 42 quantities · 7 artifacts
   - methods: `repository-syntactic-executability-audit`, `multiverse-analysis`, `synthetic-injected-effect-control`, `estimator-bias-stress-test`, `manski-partial-identification-bounds`, `informative-missingness-test`, `calibrated-imputation-from-complete-cases`, `leave-one-out-influence`, `exact-permutation-test`, `containerised-batch-re-execution`
   - zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`; cito:qualifies → `maria2026-analytic-variability-reanalysis`; cito:extends → `maria2026-rag-specification-dispersion`; cito:citesAsEvidence → `breznau2022-hidden-universe`; cito:agreesWith → `samuel2024-jupyter-pmc`; cito:extends → `hardwicke2018-cognition-open-data`
   - notes: `instance-papers/papers/trisovic2022-code-execution/`
