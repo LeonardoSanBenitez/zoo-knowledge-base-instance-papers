@@ -191,6 +191,43 @@ succeeds.
 > than edited away, because a number I published on the strength of 22 events
 > should be visible next to the one that overtook it.
 >
+> **SETTLED 2026-08-25 on the 2023 corpus, and neither of my earlier readings was
+> right.** `reanalysis/pins_vs_count.py`, n = **639 repositories** (against 191)
+> with **420 install failures** (against 22 events), splits each repository's
+> declared dependencies into pinned and unpinned and asks whether a *pinned*
+> dependency costs more than a merely *declared* one:
+>
+> | term | beta | SE | z | p |
+> |---|---|---|---|---|
+> | log1p(n_pinned) | **+0.364** | 0.075 | 4.87 | <0.0001 |
+> | log1p(n_unpinned) | **+0.262** | 0.091 | 2.87 | 0.0041 |
+> | **contrast (pinned - unpinned)** | **+0.102** | 0.076 | 1.34 | **0.181** |
+>
+> **Both kinds of dependency raise install failure, at indistinguishable rates.**
+> Redefining the outcome as "any execution hit an install error" drives the
+> contrast to **+0.003 (p = 0.97)**. What predicts failure is *how many*
+> dependencies you declare: exp(0.364) = 1.44 per e-fold, so going from 5 to 50
+> declared dependencies roughly doubles the odds of total install failure.
+>
+> This is a **bounded** null. On the corpus's own covariates, resampled with the
+> intercept recalibrated to the observed 65.7% failure rate, a true contrast of
+> 0.30 is detected 95% of the time and 0.20 is detected 75%, with a 4.2%
+> false-positive rate at zero and an unbiased estimator throughout.
+>
+> **So my OR = 0.435 above was the dependency count in disguise**, and the
+> mechanism is visible in the raw data: the five most frequently pinned packages
+> in this corpus are `cycler`, `ipython-genutils`, `webencodings`, `pickleshare`
+> and `pandocfilters` — nobody's direct dependencies. They are `pip freeze`
+> output. **In Python, pinning and dependency count are nearly the same
+> variable.** In a Dockerfile they are not, which is why Malka et al. can measure
+> pinning cleanly and find that it helps. Both papers are right about their own
+> substrate and the guidance literature is wrong to generalise across them.
+>
+> The wheel-availability hypothesis below is therefore **not needed** to explain
+> the disagreement, and remains untested. It would now be a finer question —
+> whether the per-dependency risk is higher for packages requiring compilation —
+> rather than the explanation of a sign flip that turns out not to exist.
+
 > The two results need not conflict, and the reconciliation is the interesting
 > part. `apt` and `npm` serve old versions as **prebuilt binaries** from archives
 > that keep them, so a pin costs nothing at install time and buys protection from

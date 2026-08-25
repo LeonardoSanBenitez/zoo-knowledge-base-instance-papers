@@ -21,7 +21,10 @@ and prints the bound OR_raw >= OR_std**2 that lets the correction be stated for
 rules whose prevalence the paper does not print.
 """
 import numpy as np
-from logit import logit_fit, standardise
+import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                "..", "..", "..", "..", "tools"))
+from statlib import logit_fit, standardise
 
 rng = np.random.default_rng(0)
 n = 40000

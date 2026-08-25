@@ -11,7 +11,10 @@ is not a check, so here is the check.
 """
 import numpy as np
 from scipy import optimize
-from logit import logit_fit
+import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                "..", "..", "..", "..", "tools"))
+from statlib import logit_fit
 
 ok = True
 rng = np.random.default_rng(1)

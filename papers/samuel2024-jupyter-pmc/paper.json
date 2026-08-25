@@ -460,6 +460,67 @@
         "status": "accepted-narrower-scope",
         "why": "The low rates do agree in the sense that all of them are low. They do not agree numerically, and the appearance that they do is partly manufactured by quoting across incommensurable funnels. Documented instance: Pimentel et al. write that their 24.11% 'is close to the reproducibility rate of 24.9% that Collberg et al. achieved'; the Collberg TR I read reports 32.3% / 48.3% / 54.0% of 402 code-backed papers, and 24.9% comes from the superseded 2014 version they cite. The two events are also not the same event -- a C/C++ project BUILDING versus a notebook RUNNING TO COMPLETION -- on populations that share nothing. Every one of these numbers is a proportion whose denominator was chosen partway down a funnel, and the choices differ between studies. See maria2026-executability-denominators for the pooled version."
       }
+    },
+    {
+      "id": "c6",
+      "statement": "OUR REANALYSIS, 2026-08-25. What predicts environment-install failure in this corpus is HOW MANY dependencies a repository declares, not whether it pinned their versions. A pinned dependency and an unpinned one carry statistically indistinguishable install risk.",
+      "scope": "2023 corpus. 639 repositories that have a requirements.txt AND at least one mode-3 execution (dependencies declared and installed). Unit = repository. Outcome = every mode-3 execution in the repository hit `<Install Dependency Error>` (processed == 0), an outcome recorded BEFORE any notebook cell runs and therefore untouched by the vacuous-comparison defect in maria2026-vacuous-reproduction-flag. Model: logit(fail) ~ log1p(n_pinned) + log1p(n_unpinned).",
+      "quantities": [
+        {
+          "name": "install_failure_log_odds_per_efold_of_pinned_deps",
+          "value": 0.3641,
+          "unit": "log odds",
+          "n": 639,
+          "baseline": "logit coefficient on log1p(number of exactly pinned dependencies); SE 0.0747, z 4.87",
+          "ci": "z = 4.87, p < 0.0001",
+          "source": "reanalysis/pins_vs_count.py"
+        },
+        {
+          "name": "install_failure_log_odds_per_efold_of_unpinned_deps",
+          "value": 0.2623,
+          "unit": "log odds",
+          "n": 639,
+          "baseline": "logit coefficient on log1p(number of dependencies declared WITHOUT an exact version); SE 0.0914, z 2.87",
+          "ci": "z = 2.87, p = 0.0041",
+          "source": "reanalysis/pins_vs_count.py"
+        },
+        {
+          "name": "pinned_minus_unpinned_install_log_odds_contrast",
+          "value": 0.1018,
+          "unit": "log odds difference",
+          "n": 639,
+          "baseline": "the extra install risk of pinning a dependency rather than merely declaring it; z = 1.34, p = 0.181",
+          "ci_low": -0.0475,
+          "ci_high": 0.251,
+          "ci_kind": "confidence",
+          "source": "reanalysis/pins_vs_count.py"
+        },
+        {
+          "name": "pinned_minus_unpinned_install_log_odds_contrast",
+          "value": 0.003,
+          "unit": "log odds difference",
+          "n": 639,
+          "baseline": "sensitivity: outcome redefined as ANY execution hitting an install error (499 events instead of 420); p = 0.971",
+          "source": "reanalysis/pins_vs_count.py"
+        },
+        {
+          "name": "repository_environment_install_failure_rate",
+          "value": 0.6573,
+          "unit": "proportion of repositories",
+          "n": 639,
+          "baseline": "2023 run; every mode-3 execution in the repository hit an install dependency error",
+          "source": "reanalysis/pins_vs_count.py",
+          "count": 420,
+          "denominator": 639
+        }
+      ],
+      "evidence": [
+        "a5"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "A bounded null rather than a bare p > 0.05. The power curve is computed on the corpus's OWN covariates, resampled with replacement, with the intercept recalibrated to the observed 65.7% failure rate: a true contrast of 0.30 is detected 95% of the time and 0.20 is detected 75%, while the false-positive rate at a true contrast of zero is 4.2% and the estimator is unbiased across the whole curve. The observed +0.102 sits well below anything that would matter. THE FIRST VERSION OF THAT POWER CURVE WAS WRONG in an instructive way: it added the planted effect to the FITTED pinned coefficient while holding the unpinned one, so its 'null' row secretly planted the observed contrast, recovered it, and reported a 25% false-positive rate. The simulation was right and the label was wrong, which is the more dangerous of the two. Reparameterised by the true contrast."
+      }
     }
   ],
   "artifacts": [
@@ -622,6 +683,11 @@
       "type": "zoo:reanalysedBy",
       "target": "maria2026-vacuous-reproduction-flag",
       "why": "That record shows the reproduction numerators here (879 in 2023, 245 in 2021) count executions in which zero cells were compared. Verified numerators are 64 and 35."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "malka2026-docker-reproducibility",
+      "why": "Resolves the disagreement over the sign of the pinning effect without either side being wrong. In Python, pinning is usually done by `pip freeze`, which dumps the whole transitive closure -- the five most pinned packages in this corpus are cycler, ipython-genutils, webencodings, pickleshare and pandocfilters, nobody's direct dependencies. So pinning and dependency COUNT are nearly the same variable here, and the count is what carries the risk. In a Dockerfile they are separate: you pin the handful of things you wrote apt-get install for. Malka can therefore measure pinning cleanly and finds it helps; on this corpus the apparent penalty is the count in disguise."
     }
   ],
   "open_questions": [

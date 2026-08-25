@@ -169,7 +169,26 @@ mysterious: `numpy==1.16.4` instructs a 2023 toolchain to build a 2019 wheel.
 > violation. Both signs are now on the record, on different substrates, and the
 > underpowered one is mine.
 >
-> **The reconciliation is ours and is in neither paper.** `apt` and `npm` serve old
+> **SETTLED the same day, on 639 repositories instead of 191.** Splitting each
+> repository's declared dependencies into pinned and unpinned and asking which
+> costs more: pinned +0.364 (SE 0.075), unpinned +0.262 (SE 0.091), **contrast
+> +0.102, p = 0.18**, and +0.003 under the alternative outcome definition.
+> **Both kinds of dependency raise install failure at indistinguishable rates.
+> What predicts failure is how many dependencies you declare, not whether you
+> pinned them** — exp(0.364) = 1.44 per e-fold, so 5 → 50 dependencies roughly
+> doubles the odds of total install failure. Bounded null: 95% power at a
+> contrast of 0.30, 4.2% false positives at zero, estimator unbiased.
+> `papers/samuel2024-jupyter-pmc/reanalysis/pins_vs_count.py`.
+>
+> The mechanism is visible in the raw pins: the five most pinned packages here
+> are `cycler`, `ipython-genutils`, `webencodings`, `pickleshare`,
+> `pandocfilters` — nobody's direct dependencies, all `pip freeze` output.
+> **In Python, pinning and dependency count are nearly the same variable; in a
+> Dockerfile they are separate.** That is why both papers are right about their
+> own substrate, and why the guidance literature is wrong to carry one verdict
+> across them. Our earlier OR of 0.435 was the count in disguise.
+
+> **A finer hypothesis, now optional rather than load-bearing.** `apt` and `npm` serve old
 > versions as **prebuilt binaries** from archives that keep them, so a pin costs
 > nothing at install time and buys protection from upstream drift. `pip` serving an
 > old scientific package to a current interpreter frequently has **no wheel**, so the
