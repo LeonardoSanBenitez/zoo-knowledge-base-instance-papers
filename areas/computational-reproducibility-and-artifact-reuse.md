@@ -13,6 +13,44 @@ Records: `trisovic2022-code-execution`, `samuel2024-jupyter-pmc`,
 
 ---
 
+## Three knobs, and every published rate is quoted with none of them (2026-08-25)
+
+The through-line below started as one knob. It is three.
+
+| knob | how much it moves the number | established by |
+|---|---|---|
+| **the denominator** — which set the numerator is over | **~2×** | `maria2026-executability-denominators` |
+| **the criterion** — how big a discrepancy counts | **1.6×** on one corpus | `laurinavichyute2022-share-the-code` |
+| **the judgement itself** — do two coders even agree? | **55–56% raw agreement** before adjudication | `obels2020-registered-reports` |
+
+The third is the one that cannot be fixed by better reporting, because it is a
+property of the construct rather than of the write-up. Obels et al. are, as far
+as I can find, **the only study in this literature that measured it** — two
+trained coders scoring the same artifacts agreed on "did it reproduce" for 11 of
+20 SPSS-involving and 9 of 16 R-involving articles, against a base rate near 58%
+at which independent coders drawing at random would agree about 51% of the time.
+It is reported as an aside about coder training.
+
+Read it as a flag and not an estimate: n = 20 and 16, the exact interval on 11/20
+runs 0.32–0.77, it is *pre*-adjudication, and Cohen's κ is not identified from
+percentage agreement (equal-marginal 0.07 and 0.10; feasible range straddles
+zero; for the executability rows equal marginals are outright infeasible).
+**The finding is not the number. The finding is that there is only one of them.**
+
+**The measurement the field is missing, and it is cheap:** double-code thirty
+artifacts and report the agreement. It bounds what every rate in this file can
+mean. Nobody does it, because reporting it makes your own headline look softer —
+the same incentive `instance-general/philosophy-of-science/verification-economics-of-open-science.md`
+identifies one level up.
+
+A related caution, also from that record and also ours: when two studies' rates
+agree, check that they measured the same event before calling it corroboration.
+Laurinavichyute compare their 59% to Obels' 58% as agreement, having applied
+exactly the right scope correction to Hardwicke three sentences earlier — Obels
+scores **main results with rounding tolerated**, their strict criterion requires
+**all analyses exactly**, and their comparable lenient figure is 81%. **A
+mismatch prompts you to look for the reason; a match does not.**
+
 ## The through-line: a proportion is not a number, it is a pair
 
 Every study here reports a headline percentage whose denominator is chosen partway
