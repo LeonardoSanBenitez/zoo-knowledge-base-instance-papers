@@ -1,0 +1,21 @@
+REPORTED percentages and whether the STATED article counts can produce them
+--------------------------------------------------------------------------
+  SPSS  executability    60%  with n=17 -> IMPOSSIBLE
+  SPSS  reproducibility  55%  with n=17 -> IMPOSSIBLE
+  R     executability    75%  with n=13 -> IMPOSSIBLE
+  R     reproducibility  56%  with n=13 -> IMPOSSIBLE
+
+RECOVERY: which single n admits BOTH percentages of a language group?
+--------------------------------------------------------------------------
+  SPSS  candidates up to n=40 : [20, 40]
+        unique at n<=25 -> n = 20   (executability 12/20, reproducibility 11/20)
+  R     candidates up to n=40 : [16, 32, 36]
+        unique at n<=25 -> n = 16   (executability 12/16, reproducibility 9/16)
+
+THIRD CONFIRMATION, from the paper's own prose
+--------------------------------------------------------------------------
+  '17 papers used SPSS ... R was used in 13 ... 3 papers used both'
+  SPSS-involving = 17 + 3 = 20      R-involving = 13 + 3 = 16
+  and 20 + 16 = 36, the number of articles that shared both data and code.
+
+RECOVERY CONFIRMED BY THREE INDEPENDENT ROUTES

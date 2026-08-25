@@ -1,0 +1,39 @@
+OBELS et al. 2020 -- inter-rater reliability on the outcome, unpacked
+==============================================================================
+Reported percentages are the INITIAL coding, before the scheme was refined
+and disagreements adjudicated. The published 21/36 is post-adjudication.
+
+what                       agree%      n     k of n 95% CI on agr. kappa (equal marginals)
+----------------------------------------------------------------------------------------------------
+SPSS  executability           60%     20      12/20   0.36 - 0.81    INFEAS
+SPSS  reproducibility         55%     20      11/20   0.32 - 0.77    +0.07
+R     executability           75%     16      12/16   0.48 - 0.93    +0.30
+R     reproducibility         56%     16       9/16   0.30 - 0.80    +0.10
+
+KAPPA IS NOT IDENTIFIED FROM PERCENTAGE AGREEMENT. Range over all marginal
+pairs (grid of 0.05) consistent with each reported agreement:
+
+  SPSS  executability      kappa in [-0.25, +0.31]   (equal marginals at the base rate: INFEASIBLE)
+  SPSS  reproducibility    kappa in [-0.29, +0.25]   (equal marginals at the base rate: +0.07)
+  R     executability      kappa in [-0.14, +0.53]   (equal marginals at the base rate: +0.30)
+  R     reproducibility    kappa in [-0.25, +0.25]   (equal marginals at the base rate: +0.10)
+
+READ IT THIS WAY. For the two EXECUTABILITY rows the equal-marginal table is
+INFEASIBLE -- with ~88% of scripts called executable by each coder, chance
+agreement alone would exceed the agreement actually observed. The coders'
+marginals therefore differed substantially, which is consistent with the
+paper saying their expertise did. For the two REPRODUCIBILITY rows the
+equal-marginal kappa is 0.07 and 0.10 and the feasible range straddles zero.
+
+So this is NOT evidence that kappa was 0.1. It is evidence that:
+
+  (a) percentage agreement on this outcome was 55-56% on a base rate near
+      58%, i.e. close to what two independent coders drawing at the base
+      rate would achieve by construction;
+  (b) the interval on that percentage, at n = 13 and 17, is enormous;
+  (c) NOBODY ELSE IN THIS LITERATURE MEASURED IT AT ALL.
+
+(c) is the finding. A field that reports reproduction rates to three
+significant figures has exactly one measurement of whether two people
+looking at the same artifact call it the same thing, and it is 55%, on
+seventeen papers, and it was reported as an aside about coder training.

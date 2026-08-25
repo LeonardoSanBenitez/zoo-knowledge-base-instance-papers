@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.2",
+  "id": "obels2020-registered-reports",
+  "title": "Analysis of Open Data and Computational Reproducibility in Registered Reports in Psychology",
+  "authors": [
+    "Pepijn Obels",
+    "Daniël Lakens",
+    "Nicholas A. Coles",
+    "Jaroslav Gottfried",
+    "Seth A. Green"
+  ],
+  "year": 2020,
+  "venue": "Advances in Methods and Practices in Psychological Science 3(2):229-237",
+  "area": [
+    "computational-reproducibility-and-artifact-reuse"
+  ],
+  "identifiers": {
+    "doi": "10.1177/2515245920918872",
+    "url": "https://osf.io/fk8vh/"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 6,
+    "bytes_downloaded": 232080,
+    "compute_notes": "PsyArXiv preprint, 6 pages, 232 KB, read as `pdftotext -layout` (437 lines), in full. One reanalysis script, scipy only, under 2 s. Reached via the discussion of Laurinavichyute et al. 2022, which quotes its 58% -- the point of reading it first-hand was to check that quotation.",
+    "session": "2026-08-25 maria"
+  },
+  "triggers": [
+    "how reliable is the judgement that an artifact reproduced",
+    "inter-rater reliability computational reproducibility",
+    "do two coders agree on whether a script reproduced the results",
+    "reproducibility of registered reports",
+    "does preregistration make analyses more reproducible",
+    "what fraction of registered reports share data and code",
+    "can I compute kappa from percentage agreement",
+    "58% reproducibility psychology registered reports",
+    "is the reproducibility outcome variable well defined",
+    "why do reproducibility studies disagree"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "two-coder-adjudicated-scoring",
+    "inter-rater-reliability-measurement",
+    "partial-identification-of-kappa-from-agreement",
+    "clopper-pearson-exact-interval",
+    "printed-decimal-denominator-forensics"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Of 62 psychology Registered Reports, 43 shared at least some data or code, 41 shared all required data, 37 shared analysis code, 36 shared both; the code could be run for 31 of 37; and the main results could be reproduced for 21 of the 36 that shared both.",
+      "scope": "Registered Reports in psychology, excluding multi-lab Registered Replication Reports, as of the sample date. 'Main results' means the descriptives and statistical tests tied to the research question in the title and abstract -- NOT all reported analyses.",
+      "quantities": [
+        {
+          "name": "artifact_sharing_rate",
+          "value": 0.694,
+          "unit": "proportion of articles",
+          "n": 62,
+          "baseline": "shared at least some data and code; Registered Reports, no mandate",
+          "source": "Results",
+          "count": 43,
+          "denominator": 62
+        },
+        {
+          "name": "code_sharing_rate",
+          "value": 0.597,
+          "unit": "proportion of articles",
+          "n": 62,
+          "baseline": "available code contained the statistical analyses",
+          "source": "Results",
+          "count": 37,
+          "denominator": 62
+        },
+        {
+          "name": "artifact_execution_success_rate",
+          "value": 0.838,
+          "unit": "proportion of articles with code",
+          "n": 37,
+          "baseline": "the analysis script could be run on the data at all",
+          "source": "Results",
+          "count": 31,
+          "denominator": 37
+        },
+        {
+          "name": "artifact_reproduction_main_results_rate",
+          "value": 0.583,
+          "unit": "proportion of articles sharing both data and code",
+          "n": 36,
+          "baseline": "MAIN results reproduced; denominator is articles sharing both",
+          "ci": "bootstrapped 95% CI [39, 72]% per Laurinavichyute et al. 2022",
+          "source": "Results",
+          "count": 21,
+          "denominator": 36
+        },
+        {
+          "name": "artifact_reproduction_main_results_rate",
+          "value": 0.339,
+          "unit": "proportion of articles",
+          "n": 62,
+          "baseline": "widest denominator the study defines: all 62 Registered Reports in the sample",
+          "source": "computed, 21/62",
+          "count": 21,
+          "denominator": 62
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Every stage of the funnel is printed with its denominator, including the awkward middle ones (43 shared something, 36 shared both, 31 ran). Note the widest-denominator figure, 21/62 = 33.9%, which the paper does not compute and which lands within a percentage point of Laurinavichyute's 34% and Hardwicke's psychology figures -- the denominator harmonisation of maria2026-executability-denominators applied to one more study, for free."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Before the coding scheme was refined and disagreements adjudicated, two trained coders agreed on whether results were reproducible for 55% of SPSS scripts and 56% of R scripts, and on whether a script was executable for 60% and 75% respectively.",
+      "scope": "Initial coding only, reported by the authors as motivation for refining their scheme. The published 21/36 is post-adjudication, so this is NOT a statement that the headline number is noise. 17 SPSS and 13 R articles.",
+      "quantities": [
+        {
+          "name": "inter_rater_agreement_on_reproducibility",
+          "value": 0.55,
+          "unit": "proportion of articles, raw agreement",
+          "n": 20,
+          "baseline": "two coders, SPSS-involving articles, initial coding; base rate of 'reproducible' about 58% -- DENOMINATOR RECOVERED, not assumed: the paper prints only a rounded percentage. Neither 55% nor 60% is attainable as k/17, and 20 is the UNIQUE n<=25 producing both (11/20 and 12/20); likewise 16 is the unique n<=25 producing both 75% and 56% (12/16, 9/16). And 20 = 17 SPSS + 3 that used both languages, 16 = 13 R + 3 both, summing to the 36 articles with data and code. Three independent confirmations. See reanalysis/irr_bounds.py.",
+          "ci_low": 0.3153,
+          "ci_high": 0.7694,
+          "ci_kind": "confidence",
+          "source": "Results; denominator recovered in reanalysis/irr_bounds.py",
+          "count": 11,
+          "denominator": 20
+        },
+        {
+          "name": "inter_rater_agreement_on_reproducibility",
+          "value": 0.5625,
+          "unit": "proportion of articles, raw agreement",
+          "n": 16,
+          "baseline": "two coders, R-involving articles, initial coding -- DENOMINATOR RECOVERED, not assumed: the paper prints only a rounded percentage. Neither 55% nor 60% is attainable as k/17, and 20 is the UNIQUE n<=25 producing both (11/20 and 12/20); likewise 16 is the unique n<=25 producing both 75% and 56% (12/16, 9/16). And 20 = 17 SPSS + 3 that used both languages, 16 = 13 R + 3 both, summing to the 36 articles with data and code. Three independent confirmations. See reanalysis/irr_bounds.py.",
+          "ci_low": 0.2988,
+          "ci_high": 0.8025,
+          "ci_kind": "confidence",
+          "source": "Results; denominator recovered in reanalysis/irr_bounds.py",
+          "count": 9,
+          "denominator": 16
+        },
+        {
+          "name": "inter_rater_agreement_on_executability",
+          "value": 0.6,
+          "unit": "proportion of articles, raw agreement",
+          "n": 20,
+          "baseline": "two coders, SPSS-involving articles, initial coding -- DENOMINATOR RECOVERED, not assumed: the paper prints only a rounded percentage. Neither 55% nor 60% is attainable as k/17, and 20 is the UNIQUE n<=25 producing both (11/20 and 12/20); likewise 16 is the unique n<=25 producing both 75% and 56% (12/16, 9/16). And 20 = 17 SPSS + 3 that used both languages, 16 = 13 R + 3 both, summing to the 36 articles with data and code. Three independent confirmations. See reanalysis/irr_bounds.py.",
+          "ci_low": 0.3605,
+          "ci_high": 0.8088,
+          "ci_kind": "confidence",
+          "source": "Results; denominator recovered in reanalysis/irr_bounds.py",
+          "count": 12,
+          "denominator": 20
+        },
+        {
+          "name": "cohens_kappa_on_reproducibility_judgement",
+          "value": "0.07 under equal marginals; feasible range [-0.29, +0.25]",
+          "unit": "kappa",
+          "n": 20,
+          "baseline": "SPSS-involving articles (n=20, recovered). Kappa is NOT identified from percentage agreement alone; the range is over every marginal pair that can produce 55% agreement",
+          "ci_kind": "partial-identification-bounds",
+          "source": "reanalysis/irr_bounds.py"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "THIS IS THE MOST IMPORTANT NUMBER IN THE AREA FILE AND THE EASIEST TO OVERSTATE, so the scope is doing real work. What it IS: the only measurement anywhere in this literature of whether two people looking at the same artifact call it the same thing, and it sits at 55-56% against a base rate near 58%, i.e. close to what independent coders drawing at the base rate would achieve by construction. What it is NOT: an estimate of anything precise. n is 17 and 13; the exact interval on 9/17 runs from 0.28 to 0.77. It is also PRE-adjudication, so the published 21/36 is not itself unreliable to that degree. And kappa cannot be computed from it -- for the executability rows the equal-marginal table is outright INFEASIBLE, because at ~88% called executable by each coder, chance agreement alone exceeds the agreement observed, which proves the coders' marginals differed. Recorded as bounds, never as a point."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "OUR ANALYSIS. The agreement Laurinavichyute et al. report between their 59% and this study's 58% compares two different estimands: this study scores only the MAIN results of each article, while their strict criterion requires ALL reported analyses to reproduce exactly. Under their own lenient criterion the comparable figure is 81%, not 59%.",
+      "scope": "Laurinavichyute et al. 2022 apply exactly this scope correction to Hardwicke et al. ('attempted to reproduce only one key finding ... our lower estimate is more conservative') and do not apply it to Obels et al.",
+      "quantities": [
+        {
+          "name": "artifact_reproduction_rate_among_code_sharers",
+          "value": 0.583,
+          "unit": "proportion",
+          "n": 36,
+          "baseline": "Obels: MAIN results only, small rounding discrepancies tolerated",
+          "source": "Obels Results",
+          "count": 21,
+          "denominator": 36
+        },
+        {
+          "name": "artifact_reproduction_rate_among_code_sharers",
+          "value": 0.5938,
+          "unit": "proportion",
+          "n": 32,
+          "baseline": "Laurinavichyute STRICT: ALL reported analyses reproduce exactly -- the figure they compare against Obels",
+          "source": "laurinavichyute2022-share-the-code#c2",
+          "count": 19,
+          "denominator": 32
+        },
+        {
+          "name": "artifact_reproduction_rate_among_code_sharers",
+          "value": 0.8125,
+          "unit": "proportion",
+          "n": 32,
+          "baseline": "Laurinavichyute LENIENT: <=20 discrepancies over 10% -- closer in strictness to Obels' main-results-only scoring",
+          "source": "laurinavichyute2022-share-the-code#c2",
+          "count": 26,
+          "denominator": 32
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Established by reading both criteria in the two primary sources rather than either paper's summary of the other. Obels: 'for each study reported in the article we identified MAIN results ... based on the research question highlighted in the title and abstract', and two small rounding errors were tolerated in articles coded reproducible. Laurinavichyute strict: 'all the reported analyses could be reproduced exactly'. These are not the same event. The comparable Laurinavichyute figure lies between 59% and 81%, so the two studies are further apart than the printed 58-vs-59 suggests, and probably in the direction of the JML papers reproducing BETTER. Nobody is at fault here beyond the field's habit of quoting a rate without its criterion -- which is the same failure as quoting it without its denominator, and this area file now has both."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "https://osf.io/fk8vh/",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "curl -sL -o obels.pdf https://osf.io/fk8vh/download && pdftotext -layout obels.pdf obels.txt",
+        "result": "232,080-byte PDF, 6 pages, 437 lines of text, read in full. Preprint of the AMPPS version; the criterion definitions and the inter-rater sentence are both in it."
+      },
+      "bytes": 232080,
+      "local_path": "artifacts/obels2020.pdf"
+    },
+    {
+      "id": "a2",
+      "role": "derived-data",
+      "locator": "reanalysis/irr_bounds.py",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-08-25",
+        "by": "maria",
+        "how": "python reanalysis/irr_bounds.py",
+        "result": "Converts the four reported agreement percentages back to counts, puts exact Clopper-Pearson intervals on them, and partially identifies Cohen's kappa by enumerating every marginal pair that could produce the reported agreement. Its first version printed an equal-marginal kappa of -0.93 for a table that CANNOT EXIST at those marginals; a feasibility check was added and the cell now reads INFEASIBLE, which turns out to be the informative answer."
+      },
+      "local_path": "reanalysis/irr_bounds.py"
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:qualifies",
+      "target": "laurinavichyute2022-share-the-code#c2",
+      "why": "Their comparison to this study is between different estimands -- main results only here, all reported analyses there. See c3.",
+      "asymmetric_note": "The reciprocal is not the inverse: their record is not wrong, it quotes this study accurately. What is wrong is treating the closeness of 58% and 59% as corroboration when the criteria differ."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "maria2026-executability-denominators",
+      "why": "Adds the third knob. That synthesis showed the DENOMINATOR moves these rates by ~2x; laurinavichyute2022 showed the CRITERION moves them by 1.6x; this study shows the JUDGEMENT ITSELF was agreed by two trained coders only 55-56% of the time before adjudication. A rate quoted without denominator, criterion and adjudication procedure is three unstated choices deep."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "breznau2022-hidden-universe",
+      "why": "Breznau measures dispersion across analysts given one dataset and one question. This measures dispersion across CODERS given one artifact and one question -- the same phenomenon one level down, on the meta-scientific outcome rather than the scientific one. Both fields report point estimates as though the underlying judgement were a natural kind."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "hardwicke2018-cognition-open-data",
+      "why": "Cited by these authors as their comparator and reproduced accurately: Cognition post-policy had 78.2% with a data availability statement, 49.0% with reusable data, and 10.3% providing analysis code. Registered Reports, with no mandate at all, reached 69.4% sharing something and 59.7% sharing code -- so a self-selected population beats a mandated one on the thing the mandate did not require."
+    }
+  ],
+  "open_questions": [
+    "Nobody else in this literature has measured inter-rater reliability on the reproduction judgement. It is cheap -- double-code 30 artifacts -- and it bounds what every rate in the area can mean. It is the single highest-value missing measurement I have found, and it is missing because reporting it makes your own headline look softer.",
+    "Does the reliability rise with a stricter criterion? Laurinavichyute's K-ladder is mechanical (count discrepancies over 10%) and should be far more reliable than 'did the main results reproduce'. If so, the fix for the field is not better coders but a mechanical criterion, and that is testable by double-coding one corpus under both.",
+    "The 21/62 = 33.9% widest-denominator figure computed here is within a point of Laurinavichyute's 34% and of the psychology figures in Hardwicke. Three studies, three fields, three methods, same number at the widest denominator. That could be the denominator harmonisation working, or it could be a coincidence at k=3 -- and per instance-general/philosophy-of-science/independence-the-hidden-premise-of-agreement.md the first question is whether these three share anything. They do not share code. They do share a literature and a tacit idea of what counts."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-08-25",
+    "verified": "2026-08-25",
+    "notes_file": "NOTES.md"
+  }
+}
