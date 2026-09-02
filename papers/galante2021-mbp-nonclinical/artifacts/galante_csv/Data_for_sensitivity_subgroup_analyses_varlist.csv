@@ -1,0 +1,29 @@
+position,name,type,isnumeric,format,vallab,varlab
+1,studytab_name,str19,0,%19s,,Study identified with author name and publication year
+2,country,str20,0,%20s,,Country
+3,regiongroup,str7,0,%9s,,Region group
+4,groupsize,str36,0,%36s,,Group size
+5,teacherexperience,byte,1,%8.0g,,Teacher experience
+6,contacthours,double,1,%10.0g,,Contact hours
+7,participantgroup,str70,0,%70s,,Participant group
+8,participanttype,str11,0,%11s,,Participant type
+9,activecontroltype,byte,1,%8.0g,,Active control type
+10,interventiontype,byte,1,%8.0g,,Intervention type
+11,USA,str3,0,%9s,,Study conducted in the USA?
+12,nr_rand,int,1,%8.0g,,Number of participants randomised
+13,sample_category,str150,0,%150s,,Sample_category
+14,age_mean_sd,str15,0,%15s,,Age_Mean_SD
+15,women,str4,0,%9s,,Women
+16,outcomes,str44,0,%44s,,Outcomes
+17,intervention,str93,0,%93s,,Intervention
+18,controls,str102,0,%102s,,Controls
+19,timepoints,str55,0,%55s,,TimePoints
+20,d1,str4,0,%9s,,RoB2 domain 1
+21,d2,str4,0,%9s,,RoB2 domain 2
+22,d3,str4,0,%9s,,RoB2 domain 3
+23,d4,str4,0,%9s,,RoB2 domain 4
+24,d5,str4,0,%9s,,RoB2 domain 5
+25,developedadapted,str1,0,%9s,,Author developed or significantly adapted intervention
+26,taught,str2,0,%9s,,Author taught intervention
+27,coi,str2,0,%9s,,Author declared conflicts of interest
+28,excludeAErisk,str3,0,%9s,,Trial excluded participants at higher risk of adverse effects?

@@ -1,0 +1,52 @@
+position,name,type,isnumeric,format,vallab,varlab
+1,studytab_name,str19,0,%19s,,Study identified with author name and publication year
+2,nr_arms,byte,1,%8.0g,,Number of trial arms
+3,a1,str26,0,%26s,,Arm 1
+4,a2,str37,0,%37s,,Arm 2
+5,a3,str28,0,%28s,,Arm 3
+6,a4,str4,0,%9s,,Arm 4
+7,a5,str11,0,%11s,,Arm 5
+8,ctrlcata2,byte,1,%8.0g,,Control group category - arm 2
+9,ctrlcata3,str23,0,%23s,,Control group category - arm 3
+10,name,str103,0,%103s,,Outcome name
+11,instrument,str106,0,%106s,,Outcome instrument
+12,dir_imp,str39,0,%39s,,Outcome direction of improvement - Up or Down
+13,domain,str22,0,%22s,,Outcome domain
+14,t1,str48,0,%48s,,Study time point 1
+15,t2,str57,0,%57s,,Study time point 2
+16,t3,str89,0,%89s,,Study time point 3
+17,t4,str54,0,%54s,,Study time point 4
+18,t5,str47,0,%47s,,Study time point 5
+19,t6,str27,0,%27s,,Study time point 6
+20,postintervention,str57,0,%57s,,Study time point included as post-intervention
+21,onesixmonths,str57,0,%57s,,Study time point included as 1-6 months
+22,sixplusmonths,str47,0,%47s,,Study time point included as over 6 months
+23,trange,str16,0,%16s,,Outcome time point range
+24,trial_design,str35,0,%35s,,Trial_design
+25,icc_for_cluster,str2,0,%9s,,ICC_for_cluster?
+26,mergearm,str38,0,%38s,,Trial arms that need to be merged
+27,oa1n,str10,0,%10s,,n for outcome - arm 1
+28,priority_oa1em_central,str37,0,%37s,,effect measure of central tendency prioritised for outcome - arm 1
+29,priority_oa1em_dc,str35,0,%35s,,effect measure of dispersion prioritised for outcome - arm 1
+30,value_prior_oa1em_central,str13,0,%13s,,priority_oa1em_central value
+31,value_prior_oa1em_dc,str14,0,%14s,,priority_oa1em_dc value
+32,oa2n,str10,0,%10s,,n for outcome - arm 2
+33,priority_oa2em_central,str37,0,%37s,,effect measure of central tendency prioritised for outcome - arm 2
+34,priority_oa2em_dc,str35,0,%35s,,effect measure of dispersion prioritised for outcome - arm 2
+35,value_prior_oa2em_central,str13,0,%13s,,priority_oa2em_central value
+36,value_prior_oa2em_dc,str14,0,%14s,,priority_oa2em_dc value
+37,oa3n,str9,0,%9s,,n for outcome - arm 3
+38,priority_oa3em_central,str5,0,%9s,,effect measure of central tendency prioritised for outcome - arm 3
+39,priority_oa3em_dc,str6,0,%9s,,effect measure of dispersion prioritised for outcome - arm 3
+40,value_prior_oa3em_central,str6,0,%9s,,priority_oa3em_central value
+41,value_prior_oa3em_dc,str12,0,%12s,,priority_oa3em_dc value
+42,oa4n,str2,0,%9s,,n for outcome - arm 4
+43,priority_oa4em_central,str4,0,%9s,,effect measure of central tendency prioritised for outcome - arm 4
+44,priority_oa4em_dc,str2,0,%9s,,effect measure of dispersion prioritised for outcome - arm 4
+45,value_prior_oa4em_central,str6,0,%9s,,priority_oa4em_central value
+46,value_prior_oa4em_dc,str5,0,%9s,,priority_oa4em_dc value
+47,oa5n,str2,0,%9s,,n for outcome - arm 5
+48,priority_oa5em_central,str4,0,%9s,,effect measure of central tendency prioritised for outcome - arm 5
+49,priority_oa5em_dc,str2,0,%9s,,effect measure of dispersion prioritised for outcome - arm 5
+50,value_prior_oa5em_central,str6,0,%9s,,priority_oa5em_central value
+51,value_prior_oa5em_dc,str6,0,%9s,,priority_oa5em_dc value

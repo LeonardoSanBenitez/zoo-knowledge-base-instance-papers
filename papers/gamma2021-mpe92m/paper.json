@@ -498,6 +498,11 @@
       "type": "zoo:sharesUnstatedAssumptionWith",
       "target": "maria2026-happiness-income-spread",
       "why": "Reciprocal of the above."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-mbp-variability-ratio",
+      "why": "Reciprocal. Third instance of the same shape in this corpus: a reported quantity turns out to be a property of a measurement decision rather than of the phenomenon. There the number of factors; here whether an intervention 'changes variability', which is decided by an unstated coupling assumption."
     }
   ],
   "open_questions": [

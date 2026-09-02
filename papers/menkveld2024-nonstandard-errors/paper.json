@@ -278,6 +278,11 @@
       "type": "cito:usesMethodIn",
       "target": "maria2026-happiness-income-spread",
       "why": "PROPOSED BY kb.py suggest, accepted on the method rather than the substance: Menkveld et al. adopt the interquartile range as the dispersion measure precisely because the cross-analyst distribution is heavy-tailed, and this record uses the same robust dispersion logic on a within-sample rather than a cross-analyst distribution."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "maria2026-mbp-variability-ratio",
+      "why": "Reciprocal. The choice of a dispersion measure is treated as technical in both literatures; here it reverses the conclusion, which argues that dispersion measures deserve the scrutiny given to point estimates."
     }
   ],
   "open_questions": [

@@ -1,0 +1,5 @@
+position,name,type,isnumeric,format,vallab,varlab
+1,studytab_name,str13,0,%13s,,Cluster RCT identified with author name and publication year
+2,nrclusters,int,1,%8.0g,,Total number of clusters in cluster RCT
+3,nrclustersa1,byte,1,%8.0g,,Number of clusters in arm 1
+4,nrclustersa2,byte,1,%8.0g,,Number of clusters in arm 2

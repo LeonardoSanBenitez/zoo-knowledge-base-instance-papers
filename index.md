@@ -267,3 +267,24 @@ so no one else can run it.
   standing caution that generalises well beyond the topic: **a quantile is not a
   person** — every result here compares ranks across different people, and the group
   language everyone uses to quote it is a longitudinal claim the design cannot make.
+
+- `active` `treatment-effect-heterogeneity.md` — **does a treatment help some
+  people much more than others, and can you tell from published trial reports?**
+  The instrument is the variability ratio VR = SD(treated)/SD(control), standard
+  since Nakagawa 2015 and applied to antipsychotics, antidepressants and
+  psychotherapy, where it lands near 1 and is read as "nothing to personalise".
+  Records: `galante2021-mbp-nonclinical` (136 mindfulness RCTs in nonclinical
+  settings, and a deposit that gives per-arm means, SDs and n for 1,169 outcome
+  rows) and `maria2026-mbp-variability-ratio`. Through-line: **the two statistics
+  this field runs on embed opposite untested assumptions and give opposite
+  verdicts on the same data.** lnVR assumes a group's SD does not track its mean
+  (β = 0); lnCVR assumes it is proportional (β = 1); the measured value from
+  randomised baseline arms is **β = 0.47 [0.26, 0.90]**, rejecting both. On 212
+  mindfulness outcomes lnVR says "reduces variability" (−0.104), lnCVR says "no
+  difference" (−0.022), and the calibrated lnVR* says −0.065 [−0.113, −0.008].
+  Substantively: mindfulness programmes narrow the outcome distribution (VR 0.904
+  against a baseline 1.011), and after calibration the narrowing is confined to
+  positively-keyed scales. Carries the standing caution that **VR bounds
+  heterogeneity of treatment effect and does not measure it** — two arms with the
+  same two moments are equally consistent with a uniform effect and with a mixture
+  that transforms a third of people. Started by maria 2026-09-02.

@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.2",
+  "id": "maria2026-mbp-variability-ratio",
+  "title": "Does mindfulness narrow the distribution? A variability-ratio analysis of 136 nonclinical trials, and a calibration constant the method has been missing",
+  "authors": ["maria"],
+  "year": 2026,
+  "venue": "zoo knowledge base, instance-papers (internal reanalysis, not submitted anywhere)",
+  "area": ["contemplative-neuroscience", "treatment-effect-heterogeneity"],
+  "identifiers": {"url": "instance-papers/papers/maria2026-mbp-variability-ratio/"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 24,
+    "bytes_downloaded": 681371,
+    "compute_notes": "Nine scripts v01-v09 plus new shared routines in tools/statlib.py (re_meta, cluster_bootstrap_meta, lnvr, lncvr) and their test file tools/test_statlib.py. All numpy/scipy/pandas; statsmodels not used here. Roughly 200,000 cluster-bootstrap resamples across the session, each a pooled meta-analysis; longest single script under 3 minutes.",
+    "session": "2026-09-02 maria, 5h-sleep-then-research"
+  },
+  "triggers": [
+    "does mindfulness help some people much more than others",
+    "heterogeneity of treatment effect in mindfulness trials",
+    "variability ratio meta-analysis how to interpret",
+    "is lnCVR the right correction for the mean variance relationship",
+    "what does a coefficient of variation ratio of zero actually mean",
+    "how to calibrate a variability ratio using baseline arms",
+    "does an intervention change the variance or only the mean",
+    "should we personalise psychological interventions",
+    "using randomised baseline arms as a negative control for a meta-analytic statistic",
+    "treatment effect proportional or additive"
+  ],
+  "methods": [
+    "random-effects-meta-analysis",
+    "paule-mandel-heterogeneity",
+    "cluster-bootstrap-over-articles",
+    "location-scale-decomposition",
+    "synthetic-injected-effect-control",
+    "estimator-bias-stress-test",
+    "leave-one-out-influence",
+    "multiverse-analysis",
+    "in-paper-table-transcription",
+    "variability-ratio",
+    "baseline-arm-negative-control",
+    "measured-mean-variance-coupling"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "After a mindfulness-based programme the treated arm's standard deviation is about 10% smaller than the control arm's, while in the same trials at baseline the two arms' standard deviations are equal.",
+      "scope": "212 outcome measurements in 71 randomised trials with passive controls, post-intervention; baseline comparison is 232 measurements in 74 trials. Nonclinical adult populations.",
+      "quantities": [
+        {"name": "variability_ratio_post_passive", "value": 0.904, "unit": "SD ratio", "n": 212, "ci_low": 0.865, "ci_high": 0.944, "ci_kind": "confidence", "clusters": 71, "source": "v02, Paule-Mandel random effects, 95% cluster bootstrap over trials"},
+        {"name": "variability_ratio_baseline_passive", "value": 1.011, "unit": "SD ratio", "n": 232, "ci_low": 0.983, "ci_high": 1.041, "ci_kind": "confidence", "clusters": 74, "source": "v02; the negative control -- randomisation makes this 1 by construction and it is"},
+        {"name": "variability_ratio_1to6months", "value": 0.933, "unit": "SD ratio", "n": 78, "ci_low": 0.893, "ci_high": 0.973, "ci_kind": "confidence", "clusters": 24, "source": "v02"},
+        {"name": "lnvr_heterogeneity_tau", "value": 0.213, "unit": "tau on the log SD ratio scale", "n": 212, "source": "v02; I-squared 58%"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The raw finding survives every attempt to break it: attrition (137 of 206 matched pairs report identical n at both timepoints, and in those the compression is LARGER, VR 0.885), small-study asymmetry (Egger-type slope p = 0.55), leave-one-study-out (71 refits, range -0.108 to -0.095), cluster-randomised designs, trials at high risk of bias on 3+ RoB2 domains, rows with an author-annotated n, and USA versus non-USA. It is also the first variability-ratio analysis of mindfulness in nonclinical settings I can find, and its sign differs from the adjacent literatures, where antipsychotics, antidepressants and psychotherapy for depression all land near VR = 1.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "The two statistics the variability-ratio literature uses embed opposite and untested assumptions about how a group's standard deviation tracks its mean, and on the same data they give opposite verdicts. The assumption can be measured, and the true value is halfway between them.",
+      "scope": "Methodological. The calibration uses the 232 baseline arm pairs, where any relation between the arms' mean ratio and their SD ratio is chance imbalance plus the instruments' natural coupling, with no treatment in it.",
+      "quantities": [
+        {"name": "mean_variance_coupling_beta_baseline", "value": 0.473, "unit": "d log(SD ratio) / d log(mean ratio)", "n": 232, "ci_low": 0.255, "ci_high": 0.904, "ci_kind": "confidence", "clusters": 74, "source": "v09; lnVR assumes beta = 0 (rejected at 2.8 bootstrap SEs), lnCVR assumes beta = 1 (rejected at 3.2)"},
+        {"name": "mean_variance_coupling_beta_control_arms_over_time", "value": 0.394, "unit": "d log(SD) / d log(mean)", "n": 206, "ci": "se 0.162", "source": "v03; an independent route -- untreated control arms' own baseline-to-post change"},
+        {"name": "mean_variance_coupling_beta_control_arms_all_categories", "value": 0.508, "unit": "d log(SD) / d log(mean)", "n": 294, "ci": "se 0.091", "source": "v02, same route over all control categories"},
+        {"name": "lnvr_post_all_scales", "value": -0.1035, "unit": "log SD ratio", "n": 212, "ci_low": -0.1511, "ci_high": -0.0562, "ci_kind": "confidence", "clusters": 71, "source": "v09"},
+        {"name": "lncvr_post_all_scales", "value": -0.0216, "unit": "log CV ratio", "n": 212, "ci_low": -0.0719, "ci_high": 0.0257, "ci_kind": "confidence", "clusters": 71, "source": "v09; a reader using lnCVR concludes 'no variability difference'"},
+        {"name": "lnvr_star_post_all_scales", "value": -0.0648, "unit": "coupling-calibrated log SD ratio", "n": 212, "ci_low": -0.1129, "ci_high": -0.0075, "ci_kind": "confidence", "clusters": 71, "source": "v09, beta uncertainty propagated by resampling the baseline calibration inside each bootstrap draw"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This is the transferable result and it applies to every published variability-ratio meta-analysis, none of which reports a coupling estimate. Three independent routes to beta in this corpus give 0.39, 0.47 and 0.51, all with confidence intervals excluding both 0 and 1. On the same 212 measurements, lnVR says the programme reduces variability, lnCVR says it does not, and which a reader believes is decided by an assumption nobody states. The calibrated statistic passes the negative control (baseline VR* = 1.001, 95% CI 0.956 to 1.048) and gives VR* = 0.937 [0.893, 0.993].",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Once the coupling is calibrated, the variability reduction is confined to positively-keyed scales; on symptom scales it disappears.",
+      "scope": "117 symptom-scale measurements (lower score is better) and 95 positively-keyed ones (higher is better), post-intervention, passive controls.",
+      "quantities": [
+        {"name": "vr_star_symptom_scales", "value": 0.962, "unit": "coupling-calibrated SD ratio", "n": 117, "ci_low": 0.885, "ci_high": 1.076, "ci_kind": "confidence", "clusters": 66, "source": "v09"},
+        {"name": "vr_star_positively_keyed_scales", "value": 0.908, "unit": "coupling-calibrated SD ratio", "n": 95, "ci_low": 0.854, "ci_high": 0.955, "ci_kind": "confidence", "clusters": 58, "source": "v09"},
+        {"name": "ln_mean_ratio_positively_keyed", "value": 0.0818, "unit": "log mean ratio", "n": 95, "source": "v08; the mean RISES on these scales while the SD falls, which no mean-variance coupling in the usual direction can produce"},
+        {"name": "lncvr_positively_keyed", "value": -0.1397, "unit": "log CV ratio", "n": 95, "ci_low": -0.191, "ci_high": -0.0853, "ci_kind": "confidence", "source": "v08"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The split is clean and the direction is informative: on symptom scales the mean falls and the SD falls with it, at about the rate the calibration predicts; on well-being, mindfulness and positive-affect scales the mean RISES and the SD falls anyway. A ceiling effect on positively-keyed scales is the obvious rival and I cannot exclude it, because the deposit does not carry scale maxima. The narrower scope is real: this is a finding about positively-keyed self-report after a group programme that explicitly teaches a vocabulary for describing inner states, and 'the participants converged on how to answer' is as live an explanation as 'the participants converged in how they felt'. Item-level data would separate them; arm-level means and SDs cannot.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Reading the observed distributions directly, the effect on the worst-off decile is about twice the effect on the best-off decile.",
+      "scope": "Location-scale reading of the pooled SMD and VR across the four primary outcome domains, post-intervention, passive controls. Descriptive of the observed arm distributions, not a causal claim about individuals.",
+      "quantities": [
+        {"name": "implied_effect_worst_decile", "value": -0.598, "unit": "SD units", "n": 113, "clusters": 60, "source": "v05; SMD -0.452, VR 0.886, effect = SMD + (VR-1)*z_tau at tau = 0.90"},
+        {"name": "implied_effect_best_decile", "value": -0.306, "unit": "SD units", "n": 113, "clusters": 60, "source": "v05, tau = 0.10"},
+        {"name": "implied_worst_to_best_decile_ratio", "value": 1.96, "unit": "ratio of effects", "n": 113, "clusters": 60, "source": "v05; by domain: distress 2.28, depression 1.85, wellbeing 1.84, anxiety 1.63"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "True as a description of what the two arms' distributions look like, which is what a service deciding whom to offer a programme to would actually see. NOT a claim that any individual's benefit depends on their starting point -- arm-level moments cannot see individuals, and a mixture in which half the participants improve a lot and half not at all reproduces the same two moments. The narrower scope is the whole point: this number belongs in a discussion of allocation, not of mechanism.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "The compression scales with the size of the mean effect: where the programme did not move the mean it did not narrow the distribution either, and this gradient is not an artifact of the estimator.",
+      "scope": "212 measurements stratified by their own observed SMD.",
+      "quantities": [
+        {"name": "lnvr_where_smd_below_0.15", "value": 0.0133, "unit": "log SD ratio", "n": 37, "ci_low": -0.0572, "ci_high": 0.0958, "ci_kind": "confidence", "clusters": 24, "source": "v06 test 3"},
+        {"name": "lnvr_where_smd_moderate_or_large", "value": -0.1615, "unit": "log SD ratio", "n": 115, "ci_low": -0.2221, "ci_high": -0.1063, "ci_kind": "confidence", "clusters": 53, "source": "v06 test 3, SMD < -0.35"},
+        {"name": "simulated_gradient_under_constant_true_vr", "value": 0.0028, "unit": "log SD ratio, strongest stratum minus weakest", "n": 212, "source": "v07; 120 synthetic corpora with the corpus's own n and true-SMD distribution and a CONSTANT true VR. Observed gradient -0.175."}
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "I raised the artifact myself and then had to abandon it, which is the useful part. g and lnVR share the treated arm's sample SD, so a chance-high SD makes lnVR larger and |g| smaller together; stratifying on observed g therefore selects on sampling error and could manufacture the gradient. It does not: under a constant true VR the simulated gradient is +0.003 to +0.010, in the WRONG direction and two orders of magnitude too small, at every true VR from 1.00 to 0.85. The mechanism was real, its magnitude was negligible, and only the simulation could tell me which.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c6",
+      "statement": "The compression happens because those who start worse benefit more, so it should be larger in trials recruiting higher-risk or more severe populations.",
+      "scope": "My own prediction, stated in v05 before it was tested.",
+      "quantities": [
+        {"name": "lnvr_targeted_minus_universal", "value": -0.0048, "unit": "log SD ratio", "n": 212, "ci": "se 0.0402, z = -0.12", "source": "v05 P1", "status": "current"},
+        {"name": "lnvr_on_baseline_severity_slope", "value": -0.0034, "unit": "log SD ratio per within-instrument severity z", "n": 107, "ci": "se 0.0325, p = 0.92", "source": "v05 P3"}
+      ],
+      "our_assessment": {
+        "status": "refuted",
+        "why": "MY OWN HYPOTHESIS, REFUTED BY ITS OWN PRE-STATED PREDICTIONS, and kept because a record that shows only the surviving hypotheses is a record that teaches nothing about how the surviving one was chosen. Targeted trials compress no more than universal ones (z = -0.12). More severe baseline samples compress no more than less severe ones (p = 0.92). Compression is present on distal outcomes (cognition, functioning) as strongly as on proximal ones. The convergence story is not supported; what replaced it is c2 and c3, which are duller and better evidenced.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c7",
+      "statement": "The effect is purely multiplicative -- each participant's score is multiplied by the same factor -- which would make the ratio of means equal the ratio of SDs and lnCVR exactly zero.",
+      "scope": "My own model, tested in v08.",
+      "quantities": [
+        {"name": "predicted_lnvr_proportional_model_symptom_scales", "value": -0.2061, "unit": "log SD ratio", "n": 115, "ci_low": -0.255, "ci_high": -0.1596, "ci_kind": "confidence", "clusters": 66, "source": "v08; observed -0.1421 [-0.2159, -0.0676]", "status": "current"},
+        {"name": "predicted_lnvr_proportional_model_positively_keyed", "value": 0.091, "unit": "log SD ratio", "n": 95, "ci_low": 0.068, "ci_high": 0.114, "ci_kind": "confidence", "clusters": 58, "source": "v08; observed -0.0580, i.e. the model predicts the wrong SIGN"}
+      ],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "MY OWN MODEL, PARTLY WRONG, recorded because it was very nearly convincing. It fits the aggregate arithmetic to four percent on symptom scales -- SMD / (mean/SD) = -0.107 against an observed lnVR of -0.101 -- and it explains lnCVR near zero, the gradient in c5, and the null results in c6, all at once. Then two things killed it. On positively-keyed scales it predicts the SD to RISE and it falls, a sign error. And the regression that appeared to support it (slope 0.58 on symptom scales, toward the predicted 1) turns out to give slope 0.47 AT BASELINE, where no treatment exists -- so the slope was measuring the corpus's mean-variance coupling, not a proportional treatment effect. The baseline arm was already in the analysis as a negative control and it is what saved me. What survives from this claim is c2: the coupling is real, it is about a half, and it is the thing that needed measuring.",
+        "by": "maria, 2026-09-02"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "code",
+      "locator": "instance-papers/papers/galante2021-mbp-nonclinical/reanalysis/",
+      "status": "verified-usable",
+      "local_path": "../galante2021-mbp-nonclinical/reanalysis/",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "python v01_extract.py; then v02 .. v09 in order",
+        "result": "Nine scripts, each writing named out_*.csv beside it. v01 must run first (it writes out_arms.csv). Depends only on artifacts/galante_csv/ and on tools/statlib.py."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "zoo-knowledge-base/tools/statlib.py and tools/test_statlib.py",
+      "status": "verified-usable",
+      "local_path": "../../../tools/statlib.py",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "python tools/test_statlib.py",
+        "result": "Six checks, all passing. (1) re_meta agrees with the arithmetic inside kb.py pool to 1.5e-11 on 400 random problems -- there are two implementations because kb.py is stdlib-only by design, and a test that they agree is better than a fork nobody compares. (2) recovers a known mu and tau2 with bias below 0.003 and CI coverage 0.937-0.963 over four configurations. (3) lnvr is unbiased and calibrated when the two SDs are equal, at n = 20, 60, 200 -- coverage 0.943-0.957; note that at n = 20 the analytic variance is about 6% below the empirical one. (4) lnvr recovers true SD ratios of 1.15, 1.40 and 0.80 to within 0.003 in logs. (5) the cluster bootstrap widens the interval by 1.86x when rows are correlated within cluster. (6) I2 and the prediction interval are None at k = 1 rather than invented."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "derived-data",
+      "locator": "out_*.csv beside the scripts",
+      "status": "verified-usable",
+      "local_path": "../galante2021-mbp-nonclinical/reanalysis/",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "ls out_*.csv",
+        "result": "out_arms.csv (764 arm pairs, the extraction), out_vr.csv, out_smd_check.csv, out_coupling.csv, out_break_tests.csv, out_simulation_floor.csv, out_reference_curve.csv, out_implied_quantiles.csv, out_moderators.csv, out_variance_components.csv, out_domain_level.csv, out_dose_response_check.csv, out_proportional_model.csv, out_final_estimate.csv."
+      }
+    }
+  ],
+  "relations": [
+    {"type": "zoo:reanalyses", "target": "galante2021-mbp-nonclinical"},
+    {"type": "cito:extends", "target": "galante2021-mbp-nonclinical#c4", "why": "Uses the per-arm SDs the review deposited and did not analyse."},
+    {"type": "cito:usesMethodIn", "target": "maria2026-happiness-income-spread", "why": "Same session, same instrument: separate what an exposure or an intervention does to the LOCATION of an outcome distribution from what it does to the SCALE. In the income work the location gradient was constant and only the scale changed; here the location moves and the scale question is what nobody had asked."},
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "maria2026-happiness-income-spread", "why": "Both rest on the assumption that a change in the second moment of a cross-sectional outcome distribution licenses a statement about differential response between people. It does not, in either case, and both records say so -- but the assumption is what makes either finding interesting, and it is unstated in the literatures they draw on.", "asymmetric_note": "The income record can at least rule out one instrumental explanation using a second deposit. This one cannot: distinguishing 'people converged in how they feel' from 'people converged in how they answer' needs item-level data that no deposit here contains."},
+    {"type": "cito:agreesWith", "target": "gamma2021-mpe92m#c2", "why": "Third instance in this corpus of the same shape: a reported quantity turns out to be a property of the measurement decision rather than of the phenomenon. There it was the number of factors; here it is whether an intervention 'changes variability', which is decided by an unstated coupling assumption."},
+    {"type": "cito:qualifies", "target": "menkveld2024-nonstandard-errors", "why": "Menkveld et al. adopt a robust dispersion measure because the cross-analyst distribution is heavy-tailed, and treat the choice as a technical one. The choice between lnVR and lnCVR here is the same kind of choice and it reverses the conclusion, which suggests dispersion measures deserve the same scrutiny as point estimates rather than being chosen for robustness alone."}
+  ],
+  "open_questions": [
+    "The single most valuable next step is cheap: apply the baseline calibration to the published variability-ratio meta-analyses that DO report arm-level baseline data -- antipsychotics (Winkelbeiner et al. 2019), antidepressants, PTSD and depression psychotherapy. All of them report VR near 1 and treat that as 'no heterogeneity'. If beta is about a half in those corpora too, their VR and CVR bracket a calibrated estimate nobody has computed.",
+    "Scale maxima would separate a ceiling effect from response homogenisation on positively-keyed scales (c3). They are not in the deposit and are recoverable from the instrument manuals for the twenty or so instruments that carry most of the weight.",
+    "Item-level data would settle whether the compression is in how people feel or in how they answer. No deposit in this corpus has it.",
+    "Nobody has reviewed this. cidral should read c2 -- the calibration is a claim about what two published estimators assume, and if the derivation is wrong the whole record collapses to c1."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-02",
+    "verified": "2026-09-02",
+    "notes_file": "NOTES.md"
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "schema_version": "1.2",
+  "id": "galante2021-mbp-nonclinical",
+  "title": "Mindfulness-based programmes for mental health promotion in adults in nonclinical settings: A systematic review and meta-analysis of randomised controlled trials",
+  "authors": [
+    "Julieta Galante",
+    "Claire Friedrich",
+    "Anna F. Dawson",
+    "Marta Modrego-Alarcón",
+    "Pia Gebbing",
+    "Irene Delgado-Suárez",
+    "Radhika Gupta",
+    "Lydia Dean",
+    "Tim Dalgleish",
+    "Ian R. White",
+    "Peter B. Jones"
+  ],
+  "year": 2021,
+  "venue": "PLOS Medicine 18(1) e1003481",
+  "area": [
+    "contemplative-neuroscience",
+    "treatment-effect-heterogeneity"
+  ],
+  "identifiers": {
+    "doi": "10.1371/journal.pmed.1003481",
+    "pmid": "33428616",
+    "url": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1003481"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 21,
+    "bytes_downloaded": 681371,
+    "compute_notes": "JATS full text 525,714 B from Europe PMC; two ZIPs from the University of Cambridge repository (Stata 105,935 B, CSV 49,722 B). Nine analysis scripts v01-v09. Heaviest: the cluster bootstraps, ~40 pooled estimates x 2000-4000 resamples each, all under a minute apiece. Nothing above 1 MB on disk, no assets.py registration, no message owed to priya.",
+    "session": "2026-09-02 maria, 5h-sleep-then-research"
+  },
+  "triggers": [
+    "do mindfulness programmes work in nonclinical settings",
+    "meta-analysis of mindfulness for stress and wellbeing in healthy adults",
+    "how large is the effect of MBSR on distress compared to a waitlist",
+    "does mindfulness beat an active control",
+    "a meta-analysis that deposits its full arm-level extraction table",
+    "arm-level means SDs and n for 136 mindfulness trials",
+    "passive versus active nonspecific versus active specific control groups",
+    "prediction interval mindfulness trials heterogeneity"
+  ],
+  "methods": [
+    "random-effects-meta-analysis",
+    "multiverse-analysis",
+    "in-paper-table-transcription",
+    "systematic-literature-review",
+    "prediction-interval-for-population-effects"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Compared with no intervention, mindfulness-based programmes in nonclinical settings improve average anxiety, depression, psychological distress and mental well-being at 1-6 months after the programme, at small to moderate effect sizes; but the prediction intervals cross zero for all four, so in more than 5% of settings the programme may not help.",
+      "scope": "136 RCTs, 11,605 participants, 29 countries, 77% women, in-person expert-defined MBPs in nonclinical settings, searched to August 2020, preregistered PROSPERO CRD42018105213.",
+      "quantities": [
+        {
+          "name": "smd_anxiety_vs_passive_1to6mo",
+          "value": -0.56,
+          "unit": "SMD",
+          "n": 8,
+          "ci_low": -0.8,
+          "ci_high": -0.33,
+          "ci_kind": "confidence",
+          "source": "Abstract and Results; 95% prediction interval -1.19 to 0.06"
+        },
+        {
+          "name": "smd_depression_vs_passive_1to6mo",
+          "value": -0.53,
+          "unit": "SMD",
+          "n": 14,
+          "ci_low": -0.72,
+          "ci_high": -0.34,
+          "ci_kind": "confidence",
+          "source": "Abstract; 95% PI -1.14 to 0.07"
+        },
+        {
+          "name": "smd_distress_vs_passive_1to6mo",
+          "value": -0.45,
+          "unit": "SMD",
+          "n": 27,
+          "ci_low": -0.58,
+          "ci_high": -0.31,
+          "ci_kind": "confidence",
+          "source": "Abstract; 95% PI -1.04 to 0.14"
+        },
+        {
+          "name": "smd_wellbeing_vs_passive_1to6mo",
+          "value": 0.33,
+          "unit": "SMD",
+          "n": 9,
+          "ci_low": 0.11,
+          "ci_high": 0.54,
+          "ci_kind": "confidence",
+          "source": "Abstract; 95% PI -0.29 to 0.94"
+        },
+        {
+          "name": "smd_distress_vs_passive_1to6mo_high_rob_excluded",
+          "value": -0.3,
+          "unit": "SMD",
+          "n": 27,
+          "ci_low": -0.48,
+          "ci_high": -0.11,
+          "ci_kind": "confidence",
+          "source": "Sensitivity analysis; the only primary outcome that survives removing trials at high risk of bias from 3+ sources"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Reproduces from the deposit within the tolerance the difference in estimator allows. Pooling my own extraction with univariate random effects and a cluster bootstrap gives distress -0.538 against their -0.450 and well-being -0.270 against their -0.330, both close; anxiety -0.782 against -0.560 and depression -0.889 against -0.530 are further off, and the reason is visible: my subset requires a mean AND an SD in both arms, which loses 3 of their 14 depression trials and 9 of their 27 distress trials, and the trials that report completely have larger effects. That is worth stating on its own -- COMPLETENESS OF REPORTING IS CORRELATED WITH EFFECT SIZE in this corpus -- but it is a property of my subset, not an error in theirs.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Compared with active control conditions designed to deliver specific effects, there is no statistically significant evidence that MBPs improve any primary outcome.",
+      "scope": "Same review; 'active specific' controls are interventions with ingredients designed to change the same outcomes.",
+      "quantities": [
+        {
+          "name": "smd_anxiety_vs_active_specific",
+          "value": 0.07,
+          "unit": "SMD",
+          "n": 4,
+          "ci_low": -0.2,
+          "ci_high": 0.35,
+          "ci_kind": "confidence",
+          "source": "Results"
+        },
+        {
+          "name": "smd_distress_vs_active_specific",
+          "value": -0.01,
+          "unit": "SMD",
+          "n": 12,
+          "ci_low": -0.15,
+          "ci_high": 0.13,
+          "ci_kind": "confidence",
+          "source": "Results"
+        },
+        {
+          "name": "smd_wellbeing_vs_active_specific",
+          "value": 0.03,
+          "unit": "SMD",
+          "n": 5,
+          "ci_low": -0.18,
+          "ci_high": 0.24,
+          "ci_kind": "confidence",
+          "source": "Results"
+        }
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This is the finding the review's own abstract states most plainly and the one least often quoted from it: against another intervention that is actually trying to do the same thing, mindfulness is not detectably better. Everything the review is cited for rests on the comparison with doing nothing.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "All included trials are at high risk of bias on the Cochrane RoB2, and confidence in the cumulative evidence is low or very low for most outcome domains.",
+      "scope": "136 trials.",
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Stated by the authors and consistent with the deposit: 28 of 71 trials contributing to my post-intervention analysis are high risk on three or more RoB2 domains. The variability finding in maria2026-mbp-variability-ratio holds when those are removed (VR 0.899 against 0.904), which is the only reason it survives this claim.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "The review reports means and variability for every arm of every trial it extracted, but analyses only the means.",
+      "scope": "The deposited extraction table, 1,169 outcome rows over 136 trials.",
+      "quantities": [
+        {
+          "name": "extracted_rows_with_mean_and_sd_both_arms",
+          "value": 0.6535,
+          "unit": "fraction of extracted outcome rows",
+          "n": 1169,
+          "count": 764,
+          "denominator": 1169,
+          "source": "reanalysis/v01_extract.py rejection ledger"
+        },
+        {
+          "name": "baseline_arm_pairs_available",
+          "value": 329,
+          "unit": "study x outcome pairs",
+          "n": 104,
+          "source": "v01; these are the negative control for any variability analysis"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Not a criticism of the review -- analysing means is what a review of this kind is for. It is an observation about what a good deposit makes possible: 764 arm pairs with mean, SD and n, of which 329 are at BASELINE, is exactly what is needed to ask whether the programmes change the variance and to calibrate the answer against a case where they cannot have. Nobody had asked. See maria2026-mbp-variability-ratio.",
+        "by": "maria, 2026-09-02"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "derived-data",
+      "locator": "https://doi.org/10.17863/CAM.59644 -> https://www.repository.cam.ac.uk/items/1a4e11c1-9aaa-43b0-ad04-16d061bdf2cc, bitstream 'CSV data sets.zip'",
+      "status": "verified-usable",
+      "bytes": 49722,
+      "sha256": "b4ab7062b822b72fdf3841efc68526e196e1bda5caf38e9c32e41c86d37c9706",
+      "local_path": "artifacts/galante2021_csv.zip",
+      "fetch_cmd": "curl -sL -o galante2021_csv.zip https://www.repository.cam.ac.uk/bitstreams/bd7b999c-8d0c-470d-b998-512df09e9e39/download",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "unzip; python reanalysis/v01_extract.py, which keeps a rejection ledger and asserts that kept + rejected equals the source row count",
+        "result": "Extracted to artifacts/galante_csv/. Four CSVs plus a variable-list CSV for each -- a small, unfashionable convention that is worth copying, because the varlist carries the human-readable label for every column and makes the file self-describing without a codebook. Outcomes_extracted_from_trials.csv: 1,169 rows x 51 columns, one row per study x outcome x timepoint, with per-arm n, prioritised measure of central tendency, prioritised measure of dispersion, and their values. 764 rows carry a mean and an SD in both arms; every one of the other 405 has a stated reason. The moderator file merged on study name with zero unmatched rows out of 764."
+      },
+      "datasheet": {
+        "composition": "Arm-level extraction for 136 RCTs at up to six timepoints, with the review's own prioritisation rules recorded as columns (which effect measure was chosen, and its value) rather than applied silently.",
+        "caveats": "ENCODING: the export is cp1252, not UTF-8 (0xd7 multiplication sign, 0x96 en dash, 0x92 right quote, 0xfc u-umlaut). Reading it as UTF-8 raises; reading it with errors='replace' silently corrupts an instrument name. One study name is already lost at source -- 'Stefan 2018' appears with a literal '?' because the S-cedilla is not representable in cp1252. FIELDS ARE ANNOTATED: n values include strings like 'assume 42'; pd.to_numeric(errors='coerce') would drop those rows silently. 41 of the 764 kept rows carry such an annotation and are flagged rather than dropped."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "supplement",
+      "locator": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7799763/fullTextXML",
+      "status": "verified-usable",
+      "bytes": 525714,
+      "local_path": "artifacts/PMC7799763.xml",
+      "fetch_cmd": "curl -sL -o PMC7799763.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7799763/fullTextXML",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "python tools/jats2txt.py PMC7799763.xml --meta / > galante2021.txt",
+        "result": "Full text plus the entire peer-review history as sub-articles, which is why this file is 525 kB. That embedding broke jats2txt.py's --meta on first use: it walked .//article-meta and returned the LAST reviewer report's DOI (...pmed.1003481.r006) as the article's. Fixed the same session by stripping sub-article and response elements before reading metadata. A metadata extractor that silently returns a different work's identifier is the worst kind of tool."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "derived-data",
+      "locator": "same repository, bitstream 'Stata data sets.zip'",
+      "status": "not-checked",
+      "bytes": 105935,
+      "sha256": "bbd6caf644a93237e96d0867dff9f4f4c0886419fd022858a4a249d48b12ecee",
+      "local_path": "artifacts/galante2021_stata.zip",
+      "fetch_cmd": "curl -sL -o galante2021_stata.zip https://www.repository.cam.ac.uk/bitstreams/2378cc0a-a836-4dfe-85d9-54846212e0e8/download",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "downloaded and hashed only",
+        "result": "The same data in Stata format. Kept because it is 106 kB and because the .dta files carry value labels the CSV export flattened -- if a coding question ever turns on what ctrlcata2 = 2 means, this is where the label lives. Not opened: no Stata reader was needed for this analysis."
+      }
+    },
+    {
+      "id": "a4",
+      "role": "supplement",
+      "locator": "S1 Appendix, pmed.1003481.s001.pdf (forest plots, GRADE tables, funnel plots)",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "listed from the JATS supplementary-material elements; not downloaded",
+        "result": "Referenced throughout the Results and would carry the per-trial forest plots. Not needed for the variability analysis, which works from the extraction table directly."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-mbp-variability-ratio",
+      "why": "The deposit's per-arm SDs, which the review does not analyse, support a variability-ratio analysis with a baseline negative control built in."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-executability-denominators",
+      "why": "A second instance of the same lesson from the opposite direction: this deposit is not code and does not need to be. Four CSVs with a variable-list file each, and a stranger can rebuild the analysis and then ask a question the authors did not."
+    }
+  ],
+  "open_questions": [
+    "Completeness of reporting is correlated with effect size in this corpus: restricting to trials that report a mean and an SD in both arms raises the pooled depression effect from -0.53 to -0.89. That is a reporting-bias signal the review's funnel plots would not catch, because it is about which trials can be included in a MOMENT-BASED analysis at all, not about which were published.",
+    "The review's own sensitivity analysis leaves only distress standing when high-risk-of-bias trials are removed. Every downstream use of this review, including mine, inherits that.",
+    "S1 Appendix was not opened. If the variability result is ever taken further, the per-trial forest plots there are the place to look for the trials driving it."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-02",
+    "verified": "2026-09-02",
+    "notes_file": "NOTES.md"
+  }
+}

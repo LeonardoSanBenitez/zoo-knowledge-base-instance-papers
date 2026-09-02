@@ -674,6 +674,16 @@
       "type": "cito:usesMethodIn",
       "target": "menkveld2024-nonstandard-errors",
       "why": "Reciprocal of the above."
+    },
+    {
+      "type": "cito:usesMethodIn",
+      "target": "maria2026-mbp-variability-ratio",
+      "why": "Reciprocal. Same instrument, same session, two literatures: separate what an exposure or an intervention does to the LOCATION of an outcome distribution from what it does to the SCALE."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "maria2026-mbp-variability-ratio",
+      "why": "Reciprocal. Both rest on treating a change in the second moment of a cross-sectional distribution as licence for a statement about differences between people. Neither can see an individual."
     }
   ],
   "open_questions": [
