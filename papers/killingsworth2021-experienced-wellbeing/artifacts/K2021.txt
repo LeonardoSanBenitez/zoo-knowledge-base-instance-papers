@@ -1,0 +1,244 @@
+# Experienced well-being rises with income, even above $75,000 per year
+
+Proceedings of the National Academy of Sciences of the United States of America (2021) doi:10.1073/pnas.2016976118
+
+## Abstract
+SignificancePast research has found that experienced well-being does not increase above incomes of $75,000/y. This finding has been the focus of substantial attention from researchers and the general public, yet is based on a dataset with a measure of experienced well-being that may or may not be indicative of actual emotional experience (retrospective, dichotomous reports). Here, over one million real-time reports of experienced well-being from a large US sample show evidence that experienced well-being rises linearly with log income, with an equally steep slope above $80,000 as below it. This suggests that higher incomes may still have potential to improve people’s day-to-day well-being, rather than having already reached a plateau for many people in wealthy countries.Keywords: well-being, happiness, income, satiation, experience sampling
+
+Does earning more money lead to greater well-being? This is one of the most enduring questions in the science of human well-being, with relevance to individuals making trade-offs between income and other life goals, employers determining wages for employees, and institutions influencing economic policy. Although an abundance of research suggests a positive relationship between income and well-being in general, at least two important and interrelated questions remain about the nature of this relationship. A first question concerns the shape of the relationship between income and well-being across income levels: Does income stop mattering above some modest threshold, or is higher income associated with greater well-being across a wide range of income levels? A second question concerns the degree to which income specifically affects certain aspects of well-being: Does income primarily affect people’s evaluations of their lives (evaluative well-being), or does it also affect how people feel during the day-to-day moments of their lives (experienced well-being)?
+
+Almost all studies in the sizable literature on income and well-being examine evaluative well-being. Evaluative well-being is a person’s summary evaluation of their life, such as overall life satisfaction. These studies show that people with larger incomes tend to report greater evaluative well-being ([1]–[10]). They also show that the relationship between income and evaluative well-being is best described as logarithmic ([4], [10], [11]). By contrast, just a handful of studies have examined the relationship between income and experienced well-being ([11]–[14]), which is how good or bad a person feels during the moments of their life.
+
+One highly influential study compared evaluative and experienced well-being and their associations to income in the United States and found a striking difference: While evaluative well-being rose across the entire measured income range, experienced well-being did not ([11]). For incomes below $75,000, larger incomes were associated with greater experienced well-being, but beyond $75,000, there was no further improvement. A similar conclusion was reached in a more recent, global analysis of the same dataset, with a plateau for experienced well-being around $75,000, and a plateau for evaluative well-being at higher income levels ([12]). One interpretation of this result is that incomes below $75,000 allow people to satisfy basic needs, leading to concrete improvements in their daily experiences, but that beyond this point, income only matters when people stop and reflect on their lives. A possible implication is that, beyond $75,000, money is just a way of “keeping score” in life, and there might be little reason to care about further increases in income as far as one’s day-to-day experiences are concerned. The resulting threshold of $75,000/y has been influential in shaping scientific and popular understanding of the relationship between income and well-being, and the existence of such a plateau has substantial implications for individual and collective decision-making—but is it accurate?
+
+The challenge to studying experienced well-being at the scale needed to understand its relationship to income is measuring it. Evaluative well-being can be easily measured using ordinary surveys. To directly measure experienced well-being requires collecting real-time data in in the midst of people’s everyday lives, and this has until recently been infeasible to do at scale. Instead, researchers have used surveys to ask people how they remember feeling during some period in the past, such as the last day, week, or month. This requires people to accurately remember how they felt across the various moments of the past and then accurately integrate those memories into a single estimate, an approach that is vulnerable to memory errors and biases in judgment ([15]–[17]). Current evidence, including the original study finding a $75,000/y plateau in experienced well-being, tells us what the relationship is between income and remembered feelings, which may or may not be indicative of the association between income and actual emotional experience. In particular, relying on remembered feelings might inflate the apparent correspondence between evaluative well-being and experienced well-being, since making a summary judgment of how one felt on average over some time period in the past invokes a judgment process similar to evaluative well-being. At the extreme, this leaves open the possibility that, despite its association with remembered feelings, income could have little or no association with people’s actual experienced well-being as they live their lives. Remembered feelings might also introduce noise or forms of bias that artificially mute its association to income, such that actual experienced well-being could have a stronger association to income. The true relationship between income and experienced well-being could therefore be considerably stronger or considerably weaker than currently thought, and a plateau might exist at a different income level or not exist at all.
+
+The present investigation used smartphones to collect real-time reports of experienced well-being and examined its relationship to household income in the United States. Specifically, it compared experienced and evaluative well-being across the income spectrum using an experienced well-being measure that was 1) measured in real-time (minimizing errors of memory), 2) measured on a continuous scale (allowing ample room for variation), and 3) measured on dozens of separate occasions per person (providing a less noisy estimate of person’s experienced well-being than a single measurement occasion, and permitting mathematical aggregation of experienced well-being rather than relying on people to accurately aggregate their memories into a single estimate). Additionally, 4) it used a comparable scale for both experienced and evaluative well-being (allowing results to be directly compared without confounding differences in scale design) and 5) it included a large number of high-earning participants, and measured higher incomes in granular increments (informing an income trend line that extends higher than most studies). These features offer a number of methodological improvements over the study finding a $75,000 plateau in experienced well-being ([11]), which was based on a dichotomous (Yes/No) experienced well-being measure, measured emotions retrospectively for yesterday, on a single occasion, with large differences in scale design between evaluative well-being and experienced well-being (a 10-level scale vs. a dichotomous scale, respectively), and which pooled incomes above $120,000/y.
+
+Data are from http://trackyourhappiness.org ([18]), a large-scale project using the experience sampling method ([19], [20]), in which participants’ smartphones were signaled at randomly timed moments during their waking hours and prompted to answer questions about their experience at the moment just before the signal. The present results are based on 1,725,994 reports of experienced well-being from 33,391 employed, working-age adults (ages 18 to 65) living in the United States. Experienced well-being was measured with the question “How do you feel right now?” on a continuous response scale with endpoints labeled “Very bad” and “Very good,” while evaluative well-being was measured with the question, “Overall, how satisfied are you with your life?” on a continuous response scale with endpoints labeled “Not at all” and “Extremely.” Household income was measured with the question, “What is your total annual household income before taxes?,” with answers collected in defined income bands. In accordance with past research showing that the relationship between income and well-being is best described as logarithmic ([4], [10], [11]), income values were log transformed for regression analyses and untransformed income values were plotted on a log-scaled axis for visualization.
+
+
+## Results and Discussion
+
+
+What was the observed relationship between income and well-being? Larger incomes were robustly associated with both greater experienced well-being and greater evaluative well-being. Moreover, the shape of the relationship between log(income) and experienced well-being was strikingly linear: There was no observed plateau in experienced well-being, and there was no obvious change in slope of experienced well-being or divergence between experienced well-being and evaluative well-being, either around $75,000/y or at any other income level ([Fig. 1]). Regression results confirm that people with larger incomes reported both higher levels of evaluative well-being and higher levels of experienced well-being (both values of P < 0.00001).
+
+
+[FIG Fig. 1.] Mean levels of experienced well-being (real-time feeling reports on a good–bad continuum) and evaluative well-being (overall life satisfaction) for each income band. Income axis is log transformed. Figure includes only data from people who completed both measures.
+
+
+To formally assess whether experienced well-being plateaued around incomes of $75,000/y, the association between income and experienced well-being was analyzed separately for incomes below and above $80,000/y (the upper bound of the income band containing $75,000). Results showed that the slope of the association between log(income) and experienced well-being was virtually identical for incomes below and up to $80,000/y (b = 0.109, P < 0.00001) as it was for incomes larger than $80,000/y (b = 0.110, P < 0.00001). Although both forms of well-being rose linearly with log(income), the correlation was stronger for evaluative well-being (r = 0.17) than experienced well-being (r = 0.09, Pdifference < 0.00001).
+
+Are larger incomes associated with feeling more good, less bad, or both? Since the primary measure of experienced well-being in this study combined good and bad feelings on one scale, different measures are needed to distinguish these effects. An existing study of experienced well-being in the United States measuring remembered feelings found that larger incomes were associated with lower levels of “sadness” but no difference in “happiness” ([13]), while a replication in a German sample measuring eight specific remembered feelings found the same result for sadness but mixed results overall ([14]). To investigate the relationship between income and the positive and negative aspects of experienced well-being separately, real-time levels of a variety of positive feelings (confident, good, inspired, interested, and proud) and negative feelings (afraid, angry, bad, bored, sad, stressed, and upset) were measured. These were secondary measures and collected at a lower volume than the primary experienced well-being measure (around 50,000 responses per feeling; see SI Appendix, Table S1 for details).
+
+Regression results for each of the 12 feelings across the income spectrum showed that larger incomes were associated with significantly higher levels of all positive feelings and significantly lower levels of all negative feelings (all values of P < 0.00001, except Pstressed = 0.048 and Pangry = 0.00032; see SI Appendix, Table S2 for details, and see [Fig. 2] for a plot of income vs. the composite averages of positive and negative feelings).
+
+
+[FIG Fig. 2.] Mean levels of positive feelings (Positive Feelings is the average of confident, good, inspired, interested, and proud) and negative feelings (Negative Feelings is the average of afraid, angry, bad, bored, sad, stressed, and upset) for each income band.
+
+
+For incomes up to $80,000/y, larger incomes were associated with significantly higher levels of four of the five positive feelings (confident, good, interested, and proud) and significantly lower levels of all negative feelings (afraid, angry, bad, bored, sad, stressed, and upset). Above $80,000/y, larger incomes were associated with significantly higher levels of all positive feelings (confident, good, inspired, interested, and proud) and significantly lower levels of four of the seven negative feelings (bad, bored, sad, and upset; see SI Appendix, Table S2 for details). There was some evidence that larger incomes for lower earners disproportionately reduced negative feelings, while larger incomes for higher earners disproportionately increased positive feelings (SI Appendix, Table S3). Multilevel regression results found a significant three-way interaction (P = 0.0015) between income, income category (above vs. below $80,000), and feeling valence (positive vs. negative), indicating that differences in income below $80,000 were comparatively stronger in reducing negative feelings, while differences in income above $80,000 were comparatively stronger in increasing positive feelings (SI Appendix, Table S4). Multilevel regressions that aggregate across specific feelings within-valence show that, overall, both positive and negative feelings improved with larger incomes, whether analyzed across the income range or analyzed separately for incomes below and above $80,000 (all values of P < 0.00001; see SI Appendix for details).
+
+Just as results for experienced well-being replicated across multiple measures, results for evaluative well-being did as well. Alternate measures of evaluative well-being, including the five-item Satisfaction With Life Scale ([21]) and a single-item, four-level life satisfaction measure similar to ones used in large population surveys, showed a linear rise with log(income) (both values of P < 0.00001; see SI Appendix, Fig. S1). These measures were collected on an intake survey prior to and on a separate occasion from any experience sampling data collection, as well as being asked prior to any questions about income.
+
+Why might the current results find a linear relationship between experienced well-being and log(income), when some past research has found a plateau around $75,000 ([11], [12])? The current study possesses a number of methodological differences that may have contributed to this, including measuring experienced well-being in real-time. A basic difference that might specifically explain the absence vs. presence of a plateau, however, is the scale used to measure experienced well-being. The two studies finding a plateau both used a dichotomous (binary) measure of experienced well-being, which means there is no room left to register improvements once the higher of the two levels is registered. In both studies finding a plateau, over 70% of responses from people with the lowest level of income were already registering the highest possible level of positive feelings, and this proportion was well above 80% for upper income levels. With almost all responses at the response ceiling, it is possible that a considerable fraction of the people earning incomes above $75,000 experienced greater positive feelings than people who earned less, but there was no room in the scale left to detect it. The current study used a continuous scale to measure experienced well-being, such that only 5.5% of responses were at the response ceiling. Moreover, the repeated measurement approach meant that even if people were at the response ceiling on a single occasion, that response was averaged with many of other measurement occasions for analysis, such that less than 0.5% of people in any income group had experienced well-being equal to the response ceiling, on average. As a result, the current study had ample headroom to detect variation in experienced well-being above $75,000, while studies finding a plateau did not, which could explain the difference in results (see SI Appendix for additional discussion of this question).
+
+A major advantage of the current study is its use of experience sampling to collect a large number of repeated, real-time reports of experienced well-being in a large number of participants. A trade-off of this highly intensive method of data collection is participant recruitment: No experience sampling study of which I am aware has ever employed a representative sample, and the present study is no exception. The result is a significant advantage over previous studies in the quality of measurement of experienced well-being but a potential disadvantage when it comes to the representativeness of the sample of people being studied. Nevertheless, there is reason to expect the results from this sample to generalize to the population as a whole.
+
+One way to assess the extent to which results from the current sample are generalizable is to assess the degree to which the current sample of people “behave like” a representative sample in terms of key variables that are shared across the current study and previous studies of representative samples. One such variable is evaluative well-being, which can be effectively measured without experience sampling and whose relationship with income has been widely studied in representative samples. Results from representative samples in the United States and around the world generally find that evaluative well-being rises approximately linearly with log(income), without a plateau ([10]). The 2010 study finding a plateau in experienced well-being likewise found that evaluative well-being rose linearly with log(income), without a plateau ([11]). In the current study, evaluative well-being rose linearly with log(income), without a plateau ([Fig. 1] and SI Appendix, Fig. S1), following the same trajectory that has been repeatedly observed in representative samples [although see one recent exception ([12])]. This suggests that the general form of the relationship between well-being and income found here matches the population as a whole, and offers a reason to expect results for experienced well-being to generalize as well. Additionally, while the sample was not recruited with the intent of being representative, the actual distribution of incomes values is a close match to the US census distribution (SI Appendix, Table S8). Finally, after controlling for other demographic variables, including age, gender, marriage, and education level, the relationship between income and experienced well-being remains statistically significant and with a majority of the effect intact, including when analyzed across all income levels, below and up to $80,000, and above $80,000 (all values of P < 0.00001; SI Appendix, Table S9). A concern that sample bias might explain the current results seems even less plausible after a close inspection of the relationship between well-being and income. If the sample just happened to include some unusually happy people with large incomes, there are many possible patterns of results that this could generate, most of which would be noisy patterns even if they did trend upward overall. The actual results from this study, however, show an almost perfectly linear relationship between well-being and log(income), as shown in [Fig. 1] and SI Appendix, Fig. S1. Accordingly, if sample bias were the explanation for this study’s results, the sample would have to be biased in exactly the way necessary to produce the linear relationship that is observed between well-being and log(income). This is not strictly impossible, but it seems highly improbable.
+
+Do the present data offer any insight into why income is correlated with well-being? The answer to this question is necessarily speculative, since the factors linking well-being to income are likely numerous, complex, and interrelated. One possibility is that people spend money to reduce suffering and increase enjoyment, and that marginal dollars are differentially deployed against these aims depending on one’s income. The difference between positive and negative feelings described above provides some evidence in favor of this: Compared to variation in incomes above $80,000, larger incomes below $80,000 had a stronger association with reduced negative feelings, consistent with the possibility that moving from low to moderate income might be especially useful in avoiding (or mitigating) causes of suffering. Perhaps low earners have many avoidable sources of suffering, but as one earns more, there are fewer sources of suffering whose avoidance can be purchased. In contrast, positive feelings rose more evenly across the entire income range, and even had a directionally steeper association with income above $80,000. Another possibility, not incompatible with the first, is that larger incomes give people more control over their lives. People’s sense of control, measured with the question “To what extent do you feel in control of your life?,” was able to account for 74% of the association between income and experienced well-being (b = 0.105 with no covariates vs. b = 0.027 with sense of control over one’s life as a covariate, in the same participants, Pmediation < 0.00001). Financial insecurity, measured with the question “Did you have trouble coping with regular bills during the last 15 days?,” also played a role and was able to account for 38% of the association between income and experienced well-being (Pmediation < 0.00001). Although higher incomes could hypothetically allow a person to “buy” more time and feel less rushed ([22]), time poverty, measured with the question, “Do you have too little time to do what you’re currently doing?,” actually increased with income (P < 0.00001). It was a small but significantly negative mediator of the association between income and experienced well-being (Pmediation < 0.00001), such that the association between income and experienced well-being was significantly steeper when time poverty was held constant.
+
+There was also evidence that the strength of the association between income and experienced well-being was systematically larger for some people and smaller for others. The importance of money, measured with the question “To what extent is money important to you?,” was only modestly related to income (r = 0.12, P < 0.00001) yet had a sizable statistical interaction with income in predicting experienced well-being (P < 0.00001). Based on the size of the interaction term, results estimate that the association between income and experienced well-being was over four times as steep when comparing people 1 SD above vs. 1 SD below the mean in money importance (b+1SD = 0.149 vs. b−1SD = 0.035). Whether people who rate money as relatively unimportant simply do not care about money, have found that “the best things in life are free,” or have tried and failed to spend money to improve their lives is unclear, but this result shows that there is something systematic causing income to matter more for some people’s well-being than for others. The importance of money on its own was virtually unrelated to experienced well-being (r = 0.02, P = 0.06), so it was not better or worse overall to think money was important; instead, low earners were happier if they thought money was unimportant and high earners were happier if they thought money was important. A question that asked participants “To what extent do you think money is indicative of success in life?” similarly showed that the association between income and well-being was steeper for people who equated money and success (P < 0.00001). Unlike money importance, however, the more people equated money and success, the lower their experienced well-being was on average (P < 0.00001), and there did not appear to be any income level at which equating money and success was associated with greater experienced well-being. Detailed results for these and other mediators and moderators are available in SI Appendix, including SI Appendix, Tables S5 and S6.
+
+When interpreting these results, it bears repeating that well-being rose approximately linearly with log(income), not raw income. This means that two households earning $20,000 and $60,000, respectively, would be expected to exhibit the same difference in well-being as two households earning $60,000 and $180,000, respectively. The logarithmic relationship implies that marginal dollars do matter less the more one earns, while proportional differences in income have a constant association with well-being regardless of income.
+
+Taken together, the current results show that larger incomes were robustly associated with greater well-being. Contrary to past research, there was no evidence for a plateau around $75,000, with experienced well-being instead continuing to climb across the income range. There was also no income threshold at which experienced and evaluative well-being diverged; instead, higher incomes were associated with both feeling better moment-to-moment and being more satisfied with life overall. While there may be some point beyond which money loses its power to improve well-being, the current results suggest that point may lie higher than previously thought.
+
+
+## Materials and Methods
+
+
+
+### Sample Information.
+
+
+Participants were 33,391 employed adults living in the United States; median age was 33; median household income was $85,000/y (25th percentile = $45,000; 75th percentile = $137,500; mean = $106,548; SD = $95,393); 36% were male; and 37% were married. To reduce confounding effects on the association between income and well-being such as unemployment, retirement, and family income transfers, participants were restricted to employed adults living in the United States of working age (18 to 65) who reported household incomes of at least $10,000/y (see [Table 1] for a results comparison to an unrestricted US sample).
+
+
+[TABLE Table 1.] The association between experienced well-being and household income
+
+    	1) Main results	2) Only people with life satisfaction data	3) All cases
+
+    Overall slope	0.113[****]	0.121[****]	0.091[****]
+
+    Slope up to $80,000	0.109[****]	0.130[****]	0.076[****]
+
+    Slope above $80,000	0.110[****]	0.129[****]	0.101[****]
+
+    No. of people	33,391	17,253	41,319
+
+    No. of observations	1,725,994	1,292,642	2,100,828
+
+    (foot) ​Table 1​ compares 1) results reported in body of paper (employed, working age, US adults with household income of at least $10,000/y); 2) results for the subsample of 1) who also had data for the equivalently constructed life satisfaction measure, which is the basis for ​[Fig. 1]​; 3) a completely unrestricted US sample (the United States was the primary country surveyed and the only country with income data available). In all cases, experienced well-being rose significantly with income, with a log(income):experienced well-being slope that was statistically significantly positive both below and above $80,000/y, and approximately as steep above $80,000/y as below it.****P < 0.00001.
+
+
+### Experience Sampling Procedure.
+
+
+After provided informed consent, participants completed an intake survey, which included demographic questions as well as two measures of life satisfaction, as detailed below, amongst other questions. Participants were next asked to indicate the times at which they typically woke up and went to sleep, and how many times during the day they wished to report on their experiences (default = 3). A computer algorithm then divided each participant’s day into a number of intervals equal to the number of desired reports, and a random time was chosen within each interval. New random times were generated each day, and the times were independently randomized for each participant. At each of these times, participants were signaled via a notification on their smartphone, asking them to respond to a variety of questions about their experiences at the moment just before the signal. The primary experienced well-being question was asked in every survey, while other measures, including specific positive and negative feelings, evaluative well-being, and candidate mediators and moderators, were assessed in independently randomized subsets of surveys, as described below. Other questions unrelated to the present investigation were also asked. Participants received notifications requesting a report until they chose to discontinue participation. If 50 samples had been collected, reporting stopped for 6 mo or until the participant requested that it be restarted.
+
+Compliance rate was calculated by dividing the number of actual reports by the number of notifications sent during a participant’s “active period,” which was defined as the interval between a participant’s first and last response. For example, if a participant received 50 notifications but only completed 25 reports, their compliance rate would have been 50%. The median compliance rate observed was 72%.
+
+
+### Life Satisfaction and Experienced Well-Being Case Details.
+
+
+The main life satisfaction question described in the body of the paper was designed to match the construction of the experienced well-being question. It was collected in a randomized subsample of the participants: 17,026 people, who collectively provided 1,275,159 real-time reports of experienced well-being. Many of these 17,026 participants (52%) were asked this life satisfaction question exactly once, and some, based on random chance, were asked more than once (average, 2.03). If a person had more than one response, the mean value was used in calculations.
+
+[Fig. 1], which compares the shape of the relationship between income and these two types of well-being, is based on the people who had data for both measures (to ensure an apples-to-apples comparison). All other results for experienced well-being (e.g., regression results) are based on all 1,704,162 reports from 33,391 people. A comparison of results for these two samples, plus a comparison to an unrestricted sample, is detailed in [Table 1].
+
+
+### Correlation between Well-Being Measures.
+
+
+Experienced well-being was positively correlated with the equivalently constructed life satisfaction measure (r = 0.61, P < 0.00001), with the Satisfaction With Life Scale (r = 0.43, P < 0.00001), and with the (1–4) life satisfaction measure (r = 0.38, P < 0.00001).
+
+
+### Income Measure.
+
+
+Income was measured on an intake survey that occurred prior to and on a different occasion from any of the experienced well-being measures or the main life satisfaction measure reported in the body of the paper, which were all collected via experience sampling reports. The “additional life satisfaction measures” that are reported below were measured on the intake survey, with the income measure always being asked after the life satisfaction questions. Thus, for all outcomes, income was not made salient by the study design to participants when they were reporting experienced well-being or evaluative well-being.
+
+Income was measured by asking people, “What is your total annual household income before taxes?,” with response options in $10,000 increments up to $100,000/y, followed by “$100,001–$125,000, $125,001–$150,000, 150,001–$200,000, and over $200,000.”
+
+If a person selected “over $200,000,” then an expanded income range was offered including $200,001–$300,000, $300,001–$500,000, $500,001–$750,000, $750,001–$1,000,000, $1,000,001–$2,000,000, $2,000,001–$4,000,000, $4,000,001–$7,000,000, $7,000,001–$10,000,000, $10,000,001–$20,000,000, $20,000,001–$50,000,000, $50,000,001–$100,000,000, and more than $100,000,000.
+
+For analysis and visualization, income values were set to the midpoint of the income range selected, e.g., the income value for the income band $100,001–$125,000 was set to $112,500. In practice, 90.96% of people indicated incomes below $200,000/y. Incomes over $500,000 were quite rare, collectively comprising just 1.2% of the sample, and were pooled together and set to a value of $625,000/y for visualization and analysis (the midpoint of the income band above $500,000/y).
+
+The income band $70,001–$80,000 was the band that included the reference value of $75,000, and in fact that band was valued at $75,000 for visualization and analysis (the midpoint of its range, based on the same valuation method used for all income bands). To compare slopes above and below the reference value, people were split into a lower income group that included income bands below and up to the $70,001–$80,000 band, and a higher income group that included all people reporting incomes greater than $80,000.
+
+
+### Positive and Negative Feelings Measures.
+
+
+Positive and negative feelings were secondary outcomes and collected in a subsample of people, compared to the primary measure of experienced well-being, which was collected in every report. All responses were recorded on a continuous scale with endpoints labeled “Not at all” and “Extremely.” The number of responses for each positive and negative feeling are shown in SI Appendix, Table S1.
+
+Composite positive and negative feelings shown in [Fig. 2] are the average of positive and negative feeling means by income group, calculated by first determining the mean value for each feeling (Good, Inspired, Proud, etc.) across individual people, and then averaging across feelings of positive valence to calculate a positive feeling composite and averaging across feelings of a negative valence to calculate a negative feeling composite.
+
+
+### Additional Life Satisfaction Measures.
+
+
+Because the continuous life satisfaction measure was specifically designed to closely match the structure of the experienced well-being question, it is the focus of the primary results comparing these two constructs (e.g., [Fig. 1]). However, two additional life satisfaction measures were also asked, and they were asked of all participants rather than a subsample as for the continuous life satisfaction question. The first measure was the Satisfaction With Life Scale ([21]), a five-item scale that asks people about the extent to which they agree or disagree with five statements, such as “In most ways my life is close to ideal” and “If I could live my life over, I would change almost nothing” with responses recorded on a seven-level agree/disagree scale. The second measure was a single-item question that asked, “Overall, how satisfied are you with your life as a whole?,” with four response options (very satisfied, satisfied, not very satisfied, not at all satisfied). Results for these additional measures also find an approximately linear increase in evaluative well-being with log(income); see SI Appendix, Fig. S1. These measures were collected via an intake survey, on an occasion separate from any experience sampling reports, and asked prior to any questions about income (so that responses would not be influenced by making income salient).
+
+
+### Mediators and Moderators.
+
+
+Candidate mediators and moderators were secondary variables collected in a subsample of people. The number of responses is detailed in SI Appendix, Table S7.
+
+Money importance was measured with the question, “To what extent is money important to you?” answered on a continuous response scale with endpoints labeled Not at all and Extremely.
+
+Money is success was measured with the question, “To what extent do you think money is indicative of success in life?” answered on a continuous response scale with endpoints labeled Not at all and Extremely.
+
+Control life was measured with the question, “To what extent do you feel in control of your life?” answered on a continuous response scale with endpoints labeled Not at all and Extremely.
+
+Control situation was measured with the question, “To what extent do you feel in control of your current situation?” answered on a continuous response scale with endpoints labeled Not at all and Extremely.
+
+Optimism was measured with the question, “To what extent do you expect good things to happen in the future?” answered on a continuous response scale with endpoints labeled Not at all and Very much.
+
+Financial insecurity was measured with the question, “Did you have trouble coping with regular bills during the last 15 days?” with response options Yes, No, and This doesn’t apply. Results are based on comparing Yes and No responses.
+
+Hours worked was measured with the question, “On average, how many hours do you work each week?” with response options Less than 5 h, 5 to 10 h, and then options in 10-h increments up to 100 h per week, finally ending with “100+ hours.”
+
+Time poverty was measured with the question, “Do you have too little time to do what you’re currently doing?” with response options Yes, No, and This doesn’t apply. Results are based on comparing Yes and No responses.
+
+
+### Informed Consent.
+
+
+At initial sign-up, participants completed an informed consent form electronically. This research was approved by the University of California, Berkeley, Committee for Protection of Human Subjects.
+
+
+### Data Analysis.
+
+
+Results were aggregated to the person level for analysis, such that each person’s experienced well-being, for example, represented the mean value of all responses to the experienced well-being question. Then, regression analysis was performed in R examining the relationship between each well-being outcome and the log of household income values. Piecewise regressions that separately analyzed the association between income and well-being for low and high incomes were based on splitting people into two groups: one group that included all people with incomes below and up to the $70,001–$80,000 income band, and a second group that included all people with incomes larger than $80,000. Analyzing the income slope of well-being for people in the second group made it possible to assess whether larger incomes above $75,000/y continue to be associated with greater experienced well-being.
+
+
+## Supplementary Material
+
+
+
+## Acknowledgments
+
+
+I thank A. Jenkins, G. Cooney, A. Moon, R. Rebele, D. Yaden, D. Gilbert, and C. Massey for their comments. Special thanks to V. Pitiyanuvath for engineering http://trackyourhappiness.org.
+
+
+## Footnotes
+
+
+The authors declare no competing interest.This article is a PNAS Direct Submission.This article contains supporting information online at https://www.pnas.org/lookup/suppl/doi:10.1073/pnas.2016976118/-/DCSupplemental.
+
+
+## Data Availability.
+
+
+Data aggregated by income level have been deposited in OSF (https://osf.io/nguwz/) ([23]). Granular data are stored in a repository and are available to qualified researchers who wish to verify or extend the claims of this paper; contact the author for access information.
+
+
+## Change History
+
+
+March 25, 2021: The Data Availability section has been updated.
+
+
+## References
+
+
+1.Diener E., Biswas-Diener R., Will money increase subjective well-being?
+Soc. Indic. Res.
+57, 119–169 (2002).2.Gardner J., Oswald A. J., Money and mental wellbeing: A longitudinal study of medium-sized lottery wins. J. Health Econ.
+26, 49–60 (2007).3.Argyle M., “Causes and correlates of happiness” in Well-Being: The Foundations of Hedonic Psychology, Kahneman D., Diener E., Schwarz N., Eds. (Russell Sage Foundation, 1999), pp. 353–373.4.Stevenson B., Wolfers J., Economic growth and subjective well-being: Reassessing the Easterlin paradox. Brookings Pap. Econ. Act.
+2008, 1–87 (2008).5.Veenhoven R., Hagerty M., Rising happiness in nations 1946–2004: A reply to Easterlin. Soc. Indic. Res.
+79, 421–436 (2006).6.Lindqvist E., Östling R., Cesarini D., Long-run effects of lottery wealth on psychological well-being. Rev. Econ. Stud.
+87, 2703–2726 (2018).7.Diener E., Sandvik E., Seidlitz L., Diener M., The relationship between income and subjective well-being: Relative or absolute?
+Soc. Indic. Res.
+28, 195–223 (1993).8.Deaton A., Income, health, and well-being around the world: Evidence from the Gallup World Poll. J. Econ. Perspect.
+22, 53–72 (2008).9.Lucas R. E., Schimmack U., Income and well-being: How big is the gap between the rich and the poor?
+J. Res. Pers.
+43, 75–78 (2009).10.Stevenson B., Wolfers J., Subjective well-being and income: Is there any evidence of satiation?
+Am. Econ. Rev.
+103, 598–604 (2013).11.Kahneman D., Deaton A., High income improves evaluation of life but not emotional well-being. Proc. Natl. Acad. Sci. U.S.A.
+107, 16489–16493 (2010).12.Jebb A. T., Tay L., Diener E., Oishi S., Happiness, income satiation and turning points around the world. Nat. Hum. Behav.
+2, 33–38 (2018).13.Kushlev K., Dunn E. W., Lucas R. E., Higher income is associated with less daily sadness but not more daily happiness. Soc. Psychol. Personal. Sci.
+6, 483–489 (2015).14.Hudson N. W., Lucas R. E., Donnellan M. B., Kushlev K., Income reliably predicts daily sadness, but not happiness: A replication and extension of Kushlev, Dunn, & Lucas (2015). Soc. Psychol. Personal. Sci.
+7, 828–836 (2016).15.Redelmeier D. A., Kahneman D., Patients’ memories of painful medical treatments: Real-time and retrospective evaluations of two minimally invasive procedures. Pain
+66, 3–8 (1996).16.Kahneman D., Fredrickson B. L., Schreiber C. A., Redelmeier D. A., When more pain is preferred to less: Adding a better end. Psychol. Sci.
+4, 401–405 (1993).17.Fredrickson B. L., Kahneman D., Duration neglect in retrospective evaluations of affective episodes. J. Pers. Soc. Psychol.
+65, 45–55 (1993).18.Killingsworth M. A., Gilbert D. T., A wandering mind is an unhappy mind. Science
+330, 932 (2010).19.Csikszentmihalyi M., Larson R., Prescott S., The ecology of adolescent activity and experience. J. Youth Adolesc.
+6, 281–294 (1977).20.Csikszentmihalyi M., Larson R., Validity and reliability of the experience-sampling method. J. Nerv. Ment. Dis.
+175, 526–536 (1987).21.Diener E., Emmons R. A., Larsen R. J., Griffin S., The satisfaction with life scale. J. Pers. Assess.
+49, 71–75 (1985).22.Whillans A. V., Dunn E. W., Smeets P., Bekkers R., Norton M. I., Buying time promotes happiness. Proc. Natl. Acad. Sci. U.S.A.
+114, 8523–8527 (2017).23.Killingsworth M. A., Experienced well-being rises with income, even above $75,000 per year. Open Science Framework. https://osf.io/nguwz/. Deposited 3 January 2021.
+
+
+## Associated Data
+
+
+
+### Supplementary Materials
+
+
+
+### Data Availability Statement
+
+
+Data aggregated by income level have been deposited in OSF (https://osf.io/nguwz/) ([23]). Granular data are stored in a repository and are available to qualified researchers who wish to verify or extend the claims of this paper; contact the author for access information.
+
+## DATA AVAILABILITY
+Data Availability.Data aggregated by income level have been deposited in OSF (https://osf.io/nguwz/) ([23]). Granular data are stored in a repository and are available to qualified researchers who wish to verify or extend the claims of this paper; contact the author for access information.
+Data Availability StatementData aggregated by income level have been deposited in OSF (https://osf.io/nguwz/) ([23]). Granular data are stored in a repository and are available to qualified researchers who wish to verify or extend the claims of this paper; contact the author for access information.

@@ -578,6 +578,11 @@
       "type": "zoo:reanalysedBy",
       "target": "maria2026-vacuous-reproduction-flag",
       "why": "Refutes c3 of this record. c1 and c2 stand."
+    },
+    {
+      "type": "cito:extends",
+      "target": "maria2026-happiness-income-spread",
+      "why": "Reciprocal. The KKM 2023 deposit is the opposite end of the range this record measures: zero code, four columns, 739 kB, and complete reproduction of every printed number. Whether deposited code runs is the wrong question when the analysis is small enough to re-derive from the columns."
     }
   ],
   "open_questions": [

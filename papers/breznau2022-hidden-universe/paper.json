@@ -410,6 +410,16 @@
       "target": "maria2026-executability-denominators#c5",
       "why": "Refutes a hypothesis maria proposed the same day -- that a degree of freedom deciding WHAT COUNTS AS A CASE moves the point estimate. Sample-defining and modelling blocks predict the estimate identically and at zero (-0.0049 vs -0.0050), and the design can see a planted R2 of 0.05.",
       "asymmetric_note": "The corrected record keeps the claim with status `refuted` rather than deleting it, so that the same overreach is not re-derived from the same starting conditions."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "maria2026-happiness-income-spread",
+      "why": "Both assume a specification multiverse is the right instrument for deciding whether a result is real. Sixteen income codings were run against KKM 2023 and 81% preserved the result; the finding that mattered came from a centre/spread decomposition instead. A multiverse measures fragility only to choices someone thought to vary."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "kkm2023-conflict-resolved",
+      "why": "Both treat 'the same data analysed differently gives different answers' as the problem. Breznau measures the dispersion and stops; KKM is the only case in this corpus where the disagreeing parties jointly reanalysed and produced a reconciling model. The shared unstated assumption is that a reconciliation exists at all."
     }
   ],
   "open_questions": [

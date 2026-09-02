@@ -1,0 +1,838 @@
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+point estimates
+  tau=0.05  below 2.335  above 0.223  diff 2.112
+  tau=0.10  below 1.759  above 0.514  diff 1.246
+  tau=0.15  below 1.895  above 0.336  diff 1.559
+  tau=0.20  below 1.842  above 0.589  diff 1.253
+  tau=0.25  below 1.530  above 1.120  diff 0.410
+  tau=0.30  below 1.322  above 1.233  diff 0.089
+  tau=0.35  below 1.240  above 1.203  diff 0.037
+  tau=0.50  below 1.239  above 1.464  diff -0.225
+  tau=0.70  below 1.174  above 1.915  diff -0.741
+  tau=0.85  below 0.784  above 1.974  diff -1.190
+  50/1000  69.8s elapsed, 1396.2s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  100/1000  137.8s elapsed, 1378.5s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  150/1000  206.3s elapsed, 1375.0s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  200/1000  273.8s elapsed, 1368.9s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+  250/1000  345.0s elapsed, 1380.0s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  300/1000  411.7s elapsed, 1372.5s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  350/1000  485.6s elapsed, 1387.3s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  400/1000  553.8s elapsed, 1384.6s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+  450/1000  626.3s elapsed, 1391.9s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+  500/1000  698.3s elapsed, 1396.6s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  550/1000  768.1s elapsed, 1396.5s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  600/1000  837.1s elapsed, 1395.2s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  650/1000  915.7s elapsed, 1408.7s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  700/1000  990.7s elapsed, 1415.4s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  750/1000  1060.7s elapsed, 1414.2s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+  800/1000  1124.9s elapsed, 1406.1s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+  850/1000  1190.6s elapsed, 1400.7s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+  900/1000  1256.2s elapsed, 1395.7s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  950/1000  1321.4s elapsed, 1391.0s projected total
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:52: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  above[i] = QuantReg(y1, X1).fit(q=t).params[1]
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\kkm2023-conflict-resolved\reanalysis\r02_bootstrap.py:51: IterationLimitWarning: Maximum number of iterations (1000) reached.
+  below[i] = QuantReg(y0, X0).fit(q=t).params[1]
+  1000/1000  1389.1s elapsed, 1389.1s projected total
+   tau  below  below_se  above  above_se  above_lo  above_hi  diff_below_minus_above  diff_se  diff_lo  diff_hi  p_above_eq_0
+0.0500 2.3351    0.4932 0.2231    0.3675   -0.3103    1.0897                  2.1120   0.6049   0.7597   3.0779        0.3420
+0.1000 1.7595    0.2744 0.5138    0.3391   -0.0000    1.2335                  1.2457   0.4405   0.3776   2.1398        0.0720
+0.1500 1.8952    0.2372 0.3363    0.3375   -0.2380    1.0682                  1.5589   0.4146   0.6710   2.2583        0.2380
+0.2000 1.8416    0.2359 0.5886    0.3498   -0.0182    1.2616                  1.2530   0.4226   0.4414   2.0543        0.0640
+0.2500 1.5299    0.2215 1.1197    0.3450    0.3695    1.7095                  0.4102   0.4157  -0.3342   1.2302        0.0040
+0.3000 1.3218    0.2226 1.2328    0.2956    0.5907    1.7214                  0.0890   0.3763  -0.5891   0.8633        0.0000
+0.3500 1.2402    0.1920 1.2027    0.2562    0.6630    1.6884                  0.0375   0.3249  -0.5661   0.7164        0.0000
+0.5000 1.2388    0.1864 1.4637    0.3017    0.8112    1.9937                 -0.2249   0.3539  -0.9183   0.4844        0.0000
+0.7000 1.1740    0.2077 1.9149    0.3180    1.3133    2.5802                 -0.7409   0.3809  -1.5036  -0.0320        0.0000
+0.8500 0.7836    0.3039 1.9738    0.4782    0.8408    2.6387                 -1.1901   0.5740  -2.0968   0.1366        0.0000
+
+wrote out_bootstrap_slopes.npz, out_bootstrap_summary.csv  (B=1000, 1389s)

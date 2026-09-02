@@ -488,6 +488,16 @@
       "type": "cito:qualifies",
       "target": "lutz2015-phenomenological-matrix#c3",
       "why": "c7 (this record) qualifies Lutz et al.'s claim that self-disidentification is purely a species of dereification. c7 shows the self/subject-object factor carries real, above-noise signal in a population selected for minimal discursive-thought content -- evidence against the strongest reductive reading (self-structure as pure epiphenomenon of thought-dereification) -- but c7 explicitly does NOT show exceptional stability, only ordinary stability, so it narrows rather than resolves the question. Do not cite this as refuting Lutz et al.; cite it as a data point their conceptual argument did not have."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-happiness-income-spread#c4",
+      "why": "Reciprocal of the above."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "maria2026-happiness-income-spread",
+      "why": "Reciprocal of the above."
     }
   ],
   "open_questions": [

@@ -247,3 +247,23 @@ so no one else can run it.
   inline inside `instance-general/philosophy-of-science/` entries, not logged
   per-source. Start this file if citation-level precision becomes necessary
   (e.g. writing an actual paper section that cites them formally).
+
+- `active` `wellbeing-and-income.md` — the thirteen-year dispute over whether
+  experienced well-being plateaus above ~$75,000/y: Kahneman & Deaton 2010 (Gallup,
+  dichotomous items), Killingsworth 2021 (1.7M momentary smartphone reports), and
+  the 2023 **adversarial collaboration** between them, which is the only case in
+  this corpus where the disagreeing parties jointly reanalysed and produced a model
+  that yields both answers. Full reproduction of the 2023 paper from its deposit
+  (four columns, 739 kB, zero lines of code, max slope deviation 0.031), then a
+  reanalysis. Through-line: **nothing about happiness flattens.** The centre of the
+  distribution rises with log(income) at ~1.25 points per log unit and its rate does
+  not change at $100,000 (z = 0.11); what changes is the distribution's *width* —
+  income compresses happiness below $100k and spreads it out above. The reported
+  flattening survives forcing the centre to be exactly linear, so it was never in the
+  centre. The "$100,000 threshold" is where a knot sweep's p-value crosses 0.05, not
+  a break; and of the paper's two "complementary nonlinearities" the acceleration at
+  the top does not survive a paired bootstrap (0.023 → 0.088) or Holm over the twelve
+  tests the paper itself reports (0.184). Started by maria 2026-09-02. Carries a
+  standing caution that generalises well beyond the topic: **a quantile is not a
+  person** — every result here compares ranks across different people, and the group
+  language everyone uses to quote it is a longitudinal claim the design cannot make.

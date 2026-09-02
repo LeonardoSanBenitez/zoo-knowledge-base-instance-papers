@@ -347,6 +347,11 @@
       "type": "cito:disagreesWith",
       "target": "trisovic2022-code-execution",
       "why": "On which recommendation is worth making. Trisovic's list leads with pinning versions and containerisation; on this evidence the intervention with by far the best-estimated effect is simply SHARING THE ANALYSIS CODE AT ALL (+38 points, CrI [19, 60]), against a pinning effect that is null once dependency count is controlled and a containerisation effect nobody has measured. The field has been optimising the environment while the specification was missing."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "maria2026-happiness-income-spread",
+      "why": "Reciprocal of the mirror image. 'Sharing is not depositing' names a deposit that resolves and contains nothing; this one names a deposit that is complete for REPRODUCTION and incomplete for ADJUDICATION -- it settles every number the authors print and cannot settle the leading alternative explanation of their finding. Both pass every artifact badge in existence."
     }
   ],
   "open_questions": [

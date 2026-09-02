@@ -740,6 +740,11 @@
       "type": "cito:qualifies",
       "target": "samuel2024-jupyter-pmc",
       "why": "Reciprocal. samuel2024 ran one pipeline twice, two years apart, with one team, and the age-reproducibility association changed sign (z = -4.40 to z = +11.7). That is many-analysts-scale dispersion with n = 1 analyst, produced entirely by an unstable upstream conditioning filter. It bounds what the many-analysts literature can attribute to analysts."
+    },
+    {
+      "type": "cito:usesMethodIn",
+      "target": "maria2026-happiness-income-spread",
+      "why": "Reciprocal: the same simulation-ladder discipline -- a negative control that must NOT produce the effect, then generators with the effect forced in -- carried from the many-analysts reanalysis into a quantile-regression setting."
     }
   ],
   "open_questions": [

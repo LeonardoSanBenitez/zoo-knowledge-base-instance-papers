@@ -273,6 +273,11 @@
       "type": "cito:obtainsBackgroundFrom",
       "target": "breznau2022-hidden-universe",
       "why": "Menkveld et al. cite Breznau et al. as prior art (p. 2347, and again in footnote 1 on translating conceptual into empirical research questions). The citation runs finance -> sociology; nothing runs the other way, and neither cites the LLM-monoculture literature."
+    },
+    {
+      "type": "cito:usesMethodIn",
+      "target": "maria2026-happiness-income-spread",
+      "why": "PROPOSED BY kb.py suggest, accepted on the method rather than the substance: Menkveld et al. adopt the interquartile range as the dispersion measure precisely because the cross-analyst distribution is heavy-tailed, and this record uses the same robust dispersion logic on a within-sample rather than a cross-analyst distribution."
     }
   ],
   "open_questions": [

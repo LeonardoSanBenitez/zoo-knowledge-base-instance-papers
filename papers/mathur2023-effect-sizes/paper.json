@@ -161,6 +161,16 @@
       "type": "zoo:reanalysedBy",
       "target": "maria2026-analytic-variability-reanalysis",
       "why": "Both of its numerical claims were independently recomputed from the primary data; c1 reproduced, c2 confirmed by an independent route but shown to be estimator-fragile, c3 disputed by simulation."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-happiness-income-spread",
+      "why": "Same move in a different literature: a disagreement presented as a disagreement about significance dissolves once the magnitudes and their intervals are shown side by side. In KKM 2023 the two 'complementary nonlinearities' swap significance depending on the standard-error estimator, which the paper does not name."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "kkm2023-conflict-resolved",
+      "why": "KKM volunteer the magnitude of their own headline -- r = 0.09, a few points on a 100-point scale -- which is Mathur & VanderWeele's move against Breznau. They then do not apply it to their own Table 1, which is presented entirely as a significant/non-significant pattern."
     }
   ],
   "open_questions": [

@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.2",
+  "id": "kahneman2010-high-income",
+  "title": "High income improves evaluation of life but not emotional well-being",
+  "authors": [
+    "Daniel Kahneman",
+    "Angus Deaton"
+  ],
+  "year": 2010,
+  "venue": "PNAS 107(38) 16489-16493",
+  "area": [
+    "wellbeing-and-income"
+  ],
+  "identifiers": {
+    "doi": "10.1073/pnas.1011492107",
+    "pmid": "20823223",
+    "url": "https://www.pnas.org/doi/10.1073/pnas.1011492107"
+  },
+  "record_status": "draft",
+  "read_depth": "abstract-only",
+  "cost": {
+    "tool_calls": 6,
+    "bytes_downloaded": 9000,
+    "compute_notes": "Six retrieval attempts, all failed; see artifact a1. No assessments are carried in this record because none may be.",
+    "session": "2026-09-02 maria"
+  },
+  "triggers": [
+    "the 75000 dollar happiness threshold",
+    "Kahneman Deaton 2010 emotional well-being plateau",
+    "where does the 75000 number actually come from",
+    "a paper that is free to read and still not retrievable"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Emotional well-being rises with log income but there is no further progress beyond an annual income of about $75,000, while life evaluation continues to rise.",
+      "scope": "More than 450,000 responses to the Gallup-Healthways Well-Being Index, US, 2008-2009; dichotomous yes/no items about yesterday's emotions.",
+      "quantities": [
+        {
+          "name": "claimed_satiation_income",
+          "value": 75000,
+          "unit": "USD/year (2008-9)",
+          "n": "450,000+",
+          "source": "SECOND-HAND, quoted in kkm2023-conflict-resolved. KKM note that $75,000 'is simply the midpoint of the 60 to 90K income category' and that 'a more precise statement would be that there is no further progress in average happiness beyond a threshold at or below 90K'."
+        }
+      ],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "The primary source was not retrieved, so nothing here is assessed. Every number in this record is second-hand from KKM 2023, marked as such in its source field. Recording the paper anyway, because it is the anchor of a literature this corpus now holds three records on, and because a stub that says WHY it is a stub is more useful than a silent gap.",
+        "by": "maria, 2026-09-02"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "supplement",
+      "locator": "the article PDF / full text",
+      "status": "absent",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "six routes: (1) https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2944762/pdf/ -> 1,817 B of HTML; (2) https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2944762/fullTextXML -> HTTP 200 with a ZERO-BYTE body; (3) https://www.pnas.org/doi/pdf/10.1073/pnas.1011492107 -> Cloudflare interstitial; (4) https://europepmc.org/articles/pmc2944762?pdf=render -> 403 on /api/getPdf; (5) https://pmc.ncbi.nlm.nih.gov/articles/PMC2944762/pdf/pnas.201011492.pdf -> 1,817 B of HTML; (6) NCBI OA service oa.fcgi -> 404, the endpoint is retired.",
+        "result": "NOT RETRIEVABLE from this box. Unpaywall reports is_oa = true, oa_status = green, with exactly one location: the PMC record, which is the one that serves an interstitial. So the paper is free to read by a human with a browser and unavailable to any automated agent -- a state no availability metric in existence distinguishes from open. Semantic Scholar's openAccessPdf field points at route (4), which 403s. That is worth its own line: THREE independent open-access indexes assert this PDF is available and none of the URLs they give returns a PDF."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:disagreesWith",
+      "target": "killingsworth2021-experienced-wellbeing"
+    },
+    {
+      "type": "cito:repliesTo",
+      "target": "kkm2023-conflict-resolved",
+      "why": "Reciprocal: KKM qualifies this paper. Note the KKM footnote -- Angus Deaton did not participate in the adversarial collaboration and should not be taken as endorsing its conclusions."
+    }
+  ],
+  "open_questions": [
+    "Leonardo has offered to fetch paywalled papers before. This one is not paywalled; it is bot-blocked, which is a different failure and may be easier to solve. Until it is read, kkm2023-conflict-resolved#c2 is accepted on argument rather than on evidence."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-02",
+    "verified": "2026-09-02",
+    "notes_file": "NOTES.md"
+  }
+}

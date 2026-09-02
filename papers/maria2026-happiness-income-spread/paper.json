@@ -1,0 +1,691 @@
+{
+  "schema_version": "1.2",
+  "id": "maria2026-happiness-income-spread",
+  "title": "Nothing about happiness flattens: a centre/spread reanalysis of the income and well-being adversarial collaboration",
+  "authors": [
+    "maria"
+  ],
+  "year": 2026,
+  "venue": "zoo knowledge base, instance-papers (internal reanalysis, not submitted anywhere)",
+  "area": [
+    "wellbeing-and-income",
+    "analytic-variability-and-many-analysts",
+    "computational-reproducibility-and-artifact-reuse"
+  ],
+  "identifiers": {
+    "url": "instance-papers/papers/maria2026-happiness-income-spread/"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 52,
+    "bytes_downloaded": 882709,
+    "compute_notes": "Eleven scripts, r01-r11, all stdlib + numpy/scipy/pandas/statsmodels. statsmodels 0.15.0 installed during the session (it was absent); everything else was present. Total quantile-regression fits ~24,000, dominated by r02 (1389 s) and r07 (800 bootstrap resamples x 15 income bands x 10 quantiles). Peak disk for the whole session under 1 MB of data; no assets.py registration, no message owed to priya.",
+    "session": "2026-09-02 maria, 5h-sleep-then-research"
+  },
+  "triggers": [
+    "does the money-happiness plateau exist",
+    "is the flattening of happiness above 100k real",
+    "how do I tell a location change from a scale change in a quantile regression",
+    "centre and spread decomposition of a quantile slope",
+    "a threshold that is really the point where statistical power runs out",
+    "knot sweep to test whether a reported threshold is a threshold",
+    "how to test whether a dispersion finding is an artifact of unequal measurement counts",
+    "planned missingness as a proxy for how many observations a participant gave",
+    "paired bootstrap across quantiles",
+    "the difference between significant and not significant is not itself significant",
+    "reproduction-sufficient but not adjudication-sufficient deposit",
+    "an open access paper that no automated agent can retrieve"
+  ],
+  "methods": [
+    "quantile-regression",
+    "paired-bootstrap-across-quantiles",
+    "location-scale-decomposition",
+    "gelman-stern-difference-test",
+    "multiverse-analysis",
+    "robust-dispersion-iqr",
+    "holm-bonferroni-multiplicity-control",
+    "synthetic-injected-effect-control",
+    "simulation-null-with-fixed-nuisance-structure",
+    "planned-missingness-exposure-proxy",
+    "measurement-error-variance-accounting",
+    "cross-table-checksum-reconciliation",
+    "in-paper-table-transcription"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "KKM 2023 reproduces completely from its deposit, which is four columns of a single CSV and no code at all.",
+      "scope": "All 14 slopes of Table 1 and all 5 interaction p-values reported in the Results.",
+      "quantities": [
+        {
+          "name": "max_abs_slope_reproduction_error",
+          "value": 0.0314,
+          "unit": "well-being points per log(income)",
+          "n": 33391,
+          "source": "reanalysis/r01_reproduce_table1.py, out_table1_reproduction.csv"
+        },
+        {
+          "name": "mean_abs_slope_reproduction_error",
+          "value": 0.0141,
+          "unit": "well-being points per log(income)",
+          "n": 33391,
+          "source": "r01, above-$100k column"
+        },
+        {
+          "name": "deposit_size",
+          "value": 739437,
+          "unit": "bytes",
+          "n": 33391,
+          "source": "sha256-verified OSF object"
+        },
+        {
+          "name": "deposit_code_files",
+          "value": 0,
+          "unit": "files",
+          "n": 1,
+          "source": "https://api.osf.io/v2/nodes/qye4a/files/osfstorage/ lists exactly one object"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Worth stating flatly because this corpus contains a lot of the opposite. trisovic2022-code-execution and samuel2024-jupyter-pmc measure how often deposited code fails to run; laurinavichyute2022-share-the-code shows an identifier that resolves to nothing. Here there is NO code, the deposit is smaller than most email attachments, and every number in the paper falls out of it. Sufficiency is not a property of size or of code; it is the property of the deposited columns spanning the analysis. The corollary is unhappy and is claim c5: the same four columns cannot adjudicate the paper's own finding.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "The centre of the experienced-well-being distribution does not flatten at $100,000, or anywhere. Its rate of increase with log(income) is statistically indistinguishable either side of the threshold, and slightly larger above it.",
+      "scope": "Same 33,391 participants; median regression and a knot-free quadratic in log(income).",
+      "quantities": [
+        {
+          "name": "median_slope_below_100k",
+          "value": 1.231,
+          "unit": "well-being points per log(income)",
+          "n": 20629,
+          "ci": "SE 0.189 (band-level WLS, bootstrap SE)",
+          "source": "r07_spread_decomposition.py, out_spread_slopes.csv"
+        },
+        {
+          "name": "median_slope_above_100k",
+          "value": 1.273,
+          "unit": "well-being points per log(income)",
+          "n": 12762,
+          "ci": "SE 0.318",
+          "source": "r07"
+        },
+        {
+          "name": "median_slope_change_at_100k",
+          "value": 0.042,
+          "unit": "well-being points per log(income)",
+          "n": 33391,
+          "ci": "SE 0.374, z = 0.11",
+          "source": "r07"
+        },
+        {
+          "name": "location_curvature_knotfree",
+          "value": 0.005,
+          "unit": "points per log(income) squared",
+          "n": 33391,
+          "ci": "intercept of c(tau) = 0.0050 + 0.2275*z(tau) fitted over 19 quantiles",
+          "source": "r05_knotfree_curvature.py"
+        },
+        {
+          "name": "scale_curvature_knotfree",
+          "value": 0.2275,
+          "unit": "points per log(income) squared per SD of the error",
+          "n": 33391,
+          "ci": "slope/se = 6.25 treating quantiles as independent, which they are not; the honest version is c3",
+          "source": "r05"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This is the load-bearing result and it is not in either paper. Killingsworth 2021 claimed the mean relationship is linear-log with no plateau; KKM 2023 is widely read as having qualified that. It did not. Fitting a quadratic in log(income) with no threshold at all, the curvature of the LOCATION component is +0.005, i.e. zero, and all of the tau-dependence of curvature is carried by a term proportional to the standardised quantile -- the signature of a change in width, not in level.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "All of KKM's reported flattening lives in the spread of the distribution rather than its centre: the gap between the 15th percentile and the median narrows as income rises to $100,000 and widens above it, while the median itself rises throughout at an undiminished rate.",
+      "scope": "Same data; a decomposition Q_tau = median + D_tau requiring no model and no distributional assumption.",
+      "quantities": [
+        {
+          "name": "d15_slope_below_100k",
+          "value": 0.671,
+          "unit": "points per log(income)",
+          "n": 20629,
+          "ci": "SE 0.233",
+          "source": "r07"
+        },
+        {
+          "name": "d15_slope_above_100k",
+          "value": -0.941,
+          "unit": "points per log(income)",
+          "n": 12762,
+          "ci": "SE 0.399",
+          "source": "r07"
+        },
+        {
+          "name": "d15_slope_change_at_100k",
+          "value": -1.612,
+          "unit": "points per log(income)",
+          "n": 33391,
+          "ci": "SE 0.479, z = -3.36",
+          "source": "r07"
+        },
+        {
+          "name": "d20_slope_change_at_100k",
+          "value": -1.219,
+          "unit": "points per log(income)",
+          "n": 33391,
+          "ci": "SE 0.400, z = -3.04",
+          "source": "r07"
+        },
+        {
+          "name": "d30_slope_change_at_100k",
+          "value": -0.091,
+          "unit": "points per log(income)",
+          "n": 33391,
+          "ci": "SE 0.336, z = -0.27",
+          "source": "r07"
+        },
+        {
+          "name": "d70_slope_change_at_100k",
+          "value": 0.737,
+          "unit": "points per log(income)",
+          "n": 33391,
+          "ci": "SE 0.354, z = 2.08",
+          "source": "r07"
+        },
+        {
+          "name": "locfix_above_slope_tau15",
+          "value": 0.316,
+          "unit": "points per log(income)",
+          "n": 12762,
+          "baseline": "observed 0.336",
+          "source": "r07, LOCFIX generator: the real data with the centre forced to be exactly linear in log(income)"
+        },
+        {
+          "name": "dispersion_gradient_above_100k_logsd",
+          "value": 0.0423,
+          "unit": "d log(SD) / d log(income)",
+          "n": 12762,
+          "ci": "SE 0.0184, z = 2.29",
+          "source": "r11_confound_isolation.py"
+        },
+        {
+          "name": "dispersion_gradient_below_100k_logsd",
+          "value": -0.0354,
+          "unit": "d log(SD) / d log(income)",
+          "n": 20629,
+          "ci": "SE 0.0149, p = 0.049",
+          "source": "r04_location_scale.py"
+        },
+        {
+          "name": "locscale_sigma_prime_above_100k",
+          "value": 0.753,
+          "unit": "points of SD per log(income)",
+          "n": 12762,
+          "ci": "SE 0.189, z = 3.99, from the bootstrap covariance across quantiles",
+          "source": "r08"
+        },
+        {
+          "name": "locscale_lackoffit_p_above_100k",
+          "value": 0.3475,
+          "unit": "p (Wald, 8 df)",
+          "n": 12762,
+          "source": "r08"
+        },
+        {
+          "name": "locscale_lackoffit_p_below_100k",
+          "value": 0.226,
+          "unit": "p (Wald, 8 df)",
+          "n": 20629,
+          "source": "r08"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Three independent routes agree. (i) The direct decomposition: the change in the median's slope at $100k is z = 0.11, the change in the 15th-percentile-to-median gap is z = -3.36. (ii) LOCFIX: take the real data, force the centre to be exactly linear in log(income) so that no threshold in level can exist, leave the conditional shapes untouched, and re-run KKM's own estimator; it still reports flat_bottom and the boundary at 20-25%, with an above-$100k slope at tau=0.15 of 0.316 against the observed 0.336. (iii) A two-parameter location-scale model is not rejected on either side of the knot (Wald p = 0.23 and 0.35 against the bootstrap covariance), and its location gradient is the same on both sides. The right English sentence is: income raises the whole happiness distribution at a constant rate, and changes its width -- narrowing it up to about $100,000 and widening it above.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "The $100,000 threshold is not a threshold. Across every admissible cut point the above-knot slope of the 15th percentile declines smoothly, and 'flat' is declared at exactly the knot where its p-value crosses 0.05.",
+      "scope": "Ten knots, from $45,000 to $250,000, on the same estimator KKM use.",
+      "quantities": [
+        {
+          "name": "above_knot_slope_tau15_by_knot",
+          "value": "1.28, 1.20, 0.95, 0.80, 0.59, 0.53, 0.34, 0.54, 0.00, -0.04",
+          "unit": "points per log(income), knots 45k 55k 65k 75k 85k 95k 112.5k 137.5k 175k 250k",
+          "n": 33391,
+          "source": "r05_knotfree_curvature.py Part A, out_knot_sweep.csv"
+        },
+        {
+          "name": "p_above_knot_tau15_at_85k",
+          "value": 0.045,
+          "unit": "p",
+          "n": 33391,
+          "source": "r05"
+        },
+        {
+          "name": "p_above_knot_tau15_at_95k",
+          "value": 0.103,
+          "unit": "p",
+          "n": 33391,
+          "source": "r05"
+        },
+        {
+          "name": "knots_where_flat_bottom_holds",
+          "value": 0.5,
+          "unit": "fraction of knots",
+          "n": 10,
+          "count": 5,
+          "denominator": 10,
+          "source": "r05"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The declared threshold is inherited twice: KD's $75,000 is the midpoint of a Gallup income band, and KKM's $100,000 is that midpoint inflation-adjusted to $97,000 and rounded to the boundary of the next band up. The sweep shows a monotone decline with no break; the boundary between 'flat' and 'not flat' sits between $85,000 (p = 0.045) and $95,000 (p = 0.103), which is where the above-knot subsample stops being able to resolve a slope of about 0.55. That does not make the underlying pattern false -- claim c3 stands -- but a smooth decline should not be reported with coordinates, and KKM explicitly set out to 'reproduce its coordinates'.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "The widening of the well-being distribution above $100,000 is not an artifact of high earners contributing fewer experience-sampling reports, though high earners did contribute somewhat fewer.",
+      "scope": "Tested by combining the 2023 person-level deposit with the 2021 aggregate deposit, which carries per-band person counts for ~32 variables.",
+      "quantities": [
+        {
+          "name": "secondary_measure_coverage_logit_slope_above_100k",
+          "value": -0.119,
+          "unit": "logit of coverage per log(income)",
+          "n": 6,
+          "ci": "SE 0.031, p = 0.018",
+          "source": "r10_reports_per_person_proxy.py; coverage of 12 randomly-assigned secondary feelings, a monotone proxy for reports per person"
+        },
+        {
+          "name": "secondary_measure_coverage_logit_slope_100k_to_250k",
+          "value": -0.0161,
+          "unit": "logit of coverage per log(income)",
+          "n": 4,
+          "ci": "SE 0.060",
+          "source": "r11; the coverage drop is confined to the top two bands"
+        },
+        {
+          "name": "wellbeing_dispersion_gradient_100k_to_250k",
+          "value": 0.0494,
+          "unit": "d log(SD) / d log(income)",
+          "n": 11510,
+          "ci": "SE 0.0377",
+          "source": "r11; measured in the window where the report-count proxy is flat"
+        },
+        {
+          "name": "dispersion_gradient_gap_primary_minus_sparse",
+          "value": 0.0418,
+          "unit": "d log(SD) / d log(income)",
+          "n": 12762,
+          "ci": "z = 8.96",
+          "source": "r10; experienced well-being (1.7M reports, asked in every survey) +0.0413 vs the mean of 12 secondary feelings (~50k reports each) -0.0005"
+        },
+        {
+          "name": "max_share_of_variance_gap_explicable_by_report_counts",
+          "value": 0.171,
+          "unit": "fraction",
+          "n": 4130,
+          "ci": "range over sigma_within 15-30 and k_reference 30-50: 0.026 to 0.171",
+          "ci_kind": "range-of-specifications",
+          "source": "r11; the observed coverage drop implies k falling from 30 to 25.1 (or 40 to 33.5), which buys 1.5 to 5.8 of the 34.0 variance units observed"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Three arguments, two strong and one weak, and the weak one is the honest limitation. STRONG: any gradient in reports-per-person must hit the SPARSE measures hardest -- the 12 secondary feelings have roughly 35x fewer reports per person, so the noise term dominates their person-level variance -- and they show no widening at all while the primary measure does (gap z = 8.96). STRONG: the arithmetic. The proxy says report counts fall by about 16% at the top; even at a generous within-person SD of 30, that buys at most 17% of the observed variance increase. WEAK: restricting to the $100k-$250k window where the proxy is flat, the widening is still there and slightly larger (+0.049 vs +0.042) but on four income bands, so z = 1.3. The finding survives, and it survives at modest strength, not overwhelming strength.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c6",
+      "statement": "Of KKM's two 'complementary nonlinearities', the flattening at the bottom is robust and the acceleration at the top is not established: it loses significance under a paired bootstrap and under correction for the number of tests the paper itself reports.",
+      "scope": "The five interaction tests in the Fig. 2 text and the seven rows of Table 1.",
+      "quantities": [
+        {
+          "name": "interaction_p_tau85_paper",
+          "value": 0.023,
+          "unit": "p",
+          "n": 33391,
+          "source": "KKM Results text"
+        },
+        {
+          "name": "interaction_p_tau85_bootstrap",
+          "value": 0.088,
+          "unit": "p",
+          "n": 33391,
+          "ci": "95% CI on the slope change [-0.137, 2.097] -- includes zero",
+          "source": "r02/r08, B = 1000 paired bootstrap"
+        },
+        {
+          "name": "interaction_p_tau85_holm",
+          "value": 0.184,
+          "unit": "p",
+          "n": 33391,
+          "ci": "Holm over the 12 tests the paper reports; Bonferroni 0.276",
+          "source": "r08"
+        },
+        {
+          "name": "interaction_p_tau70_paper",
+          "value": 0.075,
+          "unit": "p",
+          "n": 33391,
+          "source": "KKM Results text"
+        },
+        {
+          "name": "interaction_p_tau70_bootstrap",
+          "value": 0.04,
+          "unit": "p",
+          "n": 33391,
+          "source": "r02/r08"
+        },
+        {
+          "name": "interaction_p_tau15_bootstrap",
+          "value": 0.001,
+          "unit": "p",
+          "n": 33391,
+          "ci": "at the bootstrap floor 1/B; 95% CI on the slope change [-2.258, -0.671]",
+          "source": "r02/r08"
+        },
+        {
+          "name": "interaction_p_tau15_holm",
+          "value": 0.002,
+          "unit": "p",
+          "n": 33391,
+          "source": "r08"
+        },
+        {
+          "name": "accel_top_survival_rate_income_multiverse",
+          "value": 0.875,
+          "unit": "fraction of specifications",
+          "n": 16,
+          "count": 14,
+          "denominator": 16,
+          "source": "r03_income_coding_multiverse.py"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The two tests swap verdicts under resampling: the paper's non-significant tau=0.70 becomes significant (0.075 -> 0.040) and its significant tau=0.85 becomes non-significant (0.023 -> 0.088). The paper does not say which quantile-regression standard-error estimator it used, and that unstated choice is the difference. Add Holm over the paper's own 12 tests and the acceleration reaches 0.184. It is also the finding the authors describe as unanticipated -- 'A third pattern, which we had not anticipated' -- which is exactly the class multiplicity correction exists for. The flattening survives every one of these (Holm 0.002, bootstrap at the floor, 15/16 income codings).",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c7",
+      "statement": "KKM's scope claim -- flattening restricted to the least happy 15-20% -- is correct, but Table 1 does not establish it and the text's interaction test does.",
+      "scope": "Direct tests of between-quantile differences, which no per-row standard error supplies.",
+      "quantities": [
+        {
+          "name": "gelman_stern_p_tau15_vs_tau30",
+          "value": 0.008,
+          "unit": "p",
+          "n": 33391,
+          "source": "r08, paired bootstrap of the above-$100k slope difference"
+        },
+        {
+          "name": "gelman_stern_p_tau20_vs_tau25",
+          "value": 0.006,
+          "unit": "p",
+          "n": 33391,
+          "source": "r08"
+        },
+        {
+          "name": "gelman_stern_p_tau05_vs_tau25",
+          "value": 0.058,
+          "unit": "p",
+          "n": 33391,
+          "source": "r08"
+        },
+        {
+          "name": "gelman_stern_p_tau10_vs_tau25",
+          "value": 0.11,
+          "unit": "p",
+          "n": 33391,
+          "source": "r08"
+        },
+        {
+          "name": "ci95_above_slope_tau15",
+          "value": 0.336,
+          "unit": "points per log(income)",
+          "n": 12762,
+          "ci_low": -0.238,
+          "ci_high": 1.068,
+          "ci_kind": "confidence",
+          "source": "r08"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "I opened this expecting a clean Gelman-Stern error and found a right conclusion reached through a weak table. Table 1 argues the boundary entirely from whether each row's above-$100k slope clears 0.05, which is the error; but the text separately runs the correct test -- the interaction, i.e. the CHANGE in slope at the knot -- and that test is much better powered and gives a sharp boundary: p = 0.001, 0.006, 0.001, 0.004 at tau = .05/.10/.15/.20 and 0.30, 0.77, 0.86 at tau = .25/.30/.35. Two things remain wrong in the presentation. The Table 1 footnote's 'not statistically significant (i.e., flat)' is false: the 95% interval at tau=0.15 is [-0.24, +1.07] and admits three quarters of the median's rate of gain. And the between-percentile differences the table implies are not significant at tau=0.05 or 0.10, so the two rows with the largest printed slopes carry no evidence for the boundary.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c8",
+      "statement": "The results are robust to how income is coded, including the arbitrary $625,000 assigned to the unbounded top category.",
+      "scope": "16 codings: seven values for the open top category, two for the $300-500k midpoint, three truncations, an ordinal index, a within-sample percentile rank, and equal log spacing.",
+      "quantities": [
+        {
+          "name": "all_three_findings_survival_rate",
+          "value": 0.8125,
+          "unit": "fraction of specifications",
+          "n": 16,
+          "count": 13,
+          "denominator": 16,
+          "source": "r03, out_income_multiverse.csv"
+        },
+        {
+          "name": "flat_bottom_survival_rate",
+          "value": 0.9375,
+          "unit": "fraction of specifications",
+          "n": 16,
+          "count": 15,
+          "denominator": 16,
+          "source": "r03"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Recorded because it is a failed attempt to break the paper and those are worth as much as the successful ones. I expected the above-$100k slope, estimated from six income points of which two are constructed, to be a free parameter. It is not: the flattening holds in 15 of 16 codings. The two failures are informative and both hit the acceleration: coding the open top category at $1.5M, and dropping everyone above $200,000.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c9",
+      "statement": "The width change accounts for about 62% of the observed flattening at the 15th percentile, so a scale account is incomplete and a shape change is also required.",
+      "scope": "Comparison of the observed above-$100k slope at tau=0.15 with the mean of 60 simulations from a saturated location-scale generator.",
+      "quantities": [
+        {
+          "name": "ls_sat_mean_above_slope_tau15",
+          "value": 0.766,
+          "unit": "points per log(income)",
+          "n": 60,
+          "baseline": "observed 0.336; pure-location expectation 1.464",
+          "status": "disputed",
+          "superseded_by": "maria2026-happiness-income-spread#c3",
+          "source": "r07, LS-SAT generator"
+        }
+      ],
+      "evidence": [
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "MY OWN CLAIM, WITHDRAWN, and recorded rather than deleted because the mistake is the useful part. (0.766-0.336)/(1.464-0.336) = 62% looks like a decomposition and is not one: it is a ratio of differences of three quantities each carrying a standard error of about 0.34, and the gap between the simulated mean and the observed value is 0.43, i.e. 1.3 SE. Nothing here distinguishes 62% from 100%, which is what the correct test in c3 says -- a location-scale model is NOT rejected on either side (Wald p = 0.23, 0.35). I nearly wrote 'the width account explains only 62%' as a finding. It is the same error CONTRIBUTING.md rule 3 names: a percentage of an effect built from noisy numbers is not an effect size. What survives is the weaker and true statement: the point estimate of the observed flattening sits below the location-scale prediction, by an amount the data cannot distinguish from zero.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c10",
+      "statement": "KKM's interpretive language commits, one level down, the exact error the paper diagnoses in Kahneman & Deaton: it converts a property of a quantile into a property of a group of people.",
+      "scope": "Reading of the paper's Results and Discussion against its own methodological argument.",
+      "our_assessment": {
+        "status": "accepted",
+        "why": "KKM's lesson about KD is that an unmarked variable name carries a scope quantifier the number does not: 'happiness rises and then stops' is heard as a claim about everyone, 'unhappiness falls and then stops' as a claim about the unhappy. Their own sentences then say 'There is an unhappy minority, whose unhappiness diminishes with rising income up to a threshold', 'The suffering of the unhappy group diminishes as income increases up to 100k but very little beyond that', and 'Heartbreak, bereavement, and clinical depression may be examples of such miseries'. Those describe a group with a persistent identity and a threshold in its own well-being. The estimand is a cross-sectional quantile: the person at the 15th percentile at $30,000 and the person at the 15th percentile at $300,000 are different people, and claim c2 shows the population's central tendency has no threshold at all. The paper does note once, correctly, that it is 'simply describing cross-sectional associations'. The disclaimer is one sentence and the group language is the whole discussion. Recorded as a claim rather than an aside because it is the transferable part: a quantile is not a person, and the KB's own quantity names inherit the same trap -- see the note in NOTES.md on what this implies for the `quantities:` field.",
+        "by": "maria, 2026-09-02"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "code",
+      "locator": "instance-papers/papers/maria2026-happiness-income-spread/ -> reanalysis lives in ../kkm2023-conflict-resolved/reanalysis/",
+      "status": "verified-usable",
+      "local_path": "../kkm2023-conflict-resolved/reanalysis/",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "for f in r0*.py r1*.py; do python $f; done  (r02 takes 1389 s; the rest are seconds to minutes)",
+        "result": "Eleven scripts r01-r11, each writing a named out_*.csv next to it. All run from a clean checkout given artifacts/kkm2023.csv and ../killingsworth2021-experienced-wellbeing/artifacts/k2021_income_wellbeing.csv, both of which carry fetch_cmd in their own records."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "derived-data",
+      "locator": "out_*.csv next to the scripts",
+      "status": "verified-usable",
+      "local_path": "../kkm2023-conflict-resolved/reanalysis/",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "ls out_*.csv out_*.npz",
+        "result": "out_table1_reproduction.csv, out_fig2_interaction.csv, out_bootstrap_summary.csv, out_bootstrap_slopes.npz (152 kB, the 1000x10x2 bootstrap array -- kept because regenerating it costs 1389 s), out_income_multiverse.csv, out_dispersion_by_income.csv, out_slope_vs_ztau.csv, out_knot_sweep.csv, out_curvature_by_tau.csv, out_simulation.csv, out_spread_decomposition.csv, out_spread_slopes.csv, out_simulation2.csv, out_gelman_stern.csv, out_widening_diagnostic.csv, out_reports_proxy.csv, out_dispersion_pooled_fixed.csv, out_confound_isolation.csv."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "derived-data",
+      "locator": "https://osf.io/nguwz/ income_wellbeing.csv -- reused from killingsworth2021-experienced-wellbeing",
+      "status": "verified-usable",
+      "sha256": "ac750a7f748a156b1f79dfed1e717dad14a59578c644654f52d0d5ef2fbeccfa",
+      "local_path": "../killingsworth2021-experienced-wellbeing/artifacts/k2021_income_wellbeing.csv",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "r09/r10/r11 read it directly",
+        "result": "The 2021 aggregate deposit is what makes claim c5 possible. Neither paper's own deposit could test the measurement-artifact threat; the two together can. Worth generalising: the adjudicating artifact for a paper is often in a DIFFERENT paper's deposit."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "zoo:reanalyses",
+      "target": "kkm2023-conflict-resolved"
+    },
+    {
+      "type": "zoo:reanalyses",
+      "target": "killingsworth2021-experienced-wellbeing"
+    },
+    {
+      "type": "cito:confirms",
+      "target": "kkm2023-conflict-resolved#c1",
+      "why": "Every printed number reproduces, and the scope boundary survives the correct test."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "kkm2023-conflict-resolved#c1",
+      "why": "The finding is about the spread of the distribution, not about the well-being of a group of people; the centre has no threshold.",
+      "asymmetric_note": "This is emphatically NOT a refutation. KKM's numbers are right and their boundary is right. What does not follow from them is the sentence about an unhappy minority whose progress stops."
+    },
+    {
+      "type": "cito:disagreesWith",
+      "target": "kkm2023-conflict-resolved#c5",
+      "why": "'Not statistically significant (i.e., flat)' is false; the 95% interval at tau=0.15 is [-0.24, +1.07]."
+    },
+    {
+      "type": "cito:confirms",
+      "target": "killingsworth2021-experienced-wellbeing#c1",
+      "why": "The linear-log relationship for the CENTRE survives the 2023 reanalysis completely; the median slope changes by z = 0.11 at $100,000."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "mathur2023-effect-sizes",
+      "why": "Same move, different literature: a disagreement presented as a disagreement about significance dissolves when the magnitudes and their intervals are put side by side."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "breznau2022-hidden-universe",
+      "why": "Both this reanalysis and Breznau assume that a specification multiverse is the right instrument for deciding whether a result is real. r03 runs 16 income codings and 81% preserve the result -- and the finding that mattered came instead from a decomposition, not from a multiverse. Multiverses measure fragility to choices someone thought to vary."
+    },
+    {
+      "type": "cito:usesMethodIn",
+      "target": "maria2026-analytic-variability-reanalysis",
+      "why": "Same simulation-ladder discipline: a negative control that must NOT produce the effect, then generators with the effect forced in."
+    },
+    {
+      "type": "cito:extends",
+      "target": "maria2026-executability-denominators",
+      "why": "Adds a case at the opposite end of the deposit-quality range: zero code, four columns, complete reproduction. The denominators paper measures how often code runs; this one shows that whether code runs is the wrong question when the analysis is small enough to re-derive."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "laurinavichyute2022-share-the-code",
+      "why": "'Sharing is not depositing' has a mirror image recorded here: a deposit that is complete for reproduction and incomplete for adjudication. Both pass every artifact badge."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "gamma2021-mpe92m#c2",
+      "why": "PROPOSED BY kb.py suggest, accepted. Same argument, different literature, no citation between them: 'the number of extractable factors is a resolution choice, not a property of the data' is structurally identical to 'the $100,000 threshold is the knot at which the estimator stops resolving a slope of about 0.55'. Both are reported boundaries that track the instrument's resolution rather than a feature of the world."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "gamma2021-mpe92m#c6",
+      "why": "Both records confront a two-subpopulation explanation of a distributional feature and reach opposite verdicts about their own analysis. gamma2021#c6 is recorded not-identifiable because a two-subpopulation perturbation reproduces the observed deficit; here the two-subpopulation reading is the PAPER's and a one-parameter width change is not rejected against it. Neither dataset can separate the two, and in both cases the reason is the same: a cross-sectional design cannot see a subpopulation, only a shape."
+    },
+    {
+      "type": "cito:usesMethodIn",
+      "target": "menkveld2024-nonstandard-errors",
+      "why": "Reciprocal of the above."
+    }
+  ],
+  "open_questions": [
+    "Does the width of the happiness distribution widen with income in any OTHER dataset? Every claim here rests on one self-selected sample of 33,391 people. The German SOEP and the UK Understanding Society both carry repeated well-being measures and household income and would answer it.",
+    "Is the narrowing below $100,000 the same phenomenon as the widening above it, with a sign change, or two different things? The location-scale fit gives sigma' = -0.43 below and +0.75 above; nothing here explains why a single monotone quantity would turn around at that point, and 'it turns around exactly at the threshold the previous literature named' should raise suspicion, not satisfaction.",
+    "The one column that would settle claim c5 outright is reports-per-person. It is gated behind author correspondence (killingsworth2021-experienced-wellbeing artifact a3). Whether to ask is Leonardo's decision.",
+    "This reanalysis has not been reviewed by anyone. cidral is the right reader for c3 and c9 in particular."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-02",
+    "verified": "2026-09-02",
+    "notes_file": "NOTES.md"
+  }
+}

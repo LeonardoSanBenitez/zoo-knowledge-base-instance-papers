@@ -1,0 +1,324 @@
+{
+  "schema_version": "1.2",
+  "id": "kkm2023-conflict-resolved",
+  "title": "Income and emotional well-being: A conflict resolved",
+  "authors": [
+    "Matthew A. Killingsworth",
+    "Daniel Kahneman",
+    "Barbara Mellers"
+  ],
+  "year": 2023,
+  "venue": "PNAS 120(10) e2208661120",
+  "area": [
+    "wellbeing-and-income",
+    "analytic-variability-and-many-analysts"
+  ],
+  "identifiers": {
+    "doi": "10.1073/pnas.2208661120",
+    "pmid": "36857342",
+    "url": "https://www.pnas.org/doi/10.1073/pnas.2208661120"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 34,
+    "bytes_downloaded": 882709,
+    "compute_notes": "Full text as JATS XML from Europe PMC (53,524 B) rendered with the new tools/jats2txt.py; person-level data 739,437 B from OSF, sha256 verified against the hash OSF's own API declares. Eleven analysis scripts in reanalysis/. Heaviest single job: r02 paired bootstrap, B=1000 x 10 quantiles x 2 subsamples = 20,000 quantile-regression fits, 1389 s wall clock, single core. Nothing on disk above 1 MB; no assets.py registration needed and therefore no message owed to priya.",
+    "session": "2026-09-02 maria, 5h-sleep-then-research"
+  },
+  "triggers": [
+    "does money buy happiness above 75000",
+    "is there an income satiation point for happiness",
+    "what did the Kahneman Killingsworth adversarial collaboration actually find",
+    "adversarial collaboration as a way to resolve a disagreement between two studies",
+    "quantile regression on well-being and log income",
+    "does the happiness distribution change shape as income rises",
+    "example of a paper that is fully reproducible from a four-column deposit",
+    "flattening restricted to the least happy 20 percent",
+    "is a non-significant slope the same as a flat slope",
+    "what happens to the spread of well-being as income rises"
+  ],
+  "methods": [
+    "quantile-regression",
+    "many-analysts-design",
+    "in-paper-table-transcription",
+    "multiverse-analysis"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "In Killingsworth's experience-sampling data the flattening of experienced well-being above a threshold income exists but is confined to the least happy 15-20% of the population; the happiest 30% accelerate above $100k; the two offsetting nonlinearities produce the overall linear-log relationship.",
+      "scope": "33,391 employed US adults aged 18-65 with household income >= $10,000, recruited to trackyourhappiness.org 2009-2015; cross-sectional, person-level means of momentary reports.",
+      "quantities": [
+        {
+          "name": "quantile_slope_above_100k_tau05",
+          "value": 0.25,
+          "unit": "well-being points per log(income)",
+          "n": 12762,
+          "source": "Table 1, t = 4.7 / 0.5",
+          "ci": "t = 0.5"
+        },
+        {
+          "name": "quantile_slope_above_100k_tau15",
+          "value": 0.34,
+          "unit": "well-being points per log(income)",
+          "n": 12762,
+          "source": "Table 1",
+          "ci": "t = 1.0"
+        },
+        {
+          "name": "quantile_slope_above_100k_tau25",
+          "value": 1.12,
+          "unit": "well-being points per log(income)",
+          "n": 12762,
+          "source": "Table 1",
+          "ci": "t = 3.3"
+        },
+        {
+          "name": "quantile_slope_above_100k_tau35",
+          "value": 1.21,
+          "unit": "well-being points per log(income)",
+          "n": 12762,
+          "source": "Table 1",
+          "ci": "t = 4.1"
+        },
+        {
+          "name": "quantile_slope_below_100k_tau15",
+          "value": 1.9,
+          "unit": "well-being points per log(income)",
+          "n": 20629,
+          "source": "Table 1",
+          "ci": "t = 8.4"
+        },
+        {
+          "name": "interaction_p_tau15",
+          "value": 0.0002,
+          "unit": "p",
+          "n": 33391,
+          "source": "Results text"
+        },
+        {
+          "name": "interaction_p_tau85",
+          "value": 0.023,
+          "unit": "p",
+          "n": 33391,
+          "source": "Results text"
+        },
+        {
+          "name": "interaction_p_tau70",
+          "value": 0.075,
+          "unit": "p",
+          "n": 33391,
+          "source": "Results text"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Every number reproduces. The scope claim -- that the above-$100k slope genuinely DIFFERS between low and middle percentiles rather than merely failing significance at one and passing it at the other -- was not tested by the paper but does survive a direct test at tau=0.15 and tau=0.20 (bootstrap p = 0.008-0.012). It does NOT survive at tau=0.05 or tau=0.10 (p = 0.058, 0.11), so the two rows with the largest printed below-$100k slopes are the two that carry no evidence for the boundary. Narrower scope, not refutation.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Kahneman & Deaton overstated the scope of flattening because their dichotomous Gallup items have a ceiling and therefore function as a measure of unhappiness rather than of happiness; the orientation and label of a variable determine the scope of the inference readers draw from it.",
+      "scope": "Argument about measurement, applied to the Gallup-Healthways items; the ceiling figures are quoted from KD, not recomputed here.",
+      "quantities": [
+        {
+          "name": "kd_mean_positive_affect_high_income_fraction_of_max",
+          "value": 0.89,
+          "unit": "fraction of maximum",
+          "n": "450,000+ Gallup responses (2008-2009)",
+          "source": "KKM Results, quoting KD Fig. 1A"
+        },
+        {
+          "name": "kd_mean_not_blue_high_income_fraction_of_max",
+          "value": 0.81,
+          "unit": "fraction of maximum",
+          "n": "450,000+ Gallup responses",
+          "source": "KKM Results, quoting KD Fig. 1A"
+        }
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The argument is sound and it is the most transferable thing in the paper: 'happiness rises but stops at X' and 'unhappiness falls but stops at X' are the same numbers and different claims, because an unmarked variable name carries an implicit universal quantifier. Not independently checkable here -- the Gallup data are not public and the KD PDF was not retrievable (see kahneman2010-high-income) -- so this is accepted on the argument, not on re-measurement.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The results violate a homogeneity assumption routinely made and rarely checked: that the conditional distribution of the outcome keeps its shape across the range of the predictor, so that conditional means are a sufficient description.",
+      "scope": "Methodological claim, general.",
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Correct and important, and the paper deserves credit for naming it. But having identified that homogeneity fails, KKM do not fit any alternative that specifies HOW it fails; they describe five quantile slopes and interpret them as five facts about five groups of people. A two-parameter location-scale model is not rejected by these data on either side of the knot (Wald lack-of-fit p = 0.23 and 0.35, r08) and says the location gradient does not change at all.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "The relationship is weak even where robust: the correlation between average happiness and log(income) is 0.09, and the difference between the medians of happiness at $15,000 and $250,000 is about five points on a 100-point scale.",
+      "scope": "Same sample.",
+      "quantities": [
+        {
+          "name": "correlation_happiness_log_income",
+          "value": 0.0869,
+          "unit": "Pearson r",
+          "n": 33391,
+          "source": "recomputed from the deposit; the paper prints 0.09"
+        },
+        {
+          "name": "correlation_band_mean_happiness_log_income",
+          "value": 0.9756,
+          "unit": "Pearson r",
+          "n": 15,
+          "source": "recomputed from the deposit: the 15 income-band means against log(band midpoint)"
+        },
+        {
+          "name": "median_happiness_gap_15k_to_250k",
+          "value": 3.825,
+          "unit": "points on a 0-100 scale",
+          "n": 3270,
+          "source": "recomputed from the deposit: median 61.175 at $15,000 (n=1494), 65.000 at $250,000 (n=1776)"
+        },
+        {
+          "name": "mean_happiness_gap_15k_to_400k",
+          "value": 4.942,
+          "unit": "points on a 0-100 scale",
+          "n": 2326,
+          "source": "recomputed from the deposit; this is the number closest to the paper's 'about five points'"
+        }
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The honesty is real and rare: the authors say plainly that everything they are arguing about is a small modulation of a small effect, and I have not found another paper in this corpus that volunteers that about its own headline. Two phrases in the sentence are looser than the numbers, though, and both are of the kind that gets miscited. (1) 'The correlation between AVERAGE happiness and log(income) is 0.09': 0.09 is the PERSON-LEVEL correlation (recomputed: 0.0869). The correlation between the 15 band AVERAGES and log income is 0.976. A reader who takes 'average happiness' at its word gets a number ten times larger -- the ecological correlation -- in a paper whose whole subject is the scope of an inference. (2) 'the difference between the MEDIANS of happiness at household incomes of $15,000 and $250,000 is about five points': the deposited medians give 3.83. Five points is the MEAN difference, and it needs the $400,000 band (4.94) rather than the $250,000 one (4.67). Neither slip changes any conclusion; both are recorded so a future quotation can use the checked number.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Slopes above $100k 'were not statistically significant (i.e., flat)' for the lowest three percentiles.",
+      "scope": "Table 1 footnote.",
+      "quantities": [
+        {
+          "name": "ci95_slope_above_100k_tau15_upper",
+          "value": 1.068,
+          "unit": "well-being points per log(income)",
+          "n": 12762,
+          "ci_low": -0.238,
+          "ci_high": 1.068,
+          "ci_kind": "confidence",
+          "source": "maria 2026 paired bootstrap, B=1000, r08"
+        }
+      ],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "The parenthesis is the error. A non-significant slope is an interval, not a zero. The 95% bootstrap interval for the tau=0.15 above-$100k slope is [-0.24, +1.07], which admits a gain of up to about three quarters of the median's rate (1.46). What the interval DOES exclude is the median's slope and the same quantile's own below-$100k slope -- so 'the bottom rises more slowly above $100k than the middle does' is supported and 'no further progress' is not.",
+        "by": "maria, 2026-09-02"
+      },
+      "evidence": [
+        "a1"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "derived-data",
+      "locator": "https://osf.io/qye4a/ file Income_and_emotional_wellbeing_a_conflict_resolved.csv",
+      "status": "verified-usable",
+      "bytes": 739437,
+      "sha256": "01ca3cbf8c6d565117927dda56d6a2c5008bfdbab3226851da07aafc648674fd",
+      "local_path": "artifacts/kkm2023.csv",
+      "fetch_cmd": "curl -sL -o kkm2023.csv https://osf.io/download/63db33b678a62302b999cff8/",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "sha256sum kkm2023.csv, compared with the hash returned by https://api.osf.io/v2/nodes/qye4a/files/osfstorage/ ; then `python reanalysis/r01_reproduce_table1.py`",
+        "result": "MATCHES the OSF-declared sha256. Four columns (wellbeing, log_income, income, income_above_100), 33,391 rows, no missing values, income on 15 distinct midpoint values. Reproduces all 14 slopes of Table 1 to a maximum deviation of 0.031 and all 5 reported interaction p-values, which is within the deliberate privacy rounding of the well-being column. Zero code is deposited and none is needed."
+      },
+      "datasheet": {
+        "composition": "One row per participant. wellbeing = that person's mean momentary well-being on a 0-100 continuous scale, slightly rounded for privacy; income = the midpoint of the band the person selected, with everyone above $500,000 assigned $625,000.",
+        "caveats": "The four columns are exactly the four the paper's analysis uses and no more. That makes the deposit REPRODUCTION-SUFFICIENT and ADJUDICATION-INSUFFICIENT: it settles every number the authors print and cannot settle the leading alternative explanation of their finding, because the number of experience-sampling reports contributing to each person's mean is not deposited."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "supplement",
+      "locator": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10013834/fullTextXML",
+      "status": "verified-usable",
+      "bytes": 53524,
+      "local_path": "artifacts/PMC10013834.xml",
+      "fetch_cmd": "curl -sL -o PMC10013834.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10013834/fullTextXML",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "python tools/jats2txt.py PMC10013834.xml --meta ; --tables",
+        "result": "Complete body, Methods and Table 1 with row and column labels intact. The publisher PDF is NOT retrievable from this box (pnas.org and pmc.ncbi.nlm.nih.gov both return a Cloudflare interstitial), so this is the primary source actually read."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "supplement",
+      "locator": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10013834/supplementaryFiles",
+      "status": "dangling",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "curl -sL -o PMC10013834_suppl.zip <locator> ; file PMC10013834_suppl.zip",
+        "result": "190 bytes of HTML: nginx '503 Service Temporarily Unavailable', served with exit code 0 and the .zip name the caller asked for. Recorded as dangling rather than absent, because 503 is a claim about the server's mood and not about whether the object exists -- the distinction that decides whether to retry or to give up."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-happiness-income-spread",
+      "why": "Full reproduction from the deposit plus a centre/spread decomposition, a knot sweep, a specification multiverse over the income coding, and a simulation ladder."
+    },
+    {
+      "type": "cito:repliesTo",
+      "target": "killingsworth2021-experienced-wellbeing",
+      "why": "Same author, same data, revisited jointly with the author of the study it contradicted."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "kahneman2010-high-income",
+      "why": "The flattening KD reported is confirmed as a real feature and restricted to the bottom of the distribution."
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "killingsworth2021-experienced-wellbeing",
+      "why": "Killingsworth is an author of both. A self-correction, which deserves more weight rather than less."
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "kahneman2010-high-income",
+      "why": "Kahneman is an author of both. Note the footnote: Angus Deaton did not participate and should not be taken as endorsing the conclusions -- one of the two authors of the criticised paper stayed out."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "breznau2022-hidden-universe",
+      "why": "Both treat 'the same data analysed differently gives different answers' as the problem to be solved. Breznau measures the dispersion and stops; KKM is the only case in this corpus where the disagreeing parties jointly re-analysed and produced a reconciling model. The unstated shared assumption is that a reconciliation exists at all -- that the disagreement is about analysis rather than about what the measured construct is."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "mathur2023-effect-sizes",
+      "why": "KKM's own effect-size honesty (r = 0.09; a few points on a 100-point scale) is exactly Mathur & VanderWeele's move against Breznau: report the magnitude, not the significance pattern. KKM then do not apply it to their own Table 1, which is presented entirely as a significant/non-significant pattern."
+    }
+  ],
+  "open_questions": [
+    "Reports per person is the one column that would settle whether the widening of the well-being distribution above $100,000 is substantive. It is in neither deposit. Killingsworth's 2021 granular data are available to qualified researchers on request; asking is a live option and is a decision for Leonardo, not for me.",
+    "KKM split at $100,000; Killingsworth 2021 split at $80,000; KD's $75,000 was the midpoint of a survey band. Nobody has reported the flattening result as a function of the knot. r05 does, and finds it is not a threshold.",
+    "The paper reports no analysis of whether its 33,391 participants differ from the population in DISPERSION of well-being, only in level. Self-selection into a happiness-tracking app plausibly affects the second moment more than the first, and every result here is about the second moment."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-02",
+    "verified": "2026-09-02",
+    "notes_file": "NOTES.md"
+  }
+}
