@@ -1,0 +1,474 @@
+
+ Reappraising the variability of effects of antipsychotic medication in schizophrenia: a meta‐analysis - PMC
+ Skip to main content
+ An official website of the United States government
+ Here's how you know 
+ Here's how you know 
+ Official websites use .gov 
+ A
+ .gov website belongs to an official
+ government organization in the United States.
+ Secure .gov websites use HTTPS 
+ A lock (
+ Lock 
+ Locked padlock icon
+ ) or https:// means you've safely
+ connected to the .gov website. Share sensitive
+ information only on official, secure websites.
+ Search
+ Log in 
+ Dashboard
+ Publications
+ Account settings
+ Log out
+ Search…
+ Search NCBI
+ Primary site navigation
+ Search
+ Logged in as:
+ Dashboard
+ Publications
+ Account settings
+ Log in
+ Search PMC Full-Text Archive 
+ Search in PMC 
+ Journal List
+ User Guide
+ PERMALINK 
+ Copy 
+ As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+ the contents by NLM or the National Institutes of Health. 
+ Learn more:
+ PMC Disclaimer 
+ |
+ PMC Copyright Notice
+ World Psychiatry . 2022 May 7;21(2):287–294. doi: 10.1002/wps.20977 
+ Search in PMC 
+ Search in PubMed 
+ View in NLM Catalog 
+ Add to search 
+ Reappraising the variability of effects of antipsychotic medication in schizophrenia: a meta‐analysis 
+ Robert A McCutcheon 
+ Robert A McCutcheon 
+ 1 
+ Institute of Psychiatry, Psychology and Neuroscience, Department of Psychosis Studies, King's College of London, London, UK 
+ 2 
+ Psychiatric Imaging Group, MRC London Institute of Medical Sciences, Hammersmith Hospital, Imperial College London, London, UK 
+ 3 
+ Institute of Clinical Sciences, Faculty of Medicine, Imperial College London, London, UK 
+ Find articles by Robert A McCutcheon 
+ 1, 2, 3 , Toby Pillinger 
+ Toby Pillinger 
+ 1 
+ Institute of Psychiatry, Psychology and Neuroscience, Department of Psychosis Studies, King's College of London, London, UK 
+ 2 
+ Psychiatric Imaging Group, MRC London Institute of Medical Sciences, Hammersmith Hospital, Imperial College London, London, UK 
+ 3 
+ Institute of Clinical Sciences, Faculty of Medicine, Imperial College London, London, UK 
+ Find articles by Toby Pillinger 
+ 1, 2, 3 , Orestis Efthimiou 
+ Orestis Efthimiou 
+ 4 
+ Institute of Social and Preventive Medicine, University of Bern, Bern, Switzerland 
+ 8 
+ Institute of Psychiatry, Psychology and Neuroscience, Department of Psychological Medicine, King's College of London, London, UK 
+ Find articles by Orestis Efthimiou 
+ 4, 8 , Marta Maslej 
+ Marta Maslej 
+ 5 
+ Krembil Centre for Neuroinformatics, Centre for Addiction and Mental Health, Toronto, ON, Canada 
+ Find articles by Marta Maslej 
+ 5 , Benoit H Mulsant 
+ Benoit H Mulsant 
+ 6 
+ Centre for Addiction and Mental Health, Toronto, ON, Canada 
+ 7 
+ Department of Psychiatry, University of Toronto, Toronto, ON, Canada 
+ Find articles by Benoit H Mulsant 
+ 6, 7 , Allan H Young 
+ Allan H Young 
+ 8 
+ Institute of Psychiatry, Psychology and Neuroscience, Department of Psychological Medicine, King's College of London, London, UK 
+ Find articles by Allan H Young 
+ 8 , Andrea Cipriani 
+ Andrea Cipriani 
+ 9 
+ Department of Psychiatry, University of Oxford, Oxford, UK 
+ 10 
+ Oxford Health NHS Foundation Trust, Warneford Hospital, Oxford, UK 
+ Find articles by Andrea Cipriani 
+ 9, 10 , Oliver D Howes 
+ Oliver D Howes 
+ 2 
+ Psychiatric Imaging Group, MRC London Institute of Medical Sciences, Hammersmith Hospital, Imperial College London, London, UK 
+ 3 
+ Institute of Clinical Sciences, Faculty of Medicine, Imperial College London, London, UK 
+ 8 
+ Institute of Psychiatry, Psychology and Neuroscience, Department of Psychological Medicine, King's College of London, London, UK 
+ Find articles by Oliver D Howes 
+ 2, 3, 8 
+ Author information 
+ Article notes 
+ Copyright and License information 
+ 1 
+ Institute of Psychiatry, Psychology and Neuroscience, Department of Psychosis Studies, King's College of London, London, UK 
+ 2 
+ Psychiatric Imaging Group, MRC London Institute of Medical Sciences, Hammersmith Hospital, Imperial College London, London, UK 
+ 3 
+ Institute of Clinical Sciences, Faculty of Medicine, Imperial College London, London, UK 
+ 4 
+ Institute of Social and Preventive Medicine, University of Bern, Bern, Switzerland 
+ 5 
+ Krembil Centre for Neuroinformatics, Centre for Addiction and Mental Health, Toronto, ON, Canada 
+ 6 
+ Centre for Addiction and Mental Health, Toronto, ON, Canada 
+ 7 
+ Department of Psychiatry, University of Toronto, Toronto, ON, Canada 
+ 8 
+ Institute of Psychiatry, Psychology and Neuroscience, Department of Psychological Medicine, King's College of London, London, UK 
+ 9 
+ Department of Psychiatry, University of Oxford, Oxford, UK 
+ 10 
+ Oxford Health NHS Foundation Trust, Warneford Hospital, Oxford, UK 
+ Issue date 2022 Jun. 
+ © 2022 World Psychiatric Association 
+ PMC Copyright notice 
+ PMCID: PMC9077611  PMID: 35524614 
+ Abstract 
+ It is common experience for practising psychiatrists that individuals with schizophrenia vary markedly in their symptomatic response to antipsychotic medication. What is not clear, however, is whether this variation reflects variability of medication‐specific effects (also called “treatment effect heterogeneity”), as opposed to variability of non‐specific effects such as natural symptom fluctuation or placebo response. Previous meta‐analyses found no evidence of treatment effect heterogeneity, suggesting that a “one size fits all” approach may be appropriate and that efforts at developing personalized treatment strategies for schizophrenia are unlikely to succeed. Recent advances indicate, however, that earlier approaches may have been unable to accurately quantify treatment effect heterogeneity due to their neglect of a key parameter: the correlation between placebo response and medication‐specific effects. In the present paper, we address this shortcoming by using individual patient data and study‐level data to estimate that correlation and quantitatively characterize antipsychotic treatment effect heterogeneity in schizophrenia. Individual patient data (on 384 individuals who were administered antipsychotic treatment and 88 who received placebo) were obtained from the Yale University Open Data Access (YODA) database. ﻿Study‐level data were obtained from a meta‐analysis of 66 clinical trials including 17,202 patients. Both individual patient and study‐level analyses yielded a negative correlation between placebo response and treatment effect for the total score on the Positive and Negative Syndrome Scale (PANSS) (ρ=–0.32, p=0.002 and ρ=–0.39, p<0.001, respectively). Using the most conservative of these estimates, a meta‐analysis of treatment effect heterogeneity provided evidence of a marked variability in antipsychotic‐specific effects between individuals with schizophrenia, with the top quartile of patients experiencing beneficial treatment effects of 17.7 points or more on the PANSS total score, while the bottom quartile presented a detrimental effect of treatment relative to placebo. This evidence of clinically meaningful treatment effect heterogeneity suggests that efforts to personalize antipsychotic treatment of schizophrenia have potential for success. 
+ Keywords: Antipsychotic medication, schizophrenia, variability of effects, medication‐specific effects, non‐specific effects, placebo response, treatment effect heterogeneity, personalization of treatment, precision medicine 
+ When using antipsychotic medication in routine care, it is ap­parent to the practising psychiatrist that symptoms improve con­siderably in some patients, while in others there is less improvement, and in some cases there is even a worsening of symptoms. A patient's overall observed response to a medication is made up of two components. The first component includes medication‐specific effects, which are also called “treatment effects”. The second component consists of factors not directly related to medication, such as natural fluctuation in symptoms, external life events and expectation effects, which in clinical trials are subsumed by the term “placebo response”. In the clinical setting, we cannot determine whether the observed variability of symptomatic change between patients reflects variation of medication‐specific effects, termed “treatment effect heterogeneity”, as opposed to variation of placebo response. 
+ Quantifying treatment effect heterogeneity is important for research and clinical practice. If considerable heterogeneity exists, this means that medication has markedly different effects in different individuals. This in turn suggests scope for personalized treatment, and justifies efforts to identify patient factors associated with good and poor response to treatment 
+ 1 
+ , 
+ 2 
+ , 
+ 3 
+ , 
+ 4 
+ . In contrast, if heterogeneity does not exist, this suggests that the variation seen clinically is due almost entirely to factors unrelated to medication, and that all patients will experience a similar magnitude of medication‐specific benefit. In this latter case, the implication is that a “one size fits all” approach is appropriate for the prescribing of antipsychotic medication, and that attempts at developing predictive models to allow treatment personalization are doomed to failure. 
+ There have been several recent meta‐analytic attempts to investigate whether treatment effect heterogeneity exists, focusing on antipsychotics, antidepressants, and non‐pharmacological interventions 
+ 5 
+ , 
+ 6 
+ , 
+ 7 
+ , 
+ 8 
+ , 
+ 9 
+ , 
+ 10 
+ , 
+ 11 
+ . These analyses assumed that the presence of treatment effect heterogeneity would result in increased variability of symptomatic response in active treatment arms, as compared to placebo arms, of randomized controlled trials (RCTs) 
+ 5 
+ , 
+ 7 
+ , 
+ 8 
+ . These meta‐analyses, based on study‐level data, found no evidence of greater variability in the active treatment arm for a range of treatments, including antipsychotic treatment of schizophrenia. They concluded that treatment effects are likely to be relatively constant, suggesting limited scope for personalization of treatment 
+ 5 
+ , 
+ 6 
+ , 
+ 7 
+ , 
+ 8 
+ , 
+ 9 
+ , 
+ 10 
+ , 
+ 11 
+ . 
+ These findings were surprising, given the widespread clinical belief that patients differ substantially in their response to medication. They are also in contrast to previous research using individual patient data, which suggested that treatment effects vary between patients, with those who are most severely ill at baseline benefitting the most from active treatment 
+ 12 
+ , 
+ 13 
+ , 
+ 14 
+ , 
+ 15 
+ . 
+ An explanation for these discrepant findings is that the conclusions drawn from the variability meta‐analyses rest on invalid assumptions regarding the correlation between the treatment effect and placebo response 
+ 9 
+ , 
+ 16 
+ . Specifically, the conclusion that the absence of increased variability in active arms suggests an absence of treatment effect heterogeneity is valid only when the above correlation is zero or positive. It is, however, possible that individuals with a greater placebo response have a smaller medication‐specific benefit, i.e., that a negative correlation exists between placebo response and treatment effect. In this case, treatment effect heterogeneity will exist even when variability of overall symptomatic change in placebo and active treatment groups is the same, or even if the active treatment group displays lower variability of overall symptomatic change 
+ 8 
+ , 
+ 9 
+ , 
+ 16 
+ . 
+ Previous meta‐analyses have implicitly assumed a positive correlation between placebo response and treatment effect, even though a priori a negative correlation might be considered more likely, since a large placebo response effectively precludes a large treatment effect, due to the fact that all rating scales possess a lower limit. However, this correlation between treatment effect and placebo response has not been previously estimated. As a result, formal estimation of the heterogeneity of treatment effects using aggregate data from RCTs has previously not been possible. 
+ It is of major importance to quantify treatment effect heterogeneity in schizophrenia, given its implications for attempts to personalize treatment. In order to do this, we must first estimate the correlation between treatment effect and placebo response. A growing body of literature exists that cannot be accurately interpreted in the absence of this parameter. In the present paper, we estimate this value via complementary approaches, using both individual patient data and study‐level treatment effects from clinical trials. We then apply this value to the results of a variability meta‐analysis, in order to formally estimate the heterogeneity of antipsychotic treatment effects, rather than relying on the primarily intuitive interpretations of previous meta‐analyses 
+ 5 
+ , 
+ 7 
+ . 
+ METHODS 
+ Individual patient data 
+ We used the Yale University Open Data Access (YODA) database 
+ 17 
+ to identify acute treatment clinical trials of antipsychotic medication in schizophrenia including adults aged 18‐65 who had a period of placebo treatment prior to a period of active treatment, with Positive and Negative Syndrome Scale (PANSS) 
+ 18 
+ scores recorded in both periods. 
+ One trial (Sch‐703) met these criteria, using the following design: individuals with schizophrenia who were receiving antipsychotic treatment and were symptomatically stable were withdrawn from current medication and then randomized to placebo or active treatment for the duration of a 6‐week double‐blind period. Those who completed the double‐blind period, or completed at least 21 days of double‐blind treatment followed by discontinuation due to lack of efficacy, then entered an open‐label extension in which they received active treatment. Study‐level data 
+ We used all studies from a recent meta‐analysis 
+ 5 
+ , which included randomized double‐blind placebo‐controlled trials of antipsychotic monotherapy in the treatment of adults aged 18‐65 with schizophrenia. 
+ We extracted the mean and variance (standard deviation, standard error, or confidence intervals) of symptom change for total, positive and negative symptom ratings from each study for the active treatment and placebo groups. ﻿In studies where there were multiple active arms, the number of patients in the placebo group was divided by the number of arms. 
+ Brief Psychiatric Rating Scale (BPRS) 
+ 19 
+ scores were converted to PANSS scores using the method described by Leucht et al 
+ 20 
+ , to maximize the number of studies that could be included. Estimating correlation of treatment effect and placebo response from individual patient data 
+ In order to calculate a correlation coefficient (ρ) between treatment effect and placebo response, we first estimated treatment effects at the individual level. In order to ensure robustness of findings, we did this using two separate methods, which rest upon different assumptions. 
+ In the first method, termed subsequently the “open‐label method”, the placebo response for individuals randomized to the placebo arm during the double‐blind period was quantified as the change in PANSS score between the start of the double‐blind period and the point at which that individual left the double‐blind portion of the trial. The estimated treatment effect was then calculated as the change in symptom severity from the end of the double‐blind period (at which point the subject switched from placebo to active treatment) to the end of the open‐label period (i.e., the period during which the individual was receiving active treatment). This method relies on the assumption that, if the participant had been initially randomized to the other arm (i.e., active treatment), the score observed at the end of the double‐blind period should equal the score we actually observe at the end of an open‐label period of equal duration. 
+ The second method, termed subsequently the “linear model method”, was based on a simple linear regression model. More specifically, we fit a linear model with symptom severity at the end of the double‐blind period as the outcome variable. Treatment, age, gender, and baseline severity were covariates, and the interactions of all covariates with treatment were also included. Following model fitting, we were able to then estimate treatment effects at the individual level using that individual's baseline covariates. This method makes the usual assumption of linearity and additivity of the effects of the covariates and treatment on the outcome. 
+ Then, for both methods, we estimated the Spearman correlation coefficient (ρ) between placebo response and treatment effect, for positive and negative PANSS subscales as well as for the PANSS total score. Further details regarding both approaches and their assumptions are provided in the supplementary information. Estimating correlation of treatment effect and placebo response from study‐level data 
+ As a third method, we used data on study‐level placebo response and treatment effect from RCTs included in the above‐mentioned meta‐analysis 
+ 5 
+ to calculate a Spearman correlation coefficient (ρ) between the two. After weighting by number of patients in each arm, we pooled study‐level estimates for positive and negative symptom PANSS subscales, in addition to total PANSS scores. Analyses were carried out using the package wCorr (Version 1.9.1) in R. This method makes the assumption that the correlation between treatment effect and placebo response at the individual level equals that at the study level. Estimating treatment effect heterogeneity 
+ The variability ratio (VR) is defined as follows, with σ A T denoting the standard deviation of symptomatic change in the active treatment arm, and σ P L representing the standard deviation of the placebo treatment arm: VR = σ A T σ P L . 
+ VR is therefore easily calculated from study‐level data. The variable of clinical interest, however, is the standard deviation of the treatment effect ( σ T E ). This can be estimated if VR and the correlation ( ρ ) between placebo response and treatment effect are known 
+ 9 
+ , 
+ 16 
+ : 
+ σ T E = σ P L ( V R 2 − 1 + ρ 2 − ρ ) . 
+ We calculated VR for each study using the published study‐level data from RCTs of antipsychotic treatment of schizophrenia 
+ 5 
+ . We then calculated σ T E for each study through the formula above, using the most conservative estimate of ρ derived from our three methods (i.e., the value corresponding to the correlation of lowest absolute magnitude). Finally, we combined the values of σ T E from all studies via a random effects meta‐analysis. To put the estimate of variability into perspective and to help assess its clinical importance, we also estimated the average treatment effect in the same RCTs, by performing a random effects meta‐analysis using the observed mean difference between drug and placebo arms. 
+ In addition to a single summary estimate across all trials, meta‐analyses were also performed with studies grouped according to antipsychotics used. Meta‐analyses were also conducted for positive and negative PANSS subscales where their scores were reported, using the relevant value of ρ calculated above. In a ­sensitivity analysis, we repeated the calculations using instead the most liberal value for ρ (i.e., the value corresponding to the correlation of highest absolute magnitude) among the three methods. RESULTS 
+ Individual patient data correlations 
+ The eligible trial identified from the YODA database (see Table  1 ) included 384 individuals who were administered antipsychotic treatment and 88 individuals who received placebo during the double‐blind period. 
+ Table 1. 
+ Characteristics of the clinical trial providing individual patient data 
+ YODA number 
+ Sch‐703 
+ Clinical trial number 
+ 00650793 
+ Description 
+ 6‐week double‐blind period followed by 52‐week open‐label period 
+ Double‐blind treatment 
+ Paliperidone (6‐12 mg daily), olanzapine (10 mg daily) 
+ Placebo 
+ Open‐label treatment 
+ Paliperidone (3‐12 mg daily) 
+ Number of patients 
+ 384 (antipsychotic) 
+ 88 (placebo) 
+ Patients' age, years (mean±SD) 
+ 36.6±10.8 (antipsychotic) 
+ 38.1±10.6 (placebo) 
+ Patients' gender (% female) 
+ 50.5 (antipsychotic) 
+ 51.1 (placebo) 
+ Duration of double‐blind phase, days (mean±SD) 
+ 40.8±6.2 (antipsychotic) 
+ 35.7±10.0 (placebo) 
+ Duration of open‐label phase, days (mean±SD) 
+ 37.3±15.1 (antipsychotic) 
+ 33.8±16.9 (placebo) 
+ Open in a new tab 
+ YODA – Yale University Open Data Access The open‐label method yielded a strong negative correlation between the estimated treatment effect and placebo response for PANSS total ( ρ =–0.62, p<0.001), positive ( ρ =–0.61, p<0.001), and negative ( ρ =–0.35, p<0.001) symptom scores (Figure  1 ). 
+ Figure 1. 
+ Open in a new tab 
+ Correlation between treatment effects (estimated using the open‐label method) and placebo response. Each point represents a participant. The linear model method also yielded a negative correlation between the estimated treatment effect and placebo response, as observed for PANSS total ( ρ =–0.32, p=0.002), positive ( ρ =–0.29, p=0.006), and negative ( ρ =–0.26, p<0.013) symptom scores (Figure  2 ). 
+ Figure 2. 
+ Open in a new tab 
+ Correlation between treatment effects (estimated using the linear model method) and placebo response. Each point represents a participant. Study‐level data correlations 
+ Data were analyzed from 66 clinical trials including 17,202 patients (see supplementary information) 
+ 5 
+ . Consistent with correlations estimated from the individual patient data, across studies, we found a moderate negative correlation between placebo response and treatment effect for total (( ρ =–0.39, p<0.001), as well as positive ( ρ =–0.25, p=0.01) and negative ( ρ =–0.38, p<0.001) symptom scores (Figure  3 ). 
+ Figure 3. 
+ Open in a new tab 
+ Relationship between study‐level estimates of treatment effect and placebo response. Each point represents a clinical trial, with the size of the point proportional to the number of subjects in the trial. Thus, we concluded that all three methods (which employ different assumptions) gave consistent evidence of a negative correlation between placebo response and treatment effect. Treatment effect heterogeneity 
+ Using the linear model method values of ρ , as these were the most conservative, a meta‐analysis of treatment effect heterogeneity estimated the standard deviation for total symptoms to be 13.47 PANSS points (95% CI: 12.69‐14.29, p<0.001, I 2 =45%) (Figure  4 ). For positive symptoms, the estimate was 3.97 (95% CI: 3.66‐4.30, p<0.001, I 2 =53%) (Figure  5 ). For negative symptoms, it was 2.80 (95% CI: 2.54‐3.08, p<0.001, I 2 =57%) (Figure  6 ). When we used the least conservative estimates for ρ (those derived from the open‐label method), the distribution of treatment effects was wider, pointing to even larger variability of treatment, with standard deviations for total, positive and negative symptoms of 23.3, 7.4 and 3.7 points, respectively. 
+ Figure 4. 
+ Open in a new tab 
+ Total symptoms: meta‐analysis of within‐study estimates of the standard deviation (SD) of patient‐level treatment effects of antipsychotics vs. placebo Figure 5. 
+ Open in a new tab 
+ Positive symptoms: meta‐analysis of within‐study estimates of the standard deviation (SD) of patient‐level treatment effects of anti­psychotics vs. placebo Figure 6. 
+ Open in a new tab 
+ Negative symptoms: meta‐analysis of within‐study estimates of the standard deviation (SD) of patient‐level treatment effects of antipsychotics vs. placebo The mean treatment effect was estimated as 8.6 points (95% CI: 7.8‐9.4, I 2 =38%, p<0.001) for total symptoms, 2.7 (95% CI: 2.3‐3.1, I 2 =35%, p<0.001) for positive symptoms, and 1.8 (95% CI: 1.5‐2.0, I 2 =27%, p<0.001) for negative symptoms. 
+ The expected distribution of treatment effects based on these values is illustrated in Figure  7 . The figure is a density plot, effectively a smoothed histogram, which shows the distribution of expected treatment effects for a population of individuals with schizophrenia treated with antipsychotics. For total symptoms, the vertical lines denote the 25th and 75th percentile, located at –0.5 and 17.7 respectively. This means that 25% of the patients are expected to receive a benefit of at least 17.7 points on the PANSS, while another 25% are expected to experience a worsening of at least 0.5 points as compared to placebo. The remaining 50% are expected to receive a benefit between –0.5 and 17.7 on the PANSS. For positive symptoms, the 75th centile equates to an improvement of 5.4 points, and the 25th centile to a worsening of 0.05 points. For negative symptoms, the 75th centile equates to an improvement of 3.7 points, while the 25th centile equates to a deterioration of 0.1 points. The distribution suggests that 74%, 75% and 74% of patients will show a non‐zero benefit in terms of total, positive and negative symptoms, respectively. 
+ Figure 7. 
+ Open in a new tab 
+ Distribution of treatment effects in the antipsychotic treatment of schizophrenia. The area under each curve equals 1, i.e. 100% of the patient population. In the case of total symptoms, solid vertical lines represent upper and lower quartiles. For total symptoms, 25% of individuals experience a treatment effect of at least 17.7 PANSS points, while 25% experience a negative effect of treatment of at least 0.5 points. PANSS – Positive and Negative Syndrome Scale. DISCUSSION 
+ This study has found evidence of a marked variability in antipsychotic‐specific effects between individuals with schizophrenia. According to our most conservative estimates, a quarter of individuals experience a substantial benefit of over 17 points on the PANSS total score, and a quarter present a detrimental effect relative to placebo. Clinically important treatment effect heterogeneity was also estimated for positive and negative symptom domains. These results suggest that the “one size fits all” approach to treating patients with a diagnosis of schizophrenia may be suboptimal, and provide support to efforts for developing personalized approaches to treatment 
+ 1 
+ , 
+ 21 
+ , 
+ 22 
+ , 
+ 23 
+ . The need for personalized approaches is apparent, since we have demonstrated that not only is treatment effect heterogeneity likely to exist, but that it may also be of a large and clinically meaningful magnitude. 
+ Since individual patients differ from one another in terms of their overall response to antipsychotic treatment, it has long been assumed that they also differ in terms of the medication‐specific benefit they get from the drug. This has been supported by findings from individual patient data meta‐analyses 
+ 12 
+ , 
+ 13 
+ , 
+ 14 
+ . This interpretation was recently challenged by meta‐analyses which suggested that antipsychotics may in fact deliver relatively constant medication‐specific effects, and that clinically observed variability was therefore secondary to variability of factors not directly related to medications, such as treatment‐unrelated fluctuation in symptom severity or expectation effects, and measurement error 
+ 5 
+ , 
+ 7 
+ . 
+ In the present paper, we bridge the gap between the conclusions of variability meta‐analyses and those of individual patient data analyses and clinical experience. We show that the evidence is consistent, with the discrepancy in conclusions resulting from a previously imprecise interpretation of the VR. Specifically, previous meta‐analyses of variability did not formally tie the VR to the outcome of interest: the heterogeneity of treatment effects. To undertake this vital step, we estimated the correlation coefficient between placebo response and treatment effects with three different methods. We found this correlation to be consistently negative and, as a result, our findings reconciled inconsistencies in findings of variability meta‐analyses, previous individual patient data meta‐analyses, and clinical experience, suggesting that meaningful heterogeneity of antipsychotic treatment effects exists in adult patients with schizophrenia. 
+ Our open‐label method for estimating individual treatment effects involved calculating placebo responses in individuals who had previously received antipsychotic treatment. This is unavoidable, due to a lack of available trials of suitable design in anti­psychotic‐naïve individuals, but it has potential disadvantages. In addition to possible carry‐over effects, withdrawal effects and pla­cebo responses are enmeshed and, as a result, our estimates of variability may partly reflect the variability of withdrawal effects. To disentangle withdrawal and placebo responses in cross‐over designs is complex but not impossible, and could be considered in studies aiming to further unpack individual variability of response 
+ 24 
+ . The open‐label method also assumes that the change in symptom severity with an active compound following a period of placebo treatment is a fair estimate of the treatment effect; wheth­er this is fully justified is not known, although our group‐level findings suggest that this may be a reasonable assumption. 
+ The linear method for estimating treatment effects did not employ data from the open‐label phase and so does not rely on the same assumptions. It does, however, estimate treatment effects and placebo response after assuming linear, non‐interacting relations between symptom scores and the baseline covariates of age, gender, and symptom severity. Moreover, given that other covariates are likely to play a significant role in determining both placebo response and treatment effects, the estimates produced may not be entirely accurate. 
+ The study‐level calculation of the placebo‐treatment effect cor­relation circumvents shortcomings of the individual‐level analyses. This analysis, however, runs the risk of aggregation bias (“ecological fallacy”), i.e. a correlation observed across studies at the study level may not reflect correlation at the individual level. 
+ Nevertheless, concerns about the three approaches are mitigated by the consistency of findings between them. In addition, a negative correlation was a priori expected, as greater placebo response in an individual leaves less room for an additional treatment effect, and there are not reasons to believe that any of the methods would produce a bias towards a negative correlation. In addition, we believe that our estimate of the correlation coefficient is the best one currently available and, as such, its use is indicated, since the adoption of some form of coefficient is required to make any valid inference from VRs. 
+ Other psychiatric treatments, including antidepressants 
+ 6 
+ , 
+ 11 
+ and brain stimulation 
+ 10 
+ , have also recently been examined in meta‐analyses of VRs. As with the initial variability analyses of antipsychotic trials, the conclusion of these studies has been that minimal heterogeneity of treatment effects exists. However, this conclusion depends on the assumption of a positive correlation between placebo and treatment effects, which, as the results above demonstrate, may well not be the case. 
+ Future work should seek to identify the correlation between treatment effects and placebo response in other disorders and with other treatments. The estimation of this correlation will then allow for determination as to whether interindividual heterogeneity of treatment effects also exists in these disorders. It would also be of interest to see if outcome measures other than symptom rating scales, such as functioning, adverse effects, and cognitive measures, show similar heterogeneity of treatment effects 
+ 25 
+ . CONCLUSIONS 
+ The current findings support the hypothesis that substantial interindividual heterogeneity exists in terms of symptomatic response to antipsychotic treatment in schizophrenia. In turn, these findings support efforts to provide treatment personalization 
+ 1 
+ . Future work should aim to identify which medications and symptom domains are most likely to benefit from personalized precision approaches. ACKNOWLEDGEMENTS 
+ R.A. McCutcheon is supported by the UK National Institute for Health Research (NIHR); T. Pillinger by the NIHR and Maudsley Charity; M. Maslej by a post‐doctoral fellowship from the Canadian Institutes of Health Research (CIHR); O. Efthimiou by the Swiss National Science Foundation (Ambizione grant no. 180083); B.H. Mulsant by the Labatt Family Chair in Biology of Depression in Late‐Life Adults at the University of Toronto, the US National Institute of Mental Health and the US Patient‐Centered Outcomes Research Institute. A. Cipriani is supported by the NIHR Oxford Cognitive Health Clinical Research Facility, an NIHR Research Professorship (grant no. RP‐2017‐08‐ST2‐006), the NIHR Oxford and Thames Valley Applied Research Collaboration and the NIHR Oxford Health Biomedical Research Centre (grant no. BRC‐1215‐20005). O.D. Howes is supported by the UK Medical Research Council (grant no. MC_A656_5QD30_2135), the Maudsley Charity (grant no. 666), the Wellcome Trust (grant no. 094849/Z/10/Z) and the NIHR Biomedical Research Centre at South London and Maudsley NHS Foundation Trust and King's College London. The funders had no role in study design, data collection, data analysis, data interpretation, or writing of the report. The views expressed are those of the authors and not necessarily those of the funding bodies. Supplementary information on the study is available at 
+ https://zenodo.org/record/5896334#.Ye5UQljP2rM . REFERENCES 
+ 1. 
+Maj M, van Os J, De Hert M et al. The clinical characterization of the patient with primary psychosis aimed at personalization of management. World Psychiatry
+2021;20:4‐33. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 2. 
+Maj M, Stein DJ, Parker G et al. The clinical characterization of the adult patient with depression aimed at personalization of management. World Psychiatry
+2020:19:269‐93. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 3. 
+Stein DJ, Craske MG, Rothbaum BO et al. The clinical characterization of the adult patient with an anxiety or related disorder aimed at personalization of management. World Psychiatry
+2021;20:336‐56. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 4. 
+Salazar De Pablo G, Studerus E, Vaquerizo‐Serrano J et al. Implementing precision psychiatry: a systematic review of individualized prediction models for clinical practice. Schizophr Bull
+2021;47:284‐97. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 5. 
+McCutcheon RA, Pillinger T, Mizuno Y et al. The efficacy and heterogeneity of antipsychotic response in schizophrenia: a meta‐analysis. Mol Psychiatry
+2021;26:1310‐20. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 6. 
+Guo X, McCutcheon RA, Pillinger T et al. The magnitude and heterogeneity of antidepressant response in depression: a meta‐analysis of over 45,000 patients. J Affect Disord
+2020;276:991‐1000. [ DOI ] [ PubMed ] [ Google Scholar ] 
+ 7. 
+Winkelbeiner S, Leucht S, Kane JM et al. Evaluation of differences in individual treatment response in schizophrenia spectrum disorders: a meta‐analysis. JAMA Psychiatry
+2019;76:1063‐73. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 8. 
+Maslej MM, Furukawa TA, Cipriani A et al. Individual differences in response to antidepressants. JAMA Psychiatry
+2021;78:490‐7. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 9. 
+Volkmann C, Volkmann A, Müller CA. On the treatment effect heterogeneity of antidepressants in major depression: a Bayesian meta‐analysis and simulation study. PLoS One
+2020;15:1‐22. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 10. 
+Homan S, Muscat W, Joanlanne A et al. Treatment effect variability in brain stimulation across psychiatric disorders: a meta‐analysis of variance. Neurosci Biobehav Rev
+2021;124:54‐62. [ DOI ] [ PubMed ] [ Google Scholar ] 
+ 11. 
+Munkholm K, Winkelbeiner S, Homan P. Individual response to antidepressants for depression in adults – a meta‐analysis and simulation study. PLoS One
+2020;15:1‐16. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 12. 
+Leucht S, Leucht C, Huhn M et al. Sixty years of placebo‐controlled antipsychotic drug trials in acute schizophrenia: systematic review, Bayesian meta‐analysis, and meta‐regression of efficacy predictors. Am J Psychiatry
+2017;174:927‐42. [ DOI ] [ PubMed ] [ Google Scholar ] 
+ 13. 
+Zhu Y, Li C, Huhn M et al. How well do patients with a first episode of schizophrenia respond to antipsychotics: a systematic review and meta‐analysis. Eur Neuropsychopharmacol
+2017;27:835‐44. [ DOI ] [ PubMed ] [ Google Scholar ] 
+ 14. 
+Rabinowitz J, Werbeloff N, Caers I et al. Determinants of antipsychotic response in schizophrenia. J Clin Psychiatry
+2014;75:e308‐16. [ DOI ] [ PubMed ] [ Google Scholar ] 
+ 15. 
+Furukawa TA, Levine SZ, Tanaka S et al. Initial severity of schizophrenia and efficacy of antipsychotics: participant‐level meta‐analysis of 6 placebo‐controlled studies. JAMA Psychiatry
+2015;72:14‐21. [ DOI ] [ PubMed ] [ Google Scholar ] 
+ 16. 
+Volkmann A.
+On the relationship between treatment effect heterogeneity and the variability ratio effect size statistic. arXiv 2020:2006.11848. 
+ 17. 
+Yale University Open Data Access (YODA) clinical trials database
+. https://yoda.yale.edu . 
+ 18. 
+Kay SR, Fiszbein A, Opler LA. The Positive and Negative Syndrome Scale (PANSS) for schizophrenia. Schizophr Bull
+1987;13:261‐76. [ DOI ] [ PubMed ] [ Google Scholar ] 
+ 19. 
+Overall JE, Gorham DR. The Brief Psychiatric Rating Scale. Psychol Rep
+1962;10:799‐812. [ Google Scholar ] 
+ 20. 
+Leucht S, Rothe P, Davis JM et al. Equipercentile linking of the BPRS and the PANSS. Eur Neuropsychopharmacol
+2013;23:956‐9. [ DOI ] [ PubMed ] [ Google Scholar ] 
+ 21. 
+Tognin S, Van Hell HH, Merritt K et al. Towards precision medicine in psychosis: benefits and challenges of multimodal multicenter studies – PSYSCAN: translating neuroimaging findings from research into clinical practice. Schizophr Bull
+2020;46:432‐41. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 22. 
+Fernandes BS, Williams LM, Steiner J et al. The new field of “precision psychiatry”. BMC Med
+2017;15:1‐7. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 23. 
+Insel TR, Cuthbert BN. Brain disorders?
+Precisely. Science
+2015;348:499‐500. [ DOI ] [ PubMed ] [ Google Scholar ] 
+ 24. 
+Arnold SE, Betensky RA. Multicrossover randomized controlled trial designs in Alzheimer Disease. Ann Neurol
+2018;84:168‐75. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ 25. 
+Falkai P, Schmitt A. The need to develop personalized interventions to improve cognition in schizophrenia. World Psychiatry
+2019;18:170. [ DOI ] [ PMC free article ] [ PubMed ] [ Google Scholar ] 
+ Articles from World Psychiatry are provided here courtesy of The World Psychiatric Association 
+ ACTIONS 
+ View on publisher site 
+ PDF (1.2 MB) 
+ Cite 
+ Collections 
+ Permalink 
+ PERMALINK 
+ Copy 
+ RESOURCES 
+ Similar articles
+ Cited by other articles
+ Links to NCBI Databases
+ Cite 
+ Copy 
+ Download .nbib 
+ .nbib 
+ Format: 
+ AMA
+ APA
+ MLA
+ NLM
+ Add to Collections 
+ Create a new collection 
+ Add to an existing collection 
+ Name your collection
+ * 
+ Choose a collection
+ Unable to load your collection due to an error 
+ Please try again 
+ Add
+ Cancel
+ Follow NCBI
+ NCBI on X (formerly known as Twitter) 
+ NCBI on Facebook 
+ NCBI on LinkedIn 
+ NCBI on GitHub 
+ NCBI RSS feed 
+ Connect with NLM
+ NLM on X (formerly known as Twitter) 
+ NLM on Facebook 
+ NLM on YouTube 
+ National Library of Medicine
+ 8600 Rockville Pike Bethesda, MD 20894 
+ Web Policies
+ FOIA
+ HHS Vulnerability Disclosure
+ Help
+ Accessibility
+ Careers
+ NLM
+ NIH
+ HHS
+ USA.gov
+ Back to Top 

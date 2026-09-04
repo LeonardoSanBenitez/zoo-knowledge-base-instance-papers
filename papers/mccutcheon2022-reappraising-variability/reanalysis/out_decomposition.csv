@@ -1,0 +1,13 @@
+check,deletion_off,deletion_on,dropped,rho,sigma_te,variant
+decomposition,0.5023603049665913,14.798108689916525,26.656,estimated by their method,,
+decomposition,1.5751145025483748,18.909708281127095,16.084,-0.39  their study level,,
+decomposition,0.6948176753989905,17.29278842900142,20.844,-0.32  their headline,,
+decomposition,0.21388500268986188,14.90618422837257,27.82,-0.20,,
+decomposition,0.10910678503849518,13.063365811566879,31.384,-0.10,,
+decomposition,0.07778626869282447,11.531829947086536,32.068, 0.00  the truth here,,
+robustness,,,,-0.1892223851555433,14.852551902840196,"baseline: normal, SD 20 fixed, PM"
+robustness,,,,-0.19203100550470045,15.610313679636231,skewed change scores (skewnorm a=4)
+robustness,,,,-0.18976247750056474,15.416898250888774,skewed the other way (a=-4)
+robustness,,,,-0.1905144815173633,14.642086532155938,within-trial SD varies (20 +/- 4)
+robustness,,,,-0.2763511515728611,18.135723464498987,"smaller trials: SD 20, arms halved"
+robustness,,,,-0.1900539348925197,14.953846696776766,DerSimonian-Laird pooling

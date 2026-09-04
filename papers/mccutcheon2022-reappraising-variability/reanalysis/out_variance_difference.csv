@@ -1,0 +1,24 @@
+check,coverage_pct,k,pooled_D,rho,sigma_te,subset,true_D,true_sigma_te
+variance-difference,96.33333333333333,,-0.3792621870874868,,,,0.0,0.0
+variance-difference,98.0,,14.575800136837223,,,,16.0,4.0
+variance-difference,93.33333333333333,,57.63151661065219,,,,64.0,8.0
+variance-difference,89.0,,169.80015052542535,,,,182.25,13.5
+variance-difference,72.0,,373.4836135156109,,,,400.0,20.0
+real-antidepressant,,344,-0.38374401258111474,0.0,,all comparisons,,
+real-antidepressant,,344,-0.38374401258111474,-0.1,1.383,all comparisons,,
+real-antidepressant,,344,-0.38374401258111474,-0.21,3.374,all comparisons,,
+real-antidepressant,,344,-0.38374401258111474,-0.32,5.241,all comparisons,,
+real-antidepressant,,344,-0.38374401258111474,-0.39,6.417,all comparisons,,
+real-antidepressant,,344,-0.38374401258111474,-0.62,10.259,all comparisons,,
+real-antidepressant,,240,0.255666108993936,0.0,0.506,change scores,,
+real-antidepressant,,240,0.255666108993936,-0.1,1.795,change scores,,
+real-antidepressant,,240,0.255666108993936,-0.21,3.542,change scores,,
+real-antidepressant,,240,0.255666108993936,-0.32,5.336,change scores,,
+real-antidepressant,,240,0.255666108993936,-0.39,6.484,change scores,,
+real-antidepressant,,240,0.255666108993936,-0.62,10.271,change scores,,
+real-antidepressant,,104,-2.0664023175809443,0.0,,raw endpoints,,
+real-antidepressant,,104,-2.0664023175809443,-0.1,,raw endpoints,,
+real-antidepressant,,104,-2.0664023175809443,-0.21,2.786,raw endpoints,,
+real-antidepressant,,104,-2.0664023175809443,-0.32,4.958,raw endpoints,,
+real-antidepressant,,104,-2.0664023175809443,-0.39,6.219,raw endpoints,,
+real-antidepressant,,104,-2.0664023175809443,-0.62,10.212,raw endpoints,,

@@ -294,4 +294,14 @@ so no one else can run it.
   are equally consistent with a uniform effect and with a mixture that transforms a
   third of people), and **β ≈ 0.47 does not reject lnVR** — an earlier version of
   this entry said it did; that inference was refuted 2026-09-02 by a simulation on a
-  second corpus and is marked as withdrawn in place. Started by maria 2026-09-02.
+  second corpus and is marked as withdrawn in place. **Extended 2026-09-04 with the
+  third and largest axis of non-identification**: every VR analysis also assumes the
+  individual treatment effect is uncorrelated with the placebo-arm outcome (rho = 0),
+  and at rho = -0.32 the same VR = 1 implies individual effects of 0.64 sigma_PL rather
+  than zero. `mccutcheon2022-reappraising-variability` (World Psychiatry) noticed this
+  and is right about it; its three estimators of rho all return negative values when the
+  truth is zero, its headline estimator has no sensitivity to rho at all, and its
+  pipeline reports 14.9 PANSS points of heterogeneity from a world containing exactly
+  none. Verdict: **sigma_TE is not identified from aggregate data; report
+  D = sigma_AT^2 - sigma_PL^2 with an interval and a sensitivity curve in rho.**
+  Started by maria 2026-09-02.

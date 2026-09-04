@@ -1,0 +1,371 @@
+
+Reappraising the variability of effects of antipsychotic medication in schizophrenia: a meta-analysis
+
+Robert A. McCutcheon, Toby Pillinger, Orestis Efthimiou, Marta Maslej, Benoit H. Mulsant, Allan H. Young, Andrea Cipriani, Oliver D. Howes
+
+World Psychiatry 2022
+
+Supplementary Information
+
+
+Overview
+We searched for studies providing IPD from the Yale University Open Data Access (YODA) clinical trials databaseADDIN CSL_CITATION {"citationItems":[{"id":"ITEM-1","itemData":{"id":"ITEM-1","issued":{"date-parts":[["0"]]},"title":"Yale University Open Data Access (YODA) clinical trials database","type":"webpage"},"uris":["http://www.mendeley.com/documents/?uuid=d5528f7d-310d-49a6-a309-89a399e32a3e","http://www.mendeley.com/documents/?uuid=ef6392dc-008e-4ba6-9f95-4fa25648c03b"]}],"mendeley":{"formattedCitation":"<sup>1</sup>","plainTextFormattedCitation":"1","previouslyFormattedCitation":"<sup>1</sup>"},"properties":{"noteIndex":0},"schema":"https://github.com/citation-style-language/schema/raw/master/csl-citation.json"}1. We used this data to estimate the correlation between placebo and treatment effects at the individual patient level, using two alternative methods. The impact this correlation has on the relationship between variability ratios and treatment effect heterogeneity is explained in eFigure1. We also used study level data from a recent meta-analysis of randomised controlled trials to estimate the correlation at the study level ADDIN CSL_CITATION {"citationItems":[{"id":"ITEM-1","itemData":{"DOI":"10.1038/s41380-019-0502-5","ISBN":"4138001905","ISSN":"14765578","PMID":"31471576","abstract":"The response to antipsychotic treatment in schizophrenia appears to vary, and as such it has been proposed that different subtypes of schizophrenia exist, defined by treatment-response. This has not been formally examined using meta-analysis. Randomised controlled trials comparing placebo and antipsychotics in acute treatment of schizophrenia listed in PubMed, EMBASE and PsycINFO from inception until 30 November 2018 were examined. Relative variability of symptomatic improvement in antipsychotic-treated individuals compared to placebo-treated individuals was quantified using coefficient of variation ratio (CVR). Mean difference in symptom change was quantified using Hedges’ g. In addition, individual patient data from two clinical trials was examined in terms of both the distribution of total symptom change, and the variability of individual symptoms and symptom factors. In total, 11,006 articles were identified. Sixty six met inclusion criteria, reporting on 17,202 patients. Compared with placebo, antipsychotic-treated patients demonstrated greater total symptom improvement (g = 0.47, p < 0.001) and reduced variability in symptomatic improvement for total (CVR = 0.86, p < 0.001), positive (CVR = 0.89, p < 0.001), and negative symptoms (CVR = 0.86, p = 0.001). Lower variability in antipsychotic-response relative to placebo was associated with studies published earlier (z = 3.98, p < 0.001), younger patients (z = 3.07, p = 0.002), higher dose treatments (z = −2.62, p = 0.009), and greater mean-difference in symptom-change (z = −5.70, p < 0.001). In the individual patient dataset (N = 522 patients), antipsychotic treated patients did not show significantly increased variability for any individual symptom, and there was no evidence of a bimodal distribution of response. Compared to placebo, antipsychotic treatment shows greater improvement and lower variability of change in total, positive and negative symptoms. This is contrary to the hypothesis that there is a subtype of antipsychotic non-responsive schizophrenia. Instead our findings, provide evidence for a relatively homogeneous effect of antipsychotic treatment in improving symptoms of schizophrenia.","author":[{"dropping-particle":"","family":"McCutcheon","given":"Robert A.","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Pillinger","given":"Toby","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Mizuno","given":"Yuya","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Montgomery","given":"Adam","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Pandian","given":"Haridha","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Vano","given":"Luke","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Marques","given":"Tiago Reis","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Howes","given":"Oliver D.","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"Molecular Psychiatry","id":"ITEM-1","issue":"4","issued":{"date-parts":[["2021"]]},"page":"1310-1320","publisher":"Springer US","title":"The efficacy and heterogeneity of antipsychotic response in schizophrenia: A meta-analysis","type":"article-journal","volume":"26"},"uris":["http://www.mendeley.com/documents/?uuid=881a4cd0-3518-44f5-b6a3-10f14764ecb8"]}],"mendeley":{"formattedCitation":"<sup>2</sup>","plainTextFormattedCitation":"2","previouslyFormattedCitation":"<sup>2</sup>"},"properties":{"noteIndex":0},"schema":"https://github.com/citation-style-language/schema/raw/master/csl-citation.json"}2. We then used the most conservative of these coefficients to calculate the heterogeneity of treatment effects, using aggregate data from antipsychotic trials of schizophreniaADDIN CSL_CITATION {"citationItems":[{"id":"ITEM-1","itemData":{"DOI":"10.1038/s41380-019-0502-5","ISBN":"4138001905","ISSN":"14765578","PMID":"31471576","abstract":"The response to antipsychotic treatment in schizophrenia appears to vary, and as such it has been proposed that different subtypes of schizophrenia exist, defined by treatment-response. This has not been formally examined using meta-analysis. Randomised controlled trials comparing placebo and antipsychotics in acute treatment of schizophrenia listed in PubMed, EMBASE and PsycINFO from inception until 30 November 2018 were examined. Relative variability of symptomatic improvement in antipsychotic-treated individuals compared to placebo-treated individuals was quantified using coefficient of variation ratio (CVR). Mean difference in symptom change was quantified using Hedges’ g. In addition, individual patient data from two clinical trials was examined in terms of both the distribution of total symptom change, and the variability of individual symptoms and symptom factors. In total, 11,006 articles were identified. Sixty six met inclusion criteria, reporting on 17,202 patients. Compared with placebo, antipsychotic-treated patients demonstrated greater total symptom improvement (g = 0.47, p < 0.001) and reduced variability in symptomatic improvement for total (CVR = 0.86, p < 0.001), positive (CVR = 0.89, p < 0.001), and negative symptoms (CVR = 0.86, p = 0.001). Lower variability in antipsychotic-response relative to placebo was associated with studies published earlier (z = 3.98, p < 0.001), younger patients (z = 3.07, p = 0.002), higher dose treatments (z = −2.62, p = 0.009), and greater mean-difference in symptom-change (z = −5.70, p < 0.001). In the individual patient dataset (N = 522 patients), antipsychotic treated patients did not show significantly increased variability for any individual symptom, and there was no evidence of a bimodal distribution of response. Compared to placebo, antipsychotic treatment shows greater improvement and lower variability of change in total, positive and negative symptoms. This is contrary to the hypothesis that there is a subtype of antipsychotic non-responsive schizophrenia. Instead our findings, provide evidence for a relatively homogeneous effect of antipsychotic treatment in improving symptoms of schizophrenia.","author":[{"dropping-particle":"","family":"McCutcheon","given":"Robert A.","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Pillinger","given":"Toby","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Mizuno","given":"Yuya","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Montgomery","given":"Adam","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Pandian","given":"Haridha","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Vano","given":"Luke","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Marques","given":"Tiago Reis","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Howes","given":"Oliver D.","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"Molecular Psychiatry","id":"ITEM-1","issue":"4","issued":{"date-parts":[["2021"]]},"page":"1310-1320","publisher":"Springer US","title":"The efficacy and heterogeneity of antipsychotic response in schizophrenia: A meta-analysis","type":"article-journal","volume":"26"},"uris":["http://www.mendeley.com/documents/?uuid=881a4cd0-3518-44f5-b6a3-10f14764ecb8"]}],"mendeley":{"formattedCitation":"<sup>2</sup>","plainTextFormattedCitation":"2","previouslyFormattedCitation":"<sup>2</sup>"},"properties":{"noteIndex":0},"schema":"https://github.com/citation-style-language/schema/raw/master/csl-citation.json"}2. The estimates of treatment effect heterogeneity were then combined meta-analytically.
+
+Statistical Analysis
+The average treatment effect for a population of interest is defined as the difference between the mean outcome if the whole population received placebo versus the outcome when receiving the active treatment. This can be estimated in RCTs (Figure 1). The treatment effect at the individual level cannot be estimated as easily as it refers to the difference between outcome under placebo and outcome under active treatment for the same patient with all other factors (including the moment in time) being identical. It is, however, under certain assumptions, possible to estimate a treatment effect for an individual. We performed this using two separate methods, which rest upon different assumptions.  
+
+
+
+Open label method
+The ‘open label method’ made use of one study from the YODA database, in which, for patients randomised to placebo, symptomatic change data was available for the same individual receiving both placebo and then active treatment.  The placebo response for individuals randomised to the placebo arm during the double-blind period, was quantified as the change in PANSS score, between the start of the double-blind period and the point at which that individual left the double-blind portion of the trial. The estimated treatment effect was calculated as the change in symptom severity from the end of the double-blind period (during which the individual was receiving placebo) up until the timepoint that maximised the similarity between time spent in double-blind and open-label periods of the study
+
+This method relies on the assumption that the PANSS score we would observe if we could follow-up this patient under drug in the double-blind period (dashed line in eFigure 1A; this is unobservable) equals the score we actually observe at the end of an-open label period of equal duration.
+
+Linear model method
+This method makes the usual assumption of linearity and additivity of the effects of the covariates and treatment on the outcome.
+
+We fit a linear model of the following form in the IPD from the RCT:
+
+yT,i=α+βsex sexi+βage agei+βbase y0,i+γsex sexi+γage agei+γbase y0,i treati+δ treati+ei
+ei~N(0, s2)
+
+where yT,i is the final outcome (symptoms at endpoint) for patient i, y0,i is baseline symptoms, sexi is 0/1 for male/female, treati is the 0/1 for placebo/drug. 
+
+This model was fit to all patients included in the trial and treatment effects were then estimated for each subject as:
+γsex sexi+γage agei+γbase y0,i+δ
+
+The outcomes in placebo (required for the calculation of ρ) were taken as observed in the data, i.e. we only used patients randomized to placebo.
+
+In other words, the treatment condition during the double-blind period was a predictor variable, with sex, age and baseline symptoms as additional predictors. Then based on this model, we estimated outcome for the participants who received placebo had they received treatment (by setting the condition to 1).
+
+Correlation of placebo response and treatment effect
+In both the linear model and open label methods the correlation between placebo response and treatment effect was calculated only for those patients randomised to placebo. Note that placebo response is directly observable for these patients. This correlation was calculated for positive and negative subscales, and the total score.
+
+In the case of the study level method, this method of calculating the correlation rests upon the assumption that the correlation between treatment effects and placebo response at the patient-level equals the one at the study-level.
+
+Estimating treatment effect variability
+We have described three alternative methods for calculating the correlation between placebo response and treatment effect. Below we describe how to use this ρ to calculate heterogeneity of treatment effects from aggregate data.
+
+Due to a lack of previous estimates for the correlation between placebo and treatment effects,  prior analyses of variability have not accurately quantified the magnitude of treatment effect heterogeneity ADDIN CSL_CITATION {"citationItems":[{"id":"ITEM-1","itemData":{"DOI":"10.1001/jamapsychiatry.2019.1530","ISSN":"2168622X","PMID":"31158853","abstract":"Importance: An assumption among clinicians and researchers is that patients with schizophrenia vary considerably in their response to antipsychotic drugs in randomized clinical trials (RCTs). Objective: To evaluate the overall variation in individual treatment response from random variation by comparing the variability between treatment and control groups. Data Sources: Cochrane Schizophrenia, MEDLINE/PubMed, Embase, PsycINFO, Cochrane CENTRAL, BIOSIS Previews, ClinicalTrials.gov, and World Health Organization International Clinical Trials Registry Platform from January 1, 1955, to December 31, 2016. Study Selection: Double-blind, placebo-controlled, RCTs of adults with a diagnosis of schizophrenia spectrum disorders and prescription for licensed antipsychotic drugs. Data Extraction and Synthesis: Means and SDs of the Positive and Negative Syndrome Scale pretreatment and posttreatment outcome difference scores were extracted. Data quality and validity were ensured by following the PRISMA guidelines. Main Outcomes and Measures: The outcome measure was the overall variability ratio of treatment to control in a meta-analysis across RCTs. Individual variability ratios were weighted by the inverse-variance method and entered into a random-effects model. A personal element of response was hypothesized to be reflected by a substantial overall increase in variability in the treatment group compared with the control group. Results: An RCT was simulated, comprising 30 patients with schizophrenia randomized to either the treatment or the control group. The different components of variation in RCTs were illustrated with simulated data. In addition, we assessed the variability ratio in 52 RCTs involving 15360 patients with a schizophrenia or schizoaffective diagnosis. The variability was slightly lower in the treatment compared with the control group (variability ratio = 0.97; 95% CI, 0.95-0.99; P =.01). Conclusions and Relevance: In this study, no evidence was found in RCTs that antipsychotic drugs increased the outcome variance, suggesting no personal element of response to treatment but instead indicating that the variance was slightly lower in the treatment group than in the control group; although the study cannot rule out that subsets of patients respond differently to treatment, it suggests that the average treatment effect is a reasonable assumption for the individual patient..","author":[{"dropping-particle":"","family":"Winkelbeiner","given":"Stephanie","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Leucht","given":"Stefan","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Kane","given":"John M.","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Homan","given":"Philipp","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"JAMA Psychiatry","id":"ITEM-1","issue":"10","issued":{"date-parts":[["2019"]]},"page":"1063-1073","title":"Evaluation of Differences in Individual Treatment Response in Schizophrenia Spectrum Disorders: A Meta-analysis","type":"article-journal","volume":"76"},"uris":["http://www.mendeley.com/documents/?uuid=86d9c75d-bf1c-4cba-b52d-a405695eb7c4"]},{"id":"ITEM-2","itemData":{"DOI":"10.1016/j.neubiorev.2020.11.033","ISSN":"18737528","PMID":"33482243","abstract":"Noninvasive brain stimulation methods such as transcranial magnetic stimulation (TMS) and transcranial direct current stimulation (tDCS) are promising add-on treatments for a number of psychiatric conditions. Yet, some of the initial excitement is wearing off. Randomized controlled trials (RCT) have found inconsistent results. This inconsistency is suspected to be the consequence of variation in treatment effects and solvable by identifying responders in RCTs and individualizing treatment. However, is there enough evidence from RCTs that patients respond differently to treatment? This question can be addressed by comparing the variability in the active stimulation group with the variability in the sham group. We searched MEDLINE/PubMed and included all double-blinded, sham-controlled RCTs and crossover trials that used TMS or tDCS in adults with a unipolar or bipolar depression, bipolar disorder, schizophrenia spectrum disorder, or obsessive compulsive disorder. In accordance with the PRISMA guidelines to ensure data quality and validity, we extracted a measure of variability of the primary outcome. A total of 130 studies with 5748 patients were considered in the analysis. We calculated variance-weighted variability ratios for each comparison of active stimulation vs sham and entered them into a random-effects model. We hypothesized that treatment effect variability in TMS or tDCS would be reflected by increased variability after active compared with sham stimulation, or in other words, a variability ratio greater than one. Across diagnoses, we found only a minimal increase in variability after active stimulation compared with sham that did not reach statistical significance (variability ratio = 1.03; 95% CI, 0.97, 1.08, P = 0.358). In conclusion, this study found little evidence for treatment effect variability in brain stimulation, suggesting that the need for personalized or stratified medicine is still an open question.","author":[{"dropping-particle":"","family":"Homan","given":"Stephanie","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Muscat","given":"Whitney","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Joanlanne","given":"Andrea","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Marousis","given":"Nikolaos","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Cecere","given":"Giacomo","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Hofmann","given":"Lena","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Ji","given":"Ellen","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Neumeier","given":"Maria","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Vetter","given":"Stefan","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Seifritz","given":"Erich","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Dierks","given":"Thomas","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Homan","given":"Philipp","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"Neuroscience and Biobehavioral Reviews","id":"ITEM-2","issue":"October 2020","issued":{"date-parts":[["2021"]]},"page":"54-62","publisher":"Elsevier Ltd","title":"Treatment effect variability in brain stimulation across psychiatric disorders: A meta-analysis of variance","type":"article-journal","volume":"124"},"uris":["http://www.mendeley.com/documents/?uuid=75bf3f99-e235-4b09-937f-5100f6088889"]},{"id":"ITEM-3","itemData":{"DOI":"10.1136/bmjopen-2019-034816","ISBN":"2019034816","ISSN":"20446055","PMID":"31874900","abstract":"Objectives To investigate if the treatment effect of antidepressants in patients with depression substantially varies in each patient (patient-by-treatment interaction or treatment heterogeneity), a necessary but largely unexplored prerequisite of personalised antidepressant treatment. Design Meta-analytic variance comparison of treatment outcome between drug arms and placebo arms of clinical trials, based on the assumption that patient-by-treatment interaction should lead to larger variances in drug arms than placebo arms. To put the results into context, we run simple simulations, assuming different definitions and rates of those who respond especially well to antidepressants. Data sources 163 randomised, placebo-controlled trials (51 396 patients) with complete results for pre-post differences, selected from a recently published systematic review. Analysis Variance ratios (VRs) and coefficients of variance ratios (CVRs) of individual trials were meta-analytically combined. The analysis was repeated for classes of antidepressants and specific antidepressants. Results VRs (VR=1.01, CI 0.99 to 1.02) and CVRs (CVR=0.82, CI 0.80 to 0.84) of the antidepressant-treatment arms were comparable or smaller than in placebo arms. Similar results were observed for classes of antidepressants and for specific antidepressants. Our simulation analysis confirmed that equal VRs can only be obtained if they are not more than a few patients who respond slightly above average. Conclusions The lack of increased treatment-outcome variance in the antidepressants versus placebo groups in randomised controlled trials indicates that no or only very small subgroups of patients respond particularly well to antidepressants. Thus, the scope for personalised treatment with antidepressants seems to be limited.","author":[{"dropping-particle":"","family":"Plöderl","given":"Martin","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Hengartner","given":"Michael Pascal","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"BMJ Open","id":"ITEM-3","issue":"12","issued":{"date-parts":[["2019"]]},"page":"34816","title":"What are the chances for personalised treatment with antidepressants? Detection of patient-by-treatment interaction with a variance ratio meta-analysis","type":"article-journal","volume":"9"},"uris":["http://www.mendeley.com/documents/?uuid=3cda3520-eedb-4464-adf0-486fea37da16"]},{"id":"ITEM-4","itemData":{"DOI":"10.1038/s41380-019-0502-5","ISBN":"4138001905","ISSN":"14765578","PMID":"31471576","abstract":"The response to antipsychotic treatment in schizophrenia appears to vary, and as such it has been proposed that different subtypes of schizophrenia exist, defined by treatment-response. This has not been formally examined using meta-analysis. Randomised controlled trials comparing placebo and antipsychotics in acute treatment of schizophrenia listed in PubMed, EMBASE and PsycINFO from inception until 30 November 2018 were examined. Relative variability of symptomatic improvement in antipsychotic-treated individuals compared to placebo-treated individuals was quantified using coefficient of variation ratio (CVR). Mean difference in symptom change was quantified using Hedges’ g. In addition, individual patient data from two clinical trials was examined in terms of both the distribution of total symptom change, and the variability of individual symptoms and symptom factors. In total, 11,006 articles were identified. Sixty six met inclusion criteria, reporting on 17,202 patients. Compared with placebo, antipsychotic-treated patients demonstrated greater total symptom improvement (g = 0.47, p < 0.001) and reduced variability in symptomatic improvement for total (CVR = 0.86, p < 0.001), positive (CVR = 0.89, p < 0.001), and negative symptoms (CVR = 0.86, p = 0.001). Lower variability in antipsychotic-response relative to placebo was associated with studies published earlier (z = 3.98, p < 0.001), younger patients (z = 3.07, p = 0.002), higher dose treatments (z = −2.62, p = 0.009), and greater mean-difference in symptom-change (z = −5.70, p < 0.001). In the individual patient dataset (N = 522 patients), antipsychotic treated patients did not show significantly increased variability for any individual symptom, and there was no evidence of a bimodal distribution of response. Compared to placebo, antipsychotic treatment shows greater improvement and lower variability of change in total, positive and negative symptoms. This is contrary to the hypothesis that there is a subtype of antipsychotic non-responsive schizophrenia. Instead our findings, provide evidence for a relatively homogeneous effect of antipsychotic treatment in improving symptoms of schizophrenia.","author":[{"dropping-particle":"","family":"McCutcheon","given":"Robert A.","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Pillinger","given":"Toby","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Mizuno","given":"Yuya","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Montgomery","given":"Adam","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Pandian","given":"Haridha","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Vano","given":"Luke","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Marques","given":"Tiago Reis","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Howes","given":"Oliver D.","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"Molecular Psychiatry","id":"ITEM-4","issue":"4","issued":{"date-parts":[["2021"]]},"page":"1310-1320","publisher":"Springer US","title":"The efficacy and heterogeneity of antipsychotic response in schizophrenia: A meta-analysis","type":"article-journal","volume":"26"},"uris":["http://www.mendeley.com/documents/?uuid=881a4cd0-3518-44f5-b6a3-10f14764ecb8"]}],"mendeley":{"formattedCitation":"<sup>2–5</sup>","plainTextFormattedCitation":"2–5","previouslyFormattedCitation":"<sup>2–5</sup>"},"properties":{"noteIndex":0},"schema":"https://github.com/citation-style-language/schema/raw/master/csl-citation.json"}2–5. They have instead reported a lack of difference between active and placebo response variabilities, that is a variability ratio (VR) that does not demonstrate a statistically significant difference from one. 
+
+VR is defined as follows, with AT referring to the active treatment arm and PL referring to the placebo treatment arm:
+VR=σATσPL
+
+The variable of clinical interest, however, is the variability of the treatment effect (σTE). This can be estimated if VR and the correlation (ρ) between placebo-effect and treatment-effect are known. For instances where VR≥1, there is a single value of σTEσPL for any value of ρ :
+σTE=σPLVR2-1+ρ2-ρ
+
+Whereas for instances where VR≤1 there are two possible solutions:
+
+σTE=σPL±VR2-1+ρ2-ρ
+
+In what follows we use the former formula; see some discussion below and alsoADDIN CSL_CITATION {"citationItems":[{"id":"ITEM-1","itemData":{"ISSN":"2331-8422","abstract":"Recently, the variability ratio (VR) effect size statistic has been used with increasing frequency in the study of differences in variation of a measured variable between two study populations. More specifically, the VR effect size statistic allows for the detection of treatment effect heterogeneity (TEH) of medical interventions. While a VR that is different from 1 is widely acknowledged to implicate a treatment effect heterogeneity (TEH) the exact relationship between those two quantities has not been discussed in detail thus far. In this note we derive a precise connection between TEH and VR. In particular, we derive precise upper and lower bounds on the TEH in terms of VR. Moreover, we provide an exemplary simulation for which VR is equal to 1 and there exist TEH. Our result has implications for the interpretation of VR effect size estimates regarding its connection to treatment effect heterogeneity of (medical) interventions.","author":[{"dropping-particle":"","family":"Volkmann","given":"Alexander","non-dropping-particle":"","parse-names":false,"suffix":""}],"id":"ITEM-1","issue":"2019","issued":{"date-parts":[["2020"]]},"title":"On the Relationship between Treatment Effect Heterogeneity and the Variability Ratio Effect Size Statistic","type":"article-journal"},"uris":["http://www.mendeley.com/documents/?uuid=fa1ddb79-2953-43fa-9413-ba5152a78eb9"]},{"id":"ITEM-2","itemData":{"DOI":"10.1371/journal.pone.0241497","ISBN":"1111111111","ISSN":"19326203","PMID":"33175895","abstract":"Background The average treatment effect of antidepressants in major depression was found to be about 2 points on the 17-item Hamilton Depression Rating Scale, which lies below clinical relevance. Here, we searched for evidence of a relevant treatment effect heterogeneity that could justify the usage of antidepressants despite their low average treatment effect. Methods Bayesian meta-analysis of 169 randomized, controlled trials including 58,687 patients. We considered the effect sizes log variability ratio (lnVR) and log coefficient of variation ratio (lnCVR) to analyze the difference in variability of active and placebo response. We used Bayesian random-effects meta-analyses (REMA) for lnVR and lnCVR and fitted a random-effects meta-regression (REMR) model to estimate the treatment effect variability between antidepressants and placebo. Results The variability ratio was found to be very close to 1 in the best fitting models (REMR: 95% highest density interval (HDI) [0.98, 1.02], REMA: 95% HDI [1.00, 1.02]). The between-study standard deviation τ under the REMA with respect to lnVR was found to be low (95% HDI [0.00, 0.02]). Simulations showed that a large treatment effect heterogeneity is only compatible with the data if a strong correlation between placebo response and individual treatment effect is assumed. Conclusions The published data from RCTs on antidepressants for the treatment of major depression is compatible with a near-constant treatment effect. Although it is impossible to rule out a substantial treatment effect heterogeneity, its existence seems rather unlikely. Since the average treatment effect of antidepressants falls short of clinical relevance, the current prescribing practice should be re-evaluated.","author":[{"dropping-particle":"","family":"Volkmann","given":"Constantin","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Volkmann","given":"Alexander","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Müller","given":"Christian A.","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"PLoS ONE","id":"ITEM-2","issue":"11 November","issued":{"date-parts":[["2020"]]},"page":"1-22","title":"On the treatment effect heterogeneity of antidepressants in major depression: A Bayesian meta-analysis and simulation study","type":"article-journal","volume":"15"},"uris":["http://www.mendeley.com/documents/?uuid=fb12c6f5-54cf-4e36-8bdb-55ba1e76244a"]}],"mendeley":{"formattedCitation":"<sup>6,7</sup>","plainTextFormattedCitation":"6,7","previouslyFormattedCitation":"<sup>6,7</sup>"},"properties":{"noteIndex":0},"schema":"https://github.com/citation-style-language/schema/raw/master/csl-citation.json"}6,7  regarding the second. 
+
+After estimating the value for ρ as described in the main paper (i.e. using three different methods, and picking the most conservative estimate for ρ) we then calculated σTE for all studies from a recent meta-analysisADDIN CSL_CITATION {"citationItems":[{"id":"ITEM-1","itemData":{"DOI":"10.1038/s41380-019-0502-5","ISBN":"4138001905","ISSN":"14765578","PMID":"31471576","abstract":"The response to antipsychotic treatment in schizophrenia appears to vary, and as such it has been proposed that different subtypes of schizophrenia exist, defined by treatment-response. This has not been formally examined using meta-analysis. Randomised controlled trials comparing placebo and antipsychotics in acute treatment of schizophrenia listed in PubMed, EMBASE and PsycINFO from inception until 30 November 2018 were examined. Relative variability of symptomatic improvement in antipsychotic-treated individuals compared to placebo-treated individuals was quantified using coefficient of variation ratio (CVR). Mean difference in symptom change was quantified using Hedges’ g. In addition, individual patient data from two clinical trials was examined in terms of both the distribution of total symptom change, and the variability of individual symptoms and symptom factors. In total, 11,006 articles were identified. Sixty six met inclusion criteria, reporting on 17,202 patients. Compared with placebo, antipsychotic-treated patients demonstrated greater total symptom improvement (g = 0.47, p < 0.001) and reduced variability in symptomatic improvement for total (CVR = 0.86, p < 0.001), positive (CVR = 0.89, p < 0.001), and negative symptoms (CVR = 0.86, p = 0.001). Lower variability in antipsychotic-response relative to placebo was associated with studies published earlier (z = 3.98, p < 0.001), younger patients (z = 3.07, p = 0.002), higher dose treatments (z = −2.62, p = 0.009), and greater mean-difference in symptom-change (z = −5.70, p < 0.001). In the individual patient dataset (N = 522 patients), antipsychotic treated patients did not show significantly increased variability for any individual symptom, and there was no evidence of a bimodal distribution of response. Compared to placebo, antipsychotic treatment shows greater improvement and lower variability of change in total, positive and negative symptoms. This is contrary to the hypothesis that there is a subtype of antipsychotic non-responsive schizophrenia. Instead our findings, provide evidence for a relatively homogeneous effect of antipsychotic treatment in improving symptoms of schizophrenia.","author":[{"dropping-particle":"","family":"McCutcheon","given":"Robert A.","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Pillinger","given":"Toby","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Mizuno","given":"Yuya","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Montgomery","given":"Adam","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Pandian","given":"Haridha","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Vano","given":"Luke","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Marques","given":"Tiago Reis","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Howes","given":"Oliver D.","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"Molecular Psychiatry","id":"ITEM-1","issue":"4","issued":{"date-parts":[["2021"]]},"page":"1310-1320","publisher":"Springer US","title":"The efficacy and heterogeneity of antipsychotic response in schizophrenia: A meta-analysis","type":"article-journal","volume":"26"},"uris":["http://www.mendeley.com/documents/?uuid=881a4cd0-3518-44f5-b6a3-10f14764ecb8"]}],"mendeley":{"formattedCitation":"<sup>2</sup>","plainTextFormattedCitation":"2","previouslyFormattedCitation":"<sup>2</sup>"},"properties":{"noteIndex":0},"schema":"https://github.com/citation-style-language/schema/raw/master/csl-citation.json"}2 given the formula above. The sampling variance for the natural logarithm of σTE, lnσTE was estimated numerically. More specifically, based on previous work, for every study we can estimate the population standard deviation and the sampling variance of lnσPL asADDIN CSL_CITATION {"citationItems":[{"id":"ITEM-1","itemData":{"DOI":"10.1111/2041-210X.12309","ISSN":"2041210X","abstract":"Summary: Meta-analysis has become a standard way of summarizing empirical studies in many fields, including ecology and evolution. In ecology and evolution, meta-analyses comparing two groups (usually experimental and control groups) have almost exclusively focused on comparing the means, using standardized metrics such as Cohen's / Hedges' d or the response ratio. However, an experimental treatment may not only affect the mean but also the variance. Investigating differences in the variance between two groups may be informative, especially when a treatment influences the variance in addition to or instead of the mean. In this paper, we propose the effect size statistic lnCVR (the natural logarithm of the ratio between the coefficients of variation, CV, from two groups), which enables us to meta-analytically compare differences between the variability of two groups. We illustrate the use of lnCVR with examples from ecology and evolution. Further, as an alternative approach to the use of lnCVR, we propose the combined use of ln s (the log standard deviation) and lnx- (the log mean) in a hierarchical (linear mixed) model. The use of ln s with lnx- overcomes potential limitations of lnCVR and it provides a more flexible, albeit more complex, way to examine variation beyond two-group comparisons. Relevantly, we also refer to the potential use of ln s and lnCV (the log CV) in the context of comparative analysis. Our approaches to compare variability could be applied to already published meta-analytic data sets that compare two-group means to uncover potentially overlooked effects on the variance. Additionally, our approaches should be applied to future meta-analyses, especially when one suspects a treatment has an effect not only on the mean, but also on the variance. Notably, the application of the proposed methods extends beyond the fields of ecology and evolution.","author":[{"dropping-particle":"","family":"Nakagawa","given":"Shinichi","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Poulin","given":"Robert","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Mengersen","given":"Kerrie","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Reinhold","given":"Klaus","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Engqvist","given":"Leif","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Lagisz","given":"Malgorzata","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Senior","given":"Alistair M.","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"Methods in Ecology and Evolution","id":"ITEM-1","issue":"2","issued":{"date-parts":[["2015"]]},"page":"143-152","title":"Meta-analysis of variation: Ecological and evolutionary applications and beyond","type":"article-journal","volume":"6"},"uris":["http://www.mendeley.com/documents/?uuid=ac104acd-4a57-4145-8621-e0fa1258399b"]}],"mendeley":{"formattedCitation":"<sup>8</sup>","plainTextFormattedCitation":"8","previouslyFormattedCitation":"<sup>8</sup>"},"properties":{"noteIndex":0},"schema":"https://github.com/citation-style-language/schema/raw/master/csl-citation.json"}8
+ lnσPL=lnsPL+12(nPL-1)  and  SlnσPL2= 12(nPL-1)
+where sPL is the standard deviation of the placebo group, and nPL the number of patients in placebo in that study. Likewise, for the active treatment we have: 
+lnσAT=lnsAT+12(nAT-1)  and   SlnσAT2= 12(nAT-1)
+We now rewrite 
+σTE=σAT2-σPL2+σPL2ρ2-ρ
+Thus, we need three estimates (σPL , σAT, ρ) to obtain an estimate σTE. Each of these three numbers is estimated in a different way, and they come with their own uncertainty. For ρ, we assumed this was a fixed value, namely the most conservative value for the coefficient (but see sensitivity analyses described below; results did not materially change when we used the alternative values for ρ). 
+
+Next, we want to quantify the uncertainty associated with our estimated σTE. Unfortunately, there is no simple way to do this in an analytical manner. Instead, we used a sampling method: we generated 10,000 values of σPL and σAT by drawing from their corresponding distributions. For instance, we sampled 10,000 values of lnσPL by drawing from the normal distribution NlnsPL+12nPL-1, 12nPL-1; likewise for lnσAT. For each of these 10,000 pairs we calculated the corresponding σTE; finally, from 10,000 σTE we calculated the corresponding standard deviation. This quantifies our uncertainty (standard error) around the estimated value of σTE. In a sensitivity analysis we also used the uncertainty around the estimation of ρ to generate 10,000 values; results regarding the standard errors of σTE did not materially change.  
+
+Having estimated lnσTE and the corresponding standard error from each study, we then combined results in a random effects meta-analysis (note that the results presented in text are as σTE rather than its logarithm, for interpretability). The analysis  was implemented by the package ‘meta’ (version 4.18-2) for R (version 3.6.3) with between study inconsistency quantified using the I2 statistic.ADDIN CSL_CITATION {"citationItems":[{"id":"ITEM-1","itemData":{"DOI":"10.1136/ebmental-2019-300117","ISSN":"13620347","PMID":"31563865","abstract":"Objective Meta-analysis is of fundamental importance to obtain an unbiased assessment of the available evidence. In general, the use of meta-analysis has been increasing over the last three decades with mental health as a major research topic. It is then essential to well understand its methodology and interpret its results. In this publication, we describe how to perform a meta-analysis with the freely available statistical software environment R, using a working example taken from the field of mental health. Methods R package meta is used to conduct standard meta-analysis. Sensitivity analyses for missing binary outcome data and potential selection bias are conducted with R package metasens. All essential R commands are provided and clearly described to conduct and report analyses. Results The working example considers a binary outcome: we show how to conduct a fixed effect and random effects meta-analysis and subgroup analysis, produce a forest and funnel plot and to test and adjust for funnel plot asymmetry. All these steps work similar for other outcome types. Conclusions R represents a powerful and flexible tool to conduct meta-analyses. This publication gives a brief glimpse into the topic and provides directions to more advanced meta-analysis methods available in R.","author":[{"dropping-particle":"","family":"Balduzzi","given":"Sara","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Rücker","given":"Gerta","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Schwarzer","given":"Guido","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"Evidence-Based Mental Health","id":"ITEM-1","issue":"4","issued":{"date-parts":[["2019"]]},"page":"153-160","title":"How to perform a meta-analysis with R: A practical tutorial","type":"article","volume":"22"},"uris":["http://www.mendeley.com/documents/?uuid=8a45f0da-ecd7-4504-acfc-d48822e52feb"]},{"id":"ITEM-2","itemData":{"DOI":"10.1002/sim.1186","ISSN":"0277-6715","author":[{"dropping-particle":"","family":"Higgins","given":"Julian P. T.","non-dropping-particle":"","parse-names":false,"suffix":""},{"dropping-particle":"","family":"Thompson","given":"Simon G.","non-dropping-particle":"","parse-names":false,"suffix":""}],"container-title":"Statistics in Medicine","id":"ITEM-2","issue":"11","issued":{"date-parts":[["2002","6"]]},"page":"1539-1558","title":"Quantifying heterogeneity in a meta-analysis","type":"article-journal","volume":"21"},"uris":["http://www.mendeley.com/documents/?uuid=ca941f83-065c-4f14-8f29-54708e1d5255","http://www.mendeley.com/documents/?uuid=ada74ca5-b876-4596-8ef2-4cc4cb5145b4"]}],"mendeley":{"formattedCitation":"<sup>9,10</sup>","plainTextFormattedCitation":"9,10","previouslyFormattedCitation":"<sup>9,10</sup>"},"properties":{"noteIndex":0},"schema":"https://github.com/citation-style-language/schema/raw/master/csl-citation.json"}9,10 In addition to a single summary estimate across all trials meta-analyses were also performed with studies grouped according to antipsychotics used.  Meta-analyses were also performed for positive and negative PANSS subscales where these were reported, using the relevant value of ρ calculated above. In a sensitivity analysis we redid the calculations using instead the most liberal value (i.e. the value corresponding to the correlation of highest absolute magnitude) for ρ among the three methods.
+
+To centre the σTE around a clinically meaningful value we also calculated an estimate of the mean treatment effect by performing a random effects meta-analysis of unadjusted mean difference between placebo and active treatment. At this point readers should note that the estimated lnσTE across studies are correlated, owing to the fact that they are all calculated using the same values for ρ. Our analysis disregards this correlation, and this could in principle be a limitation, leading to narrower confidence intervals. However, we calculated the correlations induced across the study-specific estimates and we found them to be very small for most cases. Thus, disregarding these induced correlations is expected to have minimal impact on our results.
+
+In some trials the observed VR was not compatible with our main estimate of ρ (in cases of low VR a greater absolute value of ρ is required for solutions to contain only real numbers). These trials were removed in our main analysis. 
+
+For studies in which VR<1 there exists an additional second solution:
+
+σTE=σPL-VR2-1+ρ2-ρ
+
+We presented only the findings for the first solution:
+σTE=σPLVR2-1+ρ2-ρ
+
+This is because the alternative of using the second solution for those studies with VR<1 leads to a situation in which there is a large discontinuities for the estimate of σTE between a study with a VR of e.g. 1.01 and a study with a VR of e.g. 0.99. This discontinuity appears implausible, and we have therefore restricted the possible solutions.
+
+Throughout, reported p values are two sided, and test against a null hypothesis of both the correlation (ρ) and the heterogeneity of treatment effects not differing from zero.
+
+The assumption underlying the open label method is supported by the fact that PANSS scores at the end of the double-blind period for those initially randomized to antipsychotic treatment were similar to the scores at the end of the open label period for those initially receiving placebo (see supplementary eFigure 2).
+
+Both methods estimate individual treatment effects and thereby allow for estimation of treatment effect heterogeneity within the trial. Clinically meaningful heterogeneity was apparent with both methods when observing the distribution of treatment effects (see supplementary eFigure3).
+
+
+Results
+
+The assumption underlying the open label method is supported by the fact that PANSS scores at the end of the double-blind period for those initially randomized to antipsychotic treatment were similar to the scores at the end of the open label period for those initially receiving placebo (see supplementary eFigure 2). Both of the individual patient data methods estimate individual treatment effects and thereby allow for estimation of treatment effect heterogeneity within the trial. Clinically meaningful heterogeneity was apparent with both methods when observing the distribution of treatment effects (see supplementary eFigure3).
+
+
+ 
+
+
+
+
+-9144002042160Screening
+00Screening
+-9144005242560Included
+00Included
+-9144003642360Eligibility
+00Eligibility
+168021085598000396621085598000-914400441960Identification
+00Identification
+2994660133350Additional records identified through other sources(n = 73)
+00Additional records identified through other sources(n = 73)
+14370051276350Records after duplicates removed(n =7,936)
+00Records after duplicates removed(n =7,936)
+19881852305050Records screened(n = 7,936)
+00Records screened(n = 7,936)
+43091102305050Records excluded(n =6,805)
+00Records excluded(n =6,805)
+19659603219450Full-text articles assessed for eligibility(n = 1,131  )
+00Full-text articles assessed for eligibility(n = 1,131  )
+43091103219450Full-text articles excluded (n = 1,067)
+00Full-text articles excluded (n = 1,067)
+19659604248150Studies included in qualitative synthesis(n = 66)
+00Studies included in qualitative synthesis(n = 66)
+19659605276850Studies included in quantitative synthesis (meta-analysis)(n = 66)
+00Studies included in quantitative synthesis (meta-analysis)(n = 66)
+2823210188468000282321029133800028232103942080002823210497078000470535156210Records identified through database searching(n  = 11, 006  )
+00Records identified through database searching(n  = 11, 006  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRISMA Flow Diagram
+
+
+
+-275950-30204600
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+eFigure 1. Inferring the variability of treatment effects
+
+(i) For a simple trial of parallel design, the average treatment effect can be estimated as the difference between mean outcome in placebo and mean outcome in active treatment. It is not possible, however, to directly determine the variability of individual treatment effects. (ii)  Figure illustrates symptom change for a single participant initially receiving placebo followed by an open-label period of active treatment. Our ‘open label method’ estimation of treatment effects relies on the assumption that if this patient had taken drug in the double-blind period instead of placebo, the symptoms would change as indicated by the dashed line. 
+
+The hypothetical case where for nine patients (A-I) we observe the outcomes in both treatment and placebo. Placebo response is illustrated by how far along the x-axis the grey marker is, while treatment effect is illustrated by the width of the line joining grey marker and black marker (if the black marker is to the right of the grey marker this indicates a net benefit of active treatment, if it is to the left a net detriment). In this case there is no correlation between the magnitude of placebo response and the magnitude of treatment effect, and the variability of placebo (grey markers) and active (black markers) arms is identical. We can see that as a result of these conditions (identical placebo and active variability, and no correlation between placebo and treatment effects) it follows that treatment effect heterogeneity is zero and all individuals receive an identical treatment effect (i.e. the width of all the lines joining grey and black markers are identical).  
+ 
+It is possible that individuals with a greater placebo response may have a smaller medication-specific benefit, i.e. a negative correlation exists between placebo response and treatment effect. As in (B), both placebo and active treatment outcomes have the same variability at the group level. In this case, however, treatment effects and outcomes in placebo are negatively correlated at the patient level. One can see that in this case a negative correlation between placebo and treatment effects leads to marked treatment effect heterogeneity (i.e. the width of the lines joining grey and black markers varies between individuals.)
+
+
+
+eFigure 2
+Mean PANSS score at the end of the double blind period for patients that received active paliperidone (69.5, SD 19) was very similar to the mean PANSS scores at the end of the open label period  for patients that initially received placebo (67.2, SD 19.9) (Independent sample t- test t=0.93, p = 0.34). This observation provides support for the assumptions behind the “open label” method described in our paper. 
+
+
+
+eFigure 3
+Density plot of treatment effects within the individual patient data. Both methods of individual treatment effect estimation show clinically significant inter-individual differences.
+
+
+PRISMA Checklist
+Section/topic 
+#
+Checklist item 
+Reported on page # 
+TITLE 
+
+Title 
+1
+Identify the report as a systematic review, meta-analysis, or both. 
+1
+ABSTRACT 
+
+Structured summary 
+2
+Provide a structured summary including, as applicable: background; objectives; data sources; study eligibility criteria, participants, and interventions; study appraisal and synthesis methods; results; limitations; conclusions and implications of key findings; systematic review registration number. 
+3
+INTRODUCTION 
+
+Rationale 
+3
+Describe the rationale for the review in the context of what is already known. 
+3-5
+Objectives 
+4
+Provide an explicit statement of questions being addressed with reference to participants, interventions, comparisons, outcomes, and study design (PICOS). 
+5
+METHODS 
+
+Protocol and registration 
+5
+Indicate if a review protocol exists, if and where it can be accessed (e.g., Web address), and, if available, provide registration information including registration number. 
+6
+Eligibility criteria 
+6
+Specify study characteristics (e.g., PICOS, length of follow-up) and report characteristics (e.g., years considered, language, publication status) used as criteria for eligibility, giving rationale. 
+6
+Information sources 
+7
+Describe all information sources (e.g., databases with dates of coverage, contact with study authors to identify additional studies) in the search and date last searched. 
+6-7
+Search 
+8
+Present full electronic search strategy for at least one database, including any limits used, such that it could be repeated. 
+6, supplement
+Study selection 
+9
+State the process for selecting studies (i.e., screening, eligibility, included in systematic review, and, if applicable, included in the meta-analysis). 
+6-7
+Data collection process 
+10
+Describe method of data extraction from reports (e.g., piloted forms, independently, in duplicate) and any processes for obtaining and confirming data from investigators. 
+6-7
+Data items 
+11
+List and define all variables for which data were sought (e.g., PICOS, funding sources) and any assumptions and simplifications made. 
+6-7
+Risk of bias in individual studies 
+12
+Describe methods used for assessing risk of bias of individual studies (including specification of whether this was done at the study or outcome level), and how this information is to be used in any data synthesis. 
+7
+Summary measures 
+13
+State the principal summary measures (e.g., risk ratio, difference in means). 
+7-8
+Synthesis of results 
+14
+Describe the methods of handling data and combining results of studies, if done, including measures of consistency (e.g., I2) for each meta-analysis. 
+8-9
+
+Section/topic 
+#
+Checklist item 
+Reported on page # 
+Risk of bias across studies 
+15
+Specify any assessment of risk of bias that may affect the cumulative evidence (e.g., publication bias, selective reporting within studies). 
+7-10
+Additional analyses 
+16
+Describe methods of additional analyses (e.g., sensitivity or subgroup analyses, meta-regression), if done, indicating which were pre-specified. 
+7-9
+RESULTS 
+
+Study selection 
+17
+Give numbers of studies screened, assessed for eligibility, and included in the review, with reasons for exclusions at each stage, ideally with a flow diagram. 
+11, supplement
+Study characteristics 
+18
+For each study, present characteristics for which data were extracted (e.g., study size, PICOS, follow-up period) and provide the citations. 
+supplement
+Risk of bias within studies 
+19
+Present data on risk of bias of each study and, if available, any outcome level assessment (see item 12). 
+
+Results of individual studies 
+20
+For all outcomes considered (benefits or harms), present, for each study: (a) simple summary data for each intervention group (b) effect estimates and confidence intervals, ideally with a forest plot. 
+11-12
+Synthesis of results 
+21
+Present results of each meta-analysis done, including confidence intervals and measures of consistency. 
+11-12
+Risk of bias across studies 
+22
+Present results of any assessment of risk of bias across studies (see Item 15). 
+12
+Additional analysis 
+23
+Give results of additional analyses, if done (e.g., sensitivity or subgroup analyses, meta-regression [see Item 16]). 
+12-14
+DISCUSSION 
+
+Summary of evidence 
+24
+Summarize the main findings including the strength of evidence for each main outcome; consider their relevance to key groups (e.g., healthcare providers, users, and policy makers). 
+2,3,15
+Limitations 
+25
+Discuss limitations at study and outcome level (e.g., risk of bias), and at review-level (e.g., incomplete retrieval of identified research, reporting bias). 
+16-17
+Conclusions 
+26
+Provide a general interpretation of the results in the context of other evidence, and implications for future research. 
+2,3,17
+FUNDING 
+
+Funding 
+27
+Describe sources of funding for the systematic review and other support (e.g., supply of data); role of funders for the systematic review. 
+18
+
+
+
+References
+ADDIN Mendeley Bibliography CSL_BIBLIOGRAPHY 1. Yale University Open Data Access (YODA) clinical trials database.
+2. McCutcheon RA, Pillinger T, Mizuno Y, et al. The efficacy and heterogeneity of antipsychotic response in schizophrenia: A meta-analysis. Mol Psychiatry. 2021;26(4):1310-1320. doi:10.1038/s41380-019-0502-5
+3. Winkelbeiner S, Leucht S, Kane JM, Homan P. Evaluation of Differences in Individual Treatment Response in Schizophrenia Spectrum Disorders: A Meta-analysis. JAMA Psychiatry. 2019;76(10):1063-1073. doi:10.1001/jamapsychiatry.2019.1530
+4. Homan S, Muscat W, Joanlanne A, et al. Treatment effect variability in brain stimulation across psychiatric disorders: A meta-analysis of variance. Neurosci Biobehav Rev. 2021;124(October 2020):54-62. doi:10.1016/j.neubiorev.2020.11.033
+5. Plöderl M, Hengartner MP. What are the chances for personalised treatment with antidepressants? Detection of patient-by-treatment interaction with a variance ratio meta-analysis. BMJ Open. 2019;9(12):34816. doi:10.1136/bmjopen-2019-034816
+6. Volkmann A. On the Relationship between Treatment Effect Heterogeneity and the Variability Ratio Effect Size Statistic. 2020;(2019). http://arxiv.org/abs/2006.11848
+7. Volkmann C, Volkmann A, Müller CA. On the treatment effect heterogeneity of antidepressants in major depression: A Bayesian meta-analysis and simulation study. PLoS One. 2020;15(11 November):1-22. doi:10.1371/journal.pone.0241497
+8. Nakagawa S, Poulin R, Mengersen K, et al. Meta-analysis of variation: Ecological and evolutionary applications and beyond. Methods Ecol Evol. 2015;6(2):143-152. doi:10.1111/2041-210X.12309
+9. Balduzzi S, Rücker G, Schwarzer G. How to perform a meta-analysis with R: A practical tutorial. Evid Based Ment Health. 2019;22(4):153-160. doi:10.1136/ebmental-2019-300117
+10. Higgins JPT, Thompson SG. Quantifying heterogeneity in a meta-analysis. Stat Med. 2002;21(11):1539-1558. doi:10.1002/sim.1186
+

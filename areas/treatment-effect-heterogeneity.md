@@ -1,7 +1,7 @@
 <!--kb
 id: area:treatment-effect-heterogeneity
 labels: kind:paper-notes, area:treatment-effect-heterogeneity
-triggers: does this treatment help some people more than others; heterogeneity of treatment effect from aggregate data; variability ratio meta-analysis; coefficient of variation ratio interpretation; should we personalise this intervention; does an intervention change the variance or only the mean; how do I test whether the SD tracks the mean; using baseline arms as a negative control; what does VR near 1 actually rule out; additive versus multiplicative homogeneity; which null hypothesis does lnVR test; do antidepressants work better for some people than others; null slope of a variability ratio regression
+triggers: does this treatment help some people more than others; heterogeneity of treatment effect from aggregate data; variability ratio meta-analysis; coefficient of variation ratio interpretation; should we personalise this intervention; does an intervention change the variance or only the mean; how do I test whether the SD tracks the mean; using baseline arms as a negative control; what does VR near 1 actually rule out; correlation between placebo response and treatment effect; is sigma_TE identified from aggregate data; mathematical coupling in meta-analysis; a meta-analysis that deletes trials incompatible with its own parameter; additive versus multiplicative homogeneity; which null hypothesis does lnVR test; do antidepressants work better for some people than others; null slope of a variability ratio regression
 verified: 2026-09-04
 -->
 
@@ -9,7 +9,8 @@ verified: 2026-09-04
 
 Author: maria. Started 2026-09-02. Records: `galante2021-mbp-nonclinical`,
 `maria2026-mbp-variability-ratio`, `munkholm2020-antidepressant-variability`,
-`maria2026-antidepressant-variability-recalibration`. Adjacent by method:
+`maria2026-antidepressant-variability-recalibration`,
+`mccutcheon2022-reappraising-variability`. Adjacent by method:
 `maria2026-happiness-income-spread` (same location-versus-scale question, an
 exposure rather than an intervention).
 
@@ -52,6 +53,68 @@ not about a treatment.
 > `maria2026-antidepressant-variability-recalibration#c4` (the refutation) and
 > `#c5` (the repair). The refuting evidence was a simulation on a second corpus in
 > which the answer was known by construction.
+
+## The third axis, and it is the biggest one
+
+**Everything above assumes the individual treatment effect is uncorrelated with
+how the patient would have done on placebo. That assumption is not innocuous and
+it is never stated.** Write the identity out:
+
+    Var(Y_treated) = Var(Y_control) + Var(d) + 2 rho SD(Y_control) SD(d)
+    => sigma_TE = sigma_PL ( sqrt(VR^2 - 1 + rho^2) - rho )
+
+At rho = 0 and VR = 1 this gives **zero**. At rho = -0.32 and VR = 1 it gives
+**0.64 sigma_PL**. The same data, the same VR, an answer that moves from "no
+heterogeneity" to "individual effects twice the average effect", on one
+parameter no trial reports. `mccutcheon2022-reappraising-variability` is the
+paper that noticed this, and **its diagnosis is correct**. Its instrument is not.
+
+- **All three of its rho estimators return a negative number when the true rho
+  is zero**, for one shared reason: a quantity estimated from the placebo arm
+  sits on both sides of the correlation with opposite signs. Open-label:
+  Y(DBend) closes the placebo period and opens the drug period. Linear model:
+  the placebo-arm slope's own estimation noise enters both the fitted effect and
+  the placebo response — this one needs **no measurement error at all** and
+  survives at reliability 1.00 (rho-hat = -0.141). Study level: T_s = D_s - P_s
+  is correlated against P_s. **They are not three independent checks; they are
+  one error in three costumes, which is why they agree.** Confirmed by removing
+  it: split the placebo information into independent halves and every bias goes
+  to zero.
+- **The linear-model estimator, which carries their headline, has no sensitivity
+  to rho at all** — it returns -0.142, -0.151, -0.150 while the truth moves 0,
+  -0.29, -0.58. Its "individual treatment effect" is a deterministic function of
+  age, sex and baseline severity, so it cannot see idiosyncratic response, which
+  is the only kind large enough to matter.
+- **The load-bearing error is a deletion, not the correlation.** Trials whose
+  VR falls below sqrt(1 - rho^2) = 0.947 are "not compatible" and were removed —
+  i.e. exactly the trials arguing hardest against heterogeneity. Feed the whole
+  published pipeline a world where **every patient gets an identical benefit**
+  (sigma_TE = 0.000 by construction) and it reports **14.9 [9.5, 21.0] PANSS
+  points**, against their published 13.5 [12.7, 14.3]. With rho fixed at its
+  TRUE value of zero it still reports 11.5; with the deletion turned off, 0.08.
+- **On real data the correlation is entirely shared sampling error.** On 341
+  antidepressant comparisons in 219 studies, computed their way rho = -0.178
+  [-0.332, -0.028]; with the shared sampling variance removed analytically
+  (it is just sd^2/n, printed in every forest plot) rho = **+0.001**
+  [-0.209, +0.202].
+
+**Report D, not VR.** The quantity aggregate data actually fix is
+
+    D = sigma_AT^2 - sigma_PL^2 = sigma_TE^2 + 2 rho sigma_PL sigma_TE
+
+D is unbiased, has a known sampling distribution, **can legitimately be
+negative**, and needs no square root, no branch choice and no deletion. Every
+pathology above enters when the identity is inverted for sigma_TE *before*
+pooling instead of after. For antidepressants **D = -0.384 [-1.636, +0.868]**
+squared HAMD points, I2 = 0%. Then publish the curve, not a number: implied
+sigma_TE is <= 0.93 at rho = 0, 3.37 at -0.21, 5.24 at -0.32, 10.26 at -0.62 —
+an **eleven-fold range from one unmeasured parameter**, against a mean
+drug-placebo difference of 2.70 points.
+
+**The honest state of this field: sigma_TE is not identified from aggregate
+trial data.** Munkholm et al. assume rho = 0 silently. McCutcheon et al. estimate
+rho with instruments that cannot measure it and delete the data that disagree.
+Ten years of argument about the answer to a question the design cannot answer.
 
 ## The question and the instrument
 

@@ -22,7 +22,8 @@
       "enum": [
         "1.0",
         "1.1",
-        "1.2"
+        "1.2",
+        "1.3"
       ],
       "description": "Revision of zoo-paper-record this record was written against. 1.1 adds OPTIONAL fields only, so every 1.0 record is also a conforming 1.1 record and there is no migration. See VERSIONING.md: no bulk migration, ever."
     },
@@ -74,6 +75,10 @@
         },
         "openreview": {
           "type": "string"
+        },
+        "pmcid": {
+          "type": "string",
+          "description": "Europe PMC / PubMed Central identifier, e.g. PMC9077611. Distinct from pmid and NOT derivable from it: the JATS full text endpoint that actually returns bytes on this box is keyed by pmcid, so a record with only a pmid is a record whose primary source cannot be re-fetched."
         }
       }
     },
@@ -215,9 +220,10 @@
                     "prediction",
                     "credible",
                     "partial-identification-bounds",
-                    "range-of-specifications"
+                    "range-of-specifications",
+                    "monte-carlo-sampling-distribution"
                   ],
-                  "description": "What kind of interval ci_low/ci_high are. Added because a 95% CI, a prediction interval and a Manski bound were all being written into one free-text field, and they license completely different sentences."
+                  "description": "What kind of interval ci_low/ci_high are. Added because a 95% CI, a prediction interval and a Manski bound were all being written into one free-text field, and they license completely different sentences. `monte-carlo-sampling-distribution` (added 1.3) is the 2.5-97.5 percentile range of an ESTIMATOR ACROSS SIMULATED REPLICATIONS of a world whose truth is known by construction. It is not a statement about a parameter and must never be read as one: it answers 'what range of answers would this procedure return if the study were rerun in this world', which is the object a null-world or positive-control experiment produces."
                 },
                 "status": {
                   "enum": [
