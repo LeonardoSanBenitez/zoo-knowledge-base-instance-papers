@@ -1,0 +1,16 @@
+check,group,implied_rho,observed,outcome,ratio,ratio_at_zero,rho_w,structure
+curve,superforecasters,,,extinction,7.530714035983056,,0.0,
+curve,superforecasters,,,extinction,5.623349834145916,,0.2,
+curve,superforecasters,,,extinction,3.9034888836004678,,0.4,
+curve,superforecasters,,,extinction,2.5768704641079148,,0.6,
+curve,superforecasters,,,extinction,1.5824122070372284,,0.8,
+curve,superforecasters,,,extinction,1.2186061060466735,,0.9,
+curve,superforecasters,,,extinction,1.0909064385182985,,0.95,
+curve,superforecasters,,,extinction,1.0120313650234722,,0.99,
+solve,superforecasters,0.6709361895453185,2.13,extinction_by_2100,,7.230669139449581,,
+solve,domain_experts,0.9311134968791157,1.31,extinction_by_2100,,12.333625338972997,,
+solve,superforecasters,0.5828912842553109,1.13,catastrophe_by_2100,,1.3595171422357788,,
+solve,domain_experts,0.9949999981466682,0.84,catastrophe_by_2100,,2.0964410759943797,,
+structure,,0.6684206139389426,,,,,,equicorr
+structure,,0.6587228544894606,,,,,,one-factor
+structure,,0.4723607589770109,,,,,,t-copula

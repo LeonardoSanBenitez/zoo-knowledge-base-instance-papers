@@ -1,0 +1,496 @@
+{
+  "schema_version": "1.3",
+  "id": "karger2023-xpt",
+  "title": "Forecasting Existential Risks: Evidence from a Long-Run Forecasting Tournament",
+  "authors": [
+    "Ezra Karger",
+    "Josh Rosenberg",
+    "Zachary Jacobs",
+    "Molly Hickman",
+    "Rose Hadshar",
+    "Kayla Gamin",
+    "Taylor Smith",
+    "Bridget Williams",
+    "Tegan McCaslin",
+    "Stephen Thomas",
+    "Philip E. Tetlock"
+  ],
+  "year": 2023,
+  "venue": "Forecasting Research Institute Working Paper #1 (v. 2023-08-08); a version published in International Journal of Forecasting 2024",
+  "area": [
+    "existential-risk-and-longtermism",
+    "measurement-theory",
+    "analytic-variability-and-many-analysts"
+  ],
+  "identifiers": {
+    "url": "https://forecastingresearch.org/xpt"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 16,
+    "bytes_downloaded": 19485744,
+    "compute_notes": "One 754-page PDF, 19.5 MB, 1,300,783 characters of extracted text. Tables 2 and 3 transcribed by hand using PyMuPDF WORD COORDINATES rather than linear text, because the linear extraction mis-assigns columns. Four analysis scripts x01-x04; the longest runs 9 s. No data deposit was reachable: forecastingresearch.org did not resolve from this machine (curl exit, http=000) and the journal version is not in Europe PMC.",
+    "session": "2026-09-04 maria, 5h-sleep-then-research"
+  },
+  "triggers": [
+    "how likely is human extinction by 2100",
+    "do superforecasters and domain experts disagree about AI risk",
+    "does discussion make forecasters converge",
+    "existential risk probability estimates where do they come from",
+    "elicitation format changes a probability estimate",
+    "how should I aggregate expert probability judgements",
+    "is a median of expert probabilities a coherent belief",
+    "probability estimates that differ by orders of magnitude between formats",
+    "are expert risk judgements across domains independent",
+    "what does a bootstrap confidence interval on a median tell you about people"
+  ],
+  "methods": [
+    "expert-elicitation-tournament",
+    "in-paper-table-transcription",
+    "median-aggregation-artifact-simulation",
+    "spread-derived-from-reported-median-ci",
+    "implied-parameter-inversion",
+    "copula-structure-sensitivity",
+    "synthetic-injected-effect-control",
+    "elicitation-format-comparison"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Domain experts and superforecasters disagree by roughly a factor of six on the probability of human extinction by 2100, and four months of incentivised discussion did not move either group materially.",
+      "scope": "169 forecasters (89 superforecasters, 80 experts), June-October 2022, multi-stage tournament with prizes for persuasive rationales.",
+      "quantities": [
+        {
+          "name": "total_extinction_risk_by_2100_superforecasters",
+          "value": 1.0,
+          "unit": "percent",
+          "n": 88,
+          "ci_low": 0.55,
+          "ci_high": 1.23,
+          "ci_kind": "confidence",
+          "source": "Table 3; bootstrap CI of the median"
+        },
+        {
+          "name": "total_extinction_risk_by_2100_domain_experts",
+          "value": 6.0,
+          "unit": "percent",
+          "n": 59,
+          "ci_low": 3.41,
+          "ci_high": 10.0,
+          "ci_kind": "confidence",
+          "source": "Table 3"
+        },
+        {
+          "name": "total_catastrophic_risk_by_2100_superforecasters",
+          "value": 9.05,
+          "unit": "percent",
+          "n": 88,
+          "ci_low": 6.13,
+          "ci_high": 10.25,
+          "ci_kind": "confidence",
+          "source": "Table 2; catastrophe = death of 10% of humanity within 5 years"
+        },
+        {
+          "name": "total_catastrophic_risk_by_2100_domain_experts",
+          "value": 20.0,
+          "unit": "percent",
+          "n": 59,
+          "ci_low": 15.44,
+          "ci_high": 27.6,
+          "ci_kind": "confidence",
+          "source": "Table 2"
+        },
+        {
+          "name": "ai_extinction_by_2100_superforecasters",
+          "value": 0.38,
+          "unit": "percent",
+          "n": 88,
+          "ci_low": 0.1,
+          "ci_high": 0.75,
+          "ci_kind": "confidence",
+          "source": "Table 3; the largest expert-superforecaster gap in the tournament"
+        },
+        {
+          "name": "ai_extinction_by_2100_domain_experts",
+          "value": 3.0,
+          "unit": "percent",
+          "n": 59,
+          "ci_low": 0.49,
+          "ci_high": 10.0,
+          "ci_kind": "confidence",
+          "source": "Table 3"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Accepted as a faithful report of what the tournament produced; I have no way to verify the underlying forecasts because no data deposit was reachable. The design is careful and the persistent-disagreement result is the paper's real contribution: a group selected for calibration on resolvable questions and a group selected for domain knowledge, given four months and cash prizes for persuasion, did not converge. That is the same structure as the many-analysts literature already in this corpus -- independent judges, shared information, stable divergence -- with arguments as the substrate instead of data.",
+        "by": "maria, 2026-09-04"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "The same respondents, on the same questions, in the same survey, give probabilities up to 800,000 times larger when asked to type a percentage than when asked to fill in X in '1 in X'.",
+      "scope": "N=405 members of a 912-person public sample of college graduates who answered under both formats. The 1-in-X format was preceded by ten calibrating reference classes (a coin at 1 in 2, death by lightning at 1 in 300,000, a random newborn becoming US president at 1 in 10,000,000). Reported by the authors in footnote 70, not in the main text.",
+      "quantities": [
+        {
+          "name": "elicitation_ratio_total_extinction",
+          "value": 800000.0,
+          "unit": "fold, textbox over 1-in-X",
+          "n": 405,
+          "source": "maria 2026, x04: 4% against 1 in 20,000,000"
+        },
+        {
+          "name": "elicitation_ratio_ai_extinction",
+          "value": 600000.0,
+          "unit": "fold",
+          "n": 405,
+          "source": "maria 2026, x04: 1.5% against 1 in 40,000,000"
+        },
+        {
+          "name": "elicitation_ratio_total_catastrophe",
+          "value": 200.0,
+          "unit": "fold",
+          "n": 405,
+          "source": "maria 2026, x04: 10% against 1 in 2,000"
+        },
+        {
+          "name": "elicitation_ratio_ai_catastrophe",
+          "value": 2500.0,
+          "unit": "fold",
+          "n": 405,
+          "source": "maria 2026, x04: 5% against 1 in 50,000"
+        },
+        {
+          "name": "ranks_preserved_across_formats",
+          "value": 1.0,
+          "unit": "fraction of the four questions whose rank order is identical",
+          "count": 4,
+          "denominator": 4,
+          "n": 405,
+          "source": "maria 2026, x04: both formats order total-catastrophe > AI-catastrophe > total-extinction > AI-extinction"
+        },
+        {
+          "name": "pairwise_ratios_preserved_across_formats",
+          "value": 0.167,
+          "unit": "fraction of the six pairwise ratios agreeing within a factor of 2",
+          "count": 1,
+          "denominator": 6,
+          "n": 405,
+          "source": "maria 2026, x04: only total-extinction / AI-extinction survives (2.67 against 2.00)"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The arithmetic is eight numbers and a calculator; what it is worth is that nobody did it. The gap scales with the rarity of the event -- 200-fold for catastrophe, 800,000-fold for extinction -- which is the signature of a FLOOR rather than of two noisy measurements of one thing: nobody types 0.000005 into a percentage box, and changing the units removes the floor. I want to record which way this cuts, because the obvious reading is wrong: the 1-in-X numbers are not obviously the better ones. They imply that a catastrophe killing 800 million people escalates to extinction with probability 0.0001, which is its own strong and unargued claim. The finding is not that one format is right. It is that the FORMAT, not the belief, sets the number. CORRECTED IN PLACE during the session: my first summary said the ordering AND the ratios survive. My own table refuted it -- ranks 4 of 4, ratios 1 of 6.",
+        "by": "maria, 2026-09-04"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Every forecaster group in the tournament implies that a catastrophe killing a tenth of humanity escalates to extinction with probability between 11% and 40%; the same public sample implies 40% under one elicitation format and 0.01% under the other.",
+      "scope": "Derived by me as P(extinction)/P(catastrophe) from the reported medians. Not reported by the authors in any form.",
+      "quantities": [
+        {
+          "name": "p_extinction_given_catastrophe_superforecasters",
+          "value": 0.1105,
+          "unit": "conditional probability",
+          "n": 88,
+          "source": "maria 2026, x04: 1.00 / 9.05"
+        },
+        {
+          "name": "p_extinction_given_catastrophe_domain_experts",
+          "value": 0.3,
+          "unit": "conditional probability",
+          "n": 59,
+          "source": "maria 2026, x04: 6.00 / 20.00"
+        },
+        {
+          "name": "p_extinction_given_catastrophe_general_xrisk_experts",
+          "value": 0.228,
+          "unit": "conditional probability",
+          "n": 15,
+          "source": "maria 2026, x04: 6.60 / 28.95"
+        },
+        {
+          "name": "p_extinction_given_catastrophe_public_textbox",
+          "value": 0.4,
+          "unit": "conditional probability",
+          "n": 405,
+          "source": "maria 2026, x04: 4.0 / 10.0"
+        },
+        {
+          "name": "p_extinction_given_catastrophe_public_one_in_x",
+          "value": 0.0001,
+          "unit": "conditional probability",
+          "n": 405,
+          "source": "maria 2026, x04: (1/20,000,000) / (1/2,000)"
+        }
+      ],
+      "evidence": [
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The conditional is the sharpest way to show the format effect, because unlike a bare probability it has a meaning anyone can argue with: given eight hundred million dead in five years, does it finish? Four groups say roughly one time in three to one in nine. The same people, asked in different units, say one time in ten thousand. NARROWER SCOPE and the reason matters: this is a ratio of two MEDIANS taken over different questions, so it is not any individual's conditional probability -- see c4, where exactly that non-additivity turns out to be large. It is a property of the numbers as published and as used, which is the level at which policy consumes them.",
+        "by": "maria, 2026-09-04"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "The reported per-question medians are not a coherent belief state, and the amount by which the total exceeds the sum of the named causes is fully accounted for by the non-additivity of the median, leaving no evidence about unnamed causes.",
+      "scope": "My reanalysis. Tables 2 and 3, superforecasters and domain experts, five named causes plus a total.",
+      "quantities": [
+        {
+          "name": "observed_total_over_sum_extinction_superforecasters",
+          "value": 2.13,
+          "unit": "ratio",
+          "n": 88,
+          "source": "maria 2026, x01: named causes sum to 0.470%, reported total 1.000%"
+        },
+        {
+          "name": "observed_total_over_sum_extinction_domain_experts",
+          "value": 1.31,
+          "unit": "ratio",
+          "n": 59,
+          "source": "maria 2026, x01: 4.564% against 6.000%"
+        },
+        {
+          "name": "observed_total_over_sum_catastrophe_superforecasters",
+          "value": 1.13,
+          "unit": "ratio",
+          "n": 88,
+          "source": "maria 2026, x01: 7.980% against 9.050%"
+        },
+        {
+          "name": "median_artifact_ratio_extinction_at_zero_unnamed_weight",
+          "value": 7.77,
+          "unit": "ratio",
+          "n": 88,
+          "ci_low": 3.64,
+          "ci_high": 15.83,
+          "ci_kind": "monte-carlo-sampling-distribution",
+          "source": "maria 2026, x02: 500 replications, true unnamed-cause weight = 0 and every simulated forecaster coherent by construction; spread derived from the report's own bootstrap intervals, not chosen"
+        },
+        {
+          "name": "median_artifact_ratio_catastrophe_at_zero_unnamed_weight",
+          "value": 1.35,
+          "unit": "ratio",
+          "n": 88,
+          "ci_low": 1.17,
+          "ci_high": 1.56,
+          "ci_kind": "monte-carlo-sampling-distribution",
+          "source": "maria 2026, x02: 500 replications, true unnamed weight = 0"
+        },
+        {
+          "name": "negative_control_ratio_at_near_zero_spread",
+          "value": 0.9993,
+          "unit": "ratio",
+          "n": 88,
+          "source": "maria 2026, x02: sigma_log = 0.01, where the medians must add up and do"
+        }
+      ],
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "I went in expecting to report an interesting quantity -- 'superforecasters put over half their extinction probability on causes nobody asked about' -- and the simulation removed it. At the person-to-person spread derived from the report's own intervals, medians taken question by question produce a total-over-sum ratio of 7.77 in a population where every individual is perfectly coherent and no unnamed cause exists. The observed 2.13 is smaller than the artifact. So the residual carries no information about unnamed causes, and the tempting sentence is unsupported. The negative control returns 0.9993 at near-zero spread, so the machinery is not manufacturing it: the spread is. WHAT THIS MEANS FOR EVERYONE WHO USES THESE NUMBERS: a set of medians taken question by question is not a probability distribution, and arithmetic on it -- summing causes, taking ratios, feeding an expected-value calculation -- is arithmetic on numbers that belong to no single belief state.",
+        "by": "maria, 2026-09-04"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Forecasters' log-probabilities across five unrelated extinction pathways are correlated within person at roughly 0.5 to 0.9, so these are not five independent domain judgements but largely one disposition expressed five times.",
+      "scope": "Inverted from the observed total-over-sum ratio under a model in which each forecaster is coherent, has no unnamed-cause weight, and has equicorrelated log-probabilities across causes. The spread per cause comes from the report's own bootstrap intervals.",
+      "quantities": [
+        {
+          "name": "implied_within_person_correlation_extinction_superforecasters",
+          "value": 0.67,
+          "unit": "correlation of log-probabilities across causes",
+          "n": 88,
+          "source": "maria 2026, x03, Gaussian equicorrelation"
+        },
+        {
+          "name": "implied_within_person_correlation_extinction_domain_experts",
+          "value": 0.93,
+          "unit": "correlation",
+          "n": 59,
+          "source": "maria 2026, x03"
+        },
+        {
+          "name": "implied_within_person_correlation_catastrophe_superforecasters",
+          "value": 0.58,
+          "unit": "correlation",
+          "n": 88,
+          "source": "maria 2026, x03"
+        },
+        {
+          "name": "implied_correlation_under_t_copula",
+          "value": 0.47,
+          "unit": "correlation",
+          "n": 88,
+          "source": "maria 2026, x03: same target ratio, heavy joint tails (t with 4 df). Equicorrelated Gaussian gives 0.67 and a one-factor structure 0.66, so the Gaussian family agrees and the heavy-tailed alternative does not."
+        },
+        {
+          "name": "derived_person_spread_log_sd_extinction_superforecasters",
+          "value": 3.95,
+          "unit": "SD of log probability across forecasters",
+          "n": 88,
+          "source": "maria 2026, x02: mean over the five causes of (ln hi - ln lo)/3.92 * sqrt(n)/1.2533, applied to the report's bootstrap intervals"
+        }
+      ],
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "DISPUTED BY ME, deliberately, and the reason is in the numbers: the Gaussian family gives 0.66-0.67 and a heavy-tailed t-copula gives 0.47, so the point estimate is partly a property of my copula rather than of their forecasters. Only the direction should be quoted -- substantial positive correlation, somewhere around a half to two-thirds -- and it is confirmed independently by the report's own key takeaway 5, that predictions about risk were highly correlated across topics. WHY IT MATTERS ANYWAY: five domain judgements correlated at 0.5+ are not five pieces of independent evidence, and averaging them as if they were overstates the information by a large factor. This is the same structure as kim2025-correlated-errors, where nominally independent models agree on the same wrong answer, and bommasani2022-homogenization. ONE FINDING I DID NOT EXPECT AND CANNOT EXPLAIN: domain experts imply a HIGHER cross-domain correlation (0.93) than superforecasters (0.67). Domain expertise should differentiate a person's judgements across domains, not homogenise them.",
+        "by": "maria, 2026-09-04"
+      }
+    },
+    {
+      "id": "c6",
+      "statement": "The middle 90% of forecasters span five to six orders of magnitude on the same extinction question, which the report's narrow bootstrap intervals conceal.",
+      "scope": "Derived from the report's own intervals: SE(median) is about 1.2533 sigma / sqrt(n), so a narrow interval on a large sample is compatible with an enormous population spread.",
+      "quantities": [
+        {
+          "name": "derived_log_sd_ai_extinction_superforecasters",
+          "value": 3.85,
+          "unit": "SD of log probability across forecasters",
+          "n": 88,
+          "source": "maria 2026, x02: median 0.38%, reported CI [0.10, 0.75]%; implied middle-90% span 6.8e-4% to 213%"
+        },
+        {
+          "name": "derived_log_sd_natural_pathogen_extinction_superforecasters",
+          "value": 6.49,
+          "unit": "SD of log probability",
+          "n": 88,
+          "source": "maria 2026, x02: median 0.0018%, CI [0.001, 0.030]%"
+        },
+        {
+          "name": "derived_log_sd_ai_extinction_domain_experts",
+          "value": 4.72,
+          "unit": "SD of log probability",
+          "n": 59,
+          "source": "maria 2026, x02: median 3%, CI [0.49, 10.00]%"
+        },
+        {
+          "name": "derived_log_sd_ai_catastrophe_superforecasters",
+          "value": 0.94,
+          "unit": "SD of log probability",
+          "n": 88,
+          "source": "maria 2026, x02: the catastrophe questions are far tighter than the extinction ones"
+        }
+      ],
+      "evidence": [
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The inversion is standard and the inputs are all printed in the report, but it assumes an approximately log-normal population and reads the brackets as 95% bootstrap intervals of the median, which is what the caption says they are. NARROWER SCOPE for one real reason: the implied upper end exceeds 100% for several causes, which a log-normal permits and reality does not, so the true distribution must be truncated and my sigma is an overestimate at the top. The DIRECTION is safe and is the point -- the extinction questions have spreads four times the catastrophe questions, so the disagreement the paper reports between GROUPS is small next to the disagreement WITHIN them. A reader who sees '1% [0.55, 1.23]' will imagine a group that roughly agrees. They do not.",
+        "by": "maria, 2026-09-04"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "supplement",
+      "locator": "https://static1.squarespace.com/static/635693acf15a3e2a14a56a4a/t/64f0a7838ccbf43b6b5ee40c/1693493128111/XPT.pdf",
+      "status": "verified-usable",
+      "bytes": 19485744,
+      "sha256": "7c11593963301bf9fc8ba004892a244fe2c0e64150b26949dc799daad78e2718",
+      "local_path": "artifacts/xpt_report.pdf",
+      "fetch_cmd": "curl -sL -o xpt.pdf 'https://static1.squarespace.com/static/635693acf15a3e2a14a56a4a/t/64f0a7838ccbf43b6b5ee40c/1693493128111/XPT.pdf' -A 'Mozilla/5.0'",
+      "checked": {
+        "on": "2026-09-04",
+        "by": "maria",
+        "how": "sha256sum; PyMuPDF text extraction (754 pages, 1,300,783 characters); then per-page WORD COORDINATE extraction for pages 17-18",
+        "result": "USABLE, with a trap that would have corrupted every number below. Linear text extraction of Tables 2 and 3 MIS-ASSIGNS COLUMNS: two rows have an empty non-domain-expert cell, so a naive reader shifts every later value one column left and attributes the general-x-risk-expert figures to non-domain experts. Only the x-coordinates disambiguate it -- columns sit at x = 168/176, 237/247, 312/323, 378/397, 467/478. Roughly 600 of the 754 pages are the question-by-question appendix, which is where the resolution criteria and base rates live and is the most reusable part of the document."
+      },
+      "datasheet": {
+        "composition": "Main report (about 80 pages) plus a question appendix giving, for each of the tournament's questions, the resolution criteria, historical base-rate tables, prior forecasts from other sources, and curated arguments on both sides.",
+        "caveats": "No forecaster-level data. forecastingresearch.org did not resolve from this machine, so any data release there could not be checked. The published journal version is not in Europe PMC."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "in-paper-table",
+      "locator": "XPT report Tables 2 and 3, pages 17-18",
+      "status": "verified-usable",
+      "local_path": "artifacts/xpt_tables_2_3.csv",
+      "derived_from": [
+        "a1"
+      ],
+      "checked": {
+        "on": "2026-09-04",
+        "by": "maria",
+        "how": "transcribed by hand from PyMuPDF word coordinates; 52 rows covering 2 outcomes x 6 causes x 5 groups, with medians and bootstrap intervals",
+        "result": "52 rows. Two cells are genuinely absent in the source and are absent here rather than guessed: non-domain experts have no value for non-anthropogenic risk or for the total, on either table. The public column has no pathogen entries. Group sizes come from the table captions: N=88 superforecasters, N=59 domain experts, N=15 general x-risk experts."
+      },
+      "datasheet": {
+        "composition": "table, outcome, cause, group, median_pct, ci_low, ci_high.",
+        "caveats": "Medians and their bootstrap intervals only. There is no forecaster-level data anywhere in the report, which is why every claim about the SPREAD of forecasters here is derived from the interval rather than measured."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "code",
+      "locator": "instance-papers/papers/karger2023-xpt/reanalysis/",
+      "status": "verified-usable",
+      "local_path": "reanalysis/",
+      "checked": {
+        "on": "2026-09-04",
+        "by": "maria",
+        "how": "python x01_residual.py; x02_calibrated_spread.py; x03_implied_correlation.py; x04_elicitation.py",
+        "result": "All four run clean. x01 observes the residual and shows the median artifact at a GUESSED spread; x02 derives the spread from the report's own intervals instead and adds a negative control at near-zero spread; x03 inverts the residual for the within-person correlation and tests three dependence structures; x04 is the elicitation-format arithmetic and carries an in-place correction where my summary sentence was refuted by the table printed directly above it. x01 is kept with its guessed spread rather than rewritten, because x02's improvement is only legible next to it."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:agreesWith",
+      "target": "kim2025-correlated-errors",
+      "why": "Same structure in a different substrate. There, nominally independent language models converge on the same wrong answer, so aggregating them overstates the independent evidence. Here, one forecaster's judgements across five unrelated extinction pathways are correlated at roughly 0.5 to 0.9, so averaging five domain assessments overstates it the same way."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-analytic-variability-reanalysis",
+      "why": "Independent judges, the same information, and stable divergence that discussion does not close. There the substrate is analytic choices on a shared dataset; here it is arguments about the future. The many-analysts finding that dispersion between judges dwarfs the reported uncertainty of any one of them reappears exactly."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "menkveld2024-nonstandard-errors",
+      "why": "Menkveld measures non-standard error as dispersion across research teams. This is the same object for probability judgements, and the ratio here is far larger: the derived person spread on extinction questions is four orders of magnitude, against fractions of a standard error there."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "jo2026-subjectivity",
+      "why": "Both turn on the same unexamined step: that a number elicited by one instrument measures a construct that exists independently of the instrument. Here the instrument moves the answer by six orders of magnitude."
+    }
+  ],
+  "open_questions": [
+    "forecastingresearch.org did not resolve from this machine, so I could not check whether forecaster-level data exists. If it does, every derived quantity in c4, c5 and c6 becomes directly measurable rather than inverted, and c5 in particular would stop being disputed. That is the single highest-value follow-up and it is one successful HTTP request.",
+    "The XPT ran a near-term accuracy follow-up in 2024 resolving the short-horizon questions. That is the only external check available on which group was better calibrated, and it bears directly on how much weight the 6%-versus-1% disagreement deserves. Unread.",
+    "Why do domain experts imply a HIGHER cross-domain correlation (0.93) than superforecasters (0.67)? Domain expertise should differentiate judgements across domains. I have no explanation and it may be an artifact of the smaller n and wider intervals for the expert group -- testable by simulating the inversion at n = 59 with the expert spreads and checking its bias.",
+    "The 1-in-X format was preceded by ten reference classes ranging from 1 in 2 to 1 in 10,000,000. That anchor set has a floor of its own, and the elicited extinction probability (1 in 20,000,000) sits BELOW the smallest anchor shown. Whether the anchors dragged the answers down is testable and untested; it is the obvious alternative to my floor explanation of the format gap.",
+    "Population ethics is the area this record opens and it currently holds one paper. The natural companions are the empirical work on population-ethical intuitions and the expert-survey literature on discount rates, both of which report elicited numbers that this record's format finding bears on directly."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-04",
+    "verified": "2026-09-04",
+    "notes_file": "NOTES.md"
+  }
+}

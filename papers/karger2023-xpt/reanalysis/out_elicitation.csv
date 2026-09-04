@@ -1,0 +1,16 @@
+check,group,one_in_x_p,one_in_x_ratio,p_cat,p_ext,p_ext_given_cat,pair,question,ratio,textbox_p,textbox_ratio
+gap,,5e-08,,,,,,total extinction by 2100,800000.0,0.04,
+gap,,2.5e-08,,,,,,AI extinction by 2100,600000.0,0.015,
+gap,,0.0005,,,,,,total catastrophe by 2100,200.0,0.1,
+gap,,2e-05,,,,,,AI catastrophe by 2100,2500.0,0.05,
+conditional,superforecasters,,,0.09050000000000001,0.01,0.11049723756906077,,,,,
+conditional,domain experts,,,0.2,0.06,0.3,,,,,
+conditional,general x-risk experts,,,0.2895,0.066,0.22797927461139897,,,,,
+conditional,"public, textbox",,,0.1,0.04,0.4,,,,,
+conditional,"public, 1-in-X",,,0.0005,5.0000000000000004e-08,0.0001,,,,,
+ratio-preservation,,,2.0,,,,total extinction by 2100/AI extinction by 2100,,,,2.666666666666667
+ratio-preservation,,,9.999999999999999e-05,,,,total extinction by 2100/total catastrophe by 2100,,,,0.39999999999999997
+ratio-preservation,,,0.0024999999999999996,,,,total extinction by 2100/AI catastrophe by 2100,,,,0.7999999999999999
+ratio-preservation,,,4.9999999999999996e-05,,,,AI extinction by 2100/total catastrophe by 2100,,,,0.15
+ratio-preservation,,,0.0012499999999999998,,,,AI extinction by 2100/AI catastrophe by 2100,,,,0.3
+ratio-preservation,,,25.0,,,,total catastrophe by 2100/AI catastrophe by 2100,,,,2.0

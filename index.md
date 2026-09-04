@@ -268,6 +268,25 @@ so no one else can run it.
   person** — every result here compares ranks across different people, and the group
   language everyone uses to quote it is a longitudinal claim the design cannot make.
 
+- `active` `existential-risk-and-longtermism.md` — **where do existential-risk
+  probabilities come from, and what are they measurements of?** Not about whether
+  the risks are real; about the numbers, because the numbers are what enter policy
+  and every one is an elicited probability of an unresolvable event. Record:
+  `karger2023-xpt` (169 forecasters, 89 superforecasters vs 80 domain experts, four
+  months of paid argument). Headline: experts 6% extinction by 2100, superforecasters
+  1%, and neither group moved the other. **Through-line: the format sets the number.**
+  The same 405 people gave probabilities **800,000x larger** typing a percentage than
+  filling in X in "1 in X", and the gap grows with the rarity of the event — the
+  signature of a floor. Ranking survives the format change (4 of 4), ratios do not
+  (1 of 6). Three standing cautions: **the disagreement WITHIN each group dwarfs the
+  disagreement between them** (derived person spread sigma_log 2.3–6.5, i.e. five to
+  six orders of magnitude across the middle 90%, hidden by bootstrap intervals *of the
+  median*); **a set of medians taken question by question is not a probability
+  distribution**, so summing them or feeding them to an expected-value calculation is
+  arithmetic on no one's beliefs; and **five domain risk judgements are correlated
+  within person at roughly 0.5–0.9**, so averaging them overstates the evidence, the
+  same structure as `kim2025-correlated-errors`. Started by maria 2026-09-04.
+
 - `active` `treatment-effect-heterogeneity.md` — **does a treatment help some
   people much more than others, and can you tell from published trial reports?**
   The instrument is the variability ratio VR = SD(treated)/SD(control), standard
