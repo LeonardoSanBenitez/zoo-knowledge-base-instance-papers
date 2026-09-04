@@ -10,7 +10,8 @@ verified: 2026-09-04
 Author: maria. Started 2026-09-02. Records: `galante2021-mbp-nonclinical`,
 `maria2026-mbp-variability-ratio`, `munkholm2020-antidepressant-variability`,
 `maria2026-antidepressant-variability-recalibration`,
-`mccutcheon2022-reappraising-variability`. Adjacent by method:
+`mccutcheon2022-reappraising-variability`, `senn2016-mastering-variation`.
+Adjacent by method:
 `maria2026-happiness-income-spread` (same location-versus-scale question, an
 exposure rather than an intervention).
 
@@ -53,6 +54,53 @@ not about a treatment.
 > `maria2026-antidepressant-variability-recalibration#c4` (the refutation) and
 > `#c5` (the repair). The refuting evidence was a simulation on a second corpus in
 > which the answer was known by construction.
+
+## Read this before anything else: what the design identifies
+
+`senn2016-mastering-variation` settles the question this whole area is about,
+and it was in print in 2015. Four components of variation in a trial:
+
+    A between treatments   B between patients
+    C patient-by-treatment interaction   D within patients, occasion to occasion
+
+**C is sigma_TE^2. C is what "some patients respond better than others" means.**
+And by design:
+
+| design | identifies | error term |
+|---|---|---|
+| parallel group | A | **B + C + D** |
+| classical cross-over | A, B | **C + D** |
+| repeated-period cross-over | A, B, **C** | D |
+
+*"Identification of differential response to treatment requires replication at
+the level at which differential response is claimed."* Every paper in this area
+reads C off a parallel-group trial, where it is not poorly estimated but **not
+estimated at all**. Everything below is an audit of estimators for a quantity
+the design does not identify. That is still worth having -- the design argument
+has been available for a decade and has not moved the field -- but it is the
+second question, and the order matters. Ask what the design identifies first.
+
+Senn's own two worlds: 1000 patients, double cross-over, same mean difference
+(0.5 L) and same SD of that difference (0.2 L), differing only in how well a
+patient's effect in periods 1-2 predicts their effect in periods 3-4.
+r = 0.90 gives sigma_C = 0.19 L; r = 0.02 gives sigma_C = 0.03 L. **A
+parallel-group trial sees identical data in both. So does a classical
+cross-over.** Only the replicate separates them.
+
+**FOUR axes of non-identification, now, not three.** The fourth is Senn's and is
+different in kind from the others -- it is not about the estimator but about
+what an inflated variance can physically mean:
+
+1. VR **bounds** heterogeneity rather than measuring it (two arms with the same
+   two moments are consistent with a uniform effect and with a mixture that
+   transforms a third of people);
+2. lnVR and lnCVR test **different nulls** and no paper says which was chosen;
+3. **rho**, the correlation between individual effect and control outcome, which
+   no parallel-group trial observes -- and at VR = 1 it *is* the answer, not an
+   input to it (see below);
+4. an inflated treated-arm variance may be **C or D**: patients differing from
+   each other, or one patient differing from occasion to occasion. Senn's
+   example is oral versus intravenous absorption. VR is identical either way.
 
 ## The third axis, and it is the biggest one
 
@@ -110,6 +158,24 @@ squared HAMD points, I2 = 0%. Then publish the curve, not a number: implied
 sigma_TE is <= 0.93 at rho = 0, 3.37 at -0.21, 5.24 at -0.32, 10.26 at -0.62 —
 an **eleven-fold range from one unmeasured parameter**, against a mean
 drug-placebo difference of 2.70 points.
+
+**And at VR = 1 the formula is an identity, not an estimator.** With equal arm
+variances, writing r for the within-patient correlation between a patient's
+placebo and active outcomes,
+
+    rho = -sqrt((1 - r)/2)        and        sigma_TE = -2 rho sigma_PL   exactly
+
+so rho is **negative by construction for every r < 1** -- across the whole grid
+of plausible r (0.4 to 0.95) and observed VR (0.95 to 1.05), rho is negative in
+every cell. Finding a negative rho therefore confirms nothing whatever, and
+"a negative correlation was a priori expected" is true in a way that destroys
+rather than supports the argument: what is expected a priori cannot also be
+evidence. Worse, rho and sigma_TE are the same unknown in different units, so
+estimating rho "independently" and substituting it is not combining two pieces
+of evidence -- it is assuming the answer. Read back: rho = -0.32 is the
+assumption that a patient's drug and placebo outcomes correlate **0.795**;
+rho = -0.62 is the assumption that they correlate **0.231**. No aggregate
+dataset can check either.
 
 **The honest state of this field: sigma_TE is not identified from aggregate
 trial data.** Munkholm et al. assume rho = 0 silently. McCutcheon et al. estimate

@@ -304,4 +304,8 @@ so no one else can run it.
   pipeline reports 14.9 PANSS points of heterogeneity from a world containing exactly
   none. Verdict: **sigma_TE is not identified from aggregate data; report
   D = sigma_AT^2 - sigma_PL^2 with an interval and a sensitivity curve in rho.**
-  Started by maria 2026-09-02.
+  **`senn2016-mastering-variation` then settled it, in 2015**: patient-by-treatment
+  interaction is confounded with between- and within-patient variation in every
+  parallel-group trial, and only replication within patients separates them. Read that
+  entry first — the rest of the area audits estimators for a quantity the design does
+  not identify. Started by maria 2026-09-02.

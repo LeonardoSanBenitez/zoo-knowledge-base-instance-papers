@@ -53,7 +53,9 @@
     "cluster-bootstrap-over-articles",
     "end-to-end-pipeline-null-test",
     "selection-on-the-outcome-audit",
-    "in-paper-table-transcription"
+    "in-paper-table-transcription",
+    "analytic-identifiability-derivation",
+    "variance-components-identification"
   ],
   "claims": [
     {
@@ -442,6 +444,88 @@
         "why": "D is estimable without assumption, unbiased, has a known sampling distribution, can legitimately be negative, and needs no square root, no branch choice and no deletion -- every pathology in the published pipeline enters when the identity is inverted for sigma_TE BEFORE pooling rather than after. Narrower scope for two reasons I want on the record. First, my own estimator's interval coverage falls to 72% at sigma_TE = 20 because the normality assumption behind Var(s^2) fails when the drug arm is a mixture; a bootstrap is needed there, and I have not built it. Second, and more important: this does not rescue the question. It reports honestly that the question is unanswerable from aggregate data. McCutcheon et al. are RIGHT that assuming rho = 0 is not innocuous -- it is the assumption my own munkholm2020 record made silently, and it is the third open question I had already written down there on 2026-09-02. Their diagnosis of the gap is correct. Their instrument for filling it is not.",
         "by": "maria, 2026-09-04"
       }
+    },
+    {
+      "id": "c8",
+      "statement": "When the two arm variances are equal, rho and sigma_TE are the same unknown in different units: sigma_TE = -2 rho sigma_PL exactly, and rho = -sqrt((1-r)/2) where r is the within-patient correlation between drug and placebo outcomes. rho is therefore negative by construction, and estimating it 'independently' assumes the answer rather than adding evidence. Separately, Senn's own worlds show that even a CLASSICAL cross-over cannot separate real individual response from occasion noise: only a replicate does.",
+      "scope": "Algebraic, exact, for VR = 1; verified by simulation across r from 0 to 0.99. The general form is rho = (r*VR - 1)/sqrt(VR^2 + 1 - 2 r VR).",
+      "quantities": [
+        {
+          "name": "rho_at_within_patient_correlation_0_90",
+          "value": -0.2236,
+          "unit": "correlation",
+          "n": 400000,
+          "source": "maria 2026, m10: predicted -0.2236 by the identity, simulated -0.2244 at n = 400,000"
+        },
+        {
+          "name": "rho_at_within_patient_correlation_0_00",
+          "value": -0.7071,
+          "unit": "correlation",
+          "n": 400000,
+          "source": "maria 2026, m10: predicted -0.7071, simulated -0.7080. This is the value at INDEPENDENCE, not a floor: r < 0 gives rho below it, down to -1 at r = -1."
+        },
+        {
+          "name": "within_patient_correlation_implied_by_their_headline_rho",
+          "value": 0.795,
+          "unit": "correlation between a patient's drug and placebo outcomes",
+          "n": 66,
+          "source": "maria 2026, m10: r = 1 - 2 rho^2 at rho = -0.32"
+        },
+        {
+          "name": "within_patient_correlation_implied_by_their_open_label_rho",
+          "value": 0.231,
+          "unit": "correlation",
+          "n": 88,
+          "source": "maria 2026, m10: r = 1 - 2 rho^2 at rho = -0.62"
+        },
+        {
+          "name": "senn_double_crossover_sigma_C_high_reliability",
+          "value": 0.1832,
+          "unit": "litres FEV1",
+          "n": 1000,
+          "source": "maria 2026, m10: Senn 2016 Fig 2 parameters (r = 0.90 between replicate estimates of the same patient's effect); analytic value 0.1897"
+        },
+        {
+          "name": "senn_double_crossover_sigma_C_low_reliability",
+          "value": 0.0413,
+          "unit": "litres FEV1",
+          "n": 1000,
+          "source": "maria 2026, m10: Senn 2016 Fig 3 parameters (r = 0.02); analytic value 0.0283. Marginal mean 0.5 L and SD 0.2 L IDENTICAL to the Fig 2 world."
+        }
+      ],
+      "evidence": [
+        "a5",
+        "a7"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This is the sharpest thing I found and it is algebra, not simulation -- the simulation only confirms it to three decimals. Two consequences. FIRST, a negative rho is the only thing the geometry permits: across the whole grid of plausible within-patient correlations (r = 0.4 to 0.95) and observed variability ratios (VR = 0.95 to 1.05), rho is negative in every cell. So obtaining a negative estimate confirms nothing whatever, and the paper's 'a negative correlation was a priori expected' is exactly right in a way that undercuts rather than supports the argument -- what is expected a priori cannot also be evidence. SECOND, at VR = 1 their formula reduces to sigma_TE = -2 rho sigma_PL, so it contributes nothing beyond rho: rho IS the answer, restated. Their headline is the assumption that a patient's drug and placebo outcomes correlate 0.795; their open-label estimate is the assumption that they correlate 0.231. No aggregate dataset can check either, because r is a within-patient quantity and a parallel-group trial never observes the same patient twice. CORRECTION MADE IN PLACE 2026-09-04, same session: I first implemented Senn's Figures 2-3 as pairs of (placebo, active) OUTCOMES correlated r and recorded that they reproduced. They are pairs of DIFFERENCES across two replicate period-pairs of a double cross-over, so r is the test-retest reliability of a patient's own treatment effect, not a within-patient outcome correlation. Re-read his body text and appendix together and re-implemented. The misreading made his point weaker than it is: in the corrected version both worlds have IDENTICAL marginal mean (0.5 L) and SD (0.2 L) of the observed difference, so a classical cross-over sees the same data too, and only the second replicate separates sigma_C = 0.19 L from sigma_C = 0.03 L. My rho identity in section 2 is my own derivation and is unaffected; it now uses a separate generator so the two cannot be conflated again.",
+        "by": "maria, 2026-09-04"
+      }
+    },
+    {
+      "id": "c9",
+      "statement": "An increased variance in the treated arm can equally be patient-by-treatment interaction or occasion-to-occasion variation that is larger under one treatment than the other, and no parallel-group trial can separate them.",
+      "scope": "Senn 2016, Tables 1-2, applied to this literature. A fourth axis of non-identification, distinct from the three already recorded in this area.",
+      "quantities": [
+        {
+          "name": "components_identifiable_in_a_parallel_group_trial",
+          "value": 0.25,
+          "unit": "fraction of the four components A,B,C,D that a parallel-group trial identifies",
+          "count": 1,
+          "denominator": 4,
+          "n": 1,
+          "source": "Senn 2016 Table 2: parallel group identifies A only; B + C + D form the error term. Classical cross-over identifies A and B, confounding C + D. Only a REPEATED-PERIOD cross-over identifies C."
+        }
+      ],
+      "evidence": [
+        "a7"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Senn published this in 2015 and it subsumes everything else in this folder. C -- patient-by-treatment interaction -- IS sigma_TE^2, and it is confounded with between-patient variation and within-patient noise in exactly the design this whole literature uses. His own counter-example is the cleanest: an oral versus an intravenous formulation may show a larger treated-arm variance because absorption varies BETWEEN patients (interaction, real heterogeneity) or because absorption varies FROM OCCASION TO OCCASION within a patient (noise, no heterogeneity at all). VR is identical. PRIORITY IS HIS, not mine, and the design conclusion -- that only replication at the patient level identifies individual response -- was in print seven years before the paper I spent this session on, which cites the adjacent Senn 2018 Nature piece. What this session adds is not the principle but the audit: how much a specific published pipeline gets wrong, by what mechanism, and what to report instead.",
+        "by": "maria, 2026-09-04"
+      }
     }
   ],
   "artifacts": [
@@ -544,6 +628,20 @@
         "how": "written by the nine scripts above",
         "result": "out_formula, out_coupling_null, out_coupling_positive_control, out_lm_sensitivity, out_lm_nsweep, out_decoupled, out_real_validation, out_real_rho, out_calibrated_artifact, out_propagation, out_deletion, out_pipeline, out_decomposition, out_variance_difference."
       }
+    },
+    {
+      "id": "a7",
+      "role": "code",
+      "locator": "Senn 2016 (Stat Med 34:3554-3567) appendix, simulation parameters for Figures 1-3",
+      "status": "verified-usable",
+      "local_path": "reanalysis/m10_senn_identity.py",
+      "fetch_cmd": "curl -sL -o senn2016.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5054923/fullTextXML",
+      "checked": {
+        "on": "2026-09-04",
+        "by": "maria",
+        "how": "transcribed the appendix parameters verbatim (1000 pairs, means 0.5 L, variances 0.04 L^2, correlation 0.9 and 0.02) and re-ran them; python m10_senn_identity.py",
+        "result": "REPRODUCES, after a correction to my own implementation. Fig 2 world (replicate correlation r = 0.90): mean difference 0.514 L, SD 0.193 L, sigma_C = 0.183 L. Fig 3 world (r = 0.02): mean 0.492 L, SD 0.197 L, sigma_C = 0.041 L. THE MARGINALS ARE THE SAME IN BOTH and only the replicate distinguishes them. Analytic values are 0.190 and 0.028, a factor of 6.7 against the simulated 4.4 -- the gap is sampling noise in the estimated test-retest correlation at his own n = 1000, and is worth keeping because it prices the only design that identifies the quantity at all. A paper whose figure parameters are stated precisely enough to re-run seven years later, in an appendix, with no data deposit -- worth noting against the assumption that reproducibility requires a repository."
+      }
     }
   ],
   "relations": [
@@ -577,6 +675,11 @@
       "type": "cito:agreesWith",
       "target": "maria2026-analytic-variability-reanalysis",
       "why": "Same structural finding in a different literature: a statistic that shares a term with the thing it is correlated against manufactures a result. There it was the treated arm's sample SD sitting in both the SMD and lnVR; here it is the placebo arm's mean sitting in both the placebo response and the treatment effect."
+    },
+    {
+      "type": "cito:citesAsAuthority",
+      "target": "senn2016-mastering-variation",
+      "why": "The identification result underneath everything here. Priority for the design conclusion is his."
     }
   ],
   "open_questions": [
@@ -584,7 +687,8 @@
     "The two individual-patient methods cannot be tested without the YODA trial (NCT00650793). Access is by application. If it were obtained, the direct test is available: compute sigma_TE from the IPD and see which ROOT of the quadratic it matches, which is the adjudication the paper had the data to make and did not report.",
     "My variance-difference estimator's interval coverage falls to 72% at sigma_TE = 20 because Var(s^2) = 2 sigma^4/(n-1) assumes normality and the drug arm is a mixture. A cluster bootstrap over trials would fix it and is not built.",
     "Is there ANY design that identifies rho? An N-of-1 or repeated-crossover trial measures the same patient under both conditions more than once and can separate a true individual effect from occasion noise. Marwick et al. 2018 systematically reviewed N-of-1 trials in schizophrenia. That is the only literature that could settle this, and it is unread.",
-    "Six psychiatric variability meta-analyses now exist (antipsychotics, antidepressants x2, brain stimulation, PTSD psychotherapy, depression psychotherapy). All report VR and none reports D = sigma_AT^2 - sigma_PL^2 with an interval. Recomputing D for all six from published tables is a small job with a real payoff: it is the quantity that is actually identified."
+    "Six psychiatric variability meta-analyses now exist (antipsychotics, antidepressants x2, brain stimulation, PTSD psychotherapy, depression psychotherapy). All report VR and none reports D = sigma_AT^2 - sigma_PL^2 with an interval. Recomputing D for all six from published tables is a small job with a real payoff: it is the quantity that is actually identified.",
+    "The identity sigma_TE = -2 rho sigma_PL at VR = 1 means every published rho in this literature can be read back as an assumed within-patient correlation r = 1 - 2 rho^2. Doing that for all six psychiatric variability meta-analyses would put their assumptions on one comparable scale, which is a small job and would make the disagreements legible."
   ],
   "curation": {
     "author": "maria",

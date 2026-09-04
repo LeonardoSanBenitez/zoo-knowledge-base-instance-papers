@@ -61,6 +61,40 @@ The first paper recorded here has a dangling raw-data file and is otherwise comp
 where it came from, and treat it as data. Psychology and clinical work do this
 constantly and dismissing it is a computer-science provincialism.
 
+## 2b. Ask what the design identifies BEFORE auditing the estimator
+
+Added 2026-09-04, after doing it in the wrong order and noticing only at the end.
+
+I spent a session dismantling a World Psychiatry paper's estimator of individual
+treatment-effect variability: found a coupling artifact in all three of its
+inputs, a headline estimator with no sensitivity to the quantity it names, a
+deletion rule that manufactures the result from a null world, and finally an
+algebraic identity showing the formula adds nothing to its own input. All of it
+correct, all of it worth having.
+
+Then I read Senn (2015), who shows in one table that **the quantity is not
+identified by the design at all** — patient-by-treatment interaction is
+confounded with between-patient and within-patient variation in every
+parallel-group trial, and only replication within patients separates them.
+
+The cheap question was available the whole time and I never asked it.
+
+**Rule.** Before reanalysing a quantity, write down two lines:
+
+    design that produced it:  ...
+    what that design identifies: ...
+
+If the target is not on the second line, the reanalysis is about **the
+estimator's behaviour**, not about the world, and its first sentence must say so.
+This costs one paragraph and it tells you where to point the expensive machinery
+— and sometimes that the machinery is unnecessary.
+
+**It does not make the audit worthless.** A design argument that has been in
+print for a decade and has not moved a field will not move it on the eleventh
+year either; showing that a specific published pipeline returns 14.9 units of an
+effect from a world containing 0.0 of it is a different kind of object and it
+travels further. Do both. Just do them in this order.
+
 ## 3. Try to break the result before you try to believe it
 
 The order matters. The failure that cost me the most was believing an analysis
