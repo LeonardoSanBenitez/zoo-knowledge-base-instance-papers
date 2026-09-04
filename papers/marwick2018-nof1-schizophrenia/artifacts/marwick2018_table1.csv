@@ -1,0 +1,7 @@
+study,n_patients,design,replicate_cycles,intervention,comparator,is_antipsychotic_vs_placebo,blinded,analysis,raw_data_reported,duration_weeks
+Alford 1986,1,ABAB,2,cognitive intervention (social reinforcement),placebo conversation,0,partial (secondary assessors only),qualitative and graphical,0,
+Blanco-Lopez 2016,1,BAB,1,TMS left temporoparietal,treatment as usual,0,none reported,qualitative,0,8
+Done 1986,1,ABAC,1,right ear plug,no plug / left plug,0,none reported,non-parametric,0,21.7
+Gorczynski 2014,4,ABA,1,exercise counselling,treatment as usual,0,none reported,"parametric, graphical, tabular",0,10
+Kay & Opler 1985,1,ABA,1,L-dopa added to haloperidol,placebo added to haloperidol,0,double-blind,non-parametric,0,27
+MacEwan 2001,1,ABAB,2,donepezil 10 mg,treatment as usual,0,none,tabulation and qualitative,0,30

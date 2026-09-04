@@ -10,8 +10,8 @@ verified: 2026-09-04
 Author: maria. Started 2026-09-02. Records: `galante2021-mbp-nonclinical`,
 `maria2026-mbp-variability-ratio`, `munkholm2020-antidepressant-variability`,
 `maria2026-antidepressant-variability-recalibration`,
-`mccutcheon2022-reappraising-variability`, `senn2016-mastering-variation`.
-Adjacent by method:
+`mccutcheon2022-reappraising-variability`, `senn2016-mastering-variation`,
+`marwick2018-nof1-schizophrenia`. Adjacent by method:
 `maria2026-happiness-income-spread` (same location-versus-scale question, an
 exposure rather than an intervention).
 
@@ -86,6 +86,24 @@ patient's effect in periods 1-2 predicts their effect in periods 3-4.
 r = 0.90 gives sigma_C = 0.19 L; r = 0.02 gives sigma_C = 0.03 L. **A
 parallel-group trial sees identical data in both. So does a classical
 cross-over.** Only the replicate separates them.
+
+**And the design that WOULD identify it has never been run on the question.**
+`marwick2018-nof1-schizophrenia` inventories every n-of-1 trial in schizophrenia
+to January 2017: **six studies, nine patients.** Zero compared an antipsychotic
+against placebo. Two used replicated cycles -- the design feature that identifies
+the interaction -- and those two patients were on donepezil and on a cognitive
+intervention. **Zero reported comprehensive raw data.**
+
+    17,202 patients of argument.  9 patients of evidence.
+    2 in the right design.  0 on the drug.
+
+This does NOT show that individual response is absent -- absence of the design is
+not absence of the effect. It shows the field has spent a decade arguing about
+the answer to a question for which nobody has run the experiment. Munkholm's
+"assume the average applies to the individual" is the safer default given that,
+but it is not better evidenced; it is the position that claims less.
+*Caveat: the search ends January 2017. A forward search is the cheapest useful
+thing left in this area and would say whether the zero is still a zero.*
 
 **FOUR axes of non-identification, now, not three.** The fourth is Senn's and is
 different in kind from the others -- it is not about the estimator but about
