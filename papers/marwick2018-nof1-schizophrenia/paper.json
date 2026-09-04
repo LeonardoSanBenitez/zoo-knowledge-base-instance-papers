@@ -134,6 +134,37 @@
         "why": "This is the empirical closure of the whole area and it is arithmetic, not interpretation. senn2016-mastering-variation#c1 establishes that only replication within patients identifies patient-by-treatment interaction. Marwick et al. inventory every study in schizophrenia that even attempts that design. The intersection of 'replicated cycles' and 'antipsychotic versus placebo' is EMPTY. So the question that 66 trials and 17,202 patients have been argued about — does response to antipsychotics differ between individuals — has never once been addressed by a design that could answer it, in any patient. Two patients have been studied in a design of the right shape, on donepezil and on a cognitive intervention, without raw data. THE CAVEAT THAT MATTERS: their search ends January 2017, so eight years of possible trials are outside it, and I have not searched forward. Do not quote this as the present-day count; quote it as the count to 2017 and say so.",
         "by": "maria, 2026-09-04"
       }
+    },
+    {
+      "id": "c3",
+      "statement": "The zero still holds in 2026. A forward search from January 2017 finds no n-of-1 or repeated-crossover trial of an antipsychotic against placebo in schizophrenia.",
+      "scope": "My search, not theirs. Europe PMC, title-restricted, 2017-01-01 to 2026-12-31.",
+      "quantities": [
+        {
+          "name": "new_nof1_psychosis_titles_since_2017",
+          "value": 3,
+          "unit": "studies",
+          "n": 7,
+          "source": "maria 2026: Europe PMC TITLE:\"n-of-1\" AND (TITLE:schizophrenia OR TITLE:antipsychotic OR TITLE:psychosis) returns 7 hits ever; 3 are post-2017 and none is an antipsychotic-vs-placebo trial"
+        },
+        {
+          "name": "new_antipsychotic_vs_placebo_nof1_trials_since_2017",
+          "value": 0.0,
+          "unit": "fraction of the 3 post-2017 hits",
+          "count": 0,
+          "denominator": 3,
+          "n": 3,
+          "source": "maria 2026: eszopiclone for negative symptoms (a hypnotic, and self-described as an UNINTENDED n-of-1); five systemic n-of-1 trials of MUSIC THERAPY; and one HYPOTHETICAL case of using n-of-1 for ADHD in psychosis"
+        }
+      ],
+      "evidence": [
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The caveat attached to c2 -- that the review's search ended January 2017 -- is now closed, and the answer did not change. Nine years on, the design that identifies individual response to antipsychotics has still never been pointed at antipsychotics. LIMITS OF MY SEARCH, stated so nobody over-reads it: title-restricted and English-language, on one index. A trial reported without 'n-of-1' in its title -- described instead as a 'repeated crossover' or 'single-case experimental design' -- would be missed, and SCED is a live term in psychology. The honest claim is 'nothing under this name', which is weaker than 'nothing'.",
+        "by": "maria, 2026-09-04"
+      }
     }
   ],
   "artifacts": [
@@ -171,6 +202,20 @@
         "composition": "One row per included study: patient characteristics, design, duration, intervention, comparator, blinding, outcome measures, analysis, result, plus the four derived columns.",
         "caveats": "Duration for Alford 1986 is not reported in the source and is null here. Durations given in weeks were converted from months where the paper used months (Done 1986: 5 months -> 21.7 weeks); the conversion is mine and is approximate."
       }
+    },
+    {
+      "id": "a3",
+      "role": "protocol",
+      "locator": "Europe PMC REST search, run 2026-09-04",
+      "status": "verified-usable",
+      "fetch_cmd": "curl -s -G https://www.ebi.ac.uk/europepmc/webservices/rest/search --data-urlencode 'query=TITLE:\"n-of-1\" AND (TITLE:schizophrenia OR TITLE:antipsychotic OR TITLE:psychosis)' --data-urlencode format=json",
+      "local_path": "artifacts/forward_search_2026-09-04.txt",
+      "checked": {
+        "on": "2026-09-04",
+        "by": "maria",
+        "how": "ran the command above and a second variant restricted by FIRST_PDATE with abstract terms",
+        "result": "7 hits in total for the title query, of which 2 are the Marwick review itself under its two PMCIDs, 2 are unrelated medicinal-chemistry papers whose compound names begin with N-, and 3 are genuine post-2017 n-of-1 work in psychosis: eszopiclone, music therapy, and a hypothetical ADHD case. None is an antipsychotic against placebo."
+      }
     }
   ],
   "relations": [
@@ -191,7 +236,7 @@
     }
   ],
   "open_questions": [
-    "The search ends January 2017. Eight years of possible n-of-1 trials in schizophrenia are outside it and I have not searched forward. That is the single cheapest thing to do next and it directly determines whether the count of 'zero antipsychotic-vs-placebo n-of-1 trials' is still true.",
+    "My forward search was title-restricted. A repeated-crossover trial described as a 'single-case experimental design' (SCED) rather than an n-of-1 would be missed, and SCED is the live term in psychology rather than psychiatry. Searching SCED plus antipsychotic is the remaining gap and is one query.",
     "The same inventory for DEPRESSION would matter more for my own corpus, since the antidepressant data are the ones I can reach. If replicated-crossover antidepressant trials exist with raw data, sigma_C is directly estimable there and the whole aggregate dispute has an empirical anchor.",
     "Statins have an n-of-1 trial SERIES with modern methodology (StatinWISE and the series Marwick cites for muscle pain). That is outside psychiatry but it is a worked example of the design at scale, and it would show what sigma_C looks like when someone actually measures it."
   ],

@@ -102,8 +102,13 @@ not absence of the effect. It shows the field has spent a decade arguing about
 the answer to a question for which nobody has run the experiment. Munkholm's
 "assume the average applies to the individual" is the safer default given that,
 but it is not better evidenced; it is the position that claims less.
-*Caveat: the search ends January 2017. A forward search is the cheapest useful
-thing left in this area and would say whether the zero is still a zero.*
+*Forward search run 2026-09-04 rather than leaving the caveat standing: since
+2017 the n-of-1 psychosis literature has added eszopiclone (a hypnotic, and
+self-described as an unintended n-of-1), five music-therapy trials, and one
+hypothetical case. **Still zero antipsychotic-vs-placebo. Nine years on.**
+My search was title-restricted, so a trial described as a "single-case
+experimental design" would be missed — the honest claim is "nothing under this
+name".*
 
 **FOUR axes of non-identification, now, not three.** The fourth is Senn's and is
 different in kind from the others -- it is not about the estimator but about

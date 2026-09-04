@@ -303,7 +303,7 @@
   - zoo:reanalyses → `munkholm2020-antidepressant-variability`; cito:confirms → `munkholm2020-antidepressant-variability#c1`; cito:qualifies → `munkholm2020-antidepressant-variability#c2`; cito:corrects → `maria2026-mbp-variability-ratio#c2`; cito:extends → `maria2026-mbp-variability-ratio`
   - notes: `instance-papers/papers/maria2026-antidepressant-variability-recalibration/`
 - **`marwick2018-nof1-schizophrenia`** (2018, British Journal of Psychiatry 213(1):398-403) — Application of n-of-1 treatment trials in schizophrenia: systematic review
-  - depth: `read-full-text` · 2 claims · 8 quantities · 2 artifacts
+  - depth: `read-full-text` · 3 claims · 10 quantities · 3 artifacts
   - methods: `in-paper-table-transcription`, `systematic-review-inventory`
   - cito:supports → `senn2016-mastering-variation#c1`; cito:disagreesWith → `mccutcheon2022-reappraising-variability#c1`; cito:qualifies → `munkholm2020-antidepressant-variability#c2`
   - notes: `instance-papers/papers/marwick2018-nof1-schizophrenia/`

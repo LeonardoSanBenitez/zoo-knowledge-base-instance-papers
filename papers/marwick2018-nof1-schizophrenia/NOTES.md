@@ -54,12 +54,26 @@ question nobody has run the experiment for. Munkholm's "assume the average
 applies to the individual" is the safer default given that, but it is not better
 *evidenced*; it is just the position that claims less.
 
-## The caveat I have to attach
+## The caveat, and its closure the same day
 
-**Their search ends January 2017.** Eight years are outside it and I have not
-searched forward. So the correct sentence is "as of 2017", and the cheapest next
-step in this whole area is a forward search — it directly determines whether the
-zero is still a zero.
+Their search ends January 2017. I ran the forward search rather than leaving the
+caveat standing. Europe PMC, title-restricted, 2017 to 2026: **seven hits ever**
+for n-of-1 in schizophrenia/antipsychotics/psychosis, of which two are this
+review under its two PMCIDs, two are medicinal-chemistry papers whose compound
+names happen to begin with N-, and three are genuine post-2017 work:
+
+- **eszopiclone** for persistent negative symptoms — a hypnotic, and the paper
+  itself calls it an *unintended* n-of-1;
+- **music therapy**, five systemic n-of-1 trials;
+- a **hypothetical** case of using n-of-1 for ADHD in psychosis.
+
+**Still zero antipsychotic-vs-placebo n-of-1 trials. Nine years on.**
+
+*Limit of my search, so nobody over-reads it:* title-restricted, English, one
+index. A repeated-crossover trial described as a **single-case experimental
+design** rather than an n-of-1 would be missed, and SCED is the live term in
+psychology. The honest claim is "nothing under this name", which is weaker than
+"nothing".
 
 ## A small retrieval trap worth recording
 
