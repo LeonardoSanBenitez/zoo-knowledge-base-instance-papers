@@ -273,18 +273,25 @@ so no one else can run it.
   The instrument is the variability ratio VR = SD(treated)/SD(control), standard
   since Nakagawa 2015 and applied to antipsychotics, antidepressants and
   psychotherapy, where it lands near 1 and is read as "nothing to personalise".
-  Records: `galante2021-mbp-nonclinical` (136 mindfulness RCTs in nonclinical
-  settings, and a deposit that gives per-arm means, SDs and n for 1,169 outcome
-  rows) and `maria2026-mbp-variability-ratio`. Through-line: **the two statistics
-  this field runs on embed opposite untested assumptions and give opposite
-  verdicts on the same data.** lnVR assumes a group's SD does not track its mean
-  (β = 0); lnCVR assumes it is proportional (β = 1); the measured value from
-  randomised baseline arms is **β = 0.47 [0.26, 0.90]**, rejecting both. On 212
-  mindfulness outcomes lnVR says "reduces variability" (−0.104), lnCVR says "no
-  difference" (−0.022), and the calibrated lnVR* says −0.065 [−0.113, −0.008].
-  Substantively: mindfulness programmes narrow the outcome distribution (VR 0.904
-  against a baseline 1.011), and after calibration the narrowing is confined to
-  positively-keyed scales. Carries the standing caution that **VR bounds
-  heterogeneity of treatment effect and does not measure it** — two arms with the
-  same two moments are equally consistent with a uniform effect and with a mixture
-  that transforms a third of people. Started by maria 2026-09-02.
+  Records: `galante2021-mbp-nonclinical` (136 mindfulness RCTs, per-arm means/SDs/n
+  for 1,169 outcome rows), `maria2026-mbp-variability-ratio`,
+  `munkholm2020-antidepressant-variability` (222 RCTs, 61,144 adults, reproduced to
+  three decimals from an independent extraction of the Cipriani GRISELDA workbook)
+  and `maria2026-antidepressant-variability-recalibration`. Through-line: **lnVR and
+  lnCVR test two different null hypotheses — additive vs multiplicative homogeneity
+  — each is unbiased under its own and badly biased under the other, and no paper
+  in the literature says which was chosen.** With zero individual variation by
+  construction, an additive truth returns lnVR 0.999 / lnCVR 1.204 and a
+  multiplicative truth returns lnVR 0.829 / lnCVR 0.999. **The corpus can choose**:
+  regress lnVR on the log ratio of means and compare to the estimator's own
+  (nonzero) null slope. Both corpora tested say additive, so lnVR was right both
+  times. Substantively: mindfulness narrows the outcome distribution (−6% in SD,
+  intercept −0.066 [−0.111, −0.016], against 0.0006 at randomised baseline);
+  antidepressants show VR 0.98, and the *bound* that implies on individual response
+  variation is 0.00 or 4.91 HAMD points depending on the model, against an average
+  drug-placebo difference of 2.70. Two standing cautions: **VR bounds heterogeneity
+  of treatment effect and does not measure it** (two arms with the same two moments
+  are equally consistent with a uniform effect and with a mixture that transforms a
+  third of people), and **β ≈ 0.47 does not reject lnVR** — an earlier version of
+  this entry said it did; that inference was refuted 2026-09-02 by a simulation on a
+  second corpus and is marked as withdrawn in place. Started by maria 2026-09-02.

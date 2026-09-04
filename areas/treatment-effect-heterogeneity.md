@@ -1,28 +1,57 @@
 <!--kb
 id: area:treatment-effect-heterogeneity
 labels: kind:paper-notes, area:treatment-effect-heterogeneity
-triggers: does this treatment help some people more than others; heterogeneity of treatment effect from aggregate data; variability ratio meta-analysis; coefficient of variation ratio interpretation; should we personalise this intervention; does an intervention change the variance or only the mean; how do I test whether the SD tracks the mean; using baseline arms as a negative control; what does VR near 1 actually rule out
-verified: 2026-09-02
+triggers: does this treatment help some people more than others; heterogeneity of treatment effect from aggregate data; variability ratio meta-analysis; coefficient of variation ratio interpretation; should we personalise this intervention; does an intervention change the variance or only the mean; how do I test whether the SD tracks the mean; using baseline arms as a negative control; what does VR near 1 actually rule out; additive versus multiplicative homogeneity; which null hypothesis does lnVR test; do antidepressants work better for some people than others; null slope of a variability ratio regression
+verified: 2026-09-04
 -->
 
 # Treatment-effect heterogeneity from aggregate data
 
 Author: maria. Started 2026-09-02. Records: `galante2021-mbp-nonclinical`,
-`maria2026-mbp-variability-ratio`. Adjacent by method:
+`maria2026-mbp-variability-ratio`, `munkholm2020-antidepressant-variability`,
+`maria2026-antidepressant-variability-recalibration`. Adjacent by method:
 `maria2026-happiness-income-spread` (same location-versus-scale question, an
 exposure rather than an intervention).
 
 ## The lead
 
-**The two statistics this field runs on embed opposite, untested assumptions, and
-on the same data they give opposite verdicts.** The assumption is a single number
-— how much a group's standard deviation travels with its mean — and it is
-measurable from data these meta-analyses already have. Measured here in three
-independent ways it is about **0.47**, which is between the 0 that lnVR assumes
-and the 1 that lnCVR assumes, and significantly different from both.
+**The two statistics this field runs on test two different null hypotheses, the
+choice between them is load-bearing, and no paper in this literature says a choice
+was made.** lnVR tests *additive* homogeneity (the treatment subtracts the same
+amount from everyone); lnCVR tests *multiplicative* homogeneity (it multiplies
+everyone by the same factor). Simulated on a real corpus with **zero** individual
+variation by construction, each returns ≈ 1.00 under its own model and is badly
+wrong under the other: an additive truth gives lnVR 0.999 / lnCVR 1.204; a
+multiplicative truth gives lnVR 0.829 / lnCVR 0.999. A 17–20% apparent effect can
+be manufactured by the choice alone, against real signals in this literature of a
+few per cent.
 
-Until that number is reported, "VR ≈ 1, therefore no heterogeneity of treatment
-effect" is a conclusion about an assumption, not about a treatment.
+The corpus can choose. Regress lnVR on the log ratio of arm means: under additive
+homogeneity it should not track, under multiplicative homogeneity it should track
+one-for-one — but **the estimator has a nonzero null slope of its own** (mean and
+SD are correlated in skewed data), so the null must be measured or simulated, never
+assumed to be 0. Done on two corpora, both say **additive**, so lnVR was the right
+statistic in both and lnCVR would have been badly wrong.
+
+Until the model is named and the bound reported, "VR ≈ 1, therefore no
+heterogeneity of treatment effect" is a conclusion about an unstated assumption,
+not about a treatment.
+
+> **CORRECTION 2026-09-02, marked in place.** This section previously read: *"The
+> assumption is a single number — how much a group's standard deviation travels
+> with its mean — … measured here in three independent ways it is about 0.47,
+> which is between the 0 that lnVR assumes and the 1 that lnCVR assumes, and
+> significantly different from both."* **That inference was wrong and is
+> withdrawn.** The number 0.47 is real and correctly measured; what was wrong was
+> reading it as a coupling that adjudicates between the two statistics, and hence
+> concluding that both are rejected. It is the *estimator's own null slope under
+> additive homogeneity* — the value the regression returns when nothing is
+> happening. Comparing it to 0 and 1 compares an estimator artifact to two
+> substantive hypotheses. The adjudication requires the **observed** slope against
+> the **null** slope, and when done that way lnVR is vindicated, not rejected. See
+> `maria2026-antidepressant-variability-recalibration#c4` (the refutation) and
+> `#c5` (the repair). The refuting evidence was a simulation on a second corpus in
+> which the answer was known by construction.
 
 ## The question and the instrument
 
@@ -46,14 +75,36 @@ heterogeneity to personalise for".
   and with a mixture in which a third of participants are transformed and the rest
   untouched. VR ≈ 1 does not mean "no individual differences"; it means the two
   mixtures share a second moment. Every use of this literature should carry that.
-- **The coupling coefficient β is real, is about 0.47, and nobody reports it.**
-  Measured three ways in `maria2026-mbp-variability-ratio`: from randomised
-  baseline arm pairs (0.473, 95% CI [0.255, 0.904], 232 pairs, 74 trials), from
-  untreated control arms' own baseline-to-post change (0.394, se 0.162), and from
-  the same over all control types (0.508, se 0.091). lnVR (β = 0) is rejected at
-  2.8 bootstrap SEs; lnCVR (β = 1) at 3.2.
-- **Consequently the calibrated statistic is `lnVR* = lnVR − β̂·ln(m₁/m₂)`**, with
-  β̂ from the baseline arms and its uncertainty propagated. On 212 mindfulness
+- **The regression of lnVR on the log ratio of means has a nonzero slope under the
+  null, and that slope is measurable.** ~~The coupling coefficient β is real, is
+  about 0.47, and nobody reports it … lnVR (β = 0) is rejected at 2.8 bootstrap SEs;
+  lnCVR (β = 1) at 3.2.~~ **Withdrawn 2026-09-02** — see the CORRECTION above; the
+  measurements stand, the inference from them does not. What the three
+  measurements in `maria2026-mbp-variability-ratio` actually give is the estimator's
+  null slope from data where no treatment has acted: randomised baseline arm pairs
+  (0.473, 95% CI [0.255, 0.904], 232 pairs, 74 trials), untreated control arms'
+  baseline-to-post change (0.394, se 0.162), and the same over all control types
+  (0.508, se 0.091). **Randomised baseline arms give this without any distributional
+  assumption; a simulated null needs a generator and inherits its choice.**
+- **The model diagnostic: compare the observed slope to that null.** Antidepressants
+  (`munkholm2020-antidepressant-variability`, 104 comparisons): observed 0.233,
+  additive null 0.226, multiplicative prediction 0.978 — eleven SEs from
+  multiplicative. Mindfulness (212 outcomes): observed 0.460, additive null
+  0.31–0.47, multiplicative near 1. **Both additive. lnVR was right both times.**
+- **Split the regression: the slope picks the model, the intercept tests
+  homogeneity.** On the mindfulness corpus the intercept is 0.0006 at baseline,
+  where it must be zero because nothing has happened yet, against −0.066
+  [−0.111, −0.016] after the programme — a real ~6% compression in SD not
+  associated with the mean moving, and not a coupling artifact, because the same
+  estimator on the same trials returns zero when the treatment is removed.
+- **The calibrated statistic `lnVR* = lnVR − β̂·ln(m₁/m₂)` keeps its arithmetic and
+  loses its original justification.** Justified as an across-population coupling it
+  is unbiased under *neither* model (bias +0.055 under an additive truth, −0.133
+  under a multiplicative one). Justified as the regression intercept referenced to
+  the estimator's own null slope, with β̂ from **randomised baseline arms**, it is
+  defensible — and the mindfulness number is unchanged. **Consequence: the method
+  does not transfer to corpora without baseline arms**, which includes the
+  antidepressant corpus that exposed the flaw. On 212 mindfulness
   outcomes: lnVR −0.104 [−0.151, −0.056] ("reduces variability"), lnCVR −0.022
   [−0.072, +0.026] ("no difference"), lnVR* −0.065 [−0.113, −0.008]. All three pass
   the baseline negative control; only one of them can be the answer.
@@ -101,17 +152,35 @@ all. Any variability-ratio meta-analysis inherits it.
 - **"VR ≈ 1 means there is nothing to personalise."** It means the aggregate second
   moments are consistent with a uniform effect, among other things.
 - **"lnCVR corrects for the mean-variance relationship."** It corrects for a
-  proportional one. The measured relation is about half proportional, so lnCVR
-  over-corrects by about half and can turn a real difference into a null — which is
-  exactly what it does on the mindfulness corpus.
+  *proportional* one, i.e. it assumes multiplicative homogeneity rather than
+  correcting for anything. Where the truth is additive it over-corrects badly:
+  simulated with zero individual variation, lnCVR returns **1.204**. On the
+  mindfulness corpus that is what turns a real difference into a null.
+- **"β ≈ 0.47 rejects both lnVR and lnCVR."** Withdrawn 2026-09-02 — 0.47 is the
+  estimator's null slope, not a substantive coupling, and comparing it to 0 and 1
+  compares an artifact to two hypotheses. Both corpora tested so far support the
+  additive model and therefore lnVR. Retained here rather than deleted because I
+  published the wrong version first and someone may have read it.
+- **"We cannot reject the null of equal variances" as a reportable result.** It is
+  the absence of a finding. The same data support a **bound**, which is a finding:
+  on 104 antidepressant comparisons the implied ceiling on the SD of individual
+  treatment effects is 0.00 outcome SDs (additive) or 4.91 HAMD points
+  (multiplicative), against an average drug-placebo difference of 2.70 points.
+  Report the bound and name the model.
 
 ## Not yet read, and the obvious next step
 
-The single cheapest valuable thing available: **run the baseline calibration on
-the variability-ratio meta-analyses that already exist.** Winkelbeiner et al. 2019
-(antipsychotics, JAMA Psychiatry), the antidepressant analyses (Plöderl &
-Hengartner; Volkmann et al.), the PTSD variance-ratio analysis (2022), and the
-depression-psychotherapy database (k = 306). All report VR near 1 and treat that
+The single cheapest valuable thing available: **run the model diagnostic on the
+variability-ratio meta-analyses that already exist.** ~~antidepressant analyses~~
+**Done 2026-09-02 for antidepressants** (`munkholm2020-antidepressant-variability`,
+222 RCTs / 61,144 adults — verdict: additive, lnVR correct, conclusion stands).
+Remaining: Winkelbeiner et al. 2019
+(antipsychotics, JAMA Psychiatry — same group, same design, the obvious third
+corpus), the PTSD variance-ratio analysis (2022), and the
+depression-psychotherapy database (k = 306). **Caveat learned the hard way: the
+GRISELDA deposit has no baseline SDs, so the antidepressant diagnostic had to be
+simulated rather than measured. Check for baseline SDs before promising a
+measured null.** All report VR near 1 and treat that
 as the answer. All have arm-level baselines. If β is about a half in those corpora
 too, then their published VR and CVR bracket an estimate nobody has computed, in
 four literatures at once, for one regression apiece.

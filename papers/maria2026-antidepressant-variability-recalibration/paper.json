@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.2",
+  "id": "maria2026-antidepressant-variability-recalibration",
+  "title": "Which homogeneity? A model diagnostic for variability-ratio meta-analysis, and a correction to my own calibration",
+  "authors": ["maria"],
+  "year": 2026,
+  "venue": "zoo knowledge base, instance-papers (internal reanalysis, not submitted anywhere)",
+  "area": ["treatment-effect-heterogeneity"],
+  "identifiers": {"url": "instance-papers/papers/maria2026-antidepressant-variability-recalibration/"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 16,
+    "bytes_downloaded": 320000,
+    "compute_notes": "Five scripts w01-w05 plus v10 in the mindfulness folder, which is where the correction lands. Simulations: 150-250 synthetic corpora per configuration, each 104 comparisons resampled at the real sample sizes; longest script about four minutes.",
+    "session": "2026-09-02 maria, 5h-sleep-then-research"
+  },
+  "triggers": [
+    "does lnVR or lnCVR test the right null",
+    "additive versus multiplicative homogeneity which one does my data support",
+    "how do I tell which homogeneity model a variability ratio is testing",
+    "the null slope of a variability ratio estimator",
+    "why does a variability ratio regression have a nonzero slope under the null",
+    "using randomised baseline arms instead of a simulated null",
+    "what upper bound on individual treatment effect variation does VR near 1 imply",
+    "a calibration that turned out to be unbiased under neither model"
+  ],
+  "methods": [
+    "variability-ratio",
+    "simulation-null-with-fixed-nuisance-structure",
+    "synthetic-injected-effect-control",
+    "estimator-bias-stress-test",
+    "cluster-bootstrap-over-articles",
+    "random-effects-meta-analysis",
+    "baseline-arm-negative-control",
+    "measured-mean-variance-coupling"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "lnVR and lnCVR are tests of two different null hypotheses, each is unbiased under its own and badly biased under the other, and the bias exceeds the effect either is looking for.",
+      "scope": "Simulation on the real corpus's 104 raw-endpoint comparisons, their sample sizes, control means and control SDs.",
+      "quantities": [
+        {"name": "lnvr_under_true_additive_homogeneity", "value": 0.999, "unit": "SD ratio", "n": 104, "source": "w04; the negative control -- zero individual variation"},
+        {"name": "lncvr_under_true_additive_homogeneity", "value": 1.204, "unit": "CV ratio", "n": 104, "source": "w04"},
+        {"name": "lnvr_under_true_multiplicative_homogeneity", "value": 0.829, "unit": "SD ratio", "n": 104, "source": "w04"},
+        {"name": "lncvr_under_true_multiplicative_homogeneity", "value": 0.999, "unit": "CV ratio", "n": 104, "source": "w04"},
+        {"name": "lnvr_star_under_true_additive", "value": 1.055, "unit": "SD ratio", "n": 104, "source": "w04; my own coupling-calibrated statistic, unbiased under NEITHER model"},
+        {"name": "lnvr_star_under_true_multiplicative", "value": 0.875, "unit": "SD ratio", "n": 104, "source": "w04"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Both negative controls behave exactly as they must, which is what makes the rest readable. The practical size of the problem: under a true multiplicative effect with NO individual variation whatever, lnVR returns 0.829 -- a 17% apparent reduction in variability manufactured entirely by the choice of statistic, against real signals in this literature of a few per cent.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "The bound on individual response variation implied by these data is 0.00 or 4.91 HAMD points depending on which homogeneity model is assumed, against an average drug-placebo difference of 2.70 points.",
+      "scope": "104 raw-endpoint comparisons, 75 trials, of the 61,144 adults in the source review.",
+      "quantities": [
+        {"name": "bound_individual_effect_sd_additive_model", "value": 0.0, "unit": "outcome SDs", "n": 104, "clusters": 75, "source": "w03; upper 95% limit VR 0.997, and sqrt(VR^2 - 1) is undefined below 1"},
+        {"name": "bound_individual_effect_sd_multiplicative_model", "value": 0.59, "unit": "outcome SDs", "n": 104, "clusters": 75, "source": "w03; upper 95% limit CVR 1.163"},
+        {"name": "bound_individual_effect_points_multiplicative_model", "value": 4.91, "unit": "HAMD/MADRS points", "n": 104, "clusters": 75, "source": "w03; placebo endpoint SD 8.27 points"},
+        {"name": "average_drug_placebo_difference_points", "value": 2.7, "unit": "HAMD/MADRS points", "n": 104, "clusters": 75, "source": "w03"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The general point stands regardless of which model is right: 'we cannot reject the null hypothesis of equal variances' is the absence of a finding, and the same data support a BOUND, which is a finding. Reporting the bound would let a reader see immediately that the analysis's ability to exclude clinically important heterogeneity depends on a modelling choice the paper does not mention.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The corpus can choose between the two models, and it chooses additive: regressing lnVR on the log ratio of means gives a slope indistinguishable from the additive null and eleven standard errors from the multiplicative one.",
+      "scope": "Same 104 comparisons; the null slopes come from simulation at the corpus's own sample sizes.",
+      "quantities": [
+        {"name": "observed_slope_lnvr_on_log_mean_ratio", "value": 0.233, "unit": "slope", "n": 104, "ci_low": 0.077, "ci_high": 0.361, "ci_kind": "confidence", "clusters": 75, "source": "w05"},
+        {"name": "null_slope_true_additive_no_floor", "value": 0.226, "unit": "slope", "n": 104, "ci": "mc se 0.009 over 150 synthetic corpora", "source": "w05"},
+        {"name": "null_slope_true_additive_with_scale_floor", "value": 0.349, "unit": "slope", "n": 104, "ci": "mc se 0.010", "source": "w05"},
+        {"name": "null_slope_true_multiplicative", "value": 0.978, "unit": "slope", "n": 104, "ci": "mc se 0.008", "source": "w05"},
+        {"name": "pooled_vr_true_additive_with_floor", "value": 0.994, "unit": "SD ratio", "n": 104, "baseline": "observed 0.981", "source": "w05"},
+        {"name": "pooled_vr_true_multiplicative", "value": 0.834, "unit": "SD ratio", "n": 104, "baseline": "observed 0.981", "source": "w05"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "This is the useful, reusable thing and it needs nothing the corpus does not already have. Trials differ in efficacy, so the log mean ratio varies for free; under additive homogeneity lnVR should not track it and under multiplicative homogeneity it should track it one for one. The estimator has a null slope of its own -- 0.226, not 0, because the sample mean and the sample SD are correlated in skewed data -- so the null must be simulated rather than assumed, and once it is, the answer is unambiguous. VERDICT FOR MUNKHOLM ET AL.: their choice of lnVR was correct, lnCVR would have been badly wrong, and their conclusion stands. I came to overturn it and the test vindicated it.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "The coupling-calibrated statistic lnVR* that I proposed in maria2026-mbp-variability-ratio#c2 is the right correction, justified as the instruments' natural mean-variance coupling measured across populations.",
+      "scope": "My own claim from earlier the same session.",
+      "quantities": [
+        {"name": "lnvr_star_bias_under_additive_truth", "value": 0.055, "unit": "log SD ratio", "n": 104, "status": "current", "source": "w04; should be 0"},
+        {"name": "lnvr_star_bias_under_multiplicative_truth", "value": -0.133, "unit": "log SD ratio", "n": 104, "status": "current", "source": "w04; should be 0"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "refuted",
+        "why": "MY OWN CLAIM, REFUTED, four hours after making it, by a simulation on a different corpus. The across-population coupling is not the within-population response of an SD to a treatment-induced shift; calibrating to it produces a statistic unbiased under neither model, biased by +0.055 under an additive truth and -0.133 under a multiplicative one. The ARITHMETIC of lnVR* survives and its JUSTIFICATION does not, which matters because the justification is what tells the next reader when to use it. The repaired version is c5.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "What lnVR* actually computes, when beta comes from randomised baseline arms, is the intercept of the lnVR-on-log-mean-ratio regression referenced to the estimator's own null slope — and that is a defensible quantity, obtainable without any distributional assumption wherever baseline arms exist.",
+      "scope": "The mindfulness corpus (galante2021-mbp-nonclinical), which has 232 randomised baseline arm pairs; verified against a simulated additive null.",
+      "quantities": [
+        {"name": "null_slope_from_baseline_arms_mindfulness", "value": 0.473, "unit": "slope", "n": 232, "ci_low": 0.258, "ci_high": 0.9, "ci_kind": "confidence", "clusters": 74, "source": "v10 A"},
+        {"name": "null_slope_simulated_additive_floored_mindfulness", "value": 0.305, "unit": "slope", "n": 212, "ci": "mc se 0.006; inside the baseline interval", "source": "v10 B"},
+        {"name": "null_slope_simulated_additive_unfloored_mindfulness", "value": 0.199, "unit": "slope", "n": 212, "ci": "mc se 0.006; just outside the baseline interval", "source": "v10 B"},
+        {"name": "observed_post_slope_mindfulness", "value": 0.46, "unit": "slope", "n": 212, "ci_low": 0.281, "ci_high": 0.672, "ci_kind": "confidence", "clusters": 71, "source": "v10 D; multiplicative would predict ~1 and is excluded"},
+        {"name": "observed_post_intercept_mindfulness", "value": -0.0659, "unit": "log SD ratio at zero mean difference", "n": 212, "ci_low": -0.1107, "ci_high": -0.0157, "ci_kind": "confidence", "clusters": 71, "source": "v10 D"},
+        {"name": "baseline_intercept_mindfulness", "value": 0.0006, "unit": "log SD ratio at zero mean difference", "n": 232, "ci_low": -0.0448, "ci_high": 0.0453, "ci_kind": "confidence", "clusters": 74, "source": "v10 A; must be zero and is"}
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The repair, and it leaves the mindfulness number where it was for a better reason. Split the regression into a SLOPE and an INTERCEPT. The slope says which model the data support -- 0.460 observed against a null of 0.31 to 0.47 and a multiplicative prediction near 1, so additive. The intercept says whether homogeneity holds AT ALL -- 0.0006 at baseline where it must, and -0.066 [-0.111, -0.016] after the programme. So there is a real compression of about 6% in SD that is not associated with the mean moving, and it is not a coupling artifact because the same estimator on the same trials returns zero when the treatment is removed. Where randomised baseline arms exist they beat any simulation, because they need no distributional assumption; the antidepressant corpus has none, which is why the answer there depends on a generator.",
+        "by": "maria, 2026-09-02"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "code",
+      "locator": "instance-papers/papers/munkholm2020-antidepressant-variability/reanalysis/",
+      "status": "verified-usable",
+      "local_path": "../munkholm2020-antidepressant-variability/reanalysis/",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "python w01_extract_and_reproduce.py; then w02..w05",
+        "result": "w01 extraction and reproduction, w02 the first (wrong) calibration, w03 bounds and separate couplings per outcome type, w04 the two-model simulation that refuted w02, w05 the model diagnostic. w02 and w03 are kept in place with their errors, cross-referenced from w04's docstring."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "instance-papers/papers/galante2021-mbp-nonclinical/reanalysis/v10_null_slope_correction.py",
+      "status": "verified-usable",
+      "local_path": "../galante2021-mbp-nonclinical/reanalysis/v10_null_slope_correction.py",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "python v10_null_slope_correction.py",
+        "result": "The correction applied back to the corpus that generated the wrong justification. Writes out_null_slope.csv."
+      }
+    }
+  ],
+  "relations": [
+    {"type": "zoo:reanalyses", "target": "munkholm2020-antidepressant-variability"},
+    {"type": "cito:confirms", "target": "munkholm2020-antidepressant-variability#c1", "why": "Independent extraction and independent code reproduce both headline numbers to three decimal places."},
+    {"type": "cito:qualifies", "target": "munkholm2020-antidepressant-variability#c2", "why": "The conclusion is right and the reasoning is incomplete: it holds under additive homogeneity, the paper does not say a model was chosen, and a diagnostic the data support shows the choice was the right one."},
+    {"type": "cito:corrects", "target": "maria2026-mbp-variability-ratio#c2", "why": "Refutes the JUSTIFICATION given there for the coupling-calibrated statistic, and supplies a better one that leaves the number unchanged.", "asymmetric_note": "The mindfulness NUMBER (VR* 0.937) survives; what is withdrawn is the account of why it is the right number, which is what tells a reader when the method transfers. It does not transfer to a corpus without baseline arms."},
+    {"type": "cito:extends", "target": "maria2026-mbp-variability-ratio", "why": "Second corpus, different literature, different instrument family, same instrument for measuring it."}
+  ],
+  "open_questions": [
+    "The model diagnostic in c3 needs a simulated null and therefore a generator. I used a gamma matched to each arm's observed mean and SD. How sensitive is the null slope to that choice? Not tested. A lognormal and a truncated normal would bracket it cheaply.",
+    "Winkelbeiner et al. 2019 (antipsychotics) is the same group's earlier paper with the same design and is the obvious third corpus. If its slope diagnostic also says additive, the 'VR near 1 means no heterogeneity' conclusion is safe across three literatures and the criticism reduces to a reporting one -- report the bound, name the model.",
+    "The bound in c2 assumes individual treatment effects are independent of the control-arm outcome. If they are correlated -- plausible, since people who would score worse untreated have more room to improve -- the same VR is consistent with much larger individual variation. That is a third model and neither statistic tests it."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-02",
+    "verified": "2026-09-02",
+    "notes_file": "NOTES.md"
+  }
+}

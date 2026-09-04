@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.2",
+  "id": "munkholm2020-antidepressant-variability",
+  "title": "Individual response to antidepressants for depression in adults — a meta-analysis and simulation study",
+  "authors": [
+    "Klaus Munkholm",
+    "Stephanie Winkelbeiner",
+    "Philipp Homan"
+  ],
+  "year": 2020,
+  "venue": "PLOS ONE 15(8) e0237950",
+  "area": [
+    "treatment-effect-heterogeneity"
+  ],
+  "identifiers": {
+    "doi": "10.1371/journal.pone.0237950",
+    "pmid": "32841307",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0237950"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 14,
+    "bytes_downloaded": 320000,
+    "compute_notes": "OSF project (README, data dictionary, five R scripts, ~70 kB) plus the Cipriani GRISELDA workbook from Mendeley (189,027 B, sha256 verified against the hash Mendeley's API declares) plus the JATS full text (50,710 B rendered). Five analysis scripts w01-w05. openpyxl installed during the session.",
+    "session": "2026-09-02 maria, 5h-sleep-then-research"
+  },
+  "triggers": [
+    "do antidepressants work better for some people than others",
+    "is there evidence for personalised antidepressant treatment",
+    "variability ratio antidepressants placebo",
+    "can an RCT tell you about individual treatment response",
+    "what does the Cipriani GRISELDA dataset contain",
+    "a deposit whose data folder holds only a pointer to a third party",
+    "additive versus multiplicative homogeneity of a treatment effect",
+    "how large could individual differences in drug response be given VR near 1"
+  ],
+  "methods": [
+    "random-effects-meta-analysis",
+    "variability-ratio",
+    "simulation-null-with-fixed-nuisance-structure",
+    "cluster-bootstrap-over-articles",
+    "in-paper-table-transcription"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Across placebo-controlled antidepressant trials the outcome variance in the drug arm is not detectably different from that in the placebo arm, so the null hypothesis of equal variances cannot be rejected.",
+      "scope": "222 RCTs, 345 drug-vs-placebo comparisons, 61,144 adults with major depressive disorder, HAMD-17/21 or MADRS, endpoint or baseline-to-endpoint change scores.",
+      "quantities": [
+        {
+          "name": "variability_ratio_raw_endpoint",
+          "value": 0.98,
+          "unit": "SD ratio",
+          "n": 345,
+          "ci_low": 0.96,
+          "ci_high": 1.0,
+          "ci_kind": "confidence",
+          "source": "Abstract; I2 = 0%"
+        },
+        {
+          "name": "variability_ratio_change_scores",
+          "value": 1.0,
+          "unit": "SD ratio",
+          "n": 345,
+          "ci_low": 0.99,
+          "ci_high": 1.02,
+          "ci_kind": "confidence",
+          "source": "Abstract; I2 = 0%"
+        },
+        {
+          "name": "variability_ratio_raw_endpoint_reproduced",
+          "value": 0.981,
+          "unit": "SD ratio",
+          "n": 104,
+          "ci_low": 0.965,
+          "ci_high": 0.997,
+          "ci_kind": "confidence",
+          "clusters": 75,
+          "source": "maria 2026, reanalysis/w01, independent extraction from the Cipriani workbook with an independent lnVR implementation"
+        },
+        {
+          "name": "variability_ratio_change_scores_reproduced",
+          "value": 1.006,
+          "unit": "SD ratio",
+          "n": 240,
+          "ci_low": 0.997,
+          "ci_high": 1.016,
+          "ci_kind": "confidence",
+          "clusters": 146,
+          "source": "maria 2026, reanalysis/w01"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "One of the cleanest reproductions in this corpus. Reading their Methods, extracting from the third-party workbook myself, and pooling with my own code gives 0.981 [0.965, 0.997] against their 0.98 [0.96, 1.00] and 1.006 [0.997, 1.016] against their 1.00 [0.99, 1.02], with I2 = 0% in both, from 344 comparisons in 221 studies against their 345 in 222. One comparison apart.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Given that RCTs cannot provide direct evidence for individual treatment effects, it may be most reasonable to assume that the average effect of antidepressants applies also to the individual patient.",
+      "scope": "The paper's stated conclusion, and a clinical recommendation.",
+      "quantities": [
+        {
+          "name": "implied_bound_individual_effect_sd_additive",
+          "value": 0.0,
+          "unit": "outcome SDs",
+          "n": 104,
+          "ci": "from the upper 95% limit of VR = 0.997 under Var(treated) = Var(control) + Var(individual effects)",
+          "source": "maria 2026, w03/w04"
+        },
+        {
+          "name": "implied_bound_individual_effect_sd_multiplicative",
+          "value": 0.59,
+          "unit": "outcome SDs = 4.91 HAMD/MADRS points",
+          "n": 104,
+          "ci": "from the upper 95% limit of CVR = 1.163",
+          "source": "maria 2026, w03/w04"
+        },
+        {
+          "name": "average_drug_placebo_difference",
+          "value": 2.7,
+          "unit": "HAMD/MADRS points",
+          "n": 104,
+          "clusters": 75,
+          "source": "maria 2026, w03: drug endpoint mean 13.30, placebo 16.00"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The conclusion is correct FOR THE MODEL THE STATISTIC TESTS, and the paper does not say which model that is. lnVR tests ADDITIVE homogeneity (the treatment subtracts the same amount from everyone); lnCVR tests MULTIPLICATIVE homogeneity (it multiplies everyone by the same factor). Simulated on this corpus's own sample sizes, each is unbiased under its own model and badly biased under the other: with zero individual variation, an additive truth gives lnVR 0.999 and lnCVR 1.204, and a multiplicative truth gives lnVR 0.829 and lnCVR 0.999. On these 104 comparisons the implied ceiling on how much individual responses can differ is therefore either 0.00 or 4.91 HAMD points, against an average drug-placebo difference of 2.70. The paper reports 'cannot reject the null' where it could have reported a bound, and the bound is model-dependent by a factor that spans the whole clinical question. THE CHOICE IS DEFENSIBLE HERE, and see maria2026-antidepressant-variability-recalibration#c3: a diagnostic these data support says additive is the right model for this corpus. So the conclusion stands. What is missing is the statement that a choice was made and the test that it was the right one.",
+        "by": "maria, 2026-09-02"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The two reported analyses -- raw endpoint scores and baseline-to-endpoint change scores -- give the same answer.",
+      "scope": "VR 0.98 and 1.00 respectively, both with I2 = 0%.",
+      "quantities": [
+        {
+          "name": "coupling_beta_raw_endpoint_placebo_arms",
+          "value": 0.29,
+          "unit": "d log(SD) / d log(mean), scale fixed effects",
+          "n": 76,
+          "ci_low": 0.03,
+          "ci_high": 0.524,
+          "ci_kind": "confidence",
+          "clusters": 76,
+          "source": "maria 2026, w03"
+        },
+        {
+          "name": "coupling_beta_change_scores_placebo_arms",
+          "value": 0.024,
+          "unit": "d log(SD) / d log|mean change|",
+          "n": 146,
+          "ci_low": -0.105,
+          "ci_high": 0.13,
+          "ci_kind": "confidence",
+          "clusters": 146,
+          "source": "maria 2026, w03"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "They agree in verdict and differ in value (0.98 against 1.00), and the difference is not noise: the two analyses have mean ratios of OPPOSITE SIGN. On raw endpoint scores the drug arm's mean is 17% below placebo's; on change scores its mean change is 21% larger in magnitude. Placebo arms show a mean-SD association of 0.29 for endpoint scores and 0.024 for change scores, so the two outcome types have genuinely different nuisance structure and the identical statistic is not doing the identical job in both. Nothing in the paper turns on this and the conclusion is unaffected; it is recorded because it is exactly the kind of quiet inconsistency between two analyses of the same data that a knowledge base should carry.",
+        "by": "maria, 2026-09-02"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "https://data.mendeley.com/datasets/83rthbp8ys/2 — 'Cipriani et al_GRISELDA_Lancet 2018_Open data.xlsx'",
+      "status": "verified-usable",
+      "bytes": 189027,
+      "sha256": "16743cadb138a9fe35561c49c6c32aee382d236a49ae5063cce5385707c00afc",
+      "local_path": "artifacts/cipriani2018.xlsx",
+      "fetch_cmd": "curl -sL -o cipriani2018.xlsx https://data.mendeley.com/public-files/datasets/83rthbp8ys/files/8bd604c3-6b8f-4d32-a904-5e191a80b859/file_downloaded",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "sha256sum against the hash returned by data.mendeley.com/public-api/datasets/83rthbp8ys/files; then reanalysis/w01_extract_and_reproduce.py with a rejection ledger",
+        "result": "MATCHES. One sheet, 1,268 rows; the column header is row 3 and rows 1-2 are grouped banners, so a naive read gets the banner as the header. 1,265 data rows -> 876 arms with a usable endpoint mean, SD and n on HAMD17/HAMD21/MADRS, in 377 studies -> 344 drug-vs-placebo comparisons in 221 studies. Reproduces the paper's headline to three decimal places. THE DEPOSIT DOES NOT INCLUDE BASELINE SDs, only baseline means, which is what makes a baseline-arm calibration impossible here and is the reason the model diagnostic had to be done by simulation instead."
+      },
+      "datasheet": {
+        "composition": "One row per trial arm: study id, year, drug, n randomised, responders, remitters, dropouts, scale, baseline mean, weeks, endpoint n, endpoint mean, endpoint SD. Negative endpoint means denote baseline-to-endpoint CHANGE scores rather than raw endpoints; that convention is documented only in Munkholm et al.'s data dictionary, not in the workbook.",
+        "caveats": "Missing values are marked with a literal '*', 202 of them on the endpoint n column alone. Any reader coercing that column to numeric without noticing loses those rows silently."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "https://osf.io/5gpe4/ — README.md, data/data_dictionary.txt, src/*.R",
+      "status": "present-but-insufficient",
+      "bytes": 70000,
+      "local_path": "artifacts/munkholm-osf/",
+      "fetch_cmd": "curl -sL -o munkholm_response_func.R https://osf.io/download/ab8ef/  # and 2ebhp, fbyst, xg39k, teku8, v6ryz, 7fa2g, uxk6y",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "listed via api.osf.io/v2/nodes/5gpe4/files/osfstorage/ and downloaded; read response_func.R and VR_simulations.R",
+        "result": "Complete R analysis code, a proper README with full session info, and a data dictionary that is better than the workbook it describes. But the `data/` folder contains ONLY the dictionary: the dataset itself is a POINTER to a third party (data.mendeley.com), spelled out in the README with instructions to download it and place it in a subfolder. So 'all data and code are available online' is true only while Mendeley keeps serving it. Marked present-but-insufficient for that reason and not because anything is wrong with the code. THE POINTER STILL RESOLVES, six years on, and the object's hash matches — recorded as the positive counterpart to laurinavichyute2022-share-the-code, where a pointer resolved to nothing."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "supplement",
+      "locator": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7451660/fullTextXML",
+      "status": "verified-usable",
+      "local_path": "artifacts/PMC7451660.xml",
+      "fetch_cmd": "curl -sL -o PMC7451660.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7451660/fullTextXML",
+      "checked": {
+        "on": "2026-09-02",
+        "by": "maria",
+        "how": "python tools/jats2txt.py PMC7451660.xml",
+        "result": "Full text. Note one loose phrase worth not propagating: the Abstract defines the variability ratio as 'the ratio between the outcome VARIANCE in the group receiving antidepressants and the outcome variance in the group receiving placebo', and then reports 0.98 — which is an SD ratio, not a variance ratio. A reader squaring it would double the effect."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-antidepressant-variability-recalibration"
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-mbp-variability-ratio",
+      "why": "Same instrument, adjacent literature, and the reason to read it: it is the strongest published example of the 'VR near 1, therefore no heterogeneity' conclusion."
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "laurinavichyute2022-share-the-code",
+      "why": "The positive case for the same mechanism. 'Sharing is not depositing' names an identifier that resolves to nothing; here a deposit's data folder holds only a pointer to a third party, the pointer still resolves six years later, and the hash matches. Both are the same structure; only the outcome differs, and nothing in either deposit's metadata distinguishes them in advance."
+    }
+  ],
+  "open_questions": [
+    "Baseline SDs are absent from the Cipriani workbook, so the strongest possible calibration -- the randomised baseline arms, which need no distributional assumption -- is unavailable for this corpus. The trial reports have them. Extracting baseline SDs for even a subset of the 75 raw-endpoint trials would replace a simulation with data.",
+    "Winkelbeiner et al. 2019 (antipsychotics, JAMA Psychiatry) is by the same group with the same design and is the next corpus to run this on. If it also has no baseline SDs the same limitation applies.",
+    "The paper's own simulation study (VR_simulations.R, downloaded and not run) illustrates components of variation in RCTs and crossover designs. It is the right place to check whether the additive homogeneity assumption is stated there rather than in the meta-analysis."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-02",
+    "verified": "2026-09-02",
+    "notes_file": "NOTES.md"
+  }
+}

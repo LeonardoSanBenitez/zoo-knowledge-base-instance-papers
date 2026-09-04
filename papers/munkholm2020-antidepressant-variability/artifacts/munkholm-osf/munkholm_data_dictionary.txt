@@ -1,0 +1,16 @@
+# Individual response to antidepressants for depression in adults - a simulation study and meta-analysis
+
+## Data dictionary
+This file describes the variables in the dataset used in the empirical models part of the study.
+
+### Cipriani et al_GRISELDA_Lancet 2018_Open data.xlsx
+The dataset from Cipriani et al., The Lancet 2019 (https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)32802-7/fulltext) can be downloaded from: https://data.mendeley.com/datasets/83rthbp8ys/2. The dataset was not accompanied by a data dictionary and our data dictionary reflect our intepretation and use of the data variables.
+
+VARIABLE NAME                                                             - DESCRIPTION
+Efficacy:Baseline Measure:Scale                                           - Depression severity rating scales on which the outcome was reported.
+Efficacy:Endpoint (if not reported, Change):N_comp_imputed_efficacy       - Number of participants.
+Efficacy:Endpoint (if not reported, Change):Mean_endpoint                 - Raw endpoint or baseline to endpoint change score. We considered negative values to represent                                                                              baseline to endpoint change scores.
+Efficacy:Endpoint (if not reported, Change):SD_endpoint                   - Standard deviation of raw endpoint or baseline to endpoint change scores.
+
+
+
