@@ -1,0 +1,13 @@
+answer,check,decimal_places_needed,log10_distance,nearest_anchor,one_in_x,outside_anchor_range,pct
+total catastrophe by 2100,range,,,,2000,False,
+AI catastrophe by 2100,range,,,,50000,False,
+total extinction by 2100,range,,,,20000000,True,
+AI extinction by 2100,range,,,,40000000,True,
+total catastrophe by 2100,distance,,2.1760912590556813,death by lightning,,,
+AI catastrophe by 2100,distance,,0.7781512503836439,death by lightning,,,
+total extinction by 2100,distance,,0.30102999566398125,random newborn becomes US president,,,
+AI extinction by 2100,distance,,0.6020599913279625,random newborn becomes US president,,,
+total catastrophe by 2100,typing,3,,,,,0.05
+AI catastrophe by 2100,typing,4,,,,,0.002
+total extinction by 2100,typing,7,,,,,5e-06
+AI extinction by 2100,typing,7,,,,,2.5e-06

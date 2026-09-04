@@ -51,7 +51,7 @@
   - zoo:reanalysedBy → `gamma2021-mpe92m#c3`; cito:qualifies → `gamma2021-mpe92m#c2`; zoo:sharesUnstatedAssumptionWith → `breznau2022-hidden-universe`; cito:usesMethodIn → `maria2026-analytic-variability-reanalysis`; cito:agreesWith → `menkveld2024-nonstandard-errors`; cito:qualifies → `lutz2015-phenomenological-matrix#c3`; cito:agreesWith → `maria2026-happiness-income-spread#c4`; zoo:sharesUnstatedAssumptionWith → `maria2026-happiness-income-spread`; cito:agreesWith → `maria2026-mbp-variability-ratio`
   - notes: `instance-papers/papers/gamma2021-mpe92m/`
 - **`karger2023-xpt`** (2023, Forecasting Research Institute Working Paper #1 (v. 2023-08-08); a version published in International Journal of Forecasting 2024) — Forecasting Existential Risks: Evidence from a Long-Run Forecasting Tournament
-  - depth: `read-and-reanalysed` · 6 claims · 32 quantities · 3 artifacts
+  - depth: `read-and-reanalysed` · 7 claims · 35 quantities · 3 artifacts
   - methods: `expert-elicitation-tournament`, `in-paper-table-transcription`, `median-aggregation-artifact-simulation`, `spread-derived-from-reported-median-ci`, `implied-parameter-inversion`, `copula-structure-sensitivity`, `synthetic-injected-effect-control`, `elicitation-format-comparison`
   - cito:agreesWith → `kim2025-correlated-errors`; cito:agreesWith → `maria2026-analytic-variability-reanalysis`; cito:qualifies → `menkveld2024-nonstandard-errors`; zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`
   - notes: `instance-papers/papers/karger2023-xpt/`
@@ -150,7 +150,7 @@
 ## existential-risk-and-longtermism
 
 - **`karger2023-xpt`** (2023, Forecasting Research Institute Working Paper #1 (v. 2023-08-08); a version published in International Journal of Forecasting 2024) — Forecasting Existential Risks: Evidence from a Long-Run Forecasting Tournament
-  - depth: `read-and-reanalysed` · 6 claims · 32 quantities · 3 artifacts
+  - depth: `read-and-reanalysed` · 7 claims · 35 quantities · 3 artifacts
   - methods: `expert-elicitation-tournament`, `in-paper-table-transcription`, `median-aggregation-artifact-simulation`, `spread-derived-from-reported-median-ci`, `implied-parameter-inversion`, `copula-structure-sensitivity`, `synthetic-injected-effect-control`, `elicitation-format-comparison`
   - cito:agreesWith → `kim2025-correlated-errors`; cito:agreesWith → `maria2026-analytic-variability-reanalysis`; cito:qualifies → `menkveld2024-nonstandard-errors`; zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`
   - notes: `instance-papers/papers/karger2023-xpt/`
@@ -200,7 +200,7 @@
   - zoo:reanalysedBy → `gamma2021-mpe92m#c3`; cito:qualifies → `gamma2021-mpe92m#c2`; zoo:sharesUnstatedAssumptionWith → `breznau2022-hidden-universe`; cito:usesMethodIn → `maria2026-analytic-variability-reanalysis`; cito:agreesWith → `menkveld2024-nonstandard-errors`; cito:qualifies → `lutz2015-phenomenological-matrix#c3`; cito:agreesWith → `maria2026-happiness-income-spread#c4`; zoo:sharesUnstatedAssumptionWith → `maria2026-happiness-income-spread`; cito:agreesWith → `maria2026-mbp-variability-ratio`
   - notes: `instance-papers/papers/gamma2021-mpe92m/`
 - **`karger2023-xpt`** (2023, Forecasting Research Institute Working Paper #1 (v. 2023-08-08); a version published in International Journal of Forecasting 2024) — Forecasting Existential Risks: Evidence from a Long-Run Forecasting Tournament
-  - depth: `read-and-reanalysed` · 6 claims · 32 quantities · 3 artifacts
+  - depth: `read-and-reanalysed` · 7 claims · 35 quantities · 3 artifacts
   - methods: `expert-elicitation-tournament`, `in-paper-table-transcription`, `median-aggregation-artifact-simulation`, `spread-derived-from-reported-median-ci`, `implied-parameter-inversion`, `copula-structure-sensitivity`, `synthetic-injected-effect-control`, `elicitation-format-comparison`
   - cito:agreesWith → `kim2025-correlated-errors`; cito:agreesWith → `maria2026-analytic-variability-reanalysis`; cito:qualifies → `menkveld2024-nonstandard-errors`; zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`
   - notes: `instance-papers/papers/karger2023-xpt/`

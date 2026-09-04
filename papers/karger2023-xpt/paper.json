@@ -401,6 +401,45 @@
         "why": "The inversion is standard and the inputs are all printed in the report, but it assumes an approximately log-normal population and reads the brackets as 95% bootstrap intervals of the median, which is what the caption says they are. NARROWER SCOPE for one real reason: the implied upper end exceeds 100% for several causes, which a log-normal permits and reality does not, so the true distribution must be truncated and my sigma is an overestimate at the top. The DIRECTION is safe and is the point -- the extinction questions have spreads four times the catastrophe questions, so the disagreement the paper reports between GROUPS is small next to the disagreement WITHIN them. A reader who sees '1% [0.55, 1.23]' will imagine a group that roughly agrees. They do not.",
         "by": "maria, 2026-09-04"
       }
+    },
+    {
+      "id": "c7",
+      "statement": "The format gap is not classic anchoring: two of the four 1-in-X answers fall beyond the rarest reference class shown, and the typical answer sits a factor of ten from any anchor presented.",
+      "scope": "My test of my own alternative explanation. The anchor ladder named in footnote 69 runs 1 in 2, 1 in 300,000, 1 in 10,000,000.",
+      "quantities": [
+        {
+          "name": "answers_beyond_the_rarest_anchor",
+          "value": 0.5,
+          "unit": "fraction of the four 1-in-X answers",
+          "count": 2,
+          "denominator": 4,
+          "n": 405,
+          "source": "maria 2026, x05: total extinction at 1 in 20,000,000 and AI extinction at 1 in 40,000,000, against a smallest anchor of 1 in 10,000,000"
+        },
+        {
+          "name": "mean_log10_distance_to_nearest_anchor",
+          "value": 0.96,
+          "unit": "log10 units",
+          "n": 4,
+          "source": "maria 2026, x05: the typical answer is about a factor of ten from any value shown"
+        },
+        {
+          "name": "decimal_places_needed_for_the_extinction_answer_as_a_percentage",
+          "value": 7,
+          "unit": "decimal places",
+          "n": 1,
+          "source": "maria 2026, x05: 1 in 20,000,000 is 0.000005%, against an observed textbox answer of 4%"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Classic anchoring predicts clustering on the presented values and no systematic extrapolation past the extremes. Both predictions fail here. What remains, and what I now think is the same mechanism described from the other end, is that the anchors work BY MAKING SMALL NUMBERS SAYABLE: entering the elicited extinction probability as a percentage requires seven decimal places, and nobody types that into a 0-100 box. NARROWER SCOPE because the decisive experiment does not exist: the same question in 1-in-X format under two DIFFERENT anchor ladders. Until someone runs it, the SIZE of the format effect is known and its cause is not. I record this as a partial answer to my own open question rather than deleting the question.",
+        "by": "maria, 2026-09-04"
+      }
     }
   ],
   "artifacts": [
@@ -484,8 +523,8 @@
     "forecastingresearch.org did not resolve from this machine, so I could not check whether forecaster-level data exists. If it does, every derived quantity in c4, c5 and c6 becomes directly measurable rather than inverted, and c5 in particular would stop being disputed. That is the single highest-value follow-up and it is one successful HTTP request.",
     "The XPT ran a near-term accuracy follow-up in 2024 resolving the short-horizon questions. That is the only external check available on which group was better calibrated, and it bears directly on how much weight the 6%-versus-1% disagreement deserves. Unread.",
     "Why do domain experts imply a HIGHER cross-domain correlation (0.93) than superforecasters (0.67)? Domain expertise should differentiate judgements across domains. I have no explanation and it may be an artifact of the smaller n and wider intervals for the expert group -- testable by simulating the inversion at n = 59 with the expert spreads and checking its bias.",
-    "The 1-in-X format was preceded by ten reference classes ranging from 1 in 2 to 1 in 10,000,000. That anchor set has a floor of its own, and the elicited extinction probability (1 in 20,000,000) sits BELOW the smallest anchor shown. Whether the anchors dragged the answers down is testable and untested; it is the obvious alternative to my floor explanation of the format gap.",
-    "Population ethics is the area this record opens and it currently holds one paper. The natural companions are the empirical work on population-ethical intuitions and the expert-survey literature on discount rates, both of which report elicited numbers that this record's format finding bears on directly."
+    "Population ethics is the area this record opens and it currently holds one paper. The natural companions are the empirical work on population-ethical intuitions and the expert-survey literature on discount rates, both of which report elicited numbers that this record's format finding bears on directly.",
+    "The decisive elicitation experiment does not exist: the same question in 1-in-X format under two different anchor ladders, to see whether the anchors set the answer or merely make it sayable. c7 rules out classic anchoring and cannot rule out this. It is a cheap experiment and the whole interpretation of the 800,000-fold gap turns on it."
   ],
   "curation": {
     "author": "maria",
