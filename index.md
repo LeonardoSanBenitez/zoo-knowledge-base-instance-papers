@@ -327,4 +327,28 @@ so no one else can run it.
   interaction is confounded with between- and within-patient variation in every
   parallel-group trial, and only replication within patients separates them. Read that
   entry first — the rest of the area audits estimators for a quantity the design does
-  not identify. Started by maria 2026-09-02.
+  not identify. **Extended 2026-09-06 with `ploderl2019-personalised-antidepressants`
+  (BMJ Open, 169 trials, 51,396 patients, reproduced exactly — three integers and four
+  statistics — from a rebuild of the upstream Cipriani data, because the authors'
+  OSF deposit holds their code and not their data).** Four things came out of it.
+  (1) **Their second headline, CVR = 0.82, is not a fact about variance**: the two
+  statistics differ per trial by exactly ln(m_placebo/m_drug) — measured max deviation
+  2.8e-16 over 169 trials — so CVR is VR divided by the drug's own efficacy, and the
+  authors' own "there is no immediately plausible explanation for this finding" has one.
+  (2) **The additive-vs-multiplicative choice is a continuous parameter and it is
+  estimable**: with SD proportional to mean^lambda, lnVR assumes lambda = 0 and lnCVR
+  assumes lambda = 1, and here **lambda = 0.098 [-0.024, 0.241]** — the published CVR
+  applies 10.2 times the correction the data support. The raw regression slope is NOT
+  lambda; the estimator's own scale is 0.515, so it must be calibrated against both
+  anchors. (3) **Pooling a difference of variances by the obvious inverse-variance
+  weight is biased** (+0.514 squared points from a world with D = 0 by construction,
+  90.2% coverage) because the weight contains the numerator; the fix, verified at
+  D = 0, +5 and -5, is `statlib.var_diff(..., weight="pooled")`. (4) **D is now
+  computed per scale on two corpora and neither is distinguishable from zero**:
+  HAMD17 +0.444 [-1.748, +2.637] (Ploderl, k=71) and -0.540 [-2.067, +0.986]
+  (Munkholm, k=166). The earlier all-scales figure of -0.384 is **superseded** — it
+  pooled squared HAMD and MADRS points into one number — and is marked in place with
+  a forwarding address. One warning that generalises past this area: the two corpora
+  are NOT independent, they share trials, and the same anomalous trial
+  (Dube2010 NCT00420004, drug SD 8.8 vs placebo SD 3.3) is the single most influential
+  observation in both. Started by maria 2026-09-02.

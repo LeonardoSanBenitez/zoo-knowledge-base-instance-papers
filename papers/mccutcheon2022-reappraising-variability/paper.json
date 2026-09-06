@@ -1,699 +1,735 @@
 {
-  "schema_version": "1.3",
-  "id": "mccutcheon2022-reappraising-variability",
-  "title": "Reappraising the variability of effects of antipsychotic medication in schizophrenia: a meta-analysis",
-  "authors": [
-    "Robert A. McCutcheon",
-    "Toby Pillinger",
-    "Orestis Efthimiou",
-    "Marta Maslej",
-    "Benoit H. Mulsant",
-    "Allan H. Young",
-    "Andrea Cipriani",
-    "Oliver D. Howes"
-  ],
-  "year": 2022,
-  "venue": "World Psychiatry 21(2):287-294",
-  "area": [
-    "treatment-effect-heterogeneity"
-  ],
-  "identifiers": {
-    "doi": "10.1002/wps.20977",
-    "pmid": "35524614",
-    "pmcid": "PMC9077611",
-    "url": "https://doi.org/10.1002/wps.20977"
+ "schema_version": "1.3",
+ "id": "mccutcheon2022-reappraising-variability",
+ "title": "Reappraising the variability of effects of antipsychotic medication in schizophrenia: a meta-analysis",
+ "authors": [
+  "Robert A. McCutcheon",
+  "Toby Pillinger",
+  "Orestis Efthimiou",
+  "Marta Maslej",
+  "Benoit H. Mulsant",
+  "Allan H. Young",
+  "Andrea Cipriani",
+  "Oliver D. Howes"
+ ],
+ "year": 2022,
+ "venue": "World Psychiatry 21(2):287-294",
+ "area": [
+  "treatment-effect-heterogeneity"
+ ],
+ "identifiers": {
+  "doi": "10.1002/wps.20977",
+  "pmid": "35524614",
+  "pmcid": "PMC9077611",
+  "url": "https://doi.org/10.1002/wps.20977"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 27,
+  "bytes_downloaded": 6480000,
+  "compute_notes": "medRxiv preprint PDF 1,425,105 B; World Psychiatry version of record rendered from the PMC HTML (169,406 B); Zenodo supplement .docx 519,355 B (sha256 verified); Europe PMC supplementary bundle for the source meta-analysis 4,214,373 B. Nine analysis scripts m01-m09; the longest (m08) runs 45 s, total simulation wall clock about 2 min.",
+  "session": "2026-09-04 maria, 5h-sleep-then-research"
+ },
+ "triggers": [
+  "does variability ratio near 1 rule out individual treatment effect heterogeneity",
+  "correlation between placebo response and treatment effect",
+  "how do I estimate the SD of individual treatment effects from aggregate trial data",
+  "is personalised antipsychotic treatment supported by the evidence",
+  "sigma_TE from variability ratio formula",
+  "why does a placebo-response correlation come out negative",
+  "mathematical coupling regression to the mean in meta-analysis",
+  "a meta-analysis that deletes trials incompatible with its own parameter",
+  "what should a variability meta-analysis report instead of VR",
+  "reappraising treatment effect heterogeneity schizophrenia"
+ ],
+ "methods": [
+  "variability-ratio",
+  "random-effects-meta-analysis",
+  "synthetic-injected-effect-control",
+  "estimator-bias-stress-test",
+  "shared-term-coupling-decomposition",
+  "errors-in-variables-correction",
+  "cluster-bootstrap-over-articles",
+  "end-to-end-pipeline-null-test",
+  "selection-on-the-outcome-audit",
+  "in-paper-table-transcription",
+  "analytic-identifiability-derivation",
+  "variance-components-identification"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Individual treatment effect variability can be recovered from aggregate trial data via sigma_TE = sigma_PL * (sqrt(VR^2 - 1 + rho^2) - rho), where rho is the correlation between placebo response and individual treatment effect.",
+   "scope": "The paper's central identity, applied to 66 antipsychotic RCTs (17,202 patients) with rho estimated from a separate individual-patient dataset.",
+   "quantities": [
+    {
+     "name": "sigma_te_total_symptoms_published",
+     "value": 13.5,
+     "unit": "PANSS points",
+     "n": 66,
+     "ci_low": 12.7,
+     "ci_high": 14.3,
+     "ci_kind": "confidence",
+     "source": "Abstract and Results; I2 = 45%"
+    },
+    {
+     "name": "mean_treatment_effect_published",
+     "value": 8.6,
+     "unit": "PANSS points",
+     "n": 66,
+     "ci_low": 7.8,
+     "ci_high": 9.4,
+     "ci_kind": "confidence",
+     "source": "Results; I2 = 38%"
+    },
+    {
+     "name": "implied_sigma_pl_to_reproduce_13_5",
+     "value": 21.1,
+     "unit": "PANSS points",
+     "n": 66,
+     "source": "maria 2026, m01: 13.5 / (sqrt(1 - 1 + 0.32^2) - (-0.32)) at VR = 1.00"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "The ALGEBRA is correct and I derived it independently before reading their form of it: from Var(Y_T) = Var(Y_C) + Var(d) + 2 Cov(Y_C, d) with u = sigma_TE/sigma_PL one gets u^2 + 2 rho u + (1 - VR^2) = 0, whose positive root is exactly their expression. Feeding both roots back through the variance identity rebuilds VR to machine precision (m01). Their headline arithmetic also reproduces: sigma_PL of about 21 PANSS points, the standard value in this literature, gives 13.5 from rho = -0.32. The identity is right. Everything contested below is about what is put INTO it.",
+    "by": "maria, 2026-09-04"
+   }
   },
-  "record_status": "active",
-  "read_depth": "read-and-reanalysed",
-  "cost": {
-    "tool_calls": 27,
-    "bytes_downloaded": 6480000,
-    "compute_notes": "medRxiv preprint PDF 1,425,105 B; World Psychiatry version of record rendered from the PMC HTML (169,406 B); Zenodo supplement .docx 519,355 B (sha256 verified); Europe PMC supplementary bundle for the source meta-analysis 4,214,373 B. Nine analysis scripts m01-m09; the longest (m08) runs 45 s, total simulation wall clock about 2 min.",
-    "session": "2026-09-04 maria, 5h-sleep-then-research"
+  {
+   "id": "c2",
+   "statement": "There are no reasons to believe that any of the three methods used to estimate rho would produce a bias towards a negative correlation, and the consistency of the three estimates mitigates concerns about each.",
+   "scope": "The paper's stated defence of its central input parameter (Discussion). rho was estimated at -0.62 (open-label), -0.32 (linear model, used for the headline as 'most conservative'), and -0.39 (study level).",
+   "quantities": [
+    {
+     "name": "open_label_rho_under_true_null_reliability_0_90",
+     "value": -0.1,
+     "unit": "Spearman correlation",
+     "n": 88,
+     "ci_low": -0.283,
+     "ci_high": 0.11,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, m02: 400 replications, rho_true = 0 by construction"
+    },
+    {
+     "name": "open_label_rho_under_true_null_reliability_0_80",
+     "value": -0.172,
+     "unit": "Spearman correlation",
+     "n": 88,
+     "ci_low": -0.378,
+     "ci_high": 0.037,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, m02"
+    },
+    {
+     "name": "linear_model_rho_under_true_null_no_measurement_error",
+     "value": -0.141,
+     "unit": "Spearman correlation",
+     "n": 88,
+     "ci_low": -0.303,
+     "ci_high": 0.016,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, m02/m03: reliability 1.00, so this is not a measurement-error artifact"
+    },
+    {
+     "name": "study_level_rho_under_true_null_calibrated",
+     "value": -0.258,
+     "unit": "Pearson correlation",
+     "n": 66,
+     "source": "maria 2026, m06: their transcribed arm sizes (median n_placebo = 71), their I2 = 38% for tau_effect, PANSS change SD 20, between-study SD of placebo response 6 PANSS points"
+    },
+    {
+     "name": "study_level_null_rho_as_share_of_their_reported_value",
+     "value": 0.667,
+     "unit": "fraction of their reported -0.39 attributable to the artifact",
+     "n": 66,
+     "source": "maria 2026, m06: -0.258 / -0.39. Ranges 0.39 to 1.09 over between-study SD of placebo response from 10 down to 3 PANSS points. NOT a count ratio: both terms are continuous estimates, so count/denominator are deliberately absent."
+    }
+   ],
+   "evidence": [
+    "a3",
+    "a5",
+    "a6"
+   ],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "The claim is falsifiable and false. Each of the three estimators returns a NEGATIVE value when the true rho is exactly zero, and each does so for the same structural reason: a quantity estimated from the placebo arm appears on both sides of the correlation with opposite signs. Open-label: Y(DBend) closes the placebo period and opens the drug period, so occasion noise in it contributes -Var(e) to the covariance. Linear model: the placebo response carries Y0 with coefficient (beta_base - 1) where beta_base is the placebo-arm slope, and the fitted TE carries Y0 with coefficient gamma_base = drug slope minus placebo slope, so the placebo-arm slope's own estimation noise enters both with opposite signs -- this one needs NO measurement error, which is why it survives at reliability 1.00. Study level: T_s = D_s - P_s is correlated with P_s. Confirmed by construction in m04: splitting the placebo information into two independent halves and using one on each side drives every bias to zero (open-label -0.169 to +0.003; LM -0.141 to +0.002; study-level -0.222 to -0.003). The three methods are not three independent checks. They are one error in three costumes, which is why they agree.",
+    "by": "maria, 2026-09-04"
+   }
   },
-  "triggers": [
-    "does variability ratio near 1 rule out individual treatment effect heterogeneity",
-    "correlation between placebo response and treatment effect",
-    "how do I estimate the SD of individual treatment effects from aggregate trial data",
-    "is personalised antipsychotic treatment supported by the evidence",
-    "sigma_TE from variability ratio formula",
-    "why does a placebo-response correlation come out negative",
-    "mathematical coupling regression to the mean in meta-analysis",
-    "a meta-analysis that deletes trials incompatible with its own parameter",
-    "what should a variability meta-analysis report instead of VR",
-    "reappraising treatment effect heterogeneity schizophrenia"
-  ],
-  "methods": [
-    "variability-ratio",
-    "random-effects-meta-analysis",
-    "synthetic-injected-effect-control",
-    "estimator-bias-stress-test",
-    "shared-term-coupling-decomposition",
-    "errors-in-variables-correction",
-    "cluster-bootstrap-over-articles",
-    "end-to-end-pipeline-null-test",
-    "selection-on-the-outcome-audit",
-    "in-paper-table-transcription",
-    "analytic-identifiability-derivation",
-    "variance-components-identification"
-  ],
-  "claims": [
+  {
+   "id": "c3",
+   "statement": "The linear-model estimate of rho = -0.32 is the most conservative of the three and is therefore the appropriate input for the headline analysis.",
+   "scope": "Their stated rationale for choosing which rho to carry forward.",
+   "quantities": [
     {
-      "id": "c1",
-      "statement": "Individual treatment effect variability can be recovered from aggregate trial data via sigma_TE = sigma_PL * (sqrt(VR^2 - 1 + rho^2) - rho), where rho is the correlation between placebo response and individual treatment effect.",
-      "scope": "The paper's central identity, applied to 66 antipsychotic RCTs (17,202 patients) with rho estimated from a separate individual-patient dataset.",
-      "quantities": [
-        {
-          "name": "sigma_te_total_symptoms_published",
-          "value": 13.5,
-          "unit": "PANSS points",
-          "n": 66,
-          "ci_low": 12.7,
-          "ci_high": 14.3,
-          "ci_kind": "confidence",
-          "source": "Abstract and Results; I2 = 45%"
-        },
-        {
-          "name": "mean_treatment_effect_published",
-          "value": 8.6,
-          "unit": "PANSS points",
-          "n": 66,
-          "ci_low": 7.8,
-          "ci_high": 9.4,
-          "ci_kind": "confidence",
-          "source": "Results; I2 = 38%"
-        },
-        {
-          "name": "implied_sigma_pl_to_reproduce_13_5",
-          "value": 21.1,
-          "unit": "PANSS points",
-          "n": 66,
-          "source": "maria 2026, m01: 13.5 / (sqrt(1 - 1 + 0.32^2) - (-0.32)) at VR = 1.00"
-        }
-      ],
-      "evidence": [
-        "a1",
-        "a2",
-        "a5"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "The ALGEBRA is correct and I derived it independently before reading their form of it: from Var(Y_T) = Var(Y_C) + Var(d) + 2 Cov(Y_C, d) with u = sigma_TE/sigma_PL one gets u^2 + 2 rho u + (1 - VR^2) = 0, whose positive root is exactly their expression. Feeding both roots back through the variance identity rebuilds VR to machine precision (m01). Their headline arithmetic also reproduces: sigma_PL of about 21 PANSS points, the standard value in this literature, gives 13.5 from rho = -0.32. The identity is right. Everything contested below is about what is put INTO it.",
-        "by": "maria, 2026-09-04"
-      }
+     "name": "lm_rho_returned_when_true_idiosyncratic_rho_is_zero",
+     "value": -0.142,
+     "unit": "Spearman correlation",
+     "n": 88,
+     "source": "maria 2026, m03, reliability 1.00, 400 replications"
     },
     {
-      "id": "c2",
-      "statement": "There are no reasons to believe that any of the three methods used to estimate rho would produce a bias towards a negative correlation, and the consistency of the three estimates mitigates concerns about each.",
-      "scope": "The paper's stated defence of its central input parameter (Discussion). rho was estimated at -0.62 (open-label), -0.32 (linear model, used for the headline as 'most conservative'), and -0.39 (study level).",
-      "quantities": [
-        {
-          "name": "open_label_rho_under_true_null_reliability_0_90",
-          "value": -0.1,
-          "unit": "Spearman correlation",
-          "n": 88,
-          "ci_low": -0.283,
-          "ci_high": 0.11,
-          "ci_kind": "monte-carlo-sampling-distribution",
-          "source": "maria 2026, m02: 400 replications, rho_true = 0 by construction"
-        },
-        {
-          "name": "open_label_rho_under_true_null_reliability_0_80",
-          "value": -0.172,
-          "unit": "Spearman correlation",
-          "n": 88,
-          "ci_low": -0.378,
-          "ci_high": 0.037,
-          "ci_kind": "monte-carlo-sampling-distribution",
-          "source": "maria 2026, m02"
-        },
-        {
-          "name": "linear_model_rho_under_true_null_no_measurement_error",
-          "value": -0.141,
-          "unit": "Spearman correlation",
-          "n": 88,
-          "ci_low": -0.303,
-          "ci_high": 0.016,
-          "ci_kind": "monte-carlo-sampling-distribution",
-          "source": "maria 2026, m02/m03: reliability 1.00, so this is not a measurement-error artifact"
-        },
-        {
-          "name": "study_level_rho_under_true_null_calibrated",
-          "value": -0.258,
-          "unit": "Pearson correlation",
-          "n": 66,
-          "source": "maria 2026, m06: their transcribed arm sizes (median n_placebo = 71), their I2 = 38% for tau_effect, PANSS change SD 20, between-study SD of placebo response 6 PANSS points"
-        },
-        {
-          "name": "study_level_null_rho_as_share_of_their_reported_value",
-          "value": 0.667,
-          "unit": "fraction of their reported -0.39 attributable to the artifact",
-          "n": 66,
-          "source": "maria 2026, m06: -0.258 / -0.39. Ranges 0.39 to 1.09 over between-study SD of placebo response from 10 down to 3 PANSS points. NOT a count ratio: both terms are continuous estimates, so count/denominator are deliberately absent."
-        }
-      ],
-      "evidence": [
-        "a3",
-        "a5",
-        "a6"
-      ],
-      "our_assessment": {
-        "status": "refuted",
-        "why": "The claim is falsifiable and false. Each of the three estimators returns a NEGATIVE value when the true rho is exactly zero, and each does so for the same structural reason: a quantity estimated from the placebo arm appears on both sides of the correlation with opposite signs. Open-label: Y(DBend) closes the placebo period and opens the drug period, so occasion noise in it contributes -Var(e) to the covariance. Linear model: the placebo response carries Y0 with coefficient (beta_base - 1) where beta_base is the placebo-arm slope, and the fitted TE carries Y0 with coefficient gamma_base = drug slope minus placebo slope, so the placebo-arm slope's own estimation noise enters both with opposite signs -- this one needs NO measurement error, which is why it survives at reliability 1.00. Study level: T_s = D_s - P_s is correlated with P_s. Confirmed by construction in m04: splitting the placebo information into two independent halves and using one on each side drives every bias to zero (open-label -0.169 to +0.003; LM -0.141 to +0.002; study-level -0.222 to -0.003). The three methods are not three independent checks. They are one error in three costumes, which is why they agree.",
-        "by": "maria, 2026-09-04"
-      }
+     "name": "lm_rho_returned_when_true_idiosyncratic_rho_is_minus_0_29",
+     "value": -0.151,
+     "unit": "Spearman correlation",
+     "n": 88,
+     "source": "maria 2026, m03"
     },
     {
-      "id": "c3",
-      "statement": "The linear-model estimate of rho = -0.32 is the most conservative of the three and is therefore the appropriate input for the headline analysis.",
-      "scope": "Their stated rationale for choosing which rho to carry forward.",
-      "quantities": [
-        {
-          "name": "lm_rho_returned_when_true_idiosyncratic_rho_is_zero",
-          "value": -0.142,
-          "unit": "Spearman correlation",
-          "n": 88,
-          "source": "maria 2026, m03, reliability 1.00, 400 replications"
-        },
-        {
-          "name": "lm_rho_returned_when_true_idiosyncratic_rho_is_minus_0_29",
-          "value": -0.151,
-          "unit": "Spearman correlation",
-          "n": 88,
-          "source": "maria 2026, m03"
-        },
-        {
-          "name": "lm_rho_returned_when_true_idiosyncratic_rho_is_minus_0_58",
-          "value": -0.15,
-          "unit": "Spearman correlation",
-          "n": 88,
-          "source": "maria 2026, m03: the OUTPUT DOES NOT MOVE while the truth moves from 0 to -0.58"
-        },
-        {
-          "name": "lm_rho_when_correlation_runs_through_baseline_severity",
-          "value": -0.458,
-          "unit": "Spearman correlation",
-          "n": 88,
-          "source": "maria 2026, m03: true value -0.278, so the covariate-mediated component is OVERSTATED by 65%"
-        },
-        {
-          "name": "lm_null_artifact_by_placebo_arm_size",
-          "value": -0.1506,
-          "unit": "Spearman correlation at n_placebo = 88",
-          "n": 300,
-          "source": "maria 2026, m03 sweep: -0.198 at n=44, -0.151 at n=88, -0.099 at n=176, -0.074 at n=352, -0.050 at n=704; shrinks as 1/sqrt(n), the signature of a finite-sample dependence"
-        }
-      ],
-      "evidence": [
-        "a3",
-        "a5"
-      ],
-      "our_assessment": {
-        "status": "refuted",
-        "why": "This is the sharpest single finding and it is worse than bias. The LM method is not a conservative estimator of rho; it is not an estimator of rho at all. It returns about -0.15 whether the true idiosyncratic correlation is 0, -0.29 or -0.58 -- it has NO SENSITIVITY to the quantity it names, because the individual treatment effect it constructs is a deterministic linear function of age, sex and baseline severity and therefore contains no information about a patient's idiosyncratic response. Where the correlation does run through baseline severity, the method sees it and overstates it by 65%. Both failure modes push |rho| up, hence sigma_TE up. And the circularity is exact: the heterogeneity the paper concludes exists (13.5 PANSS points, far more than three demographic covariates could ever explain) is precisely the idiosyncratic kind that this method is blind to. The method used to license the conclusion could not have detected the phenomenon the conclusion asserts.",
-        "by": "maria, 2026-09-04"
-      }
+     "name": "lm_rho_returned_when_true_idiosyncratic_rho_is_minus_0_58",
+     "value": -0.15,
+     "unit": "Spearman correlation",
+     "n": 88,
+     "source": "maria 2026, m03: the OUTPUT DOES NOT MOVE while the truth moves from 0 to -0.58"
     },
     {
-      "id": "c4",
-      "statement": "Trials whose observed VR was not compatible with the assumed rho were removed from the main analysis.",
-      "scope": "Supplementary Information, one sentence: 'In some trials the observed VR was not compatible with our main estimate of rho (in cases of low VR a greater absolute value of rho is required for solutions to contain only real numbers). These trials were removed in our main analysis.' The number removed is not reported.",
-      "quantities": [
-        {
-          "name": "deletion_threshold_at_rho_minus_0_32",
-          "value": 0.947,
-          "unit": "VR below which a trial is deleted",
-          "n": 66,
-          "source": "maria 2026, m06: threshold is sqrt(1 - rho^2)"
-        },
-        {
-          "name": "trials_deleted_in_simulation_at_their_rho",
-          "value": 0.325,
-          "unit": "fraction of the 64 simulated trials deleted",
-          "n": 250,
-          "source": "maria 2026, m08: null world, rho fixed at -0.32; mean over 250 replications, so this is an average and not a count."
-        },
-        {
-          "name": "trials_deleted_in_simulation_at_rho_zero",
-          "value": 0.502,
-          "unit": "fraction of the 64 simulated trials deleted",
-          "n": 250,
-          "source": "maria 2026, m08: null world, rho fixed at 0; mean over 250 replications, so this is an average and not a count."
-        },
-        {
-          "name": "pooled_sigma_te_from_a_zero_heterogeneity_world_rho_fixed_at_truth",
-          "value": 11.5,
-          "unit": "PANSS points",
-          "n": 250,
-          "ci_low": 9.9,
-          "ci_high": 13.1,
-          "ci_kind": "monte-carlo-sampling-distribution",
-          "source": "maria 2026, m08: true sigma_TE = 0 exactly, rho fixed at its true value 0, deletion ON"
-        },
-        {
-          "name": "pooled_sigma_te_same_world_deletion_off",
-          "value": 0.08,
-          "unit": "PANSS points",
-          "n": 250,
-          "source": "maria 2026, m08"
-        }
-      ],
-      "evidence": [
-        "a3",
-        "a5"
-      ],
-      "our_assessment": {
-        "status": "refuted",
-        "why": "This is selection on the outcome, and it is the load-bearing error -- which is NOT what I expected when I started. The compatibility condition is VR >= sqrt(1 - rho^2), so the deleted trials are exactly those whose drug arm was LEAST variable relative to placebo, i.e. those providing the strongest evidence against heterogeneity of treatment effect. Every surviving trial then yields a strictly positive sigma_TE by construction. In a world built with individual treatment effects identical for every patient (sigma_TE = 0.000 exactly), the deletion alone -- with rho FIXED AT ITS TRUE VALUE OF ZERO, so no correlation artifact whatever -- produces a pooled estimate of 11.5 PANSS points. Turning deletion off on the same data gives 0.08. The correlation artifact then adds on top: 11.5 at rho = 0, 17.3 at their -0.32, 18.9 at their -0.39. The paper does not report how many trials were removed; simulation at their arm sizes puts it near a third of the corpus.",
-        "by": "maria, 2026-09-04"
-      }
+     "name": "lm_rho_when_correlation_runs_through_baseline_severity",
+     "value": -0.458,
+     "unit": "Spearman correlation",
+     "n": 88,
+     "source": "maria 2026, m03: true value -0.278, so the covariate-mediated component is OVERSTATED by 65%"
     },
     {
-      "id": "c5",
-      "statement": "The published pipeline, run end to end on trial data generated with exactly zero individual treatment-effect heterogeneity, reports clinically significant heterogeneity of the same magnitude the paper reports.",
-      "scope": "My claim, not theirs. 64 simulated trials at the arm sizes transcribed from their supplement, every patient in every trial receiving an identical benefit from the drug, run through: per-trial VR, n-weighted Spearman rho across trials, the sigma_TE formula, deletion of incompatible trials, random-effects pooling of ln(sigma_TE).",
-      "quantities": [
-        {
-          "name": "pipeline_output_from_zero_heterogeneity_world",
-          "value": 14.9,
-          "unit": "PANSS points",
-          "n": 300,
-          "ci_low": 9.5,
-          "ci_high": 21.0,
-          "ci_kind": "monte-carlo-sampling-distribution",
-          "source": "maria 2026, m07/m08; ranges 13.8 to 16.4 as the between-study SD of placebo response runs 8 down to 3 PANSS points"
-        },
-        {
-          "name": "published_value_for_comparison",
-          "value": 13.5,
-          "unit": "PANSS points",
-          "n": 66,
-          "ci_low": 12.7,
-          "ci_high": 14.3,
-          "ci_kind": "confidence",
-          "source": "McCutcheon et al. 2022, Results"
-        },
-        {
-          "name": "pipeline_output_when_true_sigma_te_is_8",
-          "value": 16.6,
-          "unit": "PANSS points",
-          "n": 300,
-          "source": "maria 2026, m07 positive control: ratio reported/true = 2.07"
-        },
-        {
-          "name": "pipeline_output_when_true_sigma_te_is_20",
-          "value": 24.6,
-          "unit": "PANSS points",
-          "n": 300,
-          "source": "maria 2026, m07 positive control: ratio 1.23, so the pipeline does carry some signal on top of a floor near 15"
-        },
-        {
-          "name": "variance_difference_estimator_on_the_same_null_world",
-          "value": 0.44,
-          "unit": "squared PANSS points",
-          "n": 300,
-          "ci_low": -21.57,
-          "ci_high": 19.66,
-          "ci_kind": "monte-carlo-sampling-distribution",
-          "source": "maria 2026, m09: true value 0; false-positive rate 4.0% against a nominal 5%"
-        }
-      ],
-      "evidence": [
-        "a5",
-        "a6"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "Robust across every variation I tried: 14.6 with a within-trial SD that varies between trials, 15.6 and 15.4 with change scores skewed either way, 15.0 under DerSimonian-Laird rather than Paule-Mandel pooling, 18.1 with the arms halved. The positive control shows the pipeline is not simply printing 13 regardless -- it tracks a true sigma_TE of 20 as 24.6 -- but it has a floor near 15 that it never goes below, so it cannot distinguish zero heterogeneity from 8 PANSS points of it. Their observed 13.5 sits BELOW my null-world value. One caveat I hold against myself: an earlier version of this test pooled ln(sigma_TE) with incompatible trials floored at 0.001, and on a log scale a zero is minus infinity, so that column depended on a floor I chose. Redone in m09 on the variance-difference scale, where zero is an ordinary number, the null world gives 0.44 [-21.6, +19.7] squared points against a true 0, with correct false-positive rate. The finding survives the fix.",
-        "by": "maria, 2026-09-04"
-      }
-    },
-    {
-      "id": "c6",
-      "statement": "On the largest antidepressant corpus available, the study-level correlation between placebo response and treatment effect is entirely accounted for by shared sampling error, and the excess variance in the drug arm is not distinguishable from zero.",
-      "scope": "My claim, not theirs. Cipriani GRISELDA workbook: 341-344 drug-vs-placebo comparisons in 219-221 studies, 61,144 adults, HAMD-17/21 or MADRS. A different literature from theirs, tested because it is the one whose per-arm data I can reach.",
-      "quantities": [
-        {
-          "name": "study_level_rho_as_published_methods_would_compute_it",
-          "value": -0.178,
-          "unit": "Pearson correlation",
-          "n": 341,
-          "clusters": 219,
-          "ci_low": -0.332,
-          "ci_high": -0.028,
-          "ci_kind": "confidence",
-          "source": "maria 2026, m05; Spearman -0.211 ; interval by cluster bootstrap over studies, 4000 draws"
-        },
-        {
-          "name": "study_level_rho_after_removing_shared_sampling_error",
-          "value": 0.001,
-          "unit": "Pearson correlation",
-          "n": 341,
-          "clusters": 219,
-          "ci_low": -0.209,
-          "ci_high": 0.202,
-          "ci_kind": "confidence",
-          "source": "maria 2026, m05 ; interval by cluster bootstrap over studies, 4000 draws"
-        },
-        {
-          "name": "study_level_rho_change_scores_only_corrected",
-          "value": -0.065,
-          "unit": "Pearson correlation",
-          "n": 240,
-          "clusters": 146,
-          "ci_low": -0.337,
-          "ci_high": 0.209,
-          "ci_kind": "confidence",
-          "source": "maria 2026, m05: raw -0.235, so 72% of the raw value is shared sampling error ; interval by cluster bootstrap over studies, 4000 draws"
-        },
-        {
-          "name": "pooled_variance_difference_antidepressants",
-          "value": -0.384,
-          "unit": "squared HAMD/MADRS points",
-          "n": 344,
-          "clusters": 221,
-          "ci_low": -1.636,
-          "ci_high": 0.868,
-          "ci_kind": "confidence",
-          "source": "maria 2026, m09: random-effects (Paule-Mandel), I2 = 0%, p = 0.548"
-        },
-        {
-          "name": "implied_sigma_te_antidepressants_at_rho_zero",
-          "value": 0.93,
-          "unit": "HAMD/MADRS points, upper 95% limit",
-          "n": 344,
-          "source": "maria 2026, m09; the point estimate has no real solution because D < 0"
-        },
-        {
-          "name": "implied_sigma_te_antidepressants_at_rho_minus_0_32",
-          "value": 5.24,
-          "unit": "HAMD/MADRS points",
-          "n": 344,
-          "ci_low": 4.99,
-          "ci_high": 5.47,
-          "ci_kind": "confidence",
-          "source": "maria 2026, m09: 1.94x the 2.70-point mean drug-placebo difference"
-        }
-      ],
-      "evidence": [
-        "a4",
-        "a5"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "The correction is an ordinary errors-in-variables adjustment; the only thing worth noticing is that the two error terms are the SAME error, so it is a covariance correction and not two independent attenuations. Validated first on data where the answer was known: at a true rho of 0 the raw estimator gives -0.113 at arm n = 30 and the corrected one gives +0.004; at a true -0.30 it gives -0.300; at a true +0.30, where the raw estimator reads +0.121, it gives +0.310. It recovers positive values, so it is not merely subtracting a constant. The shared sampling variance is 14-24% of the observed variance in placebo response, comfortably away from the degenerate case. CAVEAT recorded honestly: for the raw-endpoint comparisons the placebo response is baseline minus endpoint and the GRISELDA deposit has no baseline SDs, so Var(P) is under-corrected there and the +0.085 for that subset should not be quoted. The change-score subset, where the correction is exact, is the one to use.",
-        "by": "maria, 2026-09-04"
-      }
-    },
-    {
-      "id": "c7",
-      "statement": "sigma_TE is not identified from aggregate trial data. What the data fix is D = sigma_AT^2 - sigma_PL^2; the honest report is D plus a sensitivity curve in rho, not a single number.",
-      "scope": "My positive proposal, arising from c1-c6. Applies to every variability-ratio meta-analysis in psychiatry, of which there are now at least six.",
-      "quantities": [
-        {
-          "name": "variance_difference_coverage_at_null",
-          "value": 0.96,
-          "unit": "fraction of 95% intervals covering the truth",
-          "count": 288,
-          "denominator": 300,
-          "n": 300,
-          "source": "maria 2026, m09"
-        },
-        {
-          "name": "variance_difference_coverage_at_sigma_te_20",
-          "value": 0.72,
-          "unit": "fraction of 95% intervals covering the truth",
-          "count": 216,
-          "denominator": 300,
-          "n": 300,
-          "source": "maria 2026, m09: coverage DEGRADES for large true sigma_TE because Var(s^2) = 2 sigma^4/(n-1) assumes normality and the drug arm becomes a mixture. Recorded as a limitation of my own proposal, not of the null case."
-        },
-        {
-          "name": "sigma_te_spread_over_the_plausible_rho_range_antidepressants",
-          "value": 10.26,
-          "unit": "HAMD points at rho = -0.62 versus 0.93 upper limit at rho = 0",
-          "n": 344,
-          "source": "maria 2026, m09: an eleven-fold range from one unmeasured parameter"
-        }
-      ],
-      "evidence": [
-        "a5"
-      ],
-      "our_assessment": {
-        "status": "accepted-narrower-scope",
-        "why": "D is estimable without assumption, unbiased, has a known sampling distribution, can legitimately be negative, and needs no square root, no branch choice and no deletion -- every pathology in the published pipeline enters when the identity is inverted for sigma_TE BEFORE pooling rather than after. Narrower scope for two reasons I want on the record. First, my own estimator's interval coverage falls to 72% at sigma_TE = 20 because the normality assumption behind Var(s^2) fails when the drug arm is a mixture; a bootstrap is needed there, and I have not built it. Second, and more important: this does not rescue the question. It reports honestly that the question is unanswerable from aggregate data. McCutcheon et al. are RIGHT that assuming rho = 0 is not innocuous -- it is the assumption my own munkholm2020 record made silently, and it is the third open question I had already written down there on 2026-09-02. Their diagnosis of the gap is correct. Their instrument for filling it is not.",
-        "by": "maria, 2026-09-04"
-      }
-    },
-    {
-      "id": "c8",
-      "statement": "When the two arm variances are equal, rho and sigma_TE are the same unknown in different units: sigma_TE = -2 rho sigma_PL exactly, and rho = -sqrt((1-r)/2) where r is the within-patient correlation between drug and placebo outcomes. rho is therefore negative by construction, and estimating it 'independently' assumes the answer rather than adding evidence. Separately, Senn's own worlds show that even a CLASSICAL cross-over cannot separate real individual response from occasion noise: only a replicate does.",
-      "scope": "Algebraic, exact, for VR = 1; verified by simulation across r from 0 to 0.99. The general form is rho = (r*VR - 1)/sqrt(VR^2 + 1 - 2 r VR).",
-      "quantities": [
-        {
-          "name": "rho_at_within_patient_correlation_0_90",
-          "value": -0.2236,
-          "unit": "correlation",
-          "n": 400000,
-          "source": "maria 2026, m10: predicted -0.2236 by the identity, simulated -0.2244 at n = 400,000"
-        },
-        {
-          "name": "rho_at_within_patient_correlation_0_00",
-          "value": -0.7071,
-          "unit": "correlation",
-          "n": 400000,
-          "source": "maria 2026, m10: predicted -0.7071, simulated -0.7080. This is the value at INDEPENDENCE, not a floor: r < 0 gives rho below it, down to -1 at r = -1."
-        },
-        {
-          "name": "within_patient_correlation_implied_by_their_headline_rho",
-          "value": 0.795,
-          "unit": "correlation between a patient's drug and placebo outcomes",
-          "n": 66,
-          "source": "maria 2026, m10: r = 1 - 2 rho^2 at rho = -0.32"
-        },
-        {
-          "name": "within_patient_correlation_implied_by_their_open_label_rho",
-          "value": 0.231,
-          "unit": "correlation",
-          "n": 88,
-          "source": "maria 2026, m10: r = 1 - 2 rho^2 at rho = -0.62"
-        },
-        {
-          "name": "senn_double_crossover_sigma_C_high_reliability",
-          "value": 0.1832,
-          "unit": "litres FEV1",
-          "n": 1000,
-          "source": "maria 2026, m10: Senn 2016 Fig 2 parameters (r = 0.90 between replicate estimates of the same patient's effect); analytic value 0.1897"
-        },
-        {
-          "name": "senn_double_crossover_sigma_C_low_reliability",
-          "value": 0.0413,
-          "unit": "litres FEV1",
-          "n": 1000,
-          "source": "maria 2026, m10: Senn 2016 Fig 3 parameters (r = 0.02); analytic value 0.0283. Marginal mean 0.5 L and SD 0.2 L IDENTICAL to the Fig 2 world."
-        }
-      ],
-      "evidence": [
-        "a5",
-        "a7"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "This is the sharpest thing I found and it is algebra, not simulation -- the simulation only confirms it to three decimals. Two consequences. FIRST, a negative rho is the only thing the geometry permits: across the whole grid of plausible within-patient correlations (r = 0.4 to 0.95) and observed variability ratios (VR = 0.95 to 1.05), rho is negative in every cell. So obtaining a negative estimate confirms nothing whatever, and the paper's 'a negative correlation was a priori expected' is exactly right in a way that undercuts rather than supports the argument -- what is expected a priori cannot also be evidence. SECOND, at VR = 1 their formula reduces to sigma_TE = -2 rho sigma_PL, so it contributes nothing beyond rho: rho IS the answer, restated. Their headline is the assumption that a patient's drug and placebo outcomes correlate 0.795; their open-label estimate is the assumption that they correlate 0.231. No aggregate dataset can check either, because r is a within-patient quantity and a parallel-group trial never observes the same patient twice. CORRECTION MADE IN PLACE 2026-09-04, same session: I first implemented Senn's Figures 2-3 as pairs of (placebo, active) OUTCOMES correlated r and recorded that they reproduced. They are pairs of DIFFERENCES across two replicate period-pairs of a double cross-over, so r is the test-retest reliability of a patient's own treatment effect, not a within-patient outcome correlation. Re-read his body text and appendix together and re-implemented. The misreading made his point weaker than it is: in the corrected version both worlds have IDENTICAL marginal mean (0.5 L) and SD (0.2 L) of the observed difference, so a classical cross-over sees the same data too, and only the second replicate separates sigma_C = 0.19 L from sigma_C = 0.03 L. My rho identity in section 2 is my own derivation and is unaffected; it now uses a separate generator so the two cannot be conflated again.",
-        "by": "maria, 2026-09-04"
-      }
-    },
-    {
-      "id": "c9",
-      "statement": "An increased variance in the treated arm can equally be patient-by-treatment interaction or occasion-to-occasion variation that is larger under one treatment than the other, and no parallel-group trial can separate them.",
-      "scope": "Senn 2016, Tables 1-2, applied to this literature. A fourth axis of non-identification, distinct from the three already recorded in this area.",
-      "quantities": [
-        {
-          "name": "components_identifiable_in_a_parallel_group_trial",
-          "value": 0.25,
-          "unit": "fraction of the four components A,B,C,D that a parallel-group trial identifies",
-          "count": 1,
-          "denominator": 4,
-          "n": 1,
-          "source": "Senn 2016 Table 2: parallel group identifies A only; B + C + D form the error term. Classical cross-over identifies A and B, confounding C + D. Only a REPEATED-PERIOD cross-over identifies C."
-        }
-      ],
-      "evidence": [
-        "a7"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "Senn published this in 2015 and it subsumes everything else in this folder. C -- patient-by-treatment interaction -- IS sigma_TE^2, and it is confounded with between-patient variation and within-patient noise in exactly the design this whole literature uses. His own counter-example is the cleanest: an oral versus an intravenous formulation may show a larger treated-arm variance because absorption varies BETWEEN patients (interaction, real heterogeneity) or because absorption varies FROM OCCASION TO OCCASION within a patient (noise, no heterogeneity at all). VR is identical. PRIORITY IS HIS, not mine, and the design conclusion -- that only replication at the patient level identifies individual response -- was in print seven years before the paper I spent this session on, which cites the adjacent Senn 2018 Nature piece. What this session adds is not the principle but the audit: how much a specific published pipeline gets wrong, by what mechanism, and what to report instead.",
-        "by": "maria, 2026-09-04"
-      }
+     "name": "lm_null_artifact_by_placebo_arm_size",
+     "value": -0.1506,
+     "unit": "Spearman correlation at n_placebo = 88",
+     "n": 300,
+     "source": "maria 2026, m03 sweep: -0.198 at n=44, -0.151 at n=88, -0.099 at n=176, -0.074 at n=352, -0.050 at n=704; shrinks as 1/sqrt(n), the signature of a finite-sample dependence"
     }
-  ],
-  "artifacts": [
+   ],
+   "evidence": [
+    "a3",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "This is the sharpest single finding and it is worse than bias. The LM method is not a conservative estimator of rho; it is not an estimator of rho at all. It returns about -0.15 whether the true idiosyncratic correlation is 0, -0.29 or -0.58 -- it has NO SENSITIVITY to the quantity it names, because the individual treatment effect it constructs is a deterministic linear function of age, sex and baseline severity and therefore contains no information about a patient's idiosyncratic response. Where the correlation does run through baseline severity, the method sees it and overstates it by 65%. Both failure modes push |rho| up, hence sigma_TE up. And the circularity is exact: the heterogeneity the paper concludes exists (13.5 PANSS points, far more than three demographic covariates could ever explain) is precisely the idiosyncratic kind that this method is blind to. The method used to license the conclusion could not have detected the phenomenon the conclusion asserts.",
+    "by": "maria, 2026-09-04"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "Trials whose observed VR was not compatible with the assumed rho were removed from the main analysis.",
+   "scope": "Supplementary Information, one sentence: 'In some trials the observed VR was not compatible with our main estimate of rho (in cases of low VR a greater absolute value of rho is required for solutions to contain only real numbers). These trials were removed in our main analysis.' The number removed is not reported.",
+   "quantities": [
     {
-      "id": "a1",
-      "role": "supplement",
-      "locator": "https://zenodo.org/record/5896334 -- McCutcheon_supplementary6.0.docx",
-      "status": "verified-usable",
-      "bytes": 519355,
-      "sha256": "8b53ff9e89d0d0e24e6b43cc7255c6ddb801cf10577bf87b9a476d943dc06dbe",
-      "license": "CC-BY-4.0",
-      "local_path": "artifacts/mccutcheon2022_supplementary.docx",
-      "fetch_cmd": "curl -sL -o supp.docx https://zenodo.org/api/records/5896334/files/McCutcheon_supplementary6.0.docx/content",
-      "checked": {
-        "on": "2026-09-04",
-        "by": "maria",
-        "how": "sha256sum; then unzipped word/document.xml and stripped tags to plain text (the file is 60,377 characters of which roughly two thirds is embedded Mendeley CSL citation JSON that has to be filtered before anything is readable)",
-        "result": "USABLE and it is where the load-bearing disclosures live. Three things appear here and NOT in the main paper: (a) the exact linear-model specification, without which the coupling in c3 cannot be identified; (b) the acknowledgement that for VR <= 1 the formula has TWO admissible solutions, with the justification for picking one ('a large discontinuities ... appears implausible'); (c) the single sentence disclosing that incompatible trials were deleted. Credit where due: none of this is hidden. It is disclosed in the place fewest readers look, and the deletion is one sentence with no count attached."
-      },
-      "datasheet": {
-        "composition": "Statistical analysis detail, PRISMA checklist and flow, the included-studies table (66 rows: study, antipsychotic, dose, trial duration, antipsychotic arm Ns, placebo arm N), and eFigures 1-3 as embedded images.",
-        "caveats": "The included-studies table gives arm SIZES but no per-arm means or SDs, so the study-level rho of -0.39 and the per-trial VRs cannot be recomputed from the deposit. Only the artifact component can be predicted, which is what m06 does."
-      }
+     "name": "deletion_threshold_at_rho_minus_0_32",
+     "value": 0.947,
+     "unit": "VR below which a trial is deleted",
+     "n": 66,
+     "source": "maria 2026, m06: threshold is sqrt(1 - rho^2)"
     },
     {
-      "id": "a2",
-      "role": "supplement",
-      "locator": "https://www.medrxiv.org/content/10.1101/2021.11.03.21265858v1.full.pdf",
-      "status": "verified-usable",
-      "bytes": 1425105,
-      "sha256": "867b9f1309ae106d4ce4bea65aaeeb144cb1fd34c1435cc19a998abf98a5fc36",
-      "license": "CC-BY-ND-4.0",
-      "local_path": "artifacts/mccutcheon2021_medrxiv.pdf",
-      "fetch_cmd": "curl -sL -o reappraisal.pdf https://www.medrxiv.org/content/10.1101/2021.11.03.21265858v1.full.pdf",
-      "checked": {
-        "on": "2026-09-04",
-        "by": "maria",
-        "how": "PyMuPDF 1.28.0 page-by-page text extraction, 22 pages, 49,096 characters",
-        "result": "USABLE with one trap worth recording: EVERY equation in the preprint is an embedded image or OMML and extracts as blank space, so the central formula is simply absent from the extracted text. I derived it from the variance identity instead and only afterwards found it stated in words in the PMC rendering of the version of record. Anyone relying on text extraction of this PDF would silently lose the paper's mathematical content."
-      }
+     "name": "trials_deleted_in_simulation_at_their_rho",
+     "value": 0.325,
+     "unit": "fraction of the 64 simulated trials deleted",
+     "n": 250,
+     "source": "maria 2026, m08: null world, rho fixed at -0.32; mean over 250 replications, so this is an average and not a count."
     },
     {
-      "id": "a3",
-      "role": "in-paper-table",
-      "locator": "Europe PMC supplementary bundle for PMC7610422 (McCutcheon et al. 2021, Mol Psychiatry) -- EMS83518-supplement-1.docx, included-studies table",
-      "status": "present-but-insufficient",
-      "bytes": 4214373,
-      "local_path": "artifacts/mcc2021_arm_sizes.csv",
-      "fetch_cmd": "curl -s https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7610422/supplementaryFiles -o supp.zip",
-      "checked": {
-        "on": "2026-09-04",
-        "by": "maria",
-        "how": "unzipped, parsed the 67-row 6-column Word table, transcribed to CSV: study, n_drug_arms, n_drug_total, n_placebo, duration_wk",
-        "result": "PRESENT-BUT-INSUFFICIENT, which is the whole point. It gives arm sizes for all 66 trials -- median placebo arm 71, mean 78, range 4 to 178, 148 drug arms in total -- which is enough to CALIBRATE the artifact and was worth having. It does NOT give per-arm means or SDs, so the central parameter of the 2022 paper cannot be rechecked from either deposit. TRANSCRIPTION CAVEAT: my parse totals 16,791 patients against the 17,202 the papers report, a 2.4% shortfall, most likely from dose strings being mis-parsed as arm sizes in a few multi-arm rows. Arm-size DISTRIBUTION is what m06/m07/m08 use and it is unaffected at that tolerance; do not quote the total."
-      }
+     "name": "trials_deleted_in_simulation_at_rho_zero",
+     "value": 0.502,
+     "unit": "fraction of the 64 simulated trials deleted",
+     "n": 250,
+     "source": "maria 2026, m08: null world, rho fixed at 0; mean over 250 replications, so this is an average and not a count."
     },
     {
-      "id": "a4",
-      "role": "raw-data",
-      "locator": "Cipriani et al. GRISELDA open data, https://data.mendeley.com/datasets/83rthbp8ys/2",
-      "status": "verified-usable",
-      "bytes": 189027,
-      "sha256": "16743cadb138a9fe35561c49c6c32aee382d236a49ae5063cce5385707c00afc",
-      "local_path": "../munkholm2020-antidepressant-variability/artifacts/cipriani2018.xlsx",
-      "fetch_cmd": "see munkholm2020-antidepressant-variability artifact a1",
-      "checked": {
-        "on": "2026-09-02",
-        "by": "maria",
-        "how": "reused the extraction verified for munkholm2020-antidepressant-variability; here consumed via reanalysis/out_comparisons.csv",
-        "result": "REUSED, not re-verified. 344 drug-vs-placebo comparisons in 221 studies. Used for c6 and for the real-data half of c7. Its known limitation matters here too: no baseline SDs, which is why the raw-endpoint subset is under-corrected in m05."
-      }
+     "name": "pooled_sigma_te_from_a_zero_heterogeneity_world_rho_fixed_at_truth",
+     "value": 11.5,
+     "unit": "PANSS points",
+     "n": 250,
+     "ci_low": 9.9,
+     "ci_high": 13.1,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, m08: true sigma_TE = 0 exactly, rho fixed at its true value 0, deletion ON"
     },
     {
-      "id": "a5",
-      "role": "code",
-      "locator": "instance-papers/papers/mccutcheon2022-reappraising-variability/reanalysis/",
-      "status": "verified-usable",
-      "local_path": "reanalysis/",
-      "checked": {
-        "on": "2026-09-04",
-        "by": "maria",
-        "how": "python m01_formula.py; m02_coupling.py; m03_lm_sensitivity.py; m04_decoupled.py; m05_real_data.py; m06_calibrate_and_propagate.py; m07_pipeline_end_to_end.py; m08_decomposition.py; m09_variance_difference.py",
-        "result": "All nine run clean. m01 algebra and root ambiguity; m02 the three estimators under a known null; m03 the LM sensitivity finding; m04 the de-coupling that confirms the mechanism; m05 the correction on real data with its own validation block; m06 calibration to their arm sizes and the propagation; m07 the end-to-end pipeline test with positive control; m08 the decomposition that overturned my own hypothesis about which component mattered; m09 the variance-difference estimator and the fix to a weakness in m08. Every script carries its own negative control and writes a CSV."
-      }
-    },
-    {
-      "id": "a6",
-      "role": "derived-data",
-      "locator": "reanalysis/out_*.csv",
-      "status": "verified-usable",
-      "local_path": "reanalysis/",
-      "derived_from": [
-        "a3",
-        "a4",
-        "a5"
-      ],
-      "checked": {
-        "on": "2026-09-04",
-        "by": "maria",
-        "how": "written by the nine scripts above",
-        "result": "out_formula, out_coupling_null, out_coupling_positive_control, out_lm_sensitivity, out_lm_nsweep, out_decoupled, out_real_validation, out_real_rho, out_calibrated_artifact, out_propagation, out_deletion, out_pipeline, out_decomposition, out_variance_difference."
-      }
-    },
-    {
-      "id": "a7",
-      "role": "code",
-      "locator": "Senn 2016 (Stat Med 34:3554-3567) appendix, simulation parameters for Figures 1-3",
-      "status": "verified-usable",
-      "local_path": "reanalysis/m10_senn_identity.py",
-      "fetch_cmd": "curl -sL -o senn2016.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5054923/fullTextXML",
-      "checked": {
-        "on": "2026-09-04",
-        "by": "maria",
-        "how": "transcribed the appendix parameters verbatim (1000 pairs, means 0.5 L, variances 0.04 L^2, correlation 0.9 and 0.02) and re-ran them; python m10_senn_identity.py",
-        "result": "REPRODUCES, after a correction to my own implementation. Fig 2 world (replicate correlation r = 0.90): mean difference 0.514 L, SD 0.193 L, sigma_C = 0.183 L. Fig 3 world (r = 0.02): mean 0.492 L, SD 0.197 L, sigma_C = 0.041 L. THE MARGINALS ARE THE SAME IN BOTH and only the replicate distinguishes them. Analytic values are 0.190 and 0.028, a factor of 6.7 against the simulated 4.4 -- the gap is sampling noise in the estimated test-retest correlation at his own n = 1000, and is worth keeping because it prices the only design that identifies the quantity at all. A paper whose figure parameters are stated precisely enough to re-run seven years later, in an appendix, with no data deposit -- worth noting against the assumption that reproducibility requires a repository."
-      }
+     "name": "pooled_sigma_te_same_world_deletion_off",
+     "value": 0.08,
+     "unit": "PANSS points",
+     "n": 250,
+     "source": "maria 2026, m08"
     }
-  ],
-  "relations": [
+   ],
+   "evidence": [
+    "a3",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "This is selection on the outcome, and it is the load-bearing error -- which is NOT what I expected when I started. The compatibility condition is VR >= sqrt(1 - rho^2), so the deleted trials are exactly those whose drug arm was LEAST variable relative to placebo, i.e. those providing the strongest evidence against heterogeneity of treatment effect. Every surviving trial then yields a strictly positive sigma_TE by construction. In a world built with individual treatment effects identical for every patient (sigma_TE = 0.000 exactly), the deletion alone -- with rho FIXED AT ITS TRUE VALUE OF ZERO, so no correlation artifact whatever -- produces a pooled estimate of 11.5 PANSS points. Turning deletion off on the same data gives 0.08. The correlation artifact then adds on top: 11.5 at rho = 0, 17.3 at their -0.32, 18.9 at their -0.39. The paper does not report how many trials were removed; simulation at their arm sizes puts it near a third of the corpus.",
+    "by": "maria, 2026-09-04"
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "The published pipeline, run end to end on trial data generated with exactly zero individual treatment-effect heterogeneity, reports clinically significant heterogeneity of the same magnitude the paper reports.",
+   "scope": "My claim, not theirs. 64 simulated trials at the arm sizes transcribed from their supplement, every patient in every trial receiving an identical benefit from the drug, run through: per-trial VR, n-weighted Spearman rho across trials, the sigma_TE formula, deletion of incompatible trials, random-effects pooling of ln(sigma_TE).",
+   "quantities": [
     {
-      "type": "cito:critiques",
-      "target": "munkholm2020-antidepressant-variability",
-      "why": "This paper's target: the class of variability meta-analyses concluding 'VR near 1, therefore nothing to personalise'. Its diagnosis of the gap in those papers is correct."
+     "name": "pipeline_output_from_zero_heterogeneity_world",
+     "value": 14.9,
+     "unit": "PANSS points",
+     "n": 300,
+     "ci_low": 9.5,
+     "ci_high": 21.0,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, m07/m08; ranges 13.8 to 16.4 as the between-study SD of placebo response runs 8 down to 3 PANSS points"
     },
     {
-      "type": "cito:corrects",
-      "target": "munkholm2020-antidepressant-variability#c2",
-      "why": "My earlier record read Munkholm's bound as 0.00 outcome SDs under the additive model. That bound silently assumed rho = 0. McCutcheon et al. are right that the assumption is load-bearing: at rho = -0.32 the same antidepressant data imply sigma_TE of 5.24 HAMD points, nearly twice the 2.70-point mean drug-placebo difference.",
-      "asymmetric_note": "What is corrected is the STATUS of the number, not the number. 0.00 remains right conditional on rho = 0; what is withdrawn is treating that condition as innocuous. The replacement is a curve, not a different point estimate."
+     "name": "published_value_for_comparison",
+     "value": 13.5,
+     "unit": "PANSS points",
+     "n": 66,
+     "ci_low": 12.7,
+     "ci_high": 14.3,
+     "ci_kind": "confidence",
+     "source": "McCutcheon et al. 2022, Results"
     },
     {
-      "type": "cito:qualifies",
-      "target": "maria2026-antidepressant-variability-recalibration#c2",
-      "why": "That record framed the identification problem as two-dimensional -- additive versus multiplicative homogeneity. It is three-dimensional. rho is a third axis, it is larger than the other two, and it was already written down there as open question 3 before this paper was read."
+     "name": "pipeline_output_when_true_sigma_te_is_8",
+     "value": 16.6,
+     "unit": "PANSS points",
+     "n": 300,
+     "source": "maria 2026, m07 positive control: ratio reported/true = 2.07"
     },
     {
-      "type": "zoo:sharesUnstatedAssumptionWith",
-      "target": "galante2021-mbp-nonclinical",
-      "why": "Every variability-ratio analysis in the mindfulness corpus also assumes rho = 0 without saying so, and inherits exactly the same non-identification."
+     "name": "pipeline_output_when_true_sigma_te_is_20",
+     "value": 24.6,
+     "unit": "PANSS points",
+     "n": 300,
+     "source": "maria 2026, m07 positive control: ratio 1.23, so the pipeline does carry some signal on top of a floor near 15"
     },
     {
-      "type": "cito:usesDataFrom",
-      "target": "munkholm2020-antidepressant-variability",
-      "why": "c6 and the real-data half of c7 run on the GRISELDA extraction verified for that record."
-    },
-    {
-      "type": "cito:agreesWith",
-      "target": "maria2026-analytic-variability-reanalysis",
-      "why": "Same structural finding in a different literature: a statistic that shares a term with the thing it is correlated against manufactures a result. There it was the treated arm's sample SD sitting in both the SMD and lnVR; here it is the placebo arm's mean sitting in both the placebo response and the treatment effect."
-    },
-    {
-      "type": "cito:citesAsAuthority",
-      "target": "senn2016-mastering-variation",
-      "why": "The identification result underneath everything here. Priority for the design conclusion is his."
+     "name": "variance_difference_estimator_on_the_same_null_world",
+     "value": 0.44,
+     "unit": "squared PANSS points",
+     "n": 300,
+     "ci_low": -21.57,
+     "ci_high": 19.66,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, m09: true value 0; false-positive rate 4.0% against a nominal 5%"
     }
-  ],
-  "open_questions": [
-    "The one parameter I could not measure is the between-study SD of placebo response in antipsychotic trials. The artifact accounts for 39% of their study-level rho at 10 PANSS points and 109% at 3. Agid et al. 2013 and Rutherford et al. 2014 both meta-regress placebo response in antipsychotic trials and would pin it down; neither was read.",
-    "The two individual-patient methods cannot be tested without the YODA trial (NCT00650793). Access is by application. If it were obtained, the direct test is available: compute sigma_TE from the IPD and see which ROOT of the quadratic it matches, which is the adjudication the paper had the data to make and did not report.",
-    "My variance-difference estimator's interval coverage falls to 72% at sigma_TE = 20 because Var(s^2) = 2 sigma^4/(n-1) assumes normality and the drug arm is a mixture. A cluster bootstrap over trials would fix it and is not built.",
-    "Is there ANY design that identifies rho? An N-of-1 or repeated-crossover trial measures the same patient under both conditions more than once and can separate a true individual effect from occasion noise. Marwick et al. 2018 systematically reviewed N-of-1 trials in schizophrenia. That is the only literature that could settle this, and it is unread.",
-    "Six psychiatric variability meta-analyses now exist (antipsychotics, antidepressants x2, brain stimulation, PTSD psychotherapy, depression psychotherapy). All report VR and none reports D = sigma_AT^2 - sigma_PL^2 with an interval. Recomputing D for all six from published tables is a small job with a real payoff: it is the quantity that is actually identified.",
-    "The identity sigma_TE = -2 rho sigma_PL at VR = 1 means every published rho in this literature can be read back as an assumed within-patient correlation r = 1 - 2 rho^2. Doing that for all six psychiatric variability meta-analyses would put their assumptions on one comparable scale, which is a small job and would make the disagreements legible."
-  ],
-  "curation": {
-    "author": "maria",
-    "created": "2026-09-04",
-    "verified": "2026-09-04",
-    "notes_file": "NOTES.md"
+   ],
+   "evidence": [
+    "a5",
+    "a6"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Robust across every variation I tried: 14.6 with a within-trial SD that varies between trials, 15.6 and 15.4 with change scores skewed either way, 15.0 under DerSimonian-Laird rather than Paule-Mandel pooling, 18.1 with the arms halved. The positive control shows the pipeline is not simply printing 13 regardless -- it tracks a true sigma_TE of 20 as 24.6 -- but it has a floor near 15 that it never goes below, so it cannot distinguish zero heterogeneity from 8 PANSS points of it. Their observed 13.5 sits BELOW my null-world value. One caveat I hold against myself: an earlier version of this test pooled ln(sigma_TE) with incompatible trials floored at 0.001, and on a log scale a zero is minus infinity, so that column depended on a floor I chose. Redone in m09 on the variance-difference scale, where zero is an ordinary number, the null world gives 0.44 [-21.6, +19.7] squared points against a true 0, with correct false-positive rate. The finding survives the fix.",
+    "by": "maria, 2026-09-04"
+   }
+  },
+  {
+   "id": "c6",
+   "statement": "On the largest antidepressant corpus available, the study-level correlation between placebo response and treatment effect is entirely accounted for by shared sampling error, and the excess variance in the drug arm is not distinguishable from zero.",
+   "scope": "My claim, not theirs. Cipriani GRISELDA workbook: 341-344 drug-vs-placebo comparisons in 219-221 studies, 61,144 adults, HAMD-17/21 or MADRS. A different literature from theirs, tested because it is the one whose per-arm data I can reach.",
+   "quantities": [
+    {
+     "name": "study_level_rho_as_published_methods_would_compute_it",
+     "value": -0.178,
+     "unit": "Pearson correlation",
+     "n": 341,
+     "clusters": 219,
+     "ci_low": -0.332,
+     "ci_high": -0.028,
+     "ci_kind": "confidence",
+     "source": "maria 2026, m05; Spearman -0.211 ; interval by cluster bootstrap over studies, 4000 draws"
+    },
+    {
+     "name": "study_level_rho_after_removing_shared_sampling_error",
+     "value": 0.001,
+     "unit": "Pearson correlation",
+     "n": 341,
+     "clusters": 219,
+     "ci_low": -0.209,
+     "ci_high": 0.202,
+     "ci_kind": "confidence",
+     "source": "maria 2026, m05 ; interval by cluster bootstrap over studies, 4000 draws"
+    },
+    {
+     "name": "study_level_rho_change_scores_only_corrected",
+     "value": -0.065,
+     "unit": "Pearson correlation",
+     "n": 240,
+     "clusters": 146,
+     "ci_low": -0.337,
+     "ci_high": 0.209,
+     "ci_kind": "confidence",
+     "source": "maria 2026, m05: raw -0.235, so 72% of the raw value is shared sampling error ; interval by cluster bootstrap over studies, 4000 draws"
+    },
+    {
+     "name": "pooled_variance_difference_antidepressants",
+     "value": -0.384,
+     "unit": "squared HAMD/MADRS points",
+     "n": 344,
+     "clusters": 221,
+     "ci_low": -1.636,
+     "ci_high": 0.868,
+     "ci_kind": "confidence",
+     "source": "maria 2026, m09: random-effects (Paule-Mandel), I2 = 0%, p = 0.548. SUPERSEDED 2026-09-06: this pools squared points of HAMD17, HAMD21, HAMD24 and MADRS into one number -- the unit field says so out loud and I wrote it anyway. D carries units. Use the per-scale rows below.",
+     "status": "superseded",
+     "superseded_by": "mccutcheon2022-reappraising-variability#c6"
+    },
+    {
+     "name": "implied_sigma_te_antidepressants_at_rho_zero",
+     "value": 0.93,
+     "unit": "HAMD/MADRS points, upper 95% limit",
+     "n": 344,
+     "source": "maria 2026, m09; the point estimate has no real solution because D < 0"
+    },
+    {
+     "name": "implied_sigma_te_antidepressants_at_rho_minus_0_32",
+     "value": 5.24,
+     "unit": "HAMD/MADRS points",
+     "n": 344,
+     "ci_low": 4.99,
+     "ci_high": 5.47,
+     "ci_kind": "confidence",
+     "source": "maria 2026, m09: 1.94x the 2.70-point mean drug-placebo difference"
+    },
+    {
+     "name": "variance_difference_antidepressants_hamd17",
+     "value": -0.54,
+     "unit": "squared HAMD17 points",
+     "n": 166,
+     "ci_low": -2.067,
+     "ci_high": 0.986,
+     "ci_kind": "confidence",
+     "source": "maria 2026, m11: pooled-variance weight (statlib.var_diff weight='pooled'), Paule-Mandel. With the naive weight -0.474 [-2.003, +1.055] -- the weight is immaterial here because this corpus's arms are balanced (drug smaller in 169 of 344 comparisons, medians 102 vs 101), so the p05 bias mechanism barely fires: calibrated bias +0.054 naive, +0.044 pooled, coverage 95.8% and 95.2%."
+    },
+    {
+     "name": "variance_difference_antidepressants_madrs",
+     "value": 0.816,
+     "unit": "squared MADRS points",
+     "n": 49,
+     "ci_low": -3.508,
+     "ci_high": 5.141,
+     "ci_kind": "confidence",
+     "source": "maria 2026, m11"
+    },
+    {
+     "name": "max_leave_one_out_influence_ratio_hamd17",
+     "value": 0.18,
+     "unit": "fraction of the CI half-width",
+     "n": 166,
+     "source": "maria 2026, m12: worst single-study deletion moves D by +0.276 against a CI half-width of 1.526. The subset is stable."
+    },
+    {
+     "name": "max_leave_one_out_influence_ratio_hamd21",
+     "value": 0.73,
+     "unit": "fraction of the CI half-width",
+     "n": 129,
+     "source": "maria 2026, m12: dropping Dube2010 (NCT00420004) alone moves the pooled-weight D by -1.924 against a CI half-width of 2.644, and flips its sign. HAMD21 is NOT estimable here without a decision about that trial."
+    }
+   ],
+   "evidence": [
+    "a4",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "The correction is an ordinary errors-in-variables adjustment; the only thing worth noticing is that the two error terms are the SAME error, so it is a covariance correction and not two independent attenuations. Validated first on data where the answer was known: at a true rho of 0 the raw estimator gives -0.113 at arm n = 30 and the corrected one gives +0.004; at a true -0.30 it gives -0.300; at a true +0.30, where the raw estimator reads +0.121, it gives +0.310. It recovers positive values, so it is not merely subtracting a constant. The shared sampling variance is 14-24% of the observed variance in placebo response, comfortably away from the degenerate case. CAVEAT recorded honestly: for the raw-endpoint comparisons the placebo response is baseline minus endpoint and the GRISELDA deposit has no baseline SDs, so Var(P) is under-corrected there and the +0.085 for that subset should not be quoted. The change-score subset, where the correction is exact, is the one to use. CORRECTED IN PLACE 2026-09-06 (from ploderl2019-personalised-antidepressants, m11-m12): the -0.384 pooled four measurement scales into one squared-points number and is superseded by the per-scale rows. Two things were checked and did NOT change it: the inverse-variance weight (the p05 bias needs unequal arms and this corpus is balanced) and Paule-Mandel vs DerSimonian-Laird. What DID change it is the units. The comparable HAMD17 figure is -0.540 [-2.067, +0.986], against +0.444 [-1.748, +2.637] on Ploderl's independent HAMD17 corpus: opposite signs, both straddling zero, intervals overlapping over most of their length. Two corpora, one conclusion -- D is not distinguishable from zero.",
+    "by": "maria, 2026-09-04"
+   }
+  },
+  {
+   "id": "c7",
+   "statement": "sigma_TE is not identified from aggregate trial data. What the data fix is D = sigma_AT^2 - sigma_PL^2; the honest report is D plus a sensitivity curve in rho, not a single number.",
+   "scope": "My positive proposal, arising from c1-c6. Applies to every variability-ratio meta-analysis in psychiatry, of which there are now at least six.",
+   "quantities": [
+    {
+     "name": "variance_difference_coverage_at_null",
+     "value": 0.96,
+     "unit": "fraction of 95% intervals covering the truth",
+     "count": 288,
+     "denominator": 300,
+     "n": 300,
+     "source": "maria 2026, m09"
+    },
+    {
+     "name": "variance_difference_coverage_at_sigma_te_20",
+     "value": 0.72,
+     "unit": "fraction of 95% intervals covering the truth",
+     "count": 216,
+     "denominator": 300,
+     "n": 300,
+     "source": "maria 2026, m09: coverage DEGRADES for large true sigma_TE because Var(s^2) = 2 sigma^4/(n-1) assumes normality and the drug arm becomes a mixture. Recorded as a limitation of my own proposal, not of the null case."
+    },
+    {
+     "name": "sigma_te_spread_over_the_plausible_rho_range_antidepressants",
+     "value": 10.26,
+     "unit": "HAMD points at rho = -0.62 versus 0.93 upper limit at rho = 0",
+     "n": 344,
+     "source": "maria 2026, m09: an eleven-fold range from one unmeasured parameter"
+    }
+   ],
+   "evidence": [
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "D is estimable without assumption, unbiased, has a known sampling distribution, can legitimately be negative, and needs no square root, no branch choice and no deletion -- every pathology in the published pipeline enters when the identity is inverted for sigma_TE BEFORE pooling rather than after. Narrower scope for two reasons I want on the record. First, my own estimator's interval coverage falls to 72% at sigma_TE = 20 because the normality assumption behind Var(s^2) fails when the drug arm is a mixture; a bootstrap is needed there, and I have not built it. Second, and more important: this does not rescue the question. It reports honestly that the question is unanswerable from aggregate data. McCutcheon et al. are RIGHT that assuming rho = 0 is not innocuous -- it is the assumption my own munkholm2020 record made silently, and it is the third open question I had already written down there on 2026-09-02. Their diagnosis of the gap is correct. Their instrument for filling it is not.",
+    "by": "maria, 2026-09-04"
+   }
+  },
+  {
+   "id": "c8",
+   "statement": "When the two arm variances are equal, rho and sigma_TE are the same unknown in different units: sigma_TE = -2 rho sigma_PL exactly, and rho = -sqrt((1-r)/2) where r is the within-patient correlation between drug and placebo outcomes. rho is therefore negative by construction, and estimating it 'independently' assumes the answer rather than adding evidence. Separately, Senn's own worlds show that even a CLASSICAL cross-over cannot separate real individual response from occasion noise: only a replicate does.",
+   "scope": "Algebraic, exact, for VR = 1; verified by simulation across r from 0 to 0.99. The general form is rho = (r*VR - 1)/sqrt(VR^2 + 1 - 2 r VR).",
+   "quantities": [
+    {
+     "name": "rho_at_within_patient_correlation_0_90",
+     "value": -0.2236,
+     "unit": "correlation",
+     "n": 400000,
+     "source": "maria 2026, m10: predicted -0.2236 by the identity, simulated -0.2244 at n = 400,000"
+    },
+    {
+     "name": "rho_at_within_patient_correlation_0_00",
+     "value": -0.7071,
+     "unit": "correlation",
+     "n": 400000,
+     "source": "maria 2026, m10: predicted -0.7071, simulated -0.7080. This is the value at INDEPENDENCE, not a floor: r < 0 gives rho below it, down to -1 at r = -1."
+    },
+    {
+     "name": "within_patient_correlation_implied_by_their_headline_rho",
+     "value": 0.795,
+     "unit": "correlation between a patient's drug and placebo outcomes",
+     "n": 66,
+     "source": "maria 2026, m10: r = 1 - 2 rho^2 at rho = -0.32"
+    },
+    {
+     "name": "within_patient_correlation_implied_by_their_open_label_rho",
+     "value": 0.231,
+     "unit": "correlation",
+     "n": 88,
+     "source": "maria 2026, m10: r = 1 - 2 rho^2 at rho = -0.62"
+    },
+    {
+     "name": "senn_double_crossover_sigma_C_high_reliability",
+     "value": 0.1832,
+     "unit": "litres FEV1",
+     "n": 1000,
+     "source": "maria 2026, m10: Senn 2016 Fig 2 parameters (r = 0.90 between replicate estimates of the same patient's effect); analytic value 0.1897"
+    },
+    {
+     "name": "senn_double_crossover_sigma_C_low_reliability",
+     "value": 0.0413,
+     "unit": "litres FEV1",
+     "n": 1000,
+     "source": "maria 2026, m10: Senn 2016 Fig 3 parameters (r = 0.02); analytic value 0.0283. Marginal mean 0.5 L and SD 0.2 L IDENTICAL to the Fig 2 world."
+    }
+   ],
+   "evidence": [
+    "a5",
+    "a7"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "This is the sharpest thing I found and it is algebra, not simulation -- the simulation only confirms it to three decimals. Two consequences. FIRST, a negative rho is the only thing the geometry permits: across the whole grid of plausible within-patient correlations (r = 0.4 to 0.95) and observed variability ratios (VR = 0.95 to 1.05), rho is negative in every cell. So obtaining a negative estimate confirms nothing whatever, and the paper's 'a negative correlation was a priori expected' is exactly right in a way that undercuts rather than supports the argument -- what is expected a priori cannot also be evidence. SECOND, at VR = 1 their formula reduces to sigma_TE = -2 rho sigma_PL, so it contributes nothing beyond rho: rho IS the answer, restated. Their headline is the assumption that a patient's drug and placebo outcomes correlate 0.795; their open-label estimate is the assumption that they correlate 0.231. No aggregate dataset can check either, because r is a within-patient quantity and a parallel-group trial never observes the same patient twice. CORRECTION MADE IN PLACE 2026-09-04, same session: I first implemented Senn's Figures 2-3 as pairs of (placebo, active) OUTCOMES correlated r and recorded that they reproduced. They are pairs of DIFFERENCES across two replicate period-pairs of a double cross-over, so r is the test-retest reliability of a patient's own treatment effect, not a within-patient outcome correlation. Re-read his body text and appendix together and re-implemented. The misreading made his point weaker than it is: in the corrected version both worlds have IDENTICAL marginal mean (0.5 L) and SD (0.2 L) of the observed difference, so a classical cross-over sees the same data too, and only the second replicate separates sigma_C = 0.19 L from sigma_C = 0.03 L. My rho identity in section 2 is my own derivation and is unaffected; it now uses a separate generator so the two cannot be conflated again.",
+    "by": "maria, 2026-09-04"
+   }
+  },
+  {
+   "id": "c9",
+   "statement": "An increased variance in the treated arm can equally be patient-by-treatment interaction or occasion-to-occasion variation that is larger under one treatment than the other, and no parallel-group trial can separate them.",
+   "scope": "Senn 2016, Tables 1-2, applied to this literature. A fourth axis of non-identification, distinct from the three already recorded in this area.",
+   "quantities": [
+    {
+     "name": "components_identifiable_in_a_parallel_group_trial",
+     "value": 0.25,
+     "unit": "fraction of the four components A,B,C,D that a parallel-group trial identifies",
+     "count": 1,
+     "denominator": 4,
+     "n": 1,
+     "source": "Senn 2016 Table 2: parallel group identifies A only; B + C + D form the error term. Classical cross-over identifies A and B, confounding C + D. Only a REPEATED-PERIOD cross-over identifies C."
+    }
+   ],
+   "evidence": [
+    "a7"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Senn published this in 2015 and it subsumes everything else in this folder. C -- patient-by-treatment interaction -- IS sigma_TE^2, and it is confounded with between-patient variation and within-patient noise in exactly the design this whole literature uses. His own counter-example is the cleanest: an oral versus an intravenous formulation may show a larger treated-arm variance because absorption varies BETWEEN patients (interaction, real heterogeneity) or because absorption varies FROM OCCASION TO OCCASION within a patient (noise, no heterogeneity at all). VR is identical. PRIORITY IS HIS, not mine, and the design conclusion -- that only replication at the patient level identifies individual response -- was in print seven years before the paper I spent this session on, which cites the adjacent Senn 2018 Nature piece. What this session adds is not the principle but the audit: how much a specific published pipeline gets wrong, by what mechanism, and what to report instead.",
+    "by": "maria, 2026-09-04"
+   }
   }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "supplement",
+   "locator": "https://zenodo.org/record/5896334 -- McCutcheon_supplementary6.0.docx",
+   "status": "verified-usable",
+   "bytes": 519355,
+   "sha256": "8b53ff9e89d0d0e24e6b43cc7255c6ddb801cf10577bf87b9a476d943dc06dbe",
+   "license": "CC-BY-4.0",
+   "local_path": "artifacts/mccutcheon2022_supplementary.docx",
+   "fetch_cmd": "curl -sL -o supp.docx https://zenodo.org/api/records/5896334/files/McCutcheon_supplementary6.0.docx/content",
+   "checked": {
+    "on": "2026-09-04",
+    "by": "maria",
+    "how": "sha256sum; then unzipped word/document.xml and stripped tags to plain text (the file is 60,377 characters of which roughly two thirds is embedded Mendeley CSL citation JSON that has to be filtered before anything is readable)",
+    "result": "USABLE and it is where the load-bearing disclosures live. Three things appear here and NOT in the main paper: (a) the exact linear-model specification, without which the coupling in c3 cannot be identified; (b) the acknowledgement that for VR <= 1 the formula has TWO admissible solutions, with the justification for picking one ('a large discontinuities ... appears implausible'); (c) the single sentence disclosing that incompatible trials were deleted. Credit where due: none of this is hidden. It is disclosed in the place fewest readers look, and the deletion is one sentence with no count attached."
+   },
+   "datasheet": {
+    "composition": "Statistical analysis detail, PRISMA checklist and flow, the included-studies table (66 rows: study, antipsychotic, dose, trial duration, antipsychotic arm Ns, placebo arm N), and eFigures 1-3 as embedded images.",
+    "caveats": "The included-studies table gives arm SIZES but no per-arm means or SDs, so the study-level rho of -0.39 and the per-trial VRs cannot be recomputed from the deposit. Only the artifact component can be predicted, which is what m06 does."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "supplement",
+   "locator": "https://www.medrxiv.org/content/10.1101/2021.11.03.21265858v1.full.pdf",
+   "status": "verified-usable",
+   "bytes": 1425105,
+   "sha256": "867b9f1309ae106d4ce4bea65aaeeb144cb1fd34c1435cc19a998abf98a5fc36",
+   "license": "CC-BY-ND-4.0",
+   "local_path": "artifacts/mccutcheon2021_medrxiv.pdf",
+   "fetch_cmd": "curl -sL -o reappraisal.pdf https://www.medrxiv.org/content/10.1101/2021.11.03.21265858v1.full.pdf",
+   "checked": {
+    "on": "2026-09-04",
+    "by": "maria",
+    "how": "PyMuPDF 1.28.0 page-by-page text extraction, 22 pages, 49,096 characters",
+    "result": "USABLE with one trap worth recording: EVERY equation in the preprint is an embedded image or OMML and extracts as blank space, so the central formula is simply absent from the extracted text. I derived it from the variance identity instead and only afterwards found it stated in words in the PMC rendering of the version of record. Anyone relying on text extraction of this PDF would silently lose the paper's mathematical content."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "in-paper-table",
+   "locator": "Europe PMC supplementary bundle for PMC7610422 (McCutcheon et al. 2021, Mol Psychiatry) -- EMS83518-supplement-1.docx, included-studies table",
+   "status": "present-but-insufficient",
+   "bytes": 4214373,
+   "local_path": "artifacts/mcc2021_arm_sizes.csv",
+   "fetch_cmd": "curl -s https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7610422/supplementaryFiles -o supp.zip",
+   "checked": {
+    "on": "2026-09-04",
+    "by": "maria",
+    "how": "unzipped, parsed the 67-row 6-column Word table, transcribed to CSV: study, n_drug_arms, n_drug_total, n_placebo, duration_wk",
+    "result": "PRESENT-BUT-INSUFFICIENT, which is the whole point. It gives arm sizes for all 66 trials -- median placebo arm 71, mean 78, range 4 to 178, 148 drug arms in total -- which is enough to CALIBRATE the artifact and was worth having. It does NOT give per-arm means or SDs, so the central parameter of the 2022 paper cannot be rechecked from either deposit. TRANSCRIPTION CAVEAT: my parse totals 16,791 patients against the 17,202 the papers report, a 2.4% shortfall, most likely from dose strings being mis-parsed as arm sizes in a few multi-arm rows. Arm-size DISTRIBUTION is what m06/m07/m08 use and it is unaffected at that tolerance; do not quote the total."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "raw-data",
+   "locator": "Cipriani et al. GRISELDA open data, https://data.mendeley.com/datasets/83rthbp8ys/2",
+   "status": "verified-usable",
+   "bytes": 189027,
+   "sha256": "16743cadb138a9fe35561c49c6c32aee382d236a49ae5063cce5385707c00afc",
+   "local_path": "../munkholm2020-antidepressant-variability/artifacts/cipriani2018.xlsx",
+   "fetch_cmd": "see munkholm2020-antidepressant-variability artifact a1",
+   "checked": {
+    "on": "2026-09-02",
+    "by": "maria",
+    "how": "reused the extraction verified for munkholm2020-antidepressant-variability; here consumed via reanalysis/out_comparisons.csv",
+    "result": "REUSED, not re-verified. 344 drug-vs-placebo comparisons in 221 studies. Used for c6 and for the real-data half of c7. Its known limitation matters here too: no baseline SDs, which is why the raw-endpoint subset is under-corrected in m05."
+   }
+  },
+  {
+   "id": "a5",
+   "role": "code",
+   "locator": "instance-papers/papers/mccutcheon2022-reappraising-variability/reanalysis/",
+   "status": "verified-usable",
+   "local_path": "reanalysis/",
+   "checked": {
+    "on": "2026-09-04",
+    "by": "maria",
+    "how": "python m01_formula.py; m02_coupling.py; m03_lm_sensitivity.py; m04_decoupled.py; m05_real_data.py; m06_calibrate_and_propagate.py; m07_pipeline_end_to_end.py; m08_decomposition.py; m09_variance_difference.py",
+    "result": "All nine run clean. m01 algebra and root ambiguity; m02 the three estimators under a known null; m03 the LM sensitivity finding; m04 the de-coupling that confirms the mechanism; m05 the correction on real data with its own validation block; m06 calibration to their arm sizes and the propagation; m07 the end-to-end pipeline test with positive control; m08 the decomposition that overturned my own hypothesis about which component mattered; m09 the variance-difference estimator and the fix to a weakness in m08. Every script carries its own negative control and writes a CSV."
+   }
+  },
+  {
+   "id": "a6",
+   "role": "derived-data",
+   "locator": "reanalysis/out_*.csv",
+   "status": "verified-usable",
+   "local_path": "reanalysis/",
+   "derived_from": [
+    "a3",
+    "a4",
+    "a5"
+   ],
+   "checked": {
+    "on": "2026-09-04",
+    "by": "maria",
+    "how": "written by the nine scripts above",
+    "result": "out_formula, out_coupling_null, out_coupling_positive_control, out_lm_sensitivity, out_lm_nsweep, out_decoupled, out_real_validation, out_real_rho, out_calibrated_artifact, out_propagation, out_deletion, out_pipeline, out_decomposition, out_variance_difference."
+   }
+  },
+  {
+   "id": "a7",
+   "role": "code",
+   "locator": "Senn 2016 (Stat Med 34:3554-3567) appendix, simulation parameters for Figures 1-3",
+   "status": "verified-usable",
+   "local_path": "reanalysis/m10_senn_identity.py",
+   "fetch_cmd": "curl -sL -o senn2016.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5054923/fullTextXML",
+   "checked": {
+    "on": "2026-09-04",
+    "by": "maria",
+    "how": "transcribed the appendix parameters verbatim (1000 pairs, means 0.5 L, variances 0.04 L^2, correlation 0.9 and 0.02) and re-ran them; python m10_senn_identity.py",
+    "result": "REPRODUCES, after a correction to my own implementation. Fig 2 world (replicate correlation r = 0.90): mean difference 0.514 L, SD 0.193 L, sigma_C = 0.183 L. Fig 3 world (r = 0.02): mean 0.492 L, SD 0.197 L, sigma_C = 0.041 L. THE MARGINALS ARE THE SAME IN BOTH and only the replicate distinguishes them. Analytic values are 0.190 and 0.028, a factor of 6.7 against the simulated 4.4 -- the gap is sampling noise in the estimated test-retest correlation at his own n = 1000, and is worth keeping because it prices the only design that identifies the quantity at all. A paper whose figure parameters are stated precisely enough to re-run seven years later, in an appendix, with no data deposit -- worth noting against the assumption that reproducibility requires a repository."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:critiques",
+   "target": "munkholm2020-antidepressant-variability",
+   "why": "This paper's target: the class of variability meta-analyses concluding 'VR near 1, therefore nothing to personalise'. Its diagnosis of the gap in those papers is correct."
+  },
+  {
+   "type": "cito:corrects",
+   "target": "munkholm2020-antidepressant-variability#c2",
+   "why": "My earlier record read Munkholm's bound as 0.00 outcome SDs under the additive model. That bound silently assumed rho = 0. McCutcheon et al. are right that the assumption is load-bearing: at rho = -0.32 the same antidepressant data imply sigma_TE of 5.24 HAMD points, nearly twice the 2.70-point mean drug-placebo difference.",
+   "asymmetric_note": "What is corrected is the STATUS of the number, not the number. 0.00 remains right conditional on rho = 0; what is withdrawn is treating that condition as innocuous. The replacement is a curve, not a different point estimate."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "maria2026-antidepressant-variability-recalibration#c2",
+   "why": "That record framed the identification problem as two-dimensional -- additive versus multiplicative homogeneity. It is three-dimensional. rho is a third axis, it is larger than the other two, and it was already written down there as open question 3 before this paper was read."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "galante2021-mbp-nonclinical",
+   "why": "Every variability-ratio analysis in the mindfulness corpus also assumes rho = 0 without saying so, and inherits exactly the same non-identification."
+  },
+  {
+   "type": "cito:usesDataFrom",
+   "target": "munkholm2020-antidepressant-variability",
+   "why": "c6 and the real-data half of c7 run on the GRISELDA extraction verified for that record."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "maria2026-analytic-variability-reanalysis",
+   "why": "Same structural finding in a different literature: a statistic that shares a term with the thing it is correlated against manufactures a result. There it was the treated arm's sample SD sitting in both the SMD and lnVR; here it is the placebo arm's mean sitting in both the placebo response and the treatment effect."
+  },
+  {
+   "type": "cito:citesAsAuthority",
+   "target": "senn2016-mastering-variation",
+   "why": "The identification result underneath everything here. Priority for the design conclusion is his."
+  }
+ ],
+ "open_questions": [
+  "The one parameter I could not measure is the between-study SD of placebo response in antipsychotic trials. The artifact accounts for 39% of their study-level rho at 10 PANSS points and 109% at 3. Agid et al. 2013 and Rutherford et al. 2014 both meta-regress placebo response in antipsychotic trials and would pin it down; neither was read.",
+  "The two individual-patient methods cannot be tested without the YODA trial (NCT00650793). Access is by application. If it were obtained, the direct test is available: compute sigma_TE from the IPD and see which ROOT of the quadratic it matches, which is the adjudication the paper had the data to make and did not report.",
+  "My variance-difference estimator's interval coverage falls to 72% at sigma_TE = 20 because Var(s^2) = 2 sigma^4/(n-1) assumes normality and the drug arm is a mixture. A cluster bootstrap over trials would fix it and is not built.",
+  "Is there ANY design that identifies rho? An N-of-1 or repeated-crossover trial measures the same patient under both conditions more than once and can separate a true individual effect from occasion noise. Marwick et al. 2018 systematically reviewed N-of-1 trials in schizophrenia. That is the only literature that could settle this, and it is unread.",
+  "Six psychiatric variability meta-analyses now exist (antipsychotics, antidepressants x2, brain stimulation, PTSD psychotherapy, depression psychotherapy). All report VR and none reports D = sigma_AT^2 - sigma_PL^2 with an interval. Recomputing D for all six from published tables is a small job with a real payoff: it is the quantity that is actually identified.",
+  "The identity sigma_TE = -2 rho sigma_PL at VR = 1 means every published rho in this literature can be read back as an assumed within-patient correlation r = 1 - 2 rho^2. Doing that for all six psychiatric variability meta-analyses would put their assumptions on one comparable scale, which is a small job and would make the disagreements legible."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-09-04",
+  "verified": "2026-09-04",
+  "notes_file": "NOTES.md"
+ }
 }

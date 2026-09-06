@@ -176,11 +176,68 @@ paper that noticed this, and **its diagnosis is correct**. Its instrument is not
 D is unbiased, has a known sampling distribution, **can legitimately be
 negative**, and needs no square root, no branch choice and no deletion. Every
 pathology above enters when the identity is inverted for sigma_TE *before*
-pooling instead of after. For antidepressants **D = -0.384 [-1.636, +0.868]**
-squared HAMD points, I2 = 0%. Then publish the curve, not a number: implied
-sigma_TE is <= 0.93 at rho = 0, 3.37 at -0.21, 5.24 at -0.32, 10.26 at -0.62 —
-an **eleven-fold range from one unmeasured parameter**, against a mean
-drug-placebo difference of 2.70 points.
+pooling instead of after.
+
+**D carries UNITS and two corpora now have it, per scale.** Squared points of
+HAMD17 are not squared points of MADRS.
+
+| corpus | scale | k | D | I2 |
+|---|---|---|---|---|
+| Munkholm (via `mccutcheon2022`, m11) | HAMD17 | 166 | **-0.540 [-2.067, +0.986]** | 0% |
+| Plöderl & Hengartner (`ploderl2019`, p06) | HAMD17 | 71 | **+0.444 [-1.748, +2.637]** | 0% |
+| Munkholm | MADRS | 49 | +0.816 [-3.508, +5.141] | 0% |
+| Plöderl | HAMD21 | 52 | *not estimable — see Dube2010 below* | |
+
+Opposite signs, both straddling zero, intervals overlapping over most of their
+length. **Two corpora, one conclusion: D is not distinguishable from zero.**
+
+> **CORRECTED IN PLACE 2026-09-06.** This paragraph previously read *"For
+> antidepressants **D = -0.384 [-1.636, +0.868]** squared HAMD points, I2 = 0%"*.
+> That number pooled squared HAMD17, HAMD21, HAMD24 and MADRS points into one
+> figure; its own unit string read "squared HAMD/MADRS points" and I wrote it
+> anyway. Marked `superseded` in `mccutcheon2022#c6`, and `kb.py stale-claims`
+> found this copy of it. **Two candidate defects were checked and cleared**: the
+> inverse-variance weight (a real bias, found on Plöderl's corpus, but it needs
+> unequal arm sizes and the Munkholm arms are balanced) and the heterogeneity
+> estimator. Only the units mattered.
+
+**Pooling a difference of variances is not free, and the obvious way is biased.**
+`v_i = 2 s1^4/(n1-1) + 2 s2^4/(n2-1)` makes the weight a function of the same
+draw as the numerator, so whichever arm is smaller has its deviations shrunk
+harder and the pool drifts the other way. On Plöderl's corpus (placebo arm
+smaller in 116 of 169 trials) the naive estimator returns **+0.514 squared points
+from a world with D = 0 by construction**, with 90.2% coverage of a nominal 95%
+interval. Three predictions of that mechanism were stated and all held: equal
+arm sizes cut the bias to +0.064; swapping the arms reversed it to -0.567; a
+weight built from the across-arm pooled variance removes it (-0.003, coverage
+96.6%). `statlib.var_diff(..., weight="pooled")` is the fix and its docstring
+carries the numbers.
+
+**And simulation validates the estimator, not the corpus.** A contaminated-null
+simulation built specifically to catch the loss of robustness caught nothing —
+both weights survived one trial at an SD ratio of 2.7 among 129. Yet on the real
+HAMD21 data the two weights differ by 1.46 and **one trial explains all of it**:
+`Dube2010 (NCT00420004)`, drug SD 8.8, placebo SD 3.3, n 54 vs 122. Deleting it
+moves Plöderl's HAMD21 D by -3.18 (73% of its own CI half-width, sign flip) and
+Munkholm's by -1.92. Always report `statlib.max_loo_influence` beside D. On the
+HAMD17 subsets it is 14% and 18% of the CI half-width, which is why those two
+rows are in the table above and HAMD21 is not.
+
+**The same anomalous trial sits in both corpora, and that is the more important
+finding.** Plöderl & Hengartner name it themselves, in a Table 1 footnote,
+having found it through the heterogeneity index of a different statistic. I
+found it through leave-one-out in a different corpus. Munkholm et al. and
+Plöderl & Hengartner assembled their trial sets from different reviews, and I
+had been reading their agreement as replication. **They share trials**, because
+both draw on the same registries and the same FDA submissions. Agreement between
+two meta-analyses of overlapping trial sets is worth much less than it looks,
+and this is the first hard evidence of the overlap in this area.
+
+Then publish the curve, not a number. On Plöderl's HAMD17 corpus, with a median
+placebo-arm SD of 7.76 points against a 1.88-point mean drug-placebo difference,
+the upper confidence limit of D bounds sigma_TE at **1.62 points at rho = 0**,
+2.58 at -0.10, 3.93 at -0.21, **5.45 at -0.32** and 9.89 at -0.62 — a **six-fold
+range from one unmeasured parameter**.
 
 **And at VR = 1 the formula is an identity, not an estimator.** With equal arm
 variances, writing r for the within-patient correlation between a patient's

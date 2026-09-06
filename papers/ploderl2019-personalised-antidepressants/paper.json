@@ -1,0 +1,681 @@
+{
+ "schema_version": "1.3",
+ "id": "ploderl2019-personalised-antidepressants",
+ "title": "What are the chances for personalised treatment with antidepressants? Detection of patient-by-treatment interaction with a variance ratio meta-analysis",
+ "authors": [
+  "Martin Plöderl",
+  "Michael Pascal Hengartner"
+ ],
+ "year": 2019,
+ "venue": "BMJ Open 9(12):e034816",
+ "area": [
+  "treatment-effect-heterogeneity"
+ ],
+ "identifiers": {
+  "doi": "10.1136/bmjopen-2019-034816",
+  "pmid": "31874900",
+  "pmcid": "PMC7008413",
+  "url": "https://bmjopen.bmj.com/content/9/12/e034816"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 31,
+  "bytes_downloaded": 705000,
+  "compute_notes": "BMJ Open PDF 336,597 B; Europe PMC JATS full text 74,205 B; seven OSF files (five R scripts, two supplementary PDFs) 153 KB; Cipriani et al. 2018 GRISELDA workbook from Mendeley 189,027 B, sha256 16743cad... Eight analysis scripts p01-p08. Longest is p05 (53 s, 4500 simulated corpora of 169 trials); p04 35 s; p08 5.7 s including 4000 bootstrap resamples. Total simulation wall clock about 100 s.",
+  "session": "2026-09-06 maria, open-ended"
+ },
+ "triggers": [
+  "does the variance ratio of antidepressant trials show treatment heterogeneity",
+  "coefficient of variation ratio CVR meta-analysis interpretation",
+  "why is CVR below 1 when VR is 1",
+  "is the coefficient of variation meaningful for a change score",
+  "how do I choose between lnVR and lnCVR",
+  "how much of the mean-SD correlation in a meta-analysis is scale mixing",
+  "meta-analysis of a difference of two variances",
+  "inverse variance weighting bias when the weight contains the effect",
+  "sigma_TE bound from aggregate antidepressant trials",
+  "how many benefiters are compatible with an observed variance ratio",
+  "is there room for personalised treatment with antidepressants",
+  "how do I rebuild an analysis dataset when the authors posted only code",
+  "Cipriani GRISELDA data reuse"
+ ],
+ "methods": [
+  "variability-ratio",
+  "random-effects-meta-analysis",
+  "paule-mandel-heterogeneity",
+  "estimator-bias-stress-test",
+  "simulation-null-with-fixed-nuisance-structure",
+  "measured-mean-variance-coupling",
+  "analytic-identifiability-derivation",
+  "shared-term-coupling-decomposition",
+  "manski-partial-identification-bounds",
+  "cross-table-checksum-reconciliation",
+  "upstream-dataset-reconstruction"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "raw-data",
+   "locator": "Cipriani et al. (2018) GRISELDA open data, Mendeley Data 83rthbp8ys v2 -- 'Cipriani et al_GRISELDA_Lancet 2018_Open data.xlsx'",
+   "status": "verified-usable",
+   "bytes": 189027,
+   "sha256": "16743cadb138a9fe35561c49c6c32aee382d236a49ae5063cce5385707c00afc",
+   "local_path": "artifacts/cipriani2018_griselda.xlsx",
+   "fetch_cmd": "curl -sL -o cipriani2018_griselda.xlsx https://data.mendeley.com/public-files/datasets/83rthbp8ys/files/8bd604c3-6b8f-4d32-a904-5e191a80b859/file_downloaded",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "sha256sum; openpyxl read of sheet DATA (1268 rows x 37 cols, header on row 3); then reanalysis/p01_build.py rebuilt the analysis dataset and compared its counts against the paper's Table 1",
+    "result": "USABLE, and the rebuild is exact: 169 trials, 32,650 drug-arm and 18,746 placebo-arm patients, all three matching Table 1 and the abstract's 51,396 total. This is the upstream file, NOT the modified CSV the authors' code reads."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "https://osf.io/98kex/files/ -- cipriani-variance-data-generation-1.r, -2.r, cipriani-variance-1.r, -2.r, simulation-1-diff-scores.r",
+   "status": "verified-usable",
+   "bytes": 109870,
+   "local_path": "artifacts/osf/",
+   "fetch_cmd": "for id in t4kd8 4avkb yc345 bjq8s 7fkuy; do curl -sL -O https://osf.io/download/$id/; done",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "read in full; the load-bearing lines are data-generation-2.r:99-100 (outcome type read off the SIGN of the mean), :162-164 (multi-arm collapse), and variance-2.r:38-44 (Nakagawa eq. 9 and 11 written out by hand)",
+    "result": "USABLE and it is what made the reconstruction exact -- every transformation applied to the private CSV is documented in the header comment. It is also where the CVR decision is visible: 'for the calculations of CVR, it was necessary to use the absolute values of the pre-post differences'."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "derived-data",
+   "locator": "https://osf.io/98kex/files/ -- 'Cipriani et al_GRISELDA_Lancet 2018_Open data_averaged_doses.csv', the modified input every script reads",
+   "status": "dangling",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "curl -s https://api.osf.io/v2/nodes/98kex/files/osfstorage/ | list all 10 entries",
+    "result": "NOT PRESENT. The paper says 'The R-code and data of this publication are available online (https://osf.io/98kex/files/)'. The deposit holds five R scripts, two supplementary-table PDFs and three manuscript versions. No data file of any kind. The claim of data availability is false as stated, though harmlessly so here because the upstream source is public and the transformations are documented -- which is exactly why the code deposit deserves credit even as the data claim fails."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "supplement",
+   "locator": "https://osf.io/98kex/files/ -- online supplementary table 1, the same meta-analysis run on the 85 trials that report ENDPOINT scores instead of pre-post change",
+   "status": "verified-usable",
+   "bytes": 14971,
+   "local_path": "artifacts/osf/supp-table1-endpoint.pdf",
+   "fetch_cmd": "curl -sL -o supp-table1-endpoint.pdf https://osf.io/download/ycu7x/",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "curl -sL -o supp-table1-endpoint.pdf https://osf.io/download/ycu7x/ ; ls -la",
+    "result": "present, 14,971 B. NOT used in this reanalysis, which is confined to the 'diff' subset carrying the main result -- but it is the artifact that would settle open question 4, because an endpoint score has a meaningful zero and a change score does not."
+   }
+  },
+  {
+   "id": "a5",
+   "role": "code",
+   "locator": "reanalysis/p01_build.py ... p08_lambda.py",
+   "status": "verified-usable",
+   "local_path": "reanalysis/",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "python p01_build.py && python p02_reproduce.py && python p03_identified.py && python p04_calibrate.py && python p05_fix_D.py && python p06_bounds.py && python p07_null_slope_floor.py && python p08_lambda.py",
+    "result": "all eight run clean; p02/p03/p04/p05/p06/p07/p08 write out_pNN.json next to the scripts. p01 writes dat.csv, the 169-trial reconstruction, which every later script reads."
+   }
+  },
+  {
+   "id": "a6",
+   "role": "supplement",
+   "locator": "https://osf.io/98kex/files/ -- online supplementary table 2, VR and CVR per individual antidepressant",
+   "status": "verified-usable",
+   "bytes": 27973,
+   "local_path": "artifacts/osf/supp-table2-individual-AD.pdf",
+   "fetch_cmd": "curl -sL -o supp-table2-individual-AD.pdf https://osf.io/download/m3vnu/",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "curl -sL -o supp-table2-individual-AD.pdf https://osf.io/download/m3vnu/ ; ls -la",
+    "result": "present, 27,973 B. Per-drug rows; the c2 identity predicts each of them from that drug's own mean-change ratio, which is the finest-grained test available and is not yet run."
+   }
+  }
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "The variance of treatment outcome in antidepressant arms is not larger than in placebo arms (VR = 1.01, 95% CI 0.99 to 1.02, 169 trials, 51,396 patients), so there is no or only very small heterogeneity of individual treatment effect.",
+   "scope": "Short-term placebo-controlled RCTs of 21 antidepressants in unipolar major depression, restricted to the 169 trials reporting pre-post change scores; drawn from Cipriani et al. (2018).",
+   "quantities": [
+    {
+     "name": "variability_ratio_antidepressants_published",
+     "value": 1.01,
+     "unit": "ratio",
+     "n": 169,
+     "ci_low": 0.99,
+     "ci_high": 1.02,
+     "ci_kind": "confidence",
+     "source": "Table 1, row 'AD all'"
+    },
+    {
+     "name": "variability_ratio_antidepressants_reproduced",
+     "value": 1.006,
+     "unit": "ratio",
+     "n": 169,
+     "ci_low": 0.9948,
+     "ci_high": 1.0173,
+     "ci_kind": "confidence",
+     "source": "maria 2026, p02 on the p01 reconstruction; DerSimonian-Laird with Knapp-Hartung, as in their script"
+    },
+    {
+     "name": "patients_antidepressant_arms",
+     "value": 32650,
+     "unit": "patients",
+     "n": 169,
+     "source": "Table 1; reproduced exactly by p01"
+    },
+    {
+     "name": "patients_placebo_arms",
+     "value": 18746,
+     "unit": "patients",
+     "n": 169,
+     "source": "Table 1; reproduced exactly by p01"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Reproduced from the public upstream data to three matching integers (169 / 32,650 / 18,746) and four matching statistics (VR, CVR, Q for both, r(M,SD) for both arms). The residual difference in the third decimal is explained: they collapsed dose arms by hand and then drugs in the script, while p01 collapses all antidepressant arms in one pass, and averaging SDs is not associative under regrouping. The claim about VR is correct. What VR then LICENSES about heterogeneity is c4 and c5."
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "The coefficient-of-variation ratio is 0.82 (95% CI 0.80 to 0.84), i.e. the increase of variance with increasing pre-post difference is weaker in antidepressant than in placebo arms; the authors state there is no immediately plausible explanation for this.",
+   "scope": "Same 169 trials. Reported as a second finding alongside the VR result and repeated for every drug class.",
+   "quantities": [
+    {
+     "name": "cv_ratio_antidepressants_published",
+     "value": 0.82,
+     "unit": "ratio",
+     "n": 169,
+     "ci_low": 0.8,
+     "ci_high": 0.84,
+     "ci_kind": "confidence",
+     "source": "Table 1, row 'AD all'"
+    },
+    {
+     "name": "cv_ratio_antidepressants_reproduced",
+     "value": 0.816,
+     "unit": "ratio",
+     "n": 169,
+     "ci_low": 0.7956,
+     "ci_high": 0.8368,
+     "ci_kind": "confidence",
+     "source": "maria 2026, p02"
+    },
+    {
+     "name": "lncvr_minus_lnvr_max_abs_deviation_from_log_mean_ratio",
+     "value": 2.78e-16,
+     "unit": "natural log units",
+     "n": 169,
+     "source": "maria 2026, p02 section 2 -- machine epsilon over all 169 trials"
+    },
+    {
+     "name": "vr_over_cvr_published_table1",
+     "value": 1.2317,
+     "unit": "ratio",
+     "n": 169,
+     "source": "1.01 / 0.82 from their own Table 1"
+    },
+    {
+     "name": "mean_change_ratio_drug_over_placebo_n_weighted",
+     "value": 1.2286,
+     "unit": "ratio",
+     "n": 169,
+     "source": "maria 2026, p02 -- n-weighted mean symptom reduction, drug arms over placebo arms"
+    },
+    {
+     "name": "mean_symptom_reduction_hamd17_drug",
+     "value": 10.99,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "source": "maria 2026, p03 section 4"
+    },
+    {
+     "name": "mean_symptom_reduction_hamd17_placebo",
+     "value": 9.11,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "source": "maria 2026, p03 section 4"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "It is not a fact about variance. Both statistics carry the identical Nakagawa small-sample correction, which cancels, so per trial lnCVR_i - lnVR_i = ln(m_PL,i / m_AD,i) EXACTLY -- measured max absolute deviation 2.8e-16 across all 169 trials. CVR is VR divided by the ratio of mean symptom reductions and contains no further information. The drug reduces symptoms more than placebo in 159 of 169 trials; on HAMD17 the reduction is 10.99 vs 9.11 points, ratio 1.207, reciprocal 0.829. Their own Table 1 gives VR/CVR = 1.2317 against an n-weighted mean-change ratio of 1.2286, and the identity predicts every subgroup row including the tricyclic outlier (CVR/VR 0.613 vs mean ratio 0.603). The 'no immediately plausible explanation' is the treatment effect. Their code carries the tell: 'for the calculations of CVR, it was necessary to use the absolute values of the pre-post differences' -- a coefficient of variation requires a mean on a ratio scale, and a pre-post change has an arbitrary zero and either sign.",
+    "by": "ploderl2019-personalised-antidepressants (maria's p02)"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "The switch from VR to CVR is justified because 'the pre-post differences were significantly associated with their SD' (r(M,SD) = 0.55 in drug arms, 0.52 in placebo arms).",
+   "scope": "One sentence in Statistical analysis, and the r(M,SD) columns of Table 1.",
+   "quantities": [
+    {
+     "name": "mean_sd_correlation_across_trials_drug",
+     "value": 0.552,
+     "unit": "Pearson r",
+     "n": 169,
+     "source": "maria 2026, p02; their Table 1 says 0.55"
+    },
+    {
+     "name": "mean_sd_correlation_within_scale_pooled_drug",
+     "value": 0.135,
+     "unit": "Pearson r",
+     "n": 159,
+     "source": "maria 2026, p04C; Fisher-z pooled over HAMD17/21/24 and MADRS with n-3 weights"
+    },
+    {
+     "name": "share_of_mean_sd_correlation_that_is_between_scale",
+     "value": 0.75,
+     "unit": "proportion",
+     "n": 169,
+     "source": "maria 2026, p04C: 1 - 0.135/0.552"
+    },
+    {
+     "name": "within_trial_between_arm_mean_sd_correlation",
+     "value": 0.11,
+     "unit": "Pearson r",
+     "n": 169,
+     "ci": "p = 0.154",
+     "source": "maria 2026, p04C -- r(ln(m_AD/m_PL), ln(SD_AD/SD_PL)), the correlation that would actually license a CV normalisation"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "Two independent failures. (1) The corpus mixes HAMD17 (k=71), HAMD21 (52), MADRS (24), HAMD24 (12) and four more scales with different ranges, so trials on longer scales have both larger means and larger SDs for reasons unrelated to the drug. Within scale the correlation is +0.045, +0.311, -0.136, +0.421; pooled +0.135. 75% of the cited correlation is between-scale mixing. (2) An ACROSS-TRIAL correlation cannot license a WITHIN-TRIAL, BETWEEN-ARM division. The relevant statistic is r(ln mean ratio, ln SD ratio) = +0.110, p = 0.154, not significant.",
+    "by": "ploderl2019-personalised-antidepressants (maria's p04C)"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "MARIA 2026, NEW: the additive-versus-multiplicative choice is a continuous parameter lambda (SD proportional to mean^lambda), it is estimable from aggregate data, and on this corpus lambda = 0.098 [-0.024, 0.241] -- so lnVR's assumption of 0 is inside the interval, lnCVR's assumption of 1 is far outside, and the published CVR applies 10.2 times the correction the data support.",
+   "scope": "169 trials. lambda estimated by regressing lnVR on ln(m_AD/m_PL) and rescaling the slope against the same regression run on simulated worlds with lambda = 0 and lambda = 1 by construction. Interval from 4000 trial-level bootstrap resamples.",
+   "quantities": [
+    {
+     "name": "sd_mean_power_lambda_antidepressants",
+     "value": 0.098,
+     "unit": "exponent",
+     "n": 169,
+     "ci_low": -0.024,
+     "ci_high": 0.241,
+     "ci_kind": "confidence",
+     "source": "maria 2026, p08"
+    },
+    {
+     "name": "lnvr_regression_slope_observed",
+     "value": 0.0527,
+     "unit": "slope",
+     "n": 169,
+     "source": "maria 2026, p08"
+    },
+    {
+     "name": "lnvr_regression_slope_null_lambda0",
+     "value": 0.002,
+     "unit": "slope",
+     "n": 169,
+     "ci": "Monte-Carlo SE 0.0028, B = 300",
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, p08 -- simulated world with additive homogeneity true by construction"
+    },
+    {
+     "name": "lnvr_regression_slope_null_lambda1",
+     "value": 0.517,
+     "unit": "slope",
+     "n": 169,
+     "ci": "Monte-Carlo SE 0.0060, B = 300",
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, p08 -- multiplicative homogeneity true by construction; note the estimator's own scale is 0.515, not 1"
+    },
+    {
+     "name": "cvr_overcorrection_factor",
+     "value": 10.2,
+     "unit": "multiple",
+     "n": 169,
+     "source": "maria 2026, p08: 1 / 0.098"
+    },
+    {
+     "name": "variability_ratio_at_estimated_lambda",
+     "value": 0.9813,
+     "unit": "ratio",
+     "n": 169,
+     "ci_low": 0.9467,
+     "ci_high": 1.0121,
+     "ci_kind": "confidence",
+     "source": "maria 2026, p08 -- exp(lnVR - lambda*mean ln mean-ratio), against 1.006 at lambda=0 and 0.782 at lambda=1"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "The raw regression slope is NOT lambda -- the same estimator returns +0.0020 and +0.5170 on worlds where lambda is 0 and 1, so its scale is 0.515 and an uncalibrated slope would understate lambda by half. Calibrating against both anchors is what makes the number readable. Robustness: p07 reran the additive null with a bounded generator (a change score cannot exceed the patient's own baseline, and the floor compresses the SD of whichever arm improves more), which moved the additive null to -0.046 while the multiplicative null stayed at +0.524; the observed slope sits close to additive under either generator. Third independent corpus on which this adjudication comes back additive."
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "MARIA 2026, NEW: pooling a difference of two sample variances by inverse-variance weighting is biased, because the weight is a function of the same random quantities as the numerator, and the bias does not vanish -- it takes the sign of the arm-size asymmetry. On this corpus the naive estimator returns +0.514 points^2 from a world with D = 0 by construction, with 90.2% coverage of a nominal 95% interval.",
+   "scope": "General to any meta-analysis of a difference of variances; measured here on the 169-trial antidepressant corpus with its real arm sizes and SDs, 500 simulated corpora per cell.",
+   "quantities": [
+    {
+     "name": "d_estimator_bias_naive_weight_null_world",
+     "value": 0.514,
+     "unit": "HAMD points^2",
+     "n": 169,
+     "ci": "500 simulated corpora; true D = 0 by construction",
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, p05"
+    },
+    {
+     "name": "d_estimator_coverage_naive_weight_null_world",
+     "value": 0.902,
+     "unit": "proportion",
+     "n": 500,
+     "count": 451,
+     "denominator": 500,
+     "source": "maria 2026, p05 -- realised coverage of a nominal 0.95 interval"
+    },
+    {
+     "name": "d_estimator_bias_equal_arm_sizes",
+     "value": 0.064,
+     "unit": "HAMD points^2",
+     "n": 169,
+     "source": "maria 2026, p05 prediction P1 -- forcing n1 = n2 shrinks the bias ninefold"
+    },
+    {
+     "name": "d_estimator_bias_arms_swapped",
+     "value": -0.567,
+     "unit": "HAMD points^2",
+     "n": 169,
+     "source": "maria 2026, p05 prediction P2 -- making the placebo arm the larger one reverses the sign"
+    },
+    {
+     "name": "d_estimator_bias_pooled_variance_weight",
+     "value": -0.003,
+     "unit": "HAMD points^2",
+     "n": 169,
+     "source": "maria 2026, p05 prediction P3 -- the fix"
+    },
+    {
+     "name": "d_estimator_coverage_pooled_variance_weight",
+     "value": 0.966,
+     "unit": "proportion",
+     "n": 500,
+     "count": 483,
+     "denominator": 500,
+     "source": "maria 2026, p05"
+    }
+   ],
+   "evidence": [
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Three falsifiable predictions of the proposed mechanism were stated before running and all three held: equal arm sizes shrink the bias from +0.585 to +0.064; swapping the arms reverses it to -0.567; a weight built from the across-arm pooled variance (which does not contain the difference) removes it, -0.003 with 96.6% coverage. Re-verified at D = +5 and D = -5 (bias -0.070 and +0.125, coverage 96.6% and 95.0%). A common-scale weight also works (bias +0.054) but is less efficient, SD 1.119 against 0.787. The mechanism is the same shape as the coupling artifact in mccutcheon2022: a quantity on both sides of its own estimator."
+   }
+  },
+  {
+   "id": "c6",
+   "statement": "MARIA 2026, NEW: the identified quantity D = sigma_AT^2 - sigma_PL^2 on the HAMD17 subset is +0.444 [-1.748, +2.637] HAMD points^2 (k = 71, I2 = 0%), which at rho = 0 bounds sigma_TE at 1.62 points -- 0.86 times the 1.88-point mean drug-placebo effect -- and at rho = -0.32 permits 5.45 points.",
+   "scope": "HAMD17 trials only (the largest single-scale subset, 13,132 drug and 8,147 placebo patients), corrected pooled-variance weight, Paule-Mandel. D carries units and must not be pooled across measurement scales.",
+   "quantities": [
+    {
+     "name": "variance_difference_D_antidepressants_hamd17",
+     "value": 0.444,
+     "unit": "HAMD17 points^2",
+     "n": 71,
+     "ci_low": -1.748,
+     "ci_high": 2.637,
+     "ci_kind": "confidence",
+     "source": "maria 2026, p06; I2 = 0%, tau2 = 0"
+    },
+    {
+     "name": "variance_difference_D_antidepressants_hamd21",
+     "value": 2.79,
+     "unit": "HAMD21 points^2",
+     "n": 52,
+     "ci_low": -1.549,
+     "ci_high": 7.128,
+     "ci_kind": "confidence",
+     "source": "maria 2026, p05 section 3"
+    },
+    {
+     "name": "variance_difference_D_antidepressants_madrs",
+     "value": 0.535,
+     "unit": "MADRS points^2",
+     "n": 24,
+     "ci_low": -5.012,
+     "ci_high": 6.082,
+     "ci_kind": "confidence",
+     "source": "maria 2026, p05 section 3"
+    },
+    {
+     "name": "sigma_te_upper_bound_at_rho_zero_hamd17",
+     "value": 1.62,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "ci_kind": "partial-identification-bounds",
+     "source": "maria 2026, p06 -- from the upper confidence limit of D"
+    },
+    {
+     "name": "sigma_te_upper_bound_at_rho_minus_032_hamd17",
+     "value": 5.45,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "ci_kind": "partial-identification-bounds",
+     "source": "maria 2026, p06"
+    },
+    {
+     "name": "mean_drug_placebo_difference_hamd17",
+     "value": 1.88,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "source": "maria 2026, p03 -- n-weighted"
+    },
+    {
+     "name": "median_placebo_arm_sd_hamd17",
+     "value": 7.76,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "source": "maria 2026, p03"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Accepted as an estimate of D on HAMD17 with the corrected estimator of c5. NOT accepted as a statement about sigma_TE, which is not identified by a parallel-group design (senn2016) and moves by a factor of eight over the rho values this literature has used. The scale restriction is not fastidiousness: the unit-mixed pool over all 169 trials gives +1.188 [-0.477, +2.854], so mixing units moves the answer by more than any difference between the arms does."
+   }
+  },
+  {
+   "id": "c7",
+   "statement": "Their Figure 1 -- a simulation grid asking how many 'benefiters' of what size are compatible with the observed VR -- is, at rho = 0, the single inequality p(1-p)delta^2 <= D_upper, and it reproduces their own reading of the figure.",
+   "scope": "HAMD17 subset, two-point mixture of individual treatment effects, rho = 0 assumed exactly as their figure assumes it.",
+   "quantities": [
+    {
+     "name": "max_benefiter_effect_at_10_percent_rho0",
+     "value": 5.41,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "ci_kind": "partial-identification-bounds",
+     "source": "maria 2026, p06 -- sqrt(2.637/(0.1*0.9)); their figure's own reading is 6 points at p = 10%"
+    },
+    {
+     "name": "max_benefiter_effect_at_10_percent_rho_minus_032",
+     "value": 18.17,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "ci_kind": "partial-identification-bounds",
+     "source": "maria 2026, p06"
+    },
+    {
+     "name": "max_benefiter_effect_at_5_percent_rho0",
+     "value": 7.45,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "ci_kind": "partial-identification-bounds",
+     "source": "maria 2026, p06"
+    },
+    {
+     "name": "max_benefiter_effect_at_50_percent_rho0",
+     "value": 3.25,
+     "unit": "HAMD17 points",
+     "n": 71,
+     "ci_kind": "partial-identification-bounds",
+     "source": "maria 2026, p06"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Two independent routes to the same number -- their simulation grid over benefiter definitions gives 'about 6 points at 10%', the closed form gives 5.41 -- which is worth more than either alone because the agreement does not depend on their simulation's parameter choices. The closed form additionally makes the rho = 0 assumption a visible knob: the same bound is 18.17 points at rho = -0.32, so their conclusion that 'the scope for personalised treatment seems to be limited' is carried by an independence assumption they never state."
+   }
+  },
+  {
+   "id": "c8",
+   "statement": "Their rule for collapsing several antidepressant arms into one -- the unweighted mean of the arm SDs -- is a downward-biased estimator of the combined arm SD, applied to 84 of 169 trials, always on the drug side.",
+   "scope": "The 84 multi-arm trials. Compared against correct finite-mixture pooling, which adds the between-arm mean spread.",
+   "quantities": [
+    {
+     "name": "trials_with_multiple_drug_arms",
+     "value": 0.497,
+     "unit": "proportion",
+     "count": 84,
+     "denominator": 169,
+     "n": 169,
+     "source": "maria 2026, p03 section 3"
+    },
+    {
+     "name": "median_sd_deflation_from_mean_of_sds",
+     "value": 0.9994,
+     "unit": "ratio",
+     "n": 84,
+     "source": "maria 2026, p03 -- their SD over the correct mixture SD; smaller in 50 of 84 trials, worst case 0.9230"
+    },
+    {
+     "name": "variability_ratio_with_correct_mixture_pooling",
+     "value": 1.0077,
+     "unit": "ratio",
+     "n": 169,
+     "ci_low": 0.9946,
+     "ci_high": 1.021,
+     "ci_kind": "confidence",
+     "source": "maria 2026, p03 -- against 1.0060 [0.9929, 1.0192] under their rule"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The criticism is correct in direction and immaterial in size, and it is recorded because I expected it to matter and it did not. Averaging SDs is downward-biased twice over (Jensen, plus the omission of the between-arm mean spread) and it is one-sided here because the placebo side is always a single arm. But dose arms of one drug have nearly identical means, so the between-arm term is near zero: the pooled VR moves 1.0060 -> 1.0077, well inside its own interval. Anyone re-deriving this objection should stop at the measurement, not at the argument."
+   }
+  },
+  {
+   "id": "c9",
+   "statement": "The abstract reports 163 trials; Table 1, the drug/placebo arm totals, and an independent reconstruction from the upstream data all give 169, with the same 51,396 patients.",
+   "scope": "Bookkeeping. 32,650 + 18,746 = 51,396, the abstract's own patient count.",
+   "quantities": [
+    {
+     "name": "trial_count_abstract",
+     "value": 163,
+     "unit": "trials",
+     "n": 169,
+     "source": "Abstract, Data sources"
+    },
+    {
+     "name": "trial_count_table1_and_reconstruction",
+     "value": 169,
+     "unit": "trials",
+     "n": 169,
+     "source": "Table 1 row 'AD all'; maria 2026, p01"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Nothing downstream depends on it -- every analysis in the paper uses the 169 -- but it is recorded because a k quoted from an abstract is how a wrong denominator enters a later synthesis, and the abstract is the part that gets quoted."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:agreesWith",
+   "target": "munkholm2020-antidepressant-variability",
+   "why": "Independent corpus, independent authors, same conclusion: the variability ratio of antidepressant trials is indistinguishable from 1. Munkholm draws on a different antidepressant meta-analysis; this one on Cipriani et al. 2018."
+  },
+  {
+   "type": "cito:disagreesWith",
+   "target": "mccutcheon2022-reappraising-variability",
+   "why": "McCutcheon et al. argue a VR near 1 is compatible with large sigma_TE once rho is negative, and estimate rho = -0.32. Ploderl & Hengartner read VR near 1 as evidence against heterogeneity, which requires rho = 0. Neither states its rho assumption in the abstract. They cannot both be right and no aggregate dataset can decide between them.",
+   "asymmetric_note": "The disagreement is entirely about an unmeasured parameter, not about any measured quantity: both reproduce, and my p06 shows the same D supports either reading (sigma_TE <= 1.62 at rho = 0, <= 5.45 at rho = -0.32)."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "munkholm2020-antidepressant-variability",
+   "why": "Both read VR near 1 as absence of heterogeneity of treatment effect, which is only valid at rho = 0, and neither says so. They do not cite each other's assumption because neither names it."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "senn2016-mastering-variation",
+   "why": "Senn shows a parallel-group design identifies only the between-treatment component and that patient-by-treatment interaction requires within-patient replication. This paper cites that argument correctly in its Introduction -- one of the few in the area that does -- and then draws a conclusion about personalisation anyway."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "maria2026-antidepressant-variability-recalibration",
+   "why": "The additive-versus-multiplicative adjudication with a simulated null slope was developed there; this record extends it from a binary verdict to a continuous parameter lambda with an interval."
+  },
+  {
+   "type": "cito:corrects",
+   "target": "maria2026-antidepressant-variability-recalibration",
+   "why": "The D value of -0.384 [-1.636, +0.868] carried in that record and in the area file was computed with the naive inverse-variance weight now shown biased (c5). It must be recomputed with the pooled-variance weight before being compared with anything.",
+   "asymmetric_note": "The direction of the bias depends on that corpus's own arm-size asymmetry, which has not been checked, so the old number is not simply too high -- it is unknown until recomputed. Not marked refuted, marked pending recomputation."
+  }
+ ],
+ "open_questions": [
+  "Recompute D on the Munkholm corpus with the corrected pooled-variance weight. Until then the two D values are not comparable and the -0.384 must not be quoted against the +0.444 here.",
+  "Four psychiatric variability meta-analyses still have no D: antipsychotics (Winkelbeiner 2019), brain stimulation, PTSD psychotherapy, depression psychotherapy.",
+  "Does lambda differ across drug classes? Tricyclic trials have the largest mean-change ratio and would be the place to look, but k = 3 in my class assignment (theirs was 11 because they counted a trial in every class it contained).",
+  "Is the CVR-equals-VR-over-mean-ratio identity an artifact of the pre-post change outcome, or does it hold in the 85-trial endpoint-score subset too? Endpoint scores have a meaningful zero, so CVR should be legitimate there -- and if so, the endpoint subset is the only place in this literature where CVR means anything. Untested; supplementary table 1 is on disk."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-09-06",
+  "verified": "2026-09-06",
+  "notes_file": "NOTES.md"
+ }
+}

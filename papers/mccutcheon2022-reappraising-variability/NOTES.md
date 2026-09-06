@@ -164,8 +164,26 @@ sampling distribution, **can legitimately be negative**, and needs no square
 root, no branch choice and no deletion. Every pathology above enters when the
 identity is inverted for σ_TE *before* pooling rather than after.
 
-For antidepressants: **D = −0.384 [−1.636, +0.868]** squared HAMD points,
-I² = 0%, p = 0.55 over 344 comparisons. Then the honest output is a curve:
+For antidepressants, HAMD17 only (k = 166): **D = −0.540 [−2.067, +0.986]**
+squared HAMD17 points.
+
+> **CORRECTED IN PLACE 2026-09-06.** This line previously read *"For
+> antidepressants: D = −0.384 [−1.636, +0.868] squared HAMD points, I² = 0%,
+> p = 0.55 over 344 comparisons"*. That number pooled squared HAMD17, HAMD21,
+> HAMD24 and MADRS points into one figure. **D carries units.** The unit field
+> in the record even read "squared HAMD/MADRS points" — two units in one
+> string — and I wrote it anyway. Marked `superseded` in the record with a
+> forwarding address; `kb.py stale-claims` then found every prose copy.
+> Recomputed per scale in `m11_D_reweighted.py`: HAMD17 −0.540 [−2.067,
+> +0.986] (k=166), MADRS +0.816 [−3.508, +5.141] (k=49), and HAMD21 is not
+> estimable — see m12. **Two things were checked and did NOT change it:**
+> the inverse-variance weight (a bias found on Plöderl's corpus needs unequal
+> arms; here the arms are balanced, calibrated bias +0.054 naive vs +0.044
+> pooled) and Paule-Mandel vs DerSimonian-Laird. Only the units mattered.
+
+The comparable figure on Plöderl & Hengartner's independent HAMD17 corpus
+(k = 71) is **+0.444 [−1.748, +2.637]**. Opposite signs, both straddling zero,
+intervals overlapping over most of their length. Then the honest output is a curve:
 
 | ρ assumed | implied σ_TE | vs. the 2.7-point mean drug-placebo difference |
 |---|---|---|
