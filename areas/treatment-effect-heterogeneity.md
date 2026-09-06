@@ -11,7 +11,8 @@ Author: maria. Started 2026-09-02. Records: `galante2021-mbp-nonclinical`,
 `maria2026-mbp-variability-ratio`, `munkholm2020-antidepressant-variability`,
 `maria2026-antidepressant-variability-recalibration`,
 `mccutcheon2022-reappraising-variability`, `senn2016-mastering-variation`,
-`marwick2018-nof1-schizophrenia`. Adjacent by method:
+`marwick2018-nof1-schizophrenia`, `ploderl2019-personalised-antidepressants`,
+`winkelbeiner2019-antipsychotic-variability`. Adjacent by method:
 `maria2026-happiness-income-spread` (same location-versus-scale question, an
 exposure rather than an intervention).
 
@@ -164,9 +165,12 @@ My search was title-restricted, so a trial described as a "single-case
 experimental design" would be missed — the honest claim is "nothing under this
 name".*
 
-**FOUR axes of non-identification, now, not three.** The fourth is Senn's and is
+**FIVE axes of non-identification.** The fourth is Senn's and is
 different in kind from the others -- it is not about the estimator but about
-what an inflated variance can physically mean:
+what an inflated variance can physically mean. The fifth is different again:
+it is not about the estimator or the design but about **the measuring scale**,
+and it is the only one of the five that could be removed with data every trial
+already has.
 
 1. VR **bounds** heterogeneity rather than measuring it (two arms with the same
    two moments are consistent with a uniform effect and with a mixture that
@@ -178,6 +182,36 @@ what an inflated variance can physically mean:
 4. an inflated treated-arm variance may be **C or D**: patients differing from
    each other, or one patient differing from occasion to occasion. Senn's
    example is oral versus intravenous absorption. VR is identical either way.
+5. **the outcome scale is BOUNDED, and the null for VR is therefore not 1**
+   (added 2026-09-06, and this one is mine). PANSS cannot fall below 30; HAMD17
+   cannot fall below 0. A patient cannot improve by more than their headroom, so
+   the recorded improvement is min(X, H) and truncation removes variance. The
+   treated arm improves more, so it meets the bound more often, so **a bounded
+   scale always pushes VR in the same direction** at these headrooms. Size, on
+   the two corpora that can be measured: **1 to 3 per cent**, which is the size
+   of every effect either literature has ever reported. On the antipsychotic
+   corpus a simulated world with sigma_TE = 0 EXACTLY reproduces 23% to 112% of
+   the observed variance deficit, the range spanned by the baseline mean —
+   **which the deposit does not record**. Unlike rho, this one is estimable: it
+   needs one field that every trial reports.
+
+   The governing parameter is `z = (mean headroom - mean improvement) / SD`, and
+   `statlib.floor_shrinkage(z, headroom_dispersion)` returns the factor.
+   **The direction is a regime, not a law**: a headroom that varies across
+   subjects adds variance of its own, and above about 1.5 improvement-SDs of
+   dispersion the bound INFLATES the recorded SD instead of shrinking it.
+
+   | corpus | z treated | z control | VR bias | published VR | floor-corrected |
+   |---|---|---|---|---|---|
+   | PANSS, baseline 90 | 2.12 | 2.51 | 0.985 | 0.968 | **0.983 [0.964, 1.002]** |
+   | PANSS, baseline 80 | 1.62 | 2.02 | 0.968 | 0.968 | **1.000** |
+   | HAMD17 (k=68) | 1.57 | 1.87 | 0.974 | 1.007 | **1.034 [1.022, 1.046]** |
+
+   At a plausible baseline the antipsychotic paper's significant result
+   (VR = 0.97, p = .01) no longer excludes 1. **This correction is MODEL-BASED**:
+   the within-corpus test that would confirm it has no resolving power on the
+   available data (anchors separated by 0.52 of their own noise at k = 68), and
+   that has to be said wherever the corrected number is quoted.
 
 ## The third axis, and it is the biggest one
 

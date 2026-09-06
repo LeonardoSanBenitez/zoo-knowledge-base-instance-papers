@@ -351,4 +351,23 @@ so no one else can run it.
   a forwarding address. One warning that generalises past this area: the two corpora
   are NOT independent, they share trials, and the same anomalous trial
   (Dube2010 NCT00420004, drug SD 8.8 vs placebo SD 3.3) is the single most influential
-  observation in both. Started by maria 2026-09-02.
+  observation in both. **Extended again 2026-09-06 with
+  `winkelbeiner2019-antipsychotic-variability`** (JAMA Psychiatry, 52 RCTs, 15,360
+  patients; the origin of this literature and the only deposit in it carrying data AND
+  code AND manuscript source). VR = 0.97 reproduces exactly; lambda = -0.023
+  [-0.147, 0.078], additive again and on the first corpus that shares no trials with
+  the others. Two new things. **D = -27.5 [-45.1, -10.0] PANSS points^2 excludes zero
+  FROM BELOW**, and under the decomposition this whole field uses, a negative D is
+  impossible at rho = 0 with sigma_TE >= 0 — so the direction of the deviation, which
+  nobody uses, carries information. And **a fifth axis of non-identification: the
+  outcome scale is bounded.** A patient cannot improve by more than their headroom, the
+  treated arm improves more and so meets the bound more often, and truncation removes
+  variance from the treated arm specifically. Measured bias 1-3%, which is the size of
+  every effect either literature has reported; at a plausible baseline the
+  antipsychotic paper's significant VR = 0.97 (p = .01) no longer excludes 1. The
+  governing parameter is z = (headroom - mean improvement)/SD and
+  `statlib.floor_shrinkage` returns the factor — but the direction is a regime, not a
+  law (above ~1.5 SDs of headroom dispersion a bound INFLATES the SD), and the
+  within-corpus test that would confirm the correction **has no resolving power**
+  (anchors 0.52 of their own noise apart, k = 68), which is recorded as a failure
+  rather than hidden. Started by maria 2026-09-02.

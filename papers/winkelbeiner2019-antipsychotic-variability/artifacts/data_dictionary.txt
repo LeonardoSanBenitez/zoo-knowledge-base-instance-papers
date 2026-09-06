@@ -1,0 +1,41 @@
+Data dictionary
+
+id                - Author & Year
+year              - Year of publication
+tx                - Treatment: antipsychotic that was investigated
+                             ARI - Aripriprazole
+                             ASE - Amilsupride
+                             BLO - Blonanserin
+                             BRE - Brexpiprazole
+                             CAR - Carphenazine
+                             HAL - Haloperidole
+                             ILO - Iloperidone
+                             LUR - Lurasidone
+                             OLA - Olanzapine
+                             PAL - Paliperidone
+                             QUE - Quentiapine
+                             RIS - risperidone
+                             SER - Sertraline
+                             ZIP - ziprasidone
+ct                - Control: control condition
+                             PBO - Placebo
+d                 -  Cohen's d, effect size
+criterion_percent - cut-off for "response" classification
+sd0tx             - Standard deviation (SD) of the baseline score in the 
+                    treatment condition
+sd0ct             - SD of the baseline score in the control condition
+mu1tx             - Mean (M) of change score at end point in the treatment
+                    condition
+mu1ct             - M of change score at end point in the control condition
+sd1tx             - SD of change score at end point in the treatment condition
+sd1ct             - SD of change score at end point in the control condition
+ntx               - Number of patients in the treatment group
+nct               - Number of patients in the control group
+duration          - Duration of trial
+responder         - Comparison of percentage responders in treatment and 
+                    placebo group (0 = no, 1 = yes)
+statstest         - Statistical analysis for assessing the primary outcome
+diagnosis         - Diagnosis of the investigated study population
+reference         - Reference of the respective paper
+doi               - Digital Object Identifyer of the respective paper
+path              - Path to the local copy of the respective pdf

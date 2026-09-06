@@ -1,0 +1,19 @@
+{
+ "k": 68,
+ "h_disp": 0.6,
+ "observed_slope": -1.1973966603460389,
+ "se": 0.30348697489647014,
+ "p": 0.0001955933871028555,
+ "null_no_floor": -2.1892891887242096,
+ "null_floor_only": -2.677168849132581,
+ "share": NaN,
+ "share_ci": [
+  NaN,
+  NaN
+ ],
+ "verdict": "NO RESOLVING POWER -- the design cannot tell the two worlds apart",
+ "pred_range": [
+  -0.10093815500644497,
+  0.010178545466999853
+ ]
+}

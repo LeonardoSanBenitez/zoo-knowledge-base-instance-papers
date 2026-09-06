@@ -1,0 +1,420 @@
+{
+ "schema_version": "1.3",
+ "id": "winkelbeiner2019-antipsychotic-variability",
+ "title": "Evaluation of Differences in Individual Treatment Response in Schizophrenia Spectrum Disorders: A Meta-analysis",
+ "authors": [
+  "Stephanie Winkelbeiner",
+  "Stefan Leucht",
+  "John M. Kane",
+  "Philipp Homan"
+ ],
+ "year": 2019,
+ "venue": "JAMA Psychiatry 76(10):1063-1073",
+ "area": [
+  "treatment-effect-heterogeneity"
+ ],
+ "identifiers": {
+  "doi": "10.1001/jamapsychiatry.2019.1530",
+  "pmid": "31158853",
+  "pmcid": "PMC6547253",
+  "url": "https://osf.io/qarvs/"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 14,
+  "bytes_downloaded": 70000,
+  "compute_notes": "OSF deposit: response.csv 30,538 B, data_dictionary 2,149 B, response_do.R 20,150 B, response_func.R 14,792 B. Abstract from Europe PMC. Six analysis scripts w01-w06. Longest is w01 (46 s: 800 simulated corpora for the lambda anchors plus two 4000-draw bootstraps); w05 49 s; w06 19 s. Total simulation wall clock about 2 min.",
+  "session": "2026-09-06 maria, open-ended"
+ },
+ "triggers": [
+  "do antipsychotics increase the variance of outcome in schizophrenia trials",
+  "variability ratio antipsychotics PANSS",
+  "why is the variability ratio below 1",
+  "can a bounded outcome scale bias a variance comparison",
+  "floor effect on standard deviation of a change score",
+  "PANSS minimum score 30 and truncation",
+  "is a negative variance difference possible under independence",
+  "how much headroom does a symptom scale leave",
+  "my simulated null and my regressor share a term",
+  "how do I know a simulation-based correction is testable",
+  "does clustering comparisons within studies widen the interval",
+  "which psychiatric variability meta-analysis deposited its data"
+ ],
+ "methods": [
+  "variability-ratio",
+  "random-effects-meta-analysis",
+  "paule-mandel-heterogeneity",
+  "cluster-bootstrap-over-articles",
+  "baseline-arm-negative-control",
+  "estimator-bias-stress-test",
+  "simulation-null-with-fixed-nuisance-structure",
+  "leave-one-out-influence",
+  "shared-term-coupling-decomposition",
+  "bounded-outcome-truncation-model",
+  "analytic-identifiability-derivation"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "raw-data",
+   "locator": "https://osf.io/qarvs/ -- data/response.csv, 75 antipsychotic-vs-placebo comparisons in 52 RCTs",
+   "status": "verified-usable",
+   "bytes": 30538,
+   "local_path": "artifacts/response.csv",
+   "fetch_cmd": "curl -sL -o response.csv https://osf.io/download/3fzyu/",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "python w01_full.py -- loaded all 75 rows, aggregated to 52 studies with the authors' own pooling formula, and compared against the published VR, k and patient totals",
+    "result": "USABLE and complete for the published analysis. 75 comparisons, 8,550 treated and 6,810 control patients = 15,360, matching the abstract exactly. Carries mu1tx/mu1ct (change means), sd1tx/sd1ct, ntx/nct, and baseline SDs for 38 of 75. IT DOES NOT CARRY THE BASELINE MEAN -- see claim c4, where that single missing field is what decides whether the paper's headline survives."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "https://osf.io/qarvs/ -- src/response_do.R, the analysis script (the deposit also carries response_ms.Rmd, the manuscript source)",
+   "status": "verified-usable",
+   "bytes": 20150,
+   "local_path": "artifacts/response_do.R",
+   "fetch_cmd": "curl -sL -o response_do.R https://osf.io/download/63cmq/",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "read in full; the load-bearing lines are :370-378 (escalc measure='VR', rma REML) and :425-429 (within-study pooling)",
+    "result": "USABLE. Their within-study pooling is sqrt(sum(sd^2 (n-1))/(N-k)), the correct combined-arm SD -- notably NOT the unweighted mean of arm SDs used by ploderl2019 on a comparable job. The deposit is data + code + manuscript source with a README and a licence, which is the best standard in this area and is why this record cost 14 tool calls where the antidepressant one cost 38."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "code",
+   "locator": "reanalysis/w01_full.py ... w06_floor_within_corpus_test.py",
+   "status": "verified-usable",
+   "local_path": "reanalysis/",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "python w01_full.py && python w02_break_negative_D.py && python w03_floor_with_real_baselines.py && python w04_floor_bias_curve.py && python w05_floor_bias_corrected.py && python w06_floor_within_corpus_test.py",
+    "result": "all six run clean and write out_wNN.json. w04 is SUPERSEDED BY w05 on its closing claim and is kept because the refutation is inside it; w06's first null was mis-specified and the corrected version is in place with the artifact documented in its docstring."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "code",
+   "locator": "https://osf.io/qarvs/ -- src/response_func.R, the plotting and extraction helpers",
+   "status": "verified-usable",
+   "bytes": 14792,
+   "local_path": "artifacts/response_func.R",
+   "fetch_cmd": "curl -sL -o response_func.R https://osf.io/download/cqg3k/",
+   "checked": {
+    "on": "2026-09-06",
+    "by": "maria",
+    "how": "grep -n 'escalc|measure=|VR' response_func.R; read the VR extraction block at :253",
+    "result": "present, 14,792 B. Helpers only -- forest plots and result extraction. Nothing estimated here, which is why the reanalysis reads response_do.R and not this."
+   }
+  }
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "The variability of outcome was slightly lower in the antipsychotic arms than in placebo arms: VR = 0.97 (95% CI 0.95-0.99, P = .01) across 52 RCTs and 15,360 patients, so there is no evidence that antipsychotics increase outcome variance and hence no personal element of response.",
+   "scope": "Double-blind placebo-controlled RCTs of licensed antipsychotics in schizophrenia spectrum disorders to 2016; PANSS pre-post difference scores.",
+   "quantities": [
+    {
+     "name": "variability_ratio_antipsychotics_published",
+     "value": 0.97,
+     "unit": "ratio",
+     "n": 52,
+     "ci_low": 0.95,
+     "ci_high": 0.99,
+     "ci_kind": "confidence",
+     "source": "Abstract; Results"
+    },
+    {
+     "name": "variability_ratio_antipsychotics_reproduced_by_study",
+     "value": 0.971,
+     "unit": "ratio",
+     "n": 52,
+     "ci_low": 0.9483,
+     "ci_high": 0.9942,
+     "ci_kind": "confidence",
+     "source": "maria 2026, w01 -- their own within-study pooling, DerSimonian-Laird; p = 0.0145, I2 = 4%"
+    },
+    {
+     "name": "variability_ratio_antipsychotics_reproduced_by_comparison",
+     "value": 0.968,
+     "unit": "ratio",
+     "n": 75,
+     "ci_low": 0.9458,
+     "ci_high": 0.9907,
+     "ci_kind": "confidence",
+     "source": "maria 2026, w01 -- all 75 comparisons; p = 0.0061, I2 = 0%"
+    },
+    {
+     "name": "cluster_se_over_naive_se_variability_ratio",
+     "value": 0.93,
+     "unit": "ratio",
+     "n": 75,
+     "clusters": 52,
+     "source": "maria 2026, w01 -- 4000 study-level bootstrap resamples; clustering NARROWS the interval here, which is the opposite of the usual expectation and is worth recording"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The measurement reproduces exactly from the deposited data -- k, both patient totals and the pooled VR to three decimals, under their own pooling and under two alternatives. Accepted as a measurement. NOT accepted as the inference: VR significantly BELOW 1 is not 'no increase', it is incompatible with their own null model (see c3), and the deviation is the same size as a bias their design carries (c4)."
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "MARIA 2026, NEW: on the antipsychotic corpus the SD-mean power lambda is -0.023 [-0.147, 0.078], so additive homogeneity is the right null and lnVR is the right statistic; lnCVR's assumption of lambda = 1 is far outside the interval.",
+   "scope": "75 comparisons. Regression of lnVR on ln(m_drug/m_placebo), rescaled against simulated worlds with lambda 0 and 1 by construction; 4000 trial-level bootstrap resamples.",
+   "quantities": [
+    {
+     "name": "sd_mean_power_lambda_antipsychotics",
+     "value": -0.023,
+     "unit": "exponent",
+     "n": 75,
+     "ci_low": -0.147,
+     "ci_high": 0.078,
+     "ci_kind": "confidence",
+     "source": "maria 2026, w01"
+    },
+    {
+     "name": "lnvr_regression_slope_null_lambda1_antipsychotics",
+     "value": 0.4277,
+     "unit": "slope",
+     "n": 75,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, w01 -- the estimator's own scale on this corpus is 0.429, not 1"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Third corpus on which this adjudication has been run and the third to come back additive -- and the FIRST that is genuinely independent of the others. The two antidepressant corpora share trials (ploderl2019 shows Dube2010 NCT00420004 is in both and is the most influential observation in each), so their agreement was worth less than it looked. This one shares nothing with either: different disease, drugs, authors and data source."
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "MARIA 2026, NEW: D = sigma_AT^2 - sigma_PL^2 = -27.5 [-45.1, -10.0] PANSS points^2 on this corpus. The interval excludes zero from below, which is impossible under the decomposition the whole literature uses if rho = 0 and sigma_TE >= 0.",
+   "scope": "75 comparisons, pooled-variance weight, Paule-Mandel. Robust to the weight (naive -28.2), to clustering (bootstrap CI [-43.3, -10.9]) and to any single study (max leave-one-out +5.0, 28% of the CI half-width).",
+   "quantities": [
+    {
+     "name": "variance_difference_D_antipsychotics_panss",
+     "value": -27.542,
+     "unit": "PANSS points^2",
+     "n": 75,
+     "ci_low": -45.132,
+     "ci_high": -9.952,
+     "ci_kind": "confidence",
+     "source": "maria 2026, w01; I2 = 0%"
+    },
+    {
+     "name": "variance_difference_D_antipsychotics_cluster_ci_low",
+     "value": -43.283,
+     "unit": "PANSS points^2",
+     "n": 75,
+     "clusters": 52,
+     "source": "maria 2026, w01 -- 4000 study-level bootstrap resamples; upper limit -10.915"
+    },
+    {
+     "name": "max_leave_one_out_influence_ratio_antipsychotics",
+     "value": 0.28,
+     "unit": "fraction of the CI half-width",
+     "n": 75,
+     "source": "maria 2026, w01 -- worst deletion is Litman2016, +5.012 against a half-width of 17.6"
+    },
+    {
+     "name": "baseline_variability_ratio_negative_control",
+     "value": 1.0336,
+     "unit": "ratio",
+     "n": 38,
+     "ci_low": 0.9856,
+     "ci_high": 1.0839,
+     "ci_kind": "confidence",
+     "source": "maria 2026, w02 -- the same statistic on BASELINE SDs, p = 0.173; randomisation behaves, so the endpoint deficit is not an allocation or extraction artifact"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Accepted as a measurement of D, with three robustness checks and a passing negative control. The INFERENCE that it refutes rho = 0 is NOT accepted -- see c4. What survives without qualification is the weaker and still-unstated point: every paper in this area reads VR near or below 1 as 'no heterogeneity', and under their own decomposition a VR below 1 cannot be produced by any non-negative sigma_TE at rho = 0. The direction of the deviation carries information they do not use."
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "MARIA 2026, NEW: the boundedness of the outcome scale is a fifth axis of non-identification. PANSS cannot fall below 30, the treated arm improves more and therefore meets that bound more often, and truncation removes variance from the treated arm specifically. A simulated world with sigma_TE = 0 EXACTLY reproduces between 23% and 112% of the observed negative D, depending on the baseline mean -- which the deposit does not record.",
+   "scope": "Simulation using each trial's own baseline SD from the deposit and the same change SD in both arms. Baseline mean swept from 75 to 100 because it is absent from the data.",
+   "quantities": [
+    {
+     "name": "floor_only_D_antipsychotics_baseline90",
+     "value": -12.98,
+     "unit": "PANSS points^2",
+     "n": 75,
+     "ci_low": -28.51,
+     "ci_high": 2.36,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, w03 -- 200 simulated corpora with zero heterogeneity by construction; 47% of the observed -27.5"
+    },
+    {
+     "name": "floor_only_D_antipsychotics_baseline80",
+     "value": -24.36,
+     "unit": "PANSS points^2",
+     "n": 75,
+     "ci_low": -39.55,
+     "ci_high": -8.54,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, w03 -- 88% of the observed"
+    },
+    {
+     "name": "patients_hitting_the_floor_treated_baseline90",
+     "value": 0.0458,
+     "unit": "proportion",
+     "n": 8550,
+     "source": "maria 2026, w03 -- against 0.0213 in the control arm; a 2.5-percentage-point difference produces half the headline"
+    },
+    {
+     "name": "floor_corrected_variability_ratio_antipsychotics_baseline90",
+     "value": 0.9829,
+     "unit": "ratio",
+     "n": 75,
+     "ci_low": 0.9636,
+     "ci_high": 1.0023,
+     "ci_kind": "confidence",
+     "source": "maria 2026, w05 -- 3000 trial-level bootstrap resamples of lnVR divided by a bias factor of 0.9851; THE INTERVAL INCLUDES 1"
+    },
+    {
+     "name": "floor_corrected_variability_ratio_antipsychotics_baseline80",
+     "value": 0.9999,
+     "unit": "ratio",
+     "n": 75,
+     "source": "maria 2026, w05 -- at a baseline of 80 the floor accounts for the entire published effect"
+    },
+    {
+     "name": "floor_corrected_variability_ratio_antidepressants_hamd17",
+     "value": 1.0339,
+     "unit": "ratio",
+     "n": 68,
+     "ci_low": 1.0222,
+     "ci_high": 1.0462,
+     "ci_kind": "confidence",
+     "source": "maria 2026, w05 -- the same correction on ploderl2019's HAMD17 subset, whose raw VR is 1.0066; stable across headroom dispersion 0 to 0.9"
+    },
+    {
+     "name": "floor_shrinkage_headroom_dispersion_crossover",
+     "value": 1.5,
+     "unit": "improvement SDs",
+     "source": "maria 2026, w05 -- above this dispersion of the headroom a bound INFLATES the recorded SD rather than shrinking it, so the direction of the bias is a regime and not a law"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "not-identifiable",
+    "why": "The claim has no truth value until someone supplies the baseline mean, which is exactly the sense 'not-identifiable' is for. At a baseline of 80 the floor is the whole effect; at 95 it is a third. Both are inside the plausible range for acute schizophrenia trials and the deposit records sd0 but not mu0. What IS established without that field: the floor-induced bias is of the same order as every effect ever reported in this literature (1-3%), it always runs in the same direction at these headrooms, no paper accounts for it, and the correct null for VR is therefore a few per cent below 1 rather than 1."
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "MARIA 2026: the within-corpus test that would settle whether the floor mechanism is real has NO RESOLVING POWER on the available data, and the correction in c4 therefore remains model-based.",
+   "scope": "68 HAMD17 trials with a reported baseline mean (the antipsychotic deposit cannot support the test at all). Regression of lnVR on the predicted per-trial floor bias, with both anchors simulated.",
+   "quantities": [
+    {
+     "name": "floor_test_anchor_separation_over_noise",
+     "value": 0.52,
+     "unit": "ratio",
+     "n": 68,
+     "source": "maria 2026, w06 -- anchors at -2.189 (no floor) and -2.677 (floor only), separation 0.488 against a combined Monte-Carlo spread of 0.932"
+    },
+    {
+     "name": "floor_test_predicted_bias_span",
+     "value": 0.111,
+     "unit": "natural log units",
+     "n": 68,
+     "source": "maria 2026, w06 -- against a per-trial lnVR sampling SD of 0.104; the signal is at the level of one trial's noise"
+    }
+   ],
+   "evidence": [
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Recorded as a failure with the same care as a finding, because the first version of this test produced a publishable-looking artifact. The regressor z = (baseline - mean change)/SD contains the same arm SDs as lnVR = log(s1/s2), so regressor and outcome are coupled by construction. Holding the regressor fixed across simulated replicates broke that coupling in the null ONLY, and reported 'observed -1.197 against a null of +0.010, p < 0.001, inconsistent with both'. Recomputing the regressor inside each replicate moves the no-floor null to -2.189: the entire -1.2 was coupling. With the null right, the two anchors are separated by less than their own noise, so the tool now refuses to print the ratio and says why."
+   }
+  },
+  {
+   "id": "c6",
+   "statement": "This deposit is the only one in this area that contains data, code and manuscript source together, and it is still missing the one field its own question needs.",
+   "scope": "https://osf.io/qarvs/ -- README, LICENSE, data/response.csv, data/data_dictionary, src/*.R + response_ms.Rmd, output/figures, pub/supplement.",
+   "quantities": [
+    {
+     "name": "deposit_completeness_cost_in_tool_calls",
+     "value": 14,
+     "unit": "tool calls",
+     "source": "maria 2026 -- against 38 for ploderl2019, whose OSF deposit advertises data and holds only code, forcing a rebuild from the upstream Cipriani workbook"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Worth recording positively and precisely, because the cost difference is measurable and because the failure that remains is instructive: a complete, well-licensed, executable deposit whose data dictionary lists sd0tx and sd0ct but no baseline MEAN. Completeness is judged against the question, not against a checklist. Every artifact-badging scheme in existence would pass this deposit, and the field it omits is the one that decides whether its headline survives."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:agreesWith",
+   "target": "munkholm2020-antidepressant-variability",
+   "why": "Same design, same statistic, same conclusion in a different disease: the variability ratio is at or below 1 and is read as absence of individual response."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "ploderl2019-personalised-antidepressants",
+   "why": "Ploderl & Hengartner state that they followed 'the procedure suggested by Winkelbeiner et al.' and cite this OSF node. The methodological lineage is explicit, which is why a bias in the procedure propagates to both.",
+   "asymmetric_note": "The direction is Ploderl copying Winkelbeiner, so a defect here is inherited there and not vice versa."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "mccutcheon2022-reappraising-variability",
+   "why": "McCutcheon et al. argue a VR near 1 is compatible with large sigma_TE once rho is negative. This record adds that on the antipsychotic corpus VR is significantly BELOW 1, which under their own decomposition cannot be produced by any non-negative sigma_TE at rho = 0 -- so the direction of the deviation, not just its size, is informative. It also supplies a mechanism they do not consider that produces the same sign with no rho at all."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "ploderl2019-personalised-antidepressants",
+   "why": "Both treat an outcome bounded below as though it were unbounded, so both compare VR to a null of exactly 1 when the no-heterogeneity null on their scales is a few per cent below it. Neither cites the other on this because neither states it."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "senn2016-mastering-variation",
+   "why": "Senn's four components are a variance decomposition of an unbounded quantity. On a bounded scale the decomposition itself acquires a bias term that is not any of A, B, C or D, and whose size here is comparable to the effects being argued about."
+  }
+ ],
+ "open_questions": [
+  "The floor correction has a bootstrap interval on only one of its two inputs. Model uncertainty -- truncated normal versus whatever the real bounded response distribution is -- is not represented at all.",
+  "Baseline PANSS means for these 52 trials would settle the sweep in c4 outright. They are in the papers; the deposit dropped them.",
+  "The two remaining psychiatric variability meta-analyses (PTSD psychotherapy, depression psychotherapy) both use bounded scales and both report VR near 1. The same correction applies and has never been made.",
+  "Is there a bounded-outcome literature outside psychiatry where this bias has been named? The mechanism is generic to any capped improvement measure, and it would be surprising if nobody has written it down -- but nothing in the three psychiatric papers cites such a source."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-09-06",
+  "verified": "2026-09-06",
+  "notes_file": "NOTES.md"
+ }
+}
