@@ -20,9 +20,9 @@
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
  "cost": {
-  "tool_calls": 31,
+  "tool_calls": 38,
   "bytes_downloaded": 705000,
-  "compute_notes": "BMJ Open PDF 336,597 B; Europe PMC JATS full text 74,205 B; seven OSF files (five R scripts, two supplementary PDFs) 153 KB; Cipriani et al. 2018 GRISELDA workbook from Mendeley 189,027 B, sha256 16743cad... Eight analysis scripts p01-p08. Longest is p05 (53 s, 4500 simulated corpora of 169 trials); p04 35 s; p08 5.7 s including 4000 bootstrap resamples. Total simulation wall clock about 100 s.",
+  "compute_notes": "BMJ Open PDF 336,597 B; Europe PMC JATS full text 74,205 B; seven OSF files (five R scripts, two supplementary PDFs) 153 KB; Cipriani et al. 2018 GRISELDA workbook from Mendeley 189,027 B, sha256 16743cad... Eight analysis scripts p01-p08. Longest is p05 (53 s, 4500 simulated corpora of 169 trials); p04 35 s; p08 5.7 s including 4000 bootstrap resamples. Total simulation wall clock about 100 s. p09 added the endpoint subset (84 trials) and rebuilds it exactly.",
   "session": "2026-09-06 maria, open-ended"
  },
  "triggers": [
@@ -260,7 +260,7 @@
    ],
    "our_assessment": {
     "status": "refuted",
-    "why": "It is not a fact about variance. Both statistics carry the identical Nakagawa small-sample correction, which cancels, so per trial lnCVR_i - lnVR_i = ln(m_PL,i / m_AD,i) EXACTLY -- measured max absolute deviation 2.8e-16 across all 169 trials. CVR is VR divided by the ratio of mean symptom reductions and contains no further information. The drug reduces symptoms more than placebo in 159 of 169 trials; on HAMD17 the reduction is 10.99 vs 9.11 points, ratio 1.207, reciprocal 0.829. Their own Table 1 gives VR/CVR = 1.2317 against an n-weighted mean-change ratio of 1.2286, and the identity predicts every subgroup row including the tricyclic outlier (CVR/VR 0.613 vs mean ratio 0.603). The 'no immediately plausible explanation' is the treatment effect. Their code carries the tell: 'for the calculations of CVR, it was necessary to use the absolute values of the pre-post differences' -- a coefficient of variation requires a mean on a ratio scale, and a pre-post change has an arbitrary zero and either sign.",
+    "why": "It is not a fact about variance. Both statistics carry the identical Nakagawa small-sample correction, which cancels, so per trial lnCVR_i - lnVR_i = ln(m_PL,i / m_AD,i) EXACTLY -- measured max absolute deviation 2.8e-16 across all 169 trials. CVR is VR divided by the ratio of mean symptom reductions and contains no further information. The drug reduces symptoms more than placebo in 159 of 169 trials; on HAMD17 the reduction is 10.99 vs 9.11 points, ratio 1.207, reciprocal 0.829. Their own Table 1 gives VR/CVR = 1.2317 against an n-weighted mean-change ratio of 1.2286, and the identity predicts every subgroup row including the tricyclic outlier (CVR/VR 0.613 vs mean ratio 0.603). The 'no immediately plausible explanation' is the treatment effect. Their code carries the tell: 'for the calculations of CVR, it was necessary to use the absolute values of the pre-post differences' -- a coefficient of variation requires a mean on a ratio scale, and a pre-post change has an arbitrary zero and either sign. FURTHER, 2026-09-06 (see c10): the sign of the result flips with the reporting convention. Their own supplementary table 1 runs the identical analysis on the 84 endpoint-score trials and gets CVR = 1.15, above 1, while VR stays at 0.98.",
     "by": "ploderl2019-personalised-antidepressants (maria's p02)"
    }
   },
@@ -630,6 +630,72 @@
     "status": "accepted",
     "why": "Nothing downstream depends on it -- every analysis in the paper uses the 169 -- but it is recorded because a k quoted from an abstract is how a wrong denominator enters a later synthesis, and the abstract is the part that gets quoted."
    }
+  },
+  {
+   "id": "c10",
+   "statement": "MARIA 2026, NEW: the sign of the CVR result is set by the reporting convention, not by the data. In the same paper, on the same drugs, CVR is 0.82 on the 169 trials that reported a pre-post CHANGE and 1.15 on the 84 that reported an ENDPOINT score -- it crosses 1 -- while VR is stable at 1.01 and 0.98. For tricyclics the two values are 0.65 and 1.37, a factor of 2.1.",
+   "scope": "Their Table 1 (change scores) against their online supplementary table 1 (endpoint scores). Both subsets rebuilt from upstream and reproduced exactly: 84 trials, 10,879 drug and 7,346 placebo patients, VR 0.9803 against their 0.98 and CVR 1.1494 against their 1.15.",
+   "quantities": [
+    {
+     "name": "cv_ratio_antidepressants_endpoint_subset",
+     "value": 1.15,
+     "unit": "ratio",
+     "n": 84,
+     "ci_low": 1.11,
+     "ci_high": 1.18,
+     "ci_kind": "confidence",
+     "source": "their online supplementary table 1; reproduced by maria 2026 p09 as 1.1494 [1.1146, 1.1853]"
+    },
+    {
+     "name": "variability_ratio_antidepressants_endpoint_subset",
+     "value": 0.98,
+     "unit": "ratio",
+     "n": 84,
+     "ci_low": 0.96,
+     "ci_high": 1.0,
+     "ci_kind": "confidence",
+     "source": "their online supplementary table 1; reproduced as 0.9803 [0.9634, 0.9975]"
+    },
+    {
+     "name": "cv_ratio_tricyclics_change_subset",
+     "value": 0.65,
+     "unit": "ratio",
+     "n": 11,
+     "source": "their Table 1"
+    },
+    {
+     "name": "cv_ratio_tricyclics_endpoint_subset",
+     "value": 1.37,
+     "unit": "ratio",
+     "n": 13,
+     "source": "their online supplementary table 1 -- same drug class, same statistic, ratio of the two values 2.1"
+    },
+    {
+     "name": "endpoint_score_ratio_placebo_over_drug",
+     "value": 1.1741,
+     "unit": "ratio",
+     "n": 84,
+     "source": "maria 2026, p09 -- n-weighted endpoint scores 15.86 placebo vs 13.51 drug; the identity requires CVR/VR to equal this, observed 1.173"
+    },
+    {
+     "name": "trials_where_drug_arm_has_the_smaller_endpoint_mean",
+     "value": 0.917,
+     "unit": "proportion",
+     "count": 77,
+     "denominator": 84,
+     "n": 84,
+     "source": "maria 2026, p09 -- the sign flip that carries the whole result"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a4",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "PREDICTED BEFORE LOOKING, and the prediction is recorded at the top of p09 with the supplement's actual numbers pasted in underneath. From lnCVR - lnVR = ln(m_PL/m_AD): on change scores the drug arm's mean is the LARGER one (it improves more), so CVR < VR; on endpoint scores the drug arm's mean is the SMALLER one (fewer symptoms left), so CVR > VR. The subgroup ordering was predicted too and holds -- tricyclics, with the largest drug-placebo gap in this dataset, are the most extreme in BOTH directions. Reproduced to four significant figures on both subsets from an independent rebuild. The authors interpret the 0.82 substantively and say it has no plausible explanation; the 1.15, which says the opposite, is in a supplement and is not discussed."
+   }
   }
  ],
  "relations": [
@@ -670,7 +736,7 @@
   "Recompute D on the Munkholm corpus with the corrected pooled-variance weight. Until then the two D values are not comparable and the -0.384 must not be quoted against the +0.444 here.",
   "Four psychiatric variability meta-analyses still have no D: antipsychotics (Winkelbeiner 2019), brain stimulation, PTSD psychotherapy, depression psychotherapy.",
   "Does lambda differ across drug classes? Tricyclic trials have the largest mean-change ratio and would be the place to look, but k = 3 in my class assignment (theirs was 11 because they counted a trial in every class it contained).",
-  "Is the CVR-equals-VR-over-mean-ratio identity an artifact of the pre-post change outcome, or does it hold in the 85-trial endpoint-score subset too? Endpoint scores have a meaningful zero, so CVR should be legitimate there -- and if so, the endpoint subset is the only place in this literature where CVR means anything. Untested; supplementary table 1 is on disk."
+  "ANSWERED 2026-09-06 by p09 and now claim c10: the endpoint subset gives CVR = 1.15, not because CVR is legitimate there but because the mean ratio inverts. An endpoint score does have a meaningful zero, so a CV is computable on it -- but a CV RATIO between arms still just carries the mean ratio, and the mean ratio is the treatment effect. CVR is not rescued by a better scale; it is the wrong object for a two-arm comparison whatever the scale."
  ],
  "curation": {
   "author": "maria",

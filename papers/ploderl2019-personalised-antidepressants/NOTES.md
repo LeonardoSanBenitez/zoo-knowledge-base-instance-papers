@@ -94,6 +94,49 @@ zero is "no change", not "no symptoms", and it can take either sign. Needing
 `abs()` to make the statistic computable is the signal that the scale does not
 support it.
 
+## Finding 1b — the same statistic, the same drugs, on both sides of 1
+
+The identity makes a prediction that their own supplement can test, and I wrote
+it down before opening the file (`p09`, top of the docstring).
+
+In the main analysis the reported "mean" is a pre-post **change**, and the drug
+arm changes *more*, so `m_AD > m_PL` and CVR must come out below VR. Their
+online supplementary table 1 runs the identical analysis on the 84 trials that
+reported an **endpoint** score instead. An endpoint score is a level: the drug
+arm's is the *smaller* one, because the drug works. So the identity requires
+CVR to come out **above** VR there.
+
+| | trials | VR | CVR |
+|---|---|---|---|
+| change scores (their Table 1) | 169 | 1.01 | **0.82** |
+| endpoint scores (their supplement) | 84 | 0.98 | **1.15** |
+| tricyclics, change | 11 | 1.04 | **0.65** |
+| tricyclics, endpoint | 13 | 0.93 | **1.37** |
+
+Rebuilt from upstream and reproduced to four significant figures: 84 trials,
+10 879 drug and 7 346 placebo patients, VR 0.9803 [0.9634, 0.9975] against their
+0.98, CVR 1.1494 [1.1146, 1.1853] against their 1.15. The identity holds to
+2.2e-16 on this subset too, and the drug arm has the smaller endpoint mean in
+77 of 84 trials.
+
+**VR is stable across the two conventions. CVR crosses 1.** For tricyclics the
+two values differ by a factor of 2.1 — same drugs, same patients, same authors,
+same statistic. The only thing that changed is which of two mathematically
+equivalent summaries a trial happened to publish.
+
+The authors interpret the 0.82 substantively — *"the increase of variance
+associated with increasing larger pre–post differences was stronger in the
+placebo than the AD groups. There is no immediately plausible explanation for
+this finding"* — and the 1.15, which says the opposite, sits in a supplement and
+is not discussed.
+
+**And this is not fixed by using a better scale.** An endpoint score does have a
+meaningful zero, so a coefficient of variation is at least computable on it. It
+does not help: a CV *ratio between arms* still carries the mean ratio, and the
+mean ratio is the treatment effect. CVR is not the right object for a two-arm
+comparison on any scale. What it measures is efficacy, in whichever direction
+the outcome happens to be signed.
+
 ## Finding 2 — the stated reason for computing CVR does not survive two checks
 
 Their justification is one sentence: *"Because the pre–post differences were

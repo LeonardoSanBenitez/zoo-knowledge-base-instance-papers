@@ -55,6 +55,60 @@ not about a treatment.
 > `#c5` (the repair). The refuting evidence was a simulation on a second corpus in
 > which the answer was known by construction.
 
+## The second statistic in this literature measures the treatment effect
+
+`ploderl2019-personalised-antidepressants` reports, alongside VR = 1.01, a
+coefficient-of-variation ratio CVR = 0.82 (0.80-0.84) and says of it: *"There is
+no immediately plausible explanation for this finding."* There is one, and it is
+arithmetic. Both statistics carry the same Nakagawa small-sample correction and
+it cancels, so per trial
+
+    lnCVR_i - lnVR_i = ln(m_PL,i / m_AD,i)      exactly
+
+measured max deviation **2.8e-16** over 169 trials. CVR is VR divided by the
+ratio of arm means, and the ratio of arm means is the treatment effect.
+
+**The decisive test is in their own supplement.** On the 169 trials reporting a
+pre-post CHANGE the drug arm's mean is the larger one, so CVR < VR. On the 84
+reporting an ENDPOINT score the drug arm's mean is the smaller one, so CVR > VR:
+
+| convention | k | VR | CVR |
+|---|---|---|---|
+| change scores | 169 | 1.01 | **0.82** |
+| endpoint scores | 84 | 0.98 | **1.15** |
+| tricyclics, change | 11 | 1.04 | **0.65** |
+| tricyclics, endpoint | 13 | 0.93 | **1.37** |
+
+**VR is stable. CVR crosses 1, and for tricyclics moves by a factor of 2.1** —
+same drugs, same patients, same authors. Nothing changed except which of two
+equivalent summaries a trial happened to publish. Both subsets were rebuilt from
+upstream and reproduce to four significant figures.
+
+This is not repaired by a better scale. An endpoint score has a meaningful zero,
+so a CV is computable; a CV *ratio between arms* still carries the mean ratio.
+**Do not use lnCVR for a two-arm comparison of dispersion.** If the worry is
+that SD scales with the mean, estimate how much it does — see lambda below —
+rather than dividing by the mean and hoping.
+
+**And the justification usually given for switching to CVR does not survive.**
+Ploderl & Hengartner cite r(M, SD) = 0.55 across trials. Within measurement
+scale that correlation is +0.135 (Fisher-z pooled), so **75% of it is
+between-scale mixing** in a corpus spanning HAMD17/21/24 and MADRS. Worse, an
+across-trial correlation cannot license a within-trial, between-arm division:
+the relevant statistic is r(ln mean ratio, ln SD ratio) = +0.110, p = 0.154.
+
+**How much correction the data support: lambda.** Model the arm SD as a power of
+the arm mean, SD proportional to mean^lambda, so lnVR = lambda * ln(m_AD/m_PL).
+lnVR assumes lambda = 0, lnCVR assumes lambda = 1, and nobody in this literature
+estimates it. It is estimable -- but the raw regression slope is NOT lambda: the
+same regression returns +0.002 and +0.517 on simulated worlds where lambda is 0
+and 1, so the estimator's own scale is 0.515 and must be calibrated against both
+anchors. On the Ploderl corpus **lambda = 0.098 [-0.024, 0.241]** (4000
+trial-level bootstrap resamples): lnVR's assumption is inside the interval,
+lnCVR's is far outside, and **the published CVR applies 10.2 times the
+correction the data support.** Report lambda beside every VR. It costs one
+regression and two simulated worlds.
+
 ## Read this before anything else: what the design identifies
 
 `senn2016-mastering-variation` settles the question this whole area is about,
