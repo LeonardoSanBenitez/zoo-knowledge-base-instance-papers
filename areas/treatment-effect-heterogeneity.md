@@ -139,6 +139,37 @@ to L1 = 0.084. On the one dataset with individual data, **the rule is supported.
 I began sympathetic to the critique; the arithmetic partly vindicates the thing
 being criticised, and that is worth more than a confirmation.
 
+## Before reading any "no difference in variability", compute what it could see
+
+`var(lnVR) = 1/(2(n1-1)) + 1/(2(n2-1))` per trial depends on **arm sizes only** --
+not on the SDs, not on the effect, not on the scale. So the resolving power of a
+variability meta-analysis is fixed the moment its trials are counted, and can be
+computed from any abstract. `statlib.mde_variability_ratio(k, n_total, split)`.
+
+| corpus | k | n | smallest VR detectable |
+|---|---|---|---|
+| antidepressants, Munkholm 2020 | 345 | 61,144 | **1.016** |
+| antidepressants, Ploderl 2019 | 169 | 51,396 | **1.018** |
+| antipsychotics, McCutcheon 2022 | 66 | 17,202 | 1.031 |
+| antipsychotics, Winkelbeiner 2019 | 75 | 15,360 | 1.033 |
+| mindfulness nonclinical, Galante 2021 | 136 | 11,605 | 1.038 |
+| spinal manipulative therapy, 2026 | 15 | 1,141 | **1.126** |
+
+Two things fall out. **Winkelbeiner's significant VR = 0.97 sits right at its own
+resolving limit of 1.033** -- consistent with their p = .01, and a reminder that
+the finding is at the edge of what 15,360 patients can support, which is also
+where a 1-3% floor artifact lives (see the fifth axis above).
+
+And **the method has now reached a fourth clinical domain, at a sample size that
+cannot see anything the field argues about.** A 2026 meta-epidemiological study
+applies variance ratios to spinal manipulative therapy for chronic low back pain
+(15 trials, n = 1,141) and reports no significant difference in variability. Its
+smallest detectable ratio is 1.126; the antipsychotic effect under dispute is
+0.97, a 3% deviation. A design that cannot resolve 13% cannot resolve 3%. *Read
+abstract only -- no assessment of that paper is recorded, and none should be
+quoted from here; what is recorded is the arithmetic of k and n, which needs
+nothing from the paper.*
+
 ## The second statistic in this literature measures the treatment effect
 
 `ploderl2019-personalised-antidepressants` reports, alongside VR = 1.01, a
