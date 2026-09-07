@@ -2,10 +2,20 @@
  "schema_version": "1.4",
  "id": "hope2019-not-so-proportional",
  "title": "Recovery after stroke: not so proportional after all?",
- "authors": ["Thomas M. H. Hope", "Karl Friston", "Cathy J. Price", "Alexander P. Leff", "Pia Rotshtein", "Howard Bowman"],
+ "authors": [
+  "Thomas M. H. Hope",
+  "Karl Friston",
+  "Cathy J. Price",
+  "Alexander P. Leff",
+  "Pia Rotshtein",
+  "Howard Bowman"
+ ],
  "year": 2019,
  "venue": "Brain 142(1):15-22",
- "area": ["treatment-effect-heterogeneity", "measurement-theory"],
+ "area": [
+  "treatment-effect-heterogeneity",
+  "measurement-theory"
+ ],
  "identifiers": {
   "doi": "10.1093/brain/awy302",
   "pmcid": "PMC6308308",
@@ -14,9 +24,9 @@
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
  "cost": {
-  "tool_calls": 11,
-  "bytes_downloaded": 68393,
-  "compute_notes": "Europe PMC JATS full text 68,393 B, converted with tools/jats2txt.py to 29,213 characters of markdown. No data and no code are deposited; the supplementary proofs sit behind the journal. Every reproduction below is from numbers stated in the body text. Three scripts h01-h03; longest is h03 (34 s, 27 mixture settings x 4000 replicates of n=30).",
+  "tool_calls": 17,
+  "bytes_downloaded": 181715,
+  "compute_notes": "Europe PMC JATS full text 68,393 B, converted with tools/jats2txt.py to 29,213 characters of markdown. No data and no code are deposited; the supplementary proofs sit behind the journal. Every reproduction below is from numbers stated in the body text. Three scripts h01-h03; longest is h03 (34 s, 27 mixture settings x 4000 replicates of n=30). Plus the rebuttal, Bonkhoff et al. 2023 (PMC10350731), 113,322 B of JATS. Fourth script h04, 9 s.",
   "session": "2026-09-07 maria, open-ended after a 7h wait"
  },
  "triggers": [
@@ -95,6 +105,21 @@
     "how": "python h01_identity_and_reproduction.py && python h02_crosswalk.py && python h03_ceiling_versus_selection.py",
     "result": "all three run clean and write out_hNN.json. h02's part B is SUPERSEDED by h03 and kept because the refutation is inside h03's docstring."
    }
+  },
+  {
+   "id": "a5",
+   "role": "protocol",
+   "locator": "Bonkhoff et al. (2023), Proportional Recovery After Stroke: Addressing Concerns Regarding Mathematical Coupling and Ceiling Effects, Neurorehabil Neural Repair, PMC10350731 -- the direct rebuttal",
+   "status": "verified-usable",
+   "bytes": 113322,
+   "local_path": "artifacts/rebuttal/bonkhoff2023.xml",
+   "fetch_cmd": "curl -sL -o bonkhoff2023.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10350731/fullTextXML",
+   "checked": {
+    "on": "2026-09-07",
+    "by": "maria",
+    "how": "python tools/jats2txt.py bonkhoff2023.xml (48,375 characters); their measurement-error simulations are specified precisely enough to rerun and were rerun in h04 section B",
+    "result": "USABLE. Their equations (1)-(4) and all three measurement-error scenarios are stated in the body. The Supplemental Material with full simulation methods was not fetched and is not needed for the three results that carry their conclusion."
+   }
   }
  ],
  "claims": [
@@ -103,12 +128,36 @@
    "statement": "r(X, D) between baselines and change is a function of r(X,Y) and the variability ratio sigma_Y/sigma_X alone, and is driven toward -1 when that ratio is small -- so a strong correlation between baseline and change is not evidence that recovery is proportional.",
    "scope": "Any two-timepoint design where change is computed as the difference. Demonstrated by the authors on the stroke proportional-recovery literature.",
    "quantities": [
-    {"name": "oldham_canonical_r_baseline_change", "value": -0.7071, "unit": "Pearson r", "source": "maria 2026, h01 -- Equation 1 at r(X,Y)=0 and ratio 1; their text says -0.71; the exact value is -1/sqrt(2)"},
-    {"name": "equation1_max_deviation_from_simulation", "value": 0.0023, "unit": "Pearson r", "n": 35, "source": "maria 2026, h01 -- 35 (r(X,Y), ratio) cells at 400,000 draws each"},
-    {"name": "weakest_attainable_r_baseline_change_at_ratio_0158", "value": -0.9874, "unit": "Pearson r", "source": "maria 2026, h01 -- over all r(X,Y) in [0,1) at the ratio Winters et al. 2015 report; their text says -0.97"},
-    {"name": "implied_r_baseline_outcome_lazar2010", "value": 0.773, "unit": "Pearson r", "source": "maria 2026, h01 -- inverting Equation 1 at r(X,D)=-0.9 and ratio 0.48; the other root is 0.019, and their text says 'either ~0.78 or zero'"}
+    {
+     "name": "oldham_canonical_r_baseline_change",
+     "value": -0.7071,
+     "unit": "Pearson r",
+     "source": "maria 2026, h01 -- Equation 1 at r(X,Y)=0 and ratio 1; their text says -0.71; the exact value is -1/sqrt(2)"
+    },
+    {
+     "name": "equation1_max_deviation_from_simulation",
+     "value": 0.0023,
+     "unit": "Pearson r",
+     "n": 35,
+     "source": "maria 2026, h01 -- 35 (r(X,Y), ratio) cells at 400,000 draws each"
+    },
+    {
+     "name": "weakest_attainable_r_baseline_change_at_ratio_0158",
+     "value": -0.9874,
+     "unit": "Pearson r",
+     "source": "maria 2026, h01 -- over all r(X,Y) in [0,1) at the ratio Winters et al. 2015 report; their text says -0.97"
+    },
+    {
+     "name": "implied_r_baseline_outcome_lazar2010",
+     "value": 0.773,
+     "unit": "Pearson r",
+     "source": "maria 2026, h01 -- inverting Equation 1 at r(X,D)=-0.9 and ratio 0.48; the other root is 0.019, and their text says 'either ~0.78 or zero'"
+    }
    ],
-   "evidence": ["a1", "a4"],
+   "evidence": [
+    "a1",
+    "a4"
+   ],
    "our_assessment": {
     "status": "accepted",
     "why": "Nine numeric results stated in the body text, nine reproduced, from text alone with no deposit: the canonical Oldham value, both arms of their ceiling simulation, two Equation-1 inversions with both roots each, three 'regardless of r(X,Y)' bounds, and the Feng 2015 back-calculation. Equation 1 itself matches direct simulation to 2.3e-03 over 35 cells. The algebra is right and the argument is right."
@@ -119,11 +168,31 @@
    "statement": "MARIA 2026, NEW: Hope et al.'s Equation 1 and the psychiatric treatment-variability identity are the same function. rho, the correlation between a patient's individual treatment effect and their placebo-arm outcome, IS r(X,D); and VR, the ratio of treated to control arm SDs, IS sigma_Y/sigma_X.",
    "scope": "Verified as functions on a 40x40 grid over r(X,Y) in [-0.9, 0.99] and ratio in [0.2, 3.0].",
    "quantities": [
-    {"name": "max_deviation_hope_eq1_versus_psychiatric_rho_identity", "value": 0.0, "unit": "absolute difference", "n": 1600, "source": "maria 2026, h01 section 2 -- exactly zero, not approximately"},
-    {"name": "max_attainable_rho_at_antipsychotic_measured_vr", "value": -0.251, "unit": "correlation", "n": 75, "source": "maria 2026, h02 -- over all within-patient correlations in [-1,1) at VR = 0.968"},
-    {"name": "max_attainable_rho_at_vr_one", "value": -0.0071, "unit": "correlation", "source": "maria 2026, h02 -- at the VR = 1 that McCutcheon's working assumes, rho cannot be positive"}
+    {
+     "name": "max_deviation_hope_eq1_versus_psychiatric_rho_identity",
+     "value": 0.0,
+     "unit": "absolute difference",
+     "n": 1600,
+     "source": "maria 2026, h01 section 2 -- exactly zero, not approximately"
+    },
+    {
+     "name": "max_attainable_rho_at_antipsychotic_measured_vr",
+     "value": -0.251,
+     "unit": "correlation",
+     "n": 75,
+     "source": "maria 2026, h02 -- over all within-patient correlations in [-1,1) at VR = 0.968"
+    },
+    {
+     "name": "max_attainable_rho_at_vr_one",
+     "value": -0.0071,
+     "unit": "correlation",
+     "source": "maria 2026, h02 -- at the VR = 1 that McCutcheon's working assumes, rho cannot be positive"
+    }
    ],
-   "evidence": ["a1", "a4"],
+   "evidence": [
+    "a1",
+    "a4"
+   ],
    "our_assessment": {
     "status": "accepted",
     "why": "Machine zero over 1600 grid points is not a resemblance. The two literatures have disjoint ancestries -- Oldham 1962, Lord 1956, Cronbach and Furby 1970 on the stroke side; Nakagawa 2015 and ecological meta-analysis of variation on the psychiatric side -- and neither cites the other. The consequence is asymmetric and that asymmetry is the useful part: in stroke both X and Y are OBSERVED on the same patient, so r(X,Y) is estimable and Equation 1 pins r(X,D); in psychiatry one of the two is counterfactual, r(X,Y) is not estimable at all, and that is exactly why rho is not identified. Same identity, different observability, different pathology -- a spurious correlation that could have been checked, versus an unidentified parameter that cannot be."
@@ -134,11 +203,31 @@
    "statement": "The authors attribute the small sigma_Y/sigma_X in this literature to ceiling effects on the measurement scale.",
    "scope": "Their own simulation: baselines uniform on 0-65 of the 66-point Fugl-Meyer upper-extremity scale, outcomes = baseline + 33 capped at 66.",
    "quantities": [
-    {"name": "ceiling_only_r_baseline_change_after_shuffling", "value": -0.869, "unit": "Pearson r", "n": 1000, "source": "maria 2026, h01 -- 1000 simulations of 1000 patients; their text reports -0.88"},
-    {"name": "ceiling_only_variability_ratio_their_setting", "value": 0.570, "unit": "ratio", "n": 1000, "source": "maria 2026, h01/h03 -- their own cell reproduces at 0.570 against the 0.569 implied by their text"},
-    {"name": "ceiling_only_variability_ratio_at_plausible_improvements_low", "value": 0.731, "unit": "ratio", "source": "maria 2026, h03 -- mean improvement 25 points, SD 2; the whole plausible band is 0.731 to 1.002 over mean 10-25 and SD 2-12"}
+    {
+     "name": "ceiling_only_r_baseline_change_after_shuffling",
+     "value": -0.869,
+     "unit": "Pearson r",
+     "n": 1000,
+     "source": "maria 2026, h01 -- 1000 simulations of 1000 patients; their text reports -0.88"
+    },
+    {
+     "name": "ceiling_only_variability_ratio_their_setting",
+     "value": 0.57,
+     "unit": "ratio",
+     "n": 1000,
+     "source": "maria 2026, h01/h03 -- their own cell reproduces at 0.570 against the 0.569 implied by their text"
+    },
+    {
+     "name": "ceiling_only_variability_ratio_at_plausible_improvements_low",
+     "value": 0.731,
+     "unit": "ratio",
+     "source": "maria 2026, h03 -- mean improvement 25 points, SD 2; the whole plausible band is 0.731 to 1.002 over mean 10-25 and SD 2-12"
+    }
    ],
-   "evidence": ["a1", "a4"],
+   "evidence": [
+    "a1",
+    "a4"
+   ],
    "our_assessment": {
     "status": "accepted-narrower-scope",
     "why": "The mechanism is real and their simulation reproduces. The EMPHASIS does not survive. Their setting uses a 33-point mean improvement on a 66-point scale; the improvements these studies actually report are 10-25 points, and there the ceiling alone yields a ratio between 0.731 and 1.002. Every fitters-only value in the literature (0.158, 0.36, 0.438, 0.48) is BELOW that band and every whole-sample value (0.80, 0.88, 1.20) is inside or above it. So the ceiling is not what makes the fitter ratios small."
@@ -149,12 +238,39 @@
    "statement": "MARIA 2026, NEW: the compression of sigma_Y/sigma_X in this literature is dominated by the removal of 'non-fitters', not by the ceiling. A mixture of a genuine non-fitter subpopulation with proportional recovery and a ceiling reproduces the fitters-only statistics; the ceiling alone cannot come near them.",
    "scope": "Grid search over 27 settings (non-fitter fraction, recovered proportion, noise SD), 4000 replicates of n = 30, against the six statistics Hope et al. quote from Zarahn et al. (2011).",
    "quantities": [
-    {"name": "mixture_l1_distance_over_four_zarahn_targets", "value": 0.084, "unit": "sum of absolute differences", "n": 4, "source": "maria 2026, h03 -- best of 27 settings: 30% non-fitters recovering nothing, 70% proportional recovery, noise SD 4"},
-    {"name": "mixture_fitters_variability_ratio", "value": 0.37, "unit": "ratio", "n": 30, "source": "maria 2026, h03 -- against Zarahn's 0.36"},
-    {"name": "mixture_fitters_r_baseline_change", "value": -0.95, "unit": "Pearson r", "n": 30, "source": "maria 2026, h03 -- against Zarahn's -0.95"},
-    {"name": "mixture_held_out_whole_sample_r_baseline_outcome_error", "value": -0.23, "unit": "Pearson r", "n": 30, "source": "maria 2026, h03 -- model 0.57 against Zarahn's 0.80; this statistic was NOT in the fitting objective and it misses"}
+    {
+     "name": "mixture_l1_distance_over_four_zarahn_targets",
+     "value": 0.084,
+     "unit": "sum of absolute differences",
+     "n": 4,
+     "source": "maria 2026, h03 -- best of 27 settings: 30% non-fitters recovering nothing, 70% proportional recovery, noise SD 4"
+    },
+    {
+     "name": "mixture_fitters_variability_ratio",
+     "value": 0.37,
+     "unit": "ratio",
+     "n": 30,
+     "source": "maria 2026, h03 -- against Zarahn's 0.36"
+    },
+    {
+     "name": "mixture_fitters_r_baseline_change",
+     "value": -0.95,
+     "unit": "Pearson r",
+     "n": 30,
+     "source": "maria 2026, h03 -- against Zarahn's -0.95"
+    },
+    {
+     "name": "mixture_held_out_whole_sample_r_baseline_outcome_error",
+     "value": -0.23,
+     "unit": "Pearson r",
+     "n": 30,
+     "source": "maria 2026, h03 -- model 0.57 against Zarahn's 0.80; this statistic was NOT in the fitting objective and it misses"
+    }
    ],
-   "evidence": ["a3", "a4"],
+   "evidence": [
+    "a3",
+    "a4"
+   ],
    "our_assessment": {
     "status": "accepted-narrower-scope",
     "why": "Accepted for the direction and rejected for completeness, and the route there is recorded because it was wrong twice. Attempt 1 asked whether the ceiling could REACH each published ratio and answered yes for seven of eight -- vacuous, because the sweep ran the mean improvement to 55 points on a 66-point scale and the reachable band became 0.13-1.03, i.e. everything. Attempt 2 modelled non-fitter removal as dropping the most negative residuals, moved the ratio by 0.09 against Zarahn's 0.52, and I wrote 'a comparable amount' with the contradicting table directly above. The residual model removes a TAIL where the literature removes a SUBPOPULATION. The mixture is the right shape: four targets fitted to L1 = 0.084 and one held-out statistic matched. But the other held-out statistic, whole-sample r(X,Y), misses by 0.23 -- real non-fitters are more predictable from baseline than 'recovers nothing plus noise' allows. Right shape, not the right world."
@@ -165,22 +281,172 @@
    "statement": "The authors recommend that future studies report r(X,Y), r(X,D) and sigma_Y/sigma_X together, and separately that they minimize ceiling effects.",
    "scope": "Their Discussion, two recommendations given in that order without a stated priority.",
    "quantities": [],
-   "evidence": ["a1", "a4"],
+   "evidence": [
+    "a1",
+    "a4"
+   ],
    "our_assessment": {
     "status": "accepted-narrower-scope",
     "why": "Both are right and they are not equally important, which their text does not say. At the improvements these studies report, the ceiling moves the ratio from 1.00 to roughly 0.73-1.00 while the fitter split moves it the rest of the way to 0.16-0.48. So 'report all three statistics FOR THE WHOLE SAMPLE, before any fitter split' is first-order and 'minimize ceiling effects' is second-order. Their first recommendation is the bigger one and they do not say so."
    }
+  },
+  {
+   "id": "c6",
+   "statement": "Bonkhoff et al. (2023) reply that mathematical coupling of the TRUE value is a notational construct with no effect on any correlation; that coupling of the MEASUREMENT ERROR is real but small and is offset when the two error magnitudes are equal; and that ceiling-induced compression reflects genuine recovery dynamics rather than an artifact.",
+   "scope": "Their rebuttal, with three simulation scenarios -- canonical coupling, random recovery, and true 70% proportional recovery -- over baseline range 0-100 with uniform errors on 0-k.",
+   "quantities": [
+    {
+     "name": "error_coupled_r_baseline_change_canonical_kx50",
+     "value": -0.745,
+     "unit": "Pearson r",
+     "n": 200000,
+     "source": "maria 2026, h04B -- their text says about -0.74"
+    },
+    {
+     "name": "error_coupled_r_baseline_change_canonical_kx100",
+     "value": -0.816,
+     "unit": "Pearson r",
+     "n": 200000,
+     "source": "maria 2026, h04B -- their text says -0.82"
+    },
+    {
+     "name": "error_coupled_r_baseline_change_random_recovery_kx50",
+     "value": -0.199,
+     "unit": "Pearson r",
+     "n": 200000,
+     "source": "maria 2026, h04B -- from a TRUE value of 0; their text says about -0.2"
+    },
+    {
+     "name": "error_coupled_r_baseline_change_random_recovery_kx100",
+     "value": -0.5,
+     "unit": "Pearson r",
+     "n": 200000,
+     "source": "maria 2026, h04B -- their text says about -0.5"
+    },
+    {
+     "name": "error_coupling_when_error_magnitudes_are_equal",
+     "value": -0.707,
+     "unit": "Pearson r",
+     "n": 200000,
+     "source": "maria 2026, h04B -- at kX = kY = 25, 50 and 100 the empirical value is -0.707, -0.707, -0.706 against a true -0.707: the offsetting they claim is exact"
+    }
+   ],
+   "evidence": [
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "All three of their simulation scenarios reproduce to the stated precision, and their strongest claim -- that error-coupled amplification is completely offset when the two error magnitudes match -- is exact at every level tested. Their notational argument is also right, and h01 shows why: r(X,Y-X) is an exact function of r(X,Y) and the variability ratio, which is what notational means here. What the rebuttal establishes is that the problem is not universal. What it does NOT establish is that it is absent where this literature reports its results: by their own criterion (beta2 = r(X,Y) x ratio < 0.5) every fitters-only analysis is inside the conceded zone -- Zarahn 0.27, Lazar 0.37 -- and every whole-sample analysis is outside it -- Zarahn 0.70, Feng 0.96. The fitters-only analyses are the reported results."
+   }
+  },
+  {
+   "id": "c7",
+   "statement": "MARIA 2026, NEW: the dispute is a disagreement about the null hypothesis and neither side says so. Hope et al. simulate X independent of Y; Bonkhoff et al. simulate X independent of Z = Y - X. Both simulations are correct about their own setup and the setups are different.",
+   "scope": "Hope et al. Figure 3A against Bonkhoff et al. Figure 4 (left).",
+   "quantities": [
+    {
+     "name": "r_baseline_change_when_outcome_independent_of_baseline",
+     "value": -0.707,
+     "unit": "Pearson r",
+     "source": "maria 2026, h01 and h04 -- Hope's null, the Oldham 1962 case; exactly -1/sqrt(2)"
+    },
+    {
+     "name": "r_baseline_change_when_change_independent_of_baseline",
+     "value": 0.0,
+     "unit": "Pearson r",
+     "source": "maria 2026, h04B -- Bonkhoff's null; zero by construction, which is why they see no coupling"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a4",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Under X independent of Z, r(X,Z) = 0 by construction, so their Figure 4 (left) cannot show coupling and settles nothing about Hope's case; under X independent of Y, Oldham's -0.707 follows. Each side demonstrates its own null and reads the other as refuted. Structurally this is the same failure as lnVR against lnCVR in the psychiatric variability literature -- two statistics, two nulls, no paper stating which was chosen -- and finding the same shape in an unrelated field is why it is recorded as a claim and not only as prose in the area file."
+   }
+  },
+  {
+   "id": "c8",
+   "statement": "MARIA 2026, NEW: the test that settles the dispute -- draw recovery INDEPENDENTLY of baseline, clip it to the headroom the scale imposes, apply the field's own fitter rule, and see what the statistic returns -- was run by neither side. It favours the rule for fitters and undermines the whole-sample claim.",
+   "scope": "n = 30 as in Zarahn, 4000 replicates per world, five parameter settings, against the six statistics Hope et al. quote from Zarahn et al. (2011).",
+   "quantities": [
+    {
+     "name": "mechanical_null_r_baseline_change_at_20_point_recovery",
+     "value": -0.509,
+     "unit": "Pearson r",
+     "n": 500,
+     "source": "maria 2026, h04C -- constraint alone, no non-fitters; the observed whole-sample value is -0.49"
+    },
+    {
+     "name": "mechanical_null_r_baseline_change_with_30pct_nonfitters",
+     "value": -0.2,
+     "unit": "Pearson r",
+     "n": 30,
+     "source": "maria 2026, h04D -- the same world with a non-fitter subpopulation; the null moves by 0.31 on a parameter no study reports"
+    },
+    {
+     "name": "best_independent_recovery_null_fitters_r_baseline_change",
+     "value": -0.73,
+     "unit": "Pearson r",
+     "n": 30,
+     "source": "maria 2026, h04D -- best of five null worlds after applying the field's own fitter rule, against an observed -0.95"
+    },
+    {
+     "name": "best_independent_recovery_null_fitters_variability_ratio",
+     "value": 0.68,
+     "unit": "ratio",
+     "n": 30,
+     "source": "maria 2026, h04D -- against an observed 0.36"
+    }
+   ],
+   "evidence": [
+    "a3",
+    "a4"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "AGAINST MY OWN EXPECTATION WHEN I STARTED, which is why it is worth recording. No world in which recovery is drawn independently of baseline -- with the ceiling, with a non-fitter subpopulation, and with the field's own fitter rule applied -- comes near Zarahn's fitters statistics: the best reaches ratio 0.68 and r(X,Y-X) = -0.73 against an observed 0.36 and -0.95, while the h03 mixture WITH 70% proportional recovery matches to L1 = 0.084. On the one dataset in this literature with individual data, proportional recovery among fitters is SUPPORTED. Narrower scope for two reasons: it is one dataset of 30 patients, and the whole-sample claim goes the other way -- with no non-fitters the constraint alone gives -0.51 and the observed -0.49 is indistinguishable from it, while with 30% non-fitters the null is -0.20. The null moves by 0.31 on a parameter the analysis itself chooses and no study reports."
+   }
   }
  ],
  "relations": [
-  {"type": "zoo:sharesUnstatedAssumptionWith", "target": "mccutcheon2022-reappraising-variability", "why": "They share an IDENTITY, not merely an assumption: Hope's Equation 1 and the sigma_TE/rho identity are the same function to machine zero (c2). Neither cites the other; the ancestries are Oldham 1962 versus Nakagawa 2015.", "asymmetric_note": "The relation is symmetric in the mathematics and asymmetric in what it costs each field. Stroke can estimate r(X,Y) and did not report it; psychiatry cannot estimate it at all, which is the source of its non-identification. The stroke error is remediable by better reporting; the psychiatric one requires a different experiment."},
-  {"type": "cito:qualifies", "target": "winkelbeiner2019-antipsychotic-variability", "why": "Answers the open question that record ended on -- whether a bounded-outcome literature outside psychiatry had named this bias. It had, seven years earlier, from the correlation side rather than the variance-comparison side. The floor mechanism I derived there is their ceiling mechanism; what is new on my side is the general shrinkage curve and the regime reversal, and what is new on theirs is that the same compression makes a DIFFERENT statistic spurious."},
-  {"type": "cito:agreesWith", "target": "senn2016-mastering-variation", "why": "Both conclude that the missing quantity is a within-patient one and that the design which supplies it is repeated measurement of the same patient under both conditions. Senn reaches it from variance components, Hope et al. from the algebra of correlations with change. Two independent arguments for one experiment that nobody has run."},
-  {"type": "cito:critiques", "target": "ploderl2019-personalised-antidepressants", "why": "Not a citation either author made -- this is my edge. Ploderl & Hengartner read VR near 1 as absence of individual response; Equation 1 says that at VR = 1 the corresponding rho is bounded above by approximately zero and is negative for every within-patient correlation below 1, so the sign of rho carries no information. The psychiatric literature treats a negative rho as a finding."},
-  {"type": "cito:usesMethodIn", "target": "maria2026-antidepressant-variability-recalibration", "why": "The two-anchor calibrated-null design used throughout my psychiatric work is the same move Hope et al. make when they shuffle outcomes and recompute: establish what the statistic returns when the mechanism is absent, before reading the observed value."}
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "mccutcheon2022-reappraising-variability",
+   "why": "They share an IDENTITY, not merely an assumption: Hope's Equation 1 and the sigma_TE/rho identity are the same function to machine zero (c2). Neither cites the other; the ancestries are Oldham 1962 versus Nakagawa 2015.",
+   "asymmetric_note": "The relation is symmetric in the mathematics and asymmetric in what it costs each field. Stroke can estimate r(X,Y) and did not report it; psychiatry cannot estimate it at all, which is the source of its non-identification. The stroke error is remediable by better reporting; the psychiatric one requires a different experiment."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "winkelbeiner2019-antipsychotic-variability",
+   "why": "Answers the open question that record ended on -- whether a bounded-outcome literature outside psychiatry had named this bias. It had, seven years earlier, from the correlation side rather than the variance-comparison side. The floor mechanism I derived there is their ceiling mechanism; what is new on my side is the general shrinkage curve and the regime reversal, and what is new on theirs is that the same compression makes a DIFFERENT statistic spurious."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "senn2016-mastering-variation",
+   "why": "Both conclude that the missing quantity is a within-patient one and that the design which supplies it is repeated measurement of the same patient under both conditions. Senn reaches it from variance components, Hope et al. from the algebra of correlations with change. Two independent arguments for one experiment that nobody has run."
+  },
+  {
+   "type": "cito:critiques",
+   "target": "ploderl2019-personalised-antidepressants",
+   "why": "Not a citation either author made -- this is my edge. Ploderl & Hengartner read VR near 1 as absence of individual response; Equation 1 says that at VR = 1 the corresponding rho is bounded above by approximately zero and is negative for every within-patient correlation below 1, so the sign of rho carries no information. The psychiatric literature treats a negative rho as a finding."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "maria2026-antidepressant-variability-recalibration",
+   "why": "The two-anchor calibrated-null design used throughout my psychiatric work is the same move Hope et al. make when they shuffle outcomes and recompute: establish what the statistic returns when the mechanism is absent, before reading the observed value."
+  },
+  {
+   "type": "cito:repliesTo",
+   "target": "hope2019-not-so-proportional",
+   "why": "Bonkhoff et al. (2023) is the direct rebuttal. It is recorded inside this record as artifact a5 rather than as a separate record, because its content is only meaningful against the critique it answers and because everything checkable in it was checked here.",
+   "asymmetric_note": "This edge points at the record it lives in, which is unusual and deliberate: the rebuttal is an artifact of this record, not a peer of it. If it ever earns its own record the edge should be repointed rather than deleted."
+  }
  ],
  "open_questions": [
-  "The defence is unread: 'Arguments for the biological and predictive relevance of the proportional recovery rule' (eLife 2022) and 'Proportional Recovery After Stroke: Addressing Concerns Regarding Mathematical Coupling and Ceiling Effects' (Neurorehabil Neural Repair 2023). A live methodological dispute with both sides in print is rare, and the h03 result sits between them.",
+  "The 2022 eLife defence (Arguments for the biological and predictive relevance of the proportional recovery rule) is still unread; the 2023 Neurorehabil Neural Repair rebuttal is now read and recorded as artifact a5 and claim c6.",
   "Zarahn et al. (2011) report individual data for 30 patients -- the only study in this literature that does, per Hope et al. With it the mixture could be fitted rather than grid-searched, and the held-out r(X,Y) miss of 0.23 diagnosed rather than reported.",
   "The variability ratio appeared in 2026 in a meta-analysis of spinal manipulative therapy for chronic low back pain. The method is spreading beyond psychiatry and neurorehabilitation, the bounded-scale caveat travels with it, and neither critique is cited there. One search would establish how far it has gone.",
   "Propositions 8 and 9 (r(X + pD, Y) approx r(X,Y); r(X,Y) and r(X,D) have identical residuals) were verified numerically because the proofs are gated. Both are cheap to prove directly and it would be better to have the proof than the simulation."

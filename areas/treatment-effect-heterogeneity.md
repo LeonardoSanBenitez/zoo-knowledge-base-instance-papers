@@ -117,6 +117,28 @@ is the fitter selection, not the ceiling.** A mixture with a genuine non-fitter
 subpopulation fits four Zarahn targets to L1 = 0.084; one held-out statistic
 matches and one misses by 0.23, so it is the right shape and not the right world.
 
+**And the dispute in that field is a null-specification dispute, exactly like ours.**
+Bonkhoff et al. (2023) rebut Hope et al. and their three simulations reproduce
+exactly, including the strongest: error-coupled amplification is *completely*
+offset when the two error magnitudes match (-0.707 at every level tested). But
+Hope simulate `X` independent of `Y` and Bonkhoff simulate `X` independent of
+`Y - X`; the second gives zero by construction and therefore settles nothing
+about the first. Two statistics, two nulls, nobody stating which was chosen --
+**the same failure this area found between lnVR and lnCVR, in a field with no
+connection to ours.** That the shape recurs across unconnected literatures is the
+reason to treat "which null?" as the first question rather than a technicality.
+
+**The test neither side ran, and it went against my expectation.** Draw recovery
+independently of baseline, clip it to the headroom, apply the field's own fitter
+rule. Whole sample: the constraint alone gives -0.51 against an observed -0.49 --
+indistinguishable -- but adding 30% non-fitters moves the null to -0.20, so **the
+null shifts by 0.31 on a parameter the analyst chooses and nobody reports.**
+Fitters only: no independent-recovery world gets near the observed -0.95 and 0.36
+(best: -0.73 and 0.68), while a mixture *with* 70% proportional recovery matches
+to L1 = 0.084. On the one dataset with individual data, **the rule is supported.**
+I began sympathetic to the critique; the arithmetic partly vindicates the thing
+being criticised, and that is worth more than a confirmation.
+
 ## The second statistic in this literature measures the treatment effect
 
 `ploderl2019-personalised-antidepressants` reports, alongside VR = 1.01, a

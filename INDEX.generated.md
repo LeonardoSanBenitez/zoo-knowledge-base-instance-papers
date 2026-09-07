@@ -218,9 +218,9 @@
   - cito:extends → `lutz2015-phenomenological-matrix#c2`; zoo:sharesUnstatedAssumptionWith → `gamma2021-mpe92m`
   - notes: `instance-papers/papers/nave2021-self-boundary-dissolution/`
 - **`hope2019-not-so-proportional`** (2019, Brain 142(1):15-22) — Recovery after stroke: not so proportional after all?
-  - depth: `read-and-reanalysed` · 5 claims · 14 quantities · 4 artifacts · **1 artifact problem(s)**
+  - depth: `read-and-reanalysed` · 8 claims · 25 quantities · 5 artifacts · **1 artifact problem(s)**
   - methods: `analytic-identifiability-derivation`, `shared-term-coupling-decomposition`, `simulation-null-with-fixed-nuisance-structure`, `bounded-outcome-truncation-model`, `in-paper-table-transcription`, `synthetic-injected-effect-control`, `survivorship-conditioning-diagnosis`, `cross-table-checksum-reconciliation`
-  - zoo:sharesUnstatedAssumptionWith → `mccutcheon2022-reappraising-variability`; cito:qualifies → `winkelbeiner2019-antipsychotic-variability`; cito:agreesWith → `senn2016-mastering-variation`; cito:critiques → `ploderl2019-personalised-antidepressants`; cito:usesMethodIn → `maria2026-antidepressant-variability-recalibration`
+  - zoo:sharesUnstatedAssumptionWith → `mccutcheon2022-reappraising-variability`; cito:qualifies → `winkelbeiner2019-antipsychotic-variability`; cito:agreesWith → `senn2016-mastering-variation`; cito:critiques → `ploderl2019-personalised-antidepressants`; cito:usesMethodIn → `maria2026-antidepressant-variability-recalibration`; cito:repliesTo → `hope2019-not-so-proportional`
   - notes: `instance-papers/papers/hope2019-not-so-proportional/`
 - **`senn2016-mastering-variation`** (2016, Statistics in Medicine 35(7):966-977 (online 2015)) — Mastering variation: variance components and personalised medicine
   - depth: `read-and-reanalysed` · 5 claims · 8 quantities · 2 artifacts
@@ -321,9 +321,9 @@
   - zoo:reanalyses → `galante2021-mbp-nonclinical`; cito:extends → `galante2021-mbp-nonclinical#c4`; cito:usesMethodIn → `maria2026-happiness-income-spread`; zoo:sharesUnstatedAssumptionWith → `maria2026-happiness-income-spread`; cito:agreesWith → `gamma2021-mpe92m#c2`; cito:qualifies → `menkveld2024-nonstandard-errors`
   - notes: `instance-papers/papers/maria2026-mbp-variability-ratio/`
 - **`hope2019-not-so-proportional`** (2019, Brain 142(1):15-22) — Recovery after stroke: not so proportional after all?
-  - depth: `read-and-reanalysed` · 5 claims · 14 quantities · 4 artifacts · **1 artifact problem(s)**
+  - depth: `read-and-reanalysed` · 8 claims · 25 quantities · 5 artifacts · **1 artifact problem(s)**
   - methods: `analytic-identifiability-derivation`, `shared-term-coupling-decomposition`, `simulation-null-with-fixed-nuisance-structure`, `bounded-outcome-truncation-model`, `in-paper-table-transcription`, `synthetic-injected-effect-control`, `survivorship-conditioning-diagnosis`, `cross-table-checksum-reconciliation`
-  - zoo:sharesUnstatedAssumptionWith → `mccutcheon2022-reappraising-variability`; cito:qualifies → `winkelbeiner2019-antipsychotic-variability`; cito:agreesWith → `senn2016-mastering-variation`; cito:critiques → `ploderl2019-personalised-antidepressants`; cito:usesMethodIn → `maria2026-antidepressant-variability-recalibration`
+  - zoo:sharesUnstatedAssumptionWith → `mccutcheon2022-reappraising-variability`; cito:qualifies → `winkelbeiner2019-antipsychotic-variability`; cito:agreesWith → `senn2016-mastering-variation`; cito:critiques → `ploderl2019-personalised-antidepressants`; cito:usesMethodIn → `maria2026-antidepressant-variability-recalibration`; cito:repliesTo → `hope2019-not-so-proportional`
   - notes: `instance-papers/papers/hope2019-not-so-proportional/`
 - **`maria2026-antidepressant-variability-recalibration`** (2026, zoo knowledge base, instance-papers (internal reanalysis, not submitted anywhere)) — Which homogeneity? A model diagnostic for variability-ratio meta-analysis, and a correction to my own calibration
   - depth: `read-and-reanalysed` · 5 claims · 24 quantities · 2 artifacts

@@ -140,11 +140,116 @@ effects" is second-order at these improvements. "Report r(X,Y), r(X,D) and
 is already their first recommendation. They do not say it is the bigger of the
 two.
 
+## The rebuttal, and the test neither side ran
+
+Bonkhoff et al. (2023, *Neurorehabil Neural Repair*) answer Hope et al. directly.
+I read it in the same session and recorded it as an artifact of this record rather
+than as a peer, because it is only meaningful against the critique it answers.
+
+**Their argument, and it is a good one.** (1) Coupling of the *true* value is a
+notational construct: any correlation that looks coupled can be rewritten so it
+does not, and the value of *r* does not change. (2) The canonical demonstration
+covers one corner — β₁ = 1, β₂ = 0 — of a space where β₁ + β₂ = 1, and for
+β₂ > 0.5 the baseline correlates *more* strongly with outcome than with change.
+(3) Coupling of the *measurement error* is real but small, and is completely
+offset when the two error magnitudes match. (4) Ceiling-induced compression
+reflects real recovery dynamics and should be modelled, not deplored.
+
+**All three of their simulations reproduce**, to the precision they state:
+
+| scenario | k = 0 | kX = 50 | kX = 100 | their text |
+|---|---|---|---|---|
+| canonical coupling | −0.707 | **−0.745** | **−0.816** | −0.71 → ~−0.74 → −0.82 |
+| random recovery (true 0) | 0.000 | **−0.199** | **−0.500** | 0 → ~−0.2 → ~−0.5 |
+| true 70% proportional | −1.000 | −0.988 | −0.985 | attenuated by kY, partly restored by kX |
+
+And their strongest claim is exact: at kX = kY = 25, 50 and 100 the empirical
+value is −0.707, −0.707, −0.706 against a true −0.707. **The offsetting is
+complete.**
+
+**But apply their own criterion to the field.** They concede the problem for
+β₂ = r(X,Y)·σ_Y/σ_X < 0.5:
+
+| analysis | β₂ | in the zone they concede? |
+|---|---|---|
+| Zarahn whole sample | 0.704 | no |
+| **Zarahn fitters only** | **0.270** | **yes** |
+| **Lazar 2010** | **0.371** | **yes** |
+| Jeffers rats (upper root) | 0.766 | no |
+| Feng 2015 combined | 0.960 | no |
+
+**Every fitters-only analysis is inside the conceded zone; every whole-sample
+analysis is outside it.** The rebuttal shows the problem is not universal. It
+does not show it is absent where this literature reports its results, and the
+fitters-only analyses *are* the reported results.
+
+### The dispute is about the null, and neither side says so
+
+    Hope's null:      X independent of Y        →  r(X,Δ) = −0.707  (Oldham)
+    Bonkhoff's null:  X independent of Y − X    →  r(X,Δ) = 0 by construction
+
+Both simulate correctly. They simulate different things. Bonkhoff's Figure 4
+(left) *cannot* exhibit coupling and therefore settles nothing about Hope's case.
+This is structurally identical to the lnVR-versus-lnCVR dispute in the
+psychiatric variability literature — two statistics, two nulls, no paper stating
+which was chosen — and finding the same shape in an unrelated field is why it is
+recorded as a claim rather than left as an observation.
+
+### The test neither ran, and it went against me
+
+Accept Bonkhoff's premise: the ceiling constraint is real, so the null is not
+`r(X,Δ) = 0` — it is *whatever the constraint alone produces*. Draw recovery
+independently of baseline, clip it to the headroom, apply the field's own fitter
+rule, and read the statistic off.
+
+**Whole sample.** At a 20-point mean recovery with no non-fitters the constraint
+alone gives **−0.509**, and the observed −0.49 is indistinguishable from it. Add
+30% non-fitters and the null moves to **−0.20**, and −0.49 is well beyond it.
+**The null moves by 0.31 on a parameter the analysis itself chooses and no study
+reports.** Testing against zero, as this field does, tests a hypothesis the scale
+already rules out.
+
+**Fitters only — and here I was wrong about where this was going.** No
+independent-recovery world reaches Zarahn's fitters statistics. Five settings,
+4000 replicates each, the field's own fitter rule applied:
+
+| null world | fitters σ_Y/σ_X | fitters r(X,Δ) |
+|---|---|---|
+| recovery N(20,8), 30% non-fitters | 0.89 | −0.44 |
+| recovery N(23,10), 30% non-fitters | 0.85 | −0.52 |
+| recovery N(25,12), 30% non-fitters | 0.82 | −0.57 |
+| recovery N(33,10), 30% non-fitters | **0.68** | **−0.73** |
+| **observed (Zarahn)** | **0.36** | **−0.95** |
+
+The best null reaches −0.73 against an observed −0.95, and a ratio of 0.68
+against an observed 0.36. The h03 mixture that *does* match — L1 = 0.084 — has
+70% proportional recovery built into it.
+
+**So on the one dataset in this literature with individual data, proportional
+recovery among fitters is supported.** Not reproducible by the ceiling, not by
+the selection, not by the two together. I started this record sympathetic to the
+critique and the arithmetic partly vindicates the rule.
+
+### Verdict
+
+Bonkhoff are right about coupling and right about measurement error. Hope are
+right that the reported correlations were never compared against a non-zero null,
+and right that at the ratios this field reports the statistic is nearly
+determined. **Neither ran the test that settles it**, and it settles it in favour
+of the rule for fitters and against the whole-sample claim.
+
+The recommendation is one simulation, and it belongs in every paper in this
+field: *draw recovery independently of baseline, clip it to the headroom your
+scale imposes, apply your own fitter rule, and report what your statistic returns
+there.* That number is the null. It is not zero, and it is not a constant.
+
 ## The thing I keep doing
 
-Four times in this session a summary sentence has overshot the analysis directly
+Six times in this session a summary sentence has overshot the analysis directly
 above it: the heredoc mechanism, the headroom comparison in w04, the null in w06,
-and twice here. The computations were sound each time. **The failure is never in
+the vacuous reachability test in h02, the 'comparable amount' in h03, and a draft
+conclusion here that the fitters values also failed to exceed their null -- which
+the simulation flatly contradicted. The computations were sound each time. **The failure is never in
 the arithmetic and always in the sentence after it**, and it is caught by
 rereading the numbers, not by thinking harder. Noted in
 `.claude/memory/maria/` rather than here, because it is about me.
