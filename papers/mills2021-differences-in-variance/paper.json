@@ -1,0 +1,260 @@
+{
+ "schema_version": "1.4",
+ "id": "mills2021-differences-in-variance",
+ "title": "Detecting Heterogeneity of Intervention Effects Using Analysis and Meta-analysis of Differences in Variance Between Trial Arms",
+ "authors": [
+  "Harriet L. Mills",
+  "Julian P. T. Higgins",
+  "Richard W. Morris",
+  "David Kessler",
+  "Jon Heron",
+  "Nicola Wiles",
+  "George Davey Smith",
+  "Kate Tilling"
+ ],
+ "year": 2021,
+ "venue": "Epidemiology 32(6):846-854",
+ "area": [
+  "treatment-effect-heterogeneity",
+  "measurement-theory"
+ ],
+ "identifiers": {
+  "doi": "10.1097/EDE.0000000000001401",
+  "pmcid": "PMC8478324",
+  "url": "https://github.com/harrietlmills/DetectingDifferencesInVariance"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-ran-artifacts",
+ "cost": {
+  "tool_calls": 7,
+  "bytes_downloaded": 57000,
+  "compute_notes": "Europe PMC JATS 44,523 characters after tools/jats2txt.py; GitHub API metadata; MetaAnalysis.R 12,455 B. No new simulation was needed -- the estimator their code implements is the one already calibrated in ploderl2019/p05, so the bias numbers are transferred rather than recomputed.",
+  "session": "2026-09-07 maria, open-ended after a 7h wait"
+ },
+ "triggers": [
+  "how do I meta-analyse a difference in variances between trial arms",
+  "which test compares variances between two arms of a trial",
+  "is the coefficient of variation appropriate for my outcome scale",
+  "HAMD and MADRS are interval scales not ratio scales",
+  "does a mean-SD correlation justify using the coefficient of variation",
+  "Glejser Levene Bartlett test for unequal variance in a trial",
+  "detecting effect modification without specifying the modifier",
+  "variance differences by genotype as an analogue of trial arms",
+  "why is variance lower in the intervention arm",
+  "R code for meta-analysis of differences in variance"
+ ],
+ "methods": [
+  "random-effects-meta-analysis",
+  "variability-ratio",
+  "estimator-bias-stress-test",
+  "measured-mean-variance-coupling",
+  "bounded-outcome-truncation-model",
+  "systematic-literature-review"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "protocol",
+   "locator": "Europe PMC JATS full text, PMC8478324",
+   "status": "verified-usable",
+   "bytes": 44523,
+   "local_path": "artifacts/mills2021.txt",
+   "fetch_cmd": "curl -sL -o mills2021.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8478324/fullTextXML && python tools/jats2txt.py mills2021.xml > mills2021.txt",
+   "checked": {
+    "on": "2026-09-07",
+    "by": "maria",
+    "how": "read in full; Table 1 (nine methods with their assumptions), the summary-data meta-analysis section, and the Discussion",
+    "result": "USABLE. Their Table 1 is the cleanest inventory of variance-comparison methods I have seen and it states the assumption that decides each one -- in particular that the coefficient of variation requires a ratio scale with a meaningful zero, with HAMD and MADRS named as violations."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "https://github.com/harrietlmills/DetectingDifferencesInVariance -- MetaAnalysis.R",
+   "status": "verified-usable",
+   "bytes": 12455,
+   "local_path": "artifacts/MetaAnalysis.R",
+   "fetch_cmd": "curl -sL -o MetaAnalysis.R https://raw.githubusercontent.com/harrietlmills/DetectingDifferencesInVariance/master/MetaAnalysis.R",
+   "checked": {
+    "on": "2026-09-07",
+    "by": "maria",
+    "how": "curl the GitHub API for repo metadata (200, 25 KB, last pushed 2021-06-08, NO LICENSE), then read MetaAnalysis.R lines 120-260",
+    "result": "USABLE and it is where the correction lives. Lines 129-144 build est_diff_SE as sqrt((s1^2*sqrt(2/(n1-1)))^2 + (s2^2*sqrt(2/(n2-1)))^2) and hand it to metagen for inverse-variance pooling -- i.e. 2 s1^4/(n1-1) + 2 s2^4/(n2-1), the estimator shown biased in ploderl2019#c5. The repository carries NO LICENCE, which formally means all rights reserved; it is read here and not redistributed."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "code",
+   "locator": "https://github.com/harrietlmills/DetectingDifferencesInVariance -- AnalyseIndividualTrials.R",
+   "status": "not-checked",
+   "bytes": 13791,
+   "checked": {
+    "on": "2026-09-07",
+    "by": "maria",
+    "how": "listed via the GitHub contents API; not downloaded",
+    "result": "PRESENT AND UNREAD. It holds the individual-participant-data half of the method -- Glejser, Levene, and the linear model with nonconstant variance -- none of which is represented anywhere in this corpus, because every psychiatric application works from summary data. Recorded as unchecked rather than ignored."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "supplement",
+   "locator": "eAppendix 2 (formulae for all nine methods) and eAppendix 3 (the simulation showing a mean-SD correlation does not indicate a CoV difference), http://links.lww.com/EDE/B835",
+   "status": "gated",
+   "checked": {
+    "on": "2026-09-07",
+    "by": "maria",
+    "how": "the links.lww.com URL is referenced throughout the body; not fetched",
+    "result": "NOT RETRIEVED. eAppendix 3 is load-bearing for claim c3 -- it is the simulation that severs the mean-SD correlation from the CoV question -- and the body states its conclusion without its parameters. Cheap to reproduce from the description; TODO 2."
+   }
+  }
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "The difference in variances between two trial arms can be estimated from summary data alone (sample sizes and SDs) with a standard error, and meta-analysed with standard inverse-variance methods; this is proposed here alongside the ratio of variances, the log ratio of SDs and the log ratio of coefficients of variation.",
+   "scope": "Continuous outcomes, two-arm parallel trials, summary data. Demonstrated on 19 RCTs of computer-based psychological treatment for depression and 22 statin trials from a Cochrane review.",
+   "quantities": [],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Correct and, importantly for this corpus, PRIOR. Two of my records asserted that the psychiatric literature does not report D and read as though the method were unavailable. The first half is true of the applications; the second is false -- this is a 2021 paper in a general epidemiology journal with deposited R code. Corrected in place in ploderl2019 and winkelbeiner2019 and in the area file. The lesson recorded with it: I checked prior art for the claim I was least sure of (the floor mechanism, where I found Hope et al. 2019) and skipped it for the claim the whole argument rested on. Centrality, not confidence, should trigger the search."
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "The coefficient of variation should be compared between arms only when the outcome is on a ratio scale with a meaningful zero; the Hamilton Depression Rating Scale and the Montgomery-Asberg Depression Rating Scale are interval scales and do not qualify.",
+   "scope": "Stated in Table 1 as a requirement of both CoV methods and argued in the Methods; the two named violations are citations to the psychiatric variability meta-analyses.",
+   "quantities": [],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Correct, and it is the substance of what I recorded as a new finding on ploderl2019#c2 five years later. What remains mine is the exact form: lnCVR minus lnVR equals the log ratio of arm means EXACTLY (Nakagawa's small-sample corrections are identical in both and cancel), measured to 2.8e-16 over 169 trials -- so lnCVR carries no information beyond lnVR and the treatment effect, which is stronger than 'the scale does not support it'. And the consequence they do not draw: the SIGN of a CVR result is set by the reporting convention, 0.82 on change scores and 1.15 on endpoint scores in the same paper on the same drugs."
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "A correlation between the mean and the SD across trials does not indicate that the coefficient of variation differs between arms; the CoV should be used only when the scale qualifies, irrespective of the observed correlation.",
+   "scope": "Simulation in eAppendix 3, two conditions (same CoV in both arms, different CoV in both arms). The conclusion is stated in the body; the parameters are in the gated appendix.",
+   "quantities": [],
+   "evidence": [
+    "a1",
+    "a4"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Accepted on the authors' report; the simulation itself is gated (a4) and has not been reproduced here. It is the substance of what I recorded as ploderl2019#c3. What remains mine on that corpus is quantitative and specific: of the r(M,SD) = 0.55 that Ploderl & Hengartner cite as their justification, 75% is between-SCALE mixing (within-scale pooled r = 0.135 across HAMD17/21/24 and MADRS), and the within-trial between-arm correlation that would actually license the division is +0.110 with p = 0.154."
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "MARIA 2026: their difference-in-variances estimator is biased when the arms differ in size, and the bias has the same sign as the finding they report.",
+   "scope": "MetaAnalysis.R lines 129-144 compute est_diff_SE as 2 s1^4/(n1-1) + 2 s2^4/(n2-1) and pass it to metagen for inverse-variance pooling. Calibrated on a real 169-trial corpus with D = 0 by construction, 500 simulated corpora per cell.",
+   "quantities": [
+    {
+     "name": "d_estimator_bias_naive_weight_null_world",
+     "value": 0.514,
+     "unit": "squared outcome units",
+     "n": 169,
+     "ci": "500 simulated corpora, true D = 0 by construction",
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, ploderl2019/p05 -- the estimator is identical to theirs"
+    },
+    {
+     "name": "d_estimator_coverage_naive_weight_null_world",
+     "value": 0.902,
+     "unit": "proportion",
+     "n": 500,
+     "count": 451,
+     "denominator": 500,
+     "source": "maria 2026, ploderl2019/p05 -- realised coverage of a nominal 0.95 interval"
+    },
+    {
+     "name": "d_estimator_bias_pooled_variance_weight",
+     "value": -0.003,
+     "unit": "squared outcome units",
+     "n": 169,
+     "source": "maria 2026 -- the one-line fix: build the weight from the across-arm pooled variance"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Accepted as a property of the estimator, demonstrated with three falsifiable predictions of its mechanism that all held (equal arms shrink the bias to +0.064; swapping the arms reverses it to -0.567; a weight built from the across-arm pooled variance removes it, -0.003 with 96.6% coverage). NARROWER because I have NOT recomputed their two applied examples -- their deposit carries the code and not the trial-level data. Their headline observation is that variance was smaller in the intervention arm in both meta-analyses, which is the direction this bias moves when the intervention arm is the larger one, but pointing at a direction is not showing an effect. Nothing here says their applied results are wrong; it says their estimator has an untested bias whose sign coincides with their finding, and that recomputing is a day's work with published data."
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "Lower variance in the intervention arm may be partly because the outcome scale is bounded at zero and floor or ceiling effects reduce variance.",
+   "scope": "One sentence in the Discussion, about the BDI (range 0-63) in their single trial and their first meta-analysis. Unquantified.",
+   "quantities": [],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Correct and prior to my 'fifth axis of non-identification'. They name the mechanism; they do not quantify it, and my work adds three things that are not here: the governing dimensionless parameter z = (mean headroom - mean improvement)/SD(improvement); the shrinkage curve statlib.floor_shrinkage(z, headroom_dispersion); and the finding that the DIRECTION REVERSES above about 1.5 improvement-SDs of headroom dispersion, so 'a bound reduces variance' is a statement about a regime rather than a law. Also the size on real corpora: 1-3%, which is the magnitude of every effect the psychiatric literature has reported."
+   }
+  },
+  {
+   "id": "c6",
+   "statement": "Difference in variances should be meta-analysed only when all trials use the same outcome scale; where scales differ, the ratio of variances is the appropriate summary.",
+   "scope": "Discussion, stated as guidance.",
+   "quantities": [],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Correct and prior. I violated it and then caught it independently: a pooled D of -0.384 in mccutcheon2022#c6 mixed squared HAMD17, HAMD21, HAMD24 and MADRS points, and its own unit string read 'squared HAMD/MADRS points'. Marked superseded 2026-09-06 with per-scale values. Their sentence would have prevented it."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:corrects",
+   "target": "ploderl2019-personalised-antidepressants",
+   "why": "Not a citation either author made. Mills et al. state in 2021 that the coefficient of variation requires a ratio scale and that HAMD/MADRS do not qualify, citing the psychiatric variability meta-analyses directly; Ploderl & Hengartner compute and interpret a CVR on exactly those scales in 2019 and their supplement repeats it on endpoint scores.",
+   "asymmetric_note": "Chronology runs the wrong way for a citation -- Mills is later -- so this edge means 'the later paper settles the earlier one's method', not 'the earlier paper ignored it'."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "winkelbeiner2019-antipsychotic-variability",
+   "why": "Their one-sentence note that a bounded scale reduces variance in the arm that improves more is the mechanism I derived and quantified there. The quantification stands; the priority does not."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "senn2016-mastering-variation",
+   "why": "Both hold that a difference in variance between arms is evidence of effect modification only after other explanations -- noncompliance, differential engagement, model misspecification, within-person variability -- are excluded, and both say the exclusion needs individual data."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "mccutcheon2022-reappraising-variability",
+   "why": "The corrected weight verified in this corpus (statlib.var_diff weight='pooled') was developed against the estimator their code implements, and was applied there to supersede a unit-mixed pooled D."
+  },
+  {
+   "type": "cito:corrects",
+   "target": "winkelbeiner2019-antipsychotic-variability",
+   "why": "My record there presented the bounded-scale mechanism as a fifth axis of non-identification that this literature had not named. Mills et al. name it in 2021. The quantification in that record stands; the priority claim is corrected in place there.",
+   "asymmetric_note": "This edge corrects MY record, not the Winkelbeiner paper, which does not discuss the bounded scale at all."
+  }
+ ],
+ "open_questions": [
+  "Recompute their two applied meta-analyses -- 19 computer-based therapy RCTs and 22 statin trials from a Cochrane review -- with the corrected weight. Their deposit has the code and not the trial-level data; both source reviews are published and carry mean, SD and n per arm, which is all that is needed.",
+  "eAppendix 3, the simulation severing the mean-SD correlation from the CoV question, is gated. It is cheap to reproduce from the description in the body and is the evidence for c3.",
+  "AnalyseIndividualTrials.R implements Glejser, Levene and the nonconstant-variance linear model -- the individual-data half of this method, absent from this corpus entirely because every psychiatric application works from summary data.",
+  "The repository carries NO LICENCE, which formally reserves all rights. Reading it is fine; anything derived from it would need permission. Worth noting because a deposit without a licence is a common and rarely-flagged form of incomplete openness -- and it passes every artifact-badging scheme."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-09-07",
+  "verified": "2026-09-07",
+  "notes_file": "NOTES.md"
+ }
+}

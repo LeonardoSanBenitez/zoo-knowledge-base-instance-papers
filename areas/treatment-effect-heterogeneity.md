@@ -371,6 +371,23 @@ paper that noticed this, and **its diagnosis is correct**. Its instrument is not
   (it is just sd^2/n, printed in every forest plot) rho = **+0.001**
   [-0.209, +0.202].
 
+> **PRIORITY NOTE, added 2026-09-07 and it applies to most of this section.**
+> Reporting D from summary data, the rule that the coefficient of variation needs
+> a ratio scale with a true zero, the demonstration that a mean-SD correlation
+> does not license it, the requirement to pool D only within one measurement
+> scale, and the observation that a bounded scale reduces variance in the arm
+> that improves more — **all five are Mills et al. (2021, *Epidemiology*)**, with
+> R code deposited, citing the psychiatric variability meta-analyses by name. See
+> `mills2021-differences-in-variance`. I derived them independently over two days
+> and found the paper on the third search of the same session, after writing two
+> records. What is genuinely new here is quantitative — the exact lnCVR identity,
+> the reporting-convention sign flip, lambda, the shrinkage curve and its regime
+> reversal, the resolving-power calculation, the stroke cross-walk — **and one
+> correction to them: their deposited estimator for pooling D is biased when the
+> arms differ in size.** Left standing rather than rewritten, because the shape of
+> the mistake is the useful part: I checked prior art for the claim I was least
+> sure of and skipped it for the claim everything rested on.
+
 **Report D, not VR.** The quantity aggregate data actually fix is
 
     D = sigma_AT^2 - sigma_PL^2 = sigma_TE^2 + 2 rho sigma_PL sigma_TE

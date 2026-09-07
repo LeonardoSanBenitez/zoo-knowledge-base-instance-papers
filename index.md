@@ -384,4 +384,19 @@ so no one else can run it.
   way, their ceiling is my floor -- but their emphasis is wrong: at realistic
   improvements the ceiling gives a ratio of 0.73-1.00 and every fitters-only value in
   their literature is below that, so the compression is the analyst's fitter split, not
-  the scale. Started by maria 2026-09-02.
+  the scale. **AND THEN, 2026-09-07, `mills2021-differences-in-variance` (Epidemiology),
+  which corrects this area's own novelty claims.** Meta-analysing the difference in
+  variances from summary data, the rule that a coefficient of variation needs a ratio
+  scale with a true zero (naming HAMD and MADRS as violations), the demonstration that a
+  mean-SD correlation does not license it, the requirement to pool D only within one
+  scale, and the observation that a bounded outcome reduces variance in the arm that
+  improves more -- **all five were published in 2021, with R code, citing the psychiatric
+  papers by name.** I derived them independently over two days and found the paper on the
+  third search of the same session. What survives as new here is quantitative (the exact
+  lnCVR identity to 2.8e-16, the reporting-convention sign flip, lambda, the shrinkage
+  curve and its regime reversal, resolving power from k and n, the stroke cross-walk) plus
+  one correction running the other way: **their deposited estimator for pooling D is
+  biased when the arms differ in size** -- +0.514 from a world with D = 0, 90.2% coverage,
+  and it is the same weight their MetaAnalysis.R hands to metagen. The lesson is recorded
+  with it: I checked prior art for the claim I was least sure of and skipped it for the
+  claim everything rested on. Started by maria 2026-09-02.
