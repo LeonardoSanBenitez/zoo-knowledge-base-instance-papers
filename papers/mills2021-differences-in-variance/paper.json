@@ -26,9 +26,9 @@
  "record_status": "active",
  "read_depth": "read-and-ran-artifacts",
  "cost": {
-  "tool_calls": 7,
+  "tool_calls": 12,
   "bytes_downloaded": 57000,
-  "compute_notes": "Europe PMC JATS 44,523 characters after tools/jats2txt.py; GitHub API metadata; MetaAnalysis.R 12,455 B. No new simulation was needed -- the estimator their code implements is the one already calibrated in ploderl2019/p05, so the bias numbers are transferred rather than recomputed.",
+  "compute_notes": "Europe PMC JATS 44,523 characters after tools/jats2txt.py; GitHub API metadata; MetaAnalysis.R 12,455 B. No new simulation was needed -- the estimator their code implements is the one already calibrated in ploderl2019/p05, so the bias numbers are transferred rather than recomputed. Plus q01_bias_table.py: 6 arm-ratio cells x 2 weights x 400 replicates and a 4-point k sweep, 30 s.",
   "session": "2026-09-07 maria, open-ended after a 7h wait"
  },
  "triggers": [
@@ -214,6 +214,67 @@
     "status": "accepted",
     "why": "Correct and prior. I violated it and then caught it independently: a pooled D of -0.384 in mccutcheon2022#c6 mixed squared HAMD17, HAMD21, HAMD24 and MADRS points, and its own unit string read 'squared HAMD/MADRS points'. Marked superseded 2026-09-06 with per-scale values. Their sentence would have prevented it."
    }
+  },
+  {
+   "id": "c7",
+   "statement": "MARIA 2026, NEW: the bias in their estimator takes the sign of the arm imbalance, does not shrink as trials accumulate, and therefore gets WORSE in a larger meta-analysis -- realised coverage of the nominal 95% interval falls from 0.948 at 10 trials to 0.468 at 300.",
+   "scope": "Simulated corpora with D = 0 by construction, control arm n = 100, 400 replicates per cell for the ratio sweep and 250 for the k sweep. Reported in units of the true variance so it is scale-free.",
+   "quantities": [
+    {
+     "name": "d_estimator_bias_at_treated_over_control_ratio_025",
+     "value": -0.1035,
+     "unit": "fraction of the true variance",
+     "n": 30,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, q01 -- coverage 0.557 at this ratio"
+    },
+    {
+     "name": "d_estimator_bias_at_equal_arms",
+     "value": -0.0011,
+     "unit": "fraction of the true variance",
+     "n": 30,
+     "source": "maria 2026, q01 -- coverage 0.965; the estimator is fine when the arms match"
+    },
+    {
+     "name": "d_estimator_bias_at_treated_over_control_ratio_4",
+     "value": 0.0256,
+     "unit": "fraction of the true variance",
+     "n": 30,
+     "source": "maria 2026, q01 -- coverage 0.875; the sign follows the imbalance"
+    },
+    {
+     "name": "d_estimator_coverage_at_10_trials",
+     "value": 0.948,
+     "unit": "proportion",
+     "count": 237,
+     "denominator": 250,
+     "n": 250,
+     "source": "maria 2026, q01 -- treated/control ratio 2.0, nominal 0.95"
+    },
+    {
+     "name": "d_estimator_coverage_at_300_trials",
+     "value": 0.468,
+     "unit": "proportion",
+     "count": 117,
+     "denominator": 250,
+     "n": 250,
+     "source": "maria 2026, q01 -- same ratio, same bias (0.0201 against 0.0147 at k=10); the interval narrows around the wrong value"
+    },
+    {
+     "name": "pooled_weight_bias_across_all_ratios_max_absolute",
+     "value": 0.0035,
+     "unit": "fraction of the true variance",
+     "n": 30,
+     "source": "maria 2026, q01 -- worst cell of six for the corrected weight; coverage 0.953 to 0.978 throughout"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The k-sweep is the part worth carrying: the bias is a property of the WEIGHT, not of the sample, so accumulating trials narrows the interval around the wrong value and coverage collapses. At 300 trials a nominal 95% interval covers the truth less than half the time. That inverts the usual reassurance that a bigger meta-analysis is safer. NARROWER because the table must not be interpolated onto a real corpus: every cell holds arm sizes and variance constant, and a real corpus mixes both. Measured directly, the same estimator gave +0.514 squared points on one real corpus and +0.054 on another -- a tenfold difference the table predicts for neither. Hence `statlib.calibrate_var_diff`, which takes a corpus's own arm sizes and control-arm SDs and returns the bias WITH its Monte-Carlo error, because at a few hundred replicates that error is often larger than the residual bias of the corrected weight."
+   }
   }
  ],
  "relations": [
@@ -246,7 +307,7 @@
   }
  ],
  "open_questions": [
-  "Recompute their two applied meta-analyses -- 19 computer-based therapy RCTs and 22 statin trials from a Cochrane review -- with the corrected weight. Their deposit has the code and not the trial-level data; both source reviews are published and carry mean, SD and n per arm, which is all that is needed.",
+  "Recompute their two applied meta-analyses with the corrected weight -- still not done. q01 supersedes it in usefulness (a direction-and-magnitude table plus a per-corpus calibrator) but not in force: only their own numbers can say whether their published conclusions move.",
   "eAppendix 3, the simulation severing the mean-SD correlation from the CoV question, is gated. It is cheap to reproduce from the description in the body and is the evidence for c3.",
   "AnalyseIndividualTrials.R implements Glejser, Levene and the nonconstant-variance linear model -- the individual-data half of this method, absent from this corpus entirely because every psychiatric application works from summary data.",
   "The repository carries NO LICENCE, which formally reserves all rights. Reading it is fine; anything derived from it would need permission. Worth noting because a deposit without a licence is a common and rarely-flagged form of incomplete openness -- and it passes every artifact-badging scheme."

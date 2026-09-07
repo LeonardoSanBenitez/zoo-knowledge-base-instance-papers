@@ -223,7 +223,7 @@
   - zoo:sharesUnstatedAssumptionWith → `mccutcheon2022-reappraising-variability`; cito:qualifies → `winkelbeiner2019-antipsychotic-variability`; cito:agreesWith → `senn2016-mastering-variation`; cito:critiques → `ploderl2019-personalised-antidepressants`; cito:usesMethodIn → `maria2026-antidepressant-variability-recalibration`; cito:repliesTo → `hope2019-not-so-proportional`
   - notes: `instance-papers/papers/hope2019-not-so-proportional/`
 - **`mills2021-differences-in-variance`** (2021, Epidemiology 32(6):846-854) — Detecting Heterogeneity of Intervention Effects Using Analysis and Meta-analysis of Differences in Variance Between Trial Arms
-  - depth: `read-and-ran-artifacts` · 6 claims · 3 quantities · 4 artifacts
+  - depth: `read-and-ran-artifacts` · 7 claims · 9 quantities · 4 artifacts
   - methods: `random-effects-meta-analysis`, `variability-ratio`, `estimator-bias-stress-test`, `measured-mean-variance-coupling`, `bounded-outcome-truncation-model`, `systematic-literature-review`
   - cito:corrects → `ploderl2019-personalised-antidepressants`; cito:qualifies → `winkelbeiner2019-antipsychotic-variability`; cito:agreesWith → `senn2016-mastering-variation`; cito:usesMethodIn → `mccutcheon2022-reappraising-variability`; cito:corrects → `winkelbeiner2019-antipsychotic-variability`
   - notes: `instance-papers/papers/mills2021-differences-in-variance/`
@@ -346,7 +346,7 @@
   - cito:critiques → `munkholm2020-antidepressant-variability`; cito:corrects → `munkholm2020-antidepressant-variability#c2`; cito:qualifies → `maria2026-antidepressant-variability-recalibration#c2`; zoo:sharesUnstatedAssumptionWith → `galante2021-mbp-nonclinical`; cito:usesDataFrom → `munkholm2020-antidepressant-variability`; cito:agreesWith → `maria2026-analytic-variability-reanalysis`; cito:citesAsAuthority → `senn2016-mastering-variation`
   - notes: `instance-papers/papers/mccutcheon2022-reappraising-variability/`
 - **`mills2021-differences-in-variance`** (2021, Epidemiology 32(6):846-854) — Detecting Heterogeneity of Intervention Effects Using Analysis and Meta-analysis of Differences in Variance Between Trial Arms
-  - depth: `read-and-ran-artifacts` · 6 claims · 3 quantities · 4 artifacts
+  - depth: `read-and-ran-artifacts` · 7 claims · 9 quantities · 4 artifacts
   - methods: `random-effects-meta-analysis`, `variability-ratio`, `estimator-bias-stress-test`, `measured-mean-variance-coupling`, `bounded-outcome-truncation-model`, `systematic-literature-review`
   - cito:corrects → `ploderl2019-personalised-antidepressants`; cito:qualifies → `winkelbeiner2019-antipsychotic-variability`; cito:agreesWith → `senn2016-mastering-variation`; cito:usesMethodIn → `mccutcheon2022-reappraising-variability`; cito:corrects → `winkelbeiner2019-antipsychotic-variability`
   - notes: `instance-papers/papers/mills2021-differences-in-variance/`

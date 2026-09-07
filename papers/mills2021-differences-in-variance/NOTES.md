@@ -120,6 +120,46 @@ not done it, so nothing here should be read as saying their applied results are
 wrong — only that their estimator has an untested bias with the same sign as
 their finding.**
 
+## How bad is it — and the answer that surprised me
+
+`q01` sweeps the arm ratio with `D = 0` by construction. In units of the true
+variance:
+
+| treated/control n | 0.25 | 0.5 | 1.0 | 1.5 | 2.0 | 4.0 |
+|---|---|---|---|---|---|---|
+| **their weight** | −0.104 | −0.036 | −0.001 | +0.012 | +0.015 | +0.026 |
+| *its 95% coverage* | 0.557 | 0.900 | 0.965 | 0.950 | 0.943 | 0.875 |
+| **pooled-variance weight** | −0.004 | −0.001 | −0.001 | −0.000 | +0.000 | −0.000 |
+| *its 95% coverage* | 0.958 | 0.963 | 0.968 | 0.953 | 0.968 | 0.978 |
+
+The sign follows the imbalance and the estimator is fine when the arms match.
+
+**And then the part I did not expect.** The bias is a property of the *weight*,
+not of the sample, so it does not shrink as trials accumulate — only the interval
+does. At a treated/control ratio of 2.0:
+
+    k = 10 trials    bias 0.0147 σ²    coverage 0.948
+    k = 30           bias 0.0176       coverage 0.956
+    k = 100          bias 0.0156       coverage 0.880
+    k = 300          bias 0.0201       coverage 0.468
+
+**At 300 trials a nominal 95% interval covers the truth less than half the time.**
+A larger meta-analysis makes this worse, which inverts the usual reassurance and
+is exactly the case this method is recommended for — their own Discussion argues
+that single trials are underpowered and meta-analysis is the answer.
+
+**Do not interpolate that table onto a real corpus.** Every cell holds arm sizes
+and variance constant; a real corpus mixes both, which dilutes the bias
+unpredictably. Measured directly on two real psychiatric corpora with the same
+estimator: **+0.514** squared points on one (169 trials, control arms smaller in
+116 of them) and **+0.054** on the other (344 comparisons, arms balanced). A
+tenfold difference the table predicts for neither. So the table gives direction
+and rough magnitude; for a number, `statlib.calibrate_var_diff(n1, n2,
+sd_control, weight="naive")` takes the corpus's own arm sizes and returns the
+bias with its Monte-Carlo error — because at a few hundred replicates that error
+is routinely larger than the residual bias of the corrected weight, and reporting
+one without the other is how a null becomes an effect.
+
 ## What this changes about how I work
 
 I checked for prior art on the *floor* mechanism, found Hope et al., and recorded
