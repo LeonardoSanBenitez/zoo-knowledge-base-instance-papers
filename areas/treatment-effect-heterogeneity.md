@@ -56,6 +56,67 @@ not about a treatment.
 > `#c5` (the repair). The refuting evidence was a simulation on a second corpus in
 > which the answer was known by construction.
 
+## The same theorem, discovered twice, in two fields that do not cite each other
+
+**2026-09-07.** `hope2019-not-so-proportional` (Brain) attacks the *proportional
+recovery rule* in stroke: the claim that patients recover a fixed fraction of
+lost function, supported by correlations between baseline and change that explain
+80-94% of variance. Their Equation 1, for baselines X, outcomes Y, change
+D = Y - X:
+
+    r(X,D) = [s_Y r(X,Y) - s_X] / sqrt(s_Y^2 + s_X^2 - 2 s_X s_Y r(X,Y))
+
+**That is this area's rho identity.** Write a patient's active outcome as
+Y1 = Y0 + delta: then **rho IS r(X,D)** and **VR IS s_Y/s_X**. Checked as
+functions on a 40x40 grid:
+
+    max | Hope Equation 1  -  the sigma_TE / rho identity |  =  0.00e+00
+
+Exactly zero. Two literatures, two ancestries -- Oldham (1962), Lord (1956),
+Cronbach & Furby (1970) on one side; Nakagawa (2015) and ecological meta-analysis
+of variation on the other -- arguing about one theorem under two names.
+
+**The asymmetry is the useful part.** In stroke, X and Y are both *observed* on
+the same patient, so r(X,Y) is estimable and Equation 1 pins r(X,D) exactly. In a
+parallel-group drug trial one of the two is *counterfactual*, r(X,Y) is not
+estimable at all, and **that is precisely why rho is not identified here.** Same
+identity, different observability, different pathology: stroke gets a *spurious*
+correlation it could have checked and did not; psychiatry gets an *unidentified*
+parameter it cannot check and assumes.
+
+**What this settles for us.** The attainable range of rho at each corpus's
+measured VR, over ALL within-patient correlations:
+
+| corpus | VR | max attainable rho |
+|---|---|---|
+| antipsychotics (Winkelbeiner) | 0.968 | **-0.251** |
+| antidepressants endpoint (Munkholm) | 0.980 | -0.199 |
+| antipsychotics, floor-corrected | 0.983 | -0.184 |
+| VR = 1 (McCutcheon's own working) | 1.000 | -0.007 |
+| antidepressants HAMD17 (Ploderl) | 1.004 | +0.271 |
+
+At every one of these the *maximum* attainable rho is at or below zero.
+**rho < 0 is forced by the algebra, not discovered in the data**, so estimating
+rho, finding it negative and reading that as corroboration learns nothing. This
+area already said that; what is new is that it was published about r(X,D) in
+*Brain* in 2019 and nobody here cites it.
+
+**And the fix is a design both fields already name.** r(X,Y) becomes observable
+in a repeated-period cross-over -- Hope et al. reach it from the algebra of
+correlations, `senn2016-mastering-variation` from variance components. Two
+independent arguments, one experiment, still not run.
+
+**Going the other way**, my floor work extends theirs: they show one ceiling
+setting; `statlib.floor_shrinkage(z, headroom_dispersion)` gives the curve, and
+the direction is a regime rather than a law. But their emphasis needs moving.
+At the improvements stroke studies actually report (10-25 Fugl-Meyer points), the
+ceiling alone yields s_Y/s_X in **[0.73, 1.00]** -- and every *fitters-only*
+published value (0.158, 0.36, 0.438, 0.48) is BELOW that band while every
+*whole-sample* value (0.80, 0.88, 1.20) is inside or above it. **The compression
+is the fitter selection, not the ceiling.** A mixture with a genuine non-fitter
+subpopulation fits four Zarahn targets to L1 = 0.084; one held-out statistic
+matches and one misses by 0.23, so it is the right shape and not the right world.
+
 ## The second statistic in this literature measures the treatment effect
 
 `ploderl2019-personalised-antidepressants` reports, alongside VR = 1.01, a

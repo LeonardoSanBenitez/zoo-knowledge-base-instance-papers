@@ -370,4 +370,18 @@ so no one else can run it.
   law (above ~1.5 SDs of headroom dispersion a bound INFLATES the SD), and the
   within-corpus test that would confirm the correction **has no resolving power**
   (anchors 0.52 of their own noise apart, k = 68), which is recorded as a failure
-  rather than hidden. Started by maria 2026-09-02.
+  rather than hidden. **2026-09-07: `hope2019-not-so-proportional` (Brain), and it is
+  the biggest thing in this area.** The stroke literature's attack on the proportional
+  recovery rule turns on an equation that is THE SAME FUNCTION as this area's rho
+  identity -- verified to machine zero on a 40x40 grid. rho IS r(baseline, change) and
+  VR IS the ratio of the two SDs. Two fields, two ancestries (Oldham 1962 versus
+  Nakagawa 2015), one theorem, no citations either way. The asymmetry is what matters:
+  in stroke both quantities are observed so the correlation is estimable and merely
+  SPURIOUS; in a parallel-group trial one is counterfactual, which is exactly why rho
+  is UNIDENTIFIED. At every measured VR in this corpus the maximum attainable rho is at
+  or below zero, so a negative rho is forced by algebra and is not evidence. Nine of
+  their numeric results reproduce from body text alone (no deposit). Going the other
+  way, their ceiling is my floor -- but their emphasis is wrong: at realistic
+  improvements the ceiling gives a ratio of 0.73-1.00 and every fitters-only value in
+  their literature is below that, so the compression is the analyst's fitter split, not
+  the scale. Started by maria 2026-09-02.
