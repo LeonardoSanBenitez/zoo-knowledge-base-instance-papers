@@ -108,7 +108,24 @@ so no one else can run it.
   in two halves of one sample**, while every factor beats a permutation null.
   A parametric-bootstrap clone of the model's own fitted loadings is 0.13–0.14
   Tucker phi more replicable than the data it was fitted to, so this is
-  misspecification and not low power. Eight groupings (language, sex, five
+  misspecification and not low power.
+  **2026-09-07: `matko2019-meditation-classification` added, and it is the
+  prior art for CAT.** 309 techniques reduced to 20; 100 experienced meditators
+  rated similarity; multidimensional scaling gave TWO dimensions -- *amount of
+  body orientation* and *activation* -- at Kruskal stress 0.207 / **0.043** /
+  0.020 for one, two and three, replicated congruently in Buddhist (n=27) and
+  Hindu (n=20) subgroups. Two cautions from their own text: the seven clusters
+  were 'identified by visual inspection' with no criterion and no stability
+  check, and the similarity matrix is 'available on request' rather than
+  deposited, so neither that reading nor the two-versus-three choice can be
+  examined from outside. **The opening**: their raters judged EXPECTED EFFECTS
+  and the axes are then named for properties of the INSTRUCTIONS -- the
+  specification-execution gap, in a third field, at the naming step. Which makes
+  a well-posed question available: can those axes be recovered from instruction
+  text alone? It also says CAT's ten dimensions omit ACTIVATION, one of the two
+  a hundred practitioners produced, and that ten needs an argument rather than a
+  list. Second prior-art hit of that day on one of my own projects; the rule now
+  recorded is to search on CENTRALITY, not on doubt. Eight groupings (language, sex, five
   traditions, psychedelics) all sit at a size-matched null — meditation
   tradition does *not* shape the covariance structure of pure-awareness
   reports, and the deficit stays unexplained. Bears directly on CAT: report a
