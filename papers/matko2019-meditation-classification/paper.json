@@ -1,0 +1,145 @@
+{
+ "schema_version": "1.4",
+ "id": "matko2019-meditation-classification",
+ "title": "What Is Meditation? Proposing an Empirically Derived Classification System",
+ "authors": ["Karin Matko", "Peter Sedlmeier"],
+ "year": 2019,
+ "venue": "Frontiers in Psychology 10:2276",
+ "area": ["contemplative-neuroscience", "measurement-theory"],
+ "identifiers": {
+  "doi": "10.3389/fpsyg.2019.02276",
+  "pmcid": "PMC6803504",
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6803504/fullTextXML"
+ },
+ "record_status": "active",
+ "read_depth": "read-full-text",
+ "cost": {
+  "tool_calls": 5,
+  "bytes_downloaded": 61042,
+  "compute_notes": "Europe PMC JATS, 61,042 characters after tools/jats2txt.py. No reanalysis in this record: the similarity matrix is not deposited. Table 1's twenty full technique descriptions were transcribed into .claude/memory/maria/cat_matko_validation.py, which is my own project's file and not part of this corpus.",
+  "session": "2026-09-07 maria, open-ended after a 7h wait"
+ },
+ "triggers": [
+  "how are meditation techniques classified",
+  "is there a dimensional space of meditation practices",
+  "focused attention and open monitoring are not enough categories",
+  "multidimensional scaling of meditation techniques",
+  "what dimensions distinguish meditation practices",
+  "body orientation and activation in contemplative practice",
+  "empirically derived taxonomy rather than a tradition-based one",
+  "do Buddhist and Hindu meditators classify practices differently",
+  "how many dimensions does a similarity study support"
+ ],
+ "methods": [
+  "multidimensional-scaling",
+  "expert-similarity-elicitation",
+  "in-paper-table-transcription",
+  "systematic-literature-review"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "protocol",
+   "locator": "Europe PMC JATS full text, PMC6803504",
+   "status": "verified-usable",
+   "bytes": 61042,
+   "local_path": "artifacts/matko2019.txt",
+   "fetch_cmd": "curl -sL -o matko2019.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6803504/fullTextXML && python tools/jats2txt.py matko2019.xml > matko2019.txt",
+   "checked": {
+    "on": "2026-09-07",
+    "by": "maria",
+    "how": "read Results, Materials and Discussion in full; Table 1 transcribed in full",
+    "result": "USABLE. Table 1 carries all twenty technique descriptions verbatim as shown to raters, which is the artifact that makes any reuse possible at all given that the data are not deposited."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "raw-data",
+   "locator": "the 100 x 190 similarity ratings and the derived mean similarity matrix",
+   "status": "dangling",
+   "checked": {
+    "on": "2026-09-07",
+    "by": "maria",
+    "how": "read the Data Availability Statement in the JATS full text",
+    "result": "NOT DEPOSITED. 'The datasets generated for this study are available on request to the corresponding author.' That is unavailable to an agent, and it is the artifact everything in the paper rests on: without the matrix the MDS cannot be rerun, the choice of two dimensions over three cannot be checked, and the seven clusters -- identified by VISUAL INSPECTION of the figures, by the authors' own account -- cannot be tested against any clustering criterion."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "in-paper-table",
+   "locator": "Table 1, twenty basic meditation techniques with full descriptions as presented to raters",
+   "status": "verified-usable",
+   "local_path": "artifacts/matko2019.txt",
+   "checked": {
+    "on": "2026-09-07",
+    "by": "maria",
+    "how": "transcribed all twenty into .claude/memory/maria/cat_matko_validation.py and scored each on two dimensions from the description text alone",
+    "result": "USABLE and it is the reusable part of this paper. Twenty carefully-worded technique descriptions, validated by having been shown to 100 experienced practitioners, are a small standing benchmark for anything that claims to characterise meditation instructions."
+   }
+  }
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Similarity judgements from 100 experienced meditators over 20 basic meditation techniques are well described by two dimensions, labelled 'amount of body orientation' and 'activation', with seven clusters within them.",
+   "scope": "20 techniques distilled from 309; similarity of EXPECTED GENERAL EFFECTS, not of the techniques themselves; PROXSCAL multidimensional scaling on the mean similarity matrix, 1000 random starts.",
+   "quantities": [
+    {"name": "mds_kruskal_stress_one_dimension", "value": 0.207, "unit": "Kruskal stress", "n": 20, "source": "Results"},
+    {"name": "mds_kruskal_stress_two_dimensions", "value": 0.043, "unit": "Kruskal stress", "n": 20, "source": "Results -- the chosen model"},
+    {"name": "mds_kruskal_stress_three_dimensions", "value": 0.020, "unit": "Kruskal stress", "n": 20, "source": "Results -- the improvement over 2D was called negligible"},
+    {"name": "mds_kruskal_stress_buddhist_subgroup", "value": 0.054, "unit": "Kruskal stress", "n": 27, "source": "Differences Between Traditions"},
+    {"name": "mds_kruskal_stress_hindu_subgroup", "value": 0.048, "unit": "Kruskal stress", "n": 20, "source": "Differences Between Traditions"},
+    {"name": "raters", "value": 100, "unit": "experienced meditators", "n": 100, "source": "Participants"},
+    {"name": "techniques_screened_to_reach_twenty", "value": 309, "unit": "techniques", "source": "Abstract; previous studies by the same authors"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The design is good and the subgroup replication is the strongest part -- separately fitting Buddhist (n=27) and Hindu (n=20) raters gives congruent two-dimensional solutions, which is a real check and is rare in this literature. NARROWER on two counts, both from their own text. (1) The seven clusters were 'identified by visual inspection' of the figures, with no clustering criterion and no stability check, so they are an interpretation of the configuration rather than a result of it. (2) The choice of two dimensions over three rests on calling a stress reduction of 0.023 'negligible' -- a judgement, not a test -- and the underlying matrix is not deposited, so nobody outside can examine either decision. The dimensional finding stands; the seven clusters are a reading."
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "MARIA 2026: their axes are named after properties of the INSTRUCTIONS while the judgements they come from are about EXPECTED EFFECTS, and nothing in the study connects the two.",
+   "scope": "Their Materials section states the ratings concern 'general effects that might be expected when meditators engage in practicing these meditation techniques'; the axis labels 'amount of body orientation' and 'activation' are properties of what a practice asks you to do.",
+   "quantities": [],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Three distinct objects are in play and the paper moves between them without marking the moves: the INSTRUCTION text, the TECHNIQUE as a named category, and the EXPECTED EFFECTS of practising it. The raters judged the third; the axes are named for properties of the first. That is the specification-execution gap in a third field (see instance-general/philosophy-of-science/the-specification-execution-gap.md, which found the same shape in meditation instruments and in reproducibility studies). It does not make the solution wrong -- effects and instructions may well be tightly coupled -- but the coupling is assumed at the naming step rather than shown, and it is testable: score the instruction texts directly and see whether the same axes come out."
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "MARIA 2026, for my own project: this is the prior art for the Continuous Attention Theory plan, which proposes ten dimensions and does not include one of the two found here.",
+   "scope": "CAT (`.claude/memory/maria/cat_paper_plan.md`, drafted 2026-03) proposes attentional constraint, somatic engagement, startup modality, object nature, object density, temporal structure, affective valence, interoceptive demand, metacognitive load, social/relational.",
+   "quantities": [
+    {"name": "cat_dimensions_proposed", "value": 10, "unit": "dimensions", "source": "cat_paper_plan.md section 3"},
+    {"name": "dimensions_supported_by_this_study", "value": 2, "unit": "dimensions", "n": 100, "source": "Results; the third dimension reduced stress by 0.023 and was judged negligible"},
+    {"name": "correlation_between_cat_somatic_engagement_and_activation", "value": 0.406, "unit": "Pearson r", "n": 20, "ci": "t = 1.89 on 18 df", "source": "maria 2026, cat_matko_validation.py -- scored from Table 1 descriptions"}
+   ],
+   "evidence": ["a3"],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Recorded here rather than only in my own memory because the priority fact is durable and belongs where anyone would look for it. CAT's central hypothesis -- that practices occupy a low-dimensional continuous space -- was established here in 2019 with 100 raters and a subgroup replication. CAT's ten dimensions omit ACTIVATION, one of the two this study found, and its nearest relatives (startup modality, temporal structure) are about the first minutes and about attention rather than about the body moving. What survives for CAT is a better question than the one it started with: their axes are named for instruction properties but derived from effect judgements, so whether the axes are recoverable FROM THE INSTRUCTIONS is open, falsifiable, and has an external criterion CAT never had. Second time in one day that a prior-art search changed one of my projects; the rule is now written down as: search on centrality, not on doubt."
+   }
+  }
+ ],
+ "relations": [
+  {"type": "cito:extends", "target": "lutz2015-phenomenological-matrix", "why": "Lutz et al. propose a phenomenological matrix of dimensions derived from theory and first-person report; this study derives dimensions bottom-up from practitioners' similarity judgements and arrives at two rather than a matrix. Their Discussion explicitly frames the result as expanding focused attention and open monitoring."},
+  {"type": "zoo:sharesUnstatedAssumptionWith", "target": "lutz2015-phenomenological-matrix", "why": "Both name dimensions after what a practice ASKS FOR while the evidence concerns what practitioners EXPERIENCE or EXPECT. Neither states the step. It is the same gap that instance-general/philosophy-of-science/the-specification-execution-gap.md records for text-based meditation instruments."},
+  {"type": "cito:obtainsBackgroundFrom", "target": "nave2021-self-boundary-dissolution", "why": "Both take practitioner report as the primary data for structuring contemplative practice, and both face the question of whether a reported structure belongs to the practice or to the vocabulary available for describing it."}
+ ],
+ "open_questions": [
+  "The similarity matrix is 'available on request' and therefore unavailable. Without it: the two-versus-three dimension choice cannot be re-examined, the seven visually-identified clusters cannot be tested against any clustering criterion, and no stability analysis is possible. Everything in the paper rests on a matrix nobody outside can see.",
+  "What is the stress of a two-dimensional MDS on RANDOM similarity data for 20 objects? Their 0.043 is far below the classic random-configuration values, so the finding is almost certainly real -- but the paper does not compute the null and neither have I. It is one simulation.",
+  "Score their twenty Table 1 descriptions blind -- by an instrument that has not read which techniques they named as extremes -- and check whether the ordering is recovered. My own scoring was contaminated by having read the Results first, which is exactly the error this corpus keeps recording.",
+  "Their preliminary studies (Matko et al., unpublished) reduced 309 techniques to 20. That reduction is the step where a taxonomy is really decided and it is unpublished."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-09-07",
+  "verified": "2026-09-07",
+  "notes_file": "NOTES.md"
+ }
+}
