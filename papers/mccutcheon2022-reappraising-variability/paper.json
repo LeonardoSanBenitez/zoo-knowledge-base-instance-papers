@@ -1,5 +1,5 @@
 {
- "schema_version": "1.3",
+ "schema_version": "1.4",
  "id": "mccutcheon2022-reappraising-variability",
  "title": "Reappraising the variability of effects of antipsychotic medication in schizophrenia: a meta-analysis",
  "authors": [
@@ -71,7 +71,8 @@
      "ci_low": 12.7,
      "ci_high": 14.3,
      "ci_kind": "confidence",
-     "source": "Abstract and Results; I2 = 45%"
+     "source": "Abstract and Results; I2 = 45%. STATUS measures-something-else (zoo-paper-record 1.4), set 2026-09-06: 13.5 is exactly what their published pipeline outputs and it is not a measurement of sigma_TE. Fed a world where every patient receives an IDENTICAL benefit (sigma_TE = 0.000 by construction) the same pipeline reports 14.9 [9.5, 21.0] PANSS points, and 11.5 even with rho fixed at its true value of zero -- see c4. The name is honest ('published') and the USE is not: this number is quoted throughout the personalised-psychiatry literature as the magnitude of individual treatment-effect variability. `disputed` would be wrong because it is not the best available estimate of sigma_TE; there is no available estimate, the quantity is not identified by a parallel-group design (senn2016).",
+     "status": "measures-something-else"
     },
     {
      "name": "mean_treatment_effect_published",
