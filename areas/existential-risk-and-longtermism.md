@@ -46,6 +46,62 @@ the **ranking** (4 of 4) and **1 of 6 pairwise ratios**. So these answers carry
 ordinal information about which risk is bigger and essentially none about how
 much bigger — while every policy use of them is cardinal.
 
+## The first 38 questions have resolved, and the answer is mostly about power
+
+**2026-09-07.** The tournament's near-term accuracy follow-up (2025) scores 38 of
+the 172 questions. Three results, and they are not equally strong.
+
+**The two nulls are statements about sample size.**
+
+| null they report | what the design could have seen |
+|---|---|
+| accuracy gap between forecaster groups: **0.18 SD**, n.s. | smallest detectable gap **0.471 SD**; power against 0.18 SD is **19%** |
+| accuracy vs long-term risk view: correlations "close to zero", n.s. | smallest detectable **\|r\| = 0.214** at n = 169, before any attenuation |
+
+The same design has **100% power** against the 1.82 SD gap between forecasters
+and the public — which it did detect. **So it separates forecasters from the
+public and cannot separate forecasters from each other, and both facts sit in the
+same analysis.** The correlation null is weaker again: an accuracy score built
+from 38 questions, many of which (by the authors' own description) were
+low-probability events that did not occur or slow-moving variables where the
+trend held, is a noisy measure, and a noisy measure caps the correlation it can
+show with anything. At a plausible 38-item reliability of 0.54 the true
+correlation would have to reach **0.31** before this design could see it.
+
+The honest statement is not *"the two groups are equally accurate"*. It is:
+**no skill difference large enough for this design to see has appeared in the
+first 38 of 172 questions.**
+
+**And an argument I discarded, because the reason is worth keeping.** I intended
+to attack the correlation null by pointing at this area's own finding that the
+same 405 people give answers up to 800,000× apart across two response formats.
+It does not work: ranks are preserved across formats (4 of 4) while ratios are
+not (1 of 6), and a shift that moves everyone in the same direction changes no
+correlation. The format effect is fatal to reading those numbers as
+probabilities and harmless to reading them as an ordering.
+
+**The load-bearing result is neither null.** *Individual forecasters failed to
+beat a no-change algorithm and a trend-extrapolation algorithm.* 169 selected,
+incentivised participants, 88 with proven track records, four months of paid
+deliberation — beaten by "assume nothing changes". Median aggregation gained
+about 1 SD and showed only weak evidence of beating no-change, none of beating
+trend extrapolation. That comparison is within-subject against a fixed
+alternative, so the power objection that guts the other two does not touch it,
+and it is not what the summary leads with.
+
+**Substantively, on AI.** Superforecasters assigned a mean **9.7%** to the AI
+benchmark outcomes that occurred; domain experts **24.6%**. On AI achieving
+IMO gold — which happened in July 2025 — superforecasters said **2.3%** and
+experts **8.6%**. The group with the lower long-run AI risk estimates was also
+the group assigning less probability to what actually happened. That does not
+settle the sixfold disagreement in the lead above, but it is the first evidence
+in the tournament that bears on it at all, and it points the opposite way from
+the usual presumption that the superforecasters are the calibrated ones.
+
+*Source limit: the report itself does not resolve from this machine (HTTP 000, on
+two separate dates). Every number here is from the authors' own summary post, and
+nothing beyond those numbers should be attributed to the report.*
+
 ## What is established here
 
 - **The headline disagreement.** Domain experts: 20% catastrophe, 6% extinction

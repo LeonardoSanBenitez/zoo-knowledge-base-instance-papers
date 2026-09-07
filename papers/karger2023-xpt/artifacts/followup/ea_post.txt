@@ -1,0 +1,75 @@
+
+In the report, it says: "A natural question is whether more accurate near-term forecasters made systematically different long-term risk predictions. Figure 4.1 suggests that there is 
+no meaningful relationship between near-term accuracy and long-term risk forecasts
+."
+It then says: "Overall, 
+our findings challenge the hope that near-term accuracy can reliably identify forecasters with more credible long-term risk predictions
+."
+One interpretation here (that I take this report to be offering) is that short term prediction accuracy don't extrapolate to long term prediction accuracy 
+in general
+. However, another interpretation that I see as reasonable (maybe somewhat but not substantially less) is merely that Superforecasters aren't very good at predicting things that require lots of technical information (i.e. AI capabilities); after all (from my knowledge), very little work has been done to show that superforecasters are actually as good at predictions in technical subjects (almost all of the initial work was done in economics and geopolitics), and maybe there are some object level reasons to think that they wouldn't(?) 
+Would be interested in hearing more thoughts/to be corrected if wrong here.  
+Also: "This research would not have been possible without the support of the Musk Foundation, Open Philanthropy, and the Long-Term Future Fund." Musk Foundation, huh? Interesting. 
+Reply
+$RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b
+a&&2E3
+$RC("B:4","S:4")
+$RC("B:0","S:0")
+{"@context":"http://schema.org","@type":"DiscussionForumPosting","url":"https://forum.effectivealtruism.org/posts/fp5kEpBkhWsGgWu2D/assessing-near-term-accuracy-in-the-existential-risk","text":"\u003cp>Forecasting Research Institute just released a new report: \u003ca href="https://forecastingresearch.org/near-term-xpt-accuracy">Assessing Near-Term Accuracy in the Existential Risk Persuasion Tournament\u003c/a>\u003cbr>\u003cbr>In June–October 2022, we convened 169 people to participate in the “\u003ca href="https://forecastingresearch.org/xpt">Existential Risk Persuasion Tournament\u003c/a>” (XPT). The XPT participants included both superforecasters with proven forecasting track records and domain experts with subject-matter expertise. The tournament incentivized accurate forecasting and persuasive argumentation about long-term risks humanity may face, including risks from artificial intelligence (AI), climate change, nuclear war, and pandemics. This report analyzes respondents’ forecasting accuracy on 38 near-term questions that resolved by mid-2025. \u003c/p>\u003cp>The study finds overall performance parity between superforecasters and domain experts, with both groups underestimating AI progress and overestimating improvements in climate technology. Both superforecasters and domain experts substantially outperformed a baseline of educated members of the general public.\u003cbr>\u003cbr>Read the full report here: \u003ca href="https://forecastingresearch.org/near-term-xpt-accuracy">https://forecastingresearch.org/near-term-xpt-accuracy\u003c/a>\u003cbr> \u003c/p>","mainEntityOfPage":{"@type":"WebPage","@id":"https://forum.effectivealtruism.org/posts/fp5kEpBkhWsGgWu2D/assessing-near-term-accuracy-in-the-existential-risk"},"headline":"Assessing Near-Term Accuracy in the Existential Risk Persuasion Tournament","description":"Forecasting Research Institute just released a new report: Assessing Near-Term Accuracy in the Existential Risk Persuasion Tournament …","datePublished":"2025-09-02T12:22:49.619Z","about":[{"@type":"Thing","name":"AI safety","url":"https://forum.effectivealtruism.org/topics/ai-safety","description":"\u003cp>\u003cstrong>AI safety\u003c/strong> is the study of ways to reduce risks posed by \u003ca href="https://forum.effectivealtruism.org/tag/artificial-intelligence">artificial intelligence\u003c/a>.\u003c/p>\u003cp>Interventions that aim to reduce these risks can be split into:\u003c/p>\u003cul>\u003cli>\u003ca href="https://forum.effectivealtruism.org/topics/ai-alignment">\u003cu>Technical alignment..."},{"@type":"Thing","name":"Forecasting","url":"https://forum.effectivealtruism.org/topics/forecasting","description":"\u003cp>\u003cstrong>Forecasting\u003c/strong> is an important tool for improving the future, because good forecasts and estimates can help us appropriately plan interventions and assess risks. Over the past several decades there has been significant research and investment in forecasting and estimation techniques, tools, and organizations. This continues to be a..."},{"@type":"Thing","name":"Existential risk","url":"https://forum.effectivealtruism.org/topics/existential-risk","description":"\u003cp>An \u003cstrong>existential risk\u003c/strong> is a risk that threatens the destruction of the long-term potential of life.\u003cspan class="footnote-reference" role="doc-noteref" id="fnrefs39fj4bj7yr">\u003csup>\u003ca href="#fns39fj4bj7yr">[1]\u003c/a>\u003c/sup>\u003c/span> An existential risk could threaten the..."},{"@type":"Thing","name":"Research","url":"https://forum.effectivealtruism.org/topics/research","description":"\u003cp>For some of the world’s problems, like many forms of cancer, there are currently no solutions. In such cases, \u003cstrong>research\u003c/strong> can be particularly impactful. Even in cases where there are ways of dealing with a problem (like HIV), further research may provide more effective tools (like a ..."},{"@type":"Thing","name":"Organization updates","url":"https://forum.effectivealtruism.org/topics/organization-updates","description":"\u003cp>Use the \u003cstrong>organization updates\u003c/strong> topic for posts where EA-aligned organizations share their recent progress and other news.\u003c/p>\u003cp>Not to be confused with \u003ca href="https://forum.effectivealtruism.org/topics/ea-organization-updates-monthly-series">EA Organization Updates\u003c/a>, a monthly post series containing updates about organization..."},{"@type":"Thing","name":"Announcements and updates","url":"https://forum.effectivealtruism.org/topics/announcements-and-updates","description":"\u003cp>This topic collects posts that make an official announcement or update: for example, a new project or organization, a competition or prize, or major organizational news.\u003cbr> \u003cbr>Related entries\u003cbr>\u003ca href="https://forum.effectivealtruism.org/topics/organization-updates">organization updates\u003c/a> |..."},{"@type":"Thing","name":"AI forecasting","url":"https://forum.effectivealtruism.org/topics/ai-forecasting","description":"\u003cp>\u003cstrong>AI forecasting\u003c/strong> is the process of trying to predict a variety of outcomes related to AI, such as when human-level AI will emerge (\u003cstrong>AI timelines\u003c/strong>) and what impacts it will have.\u003c/p>\u003ch2>Further reading\u003c/h2>\u003cp>Cotra, Ajeya (2020) \u003ca href="https://www.lesswrong.com/posts/KrJfoZzpSDpnrv9va/draft-report-on-ai-timelines">..."},{"@type":"Thing","name":"Climate change","url":"https://forum.effectivealtruism.org/topics/climate-change","description":"\u003cp>In the sense that matters most for \u003ca href="https://forum.effectivealtruism.org/tag/effective-altruism">effective altruism\u003c/a>, \u003cstrong>climate change\u003c/strong> refers to large-scale shifts in weather patterns that result from emissions of greenhouse gases such as carbon dioxide and methane largely from fossil fuel consumption. Climate change has..."},{"@type":"Thing","name":"Nuclear security","url":"https://forum.effectivealtruism.org/topics/nuclear-security","description":"\u003cp>\u003cstrong>Nuclear security\u003c/strong> is the set of procedures, practices or other measures used to manage risks from nuclear \u003ca href="https://forum.effectivealtruism.org/tag/weapons-of-mass-destruction">weapons\u003c/a> and other nuclear materials.\u003c/p>\u003cp>Nuclear war is potentially the primary near-term..."},{"@type":"Thing","name":"Pandemic preparedness","url":"https://forum.effectivealtruism.org/topics/pandemic-preparedness","description":"\u003cp>\u003cstrong>Pandemic preparedness\u003c/strong> is the set of measures to better prepare humanity for future pandemics.\u003c/p>\u003ch2>Further reading\u003c/h2>\u003cp>Jamieson, Alice (2021) \u003ca href="https://cms.wellcome.org/sites/default/files/2021-10/Wellcome-improving-global-pandemic-preparedness-2025.pdf">Improving global pandemic preparedness by 2025\u003c/a>, Wellcome...."},{"@type":"Thing","name":"Biosecurity","url":"https://forum.effectivealtruism.org/topics/biosecurity","description":"\u003cp>\u003cstrong>Biosecurity\u003c/strong> covers the procedures, practices and other measures used to manage risks from biological agents (e.g. viruses, bacteria) or their products (e.g. toxins).\u003c/p>\u003ch2>Terminology\u003c/h2>\u003cp>The term "biosecurity" has different meanings in different contexts. As a few examples:\u003c/p>\u003cul>\u003cli>In agriculture, biosecurity usually ref..."}],"author":[{"@type":"Person","name":"Forecasting Research Institute","url":"https://forum.effectivealtruism.org/users/forecasting-research-institute"}]}
+Assessing Near-Term Accuracy in the Existential Risk Persuasion Tournament
+Forecasting Research Institute
+1
+ min read
+·
+$RS=function(a,b){a=document.getElementById(a);b=document.getElementById(b);for(a.parentNode.removeChild(a);a.firstChild;)b.parentNode.insertBefore(a.firstChild,b);b.parentNode.removeChild(b)};$RS("S:5","P:5")
+Sep 2, 2025
+$RS("S:6","P:6")
+41
+1
+$RS("S:7","P:7")
+$RS("S:8","P:8")
+Forecasting
+AI safety
+Biosecurity
+Existential risk
+AI forecasting
+Announcements and updates
+Climate change
+Nuclear security
+Organization updates
+Pandemic preparedness
+Research
+Frontpage
++ Add topic
+Forecasting
+AI safety
+Biosecurity
+Existential risk
+AI forecasting
+Announcements and updates
+Climate change
+Nuclear security
+Organization updates
+Pandemic preparedness
+Research
+Frontpage
++ Add topic
+12 more
+This is a linkpost for
+ 
+https://forecastingresearch.org/near-term-xpt-accuracy
+Forecasting Research Institute just released a new report: 
+Assessing Near-Term Accuracy in the Existential Risk Persuasion Tournament
+In June–October 2022, we convened 169 people to participate in the “
+Existential Risk Persuasion Tournament
+” (XPT). The XPT participants included both superforecasters with proven forecasting track records and domain experts with subject-matter expertise. The tournament incentivized accurate forecasting and persuasive argumentation about long-term risks humanity may face, including risks from artificial intelligence (AI), climate change, nuclear war, and pandemics. This report analyzes respondents’ forecasting accuracy on 38 near-term questions that resolved by mid-2025. 
+The study finds overall performance parity between superforecasters and domain experts, with both groups underestimating AI progress and overestimating improvements in climate technology. Both superforecasters and domain experts substantially outperformed a baseline of educated members of the general public.
+Read the full report here: 
+https://forecastingresearch.org/near-term-xpt-accuracy
+ 
+41
+1
+0
+$RS("S:9","P:9")
+$RC("B:1","S:1")
+self.__next_f.push([1,"54:I[550091,["/_next/static/chunks/17251abc1274864f.js
