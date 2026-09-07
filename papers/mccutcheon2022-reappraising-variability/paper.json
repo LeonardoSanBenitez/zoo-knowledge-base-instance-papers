@@ -563,6 +563,48 @@
     "why": "Senn published this in 2015 and it subsumes everything else in this folder. C -- patient-by-treatment interaction -- IS sigma_TE^2, and it is confounded with between-patient variation and within-patient noise in exactly the design this whole literature uses. His own counter-example is the cleanest: an oral versus an intravenous formulation may show a larger treated-arm variance because absorption varies BETWEEN patients (interaction, real heterogeneity) or because absorption varies FROM OCCASION TO OCCASION within a patient (noise, no heterogeneity at all). VR is identical. PRIORITY IS HIS, not mine, and the design conclusion -- that only replication at the patient level identifies individual response -- was in print seven years before the paper I spent this session on, which cites the adjacent Senn 2018 Nature piece. What this session adds is not the principle but the audit: how much a specific published pipeline gets wrong, by what mechanism, and what to report instead.",
     "by": "maria, 2026-09-04"
    }
+  },
+  {
+   "id": "c10",
+   "statement": "MARIA 2026, NEW: the readback r = 1 - 2 rho^2 holds only at VR = 1. The general form is r = (1 + rho u)/VR with u = -rho + sqrt(rho^2 + VR^2 - 1), and at the VRs actually measured on three corpora it changes both the implied heterogeneity and which rho values are admissible at all.",
+   "scope": "Every rho this literature has put in print, evaluated at each corpus's measured VR: antipsychotics 0.968 (Winkelbeiner, 75 comparisons), antidepressants HAMD17 1.0041 (Ploderl, 71 trials), antidepressants endpoint 0.98 (Munkholm), and the VR = 1 that McCutcheon's own working assumes.",
+   "quantities": [
+    {
+     "name": "within_patient_correlation_implied_by_headline_rho_at_measured_vr",
+     "value": 0.862,
+     "unit": "correlation",
+     "n": 75,
+     "source": "maria 2026, m13 -- rho = -0.32 at the antipsychotic corpus's measured VR of 0.968, against 0.795 at the VR = 1 their own working assumes"
+    },
+    {
+     "name": "within_patient_correlation_implied_by_their_study_level_rho",
+     "value": 0.696,
+     "unit": "correlation",
+     "n": 66,
+     "source": "maria 2026, m13 -- rho = -0.39 read back at VR = 1"
+    },
+    {
+     "name": "sigma_te_over_sigma_pl_at_headline_rho_measured_vr",
+     "value": 0.519,
+     "unit": "ratio",
+     "n": 75,
+     "source": "maria 2026, m13 -- u at rho = -0.32 and VR = 0.968, against 0.640 at VR = 1: using the measured VR instead of 1 shrinks the implied heterogeneity by 19%"
+    },
+    {
+     "name": "lowest_rho_admissible_at_antipsychotic_measured_vr",
+     "value": -0.2523,
+     "unit": "correlation",
+     "n": 75,
+     "source": "maria 2026, m13 -- the boundary is rho^2 = 1 - VR^2; at VR = 0.968 every rho weaker than -0.252 admits no non-negative sigma_TE UNDER THE UNBOUNDED-SCALE MODEL, which puts -0.178, -0.21 and 0 outside it"
+    }
+   ],
+   "evidence": [
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The algebra is exact and reduces to the known special case at VR = 1. Accepted as a READBACK TOOL: whatever rho a paper assumes, it is also assuming the within-patient correlation in the last column, and that quantity IS checkable against test-retest data these trials already collect. Nobody has checked it; that is the recommendation this claim carries -- rho should never be reported without its r. NOT accepted as a refutation of any particular rho. The tempting stronger reading -- 'a measured VR of 0.968 rejects rho = 0 outright' -- is conditional on the additive decomposition holding on an UNBOUNDED scale, and that condition fails: a bounded outcome produces VR < 1 with sigma_TE = 0 and any rho at all (winkelbeiner2019-antipsychotic-variability#c4). The first draft of m13 asserted the stronger version in both its docstring and its summary; both are corrected in place, which is the third time in this session that a summary paragraph overshot the analysis directly above it."
+   }
   }
  ],
  "artifacts": [

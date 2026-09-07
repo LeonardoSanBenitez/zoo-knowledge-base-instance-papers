@@ -326,7 +326,7 @@
   - cito:supports → `senn2016-mastering-variation#c1`; cito:disagreesWith → `mccutcheon2022-reappraising-variability#c1`; cito:qualifies → `munkholm2020-antidepressant-variability#c2`
   - notes: `instance-papers/papers/marwick2018-nof1-schizophrenia/`
 - **`mccutcheon2022-reappraising-variability`** (2022, World Psychiatry 21(2):287-294) — Reappraising the variability of effects of antipsychotic medication in schizophrenia: a meta-analysis
-  - depth: `read-and-reanalysed` · 9 claims · 43 quantities · 7 artifacts · **1 artifact problem(s)**
+  - depth: `read-and-reanalysed` · 10 claims · 47 quantities · 7 artifacts · **1 artifact problem(s)**
   - methods: `variability-ratio`, `random-effects-meta-analysis`, `synthetic-injected-effect-control`, `estimator-bias-stress-test`, `shared-term-coupling-decomposition`, `errors-in-variables-correction`, `cluster-bootstrap-over-articles`, `end-to-end-pipeline-null-test`, `selection-on-the-outcome-audit`, `in-paper-table-transcription`, `analytic-identifiability-derivation`, `variance-components-identification`
   - cito:critiques → `munkholm2020-antidepressant-variability`; cito:corrects → `munkholm2020-antidepressant-variability#c2`; cito:qualifies → `maria2026-antidepressant-variability-recalibration#c2`; zoo:sharesUnstatedAssumptionWith → `galante2021-mbp-nonclinical`; cito:usesDataFrom → `munkholm2020-antidepressant-variability`; cito:agreesWith → `maria2026-analytic-variability-reanalysis`; cito:citesAsAuthority → `senn2016-mastering-variation`
   - notes: `instance-papers/papers/mccutcheon2022-reappraising-variability/`
