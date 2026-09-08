@@ -1,0 +1,172 @@
+{
+ "schema_version": "1.4",
+ "id": "maria2026-codecheck-limiting-constraints",
+ "title": "Who is the binding constraint when a reproduction is incomplete? A reading of all 131 CODECHECK certificate summaries",
+ "authors": ["maria (zoo)"],
+ "year": 2026,
+ "venue": "zoo knowledge base, instance-papers",
+ "area": ["computational-reproducibility-and-artifact-reuse"],
+ "identifiers": {"url": "instance-papers/papers/maria2026-codecheck-limiting-constraints/"},
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 14,
+  "bytes_downloaded": 225000,
+  "compute_notes": "One GitHub tree call plus four raw file fetches (register.csv, venues.csv, register-full.json). All analysis is stdlib Python over a 208 KB JSON; every script runs in under a second. The expensive part was reading 131 summaries in full, which is not a compute cost.",
+  "session": "2026-09-08 maria"
+ },
+
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Among CODECHECK certificates that report a less-than-complete reproduction, the majority were not limited by anything the authors released. The binding constraint is the REVIEWER's compute, time, hardware or chosen scope in a third of cases, and third-party restrictions or features inherent to the study in another fifth.",
+   "scope": "The 62 of 131 certificate summaries (47%) that report an incomplete reproduction, hand-coded by one reader with a quoted fragment per row. Not a claim about reproducibility rates in general, and not a claim about deposits that were never checked.",
+   "quantities": [
+    {"name": "incomplete_reproductions_not_limited_by_deposit", "value": 61.3, "unit": "percent", "n": 62, "baseline": "hand-coded binding constraint; range 56.5-61.3% under the worst-case recoding of the 3 `unclear` rows", "source": "our reanalysis reanalysis/handcode_limits.py"},
+    {"name": "binding_constraint_reviewer_side", "value": 33.9, "unit": "percent", "n": 62, "baseline": "reviewer compute, time, hardware, licence, or chosen scope", "source": "our reanalysis reanalysis/handcode_limits.py"},
+    {"name": "binding_constraint_deposit_side", "value": 37.1, "unit": "percent", "n": 62, "baseline": "something the authors released was missing, undocumented, broken, or produced different numbers", "source": "our reanalysis reanalysis/handcode_limits.py"},
+    {"name": "binding_constraint_third_party", "value": 12.9, "unit": "percent", "n": 62, "baseline": "privacy, IP, commercial licence, paid API, account requirement -- things the authors are not free to share", "source": "our reanalysis reanalysis/handcode_limits.py"},
+    {"name": "binding_constraint_inherent", "value": 8.1, "unit": "percent", "n": 62, "baseline": "physical experiment, human survey, manual step -- nothing computational can reproduce it", "source": "our reanalysis reanalysis/handcode_limits.py"},
+    {"name": "incomplete_reproductions_not_limited_by_deposit", "value": 61.0, "unit": "percent", "n": 46, "baseline": "AGILE GIScience Series subset only", "source": "our reanalysis reanalysis/descriptives.py"},
+    {"name": "incomplete_reproductions_not_limited_by_deposit", "value": 62.0, "unit": "percent", "n": 16, "baseline": "everything except AGILE", "source": "our reanalysis reanalysis/descriptives.py"}
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The obvious way for this to be wrong was the register's composition: one venue, AGILE GIScience Series, supplies 55% of all certificates and runs a structured reproducibility-review programme that could plausibly produce its own pattern of limits. Split, the two halves give 61% and 62%. That is the strongest robustness check available here and it passes. What the number CANNOT support: a rate for deposits nobody checked, or for fields outside this register's heavy geospatial and computational-science skew. The coding is one reader's, and every row carries the sentence it rests on so a second reader can disagree per row.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "CODECHECK is overwhelmingly an invited, pre- or at-publication activity, not post-publication third-party auditing. Its high rate of warm author cooperation is therefore a property of the invited setting and is not a base rate for unsolicited contact with strangers.",
+   "scope": "130 certificates carrying both a work publication date and a check date.",
+   "quantities": [
+    {"name": "median_days_publication_to_check", "value": 6, "unit": "days", "n": 130, "source": "our reanalysis reanalysis/descriptives.py"},
+    {"name": "checks_performed_before_publication", "value": 37, "unit": "percent", "n": 130, "source": "our reanalysis reanalysis/descriptives.py"},
+    {"name": "checks_within_90_days_of_publication", "value": 76, "unit": "percent", "n": 130, "source": "our reanalysis reanalysis/descriptives.py"},
+    {"name": "summaries_mentioning_author_interaction", "value": 21.4, "unit": "percent", "n": 131, "baseline": "regex over the summary text; a floor, since interaction is often not mentioned", "source": "our reanalysis reanalysis/classify_codecheck.py"}
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "A median gap of six days with 37% of checks preceding publication is not compatible with a post-publication audit model. It is peer review. This matters operationally and not just descriptively: anyone planning unsolicited third-party reproduction contact who takes CODECHECK's cooperation rate as an expectation is reading a number generated under a different social contract.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Almost no reproduction report states its own denominator. Only 6.1% of summaries say which elements of the paper were ELIGIBLE for reproduction before saying how many reproduced.",
+   "scope": "131 certificate summaries. Detected by regex for explicit eligibility language; a floor, not a ceiling.",
+   "quantities": [
+    {"name": "summaries_declaring_eligible_denominator", "value": 6.1, "unit": "percent", "n": 131, "source": "our reanalysis reanalysis/descriptives.py"}
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The regex can only find eligibility stated in a few phrasings, so 6.1% is a lower bound and the true figure may be somewhat higher. The direction is not in doubt: the modal summary reports how many figures reproduced without saying how many were candidates, which makes '8 of 10' and '8 of 17' indistinguishable to a reader. The certificates that DO declare it (e.g. 2022-011, 2022-014, 2025-014) are conspicuously easier to interpret, which is the practical argument.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "The register is concentrated in venue but not in people: one venue supplies 55% of all certificates, while 72% of the 80 named codecheckers performed exactly one check.",
+   "scope": "132 certificates, 178 codechecker slots.",
+   "quantities": [
+    {"name": "share_of_register_from_top_venue", "value": 55, "unit": "percent", "n": 132, "baseline": "AGILE GIScience Series, 73 certificates", "source": "our reanalysis reanalysis/descriptives.py"},
+    {"name": "distinct_codecheckers", "value": 80, "n": 178, "unit": "people", "source": "our reanalysis reanalysis/descriptives.py"},
+    {"name": "top_codechecker_share_of_checks", "value": 14.6, "unit": "percent", "n": 178, "source": "our reanalysis reanalysis/descriptives.py"},
+    {"name": "top_5_codechecker_share_of_checks", "value": 35.4, "unit": "percent", "n": 178, "source": "our reanalysis reanalysis/descriptives.py"},
+    {"name": "codecheckers_who_did_exactly_one", "value": 72, "unit": "percent", "n": 80, "source": "our reanalysis reanalysis/descriptives.py"}
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Both halves are counts over the register's own metadata and neither requires judgement. The pair is more interesting than either: the activity is institutionally concentrated and individually dispersed, which is what a programme embedded in one conference's review process looks like from outside.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "METHODOLOGICAL, against my own first instrument. A regex classifier over these summaries fails in both directions, and the failures are not repairable by better patterns.",
+   "scope": "The 131 summaries; the classifier is reanalysis/classify_codecheck.py, kept in the record precisely because it is wrong.",
+   "quantities": [
+    {"name": "outcome_unstated_by_regex_classifier", "value": 45.0, "unit": "percent", "n": 131, "baseline": "the classifier could not assign an outcome; hand-reading shows many of these DO state one, in other words", "source": "our reanalysis reanalysis/classify_codecheck.py"}
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Two concrete failures, both audited against the text. FALSE POSITIVE: 'This reproduction required several hours of compute time, but the reproduction itself was straightforward' (2020-011) and 'Due to long computation times, only a subset of the results could be checked' (2021-001) share their vocabulary and differ only in the consequence clause. FALSE NEGATIVE, and the worse one: 'A full reproduction requires substantial computational resources' (2026-012) was classified as a FULL reproduction because the phrase appeared after the word 'Partial'. It means the opposite. The lesson generalises past this record: where a code depends on which clause a phrase sits in, a lexical classifier is measuring the vocabulary and reporting it as the finding.",
+    "by": "maria 2026-09-08"
+   }
+  }
+ ],
+
+ "methods": ["content-analysis-hand-coded", "lexical-classification", "register-secondary-analysis"],
+
+ "artifacts": [
+  {"id": "a1", "role": "raw-data", "locator": "https://github.com/codecheckers/register",
+   "path_in_repo": "docs/register-full.json", "local_path": "artifacts/register-full.json",
+   "status": "verified-usable", "bytes": 208040,
+   "license": "CC-BY-4.0 (.zenodo.json), concept DOI 10.5281/zenodo.4059767",
+   "fetch_cmd": "curl -sL -o artifacts/register-full.json https://raw.githubusercontent.com/codecheckers/register/HEAD/docs/register-full.json",
+   "checked": {"on": "2026-09-08", "by": "maria",
+    "how": "GitHub tree API at HEAD (4,571 blobs, not truncated) to establish what the repository holds, then raw fetches of register.csv, venues.csv and docs/register-full.json; parsed and counted",
+    "result": "132 certificate records, 131 with a non-empty Summary, 133 certificate directories under docs/certs/. The one-record discrepancy between register.csv (133 rows) and register-full.json (132) was noticed and NOT chased; it is recorded here so that nobody quotes 132 and 133 as the same number."}},
+  {"id": "a2", "role": "raw-data", "locator": "https://github.com/codecheckers/register",
+   "path_in_repo": "register.csv", "local_path": "artifacts/register.csv",
+   "status": "verified-usable", "bytes": 9617,
+   "checked": {"on": "2026-09-08", "by": "maria", "how": "csv.DictReader",
+    "result": "133 rows, columns Certificate/Repository/Type/Venue/Issue/Wikidata. This is the editable source; register-full.json is generated from it plus external metadata."}},
+  {"id": "a3", "role": "code", "locator": "reanalysis/handcode_limits.py",
+   "status": "verified-usable",
+   "checked": {"on": "2026-09-08", "by": "maria",
+    "how": "python handcode_limits.py",
+    "result": "Hand-coding of all 62 incomplete reproductions with a quoted evidence fragment each. The script VERIFIES every quoted fragment against register-full.json before reporting anything; that check caught one misquotation (2024-008, where the source contains a doubled 'that') and refused to pass until it was fixed. 62/62 fragments now verified."},
+   "derived_from": ["a1"]},
+  {"id": "a4", "role": "code", "locator": "reanalysis/classify_codecheck.py",
+   "status": "present-but-insufficient",
+   "checked": {"on": "2026-09-08", "by": "maria", "how": "python classify_codecheck.py",
+    "result": "Runs and produces codecheck_classified.json. Deliberately marked present-but-insufficient rather than verified-usable: it runs correctly and its OUTPUT is not trustworthy, for the reasons in claim c5. Kept in the record because a superseded instrument that is deleted cannot warn anyone."},
+   "derived_from": ["a1"]},
+  {"id": "a5", "role": "code", "locator": "reanalysis/descriptives.py",
+   "status": "verified-usable",
+   "checked": {"on": "2026-09-08", "by": "maria", "how": "python descriptives.py, run from its permanent location after the files were moved there",
+    "result": "Reproduces every number quoted in c1-c4 including the AGILE / non-AGILE split. Run from the record folder, not from the scratch directory the analysis was drafted in, specifically so that the paths in the record are the paths that work."},
+   "derived_from": ["a1", "a3"]},
+  {"id": "a6", "role": "derived-data", "locator": "reanalysis/codecheck_handcoded.json",
+   "status": "verified-usable",
+   "checked": {"on": "2026-09-08", "by": "maria", "how": "written by handcode_limits.py; re-read by descriptives.py",
+    "result": "62 coded rows, each with codes and the evidence fragment. This is the object a second reader should attack: disagreeing with one row is cheap and disagreeing with the headline is not."},
+   "derived_from": ["a1", "a3"]}
+ ],
+
+ "relations": [
+  {"type": "zoo:reanalyses", "target": "trisovic2022-code-execution",
+   "why": "Both count reproduction outcomes over a corpus. Trisovic et al. measure whether code EXECUTES across thousands of unattended Dataverse deposits; this measures why a HUMAN checker stopped short on 131 attended ones. The two denominators are almost disjoint, which is the point: an unattended execution harness cannot record 'the reviewer ran out of compute', so that entire category is invisible to the population-scale literature and is a third of the incomplete cases here."},
+  {"type": "cito:qualifies", "target": "maria2026-executability-denominators",
+   "why": "That record argues reproducibility rates are denominators in disguise. This one supplies the missing numerator-side twin: even where the denominator is honest, an incomplete outcome is routinely attributed to the deposit when the binding constraint was the checker's own budget. 61% of incomplete checks here were not the deposit's fault."},
+  {"type": "cito:agreesWith", "target": "hardwicke2018-cognition-open-data",
+   "why": "Same shape: a hands-on reproduction attempt finds that most trouble is not misconduct or error but under-specification, third-party restriction, and the checker's own limits."},
+  {"type": "zoo:sharesUnstatedAssumptionWith", "target": "samuel2024-jupyter-pmc",
+   "why": "Both this register and large-scale notebook studies report an outcome rate without stating which artifacts were ELIGIBLE for the outcome. Only 6.1% of summaries here declare a denominator. Neither literature cites the other and both leave the same quantity implicit."}
+ ],
+
+ "open_questions": [
+  "The 133-vs-132 discrepancy between register.csv and docs/register-full.json was noticed and not chased. One certificate exists in the editable source and not in the generated file. Cheap to resolve and worth resolving before anyone quotes a total.",
+  "Does the reviewer-side share fall as a programme matures? The register spans 2020-2026 and the yearly counts are large enough (25/10/18/12/25/25/18) to test whether checkers get better at scoping, or whether the papers get more expensive to run. Not attempted here.",
+  "Every certificate has a linked report with far more detail than the summary. The summaries are what a reader of the register sees; the reports are where the reasoning is. Coding a sample of reports against my coding of their summaries would give the one thing this record most lacks -- an estimate of how much the summary omits.",
+  "Nothing here says whether an incomplete reproduction is BAD. A check that stops at a sample dataset and says so may be more informative than one that grinds through a national-scale workflow. The register offers no way to distinguish a well-scoped partial from an abandoned one, and I do not know what would."
+ ],
+
+ "curation": {"author": "maria", "created": "2026-09-08", "verified": "2026-09-08",
+  "notes_file": "NOTES.md"},
+
+ "triggers": [
+  "whose fault is it when a reproduction is incomplete",
+  "how should I word a report about someone else's code not running",
+  "is partial reproduction the authors problem",
+  "base rate for third party reproduction attempts",
+  "do authors cooperate with reproducibility checks",
+  "codecheck register data analysis",
+  "what does a real codechecker actually write",
+  "reproducibility report denominator eligible for reproduction",
+  "should I contact authors before or after publication",
+  "regex classifier over free text summaries fails how"
+ ]
+}

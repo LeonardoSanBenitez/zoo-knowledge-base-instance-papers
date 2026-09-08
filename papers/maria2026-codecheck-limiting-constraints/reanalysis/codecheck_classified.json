@@ -1,0 +1,1208 @@
+{
+ "n": 131,
+ "rows": [
+  {
+   "id": "2020-001",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 201
+  },
+  {
+   "id": "2020-002",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 105
+  },
+  {
+   "id": "2020-004",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 149
+  },
+  {
+   "id": "2020-005",
+   "outcome": "unstated",
+   "limits": [
+    "stochasticity"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 296
+  },
+  {
+   "id": "2020-006",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 275
+  },
+  {
+   "id": "2020-007",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 550
+  },
+  {
+   "id": "2020-008",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 67
+  },
+  {
+   "id": "2020-009",
+   "outcome": "unstated",
+   "limits": [
+    "deposit-bugs/needed-fixes"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 74
+  },
+  {
+   "id": "2020-010",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 74
+  },
+  {
+   "id": "2020-011",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 168
+  },
+  {
+   "id": "2020-012",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 99
+  },
+  {
+   "id": "2020-013",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 167
+  },
+  {
+   "id": "2020-014",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 213
+  },
+  {
+   "id": "2020-015",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 269
+  },
+  {
+   "id": "2020-016",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 151
+  },
+  {
+   "id": "2020-017",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 95
+  },
+  {
+   "id": "2020-018",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 123
+  },
+  {
+   "id": "2020-019",
+   "outcome": "full",
+   "limits": [
+    "reviewer-compute/time",
+    "deposit-missing-data"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 142
+  },
+  {
+   "id": "2020-020",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 212
+  },
+  {
+   "id": "2020-021",
+   "outcome": "partial",
+   "limits": [
+    "deposit-bugs/needed-fixes"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 147
+  },
+  {
+   "id": "2020-022",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 246
+  },
+  {
+   "id": "2020-023",
+   "outcome": "full",
+   "limits": [
+    "reviewer-compute/time",
+    "deposit-missing-data"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 142
+  },
+  {
+   "id": "2020-024",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 26
+  },
+  {
+   "id": "2020-025",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 178
+  },
+  {
+   "id": "2021-001",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 394
+  },
+  {
+   "id": "2021-002",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "deposit-missing-data",
+    "third-party-restricted"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 499
+  },
+  {
+   "id": "2021-003",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 285
+  },
+  {
+   "id": "2021-004",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "third-party-restricted"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 369
+  },
+  {
+   "id": "2021-005",
+   "outcome": "full",
+   "limits": [
+    "inherent-non-computational"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 753
+  },
+  {
+   "id": "2021-006",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 612
+  },
+  {
+   "id": "2021-007",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "inherent-non-computational"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 364
+  },
+  {
+   "id": "2021-008",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 350
+  },
+  {
+   "id": "2021-009",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 401
+  },
+  {
+   "id": "2021-010",
+   "outcome": "full",
+   "limits": [
+    "inherent-non-computational",
+    "stochasticity"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 370
+  },
+  {
+   "id": "2022-001",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 41
+  },
+  {
+   "id": "2022-002",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 482
+  },
+  {
+   "id": "2022-003",
+   "outcome": "partial",
+   "limits": [
+    "deposit-missing-data"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 712
+  },
+  {
+   "id": "2022-004",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 382
+  },
+  {
+   "id": "2022-005",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "deposit-missing-data"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 1066
+  },
+  {
+   "id": "2022-006",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": true,
+   "mentions_author_interaction": false,
+   "chars": 599
+  },
+  {
+   "id": "2022-007",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-software/licence"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 742
+  },
+  {
+   "id": "2022-008",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 664
+  },
+  {
+   "id": "2022-009",
+   "outcome": "full",
+   "limits": [
+    "inherent-non-computational"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 1053
+  },
+  {
+   "id": "2022-010",
+   "outcome": "unstated",
+   "limits": [
+    "inherent-non-computational"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 498
+  },
+  {
+   "id": "2022-011",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "third-party-restricted"
+   ],
+   "declares_eligibility": true,
+   "mentions_author_interaction": false,
+   "chars": 469
+  },
+  {
+   "id": "2022-012",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 276
+  },
+  {
+   "id": "2022-013",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 638
+  },
+  {
+   "id": "2022-014",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": true,
+   "mentions_author_interaction": false,
+   "chars": 731
+  },
+  {
+   "id": "2022-015",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 585
+  },
+  {
+   "id": "2022-016",
+   "outcome": "partial",
+   "limits": [
+    "deposit-missing-data"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 626
+  },
+  {
+   "id": "2022-017",
+   "outcome": "unstated",
+   "limits": [
+    "third-party-restricted",
+    "stochasticity"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 663
+  },
+  {
+   "id": "2022-018",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 83
+  },
+  {
+   "id": "2023-001",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": true,
+   "mentions_author_interaction": false,
+   "chars": 357
+  },
+  {
+   "id": "2023-002",
+   "outcome": "full",
+   "limits": [
+    "inherent-non-computational"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 804
+  },
+  {
+   "id": "2023-003",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 496
+  },
+  {
+   "id": "2023-004",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 478
+  },
+  {
+   "id": "2023-005",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "third-party-restricted"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 544
+  },
+  {
+   "id": "2023-006",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 279
+  },
+  {
+   "id": "2023-007",
+   "outcome": "partial",
+   "limits": [
+    "inherent-non-computational"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 670
+  },
+  {
+   "id": "2023-008",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 889
+  },
+  {
+   "id": "2023-009",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 689
+  },
+  {
+   "id": "2023-010",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "deposit-bugs/needed-fixes",
+    "stochasticity"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 759
+  },
+  {
+   "id": "2023-011",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 451
+  },
+  {
+   "id": "2023-012",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 111
+  },
+  {
+   "id": "2024-001",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 55
+  },
+  {
+   "id": "2024-003",
+   "outcome": "full",
+   "limits": [
+    "reviewer-software/licence"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 120
+  },
+  {
+   "id": "2024-004",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 119
+  },
+  {
+   "id": "2024-005",
+   "outcome": "full",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 568
+  },
+  {
+   "id": "2024-006",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 442
+  },
+  {
+   "id": "2024-007",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 244
+  },
+  {
+   "id": "2024-008",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time",
+    "reviewer-software/licence",
+    "stochasticity"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 1648
+  },
+  {
+   "id": "2024-009",
+   "outcome": "unstated",
+   "limits": [
+    "inherent-non-computational"
+   ],
+   "declares_eligibility": true,
+   "mentions_author_interaction": false,
+   "chars": 1230
+  },
+  {
+   "id": "2024-010",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time",
+    "deposit-bugs/needed-fixes"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 951
+  },
+  {
+   "id": "2024-011",
+   "outcome": "unstated",
+   "limits": [
+    "deposit-bugs/needed-fixes"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 1109
+  },
+  {
+   "id": "2024-012",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 685
+  },
+  {
+   "id": "2024-013",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 654
+  },
+  {
+   "id": "2024-014",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 245
+  },
+  {
+   "id": "2024-015",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 297
+  },
+  {
+   "id": "2024-016",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time",
+    "stochasticity"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 254
+  },
+  {
+   "id": "2024-017",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 107
+  },
+  {
+   "id": "2024-018",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 94
+  },
+  {
+   "id": "2024-019",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 114
+  },
+  {
+   "id": "2024-020",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 76
+  },
+  {
+   "id": "2024-021",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 424
+  },
+  {
+   "id": "2024-022",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": true,
+   "mentions_author_interaction": false,
+   "chars": 481
+  },
+  {
+   "id": "2024-023",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 166
+  },
+  {
+   "id": "2024-024",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 125
+  },
+  {
+   "id": "2024-025",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 165
+  },
+  {
+   "id": "2025-001",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 381
+  },
+  {
+   "id": "2025-002",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 63
+  },
+  {
+   "id": "2025-003",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-software/licence"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 134
+  },
+  {
+   "id": "2025-004",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 187
+  },
+  {
+   "id": "2025-005",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": true,
+   "mentions_author_interaction": false,
+   "chars": 452
+  },
+  {
+   "id": "2025-006",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 365
+  },
+  {
+   "id": "2025-007",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 364
+  },
+  {
+   "id": "2025-008",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 357
+  },
+  {
+   "id": "2025-009",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "deposit-bugs/needed-fixes"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 457
+  },
+  {
+   "id": "2025-010",
+   "outcome": "full",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 341
+  },
+  {
+   "id": "2025-011",
+   "outcome": "partial",
+   "limits": [
+    "third-party-restricted"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 817
+  },
+  {
+   "id": "2025-012",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "third-party-restricted"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 308
+  },
+  {
+   "id": "2025-013",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time",
+    "deposit-missing-data",
+    "stochasticity"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 649
+  },
+  {
+   "id": "2025-014",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": true,
+   "mentions_author_interaction": true,
+   "chars": 710
+  },
+  {
+   "id": "2025-015",
+   "outcome": "unstated",
+   "limits": [
+    "inherent-non-computational"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 857
+  },
+  {
+   "id": "2025-016",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 252
+  },
+  {
+   "id": "2025-017",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 501
+  },
+  {
+   "id": "2025-018",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 441
+  },
+  {
+   "id": "2025-019",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": true,
+   "mentions_author_interaction": false,
+   "chars": 292
+  },
+  {
+   "id": "2025-020",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 196
+  },
+  {
+   "id": "2025-021",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 425
+  },
+  {
+   "id": "2025-022",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 69
+  },
+  {
+   "id": "2025-025",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 273
+  },
+  {
+   "id": "2025-027",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 370
+  },
+  {
+   "id": "2025-028",
+   "outcome": "partial",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 343
+  },
+  {
+   "id": "2026-001",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 50
+  },
+  {
+   "id": "2026-004",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 379
+  },
+  {
+   "id": "2026-005",
+   "outcome": "partial",
+   "limits": [
+    "deposit-missing-data",
+    "deposit-bugs/needed-fixes"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 544
+  },
+  {
+   "id": "2026-006",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 114
+  },
+  {
+   "id": "2026-007",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 263
+  },
+  {
+   "id": "2026-008",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 246
+  },
+  {
+   "id": "2026-009",
+   "outcome": "full",
+   "limits": [
+    "inherent-non-computational"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 305
+  },
+  {
+   "id": "2026-010",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 283
+  },
+  {
+   "id": "2026-011",
+   "outcome": "full",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 287
+  },
+  {
+   "id": "2026-012",
+   "outcome": "full",
+   "limits": [
+    "reviewer-compute/time"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 262
+  },
+  {
+   "id": "2026-013",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 216
+  },
+  {
+   "id": "2026-014",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 359
+  },
+  {
+   "id": "2026-015",
+   "outcome": "partial",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 151
+  },
+  {
+   "id": "2026-016",
+   "outcome": "full",
+   "limits": [
+    "reviewer-compute/time",
+    "reviewer-software/licence",
+    "third-party-restricted"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 390
+  },
+  {
+   "id": "2026-017",
+   "outcome": "unstated",
+   "limits": [
+    "deposit-bugs/needed-fixes"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 441
+  },
+  {
+   "id": "2026-018",
+   "outcome": "unstated",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 400
+  },
+  {
+   "id": "2026-019",
+   "outcome": "unstated",
+   "limits": [
+    "reviewer-compute/time",
+    "stochasticity"
+   ],
+   "declares_eligibility": false,
+   "mentions_author_interaction": false,
+   "chars": 803
+  },
+  {
+   "id": "2026-023",
+   "outcome": "full",
+   "limits": [],
+   "declares_eligibility": false,
+   "mentions_author_interaction": true,
+   "chars": 342
+  }
+ ],
+ "outcome_counts": {
+  "unstated": 59,
+  "partial": 38,
+  "full": 34
+ },
+ "limit_counts": {
+  "stochasticity": 8,
+  "deposit-bugs/needed-fixes": 8,
+  "reviewer-compute/time": 36,
+  "deposit-missing-data": 8,
+  "third-party-restricted": 8,
+  "inherent-non-computational": 10,
+  "reviewer-software/licence": 5
+ }
+}

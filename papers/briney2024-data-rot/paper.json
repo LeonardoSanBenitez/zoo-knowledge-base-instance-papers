@@ -1,0 +1,126 @@
+{
+ "schema_version": "1.4",
+ "id": "briney2024-data-rot",
+ "title": "Measuring data rot: An analysis of the continued availability of shared data from a single university",
+ "authors": ["Kristin A. Briney"],
+ "year": 2024,
+ "venue": "PLOS ONE 19(6):e0304781",
+ "area": ["computational-reproducibility-and-artifact-reuse"],
+ "identifiers": {
+  "doi": "10.1371/journal.pone.0304781",
+  "pmid": "38838010",
+  "pmcid": "PMC11152257",
+  "url": "https://doi.org/10.1371/journal.pone.0304781"
+ },
+ "record_status": "active",
+ "read_depth": "read-full-text",
+ "cost": {
+  "tool_calls": 4,
+  "bytes_downloaded": 134203,
+  "compute_notes": "One EuropePMC fullTextXML fetch (134 KB) plus regex extraction of the abstract and Tables 3-5. No computation.",
+  "session": "2026-09-08 maria"
+ },
+
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "5.4% of 2,166 supplemental data links harvested from one university's institutional repository no longer resolve, and the loss rate depends strongly on identifier type: DOIs 1.7%, plain URLs 5.9%, FTP 23.8%, direct ZIP 43.8%, direct PDF 58.3%.",
+   "scope": "Caltech-affiliated publications in the institutional repository; links harvested and scraped in R, with everything that failed algorithmically re-tested by hand. Single institution, physics/chemistry/geoscience-heavy.",
+   "quantities": [
+    {"name": "data_links_no_longer_available", "value": 5.4, "unit": "percent", "n": 2166, "baseline": "118 of 2166", "source": "abstract; Table 5"},
+    {"name": "data_link_loss_rate_by_type", "value": 1.7, "unit": "percent", "n": 744, "baseline": "DOI, 13 of 744", "source": "Table 5"},
+    {"name": "data_link_loss_rate_by_type", "value": 5.9, "unit": "percent", "n": 1342, "baseline": "plain URL, 79 of 1342", "source": "Table 5"},
+    {"name": "data_link_loss_rate_by_type", "value": 23.8, "unit": "percent", "n": 21, "baseline": "FTP, 5 of 21", "source": "Table 5"},
+    {"name": "data_link_loss_rate_by_type", "value": 43.8, "unit": "percent", "n": 16, "baseline": "direct link to a ZIP, 7 of 16", "source": "Table 5"},
+    {"name": "data_link_loss_rate_by_type", "value": 58.3, "unit": "percent", "n": 12, "baseline": "direct link to a PDF, 7 of 12", "source": "Table 5"},
+    {"name": "data_disappearance_rate_per_year", "value": 2.6, "unit": "percent per year", "n": 2166, "baseline": "fit over publication age", "source": "abstract; Fig 2"}
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Single institution with a discipline mix that is not representative, which the author states. The DOI-versus-URL contrast is the part that transfers, because it is a property of the identifier system rather than of Caltech. The ZIP and PDF rates rest on n=16 and n=12 and must not be quoted as rates.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "13.4% of the shared URLs point at a website homepage rather than at a specific record.",
+   "scope": "180 of the 1,342 URL-type links. Detected by extracting the homepage with a regular expression and comparing it to the link.",
+   "quantities": [
+    {"name": "shared_urls_pointing_at_a_homepage", "value": 13.4, "unit": "percent", "n": 1342, "baseline": "180 of 1342", "source": "Results, RQ1"}
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Mechanical and reproducible from the stated definition. It is also the most useful single number in the paper for anyone writing a link checker: one in eight 'data links' resolves perfectly, forever, and points at nothing in particular. A resolution check scores all 180 as available.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "The paper's own resolution criterion counts a login wall as available: links that returned a webpage but required a login to see the data 'were counted as resolving even though the data was not openly available'.",
+   "scope": "Stated in the Results, immediately before Table 5.",
+   "our_assessment": {
+    "status": "accepted",
+    "why": "It is in the paper, said plainly, and it makes 5.4% a floor rather than an estimate. It is also the clearest published instance of the specification/execution substitution: the best available measurement of data rot measures whether a URL answers rather than whether anyone can get the data, and its author says so. The paper's own comparison makes the size of the gap visible -- Vines et al. (2014), who CONTACTED AUTHORS rather than scraping, found the odds of a dataset still being extant falling 17% per year against this study's 2.6%. Same phenomenon, two sides of one gap, roughly a factor of six apart.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "Researchers share data in hundreds of places, and the most common host for URL-shared data is github.com (152 links), ahead of every purpose-built repository: osf.io 26, zenodo.org 24, figshare.com 18.",
+   "scope": "Table 3, websites with at least 10 shared datasets.",
+   "quantities": [
+    {"name": "shared_data_links_hosted_on_github", "value": 152, "unit": "links", "n": 1342, "source": "Table 3"},
+    {"name": "shared_data_links_hosted_on_osf", "value": 26, "unit": "links", "n": 1342, "source": "Table 3"},
+    {"name": "shared_data_links_hosted_on_zenodo", "value": 24, "unit": "links", "n": 1342, "source": "Table 3"},
+    {"name": "shared_data_links_hosted_on_figshare", "value": 18, "unit": "links", "n": 1342, "source": "Table 3"}
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Counts from a table, so the numbers are not in doubt; the ranking is institution-specific and this institution is computationally heavy. What transfers is the shape: the most-used host for research data is a code-hosting service that mints no DOI, publishes no checksum, guarantees no retention, and lets a 335 MB file become a 134-byte pointer without any status changing. The author separately notes that researchers link to OSF, Zenodo and Figshare BY URL even though those platforms mint DOIs -- people opting out of the persistent identifier they are already standing next to.",
+    "by": "maria 2026-09-08"
+   }
+  }
+ ],
+
+ "methods": ["link-checking-at-scale", "hand-verification-of-algorithmic-failures", "regression-on-publication-age"],
+
+ "artifacts": [
+  {"id": "a1", "role": "code", "locator": "CaltechDATA deposit named in the article's data availability statement",
+   "status": "not-checked",
+   "checked": {"on": "2026-09-08", "by": "maria",
+    "how": "noted from the data availability statement; NOT opened",
+    "result": "The author deposited R code and data. Not opened. Recorded as not-checked rather than described, because a claim about an artifact nobody opened is exactly what this house does not write."}},
+  {"id": "a2", "role": "in-paper-table", "locator": "artifacts/datarot_PMC11152257.xml",
+   "local_path": "artifacts/datarot_PMC11152257.xml",
+   "status": "verified-usable", "bytes": 134203,
+   "fetch_cmd": "curl -sL -o artifacts/datarot_PMC11152257.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11152257/fullTextXML",
+   "checked": {"on": "2026-09-08", "by": "maria",
+    "how": "EuropePMC REST fullTextXML; Tables 3, 4 and 5 transcribed from the XML text and the per-type failure counts re-added",
+    "result": "Sum check on Table 5: 79+13+5+7+7+2+3+0+1+0+0+0+1 = 118, matching the stated total of 118 failing links. The tables are usable as data even though the deposited data file was not opened."}}
+ ],
+
+ "relations": [
+  {"type": "cito:supports", "target": "maria2026-codecheck-limiting-constraints",
+   "why": "Independent evidence for the same substitution from a different instrument. This paper's resolution check counts a login wall as available and says so; the CODECHECK reading shows human checkers routinely stopping at their own budget rather than at the deposit's condition. Both are the cheap measure landing on the specification side."},
+  {"type": "cito:agreesWith", "target": "trisovic2022-code-execution",
+   "why": "Same direction from a different instrument: artifact presence measured algorithmically at scale is far more optimistic than what a person trying to use the artifact experiences."}
+ ],
+
+ "open_questions": [
+  "The 2.6%/year (scraped) versus 17%/year (authors contacted, Vines et al. 2014, Curr Biol 24(1):94-7) gap is the presence-versus-sufficiency gap with two published numbers attached. Nobody has measured both on the SAME corpus, which is the study that would size the gap rather than bracket it.",
+  "Every number here is about whether a link answers. None is about whether the bytes behind it are the bytes the paper used. A Git LFS pointer, an OSF single-page-application shell and a repository homepage all resolve and all hold bytes. The rate of THAT failure is unmeasured anywhere I have found, and it is measurable: sample data links, fetch them, and ask whether the response is a payload or a shell."
+ ],
+
+ "curation": {"author": "maria", "created": "2026-09-08", "verified": "2026-09-08", "notes_file": "NOTES.md"},
+
+ "triggers": [
+  "how fast do data links die",
+  "is a DOI actually more durable than a URL",
+  "how many data availability statements point at a homepage",
+  "data rot rate per year",
+  "where do researchers actually put their data",
+  "should we ask authors to deposit in zenodo",
+  "my link checker counts a login wall as available",
+  "github is not an archive"
+ ]
+}

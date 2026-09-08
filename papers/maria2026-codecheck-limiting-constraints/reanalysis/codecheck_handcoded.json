@@ -1,0 +1,410 @@
+{
+ "n_certificates_with_summary": 131,
+ "n_coded": 62,
+ "sensitivity_low": 35,
+ "unclear_ids": [
+  "2026-001",
+  "2026-007",
+  "2026-013"
+ ],
+ "primary": {
+  "deposit": 23,
+  "reviewer": 21,
+  "third-party": 8,
+  "inherent": 5,
+  "unclear": 3,
+  "stochastic": 2
+ },
+ "any": {
+  "deposit": 24,
+  "reviewer": 23,
+  "third-party": 10,
+  "inherent": 7,
+  "stochastic": 4,
+  "unclear": 3
+ },
+ "not_limited_by_deposit": 38,
+ "coding": {
+  "2020-014": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "Some of the original MATLAB code was provided ... this was a small subset of all the figures"
+  },
+  "2020-021": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "After some adjustments of the computational environment ... mostly successful"
+  },
+  "2020-022": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "some key figures were not created by the provided data and code"
+  },
+  "2021-001": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "Due to long computation times, only a subset of the results could be checked"
+  },
+  "2021-002": {
+   "codes": [
+    "third-party"
+   ],
+   "evidence": "not publicly available due to licence issues with the cooperating parties"
+  },
+  "2021-004": {
+   "codes": [
+    "third-party"
+   ],
+   "evidence": "irreproducible because of proprietary data"
+  },
+  "2021-007": {
+   "codes": [
+    "inherent",
+    "reviewer"
+   ],
+   "evidence": "Some manual steps ... could not be reproduced, as well as a final step due to long execution time"
+  },
+  "2021-008": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "data provided by the authors via email ... figures ... are not identical to the figures in the paper"
+  },
+  "2022-002": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "the input data for Section 4.4 are not reproducible with the provided code"
+  },
+  "2022-003": {
+   "codes": [
+    "third-party"
+   ],
+   "evidence": "authors claimed that input data cannot be disclosed"
+  },
+  "2022-005": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "the time constraints of this review ... allowed only a partial reproduction ... with more time, a successful reproduction ... is highly likely"
+  },
+  "2022-007": {
+   "codes": [
+    "third-party"
+   ],
+   "evidence": "a core analysis step based on proprietary software could not be evaluated"
+  },
+  "2022-008": {
+   "codes": [
+    "third-party"
+   ],
+   "evidence": "Only two of the four online classification APIs were tested due to the requirement of registering accounts"
+  },
+  "2022-011": {
+   "codes": [
+    "third-party",
+    "deposit"
+   ],
+   "evidence": "One data set is not available due to privacy policy concerns ... one Figure was not reproducible"
+  },
+  "2022-013": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "One of the reproduced figures differed ... tables ... returned slightly different values"
+  },
+  "2022-014": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "the provided software scripts comprise reproduction of one out of the four data columns"
+  },
+  "2022-015": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "The repository contains only one out of two datasets presented in the paper"
+  },
+  "2022-016": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "no code is provided to visually recreate the figure ... For the rest of figures and tables, no code is provided"
+  },
+  "2023-005": {
+   "codes": [
+    "third-party"
+   ],
+   "evidence": "not available due to intellectual property concerns"
+  },
+  "2023-007": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "the data processing steps were not detailed enough in the README files"
+  },
+  "2023-008": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "could be partially reproduced ... since the data used by the authors are not publicy available"
+  },
+  "2023-010": {
+   "codes": [
+    "deposit",
+    "stochastic"
+   ],
+   "evidence": "other quantitative results (tables in the paper) can not be created with the code"
+  },
+  "2024-006": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "I did not reproduce the experiment or other results ... but I was able to set up and run the system"
+  },
+  "2024-007": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "a prototype system that required specific hardware, therefore, I skipped this part"
+  },
+  "2024-013": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "due to the lack of available computational resources on the side of the reviewer"
+  },
+  "2025-009": {
+   "codes": [
+    "reviewer",
+    "third-party"
+   ],
+   "evidence": "the time to collect the data is not feasible within the reproducibility review"
+  },
+  "2025-011": {
+   "codes": [
+    "reviewer",
+    "inherent"
+   ],
+   "evidence": "I only chose a subset of models to retrain ... A part of the inference ... was done manually"
+  },
+  "2025-012": {
+   "codes": [
+    "reviewer",
+    "third-party"
+   ],
+   "evidence": "due to computational and privacy constraints, only two basic examples could be reproduced"
+  },
+  "2025-013": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "could not be reproduced ... due to code issues; the GitHub repository contained 16 code files but lacked sufficient documentation"
+  },
+  "2025-016": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "Partial reproduction with a focus on the analysis part presented in the paper"
+  },
+  "2025-017": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "I could not re-run LLM-prompting and fine-tuning due to resource restrictions (time, specific hardware needed)"
+  },
+  "2025-028": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "Table 3 could not be linked to any of the output files"
+  },
+  "2026-001": {
+   "codes": [
+    "unclear"
+   ],
+   "evidence": "Partial reproduction of figures in the publication"
+  },
+  "2026-005": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "the DEM file was not included and had to be requested from the authors, and the Figure 8 script contained an SQL error"
+  },
+  "2026-007": {
+   "codes": [
+    "unclear"
+   ],
+   "evidence": "the reproduced results were mostly in accordance with the reported results"
+  },
+  "2026-008": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "some files in the repository were differentiated only by path rather than filename"
+  },
+  "2026-013": {
+   "codes": [
+    "unclear"
+   ],
+   "evidence": "other manuscript outputs could be reproduced only partially"
+  },
+  "2026-015": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "Successful but partial reproduction. The third part of the analysis reproduced smoothly"
+  },
+  "2026-011": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "A complete reproduction was infeasible as part of the review due to the computational environment required"
+  },
+  "2026-012": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "A full reproduction requires substantial computational resources (in particular the fine-tuning in Step 2)"
+  },
+  "2026-016": {
+   "codes": [
+    "third-party",
+    "reviewer"
+   ],
+   "evidence": "data generation relied on paid APIs ... and indices/figures required ArcGIS/arcpy, which was unavailable on the reviewer's system"
+  },
+  "2025-006": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "the author recommends the use of an HPC cluster, which is beyond the scope of this CODECHECK"
+  },
+  "2025-010": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "I initially attempted a full reproduction, but had to abandon this due to time constraints"
+  },
+  "2025-019": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "Figures 1-2 and Tables 1-3 were not covered by this CODECHECK"
+  },
+  "2024-014": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "used a smaller sample dataset, since the original data set ... would require several days of computation on the available hardware"
+  },
+  "2024-015": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "certain steps were omitted as they would take several hours to compute on the available hardware"
+  },
+  "2020-001": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "Only visualiation steps performed, rather than machine learning (which could take several hours/days)"
+  },
+  "2020-015": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "The code to reproduce the figures given in the paper had more difficulties, with only some figures successfully recreated"
+  },
+  "2020-019": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "After initial problems because of absence of documentation, the reproduction was successful for some of the paper's figures, but not the maps"
+  },
+  "2020-023": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "After initial problems because of absence of documentation ... but not the maps"
+  },
+  "2020-005": {
+   "codes": [
+    "deposit",
+    "stochastic"
+   ],
+   "evidence": "two figures were very different from the originals. Some figures also varied considerably when changing the seed"
+  },
+  "2021-005": {
+   "codes": [
+    "inherent"
+   ],
+   "evidence": "A complete reproduction is practically impossible to achieve"
+  },
+  "2022-009": {
+   "codes": [
+    "inherent"
+   ],
+   "evidence": "a survey and user study ... almost impossible to reproduce"
+  },
+  "2022-010": {
+   "codes": [
+    "inherent"
+   ],
+   "evidence": "the physical/practical experiments could not be reproduced"
+  },
+  "2024-008": {
+   "codes": [
+    "reviewer",
+    "inherent"
+   ],
+   "evidence": "confirm that that the analysis runs as intended, but not check the validity of the outputs shown in the paper"
+  },
+  "2024-009": {
+   "codes": [
+    "inherent"
+   ],
+   "evidence": "The first two steps in the research design are out of scope of this reproducibility review"
+  },
+  "2024-022": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "The repository did not provide code to reproduce other plots (Figs. 7, 10 and 11)"
+  },
+  "2025-018": {
+   "codes": [
+    "reviewer"
+   ],
+   "evidence": "To avoid the lengthy execution time required to run the full experiments, the pre-computed results provided in the repository were used"
+  },
+  "2026-019": {
+   "codes": [
+    "stochastic"
+   ],
+   "evidence": "structural changes can occur, probably due to a non-deterministic order when processing input files"
+  },
+  "2024-016": {
+   "codes": [
+    "stochastic"
+   ],
+   "evidence": "The resulting figures were not an exact match due to stochasticity"
+  },
+  "2023-011": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "With some fixes, the code was confirmed to work"
+  },
+  "2026-017": {
+   "codes": [
+    "deposit"
+   ],
+   "evidence": "several surgical fixes were still required to address environment-specific dependency conflicts ... and logic bugs in the provided scripts"
+  }
+ }
+}

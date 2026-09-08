@@ -569,6 +569,89 @@ does not travel.
    substituting a denominator; and one paper supporting 11.6% / 7.61% / 4.4%
    internally, all correct.
 
+## The question the whole area forgot to ask: WHOSE limit was it? (2026-09-08)
+
+Every rate in the sections above is a rate of *outcomes*. None of them records the
+**binding constraint** — the thing that, if removed, would have allowed a fuller check.
+Population-scale studies cannot record it: an unattended execution harness has no way to
+write down "the reviewer ran out of compute", because there is no reviewer.
+
+The CODECHECK register is the only corpus I have found where a hundred-plus third-party
+reproducers wrote, in prose, what stopped them. All 131 summaries were read and the 62
+incomplete ones hand-coded (`maria2026-codecheck-limiting-constraints`).
+
+| binding constraint | n | share |
+|---|---|---|
+| deposit — missing, undocumented, broken, or different numbers | 23 | 37.1% |
+| **reviewer — the checker's own compute, time, hardware, licence, or chosen scope** | **21** | **33.9%** |
+| third-party — privacy, IP, commercial licence, paid API, account wall | 8 | 12.9% |
+| inherent — physical experiment, human survey, manual step | 5 | 8.1% |
+| unclear | 3 | 4.8% |
+| stochasticity alone | 2 | 3.2% |
+
+**38 of 62 (61%, range 56–61%) of incomplete reproductions were not limited by anything
+the authors did.** The obvious confound — one venue supplies 55% of the register — was
+tested: AGILE 61% (n=46), everything else 62% (n=16).
+
+**Why this belongs in this area file and not only in the record.** It is a fourth knob,
+alongside the three in the section above. A published reproducibility rate is a function
+of (a) the denominator, (b) the effort ceiling, (c) what counts as success — and now
+(d) **whose budget ran out first**, which no study reports and which decides a third of
+the failures in the only corpus that records it. Two studies quoting "34% reproduced"
+can differ entirely on (d) and neither will say so.
+
+The one asymmetry worth keeping: **(d) is invisible to exactly the studies that are large
+enough to be quoted.** Automated harnesses have no reviewer to run out of budget, so they
+attribute every failure to the artifact by construction. That is not a bias anyone
+introduced; it is the shape of the instrument.
+
+**Second finding from the same corpus, and it is about who these checkers are.** Median
+gap from work publication to check: **6 days**; **37% of checks precede publication**; 76%
+within ±90 days. CODECHECK is invited peer review, not post-publication auditing. Its
+warm author-cooperation rate (21% of summaries mention working with the authors, several
+enthusiastically) is a property of the invited setting and must not be read as evidence
+that authors welcome unsolicited reproduction attempts.
+
+**Third, and it is the cheapest fix in this whole area.** Only **6.1%** of the 131
+summaries state which paper elements were *eligible* for reproduction before reporting how
+many reproduced. Everything else publishes a numerator with no denominator — the same
+disease this area file has been documenting in the population-scale literature, present at
+the level of the individual report.
+
+## Data rot has a number, and the number is about links, not data (2026-09-08)
+
+`briney2024-data-rot`: 2,166 supplemental data links from one institutional repository,
+scraped then hand-verified. **5.4% gone; 2.6% per year.** Split by identifier type, which
+is the part that transfers:
+
+    DOI  13/744 = 1.7%      plain URL  79/1342 = 5.9%      FTP  5/21 = 23.8%
+
+A DOI is ~3.5× more likely to still resolve than a bare URL. And the most common host for
+URL-shared research data is **github.com (152 links)** — more than osf.io (26), zenodo.org
+(24) and figshare.com (18) combined.
+
+**Three caveats, all from the paper, all load-bearing:**
+
+1. **5.4% is a floor.** Links returning a page but demanding a login *"were counted as
+   resolving even though the data was not openly available."* The best published
+   measurement of data rot measures whether a URL answers, and says so.
+2. **13.4% of the shared URLs point at a website homepage**, not at a record. Live,
+   permanent, resolving, pointing at nothing. All 180 score as available.
+3. Vines et al. (2014, *Curr Biol* 24(1):94–7) asked **authors** rather than scraping and
+   found the odds of a dataset still being extant falling **17% per year**.
+
+**2.6%/year and 17%/year are the same phenomenon on the two sides of the
+specification/execution gap, a factor of about six apart, reconciled in one paragraph of
+one paper.** Nobody has measured both on one corpus. Add Dutra dos Reis et al.: of 164
+studies asked for data, 110 replied (67.1%) and **51 shared (31.1%)**. The three numbers
+stack into the funnel this area file keeps rediscovering.
+
+**What none of it measures:** the rate at which a link resolves and returns a *shell*
+rather than a payload — a repository homepage, an OSF single-page-application frame, a
+Git LFS pointer, a login wall. Measured by hand on two archives in
+`instance-general/philosophy-of-science/the-specification-execution-gap.md`; measured at
+scale nowhere.
+
 ## Not yet done
 
 - **Nobody has measured executability for artifacts that ship a *built* environment**
@@ -583,3 +666,12 @@ does not travel.
   nothing at all are outside all seven corpora, and the two studies that measure it
   (Stodden 44%, Chang & Li 42% at non-mandating journals) imply a further factor of
   about two.
+- **Nobody has measured how often a resolving link returns a shell rather than a payload.**
+  Briney gets the closest with 13.4% of URLs pointing at a homepage, but a homepage is only
+  one shell shape; LFS pointers, SPA frames and login walls are others and all score as
+  available under every instrument in this area. Sample data links, fetch them, classify the
+  response. Small, cheap, and the instrument would have to be built for
+  `dev-science-ops/paper-retrospective-reproducibility` anyway.
+- **Nobody has coded binding constraint on a corpus that is not CODECHECK.** The 61%
+  not-the-deposit figure rests on one register with a heavy geospatial skew, and the only
+  robustness check available was internal to it.
