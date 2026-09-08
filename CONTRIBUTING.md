@@ -36,6 +36,65 @@ the actual theorems.
 **Rule: if the PDF downloaded, read the PDF.** Use the summariser to decide whether to
 download, never to decide what the paper says.
 
+## 1b. Ask whether the paper has been corrected. One request. Do it first.
+
+Added 2026-09-08, after this method read a paper in depth, re-analysed it across three
+sessions, recorded a dead data link as a live problem — and never noticed that the
+authors had formally corrected that exact link in 2024.
+
+```sh
+curl -s "https://api.crossref.org/works?filter=updates:<DOI>"
+```
+
+For `10.1371/journal.pone.0253694` this returns exactly one item: a **Correction**,
+`10.1371/journal.pone.0314290`, PLOS ONE 19(11):e0314290, 2024-11-18, by the same two
+authors, replacing the Data Availability statement and giving the working URL. The record
+`gamma2021-mpe92m` had carried the dead URL as an open defect for twenty-two months after
+the fix was published. Had anything from it been sent to those authors, it would have told
+them about a problem they had already announced the answer to.
+
+**Three things this rule requires, and each exists because skipping it is tempting:**
+
+1. **Run the reciprocal query too** — `filter=updates:<the correction's own DOI>` — and
+   expect zero. A single query returning nothing looks the same whether there is no
+   correction or the request failed. Crossref returns HTTP 429 on back-to-back queries from
+   a bare client; use a `mailto:` in the User-Agent and retry with backoff.
+2. **Record the answer even when it is "none".** A record with no `updates` note is
+   ambiguous between *checked and clean* and *never checked*. Put the query and its result
+   in the artifact's `checked` block or in `open_questions`.
+3. **Re-run it at `curation.verified` time**, not only at creation. A paper can be corrected
+   after you read it, and the check costs one request.
+
+**The base rate, measured the same day over this corpus.** The query was run against all
+**29** of the 42 records carrying a DOI. **Two** have formal corrections — Breznau et al.
+2022 (Fig. 1 corrected, 2024-06-20) and Gamma & Metzinger 2021 — a base rate of **6.9%**.
+Raw output: `papers/gamma2024-mpe92m-correction/corpus_corrections_audit.json`.
+
+**And the uncomfortable half.** The Breznau correction had *already* been found, on
+2026-08-12, and recorded accurately. So this method does not never-check. It checks **when
+the reader happens to notice, which on this evidence is one time in two**, and the only
+visible difference between the two cases is that PNAS puts the correction on the article
+page and PLOS does not. *A practice that depends on a publisher's page layout is not a
+practice.* That is the argument for the rule, and it is a stronger argument than a simple
+miss would have been.
+
+**Where the recorded one went, and why that is a second problem.** The Breznau correction
+is stored as `artifacts[]` with `role: supplement`, because that is the only slot the schema
+offers. A correction is not a supplement. The consequence is that no `kb.py` query can
+answer *"which papers here have been corrected?"* — the fact is in the corpus and is
+reachable only by reading prose. A first-class `updates` field is proposed in that record's
+`open_questions`; until it exists, put the answer in `open_questions` where at least
+`kb.py query --text` will find it.
+
+**Where this came from.** `dev-science-ops/paper-retrospective-reproducibility/` performs
+this at its S0 stage. This method did not. The whole account, and eleven other things the
+comparison exposed, is in that project's `retrofit/FINDINGS.md`.
+
+**The second-order lesson, which is the one worth keeping.** The original read reached the
+*right* artifact by another route and never knew it was the officially corrected pointer.
+**Getting the right answer by the wrong method is not a smaller error than getting the wrong
+answer, because it does not announce itself.**
+
 ## 2. Open the artifacts. All of them, separately.
 
 A paper is not one link. It is typically several artifacts with different roles, different

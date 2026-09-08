@@ -1,361 +1,395 @@
 {
-  "schema_version": "1.0",
-  "id": "kim2025-correlated-errors",
-  "title": "Correlated Errors in Large Language Models",
-  "authors": [
-    "Elliot Kim",
-    "Avi Garg",
-    "Kenny Peng",
-    "Nikhil Garg"
-  ],
-  "year": 2025,
-  "venue": "ICML 2025 (PMLR 267)",
-  "area": [
-    "llm-monoculture",
-    "multi-agent-systems"
-  ],
-  "identifiers": {
-    "arxiv": "2506.07962",
-    "url": "https://proceedings.mlr.press/v267/kim25e.html",
-    "openreview": "kzYq2hfyHB"
+ "schema_version": "1.0",
+ "id": "kim2025-correlated-errors",
+ "title": "Correlated Errors in Large Language Models",
+ "authors": [
+  "Elliot Kim",
+  "Avi Garg",
+  "Kenny Peng",
+  "Nikhil Garg"
+ ],
+ "year": 2025,
+ "venue": "ICML 2025 (PMLR 267)",
+ "area": [
+  "llm-monoculture",
+  "multi-agent-systems"
+ ],
+ "identifiers": {
+  "arxiv": "2506.07962",
+  "url": "https://proceedings.mlr.press/v267/kim25e.html",
+  "openreview": "kzYq2hfyHB"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 14,
+  "bytes_downloaded": 66000000,
+  "compute_notes": "220 HELM scenario fetches (~7.6MB) + 247MB repo clone (3 files >50MB deleted after inspection per disk policy); 4 analysis scripts, longest run ~3min single-core pandas/stdlib",
+  "session": "2026-08-07 maria"
+ },
+ "triggers": [
+  "do different LLMs make the same mistakes",
+  "is a second model's opinion independent",
+  "how correlated are model errors",
+  "does using a different vendor's model give me diversity",
+  "LLM-as-judge inflates or deflates accuracy",
+  "everyone screened by the same model gets rejected everywhere",
+  "should all our firms use the best model or different ones"
+ ],
+ "methods": [
+  "pairwise-agreement-conditional-on-both-wrong",
+  "ols-on-pair-level-features",
+  "stable-matching-simulation",
+  "llm-as-judge-audit",
+  "leaderboard-secondary-analysis"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Conditional on two LLMs both answering a multiple-choice question incorrectly, they select the same incorrect answer far more often than chance.",
+   "scope": "MMLU-style multiple-choice items, models drawn from public leaderboards (HELM, HuggingFace Open LLM Leaderboard 2), 2023-2024 model generations.",
+   "quantities": [
+    {
+     "name": "agreement_when_both_wrong",
+     "value": 0.6,
+     "n": "71 models x 14042 items",
+     "baseline": "1/3 = uniform over the 3 wrong options",
+     "source": "sec 3.2, HELM"
+    },
+    {
+     "name": "agreement_when_both_wrong",
+     "value": 0.423,
+     "n": "349 models x 12032 items",
+     "baseline": "0.127 (>80% of items have 10 options)",
+     "source": "sec 3.2, HuggingFace"
+    },
+    {
+     "name": "pairs_above_baseline",
+     "value": 1.0,
+     "n": "349 models",
+     "unit": "fraction",
+     "baseline": "uniform-over-wrong",
+     "source": "sec 3.2, HuggingFace"
+    },
+    {
+     "name": "pairs_above_baseline",
+     "value": 0.975,
+     "n": "71 models",
+     "unit": "fraction",
+     "baseline": "uniform-over-wrong",
+     "source": "sec 3.2, HELM"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "not-identifiable",
+    "why": "The number replicates (we measured 0.5528 on an independently rebuilt 22-model x 2918-item HELM sample). What does not survive is its interpretation as evidence of dependence between models. The uniform-over-wrong baseline assumes all distractors are equally attractive, which is false for professionally written MCQ items and false in an ability-graded way: corr(model accuracy, P(picks the modal wrong answer | wrong)) = +0.835. Two models conditionally independent given the item can produce this number. Per jo2026-subjectivity Thm 1 there is no null-free fact of the matter here, so the honest status is not-identifiable rather than refuted.",
+    "by": "maria2026-marginal-competence"
+   }
   },
-  "record_status": "active",
-  "read_depth": "read-and-reanalysed",
-  "cost": {
-    "tool_calls": 14,
-    "bytes_downloaded": 66000000,
-    "compute_notes": "220 HELM scenario fetches (~7.6MB) + 247MB repo clone (3 files >50MB deleted after inspection per disk policy); 4 analysis scripts, longest run ~3min single-core pandas/stdlib",
-    "session": "2026-08-07 maria"
+  {
+   "id": "c2",
+   "statement": "Error correlation is higher for pairs sharing a provider, sharing a base architecture, or having similar parameter counts; and, conditional on those, higher for pairs that are individually more accurate.",
+   "scope": "OLS on pair-level features; HELM, HuggingFace, Resumes.",
+   "quantities": [
+    {
+     "name": "same_company_coef",
+     "value": 0.066,
+     "n": "349 models (HF)",
+     "source": "Table 1"
+    },
+    {
+     "name": "same_company_coef",
+     "value": 0.022,
+     "n": "71 models (HELM)",
+     "source": "Table 1"
+    },
+    {
+     "name": "same_company_coef",
+     "value": 0.021,
+     "n": "20 models (Resumes)",
+     "source": "Table 1, not significant"
+    },
+    {
+     "name": "same_architecture_coef",
+     "value": 0.076,
+     "n": "349 models (HF)",
+     "source": "Table 1"
+    },
+    {
+     "name": "acc1_x_acc2_interaction",
+     "value": 0.023,
+     "n": "349 models (HF)",
+     "source": "Table 1"
+    },
+    {
+     "name": "regression_R2",
+     "value": 0.613,
+     "n": "71 models (HELM)",
+     "source": "Table 1"
+    }
+   ],
+   "evidence": [
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The provider/architecture part survives our item-corrected reanalysis: same-provider pairs retain a residual (+0.066 vs +0.007 cross-provider under a leave-provider-out null), and the largest genuine residual is llama-3.1-405b/llama-3.1-70b (+0.274). Family kinship is real. The accuracy part is the problem: any null estimated from a mixed-ability population scores high-accuracy pairs as excessively correlated almost mechanically. Our anchored nulls are antisymmetric at nearly equal magnitude (weak-anchor -> strong-target +0.212, strong-anchor -> weak-target -0.206), which is the signature of a capability-gap artifact rather than kinship.",
+    "by": "maria2026-marginal-competence"
+   }
   },
-  "triggers": [
-    "do different LLMs make the same mistakes",
-    "is a second model's opinion independent",
-    "how correlated are model errors",
-    "does using a different vendor's model give me diversity",
-    "LLM-as-judge inflates or deflates accuracy",
-    "everyone screened by the same model gets rejected everywhere",
-    "should all our firms use the best model or different ones"
-  ],
-  "methods": [
-    "pairwise-agreement-conditional-on-both-wrong",
-    "ols-on-pair-level-features",
-    "stable-matching-simulation",
-    "llm-as-judge-audit",
-    "leaderboard-secondary-analysis"
-  ],
-  "claims": [
+  {
+   "id": "c3",
+   "statement": "An LLM used as a judge systematically inflates the measured accuracy of models less accurate than itself and deflates that of models more accurate than itself, with additional inflation for models from its own provider or family.",
+   "scope": "HELM and HuggingFace MMLU; each of ~15 models used in turn as judge.",
+   "quantities": [
     {
-      "id": "c1",
-      "statement": "Conditional on two LLMs both answering a multiple-choice question incorrectly, they select the same incorrect answer far more often than chance.",
-      "scope": "MMLU-style multiple-choice items, models drawn from public leaderboards (HELM, HuggingFace Open LLM Leaderboard 2), 2023-2024 model generations.",
-      "quantities": [
-        {
-          "name": "agreement_when_both_wrong",
-          "value": 0.6,
-          "n": "71 models x 14042 items",
-          "baseline": "1/3 = uniform over the 3 wrong options",
-          "source": "sec 3.2, HELM"
-        },
-        {
-          "name": "agreement_when_both_wrong",
-          "value": 0.423,
-          "n": "349 models x 12032 items",
-          "baseline": "0.127 (>80% of items have 10 options)",
-          "source": "sec 3.2, HuggingFace"
-        },
-        {
-          "name": "pairs_above_baseline",
-          "value": 1.0,
-          "n": "349 models",
-          "unit": "fraction",
-          "baseline": "uniform-over-wrong",
-          "source": "sec 3.2, HuggingFace"
-        },
-        {
-          "name": "pairs_above_baseline",
-          "value": 0.975,
-          "n": "71 models",
-          "unit": "fraction",
-          "baseline": "uniform-over-wrong",
-          "source": "sec 3.2, HELM"
-        }
-      ],
-      "evidence": [
-        "a1",
-        "a3"
-      ],
-      "our_assessment": {
-        "status": "not-identifiable",
-        "why": "The number replicates (we measured 0.5528 on an independently rebuilt 22-model x 2918-item HELM sample). What does not survive is its interpretation as evidence of dependence between models. The uniform-over-wrong baseline assumes all distractors are equally attractive, which is false for professionally written MCQ items and false in an ability-graded way: corr(model accuracy, P(picks the modal wrong answer | wrong)) = +0.835. Two models conditionally independent given the item can produce this number. Per jo2026-subjectivity Thm 1 there is no null-free fact of the matter here, so the honest status is not-identifiable rather than refuted.",
-        "by": "maria2026-marginal-competence"
-      }
-    },
-    {
-      "id": "c2",
-      "statement": "Error correlation is higher for pairs sharing a provider, sharing a base architecture, or having similar parameter counts; and, conditional on those, higher for pairs that are individually more accurate.",
-      "scope": "OLS on pair-level features; HELM, HuggingFace, Resumes.",
-      "quantities": [
-        {
-          "name": "same_company_coef",
-          "value": 0.066,
-          "n": "349 models (HF)",
-          "source": "Table 1"
-        },
-        {
-          "name": "same_company_coef",
-          "value": 0.022,
-          "n": "71 models (HELM)",
-          "source": "Table 1"
-        },
-        {
-          "name": "same_company_coef",
-          "value": 0.021,
-          "n": "20 models (Resumes)",
-          "source": "Table 1, not significant"
-        },
-        {
-          "name": "same_architecture_coef",
-          "value": 0.076,
-          "n": "349 models (HF)",
-          "source": "Table 1"
-        },
-        {
-          "name": "acc1_x_acc2_interaction",
-          "value": 0.023,
-          "n": "349 models (HF)",
-          "source": "Table 1"
-        },
-        {
-          "name": "regression_R2",
-          "value": 0.613,
-          "n": "71 models (HELM)",
-          "source": "Table 1"
-        }
-      ],
-      "evidence": [
-        "a3"
-      ],
-      "our_assessment": {
-        "status": "accepted-narrower-scope",
-        "why": "The provider/architecture part survives our item-corrected reanalysis: same-provider pairs retain a residual (+0.066 vs +0.007 cross-provider under a leave-provider-out null), and the largest genuine residual is llama-3.1-405b/llama-3.1-70b (+0.274). Family kinship is real. The accuracy part is the problem: any null estimated from a mixed-ability population scores high-accuracy pairs as excessively correlated almost mechanically. Our anchored nulls are antisymmetric at nearly equal magnitude (weak-anchor -> strong-target +0.212, strong-anchor -> weak-target -0.206), which is the signature of a capability-gap artifact rather than kinship.",
-        "by": "maria2026-marginal-competence"
-      }
-    },
-    {
-      "id": "c3",
-      "statement": "An LLM used as a judge systematically inflates the measured accuracy of models less accurate than itself and deflates that of models more accurate than itself, with additional inflation for models from its own provider or family.",
-      "scope": "HELM and HuggingFace MMLU; each of ~15 models used in turn as judge.",
-      "quantities": [
-        {
-          "name": "accuracy_inflation_sign_flip_at_judge_accuracy",
-          "value": "judge's own true accuracy",
-          "n": "15 judges x ~70 judged models",
-          "source": "Figure 2"
-        }
-      ],
-      "evidence": [
-        "a3"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "Mechanically sound and does not depend on the disputed null: a judge cannot reward a correct answer it would not itself have produced, so the deflation arm is near-tautological, and the inflation arm follows directly from shared errors being scored as correct. The same-provider extra inflation extends self-preferencing (Panickssery et al. 2024) from a model to a family. This is the most directly actionable result in the paper and the least cited."
-      }
-    },
-    {
-      "id": "c4",
-      "statement": "In a simulated labour market, LLM-based screening produces substantial systemic exclusion even when every firm independently uses a different LLM; and firm welfare is maximised by all firms using the same best model rather than diversifying.",
-      "scope": "1800 resume-job pairs, 450 human-labelled, 20 LLMs, deferred-acceptance stable matching, 1500 simulated markets.",
-      "quantities": [
-        {
-          "name": "systemic_exclusion_20_distinct_LLMs",
-          "value": 0.2,
-          "n": "20 firms, p=0.25",
-          "baseline": "-> 0 under uniformly random firm preferences",
-          "source": "Figure 3a"
-        },
-        {
-          "name": "systemic_exclusion_same_LLM",
-          "value": 0.75,
-          "n": "5 firms",
-          "source": "Figure 3b"
-        },
-        {
-          "name": "systemic_exclusion_random_LLM",
-          "value": 0.43,
-          "n": "5 firms",
-          "source": "Figure 3b"
-        },
-        {
-          "name": "systemic_exclusion_uniformly_random",
-          "value": 0.24,
-          "n": "5 firms",
-          "source": "Figure 3b"
-        }
-      ],
-      "evidence": [
-        "a2",
-        "a4"
-      ],
-      "our_assessment": {
-        "status": "unverified",
-        "why": "We did not re-run the market simulations. Recorded because it is the half of the paper that does not depend on the contested correlation statistic, and because the applicant-welfare result runs OPPOSITE to the firm-welfare result (monoculture is best for firms, worst for applicants) which is the kind of finding that gets dropped in citation. The data artifact for this half (data/final.csv, 63MB) was inspected and deleted under our >50MB policy; restorable via git checkout."
-      }
+     "name": "accuracy_inflation_sign_flip_at_judge_accuracy",
+     "value": "judge's own true accuracy",
+     "n": "15 judges x ~70 judged models",
+     "source": "Figure 2"
     }
-  ],
-  "artifacts": [
+   ],
+   "evidence": [
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Mechanically sound and does not depend on the disputed null: a judge cannot reward a correct answer it would not itself have produced, so the deflation arm is near-tautological, and the inflation arm follows directly from shared errors being scored as correct. The same-provider extra inflation extends self-preferencing (Panickssery et al. 2024) from a model to a family. This is the most directly actionable result in the paper and the least cited."
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "In a simulated labour market, LLM-based screening produces substantial systemic exclusion even when every firm independently uses a different LLM; and firm welfare is maximised by all firms using the same best model rather than diversifying.",
+   "scope": "1800 resume-job pairs, 450 human-labelled, 20 LLMs, deferred-acceptance stable matching, 1500 simulated markets.",
+   "quantities": [
     {
-      "id": "a1",
-      "role": "raw-data",
-      "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
-      "path_in_repo": "data/helm/all_mmlu_data_limitedcols.csv",
-      "status": "dangling",
-      "bytes": 335231032,
-      "checked": {
-        "on": "2026-08-07",
-        "by": "maria",
-        "how": "git clone --depth 1 <repo>; git lfs pull --include=<path>; git lfs fetch --all",
-        "result": "Git LFS pointer present in tree (oid a3f099c49c...), object 404s: 'Object does not exist on the server'. Also 404 via media.githubusercontent.com/media/. This is the per-question x per-model response matrix from which every other HELM artifact in the repo is derived. Its loss makes the paper re-executable but not reanalysable: a critic cannot change the null model, which is the only thing worth changing."
-      },
-      "license": "unstated",
-      "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+     "name": "systemic_exclusion_20_distinct_LLMs",
+     "value": 0.2,
+     "n": "20 firms, p=0.25",
+     "baseline": "-> 0 under uniformly random firm preferences",
+     "source": "Figure 3a"
     },
     {
-      "id": "a2",
-      "role": "derived-data",
-      "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
-      "path_in_repo": "data/final.csv",
-      "status": "present-but-insufficient",
-      "bytes": 63641031,
-      "checked": {
-        "on": "2026-08-07",
-        "by": "maria",
-        "how": "head -1; wc -l",
-        "result": "1,080,186 rows of per-model resume/job ratings + human labels. Present and usable for the market half. Inspected then deleted locally under the >50MB disk policy; restorable with `git checkout -- data/final.csv` (plain git object, not LFS)."
-      },
-      "derived_from": [],
-      "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+     "name": "systemic_exclusion_same_LLM",
+     "value": 0.75,
+     "n": "5 firms",
+     "source": "Figure 3b"
     },
     {
-      "id": "a3",
-      "role": "derived-data",
-      "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
-      "path_in_repo": "data/helm/model_correlations.csv",
-      "status": "verified-usable",
-      "bytes": 1436540,
-      "checked": {
-        "on": "2026-08-07",
-        "by": "maria",
-        "how": "head -2",
-        "result": "Pair-level: chi_square, p_value, overall_agreement_rate, both_correct_rate, agreement_rate_when_either_wrong, agreement_rate_when_both_wrong, and a full k x k contingency table of answer LETTERS per pair. Enough to reproduce Table 1 and the heatmaps; not enough to change the null, because it is marginalised over items."
-      },
-      "derived_from": [
-        "a1"
-      ],
-      "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+     "name": "systemic_exclusion_random_LLM",
+     "value": 0.43,
+     "n": "5 firms",
+     "source": "Figure 3b"
     },
     {
-      "id": "a4",
-      "role": "code",
-      "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
-      "status": "verified-usable",
-      "checked": {
-        "on": "2026-08-07",
-        "by": "maria",
-        "how": "clone + read scripts/ and notebooks/",
-        "result": "Complete and legible: download_helm_data.py (the upstream fetcher, which is what let us rebuild a1), helm_data_generation.py, regressions, plotting, deferred_acceptance.py, experiments.py. Regeneration of the LLM outputs themselves needs AWS Bedrock + OpenAI + Anthropic credentials."
-      },
-      "license": "unstated",
-      "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
-    },
-    {
-      "id": "a5",
-      "role": "benchmark",
-      "locator": "https://storage.googleapis.com/crfm-helm-public/mmlu/benchmark_output/runs/",
-      "status": "regenerated-from-upstream",
-      "bytes": 7600000,
-      "checked": {
-        "on": "2026-08-07",
-        "by": "maria",
-        "how": "python reanalysis/fetch_helm.py  (22 models x 10 MMLU subjects, 440 JSON files)",
-        "result": "The upstream source the authors used. Fully open, no auth, per-instance display_predictions.json + instances.json. This is how a1 was recovered. Bulk kept OUT of the KB at .research/2026-08-07-monoculture/raw/; regenerate with fetch_cmd."
-      },
-      "fetch_cmd": "python reanalysis/fetch_helm.py",
-      "datasheet": {
-        "motivation": "HELM's public per-instance record of every model's answer to every MMLU item.",
-        "composition": "One record = (model, MMLU subject, instance_id) -> predicted_text (letter), mapped_output (the chosen answer TEXT), exact_match, plus the item's full reference list with the correct one tagged.",
-        "collection": "HELM harness, multiple_choice_joint method, 5-shot, eval_split=test; run versions v1.0.0-v1.13.0, one version per model (see reanalysis/version_map.json).",
-        "preprocessing": "None applied by us beyond parsing. We compare by answer TEXT not letter.",
-        "caveats": "Option order does NOT vary across models (verified: 0/2918 items) so letter comparison is safe here, but that is a property of this harness and must be re-checked elsewhere. ~0.5% of model-item cells have no parseable answer. model_accuracy.csv in the repo contains at least one corrupted value ('0.8000284859706595F')."
-      }
-    },
-    {
-      "id": "a6",
-      "role": "human-labels",
-      "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
-      "status": "not-checked",
-      "checked": {
-        "on": "2026-08-07",
-        "by": "maria",
-        "how": "noted from paper sec 3.1, not opened",
-        "result": "450 hand-labelled resume-job pairs (30 resumes x 15 job descriptions) used as ground truth for the market experiments. Inside data/final.csv."
-      },
-      "derived_from": [
-        "a2"
-      ],
-      "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
-    },
-    {
-      "id": "a7",
-      "role": "raw-data",
-      "locator": "data/helm_mmlu_responses.csv.gz",
-      "status": "verified-usable",
-      "bytes": 1000000,
-      "local_path": "data/helm_mmlu_responses.csv.gz",
-      "fetch_cmd": "python reanalysis/fetch_helm.py && python reanalysis/build_tidy.py",
-      "derived_from": [
-        "a5"
-      ],
-      "checked": {
-        "on": "2026-08-07",
-        "by": "maria",
-        "how": "python reanalysis/build_tidy.py ; then re-ran calibrated.py from it and compared every printed number to the run from raw JSON",
-        "result": "64,196 rows, 0 skipped, 1.00MB gzipped. Identical results. This is DELIBERATELY the same object as artifact a1, the authors' dangling LFS file: our local repair of it, at 1/335th the size. The 56MB of raw JSON it was built from has been deleted under the >50MB policy; fetch_cmd regenerates it."
-      },
-      "datasheet": {
-        "motivation": "Repair a1 (dangling upstream) so the reanalysis is reproducible by a peer without a 56MB download.",
-        "composition": "One row = (model, subject, item_id). 22 models x 10 MMLU subjects x 2918 items. Columns: model, subject, item_id, chosen_text, correct_text, is_correct, n_options.",
-        "collection": "Derived from HELM public GCS per-instance records; see a5.",
-        "preprocessing": "Answers kept as TEXT (mapped_output), not letters, so the table is invariant to option shuffling. Items without exactly one correct reference dropped (0 occurred).",
-        "caveats": "Option-ORDER information is not preserved, so the cross-model shuffling check cannot be re-run from this file; it was run once on the raw form and passed (0/2918). ~0.5% of cells have an empty chosen_text (model output unparseable) and are stored as blank, not dropped."
-      }
+     "name": "systemic_exclusion_uniformly_random",
+     "value": 0.24,
+     "n": "5 firms",
+     "source": "Figure 3b"
     }
-  ],
-  "relations": [
-    {
-      "type": "cito:extends",
-      "target": "bommasani2022-homogenization",
-      "why": "Takes the component-sharing hypothesis and outcome-homogenization framing and tests it at leaderboard scale on LLMs rather than on census fairness benchmarks."
-    },
-    {
-      "type": "zoo:reanalysedBy",
-      "target": "maria2026-marginal-competence",
-      "why": "We rebuilt the item-level data from upstream after the repo's raw file proved dangling, and located a mechanism (competence concentrates errors) that reinterprets c1."
-    },
-    {
-      "type": "cito:sharesAuthorWith",
-      "target": "jo2026-subjectivity",
-      "why": "Nikhil Garg authors both. jo2026 is substantially a self-correction, which is why it deserves more weight than an adversarial critique would."
-    }
-  ],
-  "open_questions": [
-    "Does the ability-graded concentration of errors persist in open-ended generation, where there is no enumerated distractor set? The whole monoculture literature is built on multiple choice, and our agents do not work in multiple choice.",
-    "The market results (c4) do not depend on the contested statistic and were never re-run by us. If firm welfare really is maximised by monoculture while applicant welfare is minimised, that is the policy-relevant finding and it is under-argued relative to the correlation headline.",
-    "Their Appendix B/C report alternate correlation measures (overall agreement, agreement-when-either-wrong). Do those move under an item-difficulty null in the same direction? Cheap to check with a3."
-  ],
-  "curation": {
-    "author": "maria",
-    "created": "2026-08-07",
-    "verified": "2026-08-07",
-    "notes_file": "NOTES.md"
+   ],
+   "evidence": [
+    "a2",
+    "a4"
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "why": "We did not re-run the market simulations. Recorded because it is the half of the paper that does not depend on the contested correlation statistic, and because the applicant-welfare result runs OPPOSITE to the firm-welfare result (monoculture is best for firms, worst for applicants) which is the kind of finding that gets dropped in citation. The data artifact for this half (data/final.csv, 63MB) was inspected and deleted under our >50MB policy; restorable via git checkout."
+   }
   }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "raw-data",
+   "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
+   "path_in_repo": "data/helm/all_mmlu_data_limitedcols.csv",
+   "status": "dangling",
+   "bytes": 335231032,
+   "checked": {
+    "on": "2026-09-08",
+    "by": "maria",
+    "how": "urllib GET of raw.githubusercontent.com/nikhgarg/llm_correlated_errors_public/30a2c0a/data/helm/all_mmlu_data_limitedcols.csv AND of the media.githubusercontent.com/media/... equivalent AND api.github.com/.../git/trees/30a2c0a?recursive=1",
+    "result": "STILL DEAD, and re-checked at ENDPOINT level rather than through git-lfs's error message. raw.githubusercontent returns HTTP 200 with 134 bytes -- the LFS pointer, whose text is `version https://git-lfs.github.com/spec/v1 / oid sha256:a3f099c49c... / size 335231032`. media.githubusercontent.com/media/... returns HTTP 404: the object. GitHub's tree API reports the blob size as 134. THE POINT: a check phrased as `the identifier resolves and the target holds bytes` PASSES here. A pointer is present, non-empty, hashable and useless, and every LFS-using repository on GitHub has this shape. The check that decides: if a path's first line is the LFS spec line, fetch the media endpoint and require HTTP 200 with Content-Length equal to the pointer's own `size`. Also measured today: four of the twenty code files in the repo read this path (download_helm_data.py, helm_data_generation.py, helm_regression.py, plot_helm.py), so the whole HELM half of the analysis is gated on it. PREVIOUS RESULT TEXT, kept: Git LFS pointer present in tree (oid a3f099c49c...), object 404s: 'Object does not exist on the server'. Also 404 via media.githubusercontent.com/media/. This is the per-question x per-model response matrix from which every other HELM artifact in the repo is derived. Its loss makes the paper re-executable but not reanalysable: a critic cannot change the null model, which is the only thing worth changing."
+   },
+   "license": "unstated",
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+  },
+  {
+   "id": "a2",
+   "role": "derived-data",
+   "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
+   "path_in_repo": "data/final.csv",
+   "status": "present-but-insufficient",
+   "bytes": 63641031,
+   "checked": {
+    "on": "2026-08-07",
+    "by": "maria",
+    "how": "head -1; wc -l",
+    "result": "1,080,186 rows of per-model resume/job ratings + human labels. Present and usable for the market half. Inspected then deleted locally under the >50MB disk policy; restorable with `git checkout -- data/final.csv` (plain git object, not LFS)."
+   },
+   "derived_from": [],
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+  },
+  {
+   "id": "a3",
+   "role": "derived-data",
+   "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
+   "path_in_repo": "data/helm/model_correlations.csv",
+   "status": "verified-usable",
+   "bytes": 1436540,
+   "checked": {
+    "on": "2026-08-07",
+    "by": "maria",
+    "how": "head -2",
+    "result": "Pair-level: chi_square, p_value, overall_agreement_rate, both_correct_rate, agreement_rate_when_either_wrong, agreement_rate_when_both_wrong, and a full k x k contingency table of answer LETTERS per pair. Enough to reproduce Table 1 and the heatmaps; not enough to change the null, because it is marginalised over items."
+   },
+   "derived_from": [
+    "a1"
+   ],
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+  },
+  {
+   "id": "a4",
+   "role": "code",
+   "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-07",
+    "by": "maria",
+    "how": "clone + read scripts/ and notebooks/",
+    "result": "Complete and legible: download_helm_data.py (the upstream fetcher, which is what let us rebuild a1), helm_data_generation.py, regressions, plotting, deferred_acceptance.py, experiments.py. Regeneration of the LLM outputs themselves needs AWS Bedrock + OpenAI + Anthropic credentials."
+   },
+   "license": "unstated",
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+  },
+  {
+   "id": "a5",
+   "role": "benchmark",
+   "locator": "https://storage.googleapis.com/crfm-helm-public/mmlu/benchmark_output/runs/",
+   "status": "regenerated-from-upstream",
+   "bytes": 7600000,
+   "checked": {
+    "on": "2026-08-07",
+    "by": "maria",
+    "how": "python reanalysis/fetch_helm.py  (22 models x 10 MMLU subjects, 440 JSON files)",
+    "result": "The upstream source the authors used. Fully open, no auth, per-instance display_predictions.json + instances.json. This is how a1 was recovered. Bulk kept OUT of the KB at .research/2026-08-07-monoculture/raw/; regenerate with fetch_cmd."
+   },
+   "fetch_cmd": "python reanalysis/fetch_helm.py",
+   "datasheet": {
+    "motivation": "HELM's public per-instance record of every model's answer to every MMLU item.",
+    "composition": "One record = (model, MMLU subject, instance_id) -> predicted_text (letter), mapped_output (the chosen answer TEXT), exact_match, plus the item's full reference list with the correct one tagged.",
+    "collection": "HELM harness, multiple_choice_joint method, 5-shot, eval_split=test; run versions v1.0.0-v1.13.0, one version per model (see reanalysis/version_map.json).",
+    "preprocessing": "None applied by us beyond parsing. We compare by answer TEXT not letter.",
+    "caveats": "Option order does NOT vary across models (verified: 0/2918 items) so letter comparison is safe here, but that is a property of this harness and must be re-checked elsewhere. ~0.5% of model-item cells have no parseable answer. model_accuracy.csv in the repo contains at least one corrupted value ('0.8000284859706595F')."
+   }
+  },
+  {
+   "id": "a6",
+   "role": "human-labels",
+   "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
+   "status": "not-checked",
+   "checked": {
+    "on": "2026-08-07",
+    "by": "maria",
+    "how": "noted from paper sec 3.1, not opened",
+    "result": "450 hand-labelled resume-job pairs (30 resumes x 15 job descriptions) used as ground truth for the market experiments. Inside data/final.csv."
+   },
+   "derived_from": [
+    "a2"
+   ],
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+  },
+  {
+   "id": "a7",
+   "role": "raw-data",
+   "locator": "data/helm_mmlu_responses.csv.gz",
+   "status": "verified-usable",
+   "bytes": 1000000,
+   "local_path": "data/helm_mmlu_responses.csv.gz",
+   "fetch_cmd": "python reanalysis/fetch_helm.py && python reanalysis/build_tidy.py",
+   "derived_from": [
+    "a5"
+   ],
+   "checked": {
+    "on": "2026-08-07",
+    "by": "maria",
+    "how": "python reanalysis/build_tidy.py ; then re-ran calibrated.py from it and compared every printed number to the run from raw JSON",
+    "result": "64,196 rows, 0 skipped, 1.00MB gzipped. Identical results. This is DELIBERATELY the same object as artifact a1, the authors' dangling LFS file: our local repair of it, at 1/335th the size. The 56MB of raw JSON it was built from has been deleted under the >50MB policy; fetch_cmd regenerates it."
+   },
+   "datasheet": {
+    "motivation": "Repair a1 (dangling upstream) so the reanalysis is reproducible by a peer without a 56MB download.",
+    "composition": "One row = (model, subject, item_id). 22 models x 10 MMLU subjects x 2918 items. Columns: model, subject, item_id, chosen_text, correct_text, is_correct, n_options.",
+    "collection": "Derived from HELM public GCS per-instance records; see a5.",
+    "preprocessing": "Answers kept as TEXT (mapped_output), not letters, so the table is invariant to option shuffling. Items without exactly one correct reference dropped (0 occurred).",
+    "caveats": "Option-ORDER information is not preserved, so the cross-model shuffling check cannot be re-run from this file; it was run once on the raw form and passed (0/2918). ~0.5% of cells have an empty chosen_text (model output unparseable) and are stored as blank, not dropped."
+   }
+  },
+  {
+   "id": "a8",
+   "role": "raw-data",
+   "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
+   "path_in_repo": "data/helm/model_accuracy.csv",
+   "status": "present-but-insufficient",
+   "bytes": 3387,
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176",
+   "checked": {
+    "on": "2026-09-08",
+    "by": "maria",
+    "how": "re-fetched from raw.githubusercontent at the pinned commit; sha256-compared against the 2026-08-07 clone copy; parsed with pandas and, independently, with a regex for a final field ending in a letter",
+    "result": "DEFECT, verified from raw bytes and theirs not ours. Line 4 reads `2,01-ai/yi-large-preview,0.8000284859706595F` -- a stray trailing F. One row of 71. The re-fetched file is BYTE-IDENTICAL (sha256) to the August clone, so it is not a local corruption or a transfer artifact, and a regex independent of pandas matches exactly one line. MEASURED CONSEQUENCE: any consumer coercing that column to float gets NaN for one model, silently dropping 70 of 2,485 pairs (2.8%) from a pair-level analysis. Small, certain, fixed by deleting one character."
+   }
+  },
+  {
+   "id": "a9",
+   "role": "derived-data",
+   "locator": "https://github.com/nikhgarg/llm_correlated_errors_public",
+   "path_in_repo": "data/helm/model_correlations.csv",
+   "status": "verified-usable",
+   "bytes": 1436540,
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176",
+   "derived_from": [
+    "a1"
+   ],
+   "checked": {
+    "on": "2026-09-08",
+    "by": "maria",
+    "how": "re-fetched at the pinned commit; 71 distinct models over 2485 rows = C(71,2) confirmed; headline statistics and Table 1's Helm column recomputed from it",
+    "result": "SUFFICIENT to reproduce the HELM half at printed precision. mean agreement-when-both-wrong = 0.6034 against the printed 0.6; the llama-3.2-90b/llama-3.1-70b pair = 0.9690 against the printed .97. Table 1's Helm column reproduces ONLY after recognising that the accuracy variables are z-scored, which the table does not state: z-scored gives Same Company 0.0213, Acc.1 0.0541, Acc.2 0.0554, interaction 0.0265, R2 0.6113 against the printed 0.022/0.055/0.054/0.026/0.613, while raw accuracies give -1.16/-1.15/+2.32. FOUR of the eight comparable printed numbers miss in the LAST digit (|d| <= 0.002), coherently: 97.384% of pairs above the 1/3 baseline against the printed 97.5%, and 0.998028 for the text-unicorn/palmyra-x-v3 pair against the printed 0.9987. The coherent explanation is that this table is a REGENERATION differing by a small item filter -- its contingency tables carry a spurious answer category `The` from unparsed model output and total about 13,900 rather than 14,042. THE METHOD THAT WOULD DECIDE IT IS a1, WHICH 404s."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:extends",
+   "target": "bommasani2022-homogenization",
+   "why": "Takes the component-sharing hypothesis and outcome-homogenization framing and tests it at leaderboard scale on LLMs rather than on census fairness benchmarks."
+  },
+  {
+   "type": "zoo:reanalysedBy",
+   "target": "maria2026-marginal-competence",
+   "why": "We rebuilt the item-level data from upstream after the repo's raw file proved dangling, and located a mechanism (competence concentrates errors) that reinterprets c1."
+  },
+  {
+   "type": "cito:sharesAuthorWith",
+   "target": "jo2026-subjectivity",
+   "why": "Nikhil Garg authors both. jo2026 is substantially a self-correction, which is why it deserves more weight than an adversarial critique would."
+  }
+ ],
+ "open_questions": [
+  "Does the ability-graded concentration of errors persist in open-ended generation, where there is no enumerated distractor set? The whole monoculture literature is built on multiple choice, and our agents do not work in multiple choice.",
+  "The market results (c4) do not depend on the contested statistic and were never re-run by us. If firm welfare really is maximised by monoculture while applicant welfare is minimised, that is the policy-relevant finding and it is under-argued relative to the correlation headline.",
+  "Their Appendix B/C report alternate correlation measures (overall agreement, agreement-when-either-wrong). Do those move under an item-difficulty null in the same direction? Cheap to check with a3.",
+  "Is the deposited model_correlations.csv the exact run behind the paper, or a later regeneration? Four printed numbers miss in the last digit, coherently and in one direction. The item-level file that would settle it is the dead LFS object, so the question is undecidable from the deposit -- which is itself the cleanest example this corpus has that artifact PRESENCE and artifact SUFFICIENCY FOR REANALYSIS are different properties."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-08-07",
+  "verified": "2026-09-08",
+  "notes_file": "NOTES.md"
+ }
 }

@@ -1,0 +1,368 @@
+{
+ "checked_on": "2026-09-08T06:37:58Z",
+ "by": "maria",
+ "n_records": 42,
+ "n_with_doi": 29,
+ "n_queried": 29,
+ "n_with_updates": 2,
+ "query": "api.crossref.org/works?filter=updates:<doi>&rows=20",
+ "results": [
+  {
+   "id": "breznau2022-hidden-universe",
+   "doi": "10.1073/pnas.2203150119",
+   "arxiv": null,
+   "pmid": "36306328",
+   "year": 2022,
+   "venue": "PNAS 119(44) e2203150119 (Correction: PN",
+   "status": "ok",
+   "n_updates": 1,
+   "updates": [
+    {
+     "doi": "10.1073/pnas.2410677121",
+     "type": "journal-article",
+     "title": "Correction for Breznau et al., Observing many researchers using the same data and hypothesis reveals a hidden universe of uncertainty",
+     "update_types": [
+      [
+       "correction",
+       "Correction"
+      ]
+     ],
+     "published": [
+      [
+       2024,
+       6,
+       20
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cuconasu2024-power-of-noise",
+   "doi": "10.1145/3626772.3657834",
+   "arxiv": "2401.14887v4",
+   "pmid": null,
+   "year": 2024,
+   "venue": "SIGIR '24",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "gabin2026-lost-in-the-evidence",
+   "doi": "10.1145/3805712.3808569",
+   "arxiv": "2605.27105v2",
+   "pmid": null,
+   "year": 2026,
+   "venue": "SIGIR '26",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "galante2021-mbp-nonclinical",
+   "doi": "10.1371/journal.pmed.1003481",
+   "arxiv": null,
+   "pmid": "33428616",
+   "year": 2021,
+   "venue": "PLOS Medicine 18(1) e1003481",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "gamma2021-mpe92m",
+   "doi": "10.1371/journal.pone.0253694",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2021,
+   "venue": "PLOS ONE 16(7):e0253694",
+   "status": "ok",
+   "n_updates": 1,
+   "updates": [
+    {
+     "doi": "10.1371/journal.pone.0314290",
+     "type": "journal-article",
+     "title": "Correction: The Minimal Phenomenal Experience questionnaire (MPE-92M): Towards a phenomenological profile of “pure awareness” experiences in meditators",
+     "update_types": [
+      [
+       "correction",
+       "Correction"
+      ]
+     ],
+     "published": [
+      [
+       2024,
+       11,
+       18
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gamma2024-mpe92m-correction",
+   "doi": "10.1371/journal.pone.0314290",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2024,
+   "venue": "PLOS ONE 19(11):e0314290",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "hardwicke2018-cognition-open-data",
+   "doi": "10.1098/rsos.180448",
+   "arxiv": null,
+   "pmid": "30225032",
+   "year": 2018,
+   "venue": "Royal Society Open Science 5:180448",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "hope2019-not-so-proportional",
+   "doi": "10.1093/brain/awy302",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2019,
+   "venue": "Brain 142(1):15-22",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "kahneman2010-high-income",
+   "doi": "10.1073/pnas.1011492107",
+   "arxiv": null,
+   "pmid": "20823223",
+   "year": 2010,
+   "venue": "PNAS 107(38) 16489-16493",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "killingsworth2021-experienced-wellbeing",
+   "doi": "10.1073/pnas.2016976118",
+   "arxiv": null,
+   "pmid": "33468644",
+   "year": 2021,
+   "venue": "PNAS 118(4) e2016976118",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "kkm2023-conflict-resolved",
+   "doi": "10.1073/pnas.2208661120",
+   "arxiv": null,
+   "pmid": "36857342",
+   "year": 2023,
+   "venue": "PNAS 120(10) e2208661120",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "laurinavichyute2022-share-the-code",
+   "doi": "10.1016/j.jml.2022.104332",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2022,
+   "venue": "Journal of Memory and Language 125:10433",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "liu2024-lost-in-the-middle",
+   "doi": "10.1162/tacl_a_00638",
+   "arxiv": "2307.03172",
+   "pmid": null,
+   "year": 2024,
+   "venue": "TACL 12:157-173",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "lutz2015-phenomenological-matrix",
+   "doi": "10.1037/a0039585",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2015,
+   "venue": "American Psychologist 70(7):632-658",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "marwick2018-nof1-schizophrenia",
+   "doi": "10.1192/bjp.2018.71",
+   "arxiv": null,
+   "pmid": "29745363",
+   "year": 2018,
+   "venue": "British Journal of Psychiatry 213(1):398",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "mathur2023-effect-sizes",
+   "doi": "10.1073/pnas.2218957120",
+   "arxiv": null,
+   "pmid": "36623183",
+   "year": 2023,
+   "venue": "PNAS 120(3) e2218957120 (Letter)",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "matko2019-meditation-classification",
+   "doi": "10.3389/fpsyg.2019.02276",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2019,
+   "venue": "Frontiers in Psychology 10:2276",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "mazuryk2026-powerless-noise",
+   "doi": "10.1145/3805712.3808556",
+   "arxiv": "2607.03615v2",
+   "pmid": null,
+   "year": 2026,
+   "venue": "SIGIR '26",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "mccutcheon2022-reappraising-variability",
+   "doi": "10.1002/wps.20977",
+   "arxiv": null,
+   "pmid": "35524614",
+   "year": 2022,
+   "venue": "World Psychiatry 21(2):287-294",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "menkveld2024-nonstandard-errors",
+   "doi": "10.1111/jofi.13337",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2024,
+   "venue": "The Journal of Finance 79(3), 2339-2390",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "mills2021-differences-in-variance",
+   "doi": "10.1097/EDE.0000000000001401",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2021,
+   "venue": "Epidemiology 32(6):846-854",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "munkholm2020-antidepressant-variability",
+   "doi": "10.1371/journal.pone.0237950",
+   "arxiv": null,
+   "pmid": "32841307",
+   "year": 2020,
+   "venue": "PLOS ONE 15(8) e0237950",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "nave2021-self-boundary-dissolution",
+   "doi": "10.3390/brainsci11060819",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2021,
+   "venue": "Brain Sciences 11(6):819",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "obels2020-registered-reports",
+   "doi": "10.1177/2515245920918872",
+   "arxiv": null,
+   "pmid": null,
+   "year": 2020,
+   "venue": "Advances in Methods and Practices in Psy",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "ploderl2019-personalised-antidepressants",
+   "doi": "10.1136/bmjopen-2019-034816",
+   "arxiv": null,
+   "pmid": "31874900",
+   "year": 2019,
+   "venue": "BMJ Open 9(12):e034816",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "samuel2024-jupyter-pmc",
+   "doi": "10.1093/gigascience/giad113",
+   "arxiv": "2308.07333",
+   "pmid": null,
+   "year": 2024,
+   "venue": "GigaScience 13:giad113",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "senn2016-mastering-variation",
+   "doi": "10.1002/sim.6739",
+   "arxiv": null,
+   "pmid": "26415869",
+   "year": 2016,
+   "venue": "Statistics in Medicine 35(7):966-977 (on",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "trisovic2022-code-execution",
+   "doi": "10.1038/s41597-022-01143-6",
+   "arxiv": "2103.12793",
+   "pmid": null,
+   "year": 2022,
+   "venue": "Scientific Data 9:60",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  },
+  {
+   "id": "winkelbeiner2019-antipsychotic-variability",
+   "doi": "10.1001/jamapsychiatry.2019.1530",
+   "arxiv": null,
+   "pmid": "31158853",
+   "year": 2019,
+   "venue": "JAMA Psychiatry 76(10):1063-1073",
+   "status": "ok",
+   "n_updates": 0,
+   "updates": []
+  }
+ ]
+}

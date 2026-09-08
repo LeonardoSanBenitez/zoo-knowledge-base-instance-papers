@@ -1,530 +1,532 @@
 {
-  "schema_version": "1.0",
-  "id": "gamma2021-mpe92m",
-  "title": "The Minimal Phenomenal Experience questionnaire (MPE-92M): Towards a phenomenological profile of 'pure awareness' experiences in meditators",
-  "authors": [
-    "Alex Gamma",
-    "Thomas Metzinger"
-  ],
-  "year": 2021,
-  "venue": "PLOS ONE 16(7):e0253694",
-  "area": [
-    "contemplative-neuroscience",
-    "measurement-theory",
-    "analytic-variability-and-many-analysts"
-  ],
-  "identifiers": {
-    "doi": "10.1371/journal.pone.0253694",
-    "url": "https://doi.org/10.1371/journal.pone.0253694"
-  },
-  "record_status": "active",
-  "read_depth": "read-and-reanalysed",
-  "cost": {
-    "tool_calls": 27,
-    "bytes_downloaded": 1301939,
-    "compute_notes": "All analyses on CPU. validate_synthetic.py 99s; run_replicability.py 250s (14 values of k x 30 split-halves x 2 EFA fits, plus permutation null); run_clone_test.py ~150s; run_clone_oblique.py ~180s; run_perturbation_sweep.py ~90s. Single EFA fit (92 items, n~700) ~0.2s. Total compute under 15 min wall clock. 2026-08-21 addendum: run_self_factor_stability.py, 3 versions (leakage bug, null bug, corrected), each under 30s; total added compute under 2 min.",
-    "session": "2026-08-16 self-directed research session; extended 2026-08-21 to correct an uncomputed claim discovered while resolving cat_lutz_crosswalk.md's blocking question"
-  },
-  "claims": [
+ "schema_version": "1.0",
+ "id": "gamma2021-mpe92m",
+ "title": "The Minimal Phenomenal Experience questionnaire (MPE-92M): Towards a phenomenological profile of 'pure awareness' experiences in meditators",
+ "authors": [
+  "Alex Gamma",
+  "Thomas Metzinger"
+ ],
+ "year": 2021,
+ "venue": "PLOS ONE 16(7):e0253694",
+ "area": [
+  "contemplative-neuroscience",
+  "measurement-theory",
+  "analytic-variability-and-many-analysts"
+ ],
+ "identifiers": {
+  "doi": "10.1371/journal.pone.0253694",
+  "url": "https://doi.org/10.1371/journal.pone.0253694"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 27,
+  "bytes_downloaded": 1301939,
+  "compute_notes": "All analyses on CPU. validate_synthetic.py 99s; run_replicability.py 250s (14 values of k x 30 split-halves x 2 EFA fits, plus permutation null); run_clone_test.py ~150s; run_clone_oblique.py ~180s; run_perturbation_sweep.py ~90s. Single EFA fit (92 items, n~700) ~0.2s. Total compute under 15 min wall clock. 2026-08-21 addendum: run_self_factor_stability.py, 3 versions (leakage bug, null bug, corrected), each under 30s; total added compute under 2 min.",
+  "session": "2026-08-16 self-directed research session; extended 2026-08-21 to correct an uncomputed claim discovered while resolving cat_lutz_crosswalk.md's blocking question"
+ },
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "The authors report a 12-factor solution for the 92-item MPE-92M, explaining 44% of variance, selected on 'joint conceptual and statistical considerations'.",
+   "scope": "N=1403 self-selected meditators reporting 'pure awareness' experiences, 5 languages, online survey Jan-Mar 2020.",
+   "quantities": [
     {
-      "id": "c1",
-      "statement": "The authors report a 12-factor solution for the 92-item MPE-92M, explaining 44% of variance, selected on 'joint conceptual and statistical considerations'.",
-      "scope": "N=1403 self-selected meditators reporting 'pure awareness' experiences, 5 languages, online survey Jan-Mar 2020.",
-      "quantities": [
-        {
-          "name": "n_factors_reported",
-          "value": 12,
-          "n": 1403,
-          "baseline": "authors' own EFA, Spearman/principal/quartimin, joint conceptual+statistical criterion",
-          "source": "paper"
-        },
-        {
-          "name": "analysis_sample_size",
-          "value": 1403,
-          "n": 3627,
-          "baseline": "filter over85items==1 applied to 3627 submissions",
-          "source": "paper; reproduced exactly by us"
-        }
-      ],
-      "our_assessment": {
-        "status": "accepted-narrower-scope",
-        "why": "The sample filter and N reproduce exactly from the released .dta. The 12 is accepted as an accurate description of what the authors chose, not as an estimate of a number of dimensions in the phenomenon -- see c2 and c3. The authors' own wording ('joint conceptual and statistical considerations') already concedes that the 12th factor is a conceptual addition.",
-        "by": "maria 2026-07-31, extended 2026-08-16"
-      }
+     "name": "n_factors_reported",
+     "value": 12,
+     "n": 1403,
+     "baseline": "authors' own EFA, Spearman/principal/quartimin, joint conceptual+statistical criterion",
+     "source": "paper"
     },
     {
-      "id": "c2",
-      "statement": "The number of extractable factors is a resolution choice, not a property of the data: three defensible decision rules give 11, 12 and 18 on the same correlation matrix.",
-      "scope": "Our reanalysis of the released raw data, not a claim the authors make.",
-      "quantities": [
-        {
-          "name": "n_factors_mpe92m",
-          "value": 11,
-          "n": 1403,
-          "baseline": "Horn parallel analysis, 50 column-permuted datasets, Spearman, both mean and 95th-pct thresholds",
-          "source": "our reanalysis analyze.py 2026-07-31"
-        },
-        {
-          "name": "n_factors_mpe92m",
-          "value": 12,
-          "n": 1403,
-          "baseline": "authors' joint conceptual+statistical criterion",
-          "source": "paper"
-        },
-        {
-          "name": "n_factors_mpe92m",
-          "value": 18,
-          "n": 1403,
-          "baseline": "Kaiser rule, eigenvalue > 1 on Spearman R",
-          "source": "our reanalysis analyze.py 2026-07-31"
-        },
-        {
-          "name": "variance_explained_first_factor",
-          "value": 19.5,
-          "unit": "percent",
-          "n": 1403,
-          "baseline": "Spearman eigenvalue 17.9 of 92",
-          "source": "our reanalysis"
-        },
-        {
-          "name": "variance_explained_first_12_factors",
-          "value": 50.5,
-          "unit": "percent",
-          "n": 1403,
-          "baseline": "Spearman eigenvalues, cumulative",
-          "source": "our reanalysis"
-        }
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "Computed first-hand from the released data; the three rules are all standard and all applied to the identical matrix.",
-        "by": "maria 2026-07-31"
-      }
-    },
-    {
-      "id": "c3",
-      "statement": "At the resolution of a half-sample, the MPE-92M contains no discretely identifiable factors at any k. Split-half Tucker congruence decays smoothly with no cliff, and at every k >= 5 zero factors reach the .95 'factors are equal' criterion, while every factor at every k exceeds a column-permutation null. This is the claim that qualifies c2: the count is not merely under-determined by the choice of rule.",
-      "scope": "N=1403, 92 items, 30 random half-splits per k, k in 2..18. Paper's own EFA settings.",
-      "quantities": [
-        {
-          "name": "split_half_congruence_max",
-          "value": 0.93,
-          "n": 1403,
-          "baseline": "k=5, strongest factor, median matched Tucker phi over 30 half-splits (n=701 each)",
-          "source": "our reanalysis run_replicability.py"
-        },
-        {
-          "name": "n_factors_above_congruence_95",
-          "value": 0,
-          "n": 1403,
-          "baseline": "any k >= 5, median matched Tucker phi over 30 half-splits",
-          "source": "our reanalysis run_replicability.py"
-        },
-        {
-          "name": "n_factors_above_congruence_85",
-          "value": 4,
-          "n": 1403,
-          "baseline": "k=12, median matched Tucker phi over 30 half-splits",
-          "source": "our reanalysis run_replicability.py"
-        },
-        {
-          "name": "mean_split_half_congruence",
-          "value": 0.758,
-          "n": 1403,
-          "baseline": "k=12, real data, mean over 12 matched factors of median phi; 15 half-splits, seed 777 (sweep run)",
-          "source": "our reanalysis run_perturbation_sweep.py"
-        },
-        {
-          "name": "congruence_permutation_null_max",
-          "value": 0.33,
-          "n": 1403,
-          "baseline": "k=18, column-permuted real data preserving item marginals, median matched phi of strongest factor",
-          "source": "our reanalysis run_replicability.py"
-        }
-      ],
-      "evidence": [
-        "a4",
-        "a5"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "The instrument was validated before use on three synthetic cases with known answers: it recovers exactly 5 of 12 requested factors at phi=.99 with a cliff to .76 when 5 true factors exist; it returns .10-.33 and never approaches .85 on pure noise at every k tested; and it does not inflate spurious factors in a general-plus-specific structure. So the smooth real profile is not an artifact of the estimator.",
-        "by": "maria 2026-08-16"
-      }
-    },
-    {
-      "id": "c4",
-      "statement": "The non-replicability is misspecification, not estimation noise. A parametric-bootstrap clone generated from the model's OWN fitted loadings and uniquenesses, at the same N and k, is far more replicable than the data it was fitted to -- a stable deficit of +0.13 to +0.14 mean Tucker phi across k = 5, 8, 12. Building the clone with the estimated oblique factor correlations does not close the gap; at k=5 it widens it.",
-      "scope": "Same data. Clone factor scores normal, uniquenesses inherited from the fit.",
-      "quantities": [
-        {
-          "name": "mean_split_half_congruence",
-          "value": 0.767,
-          "n": 1403,
-          "baseline": "k=12, real data, same statistic; 20 half-splits, seed 312 (clone run) -- differs from the 0.758 row only by split count and seed, which brackets the Monte Carlo error at ~0.01",
-          "source": "our reanalysis run_clone_test.py"
-        },
-        {
-          "name": "mean_split_half_congruence",
-          "value": 0.907,
-          "n": 1403,
-          "baseline": "k=12, orthogonal parametric-bootstrap clone of the fitted 12-factor model",
-          "source": "our reanalysis run_clone_test.py"
-        },
-        {
-          "name": "clone_congruence_deficit",
-          "value": 0.14,
-          "unit": "Tucker phi",
-          "n": 1403,
-          "baseline": "k=12, clone mean minus real mean matched phi",
-          "source": "our reanalysis run_clone_test.py"
-        },
-        {
-          "name": "clone_congruence_deficit",
-          "value": 0.128,
-          "unit": "Tucker phi",
-          "n": 1403,
-          "baseline": "k=5, orthogonal clone mean minus real mean matched phi",
-          "source": "our reanalysis run_clone_test.py"
-        },
-        {
-          "name": "clone_congruence_deficit",
-          "value": 0.143,
-          "unit": "Tucker phi",
-          "n": 1403,
-          "baseline": "k=5, OBLIQUE clone (factors ~ N(0, Phi_hat)) mean minus real mean matched phi",
-          "source": "our reanalysis run_clone_oblique.py"
-        },
-        {
-          "name": "mean_abs_loading",
-          "value": 0.124,
-          "n": 1403,
-          "baseline": "k=12 oblimin solution on full sample",
-          "source": "our reanalysis"
-        }
-      ],
-      "evidence": [
-        "a4",
-        "a5"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "This is the test designed to kill c3 and it failed to. The weak-loadings/low-power explanation predicts clone ~= real; observed gap is stable at +0.13-0.14 across three values of k. The obliquity confound was tested explicitly because it was the most plausible remaining rescue, and it runs the wrong way.",
-        "by": "maria 2026-08-16"
-      }
-    },
-    {
-      "id": "c5",
-      "statement": "The covariance structure of pure-awareness reports is not detectably shaped by meditation tradition, questionnaire language, sex, Buddhist identification or psychedelic use. Across 8 groupings x 2 values of k, between-group factor congruence tracks a size-matched permutation null; only language at k=12 falls below it (p=.040, uncorrected for 16 comparisons) and Zen and metta at k=5 sit above their nulls.",
-      "scope": "N=1403. Traditions are non-exclusive in this questionnaire, so each is tested as practises-X vs does-not.",
-      "quantities": [
-        {
-          "name": "between_group_congruence_p_value",
-          "value": 0.04,
-          "n": 1329,
-          "baseline": "questionnaire language group 3 (n=889) vs group 1 (n=440), k=12, one-sided empirical p vs 25 size-matched random splits of the pooled sample",
-          "source": "our reanalysis run_groups.py"
-        },
-        {
-          "name": "between_group_congruence_p_value",
-          "value": 0.48,
-          "n": 1383,
-          "baseline": "sex, k=12, same test",
-          "source": "our reanalysis run_groups.py"
-        },
-        {
-          "name": "between_group_congruence_p_value",
-          "value": 0.48,
-          "n": 1365,
-          "baseline": "Vipassana practitioners vs not, k=12, same test",
-          "source": "our reanalysis run_groups.py"
-        },
-        {
-          "name": "between_group_congruence_p_value",
-          "value": 0.08,
-          "n": 1365,
-          "baseline": "Zen practitioners vs not, k=12, same test",
-          "source": "our reanalysis run_groups.py"
-        },
-        {
-          "name": "between_group_congruence_p_value",
-          "value": 0.64,
-          "n": 1371,
-          "baseline": "psychedelic users vs not, k=12, same test",
-          "source": "our reanalysis run_groups.py"
-        },
-        {
-          "name": "n_groupings_below_size_matched_null",
-          "value": 1,
-          "n": 16,
-          "baseline": "8 grouping variables x k in {5,12}, threshold p<.05 uncorrected",
-          "source": "our reanalysis run_groups.py"
-        }
-      ],
-      "evidence": [
-        "a4",
-        "a5"
-      ],
-      "our_assessment": {
-        "status": "accepted-narrower-scope",
-        "why": "A negative result, and the design bounds it in the safe direction: non-exclusive tradition membership makes each contrast weaker than a pure between-tradition one, biasing toward finding no difference. So it supports 'no large tradition effect on covariance structure' and cannot support 'no effect at all'. The size-matched null is what makes it interpretable -- raw between-group congruence would confound group difference with group size.",
-        "by": "maria 2026-08-16"
-      }
-    },
-    {
-      "id": "c6",
-      "statement": "RECORDED AS NOT-IDENTIFIABLE, against my own analysis. A two-subpopulation loading perturbation of c = 2.0 x mean|loading| reproduces the observed congruence deficit to three decimals (.757 vs .758) -- but the relationship is non-monotonic (c = 3.0 returns to .837), so c is not identified by this statistic and must not be quoted as an estimate of latent heterogeneity.",
-      "scope": "k=12, 15 half-splits per sweep point, c in {0, .6, 1, 1.5, 2, 3}.",
-      "quantities": [
-        {
-          "name": "heterogeneity_calibration_c",
-          "value": 2.0,
-          "unit": "multiples of mean|loading|",
-          "n": 1403,
-          "baseline": "k=12, two-subpopulation loading perturbation matching real mean phi -- NON-IDENTIFIED, see status",
-          "source": "our reanalysis run_perturbation_sweep.py"
-        },
-        {
-          "name": "mean_split_half_congruence",
-          "value": 0.95,
-          "n": 1403,
-          "baseline": "k=12, c=0 (homogeneous clone), sweep control",
-          "source": "our reanalysis run_perturbation_sweep.py"
-        },
-        {
-          "name": "mean_split_half_congruence",
-          "value": 0.837,
-          "n": 1403,
-          "baseline": "k=12, c=3.0 -- ABOVE the c=2.0 value, demonstrating non-monotonicity",
-          "source": "our reanalysis run_perturbation_sweep.py"
-        }
-      ],
-      "evidence": [
-        "a4",
-        "a5"
-      ],
-      "our_assessment": {
-        "status": "not-identifiable",
-        "why": "Two values of c produce the same mean phi, so the statistic does not determine c. Recorded rather than deleted because a three-decimal match is exactly the kind of too-clean agreement that gets quoted as a finding. The only defensible reading is directional: matching the deficit by two-group heterogeneity would require between-group loading differences about twice the mean loading itself, which is not credible and therefore argues against the mixture explanation rather than for it.",
-        "by": "maria 2026-08-16"
-      }
-    },
-    {
-      "id": "c7",
-      "statement": "CORRECTS an earlier, uncomputed claim in NOTES.md ('the self/subject-object factor is consistently among the top-ranked and most stable'). Properly computed with independent split-halves (self-factor identified within each half separately, no full-sample leakage), the self/subject-object factor has ORDINARY split-half stability -- median rank 3rd of 5 factors at k=5, 5th of 7 at k=7, phi statistically close to the population median-of-medians -- not exceptional stability. It IS real: median phi 0.76-0.80 decisively clears a correctly-implemented permutation null (median 0.14, max 0.36).",
-      "scope": "Same N=1403, same k=5/k=7 EFA solutions as c3-c6. 30 independent split-halves for the rank/phi computation, 15 for the permutation null (per-column numpy shuffle of one half, which destroys covariance while preserving item marginals).",
-      "quantities": [
-        {
-          "name": "self_factor_split_half_phi",
-          "value": 0.801,
-          "n": 1403,
-          "baseline": "k=7, median over 30 independent split-halves, self-factor identified within each half by mean |loading| on 6 self/boundary items",
-          "source": "our reanalysis run_self_factor_stability.py"
-        },
-        {
-          "name": "self_factor_rank_among_k_factors",
-          "value": 5,
-          "n": 1403,
-          "baseline": "k=7, median rank where 1=most stable of 7 matched factors",
-          "source": "our reanalysis run_self_factor_stability.py"
-        },
-        {
-          "name": "population_median_of_medians_phi",
-          "value": 0.811,
-          "n": 1403,
-          "baseline": "k=7, all factors, for comparison against the self-factor's 0.801 -- indistinguishable from average",
-          "source": "our reanalysis run_self_factor_stability.py"
-        },
-        {
-          "name": "self_factor_permutation_null_max",
-          "value": 0.356,
-          "n": 1403,
-          "baseline": "k=7, 15 splits, per-column-shuffled half B, self-factor's own matched phi against the shuffled data",
-          "source": "our reanalysis run_self_factor_stability.py"
-        }
-      ],
-      "evidence": [
-        "a7"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "A first attempt at both the stability check and its permutation-null control had bugs that each produced a flattering-then-alarming wrong answer in sequence: (1) matching each half against the FULL sample (which partly contains that half) gave an inflated phi (0.92-0.95) and a rank that looked exceptional -- data leakage; (2) the first permutation null used pandas `.apply(axis=0)` returning per-column arrays, which silently failed to reshuffle row correspondence, producing a null median (0.81) as high as the real data and briefly suggesting the self factor was indistinguishable from noise. Both are recorded as failed attempts in NOTES.md rather than deleted. The number reported here is the third version, with the leakage removed and the null verified against known behaviour (pure noise should score .10-.35, matching the original 2026-07-31/08-16 characterisation) before being trusted.",
-        "by": "maria 2026-08-21"
-      }
+     "name": "analysis_sample_size",
+     "value": 1403,
+     "n": 3627,
+     "baseline": "filter over85items==1 applied to 3627 submissions",
+     "source": "paper; reproduced exactly by us"
     }
-  ],
-  "methods": [
-    "exploratory-factor-analysis",
-    "split-half-factor-congruence",
-    "parametric-bootstrap-model-check",
-    "size-matched-permutation-null",
-    "horn-parallel-analysis",
-    "synthetic-injected-effect-control",
-    "simulation-null-with-fixed-nuisance-structure"
-  ],
-  "artifacts": [
-    {
-      "id": "a1",
-      "role": "raw-data",
-      "locator": "https://osf.io/xerhg/",
-      "status": "verified-usable",
-      "checked": {
-        "on": "2026-08-16",
-        "by": "maria",
-        "how": "curl -sL -o mpe.zip \"https://osf.io/download/xerhg/\" && unzip mpe.zip && python -c \"import mpelib as M; X,c=M.load(); print(len(X))\"",
-        "result": "1301939 bytes; unpacks to two .dta (Stata 14 and an R-compatible variant), 5 questionnaire PDFs, README.txt. N=1403 under over85items==1 reproduces the printed analysis sample exactly. 92 items mpe01..mpe92, max item missingness 1.7%."
-      },
-      "bytes": 2435125,
-      "sha256": "a85e6e521f01127cded59f3eba31d7f10ee3d6f7b6ca93d7d37b3a9196dac9ca",
-      "fetch_cmd": "curl -sL -o mpe.zip \"https://osf.io/download/xerhg/\" && unzip -o mpe.zip",
-      "datasheet": {
-        "motivation": "Characterise the phenomenology of 'pure awareness' / minimal phenomenal experience in meditators.",
-        "composition": "3627 online submissions, 1403 in the analysis sample; 92 visual-analogue items 0-100 plus demographics, meditation history, tradition, religion, substance use, in 5 languages.",
-        "collection": "Self-selected online survey of meditators, Jan-Mar 2020.",
-        "preprocessing": "We impute item medians ONCE on the full analysis sample (never per subsample) so that every subgroup is scored on the same item set.",
-        "caveats": "Self-selected meditators reporting pure-awareness experiences specifically -- the deep/non-dual end of the state space, NOT the full range of practices. Language groups are very unbalanced (889/440/30/26/18). Meditation traditions are non-exclusive tick-boxes, not a partition."
-      }
-    },
-    {
-      "id": "a2",
-      "role": "supplement",
-      "locator": "https://osf.io/xerhg/ (MPE92M_questionnaire_*_27.10.2020.pdf)",
-      "status": "verified-usable",
-      "checked": {
-        "on": "2026-08-16",
-        "by": "maria",
-        "how": "unzip listing of the OSF archive",
-        "result": "All five language versions (English, German, French, Italian, Spanish) of the instrument are shipped with the data. This is what makes the item wording auditable and the cross-language test in c5 meaningful; the .dta variable labels truncate the longer items."
-      },
-      "bytes": 825696
-    },
-    {
-      "id": "a3",
-      "role": "raw-data",
-      "locator": "https://osf.io/gb76x",
-      "status": "dangling",
-      "checked": {
-        "on": "2026-08-25",
-        "by": "maria",
-        "how": "curl -sL https://osf.io/gb76x (200, 4,207 bytes, text/html) AND curl -s https://api.osf.io/v2/nodes/gb76x/ AND .../files/osfstorage/",
-        "result": "STILL DANGLING, and the re-check is the point: the browser URL answers 200 with a 4 KB HTML page, which a naive link checker reads as recovery. The OSF API returns no node and no files for gb76x. A soft-404. Recorded because `kb.py links` flagged this artifact as 'was dangling, now answers' and it was wrong."
-      }
-    },
-    {
-      "id": "a4",
-      "role": "code",
-      "locator": "reanalysis/",
-      "status": "verified-usable",
-      "checked": {
-        "on": "2026-08-16",
-        "by": "maria",
-        "how": "python validate_synthetic.py; python run_replicability.py; python run_clone_test.py; python run_clone_oblique.py; python run_groups.py; python run_perturbation_sweep.py",
-        "result": "All six run to completion and write their JSON results. mpelib.check_rank_trick returns 1.9e-15, confirming that rank-transform + Pearson reproduces the Spearman matrix the paper analysed."
-      },
-      "derived_from": [
-        "a1"
-      ]
-    },
-    {
-      "id": "a5",
-      "role": "derived-data",
-      "locator": "reanalysis/results_*.json",
-      "status": "verified-usable",
-      "checked": {
-        "on": "2026-08-16",
-        "by": "maria",
-        "how": "ls reanalysis/results_*.json && python -c \"import json,glob; [json.load(open(f)) for f in glob.glob('reanalysis/results_*.json')]\"",
-        "result": "Five JSON result files (replicability, clone, clone_oblique, groups, sweep) written by the five run_*.py scripts and re-readable. Every number quoted in claims c3-c6 is in one of them."
-      },
-      "derived_from": [
-        "a1",
-        "a4"
-      ]
-    },
-    {
-      "id": "a7",
-      "role": "code",
-      "locator": "reanalysis/run_self_factor_stability.py",
-      "status": "verified-usable",
-      "checked": {
-        "on": "2026-08-21",
-        "by": "maria",
-        "how": "python reanalysis/run_self_factor_stability.py (data fetched fresh from a1, deleted after); output cross-checked against reanalysis/results_self_factor_stability.json",
-        "result": "Computes the self/subject-object factor's split-half replication rank and phi, independent-halves design (no full-sample leakage), plus a corrected permutation null. Supersedes an eyeballed claim in NOTES.md that was never actually computed and turned out to be wrong -- see c7 and the correction block in NOTES.md."
-      },
-      "derived_from": [
-        "a1"
-      ]
-    }
-  ],
-  "relations": [
-    {
-      "type": "zoo:reanalysedBy",
-      "target": "gamma2021-mpe92m#c3",
-      "why": "Self-reference marker: claims c3-c6 are ours, not the authors'. The authors make no replicability claim; we are not contradicting them on their own ground."
-    },
-    {
-      "type": "cito:qualifies",
-      "target": "gamma2021-mpe92m#c2",
-      "why": "c3 qualifies c2 rather than refuting it. The 11/12/18 computation stands exactly as printed; what changes is its force. c2 says the count depends on the decision rule; c3 says that at half-sample resolution there is no discrete factor to count under any rule.",
-      "asymmetric_note": "Do not cite c3 as overturning c2. Anyone quoting '11 by parallel analysis' is quoting a correct number; they must also quote that none of those 11 reaches the criterion for being the same factor in two halves of one sample."
-    },
-    {
-      "type": "zoo:sharesUnstatedAssumptionWith",
-      "target": "breznau2022-hidden-universe",
-      "why": "Both literatures assume a stable underlying quantity that analysts merely estimate differently. Breznau shows analyst choices disperse the estimate; this record shows the estimand itself -- the factor structure -- is not stable across samples of the same population. The many-analysts programme measures dispersion around a target it never checks is there. Neither literature cites the other."
-    },
-    {
-      "type": "cito:usesMethodIn",
-      "target": "maria2026-analytic-variability-reanalysis",
-      "why": "Same discipline of validating a dispersion instrument on synthetic data with a known answer before pointing it at real data -- the rule written after the estimator with algebraically zero power. Here it is validate_synthetic.py, and it is what licenses c3."
-    },
-    {
-      "type": "cito:agreesWith",
-      "target": "menkveld2024-nonstandard-errors",
-      "why": "Same shape of result in a different field: variation between competent implementations of the same analysis is comparable to or larger than the reported uncertainty of any one of them."
-    },
-    {
-      "type": "cito:qualifies",
-      "target": "lutz2015-phenomenological-matrix#c3",
-      "why": "c7 (this record) qualifies Lutz et al.'s claim that self-disidentification is purely a species of dereification. c7 shows the self/subject-object factor carries real, above-noise signal in a population selected for minimal discursive-thought content -- evidence against the strongest reductive reading (self-structure as pure epiphenomenon of thought-dereification) -- but c7 explicitly does NOT show exceptional stability, only ordinary stability, so it narrows rather than resolves the question. Do not cite this as refuting Lutz et al.; cite it as a data point their conceptual argument did not have."
-    },
-    {
-      "type": "cito:agreesWith",
-      "target": "maria2026-happiness-income-spread#c4",
-      "why": "Reciprocal of the above."
-    },
-    {
-      "type": "zoo:sharesUnstatedAssumptionWith",
-      "target": "maria2026-happiness-income-spread",
-      "why": "Reciprocal of the above."
-    },
-    {
-      "type": "cito:agreesWith",
-      "target": "maria2026-mbp-variability-ratio",
-      "why": "Reciprocal. Third instance of the same shape in this corpus: a reported quantity turns out to be a property of a measurement decision rather than of the phenomenon. There the number of factors; here whether an intervention 'changes variability', which is decided by an unstated coupling assumption."
-    }
-  ],
-  "open_questions": [
-    "Does the clone deficit appear in other phenomenology questionnaires (MODTAS, PCI, 5D-ASC, MEQ30) with open raw data? If yes, this is a property of introspective self-report instruments and not of the MPE-92M. This is the single highest-value follow-up and it is directly runnable -- mpelib.py is instrument-agnostic given an item matrix.",
-    "If the heterogeneity is not along any recorded grouping, is it individual-level? A mixture model or a per-respondent stability index would test whether the population contains many small structures rather than two large ones.",
-    "Is the deficit an artifact of visual-analogue response styles (extreme vs midpoint responders) rather than of phenomenology? Testable by re-running the clone comparison after within-person standardisation of the 92 items.",
-    "What does the split-half congruence profile of a WELL-BEHAVED psychometric instrument look like at n=700 and 92 items? Without that reference the clone comparison is the only calibration, and one external benchmark would strengthen it a lot.",
-    "For CAT: report the split-half congruence of CAT's own dimensions. The expectation set by this record is that they will look like this. That must be planned for, not discovered at review."
-  ],
-  "curation": {
-    "author": "maria",
-    "created": "2026-08-16",
-    "verified": "2026-08-21",
-    "notes_file": "NOTES.md"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The sample filter and N reproduce exactly from the released .dta. The 12 is accepted as an accurate description of what the authors chose, not as an estimate of a number of dimensions in the phenomenon -- see c2 and c3. The authors' own wording ('joint conceptual and statistical considerations') already concedes that the 12th factor is a conceptual addition.",
+    "by": "maria 2026-07-31, extended 2026-08-16"
+   }
   },
-  "triggers": [
-    "How many dimensions does meditative / introspective phenomenology have?",
-    "Is a factor from an EFA real, or an artifact of this sample?",
-    "How do I tell misspecification from low power in a factor analysis?",
-    "Does meditation tradition or language shape how practitioners' reports covary?",
-    "How do I test whether two groups share a factor structure without confounding group size?",
-    "What is the split-half Tucker congruence of an instrument, and what counts as low?",
-    "I need a parametric-bootstrap model check for a latent-variable model."
-  ]
+  {
+   "id": "c2",
+   "statement": "The number of extractable factors is a resolution choice, not a property of the data: three defensible decision rules give 11, 12 and 18 on the same correlation matrix.",
+   "scope": "Our reanalysis of the released raw data, not a claim the authors make.",
+   "quantities": [
+    {
+     "name": "n_factors_mpe92m",
+     "value": 11,
+     "n": 1403,
+     "baseline": "Horn parallel analysis, 50 column-permuted datasets, Spearman, both mean and 95th-pct thresholds",
+     "source": "our reanalysis analyze.py 2026-07-31"
+    },
+    {
+     "name": "n_factors_mpe92m",
+     "value": 12,
+     "n": 1403,
+     "baseline": "authors' joint conceptual+statistical criterion",
+     "source": "paper"
+    },
+    {
+     "name": "n_factors_mpe92m",
+     "value": 18,
+     "n": 1403,
+     "baseline": "Kaiser rule, eigenvalue > 1 on Spearman R",
+     "source": "our reanalysis analyze.py 2026-07-31"
+    },
+    {
+     "name": "variance_explained_first_factor",
+     "value": 19.5,
+     "unit": "percent",
+     "n": 1403,
+     "baseline": "Spearman eigenvalue 17.9 of 92",
+     "source": "our reanalysis"
+    },
+    {
+     "name": "variance_explained_first_12_factors",
+     "value": 50.5,
+     "unit": "percent",
+     "n": 1403,
+     "baseline": "Spearman eigenvalues, cumulative",
+     "source": "our reanalysis"
+    }
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Computed first-hand from the released data; the three rules are all standard and all applied to the identical matrix.",
+    "by": "maria 2026-07-31"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "At the resolution of a half-sample, the MPE-92M contains no discretely identifiable factors at any k. Split-half Tucker congruence decays smoothly with no cliff, and at every k >= 5 zero factors reach the .95 'factors are equal' criterion, while every factor at every k exceeds a column-permutation null. This is the claim that qualifies c2: the count is not merely under-determined by the choice of rule.",
+   "scope": "N=1403, 92 items, 30 random half-splits per k, k in 2..18. Paper's own EFA settings.",
+   "quantities": [
+    {
+     "name": "split_half_congruence_max",
+     "value": 0.93,
+     "n": 1403,
+     "baseline": "k=5, strongest factor, median matched Tucker phi over 30 half-splits (n=701 each)",
+     "source": "our reanalysis run_replicability.py"
+    },
+    {
+     "name": "n_factors_above_congruence_95",
+     "value": 0,
+     "n": 1403,
+     "baseline": "any k >= 5, median matched Tucker phi over 30 half-splits",
+     "source": "our reanalysis run_replicability.py"
+    },
+    {
+     "name": "n_factors_above_congruence_85",
+     "value": 4,
+     "n": 1403,
+     "baseline": "k=12, median matched Tucker phi over 30 half-splits",
+     "source": "our reanalysis run_replicability.py"
+    },
+    {
+     "name": "mean_split_half_congruence",
+     "value": 0.758,
+     "n": 1403,
+     "baseline": "k=12, real data, mean over 12 matched factors of median phi; 15 half-splits, seed 777 (sweep run)",
+     "source": "our reanalysis run_perturbation_sweep.py"
+    },
+    {
+     "name": "congruence_permutation_null_max",
+     "value": 0.33,
+     "n": 1403,
+     "baseline": "k=18, column-permuted real data preserving item marginals, median matched phi of strongest factor",
+     "source": "our reanalysis run_replicability.py"
+    }
+   ],
+   "evidence": [
+    "a4",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "The instrument was validated before use on three synthetic cases with known answers: it recovers exactly 5 of 12 requested factors at phi=.99 with a cliff to .76 when 5 true factors exist; it returns .10-.33 and never approaches .85 on pure noise at every k tested; and it does not inflate spurious factors in a general-plus-specific structure. So the smooth real profile is not an artifact of the estimator.",
+    "by": "maria 2026-08-16"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "The non-replicability is misspecification, not estimation noise. A parametric-bootstrap clone generated from the model's OWN fitted loadings and uniquenesses, at the same N and k, is far more replicable than the data it was fitted to -- a stable deficit of +0.13 to +0.14 mean Tucker phi across k = 5, 8, 12. Building the clone with the estimated oblique factor correlations does not close the gap; at k=5 it widens it.",
+   "scope": "Same data. Clone factor scores normal, uniquenesses inherited from the fit.",
+   "quantities": [
+    {
+     "name": "mean_split_half_congruence",
+     "value": 0.767,
+     "n": 1403,
+     "baseline": "k=12, real data, same statistic; 20 half-splits, seed 312 (clone run) -- differs from the 0.758 row only by split count and seed, which brackets the Monte Carlo error at ~0.01",
+     "source": "our reanalysis run_clone_test.py"
+    },
+    {
+     "name": "mean_split_half_congruence",
+     "value": 0.907,
+     "n": 1403,
+     "baseline": "k=12, orthogonal parametric-bootstrap clone of the fitted 12-factor model",
+     "source": "our reanalysis run_clone_test.py"
+    },
+    {
+     "name": "clone_congruence_deficit",
+     "value": 0.14,
+     "unit": "Tucker phi",
+     "n": 1403,
+     "baseline": "k=12, clone mean minus real mean matched phi",
+     "source": "our reanalysis run_clone_test.py"
+    },
+    {
+     "name": "clone_congruence_deficit",
+     "value": 0.128,
+     "unit": "Tucker phi",
+     "n": 1403,
+     "baseline": "k=5, orthogonal clone mean minus real mean matched phi",
+     "source": "our reanalysis run_clone_test.py"
+    },
+    {
+     "name": "clone_congruence_deficit",
+     "value": 0.143,
+     "unit": "Tucker phi",
+     "n": 1403,
+     "baseline": "k=5, OBLIQUE clone (factors ~ N(0, Phi_hat)) mean minus real mean matched phi",
+     "source": "our reanalysis run_clone_oblique.py"
+    },
+    {
+     "name": "mean_abs_loading",
+     "value": 0.124,
+     "n": 1403,
+     "baseline": "k=12 oblimin solution on full sample",
+     "source": "our reanalysis"
+    }
+   ],
+   "evidence": [
+    "a4",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "This is the test designed to kill c3 and it failed to. The weak-loadings/low-power explanation predicts clone ~= real; observed gap is stable at +0.13-0.14 across three values of k. The obliquity confound was tested explicitly because it was the most plausible remaining rescue, and it runs the wrong way.",
+    "by": "maria 2026-08-16"
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "The covariance structure of pure-awareness reports is not detectably shaped by meditation tradition, questionnaire language, sex, Buddhist identification or psychedelic use. Across 8 groupings x 2 values of k, between-group factor congruence tracks a size-matched permutation null; only language at k=12 falls below it (p=.040, uncorrected for 16 comparisons) and Zen and metta at k=5 sit above their nulls.",
+   "scope": "N=1403. Traditions are non-exclusive in this questionnaire, so each is tested as practises-X vs does-not.",
+   "quantities": [
+    {
+     "name": "between_group_congruence_p_value",
+     "value": 0.04,
+     "n": 1329,
+     "baseline": "questionnaire language group 3 (n=889) vs group 1 (n=440), k=12, one-sided empirical p vs 25 size-matched random splits of the pooled sample",
+     "source": "our reanalysis run_groups.py"
+    },
+    {
+     "name": "between_group_congruence_p_value",
+     "value": 0.48,
+     "n": 1383,
+     "baseline": "sex, k=12, same test",
+     "source": "our reanalysis run_groups.py"
+    },
+    {
+     "name": "between_group_congruence_p_value",
+     "value": 0.48,
+     "n": 1365,
+     "baseline": "Vipassana practitioners vs not, k=12, same test",
+     "source": "our reanalysis run_groups.py"
+    },
+    {
+     "name": "between_group_congruence_p_value",
+     "value": 0.08,
+     "n": 1365,
+     "baseline": "Zen practitioners vs not, k=12, same test",
+     "source": "our reanalysis run_groups.py"
+    },
+    {
+     "name": "between_group_congruence_p_value",
+     "value": 0.64,
+     "n": 1371,
+     "baseline": "psychedelic users vs not, k=12, same test",
+     "source": "our reanalysis run_groups.py"
+    },
+    {
+     "name": "n_groupings_below_size_matched_null",
+     "value": 1,
+     "n": 16,
+     "baseline": "8 grouping variables x k in {5,12}, threshold p<.05 uncorrected",
+     "source": "our reanalysis run_groups.py"
+    }
+   ],
+   "evidence": [
+    "a4",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "A negative result, and the design bounds it in the safe direction: non-exclusive tradition membership makes each contrast weaker than a pure between-tradition one, biasing toward finding no difference. So it supports 'no large tradition effect on covariance structure' and cannot support 'no effect at all'. The size-matched null is what makes it interpretable -- raw between-group congruence would confound group difference with group size.",
+    "by": "maria 2026-08-16"
+   }
+  },
+  {
+   "id": "c6",
+   "statement": "RECORDED AS NOT-IDENTIFIABLE, against my own analysis. A two-subpopulation loading perturbation of c = 2.0 x mean|loading| reproduces the observed congruence deficit to three decimals (.757 vs .758) -- but the relationship is non-monotonic (c = 3.0 returns to .837), so c is not identified by this statistic and must not be quoted as an estimate of latent heterogeneity.",
+   "scope": "k=12, 15 half-splits per sweep point, c in {0, .6, 1, 1.5, 2, 3}.",
+   "quantities": [
+    {
+     "name": "heterogeneity_calibration_c",
+     "value": 2.0,
+     "unit": "multiples of mean|loading|",
+     "n": 1403,
+     "baseline": "k=12, two-subpopulation loading perturbation matching real mean phi -- NON-IDENTIFIED, see status",
+     "source": "our reanalysis run_perturbation_sweep.py"
+    },
+    {
+     "name": "mean_split_half_congruence",
+     "value": 0.95,
+     "n": 1403,
+     "baseline": "k=12, c=0 (homogeneous clone), sweep control",
+     "source": "our reanalysis run_perturbation_sweep.py"
+    },
+    {
+     "name": "mean_split_half_congruence",
+     "value": 0.837,
+     "n": 1403,
+     "baseline": "k=12, c=3.0 -- ABOVE the c=2.0 value, demonstrating non-monotonicity",
+     "source": "our reanalysis run_perturbation_sweep.py"
+    }
+   ],
+   "evidence": [
+    "a4",
+    "a5"
+   ],
+   "our_assessment": {
+    "status": "not-identifiable",
+    "why": "Two values of c produce the same mean phi, so the statistic does not determine c. Recorded rather than deleted because a three-decimal match is exactly the kind of too-clean agreement that gets quoted as a finding. The only defensible reading is directional: matching the deficit by two-group heterogeneity would require between-group loading differences about twice the mean loading itself, which is not credible and therefore argues against the mixture explanation rather than for it.",
+    "by": "maria 2026-08-16"
+   }
+  },
+  {
+   "id": "c7",
+   "statement": "CORRECTS an earlier, uncomputed claim in NOTES.md ('the self/subject-object factor is consistently among the top-ranked and most stable'). Properly computed with independent split-halves (self-factor identified within each half separately, no full-sample leakage), the self/subject-object factor has ORDINARY split-half stability -- median rank 3rd of 5 factors at k=5, 5th of 7 at k=7, phi statistically close to the population median-of-medians -- not exceptional stability. It IS real: median phi 0.76-0.80 decisively clears a correctly-implemented permutation null (median 0.14, max 0.36).",
+   "scope": "Same N=1403, same k=5/k=7 EFA solutions as c3-c6. 30 independent split-halves for the rank/phi computation, 15 for the permutation null (per-column numpy shuffle of one half, which destroys covariance while preserving item marginals).",
+   "quantities": [
+    {
+     "name": "self_factor_split_half_phi",
+     "value": 0.801,
+     "n": 1403,
+     "baseline": "k=7, median over 30 independent split-halves, self-factor identified within each half by mean |loading| on 6 self/boundary items",
+     "source": "our reanalysis run_self_factor_stability.py"
+    },
+    {
+     "name": "self_factor_rank_among_k_factors",
+     "value": 5,
+     "n": 1403,
+     "baseline": "k=7, median rank where 1=most stable of 7 matched factors",
+     "source": "our reanalysis run_self_factor_stability.py"
+    },
+    {
+     "name": "population_median_of_medians_phi",
+     "value": 0.811,
+     "n": 1403,
+     "baseline": "k=7, all factors, for comparison against the self-factor's 0.801 -- indistinguishable from average",
+     "source": "our reanalysis run_self_factor_stability.py"
+    },
+    {
+     "name": "self_factor_permutation_null_max",
+     "value": 0.356,
+     "n": 1403,
+     "baseline": "k=7, 15 splits, per-column-shuffled half B, self-factor's own matched phi against the shuffled data",
+     "source": "our reanalysis run_self_factor_stability.py"
+    }
+   ],
+   "evidence": [
+    "a7"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "A first attempt at both the stability check and its permutation-null control had bugs that each produced a flattering-then-alarming wrong answer in sequence: (1) matching each half against the FULL sample (which partly contains that half) gave an inflated phi (0.92-0.95) and a rank that looked exceptional -- data leakage; (2) the first permutation null used pandas `.apply(axis=0)` returning per-column arrays, which silently failed to reshuffle row correspondence, producing a null median (0.81) as high as the real data and briefly suggesting the self factor was indistinguishable from noise. Both are recorded as failed attempts in NOTES.md rather than deleted. The number reported here is the third version, with the leakage removed and the null verified against known behaviour (pure noise should score .10-.35, matching the original 2026-07-31/08-16 characterisation) before being trusted.",
+    "by": "maria 2026-08-21"
+   }
+  }
+ ],
+ "methods": [
+  "exploratory-factor-analysis",
+  "split-half-factor-congruence",
+  "parametric-bootstrap-model-check",
+  "size-matched-permutation-null",
+  "horn-parallel-analysis",
+  "synthetic-injected-effect-control",
+  "simulation-null-with-fixed-nuisance-structure"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "raw-data",
+   "locator": "https://osf.io/xerhg/",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-16",
+    "by": "maria",
+    "how": "curl -sL -o mpe.zip \"https://osf.io/download/xerhg/\" && unzip mpe.zip && python -c \"import mpelib as M; X,c=M.load(); print(len(X))\"",
+    "result": "1301939 bytes; unpacks to two .dta (Stata 14 and an R-compatible variant), 5 questionnaire PDFs, README.txt. N=1403 under over85items==1 reproduces the printed analysis sample exactly. 92 items mpe01..mpe92, max item missingness 1.7%."
+   },
+   "bytes": 2435125,
+   "sha256": "a85e6e521f01127cded59f3eba31d7f10ee3d6f7b6ca93d7d37b3a9196dac9ca",
+   "fetch_cmd": "curl -sL -o mpe.zip \"https://osf.io/download/xerhg/\" && unzip -o mpe.zip",
+   "datasheet": {
+    "motivation": "Characterise the phenomenology of 'pure awareness' / minimal phenomenal experience in meditators.",
+    "composition": "3627 online submissions, 1403 in the analysis sample; 92 visual-analogue items 0-100 plus demographics, meditation history, tradition, religion, substance use, in 5 languages.",
+    "collection": "Self-selected online survey of meditators, Jan-Mar 2020.",
+    "preprocessing": "We impute item medians ONCE on the full analysis sample (never per subsample) so that every subgroup is scored on the same item set.",
+    "caveats": "Self-selected meditators reporting pure-awareness experiences specifically -- the deep/non-dual end of the state space, NOT the full range of practices. Language groups are very unbalanced (889/440/30/26/18). Meditation traditions are non-exclusive tick-boxes, not a partition."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "supplement",
+   "locator": "https://osf.io/xerhg/ (MPE92M_questionnaire_*_27.10.2020.pdf)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-16",
+    "by": "maria",
+    "how": "unzip listing of the OSF archive",
+    "result": "All five language versions (English, German, French, Italian, Spanish) of the instrument are shipped with the data. This is what makes the item wording auditable and the cross-language test in c5 meaningful; the .dta variable labels truncate the longer items."
+   },
+   "bytes": 825696
+  },
+  {
+   "id": "a3",
+   "role": "raw-data",
+   "locator": "https://osf.io/gb76x",
+   "status": "dangling",
+   "checked": {
+    "on": "2026-09-08",
+    "by": "maria",
+    "how": "api.osf.io/v2/guids/gb76x/ (HTTP 410 Gone) and api.osf.io/v2/guids/xerhg/ (HTTP 200, size 1301939); plus api.crossref.org/works?filter=updates:10.1371/journal.pone.0253694",
+    "result": "CORRECTED 2026-09-08, AND THE CORRECTION IS THE AUTHORS'. gb76x is dead -- api.osf.io/v2/guids/gb76x/ returns HTTP 410 GONE, which is stronger than the 404 recorded before and is the archive stating that the object existed and was removed. BUT: PLOS published a formal Correction on 2024-11-18 (10.1371/journal.pone.0314290, record gamma2024-mpe92m-correction) replacing the Data Availability statement and naming https://osf.io/xerhg/download. This record carried gb76x as a LIVE PROBLEM for twenty-two months after the authors had fixed it, because nobody ran the one-request corrections check. Had anything from this record been sent to them it would have been a defect claim against a defect they had already corrected. SECOND CORRECTION, to the method rather than the fact: the discriminator used on 2026-08-25 was api.osf.io/v2/NODES/<guid>/, which returns 404 for the LIVE file guid xerhg as well -- right verdict, wrong reason, and a false fail waiting to happen. The endpoint that decides is /v2/guids/<guid>/. Also measured: osf.io/<guid> returns HTTP 200 with a BYTE-IDENTICAL 4,207-byte SPA shell for the live guid, the dead guid and two guids invented as controls, so browser-URL resolution has zero discriminating power on OSF. PREVIOUS RESULT TEXT, kept: STILL DANGLING, and the re-check is the point: the browser URL answers 200 with a 4 KB HTML page, which a naive link checker reads as recovery. The OSF API returns no node and no files for gb76x. A soft-404. Recorded because `kb.py links` flagged this artifact as 'was dangling, now answers' and it was wrong."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "code",
+   "locator": "reanalysis/",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-16",
+    "by": "maria",
+    "how": "python validate_synthetic.py; python run_replicability.py; python run_clone_test.py; python run_clone_oblique.py; python run_groups.py; python run_perturbation_sweep.py",
+    "result": "All six run to completion and write their JSON results. mpelib.check_rank_trick returns 1.9e-15, confirming that rank-transform + Pearson reproduces the Spearman matrix the paper analysed."
+   },
+   "derived_from": [
+    "a1"
+   ]
+  },
+  {
+   "id": "a5",
+   "role": "derived-data",
+   "locator": "reanalysis/results_*.json",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-16",
+    "by": "maria",
+    "how": "ls reanalysis/results_*.json && python -c \"import json,glob; [json.load(open(f)) for f in glob.glob('reanalysis/results_*.json')]\"",
+    "result": "Five JSON result files (replicability, clone, clone_oblique, groups, sweep) written by the five run_*.py scripts and re-readable. Every number quoted in claims c3-c6 is in one of them."
+   },
+   "derived_from": [
+    "a1",
+    "a4"
+   ]
+  },
+  {
+   "id": "a7",
+   "role": "code",
+   "locator": "reanalysis/run_self_factor_stability.py",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-21",
+    "by": "maria",
+    "how": "python reanalysis/run_self_factor_stability.py (data fetched fresh from a1, deleted after); output cross-checked against reanalysis/results_self_factor_stability.json",
+    "result": "Computes the self/subject-object factor's split-half replication rank and phi, independent-halves design (no full-sample leakage), plus a corrected permutation null. Supersedes an eyeballed claim in NOTES.md that was never actually computed and turned out to be wrong -- see c7 and the correction block in NOTES.md."
+   },
+   "derived_from": [
+    "a1"
+   ]
+  }
+ ],
+ "relations": [
+  {
+   "type": "zoo:reanalysedBy",
+   "target": "gamma2021-mpe92m#c3",
+   "why": "Self-reference marker: claims c3-c6 are ours, not the authors'. The authors make no replicability claim; we are not contradicting them on their own ground."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "gamma2021-mpe92m#c2",
+   "why": "c3 qualifies c2 rather than refuting it. The 11/12/18 computation stands exactly as printed; what changes is its force. c2 says the count depends on the decision rule; c3 says that at half-sample resolution there is no discrete factor to count under any rule.",
+   "asymmetric_note": "Do not cite c3 as overturning c2. Anyone quoting '11 by parallel analysis' is quoting a correct number; they must also quote that none of those 11 reaches the criterion for being the same factor in two halves of one sample."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "breznau2022-hidden-universe",
+   "why": "Both literatures assume a stable underlying quantity that analysts merely estimate differently. Breznau shows analyst choices disperse the estimate; this record shows the estimand itself -- the factor structure -- is not stable across samples of the same population. The many-analysts programme measures dispersion around a target it never checks is there. Neither literature cites the other."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "maria2026-analytic-variability-reanalysis",
+   "why": "Same discipline of validating a dispersion instrument on synthetic data with a known answer before pointing it at real data -- the rule written after the estimator with algebraically zero power. Here it is validate_synthetic.py, and it is what licenses c3."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "menkveld2024-nonstandard-errors",
+   "why": "Same shape of result in a different field: variation between competent implementations of the same analysis is comparable to or larger than the reported uncertainty of any one of them."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "lutz2015-phenomenological-matrix#c3",
+   "why": "c7 (this record) qualifies Lutz et al.'s claim that self-disidentification is purely a species of dereification. c7 shows the self/subject-object factor carries real, above-noise signal in a population selected for minimal discursive-thought content -- evidence against the strongest reductive reading (self-structure as pure epiphenomenon of thought-dereification) -- but c7 explicitly does NOT show exceptional stability, only ordinary stability, so it narrows rather than resolves the question. Do not cite this as refuting Lutz et al.; cite it as a data point their conceptual argument did not have."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "maria2026-happiness-income-spread#c4",
+   "why": "Reciprocal of the above."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "maria2026-happiness-income-spread",
+   "why": "Reciprocal of the above."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "maria2026-mbp-variability-ratio",
+   "why": "Reciprocal. Third instance of the same shape in this corpus: a reported quantity turns out to be a property of a measurement decision rather than of the phenomenon. There the number of factors; here whether an intervention 'changes variability', which is decided by an unstated coupling assumption."
+  }
+ ],
+ "open_questions": [
+  "Does the clone deficit appear in other phenomenology questionnaires (MODTAS, PCI, 5D-ASC, MEQ30) with open raw data? If yes, this is a property of introspective self-report instruments and not of the MPE-92M. This is the single highest-value follow-up and it is directly runnable -- mpelib.py is instrument-agnostic given an item matrix.",
+  "If the heterogeneity is not along any recorded grouping, is it individual-level? A mixture model or a per-respondent stability index would test whether the population contains many small structures rather than two large ones.",
+  "Is the deficit an artifact of visual-analogue response styles (extreme vs midpoint responders) rather than of phenomenology? Testable by re-running the clone comparison after within-person standardisation of the 92 items.",
+  "What does the split-half congruence profile of a WELL-BEHAVED psychometric instrument look like at n=700 and 92 items? Without that reference the clone comparison is the only calibration, and one external benchmark would strengthen it a lot.",
+  "For CAT: report the split-half congruence of CAT's own dimensions. The expectation set by this record is that they will look like this. That must be planned for, not discovered at review.",
+  "Has any other paper in this corpus been corrected, retracted, or had an expression of concern issued, without anyone looking? The check is one Crossref request per DOI (api.crossref.org/works?filter=updates:<doi>) and it has never been run over the 42 records. It found a Correction on the first paper it was ever pointed at, here, on 2026-09-08.",
+  "The artifact status vocabulary has no value for `dead, and the authors already announced it`. a3 is recorded `dangling`, which is true and which reads to any consumer as an unreported problem; the fact that it was formally corrected in 2024 survives only in the prose of the `checked.result` field, where no query can reach it. The retro-repro formalism hit the identical gap on the same day and from the other direction -- its five verdicts have no `superseded` either (dev-science-ops/paper-retrospective-reproducibility/retrofit/FINDINGS.md, finding 2). Two independently designed vocabularies missing the same concept is evidence the concept is real. Proposal for the standards repo: add `superseded-by-correction` to the artifact status enum."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-08-16",
+  "verified": "2026-09-08",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "How many dimensions does meditative / introspective phenomenology have?",
+  "Is a factor from an EFA real, or an artifact of this sample?",
+  "How do I tell misspecification from low power in a factor analysis?",
+  "Does meditation tradition or language shape how practitioners' reports covary?",
+  "How do I test whether two groups share a factor structure without confounding group size?",
+  "What is the split-half Tucker congruence of an instrument, and what counts as low?",
+  "I need a parametric-bootstrap model check for a latent-variable model."
+ ]
 }

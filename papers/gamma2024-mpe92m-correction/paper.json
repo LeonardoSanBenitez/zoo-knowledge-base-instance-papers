@@ -1,0 +1,82 @@
+{
+ "schema_version": "1.4",
+ "id": "gamma2024-mpe92m-correction",
+ "title": "Correction: The Minimal Phenomenal Experience questionnaire (MPE-92M): Towards a phenomenological profile of 'pure awareness' experiences in meditators",
+ "authors": [
+  "Alex Gamma",
+  "Thomas Metzinger"
+ ],
+ "year": 2024,
+ "venue": "PLOS ONE 19(11):e0314290",
+ "area": [
+  "contemplative-neuroscience",
+  "computational-reproducibility-and-artifact-reuse"
+ ],
+ "identifiers": {
+  "doi": "10.1371/journal.pone.0314290",
+  "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314290"
+ },
+ "record_status": "active",
+ "read_depth": "read-full-text",
+ "cost": {
+  "tool_calls": 3,
+  "bytes_downloaded": 4362,
+  "compute_notes": "One Crossref query, one Crossref updates-filter query, one PLOS JATS fetch. The notice is 4,362 bytes and was read in full.",
+  "session": "2026-09-08 maria"
+ },
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "The Data Availability statement of Gamma & Metzinger (2021) is incorrect; the correct URL for the MPE-92M data, documentation and all five language versions of the questionnaire is https://osf.io/xerhg/download.",
+   "scope": "The correction amends the Data Availability statement only. No result, table, figure or number in the 2021 article is amended.",
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Read in full from the PLOS JATS manuscript. Verified against the archive: api.osf.io/v2/guids/xerhg/ returns HTTP 200 with size 1301939, the zip was re-downloaded on 2026-09-08 and matches the archive's published sha256 exactly, and api.osf.io/v2/guids/gb76x/ returns HTTP 410 Gone. Both halves of the correction are true.",
+    "by": "maria 2026-09-08"
+   }
+  }
+ ],
+ "methods": [],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "supplement",
+   "locator": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0314290&type=manuscript",
+   "status": "verified-usable",
+   "bytes": 4362,
+   "checked": {
+    "on": "2026-09-08",
+    "by": "maria",
+    "how": "urllib GET of the PLOS JATS manuscript; also api.crossref.org/works/10.1371/journal.pone.0314290 and the reciprocal api.crossref.org/works?filter=updates:10.1371/journal.pone.0253694",
+    "result": "Retrieved, 4,362 bytes. The updates filter on the 2021 DOI returns exactly one result, this notice; the reciprocal query on this DOI returns zero, which is the expected asymmetry and was checked so a zero could not be mistaken for a failed request. Copy kept at dev-science-ops/paper-retrospective-reproducibility/retrofit/papers/gamma2021-mpe92m/probe/correction_0314290.xml."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:corrects",
+   "target": "gamma2021-mpe92m",
+   "why": "Corrects the Data Availability statement only. The dead URL printed in the 2021 article (osf.io/gb76x) was formally replaced here on 2024-11-18, twenty-two months before this house re-checked it on 2026-08-25 and recorded it as a live problem. That is why this record exists: a corrected paper whose correction nobody looked for is a paper this house will report a defect against.",
+   "asymmetric_note": "The reciprocal edge cannot be WRITTEN: the vocabulary carries cito:corrects but no cito:isCorrectedBy, so gamma2021-mpe92m's own file says nothing about having been corrected. It is however DISCOVERABLE: `python tools/kb.py relations --of gamma2021-mpe92m` walks edges in both directions and prints this one. Checked 2026-09-08, after nearly recording the stronger and false claim that the fact was invisible. So the gap is in the FILE, not in the corpus -- which matters, because anyone reading paper.json directly, or any consumer that does not use kb.py, still sees an uncorrected paper."
+  }
+ ],
+ "open_questions": [
+  "ANSWERED 2026-09-08, same session: the check was run over all 29 records carrying a DOI. TWO have formal corrections -- breznau2022-hidden-universe (10.1073/pnas.2410677121, Fig. 1 corrected, 2024-06-20) and gamma2021-mpe92m (this one). Base rate 2/29 = 6.9%. Raw output in corpus_corrections_audit.json. IMPORTANT AND UNCOMFORTABLE: the Breznau correction had ALREADY been found, on 2026-08-12, and recorded accurately. So the method does not never-check; it checks when the reader happens to notice, which on this evidence is one time in two.",
+  "The Breznau correction is recorded as artifact a6 with role `supplement`. A correction is not a supplement. That was the only slot available, and the consequence is that kb.py cannot answer `which papers in this corpus have been corrected?` -- the fact is reachable only by reading prose. Proposal for the standards repo: paper.schema.json should carry a first-class `updates` array (doi, type in {correction, retraction, expression-of-concern, addendum}, date, what_changed, affects_our_claims). record_status should gain nothing: a corrected paper is still active, and conflating correction with retraction is exactly what makes people avoid recording either.",
+  "13 of the 42 records carry no DOI at all -- 9 are our own reanalyses, 4 are arXiv/openreview-only. For those the Crossref updates filter cannot be run, and arXiv withdrawal and OpenReview status are different mechanisms with different endpoints. Nobody has checked those 4."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-09-08",
+  "verified": "2026-09-08",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "has this paper been corrected",
+  "crossref updates filter",
+  "data availability statement was wrong",
+  "MPE-92M correct data URL",
+  "osf.io/gb76x dead link",
+  "did anyone check for a retraction"
+ ]
+}
