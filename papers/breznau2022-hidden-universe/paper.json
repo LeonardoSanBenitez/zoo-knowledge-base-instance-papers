@@ -1,437 +1,447 @@
 {
-  "schema_version": "1.1",
-  "id": "breznau2022-hidden-universe",
-  "title": "Observing many researchers using the same data and hypothesis reveals a hidden universe of uncertainty",
-  "authors": [
-    "Nate Breznau",
-    "Eike Mark Rinke",
-    "Alexander Wuttke",
-    "Hung H. V. Nguyen",
-    "+157 others (161 researchers, 73 teams)"
-  ],
-  "year": 2022,
-  "venue": "PNAS 119(44) e2203150119 (Correction: PNAS 121(26) e2410677121, 2024-06-20)",
-  "area": [
-    "analytic-variability",
-    "metascience",
-    "measurement-theory"
-  ],
-  "identifiers": {
-    "doi": "10.1073/pnas.2203150119",
-    "pmid": "36306328",
-    "url": "https://www.pnas.org/doi/10.1073/pnas.2203150119"
+ "schema_version": "1.1",
+ "id": "breznau2022-hidden-universe",
+ "title": "Observing many researchers using the same data and hypothesis reveals a hidden universe of uncertainty",
+ "authors": [
+  "Nate Breznau",
+  "Eike Mark Rinke",
+  "Alexander Wuttke",
+  "Hung H. V. Nguyen",
+  "+157 others (161 researchers, 73 teams)"
+ ],
+ "year": 2022,
+ "venue": "PNAS 119(44) e2203150119 (Correction: PNAS 121(26) e2410677121, 2024-06-20)",
+ "area": [
+  "analytic-variability",
+  "metascience",
+  "measurement-theory"
+ ],
+ "identifiers": {
+  "doi": "10.1073/pnas.2203150119",
+  "pmid": "36306328",
+  "url": "https://www.pnas.org/doi/10.1073/pnas.2203150119"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 34,
+  "bytes_downloaded": 959000000,
+  "compute_notes": "PDF (3.52 MB, 8 pp) read directly, all pages. Replication repo cloned in full (912 MB) and reduced to a 1.27 MB model-level table by reanalysis/00_extract.py; clone then deleted under the >50 MB policy, fetch_cmd recorded. 11 reanalysis scripts, all pure numpy/pandas except one optional sklearn GBM; longest run 09_conditioning_correct_null.py, ~6 min wall clock (400 simulations x 5 partitions x Paule-Mandel per cell).",
+  "session": "2026-08-12 maria"
+ },
+ "triggers": [
+  "how much do analysts disagree when given the same data",
+  "many analysts one dataset how big is the spread really",
+  "is the variation across research teams real or just sampling error",
+  "researcher degrees of freedom quantified",
+  "does expertise make analysts converge",
+  "how do I decompose disagreement into estimand choice versus idiosyncrasy",
+  "my teams disagree about significance but agree about effect size",
+  "human analogue of LLM monoculture",
+  "what fraction of analytic variation can analytic decisions explain"
+ ],
+ "methods": [
+  "many-analysts-design",
+  "multilevel-variance-decomposition",
+  "inverse-cluster-size-weighting",
+  "stepwise-aic-variable-selection",
+  "multiverse-simulation-benchmark"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Across 1,253 converged models from 71 teams testing the same hypothesis on the same data, 25.4% of results were statistically significant in the hypothesised (negative) direction, 57.7% were not distinguishable from zero, and 16.9% were significant and positive.",
+   "scope": "Fig. 1 (as corrected 2024). Percentages are of the distribution INVERSELY WEIGHTED BY THE NUMBER OF MODELS PER TEAM -- stated in the figure legend, absent from the abstract and from most secondary citations including Mathur et al. 2023.",
+   "quantities": [
+    {
+     "name": "share_significant_negative_teamweighted",
+     "value": 25.4,
+     "unit": "%",
+     "n": 1253,
+     "source": "Fig 1"
+    },
+    {
+     "name": "share_null_teamweighted",
+     "value": 57.7,
+     "unit": "%",
+     "n": 1253,
+     "source": "Fig 1"
+    },
+    {
+     "name": "share_significant_positive_teamweighted",
+     "value": 16.9,
+     "unit": "%",
+     "n": 1253,
+     "source": "Fig 1"
+    },
+    {
+     "name": "share_significant_negative_unweighted",
+     "value": 19.47,
+     "unit": "%",
+     "n": 1253,
+     "source": "our reanalysis/01_dispersion.py"
+    },
+    {
+     "name": "share_null_unweighted",
+     "value": 64.41,
+     "unit": "%",
+     "n": 1253,
+     "source": "our reanalysis/01_dispersion.py"
+    },
+    {
+     "name": "share_significant_positive_unweighted",
+     "value": 16.12,
+     "unit": "%",
+     "n": 1253,
+     "source": "our reanalysis/01_dispersion.py"
+    }
+   ],
+   "evidence": [
+    "a2",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Exactly reproduced from the released cri.csv. The analysis sample was not documented in the paper and had to be recovered: drop the 8 models with missing standardized AME, then drop u_teamid == 0 (a 48-model block that is not a participating team), which yields exactly n = 1,253 and 71 teams. Recording that recipe is the main reproduction contribution. The weighting caveat is real but the paper does disclose it in the legend; the citing literature is what drops it.",
+    "by": "maria"
+   }
   },
-  "record_status": "active",
-  "read_depth": "read-and-reanalysed",
-  "cost": {
-    "tool_calls": 34,
-    "bytes_downloaded": 959000000,
-    "compute_notes": "PDF (3.52 MB, 8 pp) read directly, all pages. Replication repo cloned in full (912 MB) and reduced to a 1.27 MB model-level table by reanalysis/00_extract.py; clone then deleted under the >50 MB policy, fetch_cmd recorded. 11 reanalysis scripts, all pure numpy/pandas except one optional sklearn GBM; longest run 09_conditioning_correct_null.py, ~6 min wall clock (400 simulations x 5 partitions x Paule-Mandel per cell).",
-    "session": "2026-08-12 maria"
+  {
+   "id": "c2",
+   "statement": "95.2% of the total variance in the numerical results is unexplained by any identified component of research design or researcher characteristics; identified design decisions account for at most 2.6% and researcher characteristics for at most 1.2%.",
+   "scope": "Fig. 2, from multilevel regressions on 107 coded decision variables, with the covariate set deliberately capped at ~7 interacted variables because only 87 team-case units were available.",
+   "quantities": [
+    {
+     "name": "unexplained_variance_total",
+     "value": 95.2,
+     "unit": "%",
+     "n": 1253,
+     "source": "Fig 2"
+    },
+    {
+     "name": "unexplained_variance_between_team",
+     "value": 82.4,
+     "unit": "%",
+     "n": 71,
+     "source": "Fig 2"
+    },
+    {
+     "name": "unexplained_variance_within_team",
+     "value": 96.8,
+     "unit": "%",
+     "n": 1253,
+     "source": "Fig 2"
+    },
+    {
+     "name": "unexplained_deviance_subjective_conclusions",
+     "value": 80.1,
+     "unit": "%",
+     "n": 89,
+     "source": "Fig 2"
+    },
+    {
+     "name": "explained_by_design_decisions",
+     "value": 2.6,
+     "unit": "%",
+     "source": "Fig 2",
+     "n": 1253
+    },
+    {
+     "name": "explained_by_researcher_characteristics",
+     "value": 1.2,
+     "unit": "%",
+     "source": "Fig 2",
+     "n": 1253
+    }
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The direction is right and our out-of-sample test is HARSHER than theirs, not kinder: with grouped 10-fold cross-validation by team and a swept ridge penalty over 8 orders of magnitude, the 137 non-constant decision indicators achieve a best out-of-fold R^2 of -0.003 on the standardized estimate (permutation null -0.001). Out of sample the decisions explain zero, not 2.6%. But the 95.2% figure is computed on a raw variance that is not a stable quantity: 13 models (1.0%) with standard errors above the 99th percentile carry 47% of the total sum of squares, and the ten largest contributors come from only two teams (13 and 75). Trimming that 1% drops the SD of the standardized estimates from 0.0736 to 0.0400. So 'unexplained variance' is the right conclusion reached through a fragile statistic.",
+    "by": "maria"
+   },
+   "evidence": [
+    "a3"
+   ]
   },
-  "triggers": [
-    "how much do analysts disagree when given the same data",
-    "many analysts one dataset how big is the spread really",
-    "is the variation across research teams real or just sampling error",
-    "researcher degrees of freedom quantified",
-    "does expertise make analysts converge",
-    "how do I decompose disagreement into estimand choice versus idiosyncrasy",
-    "my teams disagree about significance but agree about effect size",
-    "human analogue of LLM monoculture",
-    "what fraction of analytic variation can analytic decisions explain"
-  ],
-  "methods": [
-    "many-analysts-design",
-    "multilevel-variance-decomposition",
-    "inverse-cluster-size-weighting",
-    "stepwise-aic-variable-selection",
-    "multiverse-simulation-benchmark"
-  ],
-  "claims": [
+  {
+   "id": "c3",
+   "statement": "Researcher competencies and prior beliefs do not explain the variation: methodological expertise, topical expertise, prior attitudes and prior beliefs show correlations from -0.12 to +0.14 with both the team's average effect and its within-team variance, none significant.",
+   "scope": "Fig. 3, n = 71 teams, Pearson correlations on continuous scores.",
+   "quantities": [
     {
-      "id": "c1",
-      "statement": "Across 1,253 converged models from 71 teams testing the same hypothesis on the same data, 25.4% of results were statistically significant in the hypothesised (negative) direction, 57.7% were not distinguishable from zero, and 16.9% were significant and positive.",
-      "scope": "Fig. 1 (as corrected 2024). Percentages are of the distribution INVERSELY WEIGHTED BY THE NUMBER OF MODELS PER TEAM -- stated in the figure legend, absent from the abstract and from most secondary citations including Mathur et al. 2023.",
-      "quantities": [
-        {
-          "name": "share_significant_negative_teamweighted",
-          "value": 25.4,
-          "unit": "%",
-          "n": 1253,
-          "source": "Fig 1"
-        },
-        {
-          "name": "share_null_teamweighted",
-          "value": 57.7,
-          "unit": "%",
-          "n": 1253,
-          "source": "Fig 1"
-        },
-        {
-          "name": "share_significant_positive_teamweighted",
-          "value": 16.9,
-          "unit": "%",
-          "n": 1253,
-          "source": "Fig 1"
-        },
-        {
-          "name": "share_significant_negative_unweighted",
-          "value": 19.47,
-          "unit": "%",
-          "n": 1253,
-          "source": "our reanalysis/01_dispersion.py"
-        },
-        {
-          "name": "share_null_unweighted",
-          "value": 64.41,
-          "unit": "%",
-          "n": 1253,
-          "source": "our reanalysis/01_dispersion.py"
-        },
-        {
-          "name": "share_significant_positive_unweighted",
-          "value": 16.12,
-          "unit": "%",
-          "n": 1253,
-          "source": "our reanalysis/01_dispersion.py"
-        }
-      ],
-      "evidence": [
-        "a2",
-        "a3"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "Exactly reproduced from the released cri.csv. The analysis sample was not documented in the paper and had to be recovered: drop the 8 models with missing standardized AME, then drop u_teamid == 0 (a 48-model block that is not a participating team), which yields exactly n = 1,253 and 71 teams. Recording that recipe is the main reproduction contribution. The weighting caveat is real but the paper does disclose it in the legend; the citing literature is what drops it.",
-        "by": "maria"
-      }
+     "name": "r_methodological_expertise_vs_avg_ame",
+     "value": -0.06,
+     "n": 71,
+     "ci": "95% CI [-0.289, +0.176] (our computation, Fisher z)",
+     "source": "Fig 3"
     },
     {
-      "id": "c2",
-      "statement": "95.2% of the total variance in the numerical results is unexplained by any identified component of research design or researcher characteristics; identified design decisions account for at most 2.6% and researcher characteristics for at most 1.2%.",
-      "scope": "Fig. 2, from multilevel regressions on 107 coded decision variables, with the covariate set deliberately capped at ~7 interacted variables because only 87 team-case units were available.",
-      "quantities": [
-        {
-          "name": "unexplained_variance_total",
-          "value": 95.2,
-          "unit": "%",
-          "n": 1253,
-          "source": "Fig 2"
-        },
-        {
-          "name": "unexplained_variance_between_team",
-          "value": 82.4,
-          "unit": "%",
-          "n": 71,
-          "source": "Fig 2"
-        },
-        {
-          "name": "unexplained_variance_within_team",
-          "value": 96.8,
-          "unit": "%",
-          "n": 1253,
-          "source": "Fig 2"
-        },
-        {
-          "name": "unexplained_deviance_subjective_conclusions",
-          "value": 80.1,
-          "unit": "%",
-          "n": 89,
-          "source": "Fig 2"
-        },
-        {
-          "name": "explained_by_design_decisions",
-          "value": 2.6,
-          "unit": "%",
-          "source": "Fig 2",
-          "n": 1253
-        },
-        {
-          "name": "explained_by_researcher_characteristics",
-          "value": 1.2,
-          "unit": "%",
-          "source": "Fig 2",
-          "n": 1253
-        }
-      ],
-      "our_assessment": {
-        "status": "accepted-narrower-scope",
-        "why": "The direction is right and our out-of-sample test is HARSHER than theirs, not kinder: with grouped 10-fold cross-validation by team and a swept ridge penalty over 8 orders of magnitude, the 137 non-constant decision indicators achieve a best out-of-fold R^2 of -0.003 on the standardized estimate (permutation null -0.001). Out of sample the decisions explain zero, not 2.6%. But the 95.2% figure is computed on a raw variance that is not a stable quantity: 13 models (1.0%) with standard errors above the 99th percentile carry 47% of the total sum of squares, and the ten largest contributors come from only two teams (13 and 75). Trimming that 1% drops the SD of the standardized estimates from 0.0736 to 0.0400. So 'unexplained variance' is the right conclusion reached through a fragile statistic.",
-        "by": "maria"
-      },
-      "evidence": [
-        "a3"
-      ]
+     "name": "r_topical_expertise_vs_avg_ame",
+     "value": 0.14,
+     "n": 71,
+     "ci": "95% CI [-0.096, +0.361] (our computation)",
+     "source": "Fig 3"
     },
     {
-      "id": "c3",
-      "statement": "Researcher competencies and prior beliefs do not explain the variation: methodological expertise, topical expertise, prior attitudes and prior beliefs show correlations from -0.12 to +0.14 with both the team's average effect and its within-team variance, none significant.",
-      "scope": "Fig. 3, n = 71 teams, Pearson correlations on continuous scores.",
-      "quantities": [
-        {
-          "name": "r_methodological_expertise_vs_avg_ame",
-          "value": -0.06,
-          "n": 71,
-          "ci": "95% CI [-0.289, +0.176] (our computation, Fisher z)",
-          "source": "Fig 3"
-        },
-        {
-          "name": "r_topical_expertise_vs_avg_ame",
-          "value": 0.14,
-          "n": 71,
-          "ci": "95% CI [-0.096, +0.361] (our computation)",
-          "source": "Fig 3"
-        },
-        {
-          "name": "largest_correlation_excluded_by_these_nulls",
-          "value": 0.36,
-          "n": 71,
-          "source": "our reanalysis/10_expertise_power.py"
-        }
-      ],
-      "our_assessment": {
-        "status": "accepted-narrower-scope",
-        "why": "The nulls are real but weak. At n = 71 the widest of these intervals excludes only |R| > 0.36, i.e. a researcher characteristic explaining an eighth of the between-team variance would have been reported here as a null. Our independent scan of 85 usable team-level survey items finds max |r| = 0.26 with the team's average estimate and 0.31 with the team's median log standard error, against a chance threshold of 0.24 for 85 tests at n = 71 -- consistent with no effect and with nothing detectable. The correct statement is 'not shown to explain more than a moderate amount', not 'do not explain'.",
-        "by": "maria"
-      },
-      "evidence": [
-        "a3"
-      ]
-    },
-    {
-      "id": "c4",
-      "statement": "The residual variation is idiosyncratic to the researcher rather than attributable to identifiable analytic decisions.",
-      "scope": "Discussion; the paper's central interpretive claim.",
-      "our_assessment": {
-        "status": "accepted-narrower-scope",
-        "why": "This survived every attempt we made to break it, which is the strongest thing we can say about any claim in this record. (i) A null in which every model estimates one common true effect and keeps its OWN reported standard error produces 2.2 / 94.7 / 3.1 against the observed 25.4 / 57.7 / 16.9 -- sampling error alone cannot generate the spread of conclusions. (ii) Conditioning on the choices that change the estimand (dependent variable, immigration measure, total/within/between, country set) absorbs none of the heterogeneity: one-sided p = 0.85-1.00 against a correctly calibrated simulation null that holds the real standard errors and real cell labels fixed, with 78% power to detect a 25% between-cell share and 92% at 50%. (iii) Conditioning on TEAM absorbs none of it either (p = 0.945), which is a stronger and stranger statement than the paper makes: the variation is not 'some teams are different', it is model-to-model everywhere. The narrowing: 'idiosyncratic' is established as a residual, and the residual is small in absolute terms -- see mathur2023-effect-sizes and maria2026-analytic-variability-reanalysis.",
-        "by": "maria"
-      },
-      "evidence": [
-        "a3"
-      ]
-    },
-    {
-      "id": "c5",
-      "statement": "WHICH decisions predict precision, and the finding that they predict nothing about the estimate no matter how the decisions are sliced. Added 2026-08-24 as a block decomposition of the headline that this record already carried.",
-      "scope": "1,252 converged models from 71 teams. Out-of-TEAM 10-fold ridge, max over 17 lambdas, mean and SD over 40 RANDOM fold assignments -- not one draw.",
-      "quantities": [
-        {
-          "name": "out_of_team_r2_for_log_standard_error",
-          "value": 0.1942,
-          "unit": "R2",
-          "n": 1252,
-          "baseline": "ALL 137 coded decisions; SD 0.0244 over 40 fold assignments",
-          "source": "reanalysis/14_estimate_vs_precision_by_block.py"
-        },
-        {
-          "name": "out_of_team_r2_for_log_standard_error",
-          "value": 0.1644,
-          "unit": "R2",
-          "n": 1252,
-          "baseline": "MODELLING block only (estimator family, multilevel structure, clustering, dummies, weights, software); SD 0.0181",
-          "source": "reanalysis/14_estimate_vs_precision_by_block.py"
-        },
-        {
-          "name": "out_of_team_r2_for_log_standard_error",
-          "value": 0.0546,
-          "unit": "R2",
-          "n": 1252,
-          "baseline": "SAMPLE-DEFINING block only (42 country dummies, 5 waves, sample definitions, listwise/multimpute, level of analysis, num_countries); SD 0.0215",
-          "source": "reanalysis/14_estimate_vs_precision_by_block.py"
-        },
-        {
-          "name": "out_of_team_r2_for_log_standard_error",
-          "value": 0.0082,
-          "unit": "R2",
-          "n": 1252,
-          "baseline": "MEASUREMENT block only (which DV, which immigration measure); SD 0.0114",
-          "source": "reanalysis/14_estimate_vs_precision_by_block.py"
-        },
-        {
-          "name": "out_of_team_r2_for_log_standard_error",
-          "value": -0.0027,
-          "unit": "R2",
-          "n": 1252,
-          "baseline": "COVARIATE SET only (36 country- and individual-level controls); SD 0.0109 -- which controls you include predicts NOTHING about your precision",
-          "source": "reanalysis/14_estimate_vs_precision_by_block.py"
-        },
-        {
-          "name": "out_of_team_r2_for_estimate",
-          "value": -0.0051,
-          "unit": "R2",
-          "n": 1252,
-          "baseline": "ALL coded decisions predicting the standardised estimate; SD 0.0018. Every block separately lands within 0.0002 of this",
-          "source": "reanalysis/14_estimate_vs_precision_by_block.py"
-        },
-        {
-          "name": "model_level_r2_for_estimate_upper_bound",
-          "value": 0.0352,
-          "unit": "R2",
-          "n": 1252,
-          "baseline": "MODELLING block, folds drawn at MODEL level ignoring team. Deliberately OVERSTATED -- models inside a team are near-duplicates -- and shown only as a ceiling on how much of the estimate the coded decisions could possibly explain",
-          "source": "reanalysis/14_estimate_vs_precision_by_block.py"
-        },
-        {
-          "name": "minimum_detectable_r2_of_this_design",
-          "value": 0.05,
-          "unit": "R2",
-          "n": 1252,
-          "baseline": "synthetic control: planted in-sample R2 0.05 recovered out-of-team at 0.0418 +- 0.0036; planted 0.10 recovered at 0.0873; planted 0 gives -0.0044",
-          "source": "reanalysis/14_estimate_vs_precision_by_block.py"
-        }
-      ],
-      "evidence": [
-        "a3"
-      ],
-      "our_assessment": {
-        "status": "accepted",
-        "why": "Three things, and the second is a correction of this record's own text. (1) The precision signal is a MODELLING signal: estimator family, multilevel structure and clustering carry R2 = 0.164 of the 0.194 total, while the covariate set carries nothing at all (-0.003). 'Analytic decisions predict precision' is true and imprecise; it is specifically how you estimate, not how much data you used and not which controls you added. (2) THE HEADLINE NUMBER IN THIS RECORD WAS FOLD-UNSTABLE. NOTES.md quotes R2 = 0.207 to three decimals from a single fold draw; over 40 draws it is 0.194 +- 0.024, so 0.207 sat at the high end of its own distribution. Worse, script 11's single-draw value for sample composition was -0.0123 and over 40 draws it is +0.0546 -- the SIGN flips with the fold assignment. Corrected in place; the old number is not deleted, it is superseded here with its reason. (3) Nothing predicts the estimate, from any angle. Every block lands at -0.005 out-of-team, and even at model-level folds, which overstate everything by treating near-duplicate specifications as independent, the ceiling is 0.035. The design can see a planted R2 of 0.05. This is the strongest form of the original finding and it was not previously written down."
-      }
+     "name": "largest_correlation_excluded_by_these_nulls",
+     "value": 0.36,
+     "n": 71,
+     "source": "our reanalysis/10_expertise_power.py"
     }
-  ],
-  "artifacts": [
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The nulls are real but weak. At n = 71 the widest of these intervals excludes only |R| > 0.36, i.e. a researcher characteristic explaining an eighth of the between-team variance would have been reported here as a null. Our independent scan of 85 usable team-level survey items finds max |r| = 0.26 with the team's average estimate and 0.31 with the team's median log standard error, against a chance threshold of 0.24 for 85 tests at n = 71 -- consistent with no effect and with nothing detectable. The correct statement is 'not shown to explain more than a moderate amount', not 'do not explain'.",
+    "by": "maria"
+   },
+   "evidence": [
+    "a3"
+   ]
+  },
+  {
+   "id": "c4",
+   "statement": "The residual variation is idiosyncratic to the researcher rather than attributable to identifiable analytic decisions.",
+   "scope": "Discussion; the paper's central interpretive claim.",
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "This survived every attempt we made to break it, which is the strongest thing we can say about any claim in this record. (i) A null in which every model estimates one common true effect and keeps its OWN reported standard error produces 2.2 / 94.7 / 3.1 against the observed 25.4 / 57.7 / 16.9 -- sampling error alone cannot generate the spread of conclusions. (ii) Conditioning on the choices that change the estimand (dependent variable, immigration measure, total/within/between, country set) absorbs none of the heterogeneity: one-sided p = 0.85-1.00 against a correctly calibrated simulation null that holds the real standard errors and real cell labels fixed, with 78% power to detect a 25% between-cell share and 92% at 50%. (iii) Conditioning on TEAM absorbs none of it either (p = 0.945), which is a stronger and stranger statement than the paper makes: the variation is not 'some teams are different', it is model-to-model everywhere. The narrowing: 'idiosyncratic' is established as a residual, and the residual is small in absolute terms -- see mathur2023-effect-sizes and maria2026-analytic-variability-reanalysis.",
+    "by": "maria"
+   },
+   "evidence": [
+    "a3"
+   ]
+  },
+  {
+   "id": "c5",
+   "statement": "WHICH decisions predict precision, and the finding that they predict nothing about the estimate no matter how the decisions are sliced. Added 2026-08-24 as a block decomposition of the headline that this record already carried.",
+   "scope": "1,252 converged models from 71 teams. Out-of-TEAM 10-fold ridge, max over 17 lambdas, mean and SD over 40 RANDOM fold assignments -- not one draw.",
+   "quantities": [
     {
-      "id": "a1",
-      "role": "code",
-      "locator": "https://github.com/nbreznau/CRI",
-      "repo_commit": "dd5dcb27a190bfb27209018f1b02af3fedda9f55",
-      "status": "verified-usable",
-      "checked": {
-        "on": "2026-08-12",
-        "by": "maria",
-        "how": "git clone --depth 1 https://github.com/nbreznau/CRI.git ; du -sh CRI",
-        "result": "912 MB, 439 files, R + Stata + data. Deleted after extraction under the >50 MB rule; regenerate with fetch_cmd. Contains the raw ISSP/OECD source files as well as the derived analysis tables, so it is genuinely sufficient for reanalysis, not merely re-execution."
-      },
-      "bytes": 956301312,
-      "license": "see LICENSE.md in repo",
-      "fetch_cmd": "git clone https://github.com/nbreznau/CRI.git && cd CRI && git checkout dd5dcb27a190bfb27209018f1b02af3fedda9f55"
+     "name": "out_of_team_r2_for_log_standard_error",
+     "value": 0.1942,
+     "unit": "R2",
+     "n": 1252,
+     "baseline": "ALL 137 coded decisions; SD 0.0244 over 40 fold assignments",
+     "source": "reanalysis/14_estimate_vs_precision_by_block.py"
     },
     {
-      "id": "a2",
-      "role": "derived-data",
-      "locator": "CRI/data/cri.csv",
-      "path_in_repo": "data/cri.csv",
-      "status": "verified-usable",
-      "checked": {
-        "on": "2026-08-12",
-        "by": "maria",
-        "how": "python reanalysis/00_extract.py <CRI> ; then reanalysis/01_dispersion.py",
-        "result": "1309 rows x 479 cols, sha256 cd21f3fba1f4b016b079efe03e1a192565f56389543d16589f5bc1180ed50962, 2046600 bytes. MUST be read as latin-1; utf-8 fails at byte 0x91 offset 230354. Reproduces Fig. 1 exactly once the undocumented analysis sample is recovered."
-      },
-      "bytes": 2046600,
-      "sha256": "cd21f3fba1f4b016b079efe03e1a192565f56389543d16589f5bc1180ed50962",
-      "derived_from": [
-        "a1"
-      ],
-      "datasheet": {
-        "composition": "One row per submitted statistical model: team id, average marginal effect and its 95% CI, p, the chosen dependent variable (11 of them), the immigration measure (stock / flow / change in flow), 161 binary analytic-decision indicators, and 127 participant-survey items merged on.",
-        "preprocessing": "Effects were xy-standardized post hoc by the PIs because teams used differently scaled immigration variables and several did not report standardized estimates.",
-        "caveats": "The analysis sample of the paper (n = 1,253) is NOT flagged in the file. It is obtained by dropping 8 rows with missing AME_Z and the 48 rows with u_teamid == 0. The `error` column is the half-width of the 95% CI (1.96 x SE), not the SE. Standard errors span 4e-05 to 1.43, a factor of ~36,000, so any statistic that averages variances rather than precisions is dominated by a handful of rows."
-      }
+     "name": "out_of_team_r2_for_log_standard_error",
+     "value": 0.1644,
+     "unit": "R2",
+     "n": 1252,
+     "baseline": "MODELLING block only (estimator family, multilevel structure, clustering, dummies, weights, software); SD 0.0181",
+     "source": "reanalysis/14_estimate_vs_precision_by_block.py"
     },
     {
-      "id": "a3",
-      "role": "derived-data",
-      "status": "verified-usable",
-      "local_path": "data/cri_model_level.csv",
-      "checked": {
-        "on": "2026-08-12",
-        "by": "maria",
-        "how": "python reanalysis/00_extract.py",
-        "result": "1309 x 316, 1.27 MB, utf-8. Everything in this record is computed from this file; the 912 MB clone is not needed again."
-      },
-      "bytes": 1268273,
-      "derived_from": [
-        "a2"
-      ]
+     "name": "out_of_team_r2_for_log_standard_error",
+     "value": 0.0546,
+     "unit": "R2",
+     "n": 1252,
+     "baseline": "SAMPLE-DEFINING block only (42 country dummies, 5 waves, sample definitions, listwise/multimpute, level of analysis, num_countries); SD 0.0215",
+     "source": "reanalysis/14_estimate_vs_precision_by_block.py"
     },
     {
-      "id": "a4",
-      "role": "raw-data",
-      "locator": "https://doi.org/10.7910/DVN/UUP8CX",
-      "status": "not-checked",
-      "checked": {
-        "on": "2026-08-12",
-        "by": "maria",
-        "how": "not fetched -- the GitHub repo already contained everything needed",
-        "result": "Advertised as the archival deposit. Untested; do not cite its health."
-      }
+     "name": "out_of_team_r2_for_log_standard_error",
+     "value": 0.0082,
+     "unit": "R2",
+     "n": 1252,
+     "baseline": "MEASUREMENT block only (which DV, which immigration measure); SD 0.0114",
+     "source": "reanalysis/14_estimate_vs_precision_by_block.py"
     },
     {
-      "id": "a5",
-      "role": "analysis-notebook",
-      "locator": "https://nate-breznau.shinyapps.io/shiny/",
-      "status": "not-checked",
-      "checked": {
-        "on": "2026-08-12",
-        "by": "maria",
-        "how": "not fetched",
-        "result": "Interactive explorer advertised in the paper. A hosted app is the artifact class most likely to become dangling; re-check before citing."
-      }
+     "name": "out_of_team_r2_for_log_standard_error",
+     "value": -0.0027,
+     "unit": "R2",
+     "n": 1252,
+     "baseline": "COVARIATE SET only (36 country- and individual-level controls); SD 0.0109 -- which controls you include predicts NOTHING about your precision",
+     "source": "reanalysis/14_estimate_vs_precision_by_block.py"
     },
     {
-      "id": "a6",
-      "role": "supplement",
-      "locator": "https://doi.org/10.1073/pnas.2410677121",
-      "status": "verified-usable",
-      "checked": {
-        "on": "2026-08-12",
-        "by": "maria",
-        "how": "EuropePMC REST fullTextXML for PMC11214070",
-        "result": "Corrects Fig. 1 only; the corrected legend is what states the inverse-team-size weighting. No numerical claim in the body changed."
-      }
+     "name": "out_of_team_r2_for_estimate",
+     "value": -0.0051,
+     "unit": "R2",
+     "n": 1252,
+     "baseline": "ALL coded decisions predicting the standardised estimate; SD 0.0018. Every block separately lands within 0.0002 of this",
+     "source": "reanalysis/14_estimate_vs_precision_by_block.py"
+    },
+    {
+     "name": "model_level_r2_for_estimate_upper_bound",
+     "value": 0.0352,
+     "unit": "R2",
+     "n": 1252,
+     "baseline": "MODELLING block, folds drawn at MODEL level ignoring team. Deliberately OVERSTATED -- models inside a team are near-duplicates -- and shown only as a ceiling on how much of the estimate the coded decisions could possibly explain",
+     "source": "reanalysis/14_estimate_vs_precision_by_block.py"
+    },
+    {
+     "name": "minimum_detectable_r2_of_this_design",
+     "value": 0.05,
+     "unit": "R2",
+     "n": 1252,
+     "baseline": "synthetic control: planted in-sample R2 0.05 recovered out-of-team at 0.0418 +- 0.0036; planted 0.10 recovered at 0.0873; planted 0 gives -0.0044",
+     "source": "reanalysis/14_estimate_vs_precision_by_block.py"
     }
-  ],
-  "relations": [
-    {
-      "type": "zoo:reanalysedBy",
-      "target": "maria2026-analytic-variability-reanalysis",
-      "why": "Our 11-script reanalysis: exact reproduction, sample-definition recovery, heterogeneity estimation under five estimators, a calibrated conditioning test, and grouped-CV prediction."
-    },
-    {
-      "type": "cito:qualifies",
-      "target": "mathur2023-effect-sizes",
-      "why": "Placed here because the pair is usually cited as a refutation and is not one. Mathur et al. do not dispute any number in Breznau et al.; they dispute what 'massive variation' should mean when the estimates are all within 4% of a SD of zero.",
-      "asymmetric_note": "Direction matters: mathur2023 critiques breznau2022, breznau2022 does not respond in kind except in the published reply e2219555120."
-    },
-    {
-      "type": "zoo:sharesUnstatedAssumptionWith",
-      "target": "jo2026-subjectivity",
-      "why": "Both compute a discrepancy against a null the analyst chose and then interpret the residual substantively. Breznau's 'hidden universe' is the residual after conditioning on 107 coded decisions; Jo, Garg & Raghavan prove (Thm 1) that in the LLM-monoculture setting a rich enough null absorbs the whole discrepancy, so the quantity is only defined relative to the conditioning set. Neither literature cites the other, and the metascience side has no analogue of Jo's null ladder. Our reanalysis ran the ladder here: unusually, the discrepancy does NOT get absorbed, which is a genuine empirical difference between the two cases and not a difference of framing."
-    },
-    {
-      "type": "cito:citesAsEvidence",
-      "target": "trisovic2022-code-execution",
-      "why": "Reciprocal pointer only. trisovic2022 is used in our records as the reference case for a single analytic degree of freedom that moves a POINT ESTIMATE by 20 points, against this paper's finding that modelling choices move precision rather than the estimate."
-    },
-    {
-      "type": "cito:corrects",
-      "target": "maria2026-executability-denominators#c5",
-      "why": "Refutes a hypothesis maria proposed the same day -- that a degree of freedom deciding WHAT COUNTS AS A CASE moves the point estimate. Sample-defining and modelling blocks predict the estimate identically and at zero (-0.0049 vs -0.0050), and the design can see a planted R2 of 0.05.",
-      "asymmetric_note": "The corrected record keeps the claim with status `refuted` rather than deleting it, so that the same overreach is not re-derived from the same starting conditions."
-    },
-    {
-      "type": "zoo:sharesUnstatedAssumptionWith",
-      "target": "maria2026-happiness-income-spread",
-      "why": "Both assume a specification multiverse is the right instrument for deciding whether a result is real. Sixteen income codings were run against KKM 2023 and 81% preserved the result; the finding that mattered came from a centre/spread decomposition instead. A multiverse measures fragility only to choices someone thought to vary."
-    },
-    {
-      "type": "zoo:sharesUnstatedAssumptionWith",
-      "target": "kkm2023-conflict-resolved",
-      "why": "Both treat 'the same data analysed differently gives different answers' as the problem. Breznau measures the dispersion and stops; KKM is the only case in this corpus where the disagreeing parties jointly reanalysed and produced a reconciling model. The shared unstated assumption is that a reconciliation exists at all."
-    }
-  ],
-  "open_questions": [
-    "Why does the one-parameter random-effects model fail so badly (six functionals imply tau from 0.0012 to 0.0160, a 13x spread, where synthetic data from that model gives agreement to 3 decimal places)? The heterogeneity is real but is not exchangeable, and nothing in either paper models it.",
-    "The pooled within-cell statistic on the real data sits ABOVE its own no-structure null for every partition tried. That is a misspecification signal, not just a null result. What structure produces it?",
-    "Does the Shiny app still resolve? Not checked, and hosted apps rot fastest.",
-    "The published reply to Mathur et al. (PNAS e2219555120, 'Many-analyst studies should consider effect sizes and CIs') has not been read. It is the only place the authors respond to the effect-size critique."
-  ],
-  "curation": {
-    "author": "maria",
-    "created": "2026-08-12",
-    "verified": "2026-08-12",
-    "notes_file": "NOTES.md"
+   ],
+   "evidence": [
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Three things, and the second is a correction of this record's own text. (1) The precision signal is a MODELLING signal: estimator family, multilevel structure and clustering carry R2 = 0.164 of the 0.194 total, while the covariate set carries nothing at all (-0.003). 'Analytic decisions predict precision' is true and imprecise; it is specifically how you estimate, not how much data you used and not which controls you added. (2) THE HEADLINE NUMBER IN THIS RECORD WAS FOLD-UNSTABLE. NOTES.md quotes R2 = 0.207 to three decimals from a single fold draw; over 40 draws it is 0.194 +- 0.024, so 0.207 sat at the high end of its own distribution. Worse, script 11's single-draw value for sample composition was -0.0123 and over 40 draws it is +0.0546 -- the SIGN flips with the fold assignment. Corrected in place; the old number is not deleted, it is superseded here with its reason. (3) Nothing predicts the estimate, from any angle. Every block lands at -0.005 out-of-team, and even at model-level folds, which overstate everything by treating near-duplicate specifications as independent, the ceiling is 0.035. The design can see a planted R2 of 0.05. This is the strongest form of the original finding and it was not previously written down."
+   }
   }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "code",
+   "locator": "https://github.com/nbreznau/CRI",
+   "repo_commit": "dd5dcb27a190bfb27209018f1b02af3fedda9f55",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-12",
+    "by": "maria",
+    "how": "git clone --depth 1 https://github.com/nbreznau/CRI.git ; du -sh CRI",
+    "result": "912 MB, 439 files, R + Stata + data. Deleted after extraction under the >50 MB rule; regenerate with fetch_cmd. Contains the raw ISSP/OECD source files as well as the derived analysis tables, so it is genuinely sufficient for reanalysis, not merely re-execution."
+   },
+   "bytes": 956301312,
+   "license": "see LICENSE.md in repo",
+   "fetch_cmd": "git clone https://github.com/nbreznau/CRI.git && cd CRI && git checkout dd5dcb27a190bfb27209018f1b02af3fedda9f55"
+  },
+  {
+   "id": "a2",
+   "role": "derived-data",
+   "locator": "CRI/data/cri.csv",
+   "path_in_repo": "data/cri.csv",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-12",
+    "by": "maria",
+    "how": "python reanalysis/00_extract.py <CRI> ; then reanalysis/01_dispersion.py",
+    "result": "1309 rows x 479 cols, sha256 cd21f3fba1f4b016b079efe03e1a192565f56389543d16589f5bc1180ed50962, 2046600 bytes. MUST be read as latin-1; utf-8 fails at byte 0x91 offset 230354. Reproduces Fig. 1 exactly once the undocumented analysis sample is recovered."
+   },
+   "bytes": 2046600,
+   "sha256": "cd21f3fba1f4b016b079efe03e1a192565f56389543d16589f5bc1180ed50962",
+   "derived_from": [
+    "a1"
+   ],
+   "datasheet": {
+    "composition": "One row per submitted statistical model: team id, average marginal effect and its 95% CI, p, the chosen dependent variable (11 of them), the immigration measure (stock / flow / change in flow), 161 binary analytic-decision indicators, and 127 participant-survey items merged on.",
+    "preprocessing": "Effects were xy-standardized post hoc by the PIs because teams used differently scaled immigration variables and several did not report standardized estimates.",
+    "caveats": "The analysis sample of the paper (n = 1,253) is NOT flagged in the file. It is obtained by dropping 8 rows with missing AME_Z and the 48 rows with u_teamid == 0. The `error` column is the half-width of the 95% CI (1.96 x SE), not the SE. Standard errors span 4e-05 to 1.43, a factor of ~36,000, so any statistic that averages variances rather than precisions is dominated by a handful of rows."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "derived-data",
+   "status": "verified-usable",
+   "local_path": "data/cri_model_level.csv",
+   "checked": {
+    "on": "2026-08-12",
+    "by": "maria",
+    "how": "python reanalysis/00_extract.py",
+    "result": "1309 x 316, 1.27 MB, utf-8. Everything in this record is computed from this file; the 912 MB clone is not needed again."
+   },
+   "bytes": 1268273,
+   "derived_from": [
+    "a2"
+   ]
+  },
+  {
+   "id": "a4",
+   "role": "raw-data",
+   "locator": "https://doi.org/10.7910/DVN/UUP8CX",
+   "status": "not-checked",
+   "checked": {
+    "on": "2026-08-12",
+    "by": "maria",
+    "how": "not fetched -- the GitHub repo already contained everything needed",
+    "result": "Advertised as the archival deposit. Untested; do not cite its health."
+   }
+  },
+  {
+   "id": "a5",
+   "role": "analysis-notebook",
+   "locator": "https://nate-breznau.shinyapps.io/shiny/",
+   "status": "not-checked",
+   "checked": {
+    "on": "2026-08-12",
+    "by": "maria",
+    "how": "not fetched",
+    "result": "Interactive explorer advertised in the paper. A hosted app is the artifact class most likely to become dangling; re-check before citing."
+   }
+  },
+  {
+   "id": "a6",
+   "role": "supplement",
+   "locator": "https://doi.org/10.1073/pnas.2410677121",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-08-12",
+    "by": "maria",
+    "how": "EuropePMC REST fullTextXML for PMC11214070",
+    "result": "Corrects Fig. 1 only; the corrected legend is what states the inverse-team-size weighting. No numerical claim in the body changed."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "zoo:reanalysedBy",
+   "target": "maria2026-analytic-variability-reanalysis",
+   "why": "Our 11-script reanalysis: exact reproduction, sample-definition recovery, heterogeneity estimation under five estimators, a calibrated conditioning test, and grouped-CV prediction."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "mathur2023-effect-sizes",
+   "why": "Placed here because the pair is usually cited as a refutation and is not one. Mathur et al. do not dispute any number in Breznau et al.; they dispute what 'massive variation' should mean when the estimates are all within 4% of a SD of zero.",
+   "asymmetric_note": "Direction matters: mathur2023 critiques breznau2022, breznau2022 does not respond in kind except in the published reply e2219555120."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "jo2026-subjectivity",
+   "why": "Both compute a discrepancy against a null the analyst chose and then interpret the residual substantively. Breznau's 'hidden universe' is the residual after conditioning on 107 coded decisions; Jo, Garg & Raghavan prove (Thm 1) that in the LLM-monoculture setting a rich enough null absorbs the whole discrepancy, so the quantity is only defined relative to the conditioning set. Neither literature cites the other, and the metascience side has no analogue of Jo's null ladder. Our reanalysis ran the ladder here: unusually, the discrepancy does NOT get absorbed, which is a genuine empirical difference between the two cases and not a difference of framing."
+  },
+  {
+   "type": "cito:citesAsEvidence",
+   "target": "trisovic2022-code-execution",
+   "why": "Reciprocal pointer only. trisovic2022 is used in our records as the reference case for a single analytic degree of freedom that moves a POINT ESTIMATE by 20 points, against this paper's finding that modelling choices move precision rather than the estimate."
+  },
+  {
+   "type": "cito:corrects",
+   "target": "maria2026-executability-denominators#c5",
+   "why": "Refutes a hypothesis maria proposed the same day -- that a degree of freedom deciding WHAT COUNTS AS A CASE moves the point estimate. Sample-defining and modelling blocks predict the estimate identically and at zero (-0.0049 vs -0.0050), and the design can see a planted R2 of 0.05.",
+   "asymmetric_note": "The corrected record keeps the claim with status `refuted` rather than deleting it, so that the same overreach is not re-derived from the same starting conditions."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "maria2026-happiness-income-spread",
+   "why": "Both assume a specification multiverse is the right instrument for deciding whether a result is real. Sixteen income codings were run against KKM 2023 and 81% preserved the result; the finding that mattered came from a centre/spread decomposition instead. A multiverse measures fragility only to choices someone thought to vary."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "kkm2023-conflict-resolved",
+   "why": "Both treat 'the same data analysed differently gives different answers' as the problem. Breznau measures the dispersion and stops; KKM is the only case in this corpus where the disagreeing parties jointly reanalysed and produced a reconciling model. The shared unstated assumption is that a reconciliation exists at all."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "botviniknezer2020-narps",
+   "why": "Same design, unconnected field, same core finding: independent analysts handed one dataset do not converge on a conclusion. NARPS adds what this corpus cannot supply -- several outcomes per team -- and shows the dispersion is partly a stable team trait rather than scattered luck."
+  },
+  {
+   "type": "cito:usesDataFrom",
+   "target": "botviniknezer2020-narps",
+   "why": "The reverse direction: NARPS's record re-runs this record's released cri_model_level.csv with a pairwise instrument and a power calibration, and restates our reading of the -0.005 as a bound."
+  }
+ ],
+ "open_questions": [
+  "Why does the one-parameter random-effects model fail so badly (six functionals imply tau from 0.0012 to 0.0160, a 13x spread, where synthetic data from that model gives agreement to 3 decimal places)? The heterogeneity is real but is not exchangeable, and nothing in either paper models it.",
+  "The pooled within-cell statistic on the real data sits ABOVE its own no-structure null for every partition tried. That is a misspecification signal, not just a null result. What structure produces it?",
+  "Does the Shiny app still resolve? Not checked, and hosted apps rot fastest.",
+  "The published reply to Mathur et al. (PNAS e2219555120, 'Many-analyst studies should consider effect sizes and CIs') has not been read. It is the only place the authors respond to the effect-size critique."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-08-12",
+  "verified": "2026-08-12",
+  "notes_file": "NOTES.md"
+ }
 }

@@ -1,0 +1,6 @@
+plot_distance_from_mean
+2020-03-13T00:03:57.050499
+
+found 3 teams with r<0.2 with mean pattern
+['UK24' '9T8E' 'O6R6']
+found 32 teams with r>0.7 with mean pattern

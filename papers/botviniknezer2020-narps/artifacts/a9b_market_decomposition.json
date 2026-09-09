@@ -1,0 +1,35 @@
+{
+ "team": {
+  "mse": 0.14066802040816323,
+  "bias": 0.3228095238095237,
+  "bias2": 0.10420598866213146,
+  "bias2_share_of_mse": 0.7407937380491081,
+  "residual_var": 0.03646203174603173,
+  "debiased_mae": 0.18189417989417986,
+  "debiased_rmse": 0.19095033842869125,
+  "pearson_with_fv": 0.7824698364263752,
+  "mean_price_where_ibma_yes": 0.82475,
+  "mean_price_where_ibma_no": 0.4184,
+  "pointbiserial_with_ibma": 0.6589528580077939,
+  "pointbiserial_with_ibma_p": 0.053566413655030794,
+  "pointbiserial_with_cbma": 0.6069072759925872,
+  "spearman_with_fv": 0.961919879757386
+ },
+ "nonteam": {
+  "mse": 0.2205439092970521,
+  "bias": 0.4142539682539682,
+  "bias2": 0.1716063502141597,
+  "bias2_share_of_mse": 0.7781051436021384,
+  "residual_var": 0.0489375590828924,
+  "debiased_mae": 0.15280423280423278,
+  "debiased_rmse": 0.2212183515960925,
+  "pearson_with_fv": 0.36141488246808606,
+  "mean_price_where_ibma_yes": 0.74575,
+  "mean_price_where_ibma_no": 0.6462000000000001,
+  "pointbiserial_with_ibma": 0.3837900882715197,
+  "pointbiserial_with_ibma_p": 0.30787019512736774,
+  "pointbiserial_with_cbma": 0.349587517131676,
+  "spearman_with_fv": 0.5533167449931866
+ },
+ "loo_constant_rmse": 0.2613495196639386
+}

@@ -1,0 +1,10 @@
+,collectionID,teamID,hyp,autorectify,problem,reverse_contrast,n_thresh_vox,min_unthresh,max_unthresh,p_pos_unthresh,p_neg_unthresh
+0,4936_0H5E,0H5E,1,False,,False,0.0,0.0,0.0,0.0,0.0
+1,4936_0H5E,0H5E,2,False,,False,7612.0,2.7351930141448975,7.074066638946533,1.0,0.0
+2,4936_0H5E,0H5E,3,False,,False,0.0,0.0,0.0,0.0,0.0
+3,4936_0H5E,0H5E,4,False,,False,7612.0,2.7351930141448975,7.074066638946533,1.0,0.0
+4,4936_0H5E,0H5E,5,False,,False,7818.0,2.722456455230713,6.341358184814453,1.0,0.0
+5,4936_0H5E,0H5E,6,False,,False,0.0,0.0,0.0,0.0,0.0
+6,4936_0H5E,0H5E,7,False,,False,11302.0,2.580462694168091,6.618342399597168,1.0,0.0
+7,4936_0H5E,0H5E,8,False,,False,0.0,0.0,0.0,0.0,0.0
+8,4936_0H5E,0H5E,9,False,,False,0.0,0.0,0.0,0.0,0.0

@@ -1,0 +1,21 @@
+get_thresh_similarity
+2020-03-13T00:03:57.377916
+
+Arguments:
+dataset: resampled
+narps: <narps.Narps object at 0x7f8fe1dc5710>
+
+hyp 1: median pctagree similarity: 0.975224
+hyp 1: median jacaard similarity (nonzero): 0.002240
+hyp 2: median pctagree similarity: 0.949788
+hyp 2: median jacaard similarity (nonzero): 0.064782
+hyp 5: median pctagree similarity: 0.944261
+hyp 5: median jacaard similarity (nonzero): 0.059595
+hyp 6: median pctagree similarity: 0.996696
+hyp 6: median jacaard similarity (nonzero): 0.000000
+hyp 7: median pctagree similarity: 0.932910
+hyp 7: median jacaard similarity (nonzero): 0.045928
+hyp 8: median pctagree similarity: 0.992864
+hyp 8: median jacaard similarity (nonzero): 0.000126
+hyp 9: median pctagree similarity: 0.996687
+hyp 9: median jacaard similarity (nonzero): 0.000000

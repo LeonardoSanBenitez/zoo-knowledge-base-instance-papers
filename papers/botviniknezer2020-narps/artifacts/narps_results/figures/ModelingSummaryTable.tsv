@@ -1,0 +1,7 @@
+Effects	Chi-squared	P value (parametric)	Bootstrap CI	Model selection probability (BIC)	Model selection probability (AIC)	Delta R^2
+Hypothesis	185.39	7.59363812999328e-36	NA	1	1	0.35
+Estimated smoothness	13.21	0.000278103404841951	(0.02 - 0.26)	NA	NA	0.04
+Used fMRIPprep data	2.27	0.132208659538827	(-0.42 - 1.36)	NA	NA	0.01
+Software package	13.45	0.0037568197928693	NA	0.029	0.69	0.04
+Multiple correction method	7.50	0.0235008316149262	NA	0.107	0.816	0.02
+Movement modeling	1.16	0.281337915601999	(-1.40 - 0.29)	NA	NA	0.00

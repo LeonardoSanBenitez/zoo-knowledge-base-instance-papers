@@ -1,0 +1,7 @@
+Effect	Beta (full model)	t (full model)	p (full model)	Beta (no interaction)	t (no interaction)	p (no interaction)
+Intercept	0.44	64.12	0.000	0.41	74.61	0.000
+Time	0.00	3.38	0.001	0.00	12.48	0.000
+Teams	-0.29	-29.50	0.000	-0.22	-45.35	0.000
+Time X Teams	0.00	7.78	0.000			
+--------						
+Adjusted R-squared			0.35			0.34

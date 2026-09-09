@@ -1,299 +1,304 @@
 {
-  "schema_version": "1.0",
-  "id": "menkveld2024-nonstandard-errors",
-  "title": "Nonstandard Errors",
-  "authors": [
-    "Albert J. Menkveld",
-    "Anna Dreber",
-    "Felix Holzmeister",
-    "Juergen Huber",
-    "Magnus Johannesson",
-    "Michael Kirchler",
-    "Sebastian Neusuess",
-    "Michael Razen",
-    "Utz Weitzel",
-    "+ ~340 others (164 research teams, 34 peer evaluators)"
-  ],
-  "year": 2024,
-  "venue": "The Journal of Finance 79(3), 2339-2390",
-  "area": [
-    "analytic-variability",
-    "metascience"
-  ],
-  "identifiers": {
-    "doi": "10.1111/jofi.13337",
-    "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.13337"
+ "schema_version": "1.0",
+ "id": "menkveld2024-nonstandard-errors",
+ "title": "Nonstandard Errors",
+ "authors": [
+  "Albert J. Menkveld",
+  "Anna Dreber",
+  "Felix Holzmeister",
+  "Juergen Huber",
+  "Magnus Johannesson",
+  "Michael Kirchler",
+  "Sebastian Neusuess",
+  "Michael Razen",
+  "Utz Weitzel",
+  "+ ~340 others (164 research teams, 34 peer evaluators)"
+ ],
+ "year": 2024,
+ "venue": "The Journal of Finance 79(3), 2339-2390",
+ "area": [
+  "analytic-variability",
+  "metascience"
+ ],
+ "identifiers": {
+  "doi": "10.1111/jofi.13337",
+  "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.13337"
+ },
+ "record_status": "active",
+ "read_depth": "skimmed",
+ "cost": {
+  "tool_calls": 5,
+  "bytes_downloaded": 3048543,
+  "compute_notes": "Two independent PDF mirrors fetched (1.33 MB and 1.71 MB); BOTH are truncated to pages 2339-2350 of a 52-page article. Wiley's own pdfdirect returns a 5.5 kB challenge page. So this record covers the title matter, abstract, introduction, statistical framework and the complete Summary of Findings (p. 2345), and nothing after the start of Section I. read_depth is `skimmed` for that reason and every claim below carries our_assessment `unverified`. The derived cross-corpus arithmetic is ours and is verified.",
+  "session": "2026-08-12 maria"
+ },
+ "triggers": [
+  "how large is researcher-induced dispersion compared to sampling error",
+  "nonstandard errors definition",
+  "does peer feedback reduce disagreement between analysts",
+  "does research quality reduce analyst dispersion",
+  "many analysts study in finance",
+  "why use interquartile range instead of standard deviation across teams",
+  "do researchers know how much analysts disagree"
+ ],
+ "methods": [
+  "many-analysts-design",
+  "robust-dispersion-iqr",
+  "quantile-regression",
+  "multiverse-analysis",
+  "peer-feedback-staged-design",
+  "incentivised-belief-elicitation"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Researcher-induced dispersion (the 'nonstandard error', defined as the interquartile range of estimates across research teams) is similar in magnitude to sampling error. For RT-H1, the NSE is 6.7 percentage points against a median across-team SE of 2.5%, whose Gaussian-implied IQR is 3.4.",
+   "scope": "164 research teams, six pre-specified hypotheses, 17 years of EuroStoxx 50 index futures data supplied by Deutsche Boerse. Numbers quoted are for RT-H1 ('market efficiency has not changed over time'); the paper states dispersion is similar for the others.",
+   "quantities": [
+    {
+     "name": "n_research_teams",
+     "value": 164,
+     "n": 164,
+     "source": "p. 2343"
+    },
+    {
+     "name": "n_peer_evaluators",
+     "value": 34,
+     "n": 34,
+     "source": "p. 2343"
+    },
+    {
+     "name": "median_estimate_RT_H1",
+     "value": -1.1,
+     "unit": "% annual change",
+     "n": 164,
+     "source": "p. 2345"
+    },
+    {
+     "name": "nonstandard_error_IQR_RT_H1",
+     "value": 6.7,
+     "unit": "percentage points",
+     "n": 164,
+     "source": "p. 2345"
+    },
+    {
+     "name": "interdecile_range_RT_H1",
+     "value": 27.3,
+     "unit": "percentage points",
+     "n": 164,
+     "source": "p. 2345"
+    },
+    {
+     "name": "median_standard_error_RT_H1",
+     "value": 2.5,
+     "unit": "%",
+     "n": 164,
+     "source": "p. 2345"
+    },
+    {
+     "name": "researcher_dispersion_over_median_SE",
+     "value": 1.72,
+     "unit": "ratio",
+     "n": 164,
+     "baseline": "the identical robust recipe on Breznau et al.'s CRI gives 1.72",
+     "source": "our arithmetic, reanalysis/13_cross_corpus_menkveld.py"
+    },
+    {
+     "name": "n_teams_reporting_significance_range",
+     "value": "6 of 164 (RT-H6) to 125 of 164 (RT-H3)",
+     "n": 164,
+     "source": "p. 2345, family-wise level 0.5%"
+    },
+    {
+     "name": "single_extreme_reported_estimate",
+     "value": 74491,
+     "unit": "%",
+     "n": 1,
+     "source": "p. 2345 footnote 7; this one team moves the mean to 446.3% and the SD to 5817.5%"
+    }
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "why": "Quoted verbatim from p. 2345; no artifact was fetched and the results sections after p. 2350 were not obtainable. The derived ratio 1.72 is our own arithmetic and IS verified: tau = sqrt((IQR/1.349)^2 - medianSE^2) = 4.29pp, divided by 2.5. Applying that same recipe to the 1,252 CRI models gives 1.72 as well. Agreement to three significant figures across two fields is luck -- CRI's estimator-dependent range is 0.71 (DerSimonian-Laird) to 3.67 (Paule-Mandel) -- but agreement in order of magnitude is the finding, and it is the first time these two corpora have been put on one scale.",
+    "by": "maria"
+   }
   },
-  "record_status": "active",
-  "read_depth": "skimmed",
-  "cost": {
-    "tool_calls": 5,
-    "bytes_downloaded": 3048543,
-    "compute_notes": "Two independent PDF mirrors fetched (1.33 MB and 1.71 MB); BOTH are truncated to pages 2339-2350 of a 52-page article. Wiley's own pdfdirect returns a 5.5 kB challenge page. So this record covers the title matter, abstract, introduction, statistical framework and the complete Summary of Findings (p. 2345), and nothing after the start of Section I. read_depth is `skimmed` for that reason and every claim below carries our_assessment `unverified`. The derived cross-corpus arithmetic is ours and is verified.",
-    "session": "2026-08-12 maria"
+  {
+   "id": "c2",
+   "statement": "Higher quality coincides with smaller dispersion: a one-SD increase in reproducibility reduces NSEs by 25.0% and a one-SD increase in peer-evaluator rating reduces them by 33.3%, while a one-SD increase in team quality raises them by 2.8%.",
+   "scope": "Quantile regressions on the IQR; the paper notes the team-quality effect is small in economic magnitude.",
+   "quantities": [
+    {
+     "name": "nse_reduction_per_sd_reproducibility",
+     "value": -25.0,
+     "unit": "%",
+     "n": 164,
+     "source": "p. 2345"
+    },
+    {
+     "name": "nse_reduction_per_sd_peer_rating",
+     "value": -33.3,
+     "unit": "%",
+     "n": 164,
+     "source": "p. 2345"
+    },
+    {
+     "name": "nse_change_per_sd_team_quality",
+     "value": 2.8,
+     "unit": "%",
+     "n": 164,
+     "source": "p. 2345"
+    },
+    {
+     "name": "idr_reduction_per_sd_quality_measures",
+     "value": "13.3 / 17.9 / 11.9",
+     "unit": "%",
+     "n": 164,
+     "source": "p. 2345"
+    }
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "why": "Unverified as reported, but important for what it does to a NEIGHBOURING record. Breznau et al. 2022 concluded that researcher competencies do not explain outcome variation, from eight correlations at n = 71 teams; we showed those nulls exclude only |R| > 0.36. Menkveld et al., with n = 164, DO find quality-dispersion associations. The two are not in conflict: the sociology study could not have detected effects of this size. That is exactly the reading our breznau2022 c3 assessment argued for, now with an external instance rather than only an interval.",
+    "by": "maria"
+   }
   },
-  "triggers": [
-    "how large is researcher-induced dispersion compared to sampling error",
-    "nonstandard errors definition",
-    "does peer feedback reduce disagreement between analysts",
-    "does research quality reduce analyst dispersion",
-    "many analysts study in finance",
-    "why use interquartile range instead of standard deviation across teams",
-    "do researchers know how much analysts disagree"
-  ],
-  "methods": [
-    "many-analysts-design",
-    "robust-dispersion-iqr",
-    "quantile-regression",
-    "multiverse-analysis",
-    "peer-feedback-staged-design",
-    "incentivised-belief-elicitation"
-  ],
-  "claims": [
+  {
+   "id": "c3",
+   "statement": "Peer feedback reduces dispersion: no single stage does so significantly, but the four stages together reduce NSEs by 47.2% and interdecile ranges by 68.2%.",
+   "scope": "Staged design in which 34 peer evaluators each assessed about 10 papers in a single-blind process.",
+   "quantities": [
     {
-      "id": "c1",
-      "statement": "Researcher-induced dispersion (the 'nonstandard error', defined as the interquartile range of estimates across research teams) is similar in magnitude to sampling error. For RT-H1, the NSE is 6.7 percentage points against a median across-team SE of 2.5%, whose Gaussian-implied IQR is 3.4.",
-      "scope": "164 research teams, six pre-specified hypotheses, 17 years of EuroStoxx 50 index futures data supplied by Deutsche Boerse. Numbers quoted are for RT-H1 ('market efficiency has not changed over time'); the paper states dispersion is similar for the others.",
-      "quantities": [
-        {
-          "name": "n_research_teams",
-          "value": 164,
-          "n": 164,
-          "source": "p. 2343"
-        },
-        {
-          "name": "n_peer_evaluators",
-          "value": 34,
-          "n": 34,
-          "source": "p. 2343"
-        },
-        {
-          "name": "median_estimate_RT_H1",
-          "value": -1.1,
-          "unit": "% annual change",
-          "n": 164,
-          "source": "p. 2345"
-        },
-        {
-          "name": "nonstandard_error_IQR_RT_H1",
-          "value": 6.7,
-          "unit": "percentage points",
-          "n": 164,
-          "source": "p. 2345"
-        },
-        {
-          "name": "interdecile_range_RT_H1",
-          "value": 27.3,
-          "unit": "percentage points",
-          "n": 164,
-          "source": "p. 2345"
-        },
-        {
-          "name": "median_standard_error_RT_H1",
-          "value": 2.5,
-          "unit": "%",
-          "n": 164,
-          "source": "p. 2345"
-        },
-        {
-          "name": "researcher_dispersion_over_median_SE",
-          "value": 1.72,
-          "unit": "ratio",
-          "n": 164,
-          "baseline": "the identical robust recipe on Breznau et al.'s CRI gives 1.72",
-          "source": "our arithmetic, reanalysis/13_cross_corpus_menkveld.py"
-        },
-        {
-          "name": "n_teams_reporting_significance_range",
-          "value": "6 of 164 (RT-H6) to 125 of 164 (RT-H3)",
-          "n": 164,
-          "source": "p. 2345, family-wise level 0.5%"
-        },
-        {
-          "name": "single_extreme_reported_estimate",
-          "value": 74491,
-          "unit": "%",
-          "n": 1,
-          "source": "p. 2345 footnote 7; this one team moves the mean to 446.3% and the SD to 5817.5%"
-        }
-      ],
-      "our_assessment": {
-        "status": "unverified",
-        "why": "Quoted verbatim from p. 2345; no artifact was fetched and the results sections after p. 2350 were not obtainable. The derived ratio 1.72 is our own arithmetic and IS verified: tau = sqrt((IQR/1.349)^2 - medianSE^2) = 4.29pp, divided by 2.5. Applying that same recipe to the 1,252 CRI models gives 1.72 as well. Agreement to three significant figures across two fields is luck -- CRI's estimator-dependent range is 0.71 (DerSimonian-Laird) to 3.67 (Paule-Mandel) -- but agreement in order of magnitude is the finding, and it is the first time these two corpora have been put on one scale.",
-        "by": "maria"
-      }
+     "name": "nse_reduction_all_four_peer_stages",
+     "value": -47.2,
+     "unit": "%",
+     "n": 164,
+     "source": "p. 2345"
     },
     {
-      "id": "c2",
-      "statement": "Higher quality coincides with smaller dispersion: a one-SD increase in reproducibility reduces NSEs by 25.0% and a one-SD increase in peer-evaluator rating reduces them by 33.3%, while a one-SD increase in team quality raises them by 2.8%.",
-      "scope": "Quantile regressions on the IQR; the paper notes the team-quality effect is small in economic magnitude.",
-      "quantities": [
-        {
-          "name": "nse_reduction_per_sd_reproducibility",
-          "value": -25.0,
-          "unit": "%",
-          "n": 164,
-          "source": "p. 2345"
-        },
-        {
-          "name": "nse_reduction_per_sd_peer_rating",
-          "value": -33.3,
-          "unit": "%",
-          "n": 164,
-          "source": "p. 2345"
-        },
-        {
-          "name": "nse_change_per_sd_team_quality",
-          "value": 2.8,
-          "unit": "%",
-          "n": 164,
-          "source": "p. 2345"
-        },
-        {
-          "name": "idr_reduction_per_sd_quality_measures",
-          "value": "13.3 / 17.9 / 11.9",
-          "unit": "%",
-          "n": 164,
-          "source": "p. 2345"
-        }
-      ],
-      "our_assessment": {
-        "status": "unverified",
-        "why": "Unverified as reported, but important for what it does to a NEIGHBOURING record. Breznau et al. 2022 concluded that researcher competencies do not explain outcome variation, from eight correlations at n = 71 teams; we showed those nulls exclude only |R| > 0.36. Menkveld et al., with n = 164, DO find quality-dispersion associations. The two are not in conflict: the sociology study could not have detected effects of this size. That is exactly the reading our breznau2022 c3 assessment argued for, now with an external instance rather than only an interval.",
-        "by": "maria"
-      }
-    },
-    {
-      "id": "c3",
-      "statement": "Peer feedback reduces dispersion: no single stage does so significantly, but the four stages together reduce NSEs by 47.2% and interdecile ranges by 68.2%.",
-      "scope": "Staged design in which 34 peer evaluators each assessed about 10 papers in a single-blind process.",
-      "quantities": [
-        {
-          "name": "nse_reduction_all_four_peer_stages",
-          "value": -47.2,
-          "unit": "%",
-          "n": 164,
-          "source": "p. 2345"
-        },
-        {
-          "name": "idr_reduction_all_four_peer_stages",
-          "value": -68.2,
-          "unit": "%",
-          "n": 164,
-          "source": "p. 2345"
-        }
-      ],
-      "our_assessment": {
-        "status": "unverified",
-        "why": "The single most consequential number in this record for how work is organised, and the one most worth verifying if the full article becomes obtainable. It is the only quasi-experimental evidence in this whole area that anything REDUCES analytic dispersion. Note the shape: each stage individually insignificant, the four together large -- which is the pattern that most often turns out to be a multiple-comparisons artifact read in reverse, and which cannot be checked from the pages we have.",
-        "by": "maria"
-      }
-    },
-    {
-      "id": "c4",
-      "statement": "Research teams underestimate the dispersion in estimates across teams, measured in an incentivised belief survey.",
-      "scope": "Belief elicitation before results were revealed.",
-      "our_assessment": {
-        "status": "unverified",
-        "why": "No numbers given in the pages obtained.",
-        "by": "maria"
-      }
-    },
-    {
-      "id": "c5",
-      "statement": "The distribution of estimates across analysts is heavy-tailed, which is why a robust dispersion measure is the right instrument: the authors adopt the IQR precisely because 'the distribution of the SD could exhibit fat tails and thus be prone to outliers'.",
-      "scope": "Statistical framework, p. 2344, plus footnote 7's single team reporting +74,491%.",
-      "quantities": [
-        {
-          "name": "interdecile_over_interquartile_ratio",
-          "value": 4.07,
-          "unit": "ratio",
-          "n": 164,
-          "baseline": "Gaussian value 1.90; CRI model-level 2.79; CRI team-level 2.08",
-          "source": "our arithmetic from p. 2345, reanalysis/13_cross_corpus_menkveld.py"
-        }
-      ],
-      "our_assessment": {
-        "status": "unverified",
-        "why": "Their claim, at skimmed depth, so unverified -- the validator rejected an 'accepted-narrower-scope' here and was right to. What WE verified is a different proposition and now lives where it belongs, as maria2026-analytic-variability-reanalysis#c13: the Gaussian IDR/IQR is 1.90 at any n, #fincap RT-H1 gives 4.07 and the CRI models give 2.79 (outside the simulated 95% band 1.79-2.01 at n=1252), so heavy tails travel between corpora; and in CRI they live at the model level, not the analyst level (team-level 2.08, inside the band at n=71). Keeping the two apart is the assertion/provenance split the schema is built on.",
-        "by": "maria"
-      }
+     "name": "idr_reduction_all_four_peer_stages",
+     "value": -68.2,
+     "unit": "%",
+     "n": 164,
+     "source": "p. 2345"
     }
-  ],
-  "artifacts": [
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "why": "The single most consequential number in this record for how work is organised, and the one most worth verifying if the full article becomes obtainable. It is the only quasi-experimental evidence in this whole area that anything REDUCES analytic dispersion. Note the shape: each stage individually insignificant, the four together large -- which is the pattern that most often turns out to be a multiple-comparisons artifact read in reverse, and which cannot be checked from the pages we have.",
+    "by": "maria"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "Research teams underestimate the dispersion in estimates across teams, measured in an incentivised belief survey.",
+   "scope": "Belief elicitation before results were revealed.",
+   "our_assessment": {
+    "status": "unverified",
+    "why": "No numbers given in the pages obtained.",
+    "by": "maria"
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "The distribution of estimates across analysts is heavy-tailed, which is why a robust dispersion measure is the right instrument: the authors adopt the IQR precisely because 'the distribution of the SD could exhibit fat tails and thus be prone to outliers'.",
+   "scope": "Statistical framework, p. 2344, plus footnote 7's single team reporting +74,491%.",
+   "quantities": [
     {
-      "id": "a1",
-      "role": "preregistration",
-      "locator": "https://osf.io/h82aj/",
-      "status": "not-checked",
-      "checked": {
-        "on": "2026-08-12",
-        "by": "maria",
-        "how": "not fetched",
-        "result": "Pre-analysis plan, cited on p. 2347. Appendix B is said to reconcile the published results with the PAP results, which makes this the artifact to check first: the paper openly says it changed methods after the PAP (robust methods, multiple-testing correction, multiverse analysis added)."
-      }
-    },
-    {
-      "id": "a2",
-      "role": "supplement",
-      "locator": "https://fincap.academy",
-      "status": "not-checked",
-      "checked": {
-        "on": "2026-08-12",
-        "by": "maria",
-        "how": "not fetched",
-        "result": "Project website. Likely route to the team-level estimates and standard errors, which is what a replication of our precision-versus-conclusion split would need."
-      }
-    },
-    {
-      "id": "a3",
-      "role": "in-paper-table",
-      "status": "present-but-insufficient",
-      "local_path": "artifacts/NOTES_quoted_numbers.md",
-      "checked": {
-        "on": "2026-08-12",
-        "by": "maria",
-        "how": "read pages 2339-2350 of two independent PDF mirrors; transcribed the Summary of Findings numbers by hand",
-        "result": "Two mirrors, both truncated at p. 2350 of 2390. The summary numbers are complete and self-consistent; everything from Section I.A onward is missing, including all tables and the multiverse analysis. Sufficient to place this corpus on the same scale as CRI, insufficient to check any regression."
-      }
+     "name": "interdecile_over_interquartile_ratio",
+     "value": 4.07,
+     "unit": "ratio",
+     "n": 164,
+     "baseline": "Gaussian value 1.90; CRI model-level 2.79; CRI team-level 2.08",
+     "source": "our arithmetic from p. 2345, reanalysis/13_cross_corpus_menkveld.py"
     }
-  ],
-  "relations": [
-    {
-      "type": "cito:agreesWith",
-      "target": "maria2026-analytic-variability-reanalysis",
-      "why": "Independently, in a different field, with 164 teams instead of 71 and a robust rather than a variance-based instrument: researcher-induced dispersion is of the same order as sampling error, and the estimate distribution is heavy-tailed. Our reanalysis reached both by fighting a variance decomposition that was the wrong tool; they simply chose the right tool at the design stage."
-    },
-    {
-      "type": "cito:qualifies",
-      "target": "breznau2022-hidden-universe",
-      "why": "Their quality-versus-dispersion associations at n = 164 are of a size Breznau et al.'s n = 71 design could not have detected. The sociology null and the finance effect are compatible; reading the null as 'expertise does not matter' is not."
-    },
-    {
-      "type": "cito:obtainsBackgroundFrom",
-      "target": "breznau2022-hidden-universe",
-      "why": "Menkveld et al. cite Breznau et al. as prior art (p. 2347, and again in footnote 1 on translating conceptual into empirical research questions). The citation runs finance -> sociology; nothing runs the other way, and neither cites the LLM-monoculture literature."
-    },
-    {
-      "type": "cito:usesMethodIn",
-      "target": "maria2026-happiness-income-spread",
-      "why": "PROPOSED BY kb.py suggest, accepted on the method rather than the substance: Menkveld et al. adopt the interquartile range as the dispersion measure precisely because the cross-analyst distribution is heavy-tailed, and this record uses the same robust dispersion logic on a within-sample rather than a cross-analyst distribution."
-    },
-    {
-      "type": "cito:qualifies",
-      "target": "maria2026-mbp-variability-ratio",
-      "why": "Reciprocal. The choice of a dispersion measure is treated as technical in both literatures; here it reverses the conclusion, which argues that dispersion measures deserve the scrutiny given to point estimates."
-    }
-  ],
-  "open_questions": [
-    "Pages 2351-2390 were not obtainable from any mirror tried. Everything after the Summary of Findings -- the design detail, all tables, the multiverse analysis, Appendix B's reconciliation with the pre-analysis plan -- is unread.",
-    "Do the team-level estimates AND standard errors exist as a downloadable table? If so this is the corpus on which to replicate the precision-versus-conclusion split (maria2026-analytic-variability-reanalysis#c7), and it has 164 clusters instead of 71. fincap.academy and osf.io/h82aj are the places to look.",
-    "The peer-feedback result (c3) has the shape of a multiple-comparisons artifact read backwards: four individually insignificant stages, significant in aggregate. Cannot be checked from the pages obtained, and it is the most actionable claim in the area."
-  ],
-  "curation": {
-    "author": "maria",
-    "created": "2026-08-12",
-    "verified": "2026-08-12",
-    "notes_file": "NOTES.md"
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "why": "Their claim, at skimmed depth, so unverified -- the validator rejected an 'accepted-narrower-scope' here and was right to. What WE verified is a different proposition and now lives where it belongs, as maria2026-analytic-variability-reanalysis#c13: the Gaussian IDR/IQR is 1.90 at any n, #fincap RT-H1 gives 4.07 and the CRI models give 2.79 (outside the simulated 95% band 1.79-2.01 at n=1252), so heavy tails travel between corpora; and in CRI they live at the model level, not the analyst level (team-level 2.08, inside the band at n=71). Keeping the two apart is the assertion/provenance split the schema is built on.",
+    "by": "maria"
+   }
   }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "preregistration",
+   "locator": "https://osf.io/h82aj/",
+   "status": "not-checked",
+   "checked": {
+    "on": "2026-08-12",
+    "by": "maria",
+    "how": "not fetched",
+    "result": "Pre-analysis plan, cited on p. 2347. Appendix B is said to reconcile the published results with the PAP results, which makes this the artifact to check first: the paper openly says it changed methods after the PAP (robust methods, multiple-testing correction, multiverse analysis added)."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "supplement",
+   "locator": "https://fincap.academy",
+   "status": "not-checked",
+   "checked": {
+    "on": "2026-08-12",
+    "by": "maria",
+    "how": "not fetched",
+    "result": "Project website. Likely route to the team-level estimates and standard errors, which is what a replication of our precision-versus-conclusion split would need."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "in-paper-table",
+   "status": "present-but-insufficient",
+   "local_path": "artifacts/NOTES_quoted_numbers.md",
+   "checked": {
+    "on": "2026-08-12",
+    "by": "maria",
+    "how": "read pages 2339-2350 of two independent PDF mirrors; transcribed the Summary of Findings numbers by hand",
+    "result": "Two mirrors, both truncated at p. 2350 of 2390. The summary numbers are complete and self-consistent; everything from Section I.A onward is missing, including all tables and the multiverse analysis. Sufficient to place this corpus on the same scale as CRI, insufficient to check any regression."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:agreesWith",
+   "target": "maria2026-analytic-variability-reanalysis",
+   "why": "Independently, in a different field, with 164 teams instead of 71 and a robust rather than a variance-based instrument: researcher-induced dispersion is of the same order as sampling error, and the estimate distribution is heavy-tailed. Our reanalysis reached both by fighting a variance decomposition that was the wrong tool; they simply chose the right tool at the design stage."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "breznau2022-hidden-universe",
+   "why": "Their quality-versus-dispersion associations at n = 164 are of a size Breznau et al.'s n = 71 design could not have detected. The sociology null and the finance effect are compatible; reading the null as 'expertise does not matter' is not."
+  },
+  {
+   "type": "cito:obtainsBackgroundFrom",
+   "target": "breznau2022-hidden-universe",
+   "why": "Menkveld et al. cite Breznau et al. as prior art (p. 2347, and again in footnote 1 on translating conceptual into empirical research questions). The citation runs finance -> sociology; nothing runs the other way, and neither cites the LLM-monoculture literature."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "maria2026-happiness-income-spread",
+   "why": "PROPOSED BY kb.py suggest, accepted on the method rather than the substance: Menkveld et al. adopt the interquartile range as the dispersion measure precisely because the cross-analyst distribution is heavy-tailed, and this record uses the same robust dispersion logic on a within-sample rather than a cross-analyst distribution."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "maria2026-mbp-variability-ratio",
+   "why": "Reciprocal. The choice of a dispersion measure is treated as technical in both literatures; here it reverses the conclusion, which argues that dispersion measures deserve the scrutiny given to point estimates."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "botviniknezer2020-narps",
+   "why": "Menkveld's standard/nonstandard error split is the right vocabulary for NARPS: the team random intercept (sigma 0.97-1.32 on the logit scale) is a nonstandard error in the CONCLUSION, and NARPS's own voxelwise tau of 1.13-1.85 is one in the ESTIMATE, against a sampling SD of at least 1.0."
+  }
+ ],
+ "open_questions": [
+  "Pages 2351-2390 were not obtainable from any mirror tried. Everything after the Summary of Findings -- the design detail, all tables, the multiverse analysis, Appendix B's reconciliation with the pre-analysis plan -- is unread.",
+  "Do the team-level estimates AND standard errors exist as a downloadable table? If so this is the corpus on which to replicate the precision-versus-conclusion split (maria2026-analytic-variability-reanalysis#c7), and it has 164 clusters instead of 71. fincap.academy and osf.io/h82aj are the places to look.",
+  "The peer-feedback result (c3) has the shape of a multiple-comparisons artifact read backwards: four individually insignificant stages, significant in aggregate. Cannot be checked from the pages obtained, and it is the most actionable claim in the area."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-08-12",
+  "verified": "2026-08-12",
+  "notes_file": "NOTES.md"
+ }
 }

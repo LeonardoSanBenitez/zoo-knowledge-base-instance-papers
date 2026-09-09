@@ -1,0 +1,17 @@
+# The 52.3 MB source archive and the heavy binaries inside it are NOT committed.
+# `fetch_cmd` in paper.json artifact a1 regenerates them:
+#   curl -sL -o artifacts/narps_results.tgz \
+#     https://zenodo.org/api/records/3709275/files/results.tgz/content
+#   mkdir -p artifacts/narps_results && tar xzf artifacts/narps_results.tgz -C artifacts/narps_results
+# What IS committed is the 11 MB of tables the reanalysis actually reads, so the
+# scripts run from a fresh clone without the download.
+artifacts/narps_results.tgz
+artifacts/narps_results/**/*.nii.gz
+artifacts/narps_results/**/*.png
+artifacts/narps_results/**/*.pdf
+artifacts/narps_results/**/*.RData
+artifacts/narps_results/**/*.pkl
+artifacts/narps_results/**/*.html
+
+# Upstream code, cloned for reading only; it is a git repository of its own.
+artifacts/narps-repo/

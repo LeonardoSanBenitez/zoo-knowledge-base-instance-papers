@@ -1,0 +1,8 @@
+Hypothesis #	1	2	3	4	5	6	7	8	9
+Spearman rho	0.58	0.56	0.58	0.64	0.47	0.74	0.23	0.37	0.31
+p-value	0.000	0.000	0.000	0.000	0.000	0.000	0.104	0.007	0.020
+Share of consistent holdings	0.71	0.68	0.70	0.80	0.89	0.74	0.80	0.80	0.75
+Z (signed rank test)	3.40	2.78	2.82	4.24	6.81	3.24	4.34	4.34	3.64
+p-value (signed rank test)	0.000	0.003	0.002	0.000	0.000	0.001	0.000	0.000	0.000
+Average holdings if consistent	5.61	21.14	25.80	13.11	-115.50	7.31	34.61	24.23	23.54
+Average holdings if inconsistent	1.04	-6.90	-8.03	0.03	18.26	1.58	-14.63	-8.29	-11.61

@@ -1,0 +1,102 @@
+Running thresholding simulation
+2020-03-13T00:22:50.495760
+
+
+Hypothesis: 1
+Region (3402 voxels): vmpfc
+ROI image: /tmp/data/figures/ThresholdSimulation/vmpfc_mask.nii.gz
+
+Proportion teams with nonzero activation:
+$p < 0.001$, $k > 10$    0.734375
+FDR                      0.593750
+Activated voxels in ALE map: 1184
+Activated voxels in consensus map: 0
+
+
+Hypothesis: 2
+Region (3402 voxels): vmpfc
+ROI image: /tmp/data/figures/ThresholdSimulation/vmpfc_mask.nii.gz
+
+Proportion teams with nonzero activation:
+$p < 0.001$, $k > 10$    0.390625
+FDR                      0.765625
+Activated voxels in ALE map: 144
+Activated voxels in consensus map: 7
+
+
+Hypothesis: 3
+Region (173 voxels): ventralstriatum
+ROI image: /tmp/data/figures/ThresholdSimulation/ventralstriatum_mask.nii.gz
+
+Proportion teams with nonzero activation:
+$p < 0.001$, $k > 10$    0.15625
+FDR                      0.34375
+Activated voxels in ALE map: 56
+Activated voxels in consensus map: 0
+
+
+Hypothesis: 4
+Region (173 voxels): ventralstriatum
+ROI image: /tmp/data/figures/ThresholdSimulation/ventralstriatum_mask.nii.gz
+
+Proportion teams with nonzero activation:
+$p < 0.001$, $k > 10$    0.234375
+FDR                      0.609375
+Activated voxels in ALE map: 65
+Activated voxels in consensus map: 7
+
+
+Hypothesis: 5
+Region (3402 voxels): vmpfc
+ROI image: /tmp/data/figures/ThresholdSimulation/vmpfc_mask.nii.gz
+
+Proportion teams with nonzero activation:
+$p < 0.001$, $k > 10$    0.906250
+FDR                      0.859375
+Activated voxels in ALE map: 2815
+Activated voxels in consensus map: 2101
+
+
+Hypothesis: 6
+Region (3402 voxels): vmpfc
+ROI image: /tmp/data/figures/ThresholdSimulation/vmpfc_mask.nii.gz
+
+Proportion teams with nonzero activation:
+$p < 0.001$, $k > 10$    0.562500
+FDR                      0.359375
+Activated voxels in ALE map: 2265
+Activated voxels in consensus map: 39
+
+
+Hypothesis: 7
+Region (672 voxels): amygdala
+ROI image: /tmp/data/figures/ThresholdSimulation/amygdala_mask.nii.gz
+
+Proportion teams with nonzero activation:
+$p < 0.001$, $k > 10$    0.062500
+FDR                      0.171875
+Activated voxels in ALE map: 0
+Activated voxels in consensus map: 0
+
+
+Hypothesis: 8
+Region (672 voxels): amygdala
+ROI image: /tmp/data/figures/ThresholdSimulation/amygdala_mask.nii.gz
+
+Proportion teams with nonzero activation:
+$p < 0.001$, $k > 10$    0.015625
+FDR                      0.125000
+Activated voxels in ALE map: 4
+Activated voxels in consensus map: 0
+
+
+Hypothesis: 9
+Region (672 voxels): amygdala
+ROI image: /tmp/data/figures/ThresholdSimulation/amygdala_mask.nii.gz
+
+Proportion teams with nonzero activation:
+$p < 0.001$, $k > 10$    0.046875
+FDR                      0.093750
+Activated voxels in ALE map: 2
+Activated voxels in consensus map: 0
+

@@ -642,6 +642,11 @@
    "type": "zoo:sharesUnstatedAssumptionWith",
    "target": "jo2026-subjectivity",
    "why": "Both turn on the same unexamined step: that a number elicited by one instrument measures a construct that exists independently of the instrument. Here the instrument moves the answer by six orders of magnitude."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "botviniknezer2020-narps",
+   "why": "Both are structured elicitations of expert belief scored against an outcome, and in both the interesting failure is calibration rather than discrimination. NARPS quantifies it: 74% of the team prediction market's squared error is one constant offset, and removing it makes the market the best forecaster available."
   }
  ],
  "open_questions": [

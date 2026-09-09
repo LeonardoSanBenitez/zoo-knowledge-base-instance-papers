@@ -1,0 +1,669 @@
+{
+ "per_hypothesis": {
+  "1": {
+   "n_teams": 64,
+   "n_pairs": 2016,
+   "p_yes": 0.34375,
+   "chance_agreement_a0": 0.548828125,
+   "observed_agreement": 0.5416666666666666,
+   "excess_over_chance": -0.00716145833333337,
+   "auc_mapcorr_predicts_agreement": 0.4619438101580959,
+   "agreement_in_top_decile_of_map_corr": 0.44554455445544555,
+   "median_r_in_top_decile": 0.8769404404721665,
+   "disagreement_in_top_decile": 0.5544554455445545,
+   "deciles": [
+    {
+     "decile": 1,
+     "r_mid": -0.3731872016719155,
+     "n_pairs": 202,
+     "agreement": 0.5643564356435643
+    },
+    {
+     "decile": 2,
+     "r_mid": -0.1329645837589958,
+     "n_pairs": 201,
+     "agreement": 0.527363184079602
+    },
+    {
+     "decile": 3,
+     "r_mid": 0.09511272570934001,
+     "n_pairs": 202,
+     "agreement": 0.599009900990099
+    },
+    {
+     "decile": 4,
+     "r_mid": 0.2747494022796407,
+     "n_pairs": 201,
+     "agreement": 0.6417910447761194
+    },
+    {
+     "decile": 5,
+     "r_mid": 0.46366864470327773,
+     "n_pairs": 202,
+     "agreement": 0.5594059405940595
+    },
+    {
+     "decile": 6,
+     "r_mid": 0.5681078653342982,
+     "n_pairs": 201,
+     "agreement": 0.5323383084577115
+    },
+    {
+     "decile": 7,
+     "r_mid": 0.6532743723307852,
+     "n_pairs": 202,
+     "agreement": 0.5495049504950495
+    },
+    {
+     "decile": 8,
+     "r_mid": 0.7246158929662478,
+     "n_pairs": 201,
+     "agreement": 0.48756218905472637
+    },
+    {
+     "decile": 9,
+     "r_mid": 0.7974953426629163,
+     "n_pairs": 202,
+     "agreement": 0.5099009900990099
+    },
+    {
+     "decile": 10,
+     "r_mid": 0.8769404404721665,
+     "n_pairs": 202,
+     "agreement": 0.44554455445544555
+    }
+   ]
+  },
+  "2": {
+   "n_teams": 64,
+   "n_pairs": 2016,
+   "p_yes": 0.21875,
+   "chance_agreement_a0": 0.658203125,
+   "observed_agreement": 0.6527777777777778,
+   "excess_over_chance": -0.00542534722222221,
+   "auc_mapcorr_predicts_agreement": 0.5736593573599653,
+   "agreement_in_top_decile_of_map_corr": 0.6188118811881188,
+   "median_r_in_top_decile": 0.8615685550410727,
+   "disagreement_in_top_decile": 0.3811881188118812,
+   "deciles": [
+    {
+     "decile": 1,
+     "r_mid": 0.11791165386655264,
+     "n_pairs": 202,
+     "agreement": 0.49504950495049505
+    },
+    {
+     "decile": 2,
+     "r_mid": 0.2608982112197063,
+     "n_pairs": 201,
+     "agreement": 0.44776119402985076
+    },
+    {
+     "decile": 3,
+     "r_mid": 0.34156636288419034,
+     "n_pairs": 202,
+     "agreement": 0.5594059405940595
+    },
+    {
+     "decile": 4,
+     "r_mid": 0.41418831890633,
+     "n_pairs": 201,
+     "agreement": 0.7512437810945274
+    },
+    {
+     "decile": 5,
+     "r_mid": 0.49719327953224557,
+     "n_pairs": 202,
+     "agreement": 0.7970297029702971
+    },
+    {
+     "decile": 6,
+     "r_mid": 0.5804613458395358,
+     "n_pairs": 201,
+     "agreement": 0.7661691542288557
+    },
+    {
+     "decile": 7,
+     "r_mid": 0.664693569018739,
+     "n_pairs": 202,
+     "agreement": 0.7425742574257426
+    },
+    {
+     "decile": 8,
+     "r_mid": 0.7245624632560348,
+     "n_pairs": 201,
+     "agreement": 0.6517412935323383
+    },
+    {
+     "decile": 9,
+     "r_mid": 0.7822728717951051,
+     "n_pairs": 202,
+     "agreement": 0.698019801980198
+    },
+    {
+     "decile": 10,
+     "r_mid": 0.8615685550410727,
+     "n_pairs": 202,
+     "agreement": 0.6188118811881188
+    }
+   ]
+  },
+  "5": {
+   "n_teams": 64,
+   "n_pairs": 2016,
+   "p_yes": 0.84375,
+   "chance_agreement_a0": 0.736328125,
+   "observed_agreement": 0.7321428571428571,
+   "excess_over_chance": -0.004185267857142905,
+   "auc_mapcorr_predicts_agreement": 0.7616104586971796,
+   "agreement_in_top_decile_of_map_corr": 0.9900990099009901,
+   "median_r_in_top_decile": 0.8910317549858359,
+   "disagreement_in_top_decile": 0.00990099009900991,
+   "deciles": [
+    {
+     "decile": 1,
+     "r_mid": -0.39102613248183865,
+     "n_pairs": 202,
+     "agreement": 0.5594059405940595
+    },
+    {
+     "decile": 2,
+     "r_mid": 0.1450798154435406,
+     "n_pairs": 201,
+     "agreement": 0.3582089552238806
+    },
+    {
+     "decile": 3,
+     "r_mid": 0.35858757595253055,
+     "n_pairs": 202,
+     "agreement": 0.4900990099009901
+    },
+    {
+     "decile": 4,
+     "r_mid": 0.4704109726309693,
+     "n_pairs": 201,
+     "agreement": 0.7114427860696517
+    },
+    {
+     "decile": 5,
+     "r_mid": 0.5524520447482133,
+     "n_pairs": 202,
+     "agreement": 0.7178217821782178
+    },
+    {
+     "decile": 6,
+     "r_mid": 0.621470224184314,
+     "n_pairs": 202,
+     "agreement": 0.8267326732673267
+    },
+    {
+     "decile": 7,
+     "r_mid": 0.6892693354664303,
+     "n_pairs": 201,
+     "agreement": 0.8507462686567164
+    },
+    {
+     "decile": 8,
+     "r_mid": 0.7558651187593197,
+     "n_pairs": 201,
+     "agreement": 0.9253731343283582
+    },
+    {
+     "decile": 9,
+     "r_mid": 0.8222401690881675,
+     "n_pairs": 202,
+     "agreement": 0.8910891089108911
+    },
+    {
+     "decile": 10,
+     "r_mid": 0.8910317549858359,
+     "n_pairs": 202,
+     "agreement": 0.9900990099009901
+    }
+   ]
+  },
+  "6": {
+   "n_teams": 64,
+   "n_pairs": 2016,
+   "p_yes": 0.328125,
+   "chance_agreement_a0": 0.55908203125,
+   "observed_agreement": 0.5520833333333334,
+   "excess_over_chance": -0.00699869791666663,
+   "auc_mapcorr_predicts_agreement": 0.5895572211625618,
+   "agreement_in_top_decile_of_map_corr": 0.5891089108910891,
+   "median_r_in_top_decile": 0.7226472946273119,
+   "disagreement_in_top_decile": 0.4108910891089109,
+   "deciles": [
+    {
+     "decile": 1,
+     "r_mid": -0.3460671624958812,
+     "n_pairs": 202,
+     "agreement": 0.46534653465346537
+    },
+    {
+     "decile": 2,
+     "r_mid": -0.0260125332951898,
+     "n_pairs": 201,
+     "agreement": 0.4129353233830846
+    },
+    {
+     "decile": 3,
+     "r_mid": 0.10828062124265786,
+     "n_pairs": 202,
+     "agreement": 0.4752475247524752
+    },
+    {
+     "decile": 4,
+     "r_mid": 0.1889821531598483,
+     "n_pairs": 201,
+     "agreement": 0.5074626865671642
+    },
+    {
+     "decile": 5,
+     "r_mid": 0.24883767865809914,
+     "n_pairs": 202,
+     "agreement": 0.49504950495049505
+    },
+    {
+     "decile": 6,
+     "r_mid": 0.3143926777396503,
+     "n_pairs": 202,
+     "agreement": 0.5742574257425742
+    },
+    {
+     "decile": 7,
+     "r_mid": 0.3721810280714878,
+     "n_pairs": 201,
+     "agreement": 0.6865671641791045
+    },
+    {
+     "decile": 8,
+     "r_mid": 0.4649602039796414,
+     "n_pairs": 201,
+     "agreement": 0.6567164179104478
+    },
+    {
+     "decile": 9,
+     "r_mid": 0.5783526474679493,
+     "n_pairs": 202,
+     "agreement": 0.6584158415841584
+    },
+    {
+     "decile": 10,
+     "r_mid": 0.7226472946273119,
+     "n_pairs": 202,
+     "agreement": 0.5891089108910891
+    }
+   ]
+  },
+  "7": {
+   "n_teams": 64,
+   "n_pairs": 2016,
+   "p_yes": 0.046875,
+   "chance_agreement_a0": 0.91064453125,
+   "observed_agreement": 0.9092261904761905,
+   "excess_over_chance": -0.0014183407738095344,
+   "auc_mapcorr_predicts_agreement": 0.5701781844090877,
+   "agreement_in_top_decile_of_map_corr": 0.9900990099009901,
+   "median_r_in_top_decile": 0.8991207709968372,
+   "disagreement_in_top_decile": 0.00990099009900991,
+   "deciles": [
+    {
+     "decile": 1,
+     "r_mid": -0.30912631101577626,
+     "n_pairs": 202,
+     "agreement": 0.9653465346534653
+    },
+    {
+     "decile": 2,
+     "r_mid": 0.0303625503491571,
+     "n_pairs": 201,
+     "agreement": 0.9054726368159204
+    },
+    {
+     "decile": 3,
+     "r_mid": 0.34723784332286456,
+     "n_pairs": 202,
+     "agreement": 0.8762376237623762
+    },
+    {
+     "decile": 4,
+     "r_mid": 0.471228203331464,
+     "n_pairs": 201,
+     "agreement": 0.9104477611940298
+    },
+    {
+     "decile": 5,
+     "r_mid": 0.5540317909595533,
+     "n_pairs": 202,
+     "agreement": 0.7920792079207921
+    },
+    {
+     "decile": 6,
+     "r_mid": 0.621209376711132,
+     "n_pairs": 201,
+     "agreement": 0.835820895522388
+    },
+    {
+     "decile": 7,
+     "r_mid": 0.6936545282435036,
+     "n_pairs": 202,
+     "agreement": 0.8613861386138614
+    },
+    {
+     "decile": 8,
+     "r_mid": 0.761868495356967,
+     "n_pairs": 201,
+     "agreement": 0.9701492537313433
+    },
+    {
+     "decile": 9,
+     "r_mid": 0.831870872262173,
+     "n_pairs": 202,
+     "agreement": 0.9851485148514851
+    },
+    {
+     "decile": 10,
+     "r_mid": 0.8991207709968372,
+     "n_pairs": 202,
+     "agreement": 0.9900990099009901
+    }
+   ]
+  },
+  "8": {
+   "n_teams": 64,
+   "n_pairs": 2016,
+   "p_yes": 0.046875,
+   "chance_agreement_a0": 0.91064453125,
+   "observed_agreement": 0.9092261904761905,
+   "excess_over_chance": -0.0014183407738095344,
+   "auc_mapcorr_predicts_agreement": 0.709866771603779,
+   "agreement_in_top_decile_of_map_corr": 0.9801980198019802,
+   "median_r_in_top_decile": 0.7397679306754799,
+   "disagreement_in_top_decile": 0.01980198019801982,
+   "deciles": [
+    {
+     "decile": 1,
+     "r_mid": -0.19867299041434655,
+     "n_pairs": 202,
+     "agreement": 0.7623762376237624
+    },
+    {
+     "decile": 2,
+     "r_mid": 0.0226625254416301,
+     "n_pairs": 201,
+     "agreement": 0.8756218905472637
+    },
+    {
+     "decile": 3,
+     "r_mid": 0.12677375898231835,
+     "n_pairs": 202,
+     "agreement": 0.9306930693069307
+    },
+    {
+     "decile": 4,
+     "r_mid": 0.198044413491252,
+     "n_pairs": 201,
+     "agreement": 0.845771144278607
+    },
+    {
+     "decile": 5,
+     "r_mid": 0.2627756090878426,
+     "n_pairs": 202,
+     "agreement": 0.8217821782178217
+    },
+    {
+     "decile": 6,
+     "r_mid": 0.3319350035014842,
+     "n_pairs": 201,
+     "agreement": 0.9402985074626866
+    },
+    {
+     "decile": 7,
+     "r_mid": 0.40941670551229514,
+     "n_pairs": 202,
+     "agreement": 0.9653465346534653
+    },
+    {
+     "decile": 8,
+     "r_mid": 0.5040007399673414,
+     "n_pairs": 201,
+     "agreement": 0.9800995024875622
+    },
+    {
+     "decile": 9,
+     "r_mid": 0.6081827303518659,
+     "n_pairs": 202,
+     "agreement": 0.9900990099009901
+    },
+    {
+     "decile": 10,
+     "r_mid": 0.7397679306754799,
+     "n_pairs": 202,
+     "agreement": 0.9801980198019802
+    }
+   ]
+  },
+  "9": {
+   "n_teams": 64,
+   "n_pairs": 2016,
+   "p_yes": 0.03125,
+   "chance_agreement_a0": 0.939453125,
+   "observed_agreement": 0.9384920634920635,
+   "excess_over_chance": -0.0009610615079365115,
+   "auc_mapcorr_predicts_agreement": 0.39668723999181615,
+   "agreement_in_top_decile_of_map_corr": 0.9603960396039604,
+   "median_r_in_top_decile": 0.8151761478683306,
+   "disagreement_in_top_decile": 0.03960396039603964,
+   "deciles": [
+    {
+     "decile": 1,
+     "r_mid": -0.6873356894852019,
+     "n_pairs": 202,
+     "agreement": 0.9554455445544554
+    },
+    {
+     "decile": 2,
+     "r_mid": -0.4193533563069247,
+     "n_pairs": 201,
+     "agreement": 0.9601990049751243
+    },
+    {
+     "decile": 3,
+     "r_mid": -0.0773750678151627,
+     "n_pairs": 202,
+     "agreement": 0.9504950495049505
+    },
+    {
+     "decile": 4,
+     "r_mid": 0.040624123700876,
+     "n_pairs": 201,
+     "agreement": 0.9701492537313433
+    },
+    {
+     "decile": 5,
+     "r_mid": 0.21653541000586968,
+     "n_pairs": 202,
+     "agreement": 0.9851485148514851
+    },
+    {
+     "decile": 6,
+     "r_mid": 0.36768017420534116,
+     "n_pairs": 202,
+     "agreement": 0.9356435643564357
+    },
+    {
+     "decile": 7,
+     "r_mid": 0.4896359719254712,
+     "n_pairs": 201,
+     "agreement": 0.9203980099502488
+    },
+    {
+     "decile": 8,
+     "r_mid": 0.5964488405141122,
+     "n_pairs": 201,
+     "agreement": 0.8905472636815921
+    },
+    {
+     "decile": 9,
+     "r_mid": 0.7091233050432546,
+     "n_pairs": 202,
+     "agreement": 0.8564356435643564
+    },
+    {
+     "decile": 10,
+     "r_mid": 0.8151761478683306,
+     "n_pairs": 202,
+     "agreement": 0.9603960396039604
+    }
+   ]
+  }
+ },
+ "pooled": {
+  "n_pairs": 14112,
+  "mean_within_hyp_auc": 0.5805004347689264,
+  "auc_per_hyp": {
+   "1": 0.4619438101580959,
+   "2": 0.5736593573599653,
+   "5": 0.7616104586971796,
+   "6": 0.5895572211625618,
+   "7": 0.5701781844090877,
+   "8": 0.709866771603779,
+   "9": 0.39668723999181615
+  }
+ },
+ "strongly_correlated_pairs": {
+  "0.7": {
+   "1": {
+    "n_pairs": 579,
+    "agreement": 0.4905008635578584,
+    "chance": 0.548828125,
+    "disagreement": 0.5094991364421416
+   },
+   "2": {
+    "n_pairs": 604,
+    "agreement": 0.6572847682119205,
+    "chance": 0.658203125,
+    "disagreement": 0.3427152317880795
+   },
+   "5": {
+    "n_pairs": 680,
+    "agreement": 0.9338235294117647,
+    "chance": 0.736328125,
+    "disagreement": 0.06617647058823528
+   },
+   "6": {
+    "n_pairs": 125,
+    "agreement": 0.616,
+    "chance": 0.55908203125,
+    "disagreement": 0.384
+   },
+   "7": {
+    "n_pairs": 690,
+    "agreement": 0.9710144927536232,
+    "chance": 0.91064453125,
+    "disagreement": 0.02898550724637683
+   },
+   "8": {
+    "n_pairs": 152,
+    "agreement": 0.9736842105263158,
+    "chance": 0.91064453125,
+    "disagreement": 0.02631578947368418
+   },
+   "9": {
+    "n_pairs": 320,
+    "agreement": 0.928125,
+    "chance": 0.939453125,
+    "disagreement": 0.07187500000000002
+   }
+  },
+  "0.8": {
+   "1": {
+    "n_pairs": 294,
+    "agreement": 0.46598639455782315,
+    "chance": 0.548828125,
+    "disagreement": 0.5340136054421769
+   },
+   "2": {
+    "n_pairs": 251,
+    "agreement": 0.6095617529880478,
+    "chance": 0.658203125,
+    "disagreement": 0.3904382470119522
+   },
+   "5": {
+    "n_pairs": 368,
+    "agreement": 0.9483695652173914,
+    "chance": 0.736328125,
+    "disagreement": 0.05163043478260865
+   },
+   "6": {
+    "n_pairs": 45,
+    "agreement": 0.5777777777777777,
+    "chance": 0.55908203125,
+    "disagreement": 0.4222222222222223
+   },
+   "7": {
+    "n_pairs": 405,
+    "agreement": 0.9876543209876543,
+    "chance": 0.91064453125,
+    "disagreement": 0.012345679012345734
+   },
+   "8": {
+    "n_pairs": 54,
+    "agreement": 0.9444444444444444,
+    "chance": 0.91064453125,
+    "disagreement": 0.05555555555555558
+   },
+   "9": {
+    "n_pairs": 124,
+    "agreement": 0.967741935483871,
+    "chance": 0.939453125,
+    "disagreement": 0.032258064516129004
+   }
+  },
+  "0.9": {
+   "1": {
+    "n_pairs": 63,
+    "agreement": 0.4126984126984127,
+    "chance": 0.548828125,
+    "disagreement": 0.5873015873015873
+   },
+   "2": {
+    "n_pairs": 49,
+    "agreement": 0.7142857142857143,
+    "chance": 0.658203125,
+    "disagreement": 0.2857142857142857
+   },
+   "5": {
+    "n_pairs": 81,
+    "agreement": 0.9876543209876543,
+    "chance": 0.736328125,
+    "disagreement": 0.012345679012345734
+   },
+   "6": {
+    "n_pairs": 6,
+    "agreement": 0.8333333333333334,
+    "chance": 0.55908203125,
+    "disagreement": 0.16666666666666663
+   },
+   "7": {
+    "n_pairs": 99,
+    "agreement": 0.98989898989899,
+    "chance": 0.91064453125,
+    "disagreement": 0.010101010101010055
+   },
+   "8": {
+    "n_pairs": 8,
+    "agreement": 0.75,
+    "chance": 0.91064453125,
+    "disagreement": 0.25
+   },
+   "9": {
+    "n_pairs": 18,
+    "agreement": 1.0,
+    "chance": 0.939453125,
+    "disagreement": 0.0
+   }
+  }
+ }
+}

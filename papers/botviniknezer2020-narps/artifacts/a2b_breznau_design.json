@@ -1,0 +1,85 @@
+{
+ "n_teams": 70,
+ "n_predictors": 39,
+ "predictor_names": [
+  "smoothing_coef",
+  "movement_modeling",
+  "n_participants",
+  "package_afni",
+  "package_fsl",
+  "package_other",
+  "package_spm",
+  "package_nan",
+  "testing_parametric",
+  "testing_permutations",
+  "testing_randomise",
+  "testing_rare",
+  "testing_nan",
+  "correction_method_clustsim",
+  "correction_method_fdr",
+  "correction_method_fdr cluster",
+  "correction_method_fdr voxelwise",
+  "correction_method_grtfwe cluster",
+  "correction_method_grtfwe voxelwise",
+  "correction_method_rare",
+  "correction_method_tfce",
+  "correction_method_nan",
+  "statistic_type_rare",
+  "statistic_type_nan",
+  "inter_subject_reg_none",
+  "inter_subject_reg_rare",
+  "inter_subject_reg_nan",
+  "motion_correction_none",
+  "motion_correction_rare",
+  "motion_correction_nan",
+  "model_type_mass univariate",
+  "model_type_mass univariate.",
+  "model_type_rare",
+  "model_type_nan",
+  "used_fmriprep_data_no",
+  "used_fmriprep_data_yes",
+  "used_fmriprep_data_nan",
+  "regions_definition_rare",
+  "regions_definition_nan"
+ ],
+ "Y1_log_resels": {
+  "n": 64,
+  "r2": 0.506850035454872,
+  "sd": 0.04614051137577538
+ },
+ "Y1_log_resels_PERMUTED": {
+  "n": 64,
+  "r2": -0.048374731442348676,
+  "sd": 0.02587974068969919
+ },
+ "Y2_log_vox": {
+  "n": 63,
+  "r2": 0.12041710574598721,
+  "sd": 0.04747672796885169
+ },
+ "Y2_log_vox_PERMUTED": {
+  "n": 63,
+  "r2": -0.018771572191742053,
+  "sd": 0.038966280146835466
+ },
+ "Y3_median_corr": {
+  "n": 64,
+  "r2": -0.07325715319471089,
+  "sd": 0.03295570266604238
+ },
+ "Y3_median_corr_PERMUTED": {
+  "n": 64,
+  "r2": -0.10866151202307212,
+  "sd": 0.051453096303460746
+ },
+ "Y4_yes_count": {
+  "n": 70,
+  "r2": -0.1030642604560229,
+  "sd": 0.049116318157839574
+ },
+ "Y4_yes_count_PERMUTED": {
+  "n": 70,
+  "r2": -0.03577222640348559,
+  "sd": 0.015142219939852963
+ }
+}

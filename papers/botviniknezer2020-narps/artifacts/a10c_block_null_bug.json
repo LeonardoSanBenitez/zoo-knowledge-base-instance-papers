@@ -1,0 +1,11 @@
+{
+ "n_models": 1300,
+ "n_teams": 72,
+ "team_size_min": 1,
+ "team_size_max": 112,
+ "team_size_median": 12.0,
+ "all_teams_same_size": false,
+ "frac_pairs_keeping_within_status": 0.9674393912477054,
+ "frac_withinteam_pairs_still_withinteam": 0.4609966412091647,
+ "ideal_value_if_null_were_correct": 1.0
+}

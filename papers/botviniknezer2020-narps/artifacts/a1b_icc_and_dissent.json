@@ -1,0 +1,75 @@
+{
+ "n_teams": 70,
+ "k_hyp": 9,
+ "selftest_sigma_recovery": {
+  "0.0": {
+   "mean": 0.15464372016297426,
+   "sd": 0.22025884573559448,
+   "values": [
+    0.0,
+    0.241,
+    0.585,
+    0.0,
+    0.357,
+    0.0,
+    0.054,
+    0.0
+   ]
+  },
+  "0.5": {
+   "mean": 0.5715325083393503,
+   "sd": 0.15212265079629897,
+   "values": [
+    0.374,
+    0.654,
+    0.494,
+    0.653,
+    0.38,
+    0.605,
+    0.585,
+    0.827
+   ]
+  },
+  "1.0": {
+   "mean": 1.0804240148323003,
+   "sd": 0.1106840298013874,
+   "values": [
+    1.084,
+    1.148,
+    1.001,
+    1.198,
+    0.901,
+    1.07,
+    1.234,
+    1.007
+   ]
+  }
+ },
+ "random_intercept_sd_logit": 1.3160621569907582,
+ "nll_with_random_intercept": 265.3442722179861,
+ "nll_sigma_zero": 285.26117539613085,
+ "lrt_chi2": 39.83380635628953,
+ "latent_icc": 0.3448941299652675,
+ "odds_ratio_plus1sd_vs_minus1sd": 13.903273471837073,
+ "total_dissenting_decisions": 126,
+ "mean_dissent_rate": 0.2,
+ "top_quartile_share_of_dissent": 0.5714285714285714,
+ "top_quartile_share_null_mean": 0.4718412698412699,
+ "top_quartile_share_null_p95": 0.5079365079365079,
+ "top_quartile_share_p": 4.999750012499375e-05,
+ "frac_teams_never_dissenting": 0.24285714285714285,
+ "frac_teams_never_dissenting_null_mean": 0.12125,
+ "frac_teams_never_dissenting_p": 0.00024998750062496874,
+ "max_dissent_by_a_team": 6,
+ "dissent_count_distribution": {
+  "0": 17,
+  "1": 18,
+  "2": 15,
+  "3": 8,
+  "4": 7,
+  "5": 4,
+  "6": 1
+ },
+ "headline_20pct_from_margins": 0.2,
+ "headline_20pct_after_permutation": 0.2
+}

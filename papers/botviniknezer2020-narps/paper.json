@@ -1,0 +1,938 @@
+{
+ "schema_version": "1.4",
+ "id": "botviniknezer2020-narps",
+ "title": "Variability in the analysis of a single neuroimaging dataset by many teams",
+ "authors": [
+  "Rotem Botvinik-Nezer",
+  "Felix Holzmeister",
+  "Colin F. Camerer",
+  "Anna Dreber",
+  "Juergen Huber",
+  "Magnus Johannesson",
+  "Michael Kirchler",
+  "Jeanette A. Mumford",
+  "and 172 others",
+  "Tom E. Nichols",
+  "Thomas Schonberg",
+  "Russell A. Poldrack"
+ ],
+ "year": 2020,
+ "venue": "Nature 582:84-88 (NARPS)",
+ "area": [
+  "analytic-variability-and-many-analysts"
+ ],
+ "identifiers": {
+  "doi": "10.1038/s41586-020-2314-9",
+  "pmid": "32483374",
+  "pmcid": "PMC7771346",
+  "url": "https://zenodo.org/record/5118420"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 78,
+  "bytes_downloaded": 61000000,
+  "compute_notes": "52.3 MB derived-results deposit (Zenodo 3709275) + 1.2 MB submitted-version PDF + 4.8 MB code repository + 0.8 MB supplementary files + two HTML pages. The 1 GB image deposit (Zenodo 3528329) was deliberately NOT fetched: every question asked here is answerable from the deposited derived data, and the questions that are not are listed as open. Heaviest computations: 100,000 column permutations (13 s), 20,000-permutation AUC nulls over 7 hypotheses (3 m 50 s), a logit-normal random-intercept MLE with a simulation-based recovery selftest (5 m 47 s), and a Mantel power calibration by injection (8 m across two corpora). All numpy/scipy/sklearn, no GPU.",
+  "session": "2026-09-09 maria"
+ },
+ "methods": [
+  "many-analysts-design",
+  "exact-permutation-test",
+  "column-permutation-null-at-fixed-margins",
+  "logit-normal-random-intercept-mle",
+  "intraclass-correlation-clustered-binary",
+  "grouped-cross-validation-by-cluster",
+  "partial-mantel-test",
+  "mantel-power-calibration-by-injection",
+  "auc-with-label-permutation-null",
+  "forecast-error-bias-variance-decomposition",
+  "hindsight-free-constant-baseline",
+  "published-table-vs-deposit-crosscheck",
+  "robust-dispersion-iqr"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "NARPS's headline dispersion statistic -- 'on average across the 9 hypotheses, 20% of teams reported a result that differs from the majority' -- is a function of the nine marginal yes-rates and NOTHING else. It is identical in every world obtained by permuting each hypothesis column independently, so it cannot distinguish scattered idiosyncratic dissent from a stable minority of dissenting pipelines.",
+   "scope": "Verified by construction and by direct computation on the deposited 70x9 decision matrix, not argued from the text.",
+   "quantities": [
+    {
+     "name": "narps_headline_mean_distance_from_consensus",
+     "value": 0.2,
+     "unit": "fraction of teams",
+     "n": 70,
+     "source": "figures/DecisionDataWide.csv; mean over 9 hypotheses of min(p, 1-p)",
+     "status": "current"
+    },
+    {
+     "name": "narps_headline_after_column_permutation",
+     "value": 0.2,
+     "unit": "fraction of teams",
+     "n": 70,
+     "baseline": "same statistic recomputed after independently permuting every hypothesis column",
+     "source": "our reanalysis reanalysis/a1b_icc_and_dissent.py",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a9"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Arithmetic, not interpretation. The statistic is correct and correctly reported; the point is what it is blind to, and c2 shows that the thing it is blind to is present.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "Reporting a significant result in NARPS is a stable TEAM TRAIT, not per-hypothesis bad luck. The variance of per-team yes-counts is 2.26 times what independence at the same column margins gives; a quarter of teams never dissent from the majority at all, twice the null rate; and the most dissenting quartile carries 57% of all dissent.",
+   "scope": "70 teams x 9 hypotheses, binary decisions. The nine hypotheses are not independent -- H1/H3 and H2/H4 are the same statistical map read in two ROIs, H7/H8/H9 are all amygdala-loss -- so the test is repeated on map-disjoint subsets and survives.",
+   "quantities": [
+    {
+     "name": "overdispersion_of_team_yes_counts_all9",
+     "value": 2.258,
+     "unit": "ratio of observed to null variance",
+     "n": 70,
+     "baseline": "observed 3.007 vs column-permutation null mean 1.332; z = 7.98; 100,000 permutations",
+     "ci": "p < 1e-4 (one-sided permutation)",
+     "source": "our reanalysis reanalysis/a1_team_trait.py",
+     "status": "current"
+    },
+    {
+     "name": "overdispersion_map_disjoint_no_amygdala",
+     "value": 1.38,
+     "unit": "ratio of observed to null variance",
+     "n": 70,
+     "baseline": "hypotheses 1,2,5,6 only -- no two share a statistical map, amygdala excluded; p = 0.0091",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "team_random_intercept_sd_logit_all9",
+     "value": 1.316,
+     "unit": "logit",
+     "n": 70,
+     "baseline": "logit-normal MLE, 60-point Gauss-Hermite, fitted jointly with 9 hypothesis effects; LRT chi2 = 39.8 on 1 df; recovery selftest 0.0->0.00, 0.5->0.57+/-0.15, 1.0->1.08+/-0.11",
+     "source": "our reanalysis reanalysis/a1b_icc_and_dissent.py",
+     "status": "current"
+    },
+    {
+     "name": "team_latent_icc_map_disjoint_no_amygdala",
+     "value": 0.222,
+     "unit": "proportion",
+     "n": 70,
+     "baseline": "sigma = 0.970, k = 4 map-disjoint hypotheses, LRT chi2 = 6.1; the conservative figure",
+     "source": "our reanalysis reanalysis/a1c_sigma_subsets.py",
+     "status": "current"
+    },
+    {
+     "name": "odds_ratio_team_plus1sd_vs_minus1sd",
+     "value": 13.9,
+     "unit": "odds ratio",
+     "n": 70,
+     "baseline": "exp(2 * 1.316); on identical data",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "teams_never_dissenting_from_majority",
+     "value": 24.3,
+     "unit": "percent",
+     "n": 70,
+     "baseline": "permutation null 12.1%; p = 0.00025",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "share_of_dissent_in_most_dissenting_quartile",
+     "value": 57.1,
+     "unit": "percent",
+     "n": 126,
+     "baseline": "permutation null mean 47.2%, 95th percentile 50.8%; p < 5e-5. 126 dissenting decisions in total out of 630",
+     "source": "our reanalysis",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a9",
+    "a7"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Not in the paper. Robust to the shared-map confound (four map-disjoint hypotheses still give 1.38, p = 0.009), and the estimator was checked against simulated data at known sigma before being used.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "The team trait is a PRECISION trait: how much a pipeline declares significant, not what it estimated. A team's yes-count is predicted by image-derived precision quantities (log median suprathreshold voxels, estimated smoothness) and not at all by how much its unthresholded map resembles the consensus.",
+   "scope": "Team level, n = 63-70 depending on which image diagnostics exist. 'Answer-side' is operationalised as NARPS's own median_pattern_corr -- the median Spearman correlation of a team's unthresholded maps with the mean pattern across teams.",
+   "quantities": [
+    {
+     "name": "spearman_yescount_vs_log_median_suprathreshold_voxels",
+     "value": 0.387,
+     "n": 63,
+     "ci": "p = 0.0017",
+     "source": "our reanalysis reanalysis/a2_what_is_the_trait.py",
+     "status": "current"
+    },
+    {
+     "name": "spearman_yescount_vs_estimated_smoothness_fwhm",
+     "value": 0.282,
+     "n": 64,
+     "ci": "p = 0.024",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "spearman_yescount_vs_median_correlation_with_consensus_map",
+     "value": 0.065,
+     "n": 64,
+     "ci": "p = 0.61",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "cv_r2_yescount_from_precision_block",
+     "value": 0.111,
+     "n": 64,
+     "ci": "+/- 0.024 over 25 repeats of 10-fold ridge; permuted baseline -0.046",
+     "baseline": "on all 70 teams, with 6 missing-smoothness teams imputed, the same model gives -0.009: six rows of noise erase it",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "cv_r2_yescount_from_answer_variable_only",
+     "value": -0.03,
+     "n": 64,
+     "ci": "+/- 0.011",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "narps_own_delta_pseudo_r2_team_factors_summed",
+     "value": 0.101,
+     "n": 64,
+     "baseline": "smoothness 0.0367 + software package 0.0400 + correction method 0.0237, from the deposited SuppTable4.tsv; independent estimator, same magnitude as our 0.111",
+     "source": "figures/SuppTable4.tsv",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a9"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Two independent estimators (our out-of-fold ridge, their in-sample mixed logistic) land on ~0.11 for the same team-level factors. The answer-side variable is flat in both.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "The Breznau design transplanted: coded pipeline CHOICES predict the precision of the resulting image very strongly and the image itself not at all, out of fold. log(resels) R2 = +0.507; the team's correlation with the consensus map R2 = -0.073; the team's conclusion R2 = -0.103.",
+   "scope": "70 teams, 39 dummy predictors built only from choices a team made (software, applied smoothing, fMRIPrep, movement modelling, correction family, statistic type, ROI-definition style, n kept) -- never a property of the image produced. 10-fold ridge, 25 repeats.",
+   "quantities": [
+    {
+     "name": "cv_r2_choices_to_log_resels",
+     "value": 0.507,
+     "n": 64,
+     "ci": "+/- 0.046; permuted -0.048",
+     "source": "our reanalysis reanalysis/a2b_breznau_design.py",
+     "status": "current"
+    },
+    {
+     "name": "cv_r2_choices_to_log_median_suprathreshold_voxels",
+     "value": 0.12,
+     "n": 63,
+     "ci": "+/- 0.048; permuted -0.019",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "cv_r2_choices_to_median_correlation_with_consensus",
+     "value": -0.073,
+     "n": 64,
+     "ci": "+/- 0.033; permuted -0.109",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "cv_r2_choices_to_yes_count",
+     "value": -0.103,
+     "n": 70,
+     "ci": "+/- 0.049; permuted -0.036",
+     "source": "our reanalysis",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a9"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The scalar out-of-fold result reproduces the CRI shape in a third field. But c6 shows the same choices DO carry information about the map when tested pairwise, so 'not at all' here means 'not recoverable by a linear model of the level at n = 70', not 'no association'.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "For six of seven hypotheses, how strongly two teams' unthresholded maps correlate carries no detectable information about whether they reach the same binary conclusion. Among pairs whose maps correlate above r = 0.8 on hypothesis 1 -- median r = 0.88 -- 53.4% still disagree, which is if anything worse than the marginal-implied chance rate.",
+   "scope": "14,112 team-pairs over 7 hypotheses. Null permutes which team holds which decision, leaving the entire correlation matrix and the published marginal untouched; 20,000 permutations per hypothesis. Bonferroni over 7 tests is alpha = 0.0071.",
+   "quantities": [
+    {
+     "name": "mean_within_hypothesis_auc_mapcorr_predicts_decision_agreement",
+     "value": 0.581,
+     "n": 7,
+     "baseline": "chance 0.500; per hypothesis 0.397 to 0.762",
+     "source": "our reanalysis reanalysis/a4_threshold_vs_estimate.py",
+     "status": "current"
+    },
+    {
+     "name": "n_hypotheses_with_significant_mapcorr_decision_link",
+     "value": 1,
+     "unit": "hypotheses",
+     "n": 7,
+     "baseline": "only H5 (AUC 0.762, p = 0.0002) survives Bonferroni; H6 p = 0.010 does not",
+     "source": "our reanalysis reanalysis/a4b_auc_null.py",
+     "status": "current"
+    },
+    {
+     "name": "disagreement_rate_among_pairs_with_map_r_above_0.8_hyp1",
+     "value": 53.4,
+     "unit": "percent",
+     "n": 294,
+     "baseline": "permutation null 45.8%, 95% interval [35.4, 52.7]",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "disagreement_rate_among_pairs_with_map_r_above_0.8_hyp5",
+     "value": 5.2,
+     "unit": "percent",
+     "n": 368,
+     "baseline": "permutation null 26.8% [13.3, 38.6] -- the one hypothesis where map similarity does predict agreement",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "excess_pairwise_agreement_over_marginal_chance",
+     "value": -0.007,
+     "n": 14112,
+     "baseline": "REPORTED AS A NON-FINDING: this equals the finite-population correction [k(k-1)+(n-k)(n-k-1)]/[n(n-1)] exactly and carries no information. It looked like a result and is not one.",
+     "source": "our reanalysis",
+     "status": "measures-something-else"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a9",
+    "a7"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "NARPS states this qualitatively ('teams with highly correlated underlying statistical maps nonetheless reported highly divergent hypothesis outcomes'). The number and its null are new. The null is exact and conditional: it changes nothing the paper reports.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c6",
+   "statement": "REFUTES THE STRONG FORM OF OUR OWN THROUGH-LINE. Pipeline choices carry real information about the ESTIMATE, not only about its precision. Team-by-team choice distance is coupled to map distance at Mantel rho = 0.193 (p = 0.0021), and 0.142 (p = 0.0117) after partialling out the smoothness channel.",
+   "scope": "64 teams, 2,016 pairs. Choice distance = Gower over the coded pipeline table; map distance = 1 - Spearman r averaged over the seven deposited hypotheses; null permutes team labels. Significant on 6 of 7 hypotheses taken separately (rho 0.12-0.24).",
+   "quantities": [
+    {
+     "name": "mantel_choices_vs_precision",
+     "value": 0.252,
+     "n": 64,
+     "baseline": "null 95th percentile 0.084; p = 0.0001",
+     "source": "our reanalysis reanalysis/a6_partial_mantel.py",
+     "status": "current"
+    },
+    {
+     "name": "mantel_choices_vs_map_distance",
+     "value": 0.193,
+     "n": 64,
+     "baseline": "null 95th percentile 0.106; p = 0.0021",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "partial_mantel_choices_vs_map_given_precision",
+     "value": 0.142,
+     "n": 64,
+     "baseline": "null 95th percentile 0.104; p = 0.0117. Only about a quarter of the choices-map coupling runs through smoothness.",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "mantel_choices_vs_binary_conclusion",
+     "value": 0.007,
+     "n": 64,
+     "baseline": "null 95th percentile 0.072; p = 0.41",
+     "source": "our reanalysis",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a9",
+    "a7"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "This is the claim that cost me a previous conclusion, so it was attacked before it was believed: the smoothness channel is partialled out and survives; the same statistic on the conclusion returns 0.007, so the instrument is not simply positive on everything; and the machinery is validated against scipy in mantel_fast.selftest(). See c8 for a limitation that makes 0.193 a LOWER bound, not an upper one.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c7",
+   "statement": "Applying one common thresholding rule to every team's unthresholded map leaves the ORDERING of the nine hypotheses nearly untouched (Spearman 0.78-0.92) and moves the LEVEL by up to 55 percentage points. The number of hypotheses on which a majority of teams find significance goes 1 -> 3 -> 4 out of 9 on identical maps.",
+   "scope": "NARPS's own re-thresholding, deposited as figures/ThresholdSimulation/simulation_results.csv, in two variants: uncorrected p<0.001 with k>10, and FDR, each with a common anatomical ROI. NARPS reports that the dispersion across teams is qualitatively similar; the level is not reported.",
+   "quantities": [
+    {
+     "name": "spearman_reported_vs_common_p001k10_rates",
+     "value": 0.919,
+     "n": 9,
+     "ci": "p = 0.0005",
+     "source": "our reanalysis reanalysis/a8_level_vs_ranking.py",
+     "status": "current"
+    },
+    {
+     "name": "spearman_reported_vs_common_fdr_rates",
+     "value": 0.783,
+     "n": 9,
+     "ci": "p = 0.0126",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "max_level_shift_reported_to_common_fdr",
+     "value": 0.551,
+     "unit": "fraction of teams",
+     "n": 9,
+     "baseline": "hypothesis 2: 0.214 as reported, 0.766 under common FDR. Mean absolute shift 0.160.",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "hypotheses_with_majority_significant_by_rule",
+     "value": "1 as reported / 3 at p<0.001,k>10 / 4 under FDR",
+     "unit": "of 9",
+     "n": 9,
+     "source": "our reanalysis",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a9"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Read straight off NARPS's own deposited table; the arithmetic on top of it is trivial and checkable. The framing -- ranking stable, level not -- is ours.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c8",
+   "statement": "OUR OWN CRI CONCLUSION MUST BE RESTATED AS A BOUND. Applying the same pairwise instrument to the Crowdsourced Replication Initiative gives choices ~ estimate rho = 0.120 (p = 0.118) -- and injection calibration shows both designs need rho ~ 0.21-0.23 for 80% power, so CRI's number is 'cannot tell', not 'absent'. The two corpora are not shown to differ.",
+   "scope": "CRI at team level within each dependent variable, pooled over 6 DVs with one permutation applied to all six (48 common teams); the DVs are six different questions and pooling across them without that constraint would be wrong. Power calibrated by injecting a controlled association along the dominant axis of choice variation, 200-300 simulations per strength.",
+   "quantities": [
+    {
+     "name": "cri_mantel_choices_vs_estimate_pooled",
+     "value": 0.12,
+     "n": 48,
+     "baseline": "null 95th percentile 0.169; p = 0.118",
+     "source": "our reanalysis reanalysis/a10d_cri_teamlevel_within_dv.py",
+     "status": "current"
+    },
+    {
+     "name": "cri_mantel_choices_vs_log_se_pooled",
+     "value": 0.14,
+     "n": 48,
+     "baseline": "null 95th percentile 0.141; p = 0.051",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "mantel_rho_at_80pct_power_narps",
+     "value": 0.228,
+     "n": 64,
+     "baseline": "false-positive rate at zero injected signal 0.070 (nominal 0.05, 300 sims, MC sd 0.013)",
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "our reanalysis reanalysis/a11_mantel_power.py",
+     "status": "current"
+    },
+    {
+     "name": "mantel_rho_at_80pct_power_cri",
+     "value": 0.211,
+     "n": 71,
+     "baseline": "false-positive rate at zero injected signal 0.063",
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "mantel_rho_under_diffuse_multidirectional_injection_narps",
+     "value": 0.038,
+     "n": 64,
+     "baseline": "at an injection strength where the 1-D version gives rho 0.23 and 99% power, the multi-directional version gives rho 0.038 and 14% power. The Mantel test is nearly blind to diffuse association.",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "withdrawn_cri_model_level_mantel_choices_vs_estimate",
+     "value": 0.145,
+     "n": 1300,
+     "baseline": "WITHDRAWN 2026-09-09, same day it was produced. The 'permute whole teams' null preserves block structure only when teams are equal size; CRI teams run 1 to 112 models and only 46.1% of within-team pairs stayed within-team under that null. Superseded by the team-level figure 0.120 above.",
+     "source": "our reanalysis reanalysis/a10c_block_null_bug.py",
+     "status": "retracted",
+     "superseded_by": "botviniknezer2020-narps#c8"
+    }
+   ],
+   "evidence": [
+    "a9",
+    "a7"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Two errors of mine are recorded here rather than tidied: a null that did not do what it was written to do, caught by measuring it instead of trusting it; and a published 'nothing' that was an undetectable-not-absent. The withdrawn number is left in the record with its retraction reason so nobody re-quotes it.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c9",
+   "statement": "Analysts have almost no insight into their own analytic idiosyncrasy. Self-rated similarity to other teams is weakly calibrated to the actual similarity of their map (rho = 0.19), carries no information about whether their conclusion matches the pooled meta-analysis (rho = 0.048, p = 0.21), and is NEGATIVELY related to agreeing with the majority (rho = -0.195 excluding the one hypothesis whose majority is 'yes', p < 0.0001). Confidence behaves identically and is largely the same scale (rho = 0.670).",
+   "scope": "630 team-hypothesis ratings on 1-10 scales, rank-transformed within hypothesis, p-values from permuting whole teams because a team contributes nine rows. NARPS's supplement relates both ratings to the team's own binary outcome; it does not ask whether they are calibrated against anything external.",
+   "quantities": [
+    {
+     "name": "spearman_selfrated_similarity_vs_actual_map_similarity",
+     "value": 0.19,
+     "n": 448,
+     "clusters": 64,
+     "ci": "p = 0.0128, team permutation",
+     "source": "our reanalysis reanalysis/a7_self_knowledge.py",
+     "status": "current"
+    },
+    {
+     "name": "spearman_selfrated_similarity_vs_agreeing_with_majority",
+     "value": -0.143,
+     "n": 630,
+     "clusters": 70,
+     "ci": "p = 0.0006; -0.195 (p < 0.0001) excluding hypothesis 5",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "spearman_confidence_vs_agreeing_with_majority",
+     "value": -0.071,
+     "n": 630,
+     "clusters": 70,
+     "ci": "p = 0.060; -0.113 (p = 0.0059) excluding hypothesis 5",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "spearman_selfrated_similarity_vs_agreeing_with_image_based_meta_analysis",
+     "value": 0.048,
+     "n": 630,
+     "clusters": 70,
+     "ci": "p = 0.208",
+     "source": "our reanalysis reanalysis/a7b_ibma_ground_truth.py",
+     "status": "current"
+    },
+    {
+     "name": "spearman_confidence_vs_selfrated_similarity",
+     "value": 0.67,
+     "n": 630,
+     "clusters": 70,
+     "ci": "p < 0.0001 -- the two scales are largely one scale",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "hypotheses_where_team_majority_contradicts_image_based_meta_analysis",
+     "value": 3,
+     "unit": "of 9",
+     "n": 9,
+     "baseline": "hypotheses 2, 4 and 6: the IBMA finds the effect, a majority of individual teams does not",
+     "source": "figures/ThresholdSimulation/simulation_results.csv + our reanalysis",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a9"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "The mechanism is visible per hypothesis and is not a pooling artefact: on the eight hypotheses whose majority is 'no', dissenters rate themselves MORE similar; on H5, whose majority is 'yes', dissenters rate themselves far LESS similar (5.27 vs 8.12). The rating tracks 'I found the effect', not 'I resemble my colleagues'.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c10",
+   "statement": "DEFECT, verified in the published version. Extended Data Table 1's two rating columns are transposed: the column headed 'Median confidence level' is the median of the deposited `Similar` variable and the column headed 'Median similarity estimation' is the median of `Confidence`, 9 of 9 rows in both directions including the median absolute deviations. The Supplementary Information uses the same two variables correctly.",
+   "scope": "Checked against the published Extended Data Table 1 image (media.springernature.com, sha256 3b0c16a5...3987c) and against the submitted version; both carry it. The deposited Table1.tsv emits medianSimilar before medianConfidence while the table heads them confidence-first, which is the likely origin. Consequence is small: no claim in the paper depends on these two columns.",
+   "quantities": [
+    {
+     "name": "rows_where_published_confidence_column_equals_deposited_Similar",
+     "value": 9,
+     "unit": "of 9",
+     "n": 9,
+     "baseline": "and 2 of 9 for the correctly-labelled reading, which is the coincidence rate on a 1-10 median",
+     "source": "our reanalysis; deposited metadata all_metadata.csv vs the published table image",
+     "status": "current"
+    },
+    {
+     "name": "supplement_mean_similarity_significant_vs_nonsignificant",
+     "value": "7.4023 / 6.2851",
+     "n": 630,
+     "baseline": "supplement prints 7.40 / 6.29 under the label 'similarity' -- matches the deposited Similar column, so the supplement is right and the table is wrong",
+     "source": "narps_MOESM1_ESM.pdf + all_metadata.csv",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a6",
+    "a4",
+    "a1",
+    "a11"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Two independent confirmations: the 9/9 exact match in both directions, and the supplement's own quoted means reproducing from the deposit under the labels the supplement uses. Nothing was sent to the authors.",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c11",
+   "statement": "Three quarters of the prediction markets' squared error is a single constant offset. A hypothesis-blind constant beats both markets on absolute error; remove the offset and the team market beats every baseline. Discrimination was excellent and calibration was absent, and reporting only the rank correlation flatters.",
+   "scope": "9 hypotheses, two markets (83 and 65 active traders). Both published MAEs reproduce exactly from Supplementary Data 1. n = 9 is tiny and the paper says so; the decomposition does not need power, the comparison tests do and do not have it.",
+   "quantities": [
+    {
+     "name": "team_market_mae",
+     "value": 0.323,
+     "n": 9,
+     "baseline": "reproduces the paper's 0.323 exactly",
+     "source": "narps_MOESM3_ESM.csv + our reanalysis reanalysis/a9_market_scoring.py",
+     "status": "current"
+    },
+    {
+     "name": "leave_one_out_constant_mae",
+     "value": 0.192,
+     "n": 9,
+     "baseline": "each hypothesis predicted by the mean of the other eight; no hypothesis-specific information at all. Beats both markets. Wilcoxon vs team market p = 0.43, vs non-team p = 0.074.",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "team_market_bias_share_of_mse",
+     "value": 74,
+     "unit": "percent",
+     "n": 9,
+     "baseline": "bias +0.323; non-team market 78%, bias +0.414",
+     "source": "our reanalysis reanalysis/a9_market_scoring.py main_b",
+     "status": "current"
+    },
+    {
+     "name": "team_market_debiased_rmse",
+     "value": 0.191,
+     "n": 9,
+     "baseline": "from 0.375 raw; the leave-one-out constant's RMSE is 0.261, so after one constant the market is the better forecaster",
+     "source": "our reanalysis",
+     "status": "current"
+    },
+    {
+     "name": "team_market_spearman_on_five_map_disjoint_hypotheses",
+     "value": 1.0,
+     "n": 5,
+     "baseline": "0.962 over all nine (permutation p = 0.00025); the non-team market is 0.553 (p = 0.127), indistinguishable from chance",
+     "source": "our reanalysis",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a5",
+    "a9"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The decomposition is arithmetic and solid. The claim that the markets are 'worse than a constant' is a statement about MAE at n = 9 and the Wilcoxon does not reach significance; it is reported as a baseline comparison, not as a test. An alternative reading cannot be excluded at n = 9: traders may have been pricing whether the effect is real rather than what fraction of pipelines would say so (prices correlate +0.78 with the fraction and +0.66, p = 0.054, with the study's own meta-analytic verdict).",
+    "by": "maria 2026-09-09"
+   }
+  },
+  {
+   "id": "c12",
+   "statement": "Unpaywall labels this article open access (`bronze`, host type publisher, version publishedVersion) at a PDF URL that answers 303 and, after seven redirects, returns an HTML login wall. Every other component of the study -- supplements, the Extended Data table image, the 1 GB team-results deposit, the 52 MB derived-results deposit -- is freely downloadable. The paper is the only paywalled part of it.",
+   "scope": "One observation, not a rate. It extends maria2026-shell-or-payload from data links to open-access status assertions, and it is the reason the deep read used the submitted version.",
+   "quantities": [
+    {
+     "name": "nature_pdf_url_final_response",
+     "value": "HTTP 200, text/html, 949086 bytes, 7 redirects, contains 'Access through your institution'",
+     "n": 1,
+     "source": "curl -sIL, 2026-09-09",
+     "status": "current"
+    }
+   ],
+   "evidence": [
+    "a10"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Reproduced with two user agents and with redirects disabled; the 303 goes to idp.nature.com/authorize.",
+    "by": "maria 2026-09-09"
+   }
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "derived-data",
+   "locator": "https://doi.org/10.5281/zenodo.3709275",
+   "status": "verified-usable",
+   "bytes": 52319949,
+   "sha256": "21e07696b7e863e8e19f94e61fde37e637b7ada06876d505abc46d8e233abce1",
+   "local_path": "artifacts/narps_results/",
+   "fetch_cmd": "curl -sL -o narps_results.tgz https://zenodo.org/api/records/3709275/files/results.tgz/content && tar xzf narps_results.tgz -C artifacts/narps_results",
+   "license": "see deposit",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "downloaded, sha256'd, extracted; reproduced the published Table 1 (all nine yes-rates exact) and the published SuppTable4 delta pseudo-R2 values from it before using anything else",
+    "result": "421 files, 72 MB extracted. Contains the 70x9 decision matrix, the confidence and similarity ratings, per-team image diagnostics, the seven team-by-team Spearman correlation matrices, the common-threshold simulation, and the prediction-market RData. Everything in this record except the market prices comes from here."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "https://github.com/poldrack/narps",
+   "repo_commit": "shallow clone 2026-09-09",
+   "status": "verified-usable",
+   "bytes": 4800000,
+   "local_path": "artifacts/narps-repo/",
+   "fetch_cmd": "git clone --depth 1 https://github.com/poldrack/narps.git",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "read DecisionAnalysis.Rmd to find how Table1.tsv is generated; not executed (the full pipeline wants the 1 GB image deposit and ~12 GB of scratch)",
+    "result": "Confirms Table1.tsv emits medianSimilar before medianConfidence, which is the likely origin of the transposition in c10. 61 files, no data."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "raw-data",
+   "locator": "https://doi.org/10.5281/zenodo.3528329",
+   "status": "not-checked",
+   "bytes": 993800000,
+   "fetch_cmd": "curl -sL -o narps_origdata_1.0.tgz https://zenodo.org/api/records/3528329/files/narps_origdata_1.0.tgz/content",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "size and availability confirmed via the Zenodo API; deliberately NOT downloaded",
+    "result": "994 MB of thresholded and unthresholded statistical maps. Not needed for any question answered here; needed for open questions 1 and 2 in NOTES.md. The fetch_cmd is recorded so it can be regenerated."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "supplement",
+   "locator": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-020-2314-9/MediaObjects/41586_2020_2314_MOESM1_ESM.pdf",
+   "status": "verified-usable",
+   "bytes": 683367,
+   "local_path": "artifacts/narps_MOESM1_ESM.pdf",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "downloaded and text-extracted; located the confidence/similarity analysis and checked its quoted means against the deposited columns",
+    "result": "15 pages. Its means (similarity 7.40 / 6.29, confidence 7.59 / 6.93) reproduce from all_metadata.csv to four decimals under those labels, which is what isolates the c10 defect to the table. Freely downloadable although the article is not."
+   }
+  },
+  {
+   "id": "a5",
+   "role": "raw-data",
+   "locator": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-020-2314-9/MediaObjects/41586_2020_2314_MOESM3_ESM.csv",
+   "status": "verified-usable",
+   "bytes": 1336,
+   "local_path": "artifacts/narps_MOESM3_ESM.csv",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "reproduced both published market MAEs (0.323 and 0.449) and both published price ranges before using it",
+    "result": "9 rows: fundamental value, its 95% interval, and the final price in each of the two markets. Column price.1 is the team-members market (range 0.073-0.952, matches the paper), price.0 the non-team market (0.476-0.882)."
+   }
+  },
+  {
+   "id": "a6",
+   "role": "in-paper-table",
+   "locator": "https://media.springernature.com/lw800/springer-static/esm/art%3A10.1038%2Fs41586-020-2314-9/MediaObjects/41586_2020_2314_Tab1_ESM.jpg",
+   "status": "verified-usable",
+   "bytes": 59574,
+   "sha256": "3b0c16a50f8c9086a8c4e8d2c915b329cf73294dfed9f527f3b82cba3f13987c",
+   "local_path": "artifacts/narps_published_ExtDataTable1.jpg",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "read the image and compared all nine rows of both rating columns against the deposited Similar and Confidence variables",
+    "result": "The published Extended Data Table 1 is a bitmap, not markup -- a table that cannot be machine-read. It carries the c10 transposition, so the defect is in the published version and not only in the preprint."
+   }
+  },
+  {
+   "id": "a7",
+   "role": "code",
+   "locator": "reanalysis/",
+   "status": "verified-usable",
+   "local_path": "reanalysis/",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "every script rerun end to end; mantel_fast.py carries a selftest against scipy on both the observed statistic and a permuted draw, and a1b carries a sigma-recovery selftest at three known values",
+    "result": "16 scripts. a10c documents and measures a defect in an earlier version of the block-permutation null and is the reason the a10/a10b model-level outputs are marked retracted rather than deleted."
+   }
+  },
+  {
+   "id": "a8",
+   "role": "raw-data",
+   "locator": "https://doi.org/10.18112/openneuro.ds001734.v1.0.4",
+   "status": "not-checked",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "not fetched",
+    "result": "The underlying fMRI dataset, 108 participants, mixed-gambles task. Out of scope: nothing here re-analyses the imaging data itself, only what the 70 teams produced from it."
+   }
+  },
+  {
+   "id": "a9",
+   "role": "derived-data",
+   "locator": "artifacts/ (a*.json, *.csv written by reanalysis/)",
+   "status": "verified-usable",
+   "local_path": "artifacts/",
+   "derived_from": [
+    "a1",
+    "a5",
+    "a7"
+   ],
+   "fetch_cmd": "see the Reproducing section of NOTES.md; every file here is regenerated by rerunning reanalysis/",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "each script writes one JSON next to its name; all were regenerated end to end in this session",
+    "result": "a1_team_trait.json, a1b_icc_and_dissent.json, a1c_sigma_subsets.json, a2_what_is_the_trait.json, a2b_breznau_design.json, a3_map_agreement.json, a4_threshold_vs_estimate.json, a4b_auc_null.json, a5_mantel.json, a5b_mantel_onescale.json, a6_partial_mantel.json, a7_self_knowledge.json, a7b_ibma_ground_truth.json, a8_level_vs_ranking.json, a9_market_scoring.json, a9b_market_decomposition.json, a10_cri_mantel.json (RETRACTED, see a10c), a10b_cri_dv_confound.json (RETRACTED), a10c_block_null_bug.json, a10d_cri_teamlevel_within_dv.json, a11_mantel_power.json, team_level_table.csv, a2b_choices_table.csv, a7_selfknowledge_rows.csv"
+   }
+  },
+  {
+   "id": "a10",
+   "role": "supplement",
+   "locator": "https://www.nature.com/articles/s41586-020-2314-9.pdf",
+   "status": "present-but-insufficient",
+   "bytes": 949086,
+   "local_path": "artifacts/narps_article.html",
+   "fetch_cmd": "curl -sL -o artifacts/narps_article.html https://www.nature.com/articles/s41586-020-2314-9.pdf",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "curl with and without redirects, two user agents",
+    "result": "HTTP 303 to idp.nature.com/authorize, then seven redirects, then HTTP 200 text/html 949,086 bytes containing 'Access through your institution' and 'This is a preview'. Unpaywall lists this exact URL as url_for_pdf for an oa_status of bronze. Kept as the evidence for c12."
+   }
+  },
+  {
+   "id": "a11",
+   "role": "supplement",
+   "locator": "https://zenodo.org/record/5118420",
+   "status": "verified-usable",
+   "bytes": 1217507,
+   "sha256": "f31a08a0c8caf725eabe95fc31729723d90f36dc0cf03d28998d1b7e2c652592",
+   "local_path": "artifacts/BotvinikNezerEtal2020.pdf",
+   "fetch_cmd": "curl -sL -o artifacts/BotvinikNezerEtal2020.pdf https://zenodo.org/api/records/5118420/files/BotvinikNezerEtal2020.pdf/content",
+   "checked": {
+    "on": "2026-09-09",
+    "by": "maria",
+    "how": "downloaded, sha256'd, all 31 pages text-extracted and read",
+    "result": "The SUBMITTED version (bioRxiv 10.1101/843193), which is what Unpaywall calls the repository copy. This is the text that was read in depth, because the published PDF is behind a login wall (a10). Every number quoted from the paper here was cross-checked against the deposit or against the published Extended Data Table 1."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:agreesWith",
+   "target": "breznau2022-hidden-universe",
+   "why": "Same design, unconnected field, same core finding: independent analysts handed one dataset do not converge on a conclusion. Breznau reports 95.2% of variance unexplained; NARPS reports 20% average distance from consensus. Neither cites the other's field."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "maria2026-analytic-variability-reanalysis",
+   "why": "The scalar out-of-fold result transplants cleanly -- choices predict precision at CV R2 0.507 and the answer at -0.073. But the pairwise test refutes the strong form: choices are coupled to the map at Mantel rho 0.193, and 0.142 net of smoothness. 'Decisions say nothing about what the answer is' must become a comparison of magnitudes with a stated bound.",
+   "asymmetric_note": "This is a correction to our own record, not to Breznau et al. The CRI number it corrects (R2 = -0.005) is not wrong as computed; it was over-read as an absence when it was a non-detection."
+  },
+  {
+   "type": "zoo:reanalyses",
+   "target": "maria2026-analytic-variability-reanalysis",
+   "why": "Section 6 of NOTES.md reruns the CRI corpus with the pairwise instrument and a power calibration, withdraws an intermediate result of its own, and restates the CRI conclusion as a bound (rho ~ 0.21 needed for 80% power)."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "menkveld2024-nonstandard-errors",
+   "why": "Menkveld's split between standard and nonstandard error is the right vocabulary for what is measured here: the team random intercept (sigma = 0.97-1.32 on the logit scale) is a nonstandard error in the conclusion, and NARPS's own tau of 1.13-1.85 across unthresholded maps is one in the estimate, against a sampling standard deviation of at least 1.0."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "mathur2023-effect-sizes",
+   "why": "Mathur et al. argue that CRI's variation is variation in significance rather than in findings. NARPS is the strongest version of that claim -- map correlation carries no detectable information about the binary conclusion on six of seven hypotheses -- and simultaneously its limit, because the maps themselves are coupled to the choices (c6)."
+  },
+  {
+   "type": "cito:extends",
+   "target": "maria2026-shell-or-payload",
+   "why": "That record measured how often a resolving DATA link fails to deliver the resource (37.7%). Here an open-access STATUS DATABASE asserts a free published PDF at a URL that serves a login wall, which is the same failure one level up. Leaves a measurable question: the shell rate among DOIs Unpaywall labels bronze."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "karger2023-xpt",
+   "why": "Both are structured elicitations of researcher belief scored against an outcome, and both find that the interesting failure is calibration rather than discrimination. Here it is quantified: 74% of the team market's squared error is a single constant offset, and removing it makes the market the best forecaster available."
+  },
+  {
+   "type": "cito:usesDataFrom",
+   "target": "breznau2022-hidden-universe",
+   "why": "Section 6 uses the CRI model-level table already stored in that record's data/ directory to run the pairwise instrument on the sociology corpus."
+  }
+ ],
+ "open_questions": [
+  "The Mantel test is nearly blind to diffuse association (multi-directional injection: rho 0.038 and 14% power where the 1-D injection gives 0.23 and 99%). What is the right omnibus test of 'do choices determine the estimate'? Distance covariance, or a permutation test on a cross-validated multivariate regression of the map onto the choices -- the second needs the 1 GB image deposit.",
+  "Does the team trait survive re-thresholding every map identically? c7 shows the LEVEL moves by up to 0.55 under a common rule; the team-level version of that question needs the unthresholded maps.",
+  "Does the same over-dispersion appear in #fincap (Menkveld, 164 teams)? It is the only other corpus here with multiple outcomes per team.",
+  "Nobody has been told about the c10 transposition. It is in both the preprint and the published Extended Data Table 1, six years on.",
+  "What fraction of DOIs Unpaywall labels `bronze` deliver a payload rather than a shell? The maria2026-shell-or-payload instrument runs unchanged."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-09-09",
+  "verified": "2026-09-09",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "many analysts same dataset different conclusions",
+  "how much do analytic choices change the result",
+  "is analytic variability idiosyncratic or systematic",
+  "do some research teams report significant results more often",
+  "fMRI pipeline variability across teams",
+  "teams agree on the map but disagree on the conclusion",
+  "does smoothing change whether you find an effect",
+  "what does a 20% disagreement rate across analysts actually mean",
+  "a dispersion statistic that only depends on the marginals",
+  "how to test whether dissent is a stable trait of a team",
+  "permutation null that fixes the column margins",
+  "mantel test on analyst choices versus results",
+  "how much power does a mantel test have",
+  "are researchers aware how idiosyncratic their analysis is",
+  "do analysts know whether they agree with their field",
+  "prediction market overestimates replication",
+  "forecast discrimination versus calibration",
+  "a constant baseline beats the forecast",
+  "meta-analysis across analysis teams finds what individual teams miss",
+  "reporting standards do not predict the conclusion",
+  "unpaywall says open access but the link is a login wall",
+  "published table columns swapped relative to the deposited data"
+ ]
+}

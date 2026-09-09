@@ -1,0 +1,18 @@
+mk_correlation_maps_unthresh
+2020-03-13T00:01:32.227607
+
+Arguments:
+vox_mask_thresh: 1.0
+dataset: zstat
+n_clusters: None
+corr_type: spearman
+narps: <narps.Narps object at 0x7f8fe1dc5710>
+
+hyp 1: number of nonzero voxels (unthresh zstat): 142499
+hyp 2: number of nonzero voxels (unthresh zstat): 145304
+hyp 5: number of nonzero voxels (unthresh zstat): 140645
+hyp 6: number of nonzero voxels (unthresh zstat): 145521
+hyp 7: number of nonzero voxels (unthresh zstat): 140046
+hyp 8: number of nonzero voxels (unthresh zstat): 143226
+hyp 9: number of nonzero voxels (unthresh zstat): 111062
+median correlation between teams: 0.304895

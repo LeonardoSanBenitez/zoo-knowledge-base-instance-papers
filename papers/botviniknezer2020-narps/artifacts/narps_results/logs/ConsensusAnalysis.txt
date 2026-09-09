@@ -1,0 +1,23 @@
+run_ttests
+mean = -0.247573, var = 2.975975, mean_cc = 0.394392
+711 voxels significant at FDR corrected p<.05
+mean = 0.043790, var = 2.707152, mean_cc = 0.511033
+15511 voxels significant at FDR corrected p<.05
+mean = -0.029158, var = 3.293068, mean_cc = 0.472885
+15608 voxels significant at FDR corrected p<.05
+mean = -0.066226, var = 2.040657, mean_cc = 0.272138
+267 voxels significant at FDR corrected p<.05
+mean = 0.155364, var = 3.248666, mean_cc = 0.474818
+24435 voxels significant at FDR corrected p<.05
+mean = 0.074316, var = 2.033605, mean_cc = 0.316609
+3061 voxels significant at FDR corrected p<.05
+mean = -0.028162, var = 1.532945, mean_cc = 0.198095
+0 voxels significant at FDR corrected p<.05
+mk_figures
+hyp 1: median tau 1.761, max tau 5.071
+hyp 2: median tau 1.703, max tau 4.596
+hyp 5: median tau 1.847, max tau 5.397
+hyp 6: median tau 1.429, max tau 4.872
+hyp 7: median tau 1.854, max tau 5.617
+hyp 8: median tau 1.437, max tau 5.189
+hyp 9: median tau 1.145, max tau 3.035

@@ -1,0 +1,38 @@
+{
+ "map_distance_mean_over_7hyp": {
+  "mantel_rho": 0.184613676427537,
+  "null_mean": -0.00028623642402528324,
+  "null_sd": 0.063396225184383,
+  "null_p95": 0.10741095433146047,
+  "p_one_sided": 0.0026997300269973002,
+  "n_teams": 64,
+  "nperm": 10000
+ },
+ "log_resels": {
+  "mantel_rho": 0.25845502880381566,
+  "null_mean": 3.8033504149108047e-05,
+  "null_sd": 0.048720250478895846,
+  "null_p95": 0.0851119771058142,
+  "p_one_sided": 9.999000099990002e-05,
+  "n_teams": 64,
+  "nperm": 10000
+ },
+ "log_vox": {
+  "mantel_rho": NaN,
+  "null_mean": NaN,
+  "null_sd": NaN,
+  "null_p95": NaN,
+  "p_one_sided": 9.999000099990002e-05,
+  "n_teams": 64,
+  "nperm": 10000
+ },
+ "yes_count": {
+  "mantel_rho": 0.01541151097601827,
+  "null_mean": 0.00013285995747265683,
+  "null_sd": 0.04191748900671498,
+  "null_p95": 0.07278204852816783,
+  "p_one_sided": 0.33656634336566343,
+  "n_teams": 64,
+  "nperm": 10000
+ }
+}

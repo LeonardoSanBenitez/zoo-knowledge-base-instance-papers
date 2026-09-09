@@ -1,3 +1,10 @@
+<!--kb
+id: area:analytic-variability-and-many-analysts
+labels: kind:paper-notes, area:analytic-variability-and-many-analysts
+triggers: many analysts same data different results; does analytic flexibility change the conclusion; is analyst disagreement idiosyncratic or systematic; nonstandard errors across research teams; do some teams report significant results more often than others; a dispersion statistic computed only from marginals; permutation null that fixes the column margins; mantel test on analyst choices versus results; how much power does a pairwise distance test have; when can I compare IDR over IQR to 1.90; DerSimonian-Laird on a many-analysts corpus; thresholding sets the level not the ranking; do researchers know how idiosyncratic their analysis is; prediction market overestimates replication; forecast discrimination versus calibration; multiverse analysis across research teams; crowdsourced replication initiative reanalysis; NARPS fMRI seventy teams
+verified: 2026-09-09
+-->
+
 # Analytic variability and many-analysts studies
 
 What happens when independent analysts are handed the same data and the same
@@ -5,7 +12,8 @@ hypothesis. Started by maria, 2026-08-12.
 
 Records: `papers/breznau2022-hidden-universe/`, `papers/mathur2023-effect-sizes/`,
 `papers/menkveld2024-nonstandard-errors/`,
-`papers/maria2026-analytic-variability-reanalysis/`.
+`papers/maria2026-analytic-variability-reanalysis/`,
+`papers/botviniknezer2020-narps/`.
 Query them with `python tools/kb.py query --area analytic-variability`.
 
 ## The right vocabulary, which finance has and sociology does not
@@ -53,6 +61,14 @@ Gaussian at *any* sample size (simulated 95% bands: 1.52–2.43 at n=71,
 1.79–2.01 at n=1252), so it needs no calibration to compare corpora. Both are
 far above it.
 
+> **Caveat added 2026-09-09, because I nearly misused my own statistic.** The
+> 1.90 reference is for an *unbounded* Gaussian. Applied to a quantity bounded
+> in [−1, 1] it means nothing: the across-team pairwise map correlations in
+> NARPS give IDR/IQR of 1.59–2.34, straddling 1.90, and that is a fact about
+> the bound, not about tails. **Only compare an IDR/IQR to 1.90 when the
+> quantity can in principle run to infinity.** Estimates and standard errors
+> qualify; correlations, proportions and probabilities do not.
+
 One nuance available only in CRI, because it has multiple models per team: the
 heavy tails live at the **model** level, not the analyst level. One estimate per
 team and IDR/IQR falls to 2.08, comfortably inside the Gaussian band. **The
@@ -60,13 +76,32 @@ outliers are specifications, not people.**
 
 ---
 
-## The through-line
+## The through-line, and the sentence in it that turned out to be too strong
 
 The field's headline finding is that analysts do not converge. The reanalysis
 here says something more specific and, I think, more useful:
 
 > **Analytic decisions determine how *precisely* an analysis answers the
 > question, and say nothing about what the answer is.**
+
+> **CORRECTION 2026-09-09, marked in place.** The second half of that sentence is
+> withdrawn. Tested on a third corpus (NARPS, 70 fMRI teams — see the section
+> below), the *scalar* half transplants exactly: coded pipeline choices predict
+> the precision of the resulting image at out-of-fold R² = 0.507 and the image
+> itself at −0.073. But a **pairwise** test on the same data, which uses
+> n(n−1)/2 pairs rather than n units, finds a real coupling between choices and
+> the estimate: Mantel ρ = 0.193 (p = 0.0021), and **0.142 (p = 0.0117) after
+> partialling out the smoothness channel**, so it is not simply a precision
+> effect wearing a different hat. Re-run on CRI itself with a correct null it
+> gives ρ = 0.120, p = 0.118 — and an injection calibration says that design
+> needs ρ ≈ 0.21 for 80% power, so **CRI's "−0.005, i.e. nothing" is a
+> non-detection, not an absence, and the two corpora are not shown to differ.**
+>
+> What survives, and should be quoted instead, is a **ratio with a bound**:
+> analytic choices are coupled to precision several times more strongly than to
+> the estimate, and to the binary conclusion (in pairwise terms) not at all
+> — ρ = 0.252 / 0.193 / 0.007 on one common scale in NARPS. See
+> `botviniknezer2020-narps#c6` and `#c8`.
 
 Out-of-fold, cross-validated with folds grouped by team so that no analyst
 appears on both sides of the split, the 137 coded decision indicators in the
@@ -115,6 +150,103 @@ of Breznau et al. is disputed by Mathur et al.; only the adjective attached to
 it. The record uses `cito:qualifies` alongside `cito:critiques` for exactly that
 reason, with an `asymmetric_note`, because this is the kind of pair that gets
 miscited as a refutation.
+
+## NARPS: the third corpus, and the first with a *joint* structure to look at
+
+`botviniknezer2020-narps` — 70 teams, one fMRI dataset, nine pre-registered
+hypotheses, binary yes/no per team per hypothesis, plus every team's
+unthresholded whole-brain map. Read in depth 2026-09-09. It is the first corpus
+here with **many outcomes per analyst**, which makes a question askable that CRI
+and #fincap cannot ask.
+
+**1. The field's headline dispersion statistic is blind to the thing that
+matters.** NARPS reports *"on average 20% of teams reported a result that differs
+from the majority"*. That number is `mean_h min(p_h, 1-p_h)` over the nine
+marginal rates and nothing else: permute each hypothesis column independently and
+it is **0.2000 both times**, verified. It is identical whether dissent is
+scattered luck or a stable minority of pipelines.
+
+**2. It is a stable minority.** Variance of per-team yes-counts is **2.26x** the
+column-permutation null (p < 1e-4, 100k permutations), **1.38x** on the four
+hypotheses that share no statistical map (p = 0.009). A logit-normal random
+intercept gives sigma = 1.32 (latent ICC 0.345) on all nine, sigma = 0.97
+(ICC 0.222) on the map-disjoint four. **A team one SD above the mean propensity
+has 13.9x the odds of reporting significance, on identical data.** And the
+concentration: **24.3% of teams never dissent at all against a null of 12.1%**,
+while the most dissenting quartile carries **57.1%** of the 126 dissenting
+decisions.
+
+*Generalisable form, and the reason this belongs in the area file rather than
+only in the record:* **a dispersion statistic computed from marginals cannot
+distinguish idiosyncratic from systematic variability, and the difference decides
+whether the finding is a noise floor or a fixable property of pipelines.** Every
+number this area currently quotes — Breznau's 25.4/57.7/16.9, Menkveld's IQR,
+the 20% — is of that kind. Ask for the joint structure.
+
+**3. What the trait is: how much the pipeline declares.** Team yes-count against
+log median suprathreshold voxels rho = **+0.387** (p = 0.0017); against estimated
+smoothness +0.282; against **how much the team's map resembles the consensus,
++0.065 (p = 0.61)**; against the team's own confidence rating, +0.039.
+
+**4. Thresholding sets the LEVEL, the data set the RANKING.** Re-thresholding
+every team's map with one common rule (NARPS's own deposited simulation) leaves
+the ordering of the nine hypotheses nearly untouched — Spearman 0.919 and
+0.783 — and moves the level by up to **0.551** (H2: 21.4% to 76.6% of teams).
+The number of hypotheses on which a *majority* of teams find significance goes
+**1 -> 3 -> 4 of 9** on identical maps.
+
+**5. Agreement about the estimate barely predicts agreement about the
+conclusion.** Over 14,112 team-pairs, the AUC of map-correlation predicting
+decision agreement is 0.581, and only **one of seven** hypotheses survives
+Bonferroni — the one where 84% of teams agree anyway. Among pairs whose maps
+correlate at a median r of 0.88 on hypothesis 1, **53.4% still disagree**, which
+is *worse* than the marginal-implied chance rate.
+
+**6. Analysts do not know how idiosyncratic they are** — and this is the part
+with no counterpart in the sociology or finance corpora, because only NARPS asked
+them. Self-rated similarity to other teams is weakly calibrated to a team's
+*actual* map similarity (rho = 0.19), carries no information about whether its
+conclusion matches the pooled meta-analysis (rho = 0.048, p = 0.21), and is
+**negatively** related to agreeing with the majority (rho = -0.195 excluding the
+one hypothesis whose majority is "yes", p < 0.0001). Confidence behaves the same
+and is largely the same scale (rho = 0.670). Mechanism: the rating tracks *"I
+found the effect"*, not *"I resemble my colleagues"*.
+
+**7. On three of nine hypotheses the modal pipeline contradicts the pooled one.**
+NARPS's own image-based meta-analysis finds the effect on H2, H4, H5, H6; a
+majority of individual teams finds it only on H5.
+
+**8. Prediction markets: discrimination excellent, calibration absent.** Both
+markets overestimated, as the paper reports. What the paper does not report is a
+baseline: a hypothesis-blind constant fitted leave-one-out has MAE **0.192**
+against the team market's 0.323 and the non-team market's 0.449. But **74% of the
+team market's MSE is a single constant offset of +0.323**; subtract it and its
+RMSE falls from 0.375 to 0.191, better than any baseline, and its rank
+correlation with the truth is 0.962 over nine hypotheses and **exactly 1.000**
+over the five that do not share a map. *Report a bias/variance split beside any
+"researchers were overoptimistic" claim; the two readings imply different fixes.*
+
+**A methodological caution, learned the hard way and paid for twice.** The
+pairwise (Mantel) instrument behind the correction to the through-line is
+powerful and has two traps, both hit in one session:
+
+- *A block permutation that keeps only half the blocks.* Permuting "whole teams"
+  by lining up two position lists preserves the within/between structure only if
+  every team has the same number of rows. CRI teams have 1 to 112 models; under
+  that null only **46.1%** of within-team pairs stayed within-team, and it
+  produced a confident, wrong p = 0.005. Aggregate to one row per cluster
+  instead.
+- *Nearly blind to diffuse association.* Injecting a signal along the dominant
+  axis of choice variation, rho = 0.23 reaches 99% power; injecting the same
+  strength spread over a random combination of all choice indicators gives
+  rho = 0.038 and 14%. So a Mantel rho is a **lower** bound on coupling, and a
+  null Mantel result is weak evidence of independence.
+
+**Resolving power, to be quoted with any null result in this area:** 80% power at
+Mantel rho ~ **0.228** for NARPS (n = 64 teams) and ~ **0.211** for CRI (n = 71),
+with false-positive rates of 0.070 and 0.063 against a nominal 0.05. It is not a
+function of n alone — it depends on how clumped the distance matrices are —
+so it has to be read off the permutation null each time, not assumed.
 
 ## Numbers worth reusing
 
@@ -210,15 +342,15 @@ matter" is not, and that is how it gets cited.
 
 ## Open, in priority order
 
-1. **Replicate the precision/conclusion split elsewhere.** #fincap is now the
-   best candidate — 164 clusters, a different field, pre-registered, and each
-   team reports an estimate *and* a standard error, which is exactly the pair
-   the test needs. Look at `fincap.academy` and `osf.io/h82aj` for the
-   team-level table. Failing that, NARPS
-   (Botvinik-Nezer et al. 2020, *Nature*, 70 fMRI teams, maps on NeuroVault) and
-   Silberzahn et al. 2018 (29 teams, red cards) both released data and coded
-   decisions. This is the test that turns a finding about immigration attitudes
-   into a statement about what many-analysts studies measure.
+1. ~~**Replicate the precision/conclusion split elsewhere.**~~ **DONE 2026-09-09
+   on NARPS** — see the NARPS section above. The scalar split replicates
+   (choices to precision R2 = 0.507, choices to the map -0.073) and the
+   *absolute* form of the claim does not survive the pairwise test. **#fincap
+   remains open and is now the more interesting of the two**, because it is the
+   only other corpus with several outcomes per team and can therefore be asked
+   the over-dispersion question (`fincap.academy`, `osf.io/h82aj`). Silberzahn
+   et al. 2018 (29 teams, red cards) is a third candidate, but n = 29 is below
+   anything this area's instruments can resolve.
 2. **What structures the heterogeneity?** Real (I² = 0.93), not exchangeable
    (six functionals imply τ from 0.0012 to 0.0160), not organised by any
    partition available in the released coding. The candidates left are inside

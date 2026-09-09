@@ -1,0 +1,71 @@
+,package,testing,correction_method,statistic_type,inter_subject_reg,motion_correction,model_type,used_fmriprep_data,regions_definition,smoothing_coef,movement_modeling,n_participants,Y1_log_resels,Y2_log_vox,Y3_median_corr,Y4_yes_count
+08MQ,fsl,randomise,tfce,rare,rare,rare,mass univariate.,no,rare,6,1,106,5.661759141533655,8.560444233410552,0.7865875301339378,3
+0C7Q,other,randomise,tfce,rare,rare,rare,rare,yes,rare,6,1,101,4.321612485498193,10.721591972500457,0.8490634963682612,1
+0ED6,spm,parametric,grtfwe voxelwise,rare,rare,rare,mass univariate,no,rare,5,1,108,3.9475392158035465,2.6390573296152584,0.5100482638019559,1
+0H5E,spm,parametric,fdr voxelwise,rare,rare,rare,mass univariate.,no,rare,9,0,100,5.732875148859473,0.0,0.8063504631611619,2
+0I4U,spm,parametric,grtfwe voxelwise,rare,rare,rare,mass univariate,no,rare,5,1,108,4.2348603266821785,1.6094379124341003,0.7451999285183076,1
+0JO0,other,parametric,fdr,rare,rare,rare,mass univariate,yes,rare,5,1,102,3.8738936787181806,0.0,0.4170129356987813,1
+16IN,other,rare,rare,rare,rare,rare,rare,yes,rare,4,0,108,,,,2
+1K0E,other,permutations,tfce,rare,rare,rare,rare,no,rare,4,1,89,,,,6
+1KB2,fsl,parametric,grtfwe cluster,rare,rare,rare,mass univariate.,no,rare,7,1,103,5.411612321127435,6.222576268071369,0.7667429999167309,0
+1P0Y,spm,parametric,grtfwe cluster,rare,rare,rare,mass univariate,no,rare,5,0,104,4.4836791592217855,8.182279739259018,0.4535332043475717,2
+27SS,afni,parametric,clustsim,rare,rare,rare,rare,no,rare,6,1,108,4.939714374642602,7.315883504509785,0.64625650254062,1
+2T6S,spm,parametric,rare,rare,rare,rare,rare,yes,rare,8,1,108,5.8985774570269545,6.289715570908998,0.6269383316001058,4
+2T7P,other,rare,rare,rare,rare,rare,rare,no,rare,2,1,105,3.5134573744275346,,0.5917774138286983,0
+3C6G,spm,parametric,grtfwe cluster,rare,rare,rare,mass univariate,no,rare,6,1,107,5.491300405740726,7.095064377287131,0.8963498291392886,3
+3PQ2,fsl,parametric,grtfwe cluster,rare,rare,rare,mass univariate.,no,rare,4,1,101,3.068473001931964,6.073044534100405,0.6712864361336979,2
+3TR7,spm,parametric,grtfwe cluster,rare,rare,rare,rare,yes,rare,8,1,108,6.117671018154921,0.0,0.9459539786936844,1
+43FJ,fsl,parametric,grtfwe cluster,rare,rare,rare,rare,no,rare,5,1,103,5.0404732375252985,7.670428522190693,0.7139877688959726,2
+46CD,other,parametric,fdr cluster,rare,rare,rare,mass univariate,no,rare,8,1,105,4.927330252274177,8.42222295382501,0.8362957820586856,3
+4SZ2,fsl,parametric,tfce,rare,rare,rare,mass univariate,yes,rare,5,0,108,4.394410470796656,9.553220604892726,0.4782147481818633,7
+4TQ6,fsl,randomise,tfce,rare,rare,rare,mass univariate.,yes,rare,6,0,108,6.02818079122512,11.478903216355793,0.62295844844764,2
+50GV,fsl,parametric,grtfwe cluster,rare,rare,rare,rare,yes,rare,5,0,108,4.5744061210425055,8.737452587550584,0.9273864695654488,5
+51PW,fsl,parametric,grtfwe cluster,rare,rare,rare,mass univariate,yes,rare,5,1,108,4.890582768427843,7.829232537543592,0.6992561638819202,2
+5G9K,spm,parametric,grtfwe voxelwise,rare,rare,rare,mass univariate.,yes,rare,4,1,88,,,,0
+6FH5,spm,parametric,grtfwe cluster,rare,rare,rare,mass univariate.,no,rare,6,1,107,5.215550303036773,7.752764808851328,0.9214259888876845,2
+6VV2,afni,parametric,grtfwe cluster,rare,rare,rare,rare,no,rare,4,1,101,3.5796447769075095,6.238324625039508,0.7792961085895704,1
+80GC,afni,parametric,clustsim,rare,none,rare,rare,yes,rare,0,1,108,2.1783699153936853,9.154510487015513,0.3477467456079623,4
+94GU,spm,parametric,fdr,rare,rare,rare,mass univariate,no,rare,8,1,108,5.002298416482651,6.263398262591624,0.5840149431278951,1
+98BT,spm,parametric,fdr cluster,rare,rare,rare,rare,no,rare,8,1,100,5.337345753515515,2.833213344056216,0.8678048181487408,4
+9Q6R,fsl,parametric,grtfwe cluster,rare,rare,rare,mass univariate,no,rare,5,1,104,4.592377372439339,6.699500340161678,0.8780213835568216,5
+9T8E,spm,permutations,grtfwe cluster,rare,rare,rare,mass univariate.,yes,rare,8,1,106,5.10781779408877,6.135564891081739,0.0674515623323406,0
+9U7M,other,parametric,fdr voxelwise,rare,rare,rare,mass univariate.,no,rare,6,1,104,5.62181291178895,0.0,0.8445834002028009,3
+AO86,other,randomise,grtfwe cluster,rare,rare,rare,mass univariate,yes,rare,5,1,108,4.123077241225019,6.825460036255307,0.3509116771157318,1
+B23O,fsl,randomise,tfce,rare,rare,rare,mass univariate,yes,rare,0,0,108,1.532772827498615,8.845345196421732,0.5161555317386135,1
+B5I6,fsl,randomise,tfce,rare,rare,rare,rare,yes,rare,5,1,106,4.488028694498235,7.3796321526095525,0.9089890766006664,3
+C22U,fsl,parametric,grtfwe cluster,rare,rare,rare,mass univariate,no,rare,5,0,107,4.91613013091982,8.264363329731667,0.8289336122963953,4
+C88N,spm,parametric,grtfwe cluster,rare,none,none,mass univariate.,yes,rare,8,0,106,5.254629579750149,8.34283980427146,0.8551986325072464,1
+DC61,spm,parametric,fdr voxelwise,rare,rare,rare,mass univariate.,yes,rare,5,1,105,4.371245532436823,5.365976015021851,0.3740831505786618,3
+E3B6,spm,parametric,tfce,rare,rare,rare,rare,yes,rare,6,1,99,5.19060891145125,0.0,0.3791829797077031,3
+E6R3,other,rare,fdr voxelwise,rare,rare,rare,rare,yes,rare,5,1,108,4.329570529981473,9.588091641516831,0.8446053747374171,4
+I07H,other,permutations,clustsim,rare,rare,rare,mass univariate,yes,rare,4,0,108,3.4362850641743456,11.433525050981935,0.3899929942246133,2
+I52Y,fsl,randomise,tfce,rare,rare,rare,mass univariate,no,rare,5,1,106,4.933816002913129,6.849066282633458,0.8476214326814662,1
+I9D6,afni,parametric,rare,rare,rare,rare,mass univariate,no,rare,4,1,99,3.221670582558894,7.686162303492906,0.4868272973484588,0
+IZ20,other,parametric,fdr voxelwise,rare,rare,rare,mass univariate,no,rare,6,0,108,6.867598803695561,10.783860909223483,0.5889317763151938,5
+J7F9,spm,parametric,grtfwe cluster,rare,rare,rare,mass univariate.,yes,rare,8,1,107,5.707577855669598,8.666647144584575,0.8913072190818246,1
+K9P0,afni,parametric,clustsim,rare,rare,rare,mass univariate.,yes,rare,4,1,107,3.8519636821337224,7.01301578963963,0.8652074599050916,2
+L1A8,spm,parametric,grtfwe cluster,rare,none,rare,mass univariate,no,rare,6,1,108,,,,5
+L3V8,spm,parametric,grtfwe cluster,rare,rare,rare,mass univariate.,no,rare,6,0,101,5.583755673639967,7.340835554123275,0.8663468858520919,2
+L7J7,spm,parametric,grtfwe cluster,rare,none,none,mass univariate.,yes,rare,6,1,108,5.02564752602416,8.338066525518801,0.9176491814861056,3
+L9G5,fsl,parametric,grtfwe cluster,rare,rare,rare,rare,no,rare,5,0,104,3.978068307467663,8.99230873254815,0.3103710179205606,4
+O03M,afni,permutations,clustsim,rare,none,none,mass univariate,yes,rare,0,1,107,1.3525919275499179,5.700443573390687,0.5383395413323591,1
+O21U,fsl,parametric,grtfwe cluster,rare,rare,rare,mass univariate,yes,rare,5,1,104,4.267888043704034,8.74257423767064,0.8659560223376784,3
+O6R6,fsl,randomise,tfce,rare,rare,rare,rare,yes,rare,0,0,108,1.03197022329855,11.067762730003519,0.1940130885282693,1
+P5F3,fsl,parametric,grtfwe cluster,rare,rare,rare,rare,no,rare,4,1,107,5.568563054940661,10.924714710154692,0.6709126372739052,5
+Q58J,fsl,parametric,grtfwe cluster,rare,rare,rare,mass univariate,no,rare,4,0,108,6.081466471099145,11.007037630233862,0.6032522665835565,6
+Q6O0,spm,parametric,rare,rare,rare,rare,rare,yes,rare,8,1,107,5.79178249857583,3.9318256327243257,0.9497452926611228,1
+R42Q,other,parametric,fdr,rare,rare,rare,rare,no,rare,6,1,108,5.530113156833614,9.801288700215881,0.4557566288716706,6
+R5K7,spm,parametric,grtfwe voxelwise,rare,rare,rare,mass univariate,no,rare,8,1,108,5.251119766907587,3.6109179126442243,0.5559958241828683,4
+R7D1,other,randomise,tfce,rare,rare,rare,rare,yes,rare,5,1,107,4.17139733440458,8.079927770758275,0.8554405175862395,2
+R9K3,spm,parametric,rare,rare,rare,rare,rare,yes,rare,6,1,102,5.077647142924521,8.001355025826703,0.902083422521386,5
+SM54,other,parametric,fdr voxelwise,rare,none,none,mass univariate,yes,rare,5,1,108,3.9087019412387782,6.448889394146858,0.5159974436370539,1
+T54A,fsl,randomise,tfce,rare,rare,rare,rare,yes,rare,4,0,95,5.1694632722576515,7.7886260656250315,0.3711578474257799,5
+U26C,spm,parametric,grtfwe voxelwise,rare,none,none,rare,yes,rare,5,1,108,4.699327479251825,1.791759469228055,0.9191341022329168,1
+UI76,afni,parametric,clustsim,rare,none,none,rare,yes,rare,4,1,104,3.178387108138066,9.409191230721348,0.578933103762633,3
+UK24,spm,parametric,grtfwe cluster,rare,rare,rare,rare,no,rare,4,0,107,4.570380884056893,6.100318952020064,0.0179561911813053,0
+V55J,spm,parametric,rare,rare,rare,rare,rare,no,rare,6,0,108,5.3203897471588615,7.909122183211411,0.7763547959992594,2
+VG39,spm,parametric,grtfwe voxelwise,rare,rare,rare,mass univariate,yes,rare,5,0,108,,,,3
+X19V,fsl,parametric,fdr cluster,rare,rare,rare,mass univariate,yes,rare,5,1,107,4.036409376184492,8.56331312702979,0.8708530835765623,1
+X1Y5,other,randomise,grtfwe cluster,rare,rare,rare,mass univariate,yes,rare,4,1,102,4.321675629934768,7.57095858316901,0.7557679186663001,1
+X1Z4,other,permutations,tfce,rare,rare,rare,mass univariate,no,rare,2,1,108,,,,3
+XU70,fsl,parametric,tfce,rare,rare,rare,mass univariate,no,rare,5,1,107,4.04987278261591,10.31982665719617,0.6446729527043633,4

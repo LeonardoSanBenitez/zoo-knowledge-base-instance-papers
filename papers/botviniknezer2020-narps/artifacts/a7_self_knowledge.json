@@ -1,0 +1,187 @@
+{
+ "n_rows": 630,
+ "n_rows_with_map": 448,
+ "Similar__actual_map_r": {
+  "rho": 0.19000550121908452,
+  "n_rows": 448,
+  "p_two_sided": 0.012849357532123394,
+  "null_mean": 0.0005278007974011377,
+  "null_sd": 0.07472157658405403,
+  "nperm": 20000,
+  "label": "self-rated similarity vs ACTUAL map similarity"
+ },
+ "Similar__agrees_majority": {
+  "rho": -0.14263322441363424,
+  "n_rows": 630,
+  "p_two_sided": 0.0006499675016249188,
+  "null_mean": -1.5625781232405095e-05,
+  "null_sd": 0.04101699341542049,
+  "nperm": 20000,
+  "label": "self-rated similarity vs agreeing with the majority"
+ },
+ "Confidence__agrees_majority": {
+  "rho": -0.07134749340066111,
+  "n_rows": 630,
+  "p_two_sided": 0.060446977651117444,
+  "null_mean": 0.0074210047472268595,
+  "null_sd": 0.041493805159494385,
+  "nperm": 20000,
+  "label": "confidence vs agreeing with the majority"
+ },
+ "Confidence__actual_map_r": {
+  "rho": 0.1799202612106901,
+  "n_rows": 448,
+  "p_two_sided": 0.01584920753962302,
+  "null_mean": -0.0004764174084902704,
+  "null_sd": 0.07488533594667886,
+  "nperm": 20000,
+  "label": "confidence vs ACTUAL map similarity"
+ },
+ "Confidence__Similar": {
+  "rho": 0.6695614436891865,
+  "n_rows": 630,
+  "p_two_sided": 4.999750012499375e-05,
+  "null_mean": 0.00012884536482262075,
+  "null_sd": 0.05852549280922976,
+  "nperm": 20000,
+  "label": "confidence vs self-rated similarity"
+ },
+ "Similar__Decision": {
+  "rho": 0.22623152294508359,
+  "n_rows": 630,
+  "p_two_sided": 4.999750012499375e-05,
+  "null_mean": 0.00017466367505913024,
+  "null_sd": 0.04415829752029694,
+  "nperm": 20000,
+  "label": "self-rated similarity vs own yes/no (NARPS supp reports this)"
+ },
+ "Confidence__Decision": {
+  "rho": 0.14930635086262953,
+  "n_rows": 630,
+  "p_two_sided": 0.0009499525023748813,
+  "null_mean": -0.002265545295715919,
+  "null_sd": 0.045040500684328647,
+  "nperm": 20000,
+  "label": "confidence vs own yes/no (NARPS supp reports this)"
+ },
+ "means_by_agreement": [
+  {
+   "varnum": 1,
+   "agrees_majority": 0,
+   "Similar": 7.692,
+   "Confidence": 7.5
+  },
+  {
+   "varnum": 1,
+   "agrees_majority": 1,
+   "Similar": 5.727,
+   "Confidence": 6.25
+  },
+  {
+   "varnum": 2,
+   "agrees_majority": 0,
+   "Similar": 6.6,
+   "Confidence": 6.6
+  },
+  {
+   "varnum": 2,
+   "agrees_majority": 1,
+   "Similar": 6.4,
+   "Confidence": 6.945
+  },
+  {
+   "varnum": 3,
+   "agrees_majority": 0,
+   "Similar": 6.812,
+   "Confidence": 7.312
+  },
+  {
+   "varnum": 3,
+   "agrees_majority": 1,
+   "Similar": 5.981,
+   "Confidence": 6.667
+  },
+  {
+   "varnum": 4,
+   "agrees_majority": 0,
+   "Similar": 6.783,
+   "Confidence": 6.913
+  },
+  {
+   "varnum": 4,
+   "agrees_majority": 1,
+   "Similar": 5.66,
+   "Confidence": 6.34
+  },
+  {
+   "varnum": 5,
+   "agrees_majority": 0,
+   "Similar": 5.273,
+   "Confidence": 6.091
+  },
+  {
+   "varnum": 5,
+   "agrees_majority": 1,
+   "Similar": 8.119,
+   "Confidence": 8.288
+  },
+  {
+   "varnum": 6,
+   "agrees_majority": 0,
+   "Similar": 7.391,
+   "Confidence": 7.739
+  },
+  {
+   "varnum": 6,
+   "agrees_majority": 1,
+   "Similar": 6.17,
+   "Confidence": 7.0
+  },
+  {
+   "varnum": 7,
+   "agrees_majority": 0,
+   "Similar": 6.0,
+   "Confidence": 6.5
+  },
+  {
+   "varnum": 7,
+   "agrees_majority": 1,
+   "Similar": 6.879,
+   "Confidence": 7.515
+  },
+  {
+   "varnum": 8,
+   "agrees_majority": 0,
+   "Similar": 6.75,
+   "Confidence": 7.75
+  },
+  {
+   "varnum": 8,
+   "agrees_majority": 1,
+   "Similar": 6.818,
+   "Confidence": 7.439
+  },
+  {
+   "varnum": 9,
+   "agrees_majority": 0,
+   "Similar": 6.0,
+   "Confidence": 6.75
+  },
+  {
+   "varnum": 9,
+   "agrees_majority": 1,
+   "Similar": 6.379,
+   "Confidence": 7.015
+  }
+ ],
+ "pooled_means_by_agreement": {
+  "0": {
+   "Similar": 6.880952380952381,
+   "Confidence": 7.134920634920635
+  },
+  "1": {
+   "Similar": 6.521825396825397,
+   "Confidence": 7.109126984126984
+  }
+ }
+}

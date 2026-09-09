@@ -1,0 +1,210 @@
+
+
+===== PAGE 1 =====
+1
+nature research  |  reporting summary
+October 2018
+Corresponding author(s):
+Tom Schonberg
+Last updated by author(s): Mar 25, 2020
+Reporting Summary
+Nature Research wishes to improve the reproducibility of the work that we publish. This form provides structure for consistency and transparency 
+in reporting. For further information on Nature Research policies, see Authors & Referees and the Editorial Policy Checklist.
+Statistics
+For all statistical analyses, confirm that the following items are present in the figure legend, table legend, main text, or Methods section.
+n/a Confirmed
+The exact sample size (n) for each experimental group/condition, given as a discrete number and unit of measurement
+A statement on whether measurements were taken from distinct samples or whether the same sample was measured repeatedly
+The statistical test(s) used AND whether they are one- or two-sided 
+Only common tests should be described solely by name; describe more complex techniques in the Methods section.
+A description of all covariates tested
+A description of any assumptions or corrections, such as tests of normality and adjustment for multiple comparisons
+A full description of the statistical parameters including central tendency (e.g. means) or other basic estimates (e.g. regression coefficient) 
+AND variation (e.g. standard deviation) or associated estimates of uncertainty (e.g. confidence intervals)
+For null hypothesis testing, the test statistic (e.g. F, t, r) with confidence intervals, effect sizes, degrees of freedom and P value noted 
+Give P values as exact values whenever suitable.
+For Bayesian analysis, information on the choice of priors and Markov chain Monte Carlo settings
+For hierarchical and complex designs, identification of the appropriate level for tests and full reporting of outcomes
+Estimates of effect sizes (e.g. Cohen's d, Pearson's r), indicating how they were calculated
+Our web collection on statistics for biologists contains articles on many of the points above.
+Software and code
+Policy information about availability of computer code
+Data collection
+A full description of the experimental procedures, validations and the fMRI dataset is available in a Data Descriptor (https://
+doi.org/10.1038/s41597-019-0113-7). Code used for fMRI data collection are available at https://github.com/rotemb9/
+NARPS_scientific_data.
+Data analysis
+Fully reproducible code for the analyses of the analysis teams' submitted results and statistical maps, as well as the prediction markets, 
+are available at DOI: 10.5281/zenodo.3709273. The full list of software and versions used within the code are available in the dockerfile: 
+https://github.com/poldrack/narps/blob/master/Dockerfile
+For manuscripts utilizing custom algorithms or software that are central to the research but not yet described in published literature, software must be made available to editors/reviewers. 
+We strongly encourage code deposition in a community repository (e.g. GitHub). See the Nature Research guidelines for submitting code & software for further information.
+Data
+Policy information about availability of data
+All manuscripts must include a data availability statement. This statement should provide the following information, where applicable: 
+- Accession codes, unique identifiers, or web links for publicly available datasets 
+- A list of figures that have associated raw data 
+- A description of any restrictions on data availability
+The fMRI dataset is openly available via OpenNeuro at DOI:10.18112/openneuro.ds001734.v1.0.4. Additional data are included with the analyses code at 
+DOI:10.5281/zenodo.3709273
+
+
+===== PAGE 2 =====
+2
+nature research  |  reporting summary
+October 2018
+Field-specific reporting
+Please select the one below that is the best fit for your research. If you are not sure, read the appropriate sections before making your selection.
+Life sciences
+Behavioural & social sciences
+ Ecological, evolutionary & environmental sciences
+For a reference copy of the document with all sections, see nature.com/documents/nr-reporting-summary-flat.pdf
+Behavioural & social sciences study design
+All studies must disclose on these points even when the disclosure is negative.
+Study description
+Quantitative
+Research sample
+The fMRI dataset included nueroimaging and behavioral data of 108 participants. Demographic information of the participants can be 
+found at DOI:10.18112/openneuro.ds001734.v1.0.4. 
+70 analysis teams analyzed the dataset. 96 “team members” and 91 “non-team members” signed up to participate in the prediction 
+markets. N = 83 “team members” and N = 65 “non-team members” actively participated in the markets. Members of the analysis teams 
+and traders in the predictions market were researchers in the field from around the world.
+Sampling strategy
+Relevant information for the fMRI dataset is available at the Data Descriptor (https://doi.org/10.1038/s41597-019-0113-7). With regard 
+to the number of analysis teams and traders in the prediction markets, we aimed to recruit as many as possible within the time frame.
+Data collection
+Relevant information for the fMRI dataset is available at the Data Descriptor (https://doi.org/10.1038/s41597-019-0113-7). Shortly, data 
+was collected using MRI scanner and computers.
+Timing
+The fMRI dataset was collected between November 2017 and May 2018. Analysis teams were recruited and analyzed the data between 
+November 2018 and March 2019. The prediction markets were open between May 2nd to May 12th 2019.
+Data exclusions
+One team was excluded from all analyses since their reported results were not based on a whole-brain analysis as instructed. Of the 
+remaining 69 teams, thresholded maps of 65 teams and unthresholded (z / t) maps of 64 teams were included in the analyses (see 
+Extended Data Table 3b for detailed reasons for exclusion of the other teams).
+Non-participation
+12 out of the 82 analysis teams that signed the non-disclosure form and were provided with access to the data did not submit their 
+results by the deadline. 13 traders in the "team members" and 26 traders in the "non-team members" prediction markets registered but 
+did not actively participate in the prediction markets.
+Randomization
+fMRI dataset- participants were pseudo-randomly (alternately) assigned  to one of two experimental conditions (Equal Indifference or 
+Equal Range). Analysis teams were not allocated into experimental groups.
+Reporting for specific materials, systems and methods
+We require information from authors about some types of materials, experimental systems and methods used in many studies. Here, indicate whether each material, 
+system or method listed is relevant to your study. If you are not sure if a list item applies to your research, read the appropriate section before selecting a response. 
+Materials & experimental systems
+n/a Involved in the study
+Antibodies
+Eukaryotic cell lines
+Palaeontology
+Animals and other organisms
+Human research participants
+Clinical data
+Methods
+n/a Involved in the study
+ChIP-seq
+Flow cytometry
+MRI-based neuroimaging
+Human research participants
+Policy information about studies involving human research participants
+Population characteristics
+fMRI dataset- demographic information of the participants can be found at DOI:10.18112/openneuro.ds001734.v1.0.4. 
+108 participants where included in the dataset: 
+54 in the Equal Indifference group (30 females, mean age = 26.06 years, SD age = 3.02 years) 
+and 54 in the Equal Range group (30 females, mean age = 25.04 years, SD age = 3.99 years). 
+All participants were right-handed, had normal or corrected-to-normal vision and reported no history of 
+psychiatric or neurologic diagnoses, or use any medications that would interfere with the experiment.
+
+
+===== PAGE 3 =====
+3
+nature research  |  reporting summary
+October 2018
+Recruitment
+Analysis teams were recruited via social media, mainly Twitter and Facebook, as well as during the 2018 annual meeting of The 
+Society for Neuroeconomics. Prediction market traders were recruited via social media (mainly Facebook and Twitter) and e-
+mails. This recruitment method may increase the chances of specific researchers to participate in an analysis team or in the 
+prediction markets, for example researchers that are more active in social media or attended the 2018 meeting of The Society 
+for Neuroeconomics. Researchers who advocate for replication attempts and "open science" practices may also be more inclined 
+to join such study. However, our results strongly suggest that they were not biased. For example, the fact that several 
+hypotheses were only affirmed by roughly 5% of teams, while Hypothesis #5 was affirmed by 84% of teams, suggests that there 
+was no overall bias towards either affirmation or rejection of hypotheses. In addition, each of the 70 analysis teams chose to use 
+a different analysis pipeline, which suggests evidence against a potential bias in methods used by the specific analysis teams that 
+joined the study. With regard to the prediction markets, traders that were exposed to the recruitment ads on social media may 
+be biased with regard to their predictions, but as there is a debate in the published literature regarding most of the hypotheses 
+included in our study, we do not have a specific reason to assume such bias.
+Ethics oversight
+MRI data collection was approved by the Helsinki committee at Sheba Tel Hashomer Medical Center and the ethics committee at 
+Tel Aviv University, and all participants gave written informed consent (as described in the Scientific Data Descriptor of this 
+dataset). The Board for Ethical Questions in Science at the University of Innsbruck approved the data collection in regards of the 
+prediction markets, and certified that the project is in correspondence with all requirements of the ethical principles and the 
+guidelines of good scientific practice.  The Stanford University IRB determined that the analysis of the submitted team results did 
+not meet the definition of human subject research, and thus no further IRB review was required.
+Note that full information on the approval of the study protocol must also be provided in the manuscript.
+Magnetic resonance imaging
+Experimental design
+Design type
+Task
+Design specifications
+The fMRI dataset was published in a Data Descriptor (https://doi.org/10.1038/s41597-019-0113-7)
+Behavioral performance measures
+The fMRI dataset was published in a Data Descriptor (https://doi.org/10.1038/s41597-019-0113-7)
+Acquisition
+Imaging type(s)
+functional and structural
+Field strength
+3T
+Sequence & imaging parameters
+Imaging data were acquired using a 3 T Siemens Prisma MRI scanner with a 64-channel head coil, at the Strauss Imaging 
+Center on the campus of Tel Aviv University. Functional data during the mixed gambles task were acquired using T2*-
+weighted echo-planar imaging sequence with multi-band acceleration factor of 4 and parallel imaging factor (iPAT) of 2, 
+TR = 1000 ms, TE = 30 ms, flip angle = 68 degrees, field of view (FOV) = 212 × 212 mm, in plane resolution of 2 × 2 mm 30 
+degrees off the anterior commissure-posterior commissure line to reduce the frontal signal dropout27, slice thickness 
+of 2 mm, 64 slices and a gap of 0.4 mm between slices to cover the entire brain. For each functional run, we acquired 
+453 volumes.
+Area of acquisition
+Whole brain
+Diffusion MRI
+Used
+Not used
+Preprocessing
+Preprocessing software
+Each team performed their own preprocessing. Raw data and data preprocessed with fMRIprep v. 1.1.4 were shared 
+with the teams. 
+Normalization
+Each team performed their own preprocessing. Raw data and data preprocessed with fMRIprep v. 1.1.4 were shared 
+with the teams. 
+Normalization template
+Each team performed their own preprocessing. Raw data and data preprocessed with fMRIprep v. 1.1.4 were shared 
+with the teams. 
+Noise and artifact removal
+Each team performed their own preprocessing. Raw data and data preprocessed with fMRIprep v. 1.1.4 were shared 
+with the teams.
+Volume censoring
+Each team performed their own preprocessing. Raw data and data preprocessed with fMRIprep v. 1.1.4 were shared 
+with the teams. 
+Statistical modeling & inference
+Model type and settings
+Each team performed their own analysis.
+Effect(s) tested
+Each team performed their own analysis.
+
+
+===== PAGE 4 =====
+4
+nature research  |  reporting summary
+October 2018
+Specify type of analysis:
+Whole brain
+ROI-based
+Both
+Statistic type for inference
+(See Eklund et al. 2016)
+Each team performed their own analysis.
+Correction
+Each team performed their own analysis.
+Models & analysis
+n/a Involved in the study
+Functional and/or effective connectivity
+Graph analysis
+Multivariate modeling or predictive analysis
