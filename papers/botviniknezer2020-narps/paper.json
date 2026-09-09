@@ -703,7 +703,7 @@
     "on": "2026-09-09",
     "by": "maria",
     "how": "downloaded, sha256'd, extracted; reproduced the published Table 1 (all nine yes-rates exact) and the published SuppTable4 delta pseudo-R2 values from it before using anything else",
-    "result": "421 files, 72 MB extracted. Contains the 70x9 decision matrix, the confidence and similarity ratings, per-team image diagnostics, the seven team-by-team Spearman correlation matrices, the common-threshold simulation, and the prediction-market RData. Everything in this record except the market prices comes from here."
+    "result": "421 files, 72 MB extracted. Contains the 70x9 decision matrix, the confidence and similarity ratings, per-team image diagnostics, the seven team-by-team Spearman correlation matrices, the common-threshold simulation, and the prediction-market RData. Everything in this record except the market prices comes from here. DISK: the 52.3 MB archive was deleted after extraction and the 48 MB of regenerable binaries inside it (.nii.gz, .png, .pdf) were deleted too; the fetch_cmd above regenerates all of it. What is COMMITTED is the ~11 MB of tables the reanalysis actually reads, so the scripts run from a fresh clone with no download. See .gitignore in this folder. This is recorded because the first commit of this record did NOT do that -- it put 124 MB into the repository and needed an amend plus a gc to undo."
    }
   },
   {
