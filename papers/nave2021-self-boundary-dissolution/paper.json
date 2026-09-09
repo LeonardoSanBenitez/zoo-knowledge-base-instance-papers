@@ -2,10 +2,21 @@
  "schema_version": "1.0",
  "id": "nave2021-self-boundary-dissolution",
  "title": "Self-Boundary Dissolution in Meditation: A Phenomenological Investigation",
- "authors": ["Ohad Nave", "Fynn-Mathis Trautwein", "Yochai Ataria", "Yair Dor-Ziderman", "Yoav Schweitzer", "Stephen Fulder", "Aviva Berkovich-Ohana"],
+ "authors": [
+  "Ohad Nave",
+  "Fynn-Mathis Trautwein",
+  "Yochai Ataria",
+  "Yair Dor-Ziderman",
+  "Yoav Schweitzer",
+  "Stephen Fulder",
+  "Aviva Berkovich-Ohana"
+ ],
  "year": 2021,
  "venue": "Brain Sciences 11(6):819",
- "area": ["psychology-of-meditation", "measurement-theory"],
+ "area": [
+  "contemplative-neuroscience",
+  "measurement-theory"
+ ],
  "identifiers": {
   "doi": "10.3390/brainsci11060819",
   "url": "https://doi.org/10.3390/brainsci11060819"
@@ -24,14 +35,62 @@
    "statement": "Across n=46 practitioners' phenomenological reports of volitional self-boundary (SB) dissolution, six experiential categories (sense of agency, self-location, first-person perspective, attentional disposition, body sensations, affective valence) were derived by qualitative coding, then a PCA on five of them (excluding valence, which was uncorrelated with the rest) found ONE component explaining 58% of variance, with high loadings on all five (Agency 0.83, Location 0.85, FPP 0.84, Attention 0.78, Body 0.80). The resulting unweighted sum score correlated r=0.91 with an independent holistic dissolution rating.",
    "scope": "N=46 proficient meditators (115-24,837 lifetime practice hours), SB- (dissolve boundaries) condition only -- the SB+ (maintain boundaries) condition had too little variance for the same analysis to be meaningful (noted explicitly by the authors as a limitation, though similar association PATTERNS held, Supplementary Figure S3).",
    "quantities": [
-    {"name": "pca_variance_explained_pct", "value": 58, "n": 46, "baseline": "one component, five dimensions (Agency/Location/FPP/Attention/Body), valence excluded", "source": "paper Section 3.3"},
-    {"name": "pca_loading_agency", "value": 0.83, "n": 46, "baseline": "standardized loading, first component", "source": "paper Section 3.3"},
-    {"name": "pca_loading_location", "value": 0.85, "n": 46, "baseline": "standardized loading, first component", "source": "paper Section 3.3"},
-    {"name": "pca_loading_fpp", "value": 0.84, "n": 46, "baseline": "standardized loading, first component", "source": "paper Section 3.3"},
-    {"name": "pca_loading_attention", "value": 0.78, "n": 46, "baseline": "standardized loading, first component", "source": "paper Section 3.3"},
-    {"name": "pca_loading_body", "value": 0.80, "n": 46, "baseline": "standardized loading, first component", "source": "paper Section 3.3"},
-    {"name": "pca_loading_valence", "value": 0.33, "n": 46, "baseline": "the excluded/weak dimension, kept for comparison", "source": "paper Section 3.3"},
-    {"name": "summary_score_vs_holistic_rating_correlation", "value": 0.91, "n": 46, "baseline": "Spearman r_s, DD_C (computed) vs DD_R (independent holistic rating by 2 of 4 trained raters)", "source": "paper Section 3.3"}
+    {
+     "name": "pca_variance_explained_pct",
+     "value": 58,
+     "n": 46,
+     "baseline": "one component, five dimensions (Agency/Location/FPP/Attention/Body), valence excluded",
+     "source": "paper Section 3.3"
+    },
+    {
+     "name": "pca_loading_agency",
+     "value": 0.83,
+     "n": 46,
+     "baseline": "standardized loading, first component",
+     "source": "paper Section 3.3"
+    },
+    {
+     "name": "pca_loading_location",
+     "value": 0.85,
+     "n": 46,
+     "baseline": "standardized loading, first component",
+     "source": "paper Section 3.3"
+    },
+    {
+     "name": "pca_loading_fpp",
+     "value": 0.84,
+     "n": 46,
+     "baseline": "standardized loading, first component",
+     "source": "paper Section 3.3"
+    },
+    {
+     "name": "pca_loading_attention",
+     "value": 0.78,
+     "n": 46,
+     "baseline": "standardized loading, first component",
+     "source": "paper Section 3.3"
+    },
+    {
+     "name": "pca_loading_body",
+     "value": 0.8,
+     "n": 46,
+     "baseline": "standardized loading, first component",
+     "source": "paper Section 3.3"
+    },
+    {
+     "name": "pca_loading_valence",
+     "value": 0.33,
+     "n": 46,
+     "baseline": "the excluded/weak dimension, kept for comparison",
+     "source": "paper Section 3.3"
+    },
+    {
+     "name": "summary_score_vs_holistic_rating_correlation",
+     "value": 0.91,
+     "n": 46,
+     "baseline": "Spearman r_s, DD_C (computed) vs DD_R (independent holistic rating by 2 of 4 trained raters)",
+     "source": "paper Section 3.3"
+    }
    ],
    "evidence": [],
    "our_assessment": {
@@ -45,10 +104,34 @@
    "statement": "Sense of Agency (deliberate control vs. passive letting-go) and Attentional Disposition (focused vs. wide/formless) are the most central, causally load-bearing dimensions in a partial-correlation network of the SB dissolution categories -- Agency has the highest node-strength centrality, Attention second. The specific meditation techniques of 'relaxation, release, passivity' and, to a lesser degree, 'turning attention outwards' most strongly predict degree of dissolution in a linear model (p<=0.001 and p<=0.05 respectively against other techniques); both act by reducing active attentional/agentic engagement rather than by any content-reappraisal move.",
    "scope": "N=46, SB- condition, network analysis (Figure 2A/B) and linear model on DD_C by technique (Figure 2C).",
    "quantities": [
-    {"name": "agency_attention_hours_meditated_correlation", "value": 0.65, "n": 46, "baseline": "Spearman r_s, Agency dimension vs log lifetime meditation hours", "source": "paper Figure 2E"},
-    {"name": "fpp_hours_meditated_correlation", "value": 0.49, "n": 46, "baseline": "Spearman r_s, first-person-perspective dimension vs log lifetime meditation hours", "source": "paper Figure 2E"},
-    {"name": "attention_hours_meditated_correlation", "value": 0.44, "n": 46, "baseline": "Spearman r_s, Attention dimension vs log lifetime meditation hours", "source": "paper Figure 2E"},
-    {"name": "dissolution_hours_meditated_correlation", "value": 0.52, "n": 46, "baseline": "Spearman r_s, DD_C (computed dissolution score) vs log lifetime meditation hours", "source": "paper Figure 2D"}
+    {
+     "name": "agency_attention_hours_meditated_correlation",
+     "value": 0.65,
+     "n": 46,
+     "baseline": "Spearman r_s, Agency dimension vs log lifetime meditation hours",
+     "source": "paper Figure 2E"
+    },
+    {
+     "name": "fpp_hours_meditated_correlation",
+     "value": 0.49,
+     "n": 46,
+     "baseline": "Spearman r_s, first-person-perspective dimension vs log lifetime meditation hours",
+     "source": "paper Figure 2E"
+    },
+    {
+     "name": "attention_hours_meditated_correlation",
+     "value": 0.44,
+     "n": 46,
+     "baseline": "Spearman r_s, Attention dimension vs log lifetime meditation hours",
+     "source": "paper Figure 2E"
+    },
+    {
+     "name": "dissolution_hours_meditated_correlation",
+     "value": 0.52,
+     "n": 46,
+     "baseline": "Spearman r_s, DD_C (computed dissolution score) vs log lifetime meditation hours",
+     "source": "paper Figure 2D"
+    }
    ],
    "evidence": [],
    "our_assessment": {
@@ -82,14 +165,21 @@
    }
   }
  ],
- "methods": ["exploratory-factor-analysis"],
+ "methods": [
+  "exploratory-factor-analysis"
+ ],
  "artifacts": [
   {
    "id": "a1",
    "role": "derived-data",
    "locator": "https://doi.org/10.17605/OSF.IO/BSXUA",
    "status": "not-checked",
-   "checked": {"on": "2026-08-21", "by": "maria", "how": "Noted from the paper's Data Availability statement, not fetched or opened this session.", "result": "Processed phenomenological categorizations (categorical codes) are openly on OSF; raw Hebrew-language interview transcripts are available on request only, not open. Pre-registration at the same OSF project, referenced in the paper (accessed by the authors 2020-11-17)."}
+   "checked": {
+    "on": "2026-08-21",
+    "by": "maria",
+    "how": "Noted from the paper's Data Availability statement, not fetched or opened this session.",
+    "result": "Processed phenomenological categorizations (categorical codes) are openly on OSF; raw Hebrew-language interview transcripts are available on request only, not open. Pre-registration at the same OSF project, referenced in the paper (accessed by the authors 2020-11-17)."
+   }
   }
  ],
  "relations": [

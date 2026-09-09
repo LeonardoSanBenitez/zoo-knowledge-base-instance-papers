@@ -10,8 +10,13 @@
   - methods: `systemic-failure-rate`, `independence-normalised-homogenization-metric`, `fairness-benchmark-replication`, `foundation-model-adaptation-comparison`
   - notes: `instance-papers/papers/bommasani2022-homogenization/`
 
-## analytic-variability
+## analytic-variability-and-many-analysts
 
+- **`botviniknezer2020-narps`** (2020, Nature 582:84-88 (NARPS)) — Variability in the analysis of a single neuroimaging dataset by many teams
+  - depth: `read-and-reanalysed` · 12 claims · 52 quantities · 11 artifacts · **1 artifact problem(s)**
+  - methods: `many-analysts-design`, `exact-permutation-test`, `column-permutation-null-at-fixed-margins`, `logit-normal-random-intercept-mle`, `intraclass-correlation-clustered-binary`, `grouped-cross-validation-by-cluster`, `partial-mantel-test`, `mantel-power-calibration-by-injection`, `auc-with-label-permutation-null`, `forecast-error-bias-variance-decomposition`, `hindsight-free-constant-baseline`, `published-table-vs-deposit-crosscheck`, `robust-dispersion-iqr`
+  - cito:agreesWith → `breznau2022-hidden-universe`; cito:qualifies → `maria2026-analytic-variability-reanalysis`; zoo:reanalyses → `maria2026-analytic-variability-reanalysis`; cito:agreesWith → `menkveld2024-nonstandard-errors`; cito:qualifies → `mathur2023-effect-sizes`; cito:extends → `maria2026-shell-or-payload`; cito:agreesWith → `karger2023-xpt`; cito:usesDataFrom → `breznau2022-hidden-universe`
+  - notes: `instance-papers/papers/botviniknezer2020-narps/`
 - **`breznau2022-hidden-universe`** (2022, PNAS 119(44) e2203150119 (Correction: PNAS 121(26) e2410677121, 2024-06-20)) — Observing many researchers using the same data and hypothesis reveals a hidden universe of uncertainty
   - depth: `read-and-reanalysed` · 5 claims · 23 quantities · 6 artifacts
   - methods: `many-analysts-design`, `multilevel-variance-decomposition`, `inverse-cluster-size-weighting`, `stepwise-aic-variable-selection`, `multiverse-simulation-benchmark`
@@ -32,14 +37,6 @@
   - methods: `many-analysts-design`, `robust-dispersion-iqr`, `quantile-regression`, `multiverse-analysis`, `peer-feedback-staged-design`, `incentivised-belief-elicitation`
   - cito:agreesWith → `maria2026-analytic-variability-reanalysis`; cito:qualifies → `breznau2022-hidden-universe`; cito:obtainsBackgroundFrom → `breznau2022-hidden-universe`; cito:usesMethodIn → `maria2026-happiness-income-spread`; cito:qualifies → `maria2026-mbp-variability-ratio`; cito:agreesWith → `botviniknezer2020-narps`
   - notes: `instance-papers/papers/menkveld2024-nonstandard-errors/`
-
-## analytic-variability-and-many-analysts
-
-- **`botviniknezer2020-narps`** (2020, Nature 582:84-88 (NARPS)) — Variability in the analysis of a single neuroimaging dataset by many teams
-  - depth: `read-and-reanalysed` · 12 claims · 52 quantities · 11 artifacts · **1 artifact problem(s)**
-  - methods: `many-analysts-design`, `exact-permutation-test`, `column-permutation-null-at-fixed-margins`, `logit-normal-random-intercept-mle`, `intraclass-correlation-clustered-binary`, `grouped-cross-validation-by-cluster`, `partial-mantel-test`, `mantel-power-calibration-by-injection`, `auc-with-label-permutation-null`, `forecast-error-bias-variance-decomposition`, `hindsight-free-constant-baseline`, `published-table-vs-deposit-crosscheck`, `robust-dispersion-iqr`
-  - cito:agreesWith → `breznau2022-hidden-universe`; cito:qualifies → `maria2026-analytic-variability-reanalysis`; zoo:reanalyses → `maria2026-analytic-variability-reanalysis`; cito:agreesWith → `menkveld2024-nonstandard-errors`; cito:qualifies → `mathur2023-effect-sizes`; cito:extends → `maria2026-shell-or-payload`; cito:agreesWith → `karger2023-xpt`; cito:usesDataFrom → `breznau2022-hidden-universe`
-  - notes: `instance-papers/papers/botviniknezer2020-narps/`
 - **`maria2026-executability-denominators`** (2026, zoo knowledge base, instance-papers) — Does research code work? A denominator-harmonised synthesis of seven artifact-execution studies
   - depth: `read-and-reanalysed` · 6 claims · 31 quantities · 7 artifacts
   - methods: `random-effects-meta-analysis`, `paule-mandel-heterogeneity`, `denominator-harmonisation`, `design-effect-sensitivity`, `synthetic-injected-effect-control`, `estimator-bias-stress-test`, `leave-one-out-influence`, `printed-decimal-denominator-forensics`, `multiverse-analysis`, `prediction-interval-for-population-effects`
@@ -169,6 +166,9 @@
   - depth: `read-full-text` · 1 claims · 0 quantities · 1 artifacts
   - cito:corrects → `gamma2021-mpe92m`
   - notes: `instance-papers/papers/gamma2024-mpe92m-correction/`
+- **`lutz2015-phenomenological-matrix`** (2015, American Psychologist 70(7):632-658) — Investigating the Phenomenological Matrix of Mindfulness-Related Practices From a Neurocognitive Perspective
+  - depth: `read-full-text` · 3 claims · 0 quantities · 0 artifacts
+  - notes: `instance-papers/papers/lutz2015-phenomenological-matrix/`
 - **`maria2026-mbp-variability-ratio`** (2026, zoo knowledge base, instance-papers (internal reanalysis, not submitted anywhere)) — Does mindfulness narrow the distribution? A variability-ratio analysis of 136 nonclinical trials, and a calibration constant the method has been missing
   - depth: `read-and-reanalysed` · 7 claims · 24 quantities · 3 artifacts
   - methods: `random-effects-meta-analysis`, `paule-mandel-heterogeneity`, `cluster-bootstrap-over-articles`, `location-scale-decomposition`, `synthetic-injected-effect-control`, `estimator-bias-stress-test`, `leave-one-out-influence`, `multiverse-analysis`, `in-paper-table-transcription`, `variability-ratio`, `baseline-arm-negative-control`, `measured-mean-variance-coupling`
@@ -179,6 +179,11 @@
   - methods: `multidimensional-scaling`, `expert-similarity-elicitation`, `in-paper-table-transcription`, `systematic-literature-review`
   - cito:extends → `lutz2015-phenomenological-matrix`; zoo:sharesUnstatedAssumptionWith → `lutz2015-phenomenological-matrix`; cito:obtainsBackgroundFrom → `nave2021-self-boundary-dissolution`
   - notes: `instance-papers/papers/matko2019-meditation-classification/`
+- **`nave2021-self-boundary-dissolution`** (2021, Brain Sciences 11(6):819) — Self-Boundary Dissolution in Meditation: A Phenomenological Investigation
+  - depth: `read-full-text` · 4 claims · 12 quantities · 1 artifacts
+  - methods: `exploratory-factor-analysis`
+  - cito:extends → `lutz2015-phenomenological-matrix#c2`; zoo:sharesUnstatedAssumptionWith → `gamma2021-mpe92m`
+  - notes: `instance-papers/papers/nave2021-self-boundary-dissolution/`
 
 ## existential-risk-and-longtermism
 
@@ -188,7 +193,7 @@
   - cito:agreesWith → `kim2025-correlated-errors`; cito:agreesWith → `maria2026-analytic-variability-reanalysis`; cito:qualifies → `menkveld2024-nonstandard-errors`; zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`; cito:agreesWith → `botviniknezer2020-narps`
   - notes: `instance-papers/papers/karger2023-xpt/`
 
-## llm-monoculture
+## llm-monoculture-and-correlated-errors
 
 - **`bommasani2022-homogenization`** (2022, NeurIPS 2022) — Picking on the Same Person: Does Algorithmic Monoculture lead to Outcome Homogenization?
   - depth: `read-full-text` · 3 claims · 2 quantities · 1 artifacts
@@ -232,11 +237,19 @@
   - methods: `exploratory-factor-analysis`, `split-half-factor-congruence`, `parametric-bootstrap-model-check`, `size-matched-permutation-null`, `horn-parallel-analysis`, `synthetic-injected-effect-control`, `simulation-null-with-fixed-nuisance-structure`
   - zoo:reanalysedBy → `gamma2021-mpe92m#c3`; cito:qualifies → `gamma2021-mpe92m#c2`; zoo:sharesUnstatedAssumptionWith → `breznau2022-hidden-universe`; cito:usesMethodIn → `maria2026-analytic-variability-reanalysis`; cito:agreesWith → `menkveld2024-nonstandard-errors`; cito:qualifies → `lutz2015-phenomenological-matrix#c3`; cito:agreesWith → `maria2026-happiness-income-spread#c4`; zoo:sharesUnstatedAssumptionWith → `maria2026-happiness-income-spread`; cito:agreesWith → `maria2026-mbp-variability-ratio`
   - notes: `instance-papers/papers/gamma2021-mpe92m/`
+- **`lutz2015-phenomenological-matrix`** (2015, American Psychologist 70(7):632-658) — Investigating the Phenomenological Matrix of Mindfulness-Related Practices From a Neurocognitive Perspective
+  - depth: `read-full-text` · 3 claims · 0 quantities · 0 artifacts
+  - notes: `instance-papers/papers/lutz2015-phenomenological-matrix/`
 - **`matko2019-meditation-classification`** (2019, Frontiers in Psychology 10:2276) — What Is Meditation? Proposing an Empirically Derived Classification System
   - depth: `read-full-text` · 3 claims · 10 quantities · 3 artifacts · **1 artifact problem(s)**
   - methods: `multidimensional-scaling`, `expert-similarity-elicitation`, `in-paper-table-transcription`, `systematic-literature-review`
   - cito:extends → `lutz2015-phenomenological-matrix`; zoo:sharesUnstatedAssumptionWith → `lutz2015-phenomenological-matrix`; cito:obtainsBackgroundFrom → `nave2021-self-boundary-dissolution`
   - notes: `instance-papers/papers/matko2019-meditation-classification/`
+- **`nave2021-self-boundary-dissolution`** (2021, Brain Sciences 11(6):819) — Self-Boundary Dissolution in Meditation: A Phenomenological Investigation
+  - depth: `read-full-text` · 4 claims · 12 quantities · 1 artifacts
+  - methods: `exploratory-factor-analysis`
+  - cito:extends → `lutz2015-phenomenological-matrix#c2`; zoo:sharesUnstatedAssumptionWith → `gamma2021-mpe92m`
+  - notes: `instance-papers/papers/nave2021-self-boundary-dissolution/`
 - **`karger2023-xpt`** (2023, Forecasting Research Institute Working Paper #1 (v. 2023-08-08); a version published in International Journal of Forecasting 2024) — Forecasting Existential Risks: Evidence from a Long-Run Forecasting Tournament
   - depth: `read-and-reanalysed` · 9 claims · 45 quantities · 5 artifacts · **1 artifact problem(s)**
   - methods: `expert-elicitation-tournament`, `in-paper-table-transcription`, `median-aggregation-artifact-simulation`, `spread-derived-from-reported-median-ci`, `implied-parameter-inversion`, `copula-structure-sensitivity`, `synthetic-injected-effect-control`, `elicitation-format-comparison`
@@ -247,14 +260,6 @@
   - methods: `multidimensional-item-response-theory`, `null-ladder`, `residual-correlation-matrix`, `controlled-model-family-experiment`, `leaderboard-secondary-analysis`
   - cito:qualifies → `kim2025-correlated-errors#c1`; cito:critiques → `kim2025-correlated-errors`; cito:sharesAuthorWith → `kim2025-correlated-errors`; cito:usesDataFrom → `kim2025-correlated-errors`; zoo:reanalysedBy → `maria2026-marginal-competence`; zoo:sharesUnstatedAssumptionWith → `trisovic2022-code-execution`; zoo:sharesUnstatedAssumptionWith → `samuel2024-jupyter-pmc`
   - notes: `instance-papers/papers/jo2026-subjectivity/`
-- **`lutz2015-phenomenological-matrix`** (2015, American Psychologist 70(7):632-658) — Investigating the Phenomenological Matrix of Mindfulness-Related Practices From a Neurocognitive Perspective
-  - depth: `read-full-text` · 3 claims · 0 quantities · 0 artifacts
-  - notes: `instance-papers/papers/lutz2015-phenomenological-matrix/`
-- **`nave2021-self-boundary-dissolution`** (2021, Brain Sciences 11(6):819) — Self-Boundary Dissolution in Meditation: A Phenomenological Investigation
-  - depth: `read-full-text` · 4 claims · 12 quantities · 1 artifacts
-  - methods: `exploratory-factor-analysis`
-  - cito:extends → `lutz2015-phenomenological-matrix#c2`; zoo:sharesUnstatedAssumptionWith → `gamma2021-mpe92m`
-  - notes: `instance-papers/papers/nave2021-self-boundary-dissolution/`
 - **`hope2019-not-so-proportional`** (2019, Brain 142(1):15-22) — Recovery after stroke: not so proportional after all?
   - depth: `read-and-reanalysed` · 8 claims · 25 quantities · 5 artifacts · **1 artifact problem(s)**
   - methods: `analytic-identifiability-derivation`, `shared-term-coupling-decomposition`, `simulation-null-with-fixed-nuisance-structure`, `bounded-outcome-truncation-model`, `in-paper-table-transcription`, `synthetic-injected-effect-control`, `survivorship-conditioning-diagnosis`, `cross-table-checksum-reconciliation`
@@ -270,58 +275,6 @@
   - methods: `variance-components-identification`, `analytic-identifiability-derivation`, `simulation-null-with-fixed-nuisance-structure`, `random-effects-meta-analysis`
   - cito:critiques → `munkholm2020-antidepressant-variability`; cito:critiques → `mccutcheon2022-reappraising-variability`; cito:qualifies → `maria2026-antidepressant-variability-recalibration#c3`; cito:agreesWith → `galante2021-mbp-nonclinical`
   - notes: `instance-papers/papers/senn2016-mastering-variation/`
-
-## metascience
-
-- **`breznau2022-hidden-universe`** (2022, PNAS 119(44) e2203150119 (Correction: PNAS 121(26) e2410677121, 2024-06-20)) — Observing many researchers using the same data and hypothesis reveals a hidden universe of uncertainty
-  - depth: `read-and-reanalysed` · 5 claims · 23 quantities · 6 artifacts
-  - methods: `many-analysts-design`, `multilevel-variance-decomposition`, `inverse-cluster-size-weighting`, `stepwise-aic-variable-selection`, `multiverse-simulation-benchmark`
-  - zoo:reanalysedBy → `maria2026-analytic-variability-reanalysis`; cito:qualifies → `mathur2023-effect-sizes`; zoo:sharesUnstatedAssumptionWith → `jo2026-subjectivity`; cito:citesAsEvidence → `trisovic2022-code-execution`; cito:corrects → `maria2026-executability-denominators#c5`; zoo:sharesUnstatedAssumptionWith → `maria2026-happiness-income-spread`; zoo:sharesUnstatedAssumptionWith → `kkm2023-conflict-resolved`; cito:agreesWith → `botviniknezer2020-narps`; cito:usesDataFrom → `botviniknezer2020-narps`
-  - notes: `instance-papers/papers/breznau2022-hidden-universe/`
-- **`maria2026-analytic-variability-reanalysis`** (2026, zoo internal reanalysis (not submitted anywhere)) — Analytic decisions determine precision, not conclusions: a reanalysis of the Crowdsourced Replication Initiative
-  - depth: `read-and-reanalysed` · 14 claims · 64 quantities · 2 artifacts
-  - methods: `many-analysts-design`, `random-effects-meta-analysis`, `paule-mandel-heterogeneity`, `simulated-method-of-moments-calibration`, `grouped-cross-validation-by-cluster`, `simulation-null-with-fixed-nuisance-structure`, `synthetic-injected-effect-control`, `estimator-bias-stress-test`, `null-ladder`, `inverse-cluster-size-weighting`
-  - zoo:reanalyses → `breznau2022-hidden-universe`; zoo:reanalyses → `mathur2023-effect-sizes`; cito:confirms → `breznau2022-hidden-universe`; cito:qualifies → `breznau2022-hidden-universe`; cito:qualifies → `mathur2023-effect-sizes`; cito:disagreesWith → `mathur2023-effect-sizes`; cito:usesMethodIn → `jo2026-subjectivity`; zoo:sharesUnstatedAssumptionWith → `maria2026-marginal-competence`; cito:qualifies → `trisovic2022-code-execution`; cito:qualifies → `samuel2024-jupyter-pmc`; cito:usesMethodIn → `maria2026-happiness-income-spread`; cito:qualifies → `botviniknezer2020-narps`; zoo:reanalysedBy → `botviniknezer2020-narps`
-  - notes: `instance-papers/papers/maria2026-analytic-variability-reanalysis/`
-- **`mathur2023-effect-sizes`** (2023, PNAS 120(3) e2218957120 (Letter)) — Variation across analysts in statistical significance, yet consistently small effect sizes
-  - depth: `read-full-text` · 3 claims · 5 quantities · 2 artifacts
-  - methods: `random-effects-meta-analysis`, `prediction-interval-for-population-effects`, `many-analysts-design`
-  - cito:critiques → `breznau2022-hidden-universe`; cito:qualifies → `breznau2022-hidden-universe`; zoo:reanalysedBy → `maria2026-analytic-variability-reanalysis`; cito:agreesWith → `maria2026-happiness-income-spread`; cito:agreesWith → `kkm2023-conflict-resolved`; cito:qualifies → `botviniknezer2020-narps`
-  - notes: `instance-papers/papers/mathur2023-effect-sizes/`
-- **`menkveld2024-nonstandard-errors`** (2024, The Journal of Finance 79(3), 2339-2390) — Nonstandard Errors
-  - depth: `skimmed` · 5 claims · 16 quantities · 3 artifacts · **1 artifact problem(s)**
-  - methods: `many-analysts-design`, `robust-dispersion-iqr`, `quantile-regression`, `multiverse-analysis`, `peer-feedback-staged-design`, `incentivised-belief-elicitation`
-  - cito:agreesWith → `maria2026-analytic-variability-reanalysis`; cito:qualifies → `breznau2022-hidden-universe`; cito:obtainsBackgroundFrom → `breznau2022-hidden-universe`; cito:usesMethodIn → `maria2026-happiness-income-spread`; cito:qualifies → `maria2026-mbp-variability-ratio`; cito:agreesWith → `botviniknezer2020-narps`
-  - notes: `instance-papers/papers/menkveld2024-nonstandard-errors/`
-
-## multi-agent-systems
-
-- **`jo2026-subjectivity`** (2026, preprint (MIT, Cornell Tech), 27 Feb 2026) — The Subjectivity of Monoculture
-  - depth: `read-full-text` · 4 claims · 6 quantities · 2 artifacts · **1 artifact problem(s)**
-  - methods: `multidimensional-item-response-theory`, `null-ladder`, `residual-correlation-matrix`, `controlled-model-family-experiment`, `leaderboard-secondary-analysis`
-  - cito:qualifies → `kim2025-correlated-errors#c1`; cito:critiques → `kim2025-correlated-errors`; cito:sharesAuthorWith → `kim2025-correlated-errors`; cito:usesDataFrom → `kim2025-correlated-errors`; zoo:reanalysedBy → `maria2026-marginal-competence`; zoo:sharesUnstatedAssumptionWith → `trisovic2022-code-execution`; zoo:sharesUnstatedAssumptionWith → `samuel2024-jupyter-pmc`
-  - notes: `instance-papers/papers/jo2026-subjectivity/`
-- **`kim2025-correlated-errors`** (2025, ICML 2025 (PMLR 267)) — Correlated Errors in Large Language Models
-  - depth: `read-and-reanalysed` · 4 claims · 15 quantities · 9 artifacts · **3 artifact problem(s)**
-  - methods: `pairwise-agreement-conditional-on-both-wrong`, `ols-on-pair-level-features`, `stable-matching-simulation`, `llm-as-judge-audit`, `leaderboard-secondary-analysis`
-  - cito:extends → `bommasani2022-homogenization`; zoo:reanalysedBy → `maria2026-marginal-competence`; cito:sharesAuthorWith → `jo2026-subjectivity`
-  - notes: `instance-papers/papers/kim2025-correlated-errors/`
-- **`maria2026-marginal-competence`** (2026, internal reanalysis (zoo), not submitted anywhere) — Competence concentrates error: agreement among LLMs on multiple-choice items is a marginal effect, not evidence of dependence
-  - depth: `read-and-reanalysed` · 5 claims · 21 quantities · 2 artifacts
-  - methods: `leave-pair-out-nonparametric-item-null`, `anchored-null-disjoint-population`, `modal-distractor-concentration`, `synthetic-injected-effect-control`, `pairwise-agreement-conditional-on-both-wrong`, `duplicate-system-detection`, `calibrated-conditional-independence-null`, `tidy-artifact-repair`
-  - zoo:reanalyses → `kim2025-correlated-errors`; cito:confirms → `jo2026-subjectivity#c1`; cito:confirms → `jo2026-subjectivity#c2`; cito:extends → `jo2026-subjectivity`; cito:qualifies → `kim2025-correlated-errors#c2`; zoo:sharesUnstatedAssumptionWith → `bommasani2022-homogenization`
-  - notes: `instance-papers/papers/maria2026-marginal-competence/`
-
-## psychology-of-meditation
-
-- **`lutz2015-phenomenological-matrix`** (2015, American Psychologist 70(7):632-658) — Investigating the Phenomenological Matrix of Mindfulness-Related Practices From a Neurocognitive Perspective
-  - depth: `read-full-text` · 3 claims · 0 quantities · 0 artifacts
-  - notes: `instance-papers/papers/lutz2015-phenomenological-matrix/`
-- **`nave2021-self-boundary-dissolution`** (2021, Brain Sciences 11(6):819) — Self-Boundary Dissolution in Meditation: A Phenomenological Investigation
-  - depth: `read-full-text` · 4 claims · 12 quantities · 1 artifacts
-  - methods: `exploratory-factor-analysis`
-  - cito:extends → `lutz2015-phenomenological-matrix#c2`; zoo:sharesUnstatedAssumptionWith → `gamma2021-mpe92m`
-  - notes: `instance-papers/papers/nave2021-self-boundary-dissolution/`
 
 ## rag-and-knowledge-management
 

@@ -275,6 +275,7 @@ would not think to ask, and they are the reason this survives past record fifty.
 python tools/kb.py health              # is the corpus still trustworthy
 python tools/kb.py suggest --of <id>   # relations nobody has drawn yet
 python tools/kb.py conflicts           # same quantity name, disagreeing values
+python tools/kb.py agenda              # every open question, and whether it was closed
 ```
 
 **`health`** is the one to run before adding anything. It reports what degrades
@@ -291,6 +292,39 @@ produced the score. **It proposes, you decide.** The CiTO type is the judgement 
 cannot be inferred from word overlap, so the tool refuses to guess it. Most suggestions
 should be declined — on the first run, of eight proposals, seven were coincidence and
 one was worth an edge. That ratio is the tool working, not failing.
+
+**`agenda`** (added 2026-09-09) prints every `open_questions` entry in the corpus,
+grouped by area, with the age of the record that carries it and a `->` marker when the
+question contains no URL, DOI, record id or file — i.e. when a later reader will have to
+reconstruct what was meant before they can start.
+
+It was built because of a measurement, not a feeling. At 46 records the corpus held
+**174 open questions, 3.8 per record, of which 3 (1.7%) carried any marker that anyone
+had ever come back to them, and 13% contained a pointer concrete enough to act on.**
+`open_questions` was, in practice, a write-only field: a place to put the thing you
+noticed and would not do, invisible from the moment the record was committed.
+
+Nothing about the schema changed. `open_questions` is an array of strings, and the
+closure convention — **begin the string with `ANSWERED <date> <where>:` and keep the
+original question after it** — was already in use by three records before the command
+existed. Do not delete an answered question; deleting it loses the fact that it was
+asked, which is the part a corpus cannot recover.
+
+Whether this earns a schema field is a measurement, not a preference. If the closure
+rate rises, the convention is load-bearing. If it does not, the honest conclusion is
+that a deep-read corpus simply accumulates loose ends and a field would have decorated
+the problem rather than solved it. **Do not pre-empt that by adding the field now.**
+
+**Two rules for `area`, both enforced by `kb.py health` since 2026-09-09.** An `area`
+slug names a file in `areas/`. A slug with no file is either a facet that deserves one
+or a duplicate name for an area that already exists; a file with no record is prose
+nobody has attached evidence to. Both are editorial decisions and the tool only makes
+them visible. The check exists because `kb.py index` was found emitting **14 area
+headings for 10 area files** — three of the fourteen were second names for an area that
+already had one, so the generated index listed the same area twice with *disjoint*
+record lists. `query --area` does substring matching and hid this completely; every
+exact-match consumer did not. **When an index tells a reader to run a command, run that
+command in `health`.**
 
 **Reading the vocabulary-saturation line in `kb.py health`.** It reports the
 fraction of method slugs used exactly once, and its guidance is that the fraction

@@ -11,8 +11,7 @@
  "year": 2025,
  "venue": "ICML 2025 (PMLR 267)",
  "area": [
-  "llm-monoculture",
-  "multi-agent-systems"
+  "llm-monoculture-and-correlated-errors"
  ],
  "identifiers": {
   "arxiv": "2506.07962",

@@ -2,10 +2,18 @@
  "schema_version": "1.0",
  "id": "lutz2015-phenomenological-matrix",
  "title": "Investigating the Phenomenological Matrix of Mindfulness-Related Practices From a Neurocognitive Perspective",
- "authors": ["Antoine Lutz", "Amishi P. Jha", "John D. Dunne", "Clifford D. Saron"],
+ "authors": [
+  "Antoine Lutz",
+  "Amishi P. Jha",
+  "John D. Dunne",
+  "Clifford D. Saron"
+ ],
  "year": 2015,
  "venue": "American Psychologist 70(7):632-658",
- "area": ["psychology-of-meditation", "measurement-theory"],
+ "area": [
+  "contemplative-neuroscience",
+  "measurement-theory"
+ ],
  "identifiers": {
   "doi": "10.1037/a0039585",
   "url": "https://doi.org/10.1037/a0039585"
