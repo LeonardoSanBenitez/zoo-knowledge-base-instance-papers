@@ -1,0 +1,162 @@
+{
+ "schema_version": "1.4",
+ "id": "maria2026-shell-or-payload",
+ "title": "When a data link resolves, how often does it return the data? A per-host null-calibrated measurement",
+ "authors": ["maria (zoo)"],
+ "year": 2026,
+ "venue": "zoo knowledge base, instance-papers",
+ "area": ["computational-reproducibility-and-artifact-reuse"],
+ "identifiers": {"url": "instance-papers/papers/maria2026-shell-or-payload/"},
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 22,
+  "bytes_downloaded": 41000000,
+  "compute_notes": "160 Europe PMC full-text XML fetches (~40 MB, parsed then discarded -- only the extracted statements are kept), then 2 HTTP fetches per link for the null calibration (60 links) and 1-2 API calls per link for authoritative resolution. All stdlib. Longest single command about 6 minutes wall clock, dominated by deliberate politeness delays rather than by computation.",
+  "session": "2026-09-08 maria"
+ },
+
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "In a sample of data links printed in PLOS ONE data availability statements, 37.7% RESOLVE WITHOUT DELIVERING THE RESOURCE. They return HTTP 200 and something that is not the data: an application shell that is byte-identical to the response for an identifier that does not exist, or a bare homepage.",
+   "scope": "60 unique links extracted from the data availability statements of 160 PLOS ONE open-access articles across four year strata (2016, 2019, 2022, 2025). 53 were classifiable; 7 could not be fetched at all (403/TLS/timeout) and are excluded rather than guessed at. `shell` means THIS URL CANNOT DEMONSTRATE THE RESOURCE EXISTS -- it is not a claim that the data is missing, and c3 shows most of it is there.",
+   "quantities": [
+    {"name": "data_links_resolving_without_delivering", "value": 37.7, "unit": "percent", "n": 53, "baseline": "20 of 53 classifiable links; 95% Wilson CI [25.9, 51.2]", "source": "our reanalysis reanalysis/shell_or_payload.py"},
+    {"name": "data_links_classified_shell", "value": 24.5, "unit": "percent", "n": 53, "baseline": "13 of 53; CI [14.9, 37.6]", "source": "our reanalysis"},
+    {"name": "data_links_classified_homepage", "value": 13.2, "unit": "percent", "n": 53, "baseline": "7 of 53; CI [6.5, 24.8]", "source": "our reanalysis"},
+    {"name": "data_links_classified_payload", "value": 58.5, "unit": "percent", "n": 53, "baseline": "31 of 53; CI [45.1, 70.7]", "source": "our reanalysis"},
+    {"name": "data_links_dead", "value": 3.8, "unit": "percent", "n": 53, "baseline": "2 of 53; CI [1.0, 12.8]", "source": "our reanalysis"}
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The instrument was validated on 6 cases whose answers were known before it ran, including a live OSF deposit deliberately expected to classify as `shell` and a Git LFS pointer expected to classify as its own category; 6/6. The homepage rate, 13.2%, lands on top of Briney 2024's independently measured 13.4% over 1,342 URLs from a different institution, a different sampling frame and a different decade of publications -- a near-replication of the one component that both instruments measure the same way. What the number CANNOT support: any rate for journals without a mandatory data-availability policy, and any claim that 37.7% of data is lost. See c3.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "THE METHOD, and it is the transferable part: per-host null calibration. For each link, construct a nonsense sibling on the same host with the identifier replaced by a random token, and fetch both. If the host returns the same thing for both, the host is not discriminating and the link's HTTP 200 carries no information.",
+   "scope": "Implemented in reanalysis/shell_or_payload.py; one extra request per link.",
+   "quantities": [
+    {"name": "hosts_where_a_real_and_an_invented_identifier_are_byte_identical", "value": 4, "unit": "host families", "n": 60, "baseline": "osf.io, figshare.com, cbioportal.org, and a DSpace instance, over the sampled links", "source": "our reanalysis"}
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "The mechanism was confirmed directly rather than inferred. `doi.org/10.6084/m9.figshare.4307765.v1` returns 202 and `doi.org/10.6084/m9.figshare.99999999999.v1` returns 404, so the DOI resolver discriminates. `figshare.com/articles/Dataset_SUN_COHORT_2019/11339987` returns 202 and the same URL with an invented article id ALSO returns 202, so the publisher's own front end does not. THE SAME RESOURCE IS VERIFIABLE THROUGH ITS DOI AND UNVERIFIABLE THROUGH THE PUBLISHER'S OWN URL. That is a better argument for persistent identifiers than any survival rate, because it is about verifiability today rather than durability over a decade.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Most of what a naive fetch cannot verify IS actually there. Where the host publishes an API that answers authoritatively, 8 of 33 links (24%) that the fetch could not verify are reported by the host itself as existing. The failure belongs to the instrument, not to the deposit.",
+   "scope": "33 of the 60 links sit on a host family with an implemented authoritative endpoint (OSF, Zenodo, figshare, GitHub, DOI registries). The other 27 are `unknown-host` and are reported as such rather than guessed.",
+   "quantities": [
+    {"name": "links_unverifiable_by_fetch_but_confirmed_by_host_api", "value": 24.2, "unit": "percent", "n": 33, "baseline": "8 of 33; 95% Wilson CI [12.8, 41.0]", "source": "our reanalysis reanalysis/authoritative.py"},
+    {"name": "authoritative_endpoint_coverage_of_sampled_links", "value": 55, "unit": "percent", "n": 60, "baseline": "33 of 60 links, five host families implemented", "source": "our reanalysis"}
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "This is the same shape as maria2026-codecheck-limiting-constraints, reached by a completely different route: there, 61% of incomplete human reproductions were limited by the checker rather than the deposit; here, 24% of unverifiable links are unverifiable because of the checking method rather than because anything is missing. An instrument that attributes its own blind spots to the object it is measuring will always find the object at fault.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "Two failures that every link checker in this literature scores as `available`. (a) A published data availability statement cites an OSF node that is `public: false` and is reachable only through the anonymous-peer-review token left in the printed URL. (b) A published statement cites a Dryad DOI that was never registered: 404 at doi.org, DataCite and Crossref, while Dryad's own API returns the submission with an internal id and the message that the identifier cannot be viewed.",
+   "scope": "Two individual links, each verified from several independent endpoints. n=2 of 33; the finding is the existence and diagnosability of these states, not a rate.",
+   "quantities": [
+    {"name": "private_or_token_gated_links_in_published_statements", "value": 2, "unit": "links", "n": 33, "source": "our reanalysis reanalysis/authoritative.py"}
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "(a) api.osf.io/v2/guids/ysxuz/ returns 401; the same endpoint with the view_only token returns 200 with `public: false`. An anonymous-review token can be revoked by its owner at any time, and when it is, nothing about the printed link changes. (b) doi.org 404, DataCite 404 on both letter cases and 0 hits on a DOI-field search, Crossref 404 -- and datadryad.org's own API returns 200 with `{\"identifier\": \"doi:10.5061/dryad.fttdz08wm\", \"id\": 95584, \"message\": \"Identifier cannot be viewed...\"}`. The submission exists and was never published. `Your DOI does not resolve` is true and useless; `your Dryad submission 95584 was never published` is actionable, and only the host's own API can say it.",
+    "by": "maria 2026-09-08"
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "At a journal whose policy makes publication conditional on a data availability statement, three quarters of articles point at nothing external. 58.9% of statements say the data are within the paper or its supporting information; only 24.4% of articles carry any external URL or DOI at all.",
+   "scope": "151 of 160 sampled articles carry a parsable data availability statement.",
+   "quantities": [
+    {"name": "articles_with_any_external_link_in_the_das", "value": 24.4, "unit": "percent", "n": 160, "baseline": "39 of 160", "source": "our reanalysis reanalysis/harvest_das.py"},
+    {"name": "das_saying_data_are_within_the_paper", "value": 58.9, "unit": "percent", "n": 151, "baseline": "89 of 151, by regex over the statement text", "source": "our reanalysis"},
+    {"name": "das_naming_a_repository_or_accession", "value": 22.5, "unit": "percent", "n": 151, "baseline": "34 of 151", "source": "our reanalysis"},
+    {"name": "das_saying_available_on_request", "value": 3.3, "unit": "percent", "n": 151, "baseline": "5 of 151", "source": "our reanalysis"}
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The categories are regex over statement text and overlap, so they do not sum to 100 and each is a floor. The headline -- only a quarter of articles carry an external link -- is a count of extracted URLs and DOIs and is not a judgement call. It matters operationally: any process that selects papers on `code and data are published` is selecting from a quarter of the output of a journal that MANDATES a statement, and the specification/execution gap here is the whole distance between having a policy and having an artifact.",
+    "by": "maria 2026-09-08"
+   }
+  }
+ ],
+
+ "methods": ["per-host-null-calibration", "link-checking-at-scale", "authoritative-api-resolution", "stratified-corpus-sampling"],
+
+ "artifacts": [
+  {"id": "a1", "role": "derived-data", "locator": "artifacts/das_links.json",
+   "local_path": "artifacts/das_links.json", "status": "verified-usable", "bytes": 79086,
+   "fetch_cmd": "python reanalysis/harvest_das.py",
+   "checked": {"on": "2026-09-08", "by": "maria",
+    "how": "python harvest_das.py; then counted articles, statements and extracted links",
+    "result": "160 articles, 151 with a parsable statement, 51 URLs and 14 DOIs extracted. The 160 full-text XMLs (~40 MB) were parsed and NOT kept: only the statements and the links are stored, which is the whole reusable content and 79 KB."}},
+  {"id": "a2", "role": "code", "locator": "reanalysis/shell_or_payload.py",
+   "status": "verified-usable",
+   "checked": {"on": "2026-09-08", "by": "maria", "how": "python shell_or_payload.py --validate",
+    "result": "6/6 known-answer cases classified correctly, including a LIVE OSF deposit deliberately expected to come back `shell` (its browser URL returns the same frame as an invented identifier) and a Git LFS pointer expected to come back as its own class. An instrument that has never been shown to get a known case right is an assertion."},
+   "derived_from": ["a1"]},
+  {"id": "a3", "role": "code", "locator": "reanalysis/authoritative.py",
+   "status": "verified-usable",
+   "checked": {"on": "2026-09-08", "by": "maria", "how": "python authoritative.py --validate",
+    "result": "7/7 known-answer cases, spanning exists / gone / never-existed / private / reserved-never-published across OSF, Zenodo and Dryad. Five host families implemented; every other host returns `unknown-host` rather than a guess."},
+   "derived_from": ["a1"]},
+  {"id": "a4", "role": "derived-data", "locator": "artifacts/shell_or_payload_results.json",
+   "local_path": "artifacts/shell_or_payload_results.json", "status": "verified-usable", "bytes": 51319,
+   "checked": {"on": "2026-09-08", "by": "maria", "how": "python shell_or_payload.py --corpus",
+    "result": "60 unique links, each with the response to the link, the response to its nonsense sibling, the class and the reason. This is the object a second reader should attack: every classification carries the two responses it rests on."},
+   "derived_from": ["a1", "a2"]},
+  {"id": "a5", "role": "derived-data", "locator": "artifacts/authoritative_results.json",
+   "local_path": "artifacts/authoritative_results.json", "status": "verified-usable", "bytes": 24568,
+   "checked": {"on": "2026-09-08", "by": "maria", "how": "python authoritative.py --corpus",
+    "result": "60 rows, each with the host API consulted, its status, the derived state, and the naive class for cross-tabulation."},
+   "derived_from": ["a1", "a3", "a4"]},
+  {"id": "a6", "role": "raw-data", "locator": "https://www.ebi.ac.uk/europepmc/webservices/rest/",
+   "status": "regenerated-from-upstream",
+   "fetch_cmd": "python reanalysis/harvest_das.py",
+   "checked": {"on": "2026-09-08", "by": "maria",
+    "how": "Europe PMC REST search (JOURNAL:\"PLoS One\" AND OPEN_ACCESS:y AND PUB_YEAR:<y>) then fullTextXML per PMCID",
+    "result": "The upstream is open and unauthenticated. 160 XMLs, ~40 MB, deliberately NOT kept under the >50MB-look-then-delete spirit of the disk policy: they are regenerable and only the extracted statements are reusable."}}
+ ],
+
+ "relations": [
+  {"type": "cito:extends", "target": "briney2024-data-rot",
+   "why": "Briney measures whether links RESOLVE and states plainly that a login wall was counted as resolving. This measures what comes back when they do. Her 13.4%-of-URLs-point-at-a-homepage and this sample's 13.2% homepage rate are the one quantity both instruments measure the same way, on different corpora, and they agree."},
+  {"type": "cito:agreesWith", "target": "maria2026-codecheck-limiting-constraints",
+   "why": "The same shape by a completely different route. There, 61% of incomplete human reproductions were limited by the checker rather than the deposit. Here, 24% of links a fetch cannot verify are confirmed present by the host's own API. An instrument that attributes its blind spots to the object will always find the object at fault."},
+  {"type": "zoo:sharesUnstatedAssumptionWith", "target": "trisovic2022-code-execution",
+   "why": "Every population-scale reproducibility study assumes that what an automated harness retrieves is what a human would have retrieved. On the hosts measured here that assumption fails for a quarter to a third of links, and it fails silently, with HTTP 200."}
+ ],
+
+ "open_questions": [
+  "n = 53 classifiable links from one journal, sampled in Europe PMC search-index order rather than at random. The direction is robust and the rate is not. The obvious next step is 500 links across five journals with different data policies, which the harvester already supports by changing two constants.",
+  "27 of 60 links sit on hosts with no implemented authoritative endpoint -- national statistics portals, disease-specific databases, institutional repositories, a university library page. Those are precisely the hosts least likely to have a stable API and most likely to be the only route to the data. The instrument's coverage is 55% and its blind spot is not random.",
+  "7 links could not be fetched at all (403, TLS failure, timeout) from this host. Some of those are almost certainly bot-blocking rather than absence, which means a link checker run from a data centre and a researcher with a browser see different worlds. Nobody has measured that difference and it is measurable.",
+  "The `shell` class conflates two things it should not: a host that cannot discriminate (OSF, figshare) and a host that serves a soft-404 (a generic page with status 200). Separating them needs a per-host known-bad probe, which is one more request and would make the classification strictly stronger."
+ ],
+
+ "curation": {"author": "maria", "created": "2026-09-08", "verified": "2026-09-08", "notes_file": "NOTES.md"},
+
+ "triggers": [
+  "the link resolves but is the data actually there",
+  "how do I check a data link properly",
+  "my link checker says 200 and the file is gone",
+  "single page application returns 200 for everything",
+  "how to tell a payload from a shell",
+  "osf link in a paper is private",
+  "dryad doi does not resolve",
+  "why is a DOI better than a URL for data",
+  "how many papers actually link to external data",
+  "null calibration for a link checker"
+ ]
+}

@@ -1,0 +1,1887 @@
+{
+ "years": [
+  2016,
+  2019,
+  2022,
+  2025
+ ],
+ "per_year": 40,
+ "n_articles": 160,
+ "sampling": "Europe PMC search index order, not random. See module docstring.",
+ "articles": [
+  {
+   "year": 2016,
+   "pmcid": "PMC4735121",
+   "doi": "10.1371/journal.pone.0147761",
+   "title": "Analyses of the Binding between Water Soluble C60 Derivatives and Potential Drug Targets through a Molecular Docking App",
+   "status": 200,
+   "xml_bytes": 152988,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information file.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201265",
+   "doi": "10.1371/journal.pone.0169170",
+   "title": "Effects of Static or Oscillating Dietary Crude Protein Levels on Fermentation Dynamics of Beef Cattle Diets Using a Dual",
+   "status": 200,
+   "xml_bytes": 112057,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201252",
+   "doi": "10.1371/journal.pone.0168778",
+   "title": "Hierarchical Statistical Models to Represent and Visualize Survey Evidence for Program Evaluation: iCCM in Malawi.",
+   "status": 200,
+   "xml_bytes": 80216,
+   "das": "Data Availability All data are publicly available from the Demographic and Health Surveys at www.dhsprogram.com , and from UNICEF at mics.unicef.org . Health worker census data for districts in Malawi is also published and publicly available at www.ajtmh.org .",
+   "urls": [
+    "www.ajtmh.org",
+    "www.dhsprogram.com"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201260",
+   "doi": "10.1371/journal.pone.0168519",
+   "title": "Association of ABCB1 and SLC22A16 Gene Polymorphisms with Incidence of Doxorubicin-Induced Febrile Neutropenia: A Survey",
+   "status": 200,
+   "xml_bytes": 86502,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201279",
+   "doi": "10.1371/journal.pone.0169250",
+   "title": "Risk Profiles for Barrett's Esophagus Differ between New and Prevalent, and Long- and Short-Segment Cases.",
+   "status": 200,
+   "xml_bytes": 136914,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201261",
+   "doi": "10.1371/journal.pone.0169264",
+   "title": "Tonsillectomy Does Not Reduce Upper Respiratory Infections: A National Cohort Study.",
+   "status": 200,
+   "xml_bytes": 78243,
+   "das": "Data Availability All of the data are available from the database of National Health Insurance Sharing Service (NHISS) ( https://nhiss.nhis.or.kr/ ). NHISS allows all of this data for any researcher who promises to follow the research ethics with some cost. If you want to access the data of this article, you can download it from the website after promising to follow the research ethics.",
+   "urls": [
+    "https://nhiss.nhis.or.kr/"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201237",
+   "doi": "10.1371/journal.pone.0169332",
+   "title": "The Clinical Impact of Rapid, Direct MALDI-ToF Identification of Bacteria from Positive Blood Cultures.",
+   "status": 200,
+   "xml_bytes": 56441,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201280",
+   "doi": "10.1371/journal.pone.0169101",
+   "title": "Temporal Changes in Invasive Group B Streptococcus Serotypes: Implications for Vaccine Development.",
+   "status": 200,
+   "xml_bytes": 93692,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201287",
+   "doi": "10.1371/journal.pone.0168867",
+   "title": "Sustainable Development in Surgery: The Health, Poverty, and Equity Impacts of Charitable Surgery in Uganda.",
+   "status": 200,
+   "xml_bytes": 142757,
+   "das": "Data Availability All relevant data are within the paper, its supporting information files, and its references. These data are available from the study authors, who may be contacted at shrime@mail.harvard.edu .",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201283",
+   "doi": "10.1371/journal.pone.0168974",
+   "title": "Effects of Feeding Milk Replacer Ad Libitum or in Restricted Amounts for the First Five Weeks of Life on the Growth, Met",
+   "status": 200,
+   "xml_bytes": 199512,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201427",
+   "doi": "10.1371/journal.pone.0168665",
+   "title": "The Planorbid Snail Biomphalaria glabrata Expresses a Hemocyanin-Like Sequence in the Albumen Gland.",
+   "status": 200,
+   "xml_bytes": 132905,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201286",
+   "doi": "10.1371/journal.pone.0167568",
+   "title": "Analysis of Practical Identifiability of a Viral Infection Model.",
+   "status": 200,
+   "xml_bytes": 137232,
+   "das": "Data Availability Synthetic data and algorithms are available by adapting the R source code (that is publicly available at Github page https://github.com/smidr/plosone2016 and the corresponding DOI http://doi.org/10.5281/zenodo.167477 ) to each of the studied scenarios.",
+   "urls": [
+    "http://doi.org/10.5281/zenodo.167477",
+    "https://github.com/smidr/plosone2016"
+   ],
+   "dois": [
+    "10.5281/zenodo.167477"
+   ]
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201239",
+   "doi": "10.1371/journal.pone.0167660",
+   "title": "A Systematic Review and Meta-Analysis of a Measure of Staff/Child Interaction Quality (the Classroom Assessment Scoring ",
+   "status": 200,
+   "xml_bytes": 221047,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201232",
+   "doi": "10.1371/journal.pone.0163075",
+   "title": "Correction: Advanced Algorithms for Local Routing Strategy on Complex Networks.",
+   "status": 200,
+   "xml_bytes": 6488,
+   "das": null,
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199039",
+   "doi": "10.1371/journal.pone.0168904",
+   "title": "LGR5 Is a Gastric Cancer Stem Cell Marker Associated with Stemness and the EMT Signature Genes NANOG, NANOGP8, PRRX1, TW",
+   "status": 200,
+   "xml_bytes": 131429,
+   "das": "Data Availability All relevant data are within the paper and Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199107",
+   "doi": "10.1371/journal.pone.0169447",
+   "title": "Correction: Land-Use and Socioeconomic Change, Medicinal Plant Selection and Biodiversity Resilience in Far Western Nepa",
+   "status": 200,
+   "xml_bytes": 7750,
+   "das": null,
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199079",
+   "doi": "10.1371/journal.pone.0168999",
+   "title": "Characterisation of Species and Diversity of Anopheles gambiae Keele Colony.",
+   "status": 200,
+   "xml_bytes": 100720,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199051",
+   "doi": "10.1371/journal.pone.0169094",
+   "title": "Thin-Film Transistor-Based Biosensors for Determining Stoichiometry of Biochemical Reactions.",
+   "status": 200,
+   "xml_bytes": 48002,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199093",
+   "doi": "10.1371/journal.pone.0169055",
+   "title": "Familial Clustering of Venous Thromboembolism - A Danish Nationwide Cohort Study.",
+   "status": 200,
+   "xml_bytes": 108693,
+   "das": "Data Availability Data on prescribed medication can, by the Danish Pharmacy Law, only be made available for research on servers hosted in highly protected research environments present in either Statistics Denmark or the Serum Institute. In these institutions investigators can be granted permission to use the data with encrypted person identification. If other parties wish to work with the raw data, they will need to get access through collaboration with us or another institution which has been granted access. Please contact Sindet-Pedersen ( carolinesindet@gmail.com ) with any questions regarding data access.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199094",
+   "doi": "10.1371/journal.pone.0168919",
+   "title": "Heme Oxygenase-1-Expressing Dendritic Cells Promote Foxp3+ Regulatory T Cell Differentiation and Induce Less Severe Airw",
+   "status": 200,
+   "xml_bytes": 90372,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199115",
+   "doi": "10.1371/journal.pone.0169303",
+   "title": "Intestinal Serotonin Transporter Inhibition by Toll-Like Receptor 2 Activation. A Feedback Modulation.",
+   "status": 200,
+   "xml_bytes": 124172,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199060",
+   "doi": "10.1371/journal.pone.0167272",
+   "title": "Effects of Combined Treatment with Ionizing Radiation and the PARP Inhibitor Olaparib in BRCA Mutant and Wild Type Patie",
+   "status": 200,
+   "xml_bytes": 67340,
+   "das": "Data Availability All of our relevant data are included in the main manuscript.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199095",
+   "doi": "10.1371/journal.pone.0169168",
+   "title": "Predicting the Potential for Natural Recovery of Atlantic Salmon (Salmo salar L.) Populations following the Introduction",
+   "status": 200,
+   "xml_bytes": 147908,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199109",
+   "doi": "10.1371/journal.pone.0169165",
+   "title": "Limited Dispersal and Significant Fine - Scale Genetic Structure in a Tropical Montane Parrot Species.",
+   "status": 200,
+   "xml_bytes": 151792,
+   "das": "Data Availability Primer sequences are available from Genbank. Accession numbers: JQ965691 – JQ965696, GU230800 – GU230802, GU230804 – GU230806, GU230808 – GU230810, EU73260 – EU73261, AY244486 A genotype file with sample location of each individual is provided in Supporting Information (S3 Table).",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199004",
+   "doi": "10.1371/journal.pone.0168570",
+   "title": "Investigating the Function of Play Bows in Dog and Wolf Puppies (Canis lupus familiaris, Canis lupus occidentalis).",
+   "status": 200,
+   "xml_bytes": 112681,
+   "das": "Data Availability Data files used for the final analysis are available from Figshare at https://dx.doi.org/10.6084/m9.figshare.4307765.v1 .",
+   "urls": [
+    "https://dx.doi.org/10.6084/m9.figshare.4307765.v1"
+   ],
+   "dois": [
+    "10.6084/m9.figshare.4307765.v1"
+   ]
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199023",
+   "doi": "10.1371/journal.pone.0168803",
+   "title": "Symptoms Associated with Vestibular Impairment in Veterans with Posttraumatic Stress Disorder.",
+   "status": 200,
+   "xml_bytes": 114445,
+   "das": "Data Availability All data were collected at the VA and the signed subject consent forms did not make provision for making individual data records publicly available, even in de-identified form. However the authors can provide the “metadata” – i.e. the numerical (aggregated data) results used to generate the figures. Requests for access can be sent to: Research Service (15), VA New Jersey Health Care System, 385 Tremont Avenue, East Orange, NJ, 07018, Attn: Data Access Request or to Corresponding author, Helena Chandler at Helena.chandler@va.gov .",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199055",
+   "doi": "10.1371/journal.pone.0166786",
+   "title": "Multisensory Interactions Influence Neuronal Spike Train Dynamics in the Posterior Parietal Cortex.",
+   "status": 200,
+   "xml_bytes": 127620,
+   "das": "Data Availability The data is available at https://crcns.org/data-sets/pc/ppc-1 or http://dx.doi.org/10.6080/K0CZ353K .",
+   "urls": [
+    "http://dx.doi.org/10.6080/K0CZ353K",
+    "https://crcns.org/data-sets/pc/ppc-1"
+   ],
+   "dois": [
+    "10.6080/K0CZ353K"
+   ]
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199085",
+   "doi": "10.1371/journal.pone.0168898",
+   "title": "Time Preferences and Natural Resource Extraction Behavior: An Experimental Study from Artisanal Fisheries in Zanzibar.",
+   "status": 200,
+   "xml_bytes": 103337,
+   "das": "Data Availability Data are available on figshare at https://figshare.com/s/0a1ad979f3b2d59343a0 .",
+   "urls": [
+    "https://figshare.com/s/0a1ad979f3b2d59343a0"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5199010",
+   "doi": "10.1371/journal.pone.0168371",
+   "title": "Using Respondent Driven Sampling to Identify Malaria Risks and Occupational Networks among Migrant Workers in Ranong, Th",
+   "status": 200,
+   "xml_bytes": 154980,
+   "das": "Data Availability Data may compromise the privacy of study participants and may not be shared publicly. Data are available upon request to the authors.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201291",
+   "doi": "10.1371/journal.pone.0168768",
+   "title": "Real Time Quantification of Dangerousity in Football Using Spatiotemporal Tracking Data.",
+   "status": 200,
+   "xml_bytes": 88033,
+   "das": "Data Availability Data are from Deutsche Fußball Liga (DFL). To request the data, readers may contact: DFL Deutsche Fußball Liga GmbH, Guiollettstraße 44-46, 60325 Frankfurt/Main, info@bundesliga.de .",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201273",
+   "doi": "10.1371/journal.pone.0169192",
+   "title": "Effects of Workflow Optimization in Endovascularly Treated Stroke Patients - A Pre-Post Effectiveness Study.",
+   "status": 200,
+   "xml_bytes": 101358,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201258",
+   "doi": "10.1371/journal.pone.0168807",
+   "title": "Differentiation of Pre- and Postganglionic Nerve Injury Using MRI of the Spinal Cord.",
+   "status": 200,
+   "xml_bytes": 84048,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201257",
+   "doi": "10.1371/journal.pone.0169039",
+   "title": "Induction of miR-96 by Dietary Saturated Fatty Acids Exacerbates Hepatic Insulin Resistance through the Suppression of I",
+   "status": 200,
+   "xml_bytes": 127754,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information file.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201275",
+   "doi": "10.1371/journal.pone.0168832",
+   "title": "Structural and Catalytic Properties of S1 Nuclease from Aspergillus oryzae Responsible for Substrate Recognition, Cleava",
+   "status": 200,
+   "xml_bytes": 166346,
+   "das": "Data Availability Data is available from the Protein Data Bank using the accession codes 5FB9 (S1-free), 5FBA (S1-PO4pH5.5), 5FBB (S1-PO4/5’AMP), 5FBC (S1-5’dAMP(S)), 5FBD (S1-PO4/dCyt), 5FBF (S1-5’dCMP), and 5FBG (S1D65N-PO4/dCyt/dGua).",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201288",
+   "doi": "10.1371/journal.pone.0169259",
+   "title": "Partial Purification of a Megadalton DNA Replication Complex by Free Flow Electrophoresis.",
+   "status": 200,
+   "xml_bytes": 134368,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201234",
+   "doi": "10.1371/journal.pone.0169499",
+   "title": "Correction: Voluntary Medical Male Circumcision for HIV Prevention: New Mathematical Models for Strategic Demand Creatio",
+   "status": 200,
+   "xml_bytes": 5422,
+   "das": null,
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201293",
+   "doi": "10.1371/journal.pone.0169095",
+   "title": "Prediction of Thromboembolic Events in Heart Failure Patients in Sinus Rhythm: The Hong Kong Heart Failure Registry.",
+   "status": 200,
+   "xml_bytes": 107508,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201262",
+   "doi": "10.1371/journal.pone.0169044",
+   "title": "Transient Activation of GABAB Receptors Suppresses SK Channel Currents in Substantia Nigra Pars Compacta Dopaminergic Ne",
+   "status": 200,
+   "xml_bytes": 133576,
+   "das": "Data Availability Data are contained in two Supporting Information excel files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201296",
+   "doi": "10.1371/journal.pone.0168892",
+   "title": "Fuling Granule, a Traditional Chinese Medicine Compound, Suppresses Cell Proliferation and TGFβ-Induced EMT in Ovarian C",
+   "status": 200,
+   "xml_bytes": 114968,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information file. Microarray data is hosted at Gene Expression Omnibus (GEO) under the accession number GSE79454.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2016,
+   "pmcid": "PMC5201299",
+   "doi": "10.1371/journal.pone.0168525",
+   "title": "A Combination of Podophyllotoxin and Rutin Attenuates Radiation Induced Gastrointestinal Injury by Negatively Regulating",
+   "status": 200,
+   "xml_bytes": 133265,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938408",
+   "doi": "10.1371/journal.pone.0226190",
+   "title": "Shannon entropy approach reveals relevant genes in Alzheimer's disease.",
+   "status": 200,
+   "xml_bytes": 191810,
+   "das": "Data Availability The data underlying the results presented in the study are available from the GEO database in NCBI (Gene Expression Omnibus, https://www.ncbi.nlm.nih.gov/geo/ ). The data entry number of database is GSE1297.",
+   "urls": [
+    "https://www.ncbi.nlm.nih.gov/geo/"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938313",
+   "doi": "10.1371/journal.pone.0227251",
+   "title": "Economic evaluations of screening strategies for the early detection of colorectal cancer in the average-risk population",
+   "status": 200,
+   "xml_bytes": 142761,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938355",
+   "doi": "10.1371/journal.pone.0226940",
+   "title": "Monounsaturated fatty acids protect against palmitate-induced lipoapoptosis in human umbilical vein endothelial cells.",
+   "status": 200,
+   "xml_bytes": 111511,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938322",
+   "doi": "10.1371/journal.pone.0227280",
+   "title": "General practitioners' consultation counts and associated factors in Swiss primary care - A retrospective observational ",
+   "status": 200,
+   "xml_bytes": 119822,
+   "das": "Data Availability Legal restrictions in Switzerland prohibit public release of original patient data without consent. The authors' fully anonymized data is exempt from these legal restrictions. However, the data could be de-anonymized by individuals or organizations such as health insurers who have overlapping data (e.g. patient date of birth and consultation dates). Data access queries can be sent to Rahel Meier ( rahel.meier@usz.ch ) after clearance by the local ethics committee, or to the Kantonale Ethikkommission Zürich (Local Ethics Committee of the Canton of Zurich) ( Info.KEK@kek.zh.ch ).",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938327",
+   "doi": "10.1371/journal.pone.0227111",
+   "title": "Rapid evolution of prey maintains predator diversity.",
+   "status": 200,
+   "xml_bytes": 92164,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938333",
+   "doi": "10.1371/journal.pone.0226993",
+   "title": "A quantitative engineering study of ecosystem robustness using thermodynamic power cycles as case studies.",
+   "status": 200,
+   "xml_bytes": 117324,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938345",
+   "doi": "10.1371/journal.pone.0226875",
+   "title": "Inhibition of complement activation, myeloperoxidase, NET formation and oxidant activity by PIC1 peptide variants.",
+   "status": 200,
+   "xml_bytes": 110058,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938370",
+   "doi": "10.1371/journal.pone.0226871",
+   "title": "Hypofibrinolysis induced by tranexamic acid does not influence inflammation and mortality in a polymicrobial sepsis mode",
+   "status": 200,
+   "xml_bytes": 135702,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938343",
+   "doi": "10.1371/journal.pone.0226771",
+   "title": "A phenome-wide association study (PheWAS) in the Population Architecture using Genomics and Epidemiology (PAGE) study re",
+   "status": 200,
+   "xml_bytes": 322316,
+   "das": "Data Availability The datasets generated as part of the PAGE study can be accessed through the dbGaP repository ( http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000356 ).",
+   "urls": [
+    "http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000356"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938373",
+   "doi": "10.1371/journal.pone.0226881",
+   "title": "Intrauterine growth patterns in rural Ethiopia compared with WHO and INTERGROWTH-21st growth standards: A community-base",
+   "status": 200,
+   "xml_bytes": 112934,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938330",
+   "doi": "10.1371/journal.pone.0226113",
+   "title": "Crystal structures of p120RasGAP N-terminal SH2 domain in its apo form and in complex with a p190RhoGAP phosphotyrosine ",
+   "status": 200,
+   "xml_bytes": 126462,
+   "das": "Data Availability Coordinates and structure factors have been deposited in the Protein Data Bank under accession codes 6PXB and 6PXC. X-ray diffraction images are available online at SBGrid Data Bank [ 69 ]: doi: 10.15785/SBGRID/698 (6PXB) and doi: 10.15785/SBGRID/699 (6PXC).",
+   "urls": [],
+   "dois": [
+    "10.15785/SBGRID/698",
+    "10.15785/SBGRID/699"
+   ]
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938304",
+   "doi": "10.1371/journal.pone.0218904",
+   "title": "A framework for the development of a global standardised marine taxon reference image database (SMarTaR-ID) to support i",
+   "status": 200,
+   "xml_bytes": 214238,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938403",
+   "doi": "10.1371/journal.pone.0226819",
+   "title": "Age-dependent survival rate of the colonial Little Tern (Sternula albifrons).",
+   "status": 200,
+   "xml_bytes": 89858,
+   "das": "Data Availability Data are available on OSF using the link: https://osf.io/ysxuz/?view_only=d847c7e96f51428e9d70c942ae2af15b",
+   "urls": [
+    "https://osf.io/ysxuz/?view_only=d847c7e96f51428e9d70c942ae2af15b"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938354",
+   "doi": "10.1371/journal.pone.0227335",
+   "title": "Using archaeological and geomorphological evidence for the establishment of a relative chronology and evolution pattern ",
+   "status": 200,
+   "xml_bytes": 212846,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938318",
+   "doi": "10.1371/journal.pone.0227202",
+   "title": "Safe and effective subcutaneous adipolysis in minipigs by a collagenase derivative.",
+   "status": 200,
+   "xml_bytes": 86447,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938320",
+   "doi": "10.1371/journal.pone.0227266",
+   "title": "Vitreous levels of Lipocalin-2 on patients with primary rhegmatogenous retinal detachment.",
+   "status": 200,
+   "xml_bytes": 83946,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938384",
+   "doi": "10.1371/journal.pone.0227271",
+   "title": "Light intensity and spectrum affect metabolism of glutathione and amino acids at transcriptional level.",
+   "status": 200,
+   "xml_bytes": 113854,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938352",
+   "doi": "10.1371/journal.pone.0227011",
+   "title": "A systems biology approach uncovers a gene co-expression network associated with cell wall degradability in maize.",
+   "status": 200,
+   "xml_bytes": 283711,
+   "das": "Data Availability The sequence data underlying the results presented in this study have been deposited to the NCBI Gene Expression Omnibus and may be accessed via the accession number GSE115157.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938310",
+   "doi": "10.1371/journal.pone.0227098",
+   "title": "Antibiotic saving effect of combination therapy through synergistic interactions between well-characterized chito-oligos",
+   "status": 200,
+   "xml_bytes": 110689,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938314",
+   "doi": "10.1371/journal.pone.0226918",
+   "title": "Electrochemical analysis of uric acid excretion to the intestinal lumen: Effect of serum uric acid-lowering drugs and 5/",
+   "status": 200,
+   "xml_bytes": 70148,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938341",
+   "doi": "10.1371/journal.pone.0226811",
+   "title": "Association between IQ and FMR1 protein (FMRP) across the spectrum of CGG repeat expansions.",
+   "status": 200,
+   "xml_bytes": 174846,
+   "das": "Data Availability All relevant data will be published as supporting information.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938344",
+   "doi": "10.1371/journal.pone.0226809",
+   "title": "Evaluation of a savings-led family-based economic empowerment intervention for AIDS-affected adolescents in Uganda: A fo",
+   "status": 200,
+   "xml_bytes": 160104,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938338",
+   "doi": "10.1371/journal.pone.0226565",
+   "title": "Adherence to dietary guidelines for the Spanish population and risk of overweight/obesity in the SUN cohort.",
+   "status": 200,
+   "xml_bytes": 205664,
+   "das": "Data Availability Data from this paper are located in Figshare: https://figshare.com/articles/Dataset_SUN_COHORT_2019/11339987 .",
+   "urls": [
+    "https://figshare.com/articles/Dataset_SUN_COHORT_2019/11339987"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938349",
+   "doi": "10.1371/journal.pone.0226529",
+   "title": "Predictive sampling effort and species-area relationship models for estimating richness in fragmented landscapes.",
+   "status": 200,
+   "xml_bytes": 205313,
+   "das": "Data Availability All relevant data are within the manuscript and Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938312",
+   "doi": "10.1371/journal.pone.0225946",
+   "title": "The genetic and environmental effects on school grades in late childhood and adolescence.",
+   "status": 200,
+   "xml_bytes": 144493,
+   "das": "Data Availability The full TwinLife dataset and materials can be downloaded by the scientific community at http://dx.doi.org/10.4232/1.12665 .",
+   "urls": [
+    "http://dx.doi.org/10.4232/1.12665"
+   ],
+   "dois": [
+    "10.4232/1.12665"
+   ]
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938379",
+   "doi": "10.1371/journal.pone.0207499",
+   "title": "Palliative care for people living with HIV/AIDS: Factors influencing healthcare workers' knowledge, attitude and practic",
+   "status": 200,
+   "xml_bytes": 122140,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6938336",
+   "doi": "10.1371/journal.pone.0225863",
+   "title": "Molecular characterization of fowl adenovirus isolate of Malaysia attenuated in chicken embryo liver cells and its patho",
+   "status": 200,
+   "xml_bytes": 157376,
+   "das": "Data Availability All nucleotide sequences data are available from the GenBank database (accession numbers: KF866370, KY305950, KY305943, KY305944, KY305945, KY305946, KY305947, KY305948, KY305949, KY305951, KY305952, KY305953, KY305954, KY305955, KY305956, KY305957.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6937154",
+   "doi": "10.1371/journal.pone.0227509",
+   "title": "Correction: Novel insights into the morphology of Plesiochelys bigleri from the early Kimmeridgian of Northwestern Switz",
+   "status": 200,
+   "xml_bytes": 10106,
+   "das": null,
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936772",
+   "doi": "10.1371/journal.pone.0227426",
+   "title": "Correction: Development of rice conidiation media for Ustilaginoidea virens.",
+   "status": 200,
+   "xml_bytes": 6818,
+   "das": null,
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936803",
+   "doi": "10.1371/journal.pone.0227403",
+   "title": "Correction: Cattle intestinal microbiota shifts following Escherichia coli O157:H7 vaccination and colonization.",
+   "status": 200,
+   "xml_bytes": 7486,
+   "das": null,
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936833",
+   "doi": "10.1371/journal.pone.0227248",
+   "title": "Cannula and circuit management in peripheral extracorporeal membrane oxygenation: An international survey of 45 countrie",
+   "status": 200,
+   "xml_bytes": 110554,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936869",
+   "doi": "10.1371/journal.pone.0227122",
+   "title": "Variations in neurotoxicity and proteome profile of Malayan krait (Bungarus candidus) venoms.",
+   "status": 200,
+   "xml_bytes": 128410,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936837",
+   "doi": "10.1371/journal.pone.0227033",
+   "title": "Modeling succinate dehydrogenase loss disorders in C. elegans through effects on hypoxia-inducible factor.",
+   "status": 200,
+   "xml_bytes": 118297,
+   "das": "Data Availability All relevant data are within the manuscript.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936811",
+   "doi": "10.1371/journal.pone.0227009",
+   "title": "Genomic insights on heterogeneous resistance to vancomycin and teicoplanin in Methicillin-resistant Staphylococcus aureu",
+   "status": 200,
+   "xml_bytes": 193706,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936834",
+   "doi": "10.1371/journal.pone.0226967",
+   "title": "Folk theories of gender and anti-transgender attitudes: Gender differences and policy preferences.",
+   "status": 200,
+   "xml_bytes": 136563,
+   "das": "Data Availability Data underlying the study are available on the OSF repository (DOI: osf.io/m7vhk).",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936852",
+   "doi": "10.1371/journal.pone.0226438",
+   "title": "Measuring affect-related cognitive bias: Do mice in opposite affective states react differently to negative and positive",
+   "status": 200,
+   "xml_bytes": 139812,
+   "das": "Data Availability The data underlying the results of this study have been uploaded to figshare and are accessible using the following doi: https://doi.org/10.6084/m9.figshare.10243400.v1 .",
+   "urls": [
+    "https://doi.org/10.6084/m9.figshare.10243400.v1"
+   ],
+   "dois": [
+    "10.6084/m9.figshare.10243400.v1"
+   ]
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936838",
+   "doi": "10.1371/journal.pone.0226925",
+   "title": "Assessment of knowledge and practice of breast self-examination among reproductive age women in Akatsi South district of",
+   "status": 200,
+   "xml_bytes": 119659,
+   "das": "Data Availability Limited dataset has been deposited to Zenodo and the DOI assigned is ( 10.5281/zenodo.3526686 ). The URL is ( https://zenodo.org/record/3526686#.XfL3zht7nIV ).",
+   "urls": [
+    "https://zenodo.org/record/3526686#.XfL3zht7nIV"
+   ],
+   "dois": [
+    "10.5281/zenodo.3526686"
+   ]
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936784",
+   "doi": "10.1371/journal.pone.0226729",
+   "title": "Does it still fit? - Adapting affordance judgments to altered body properties in young and older adults.",
+   "status": 200,
+   "xml_bytes": 157554,
+   "das": "Data Availability The data that support the findings of this study are openly available in zenodo.org at https://zenodo.org/record/3571122 . We provide data on all used variables (accuracy, criterion, perceptual sensitivity) per group, session and hand.",
+   "urls": [
+    "https://zenodo.org/record/3571122"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936773",
+   "doi": "10.1371/journal.pone.0226629",
+   "title": "Optical coherence tomography angiography reveals progressive worsening of retinal vascular geometry in diabetic retinopa",
+   "status": 200,
+   "xml_bytes": 108513,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2019,
+   "pmcid": "PMC6936810",
+   "doi": "10.1371/journal.pone.0226442",
+   "title": "Modulation of protective reflex cough by acute immune driven inflammation of lower airways in anesthetized rabbits.",
+   "status": 200,
+   "xml_bytes": 175918,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803277",
+   "doi": "10.1371/journal.pone.0276433",
+   "title": "A case-control study on the driving factors of childhood brain volume loss: What pediatricians must explore.",
+   "status": 200,
+   "xml_bytes": 130431,
+   "das": "Data Availability All relevant data are available at: https://dspace.nm-aist.ac.tz/handle/20.500.12479/1682 .",
+   "urls": [
+    "https://dspace.nm-aist.ac.tz/handle/20.500.12479/1682"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803181",
+   "doi": "10.1371/journal.pone.0279870",
+   "title": "Cervical cancer screening practices and its associated factors among females of reproductive age in Durame town, Souther",
+   "status": 200,
+   "xml_bytes": 102174,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803272",
+   "doi": "10.1371/journal.pone.0279733",
+   "title": "Rubella virus IgM and IgG antibodies with avidity in pregnant women and outcomes at a tertiary facility in Ghana.",
+   "status": 200,
+   "xml_bytes": 151528,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803317",
+   "doi": "10.1371/journal.pone.0279754",
+   "title": "Prevalence of intestinal parasitic infections and genetic differentiation of Strongyloides stercoralis among migrant wor",
+   "status": 200,
+   "xml_bytes": 168587,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803299",
+   "doi": "10.1371/journal.pone.0277063",
+   "title": "Spatio-temporal evolution and influencing factors of culture and tourism integration efficiency in Shandong Province, Ch",
+   "status": 200,
+   "xml_bytes": 163338,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803175",
+   "doi": "10.1371/journal.pone.0279718",
+   "title": "A flashing light may not be that flashy: A systematic review on critical fusion frequencies.",
+   "status": 200,
+   "xml_bytes": 225623,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803126",
+   "doi": "10.1371/journal.pone.0279553",
+   "title": "Effects of domestication on responses of chickens and red junglefowl to conspecific calls: A pilot study.",
+   "status": 200,
+   "xml_bytes": 108360,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information file.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803160",
+   "doi": "10.1371/journal.pone.0278963",
+   "title": "Dual effects of NV-CoV-2 biomimetic polymer: An antiviral regimen against COVID-19.",
+   "status": 200,
+   "xml_bytes": 198853,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803312",
+   "doi": "10.1371/journal.pone.0278867",
+   "title": "Particle size distribution: An experimental study using southern African reduction methods and raw materials.",
+   "status": 200,
+   "xml_bytes": 183701,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803219",
+   "doi": "10.1371/journal.pone.0279760",
+   "title": "Uptake of appointment spacing model of care and associated factors among stable adult HIV clients on antiretroviral trea",
+   "status": 200,
+   "xml_bytes": 148556,
+   "das": "Data Availability The datasets used and/or analyzed during the current study are available as supporting information .",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803117",
+   "doi": "10.1371/journal.pone.0279630",
+   "title": "Associations between maternal plasma zinc concentrations in late pregnancy and LINE-1 and Alu methylation loci in the yo",
+   "status": 200,
+   "xml_bytes": 158592,
+   "das": "Data Availability The anonymised data on which this manuscript were based could be made available to other investigators upon bona fide request, and following all the necessary approvals (including ethics) of the detailed study proposal and statistical analyses plan. Any queries should be directed to Prof Kittipan Rerkasem ( kittipan.r@cmu.ac.th ; rerkase@gmail.com ) or Prof Khuanchai Supparatpinyo ( khuanchai.s@cmu.ac.th ; phone: +66 53 935055).",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803105",
+   "doi": "10.1371/journal.pone.0279437",
+   "title": "Elevated retinal cGMP is not associated with elevated circulating cGMP levels in a canine model of retinitis pigmentosa.",
+   "status": 200,
+   "xml_bytes": 56514,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803201",
+   "doi": "10.1371/journal.pone.0279761",
+   "title": "Three-minute bench step exercise as a countermeasure for acute mental stress-induced arterial stiffening.",
+   "status": 200,
+   "xml_bytes": 82117,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803205",
+   "doi": "10.1371/journal.pone.0279700",
+   "title": "Preventive ceftriaxone in patients at high risk of stroke-associated pneumonia. A post-hoc analysis of the PASS trial.",
+   "status": 200,
+   "xml_bytes": 76824,
+   "das": "Data Availability Under the General Data Protection Regulation, data cannot be shared publicly because of privacy regulations by the Dutch Government. Data to reproduce findings are available for researchers who meet the criteria for access to confidential data via Prof. M.C. Brouwer of the Neurology department of the Amsterdam University Medical Center location AMC: E: m.c.brouwer@amsterdamumc.nl .",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803187",
+   "doi": "10.1371/journal.pone.0279464",
+   "title": "Measures of malaria transmission, infection, and disease in an area bordering two districts with and without sustained i",
+   "status": 200,
+   "xml_bytes": 139853,
+   "das": "Data Availability Data from both cohort studies are available through a novel open-access clinical epidemiology database resource, ClinEpiDB. https://clinepidb.org/ce/app .",
+   "urls": [
+    "https://clinepidb.org/ce/app"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803162",
+   "doi": "10.1371/journal.pone.0279705",
+   "title": "Tactile sensitivity and motor coordination in infancy: Effect of age, prior surgery, anaesthesia & critical illness.",
+   "status": 200,
+   "xml_bytes": 183009,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803159",
+   "doi": "10.1371/journal.pone.0278068",
+   "title": "Heparin versus 0.9% sodium chloride intermittent flushing for preventing occlusion in newborns with peripherally inserte",
+   "status": 200,
+   "xml_bytes": 58711,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803132",
+   "doi": "10.1371/journal.pone.0276886",
+   "title": "Sparse canonical correlation to identify breast cancer related genes regulated by copy number aberrations.",
+   "status": 200,
+   "xml_bytes": 158173,
+   "das": "Data Availability The data and code are available from the following sources: METABRIC: https://www.cbioportal.org/study/summary?id=brca_metabric TCGA Breast Cancer: https://www.cbioportal.org/study/summary?id=brca_tcga Code for analysis: https://github.com/diptavo/METABRIC_analysis ShinyGO: http://bioinformatics.sdstate.edu/go/ FUMA: https://fuma.ctglab.nl/ CHEA: https://maayanlab.cloud/Harmonizome/dataset/CHEA+Transcription+Factor+Targets ENCODE: https://maayanlab.cloud/Harmonizome/dataset/ENCODE+Transcription+Factor+Targets .",
+   "urls": [
+    "http://bioinformatics.sdstate.edu/go/",
+    "https://fuma.ctglab.nl/",
+    "https://github.com/diptavo/METABRIC_analysis",
+    "https://maayanlab.cloud/Harmonizome/dataset/CHEA+Transcription+Factor+Targets",
+    "https://maayanlab.cloud/Harmonizome/dataset/ENCODE+Transcription+Factor+Targets",
+    "https://www.cbioportal.org/study/summary?id=brca_metabric",
+    "https://www.cbioportal.org/study/summary?id=brca_tcga"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803108",
+   "doi": "10.1371/journal.pone.0279686",
+   "title": "Color diversity judgments in peripheral vision: Evidence against \"cost-free\" representations.",
+   "status": 200,
+   "xml_bytes": 87354,
+   "das": "Data Availability The data are available on the Open Science Framework repository ( https://osf.io/2ptz4/ ).",
+   "urls": [
+    "https://osf.io/2ptz4/"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803127",
+   "doi": "10.1371/journal.pone.0279768",
+   "title": "Length-based assessment of five small pelagic fishes in the Senegalese artisanal fisheries.",
+   "status": 200,
+   "xml_bytes": 134838,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803192",
+   "doi": "10.1371/journal.pone.0278714",
+   "title": "L-fucose reduces gut inflammation due to T-regulatory response in Muc2 null mice.",
+   "status": 200,
+   "xml_bytes": 97910,
+   "das": "Data Availability All relevant data files are available from Zenodo: https://zenodo.org/record/7364536#.Y4HVVL1ByUk .",
+   "urls": [
+    "https://zenodo.org/record/7364536#.Y4HVVL1ByUk"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803243",
+   "doi": "10.1371/journal.pone.0270127",
+   "title": "Modeling the spread of the Zika virus by sexual and mosquito transmission.",
+   "status": 200,
+   "xml_bytes": 345936,
+   "das": "Data Availability The used weekly incidence data was reported to the Colombian National Public Health Surveillance System (SIVIGILA) from 2015 to 2017 as General Zika Disease~(code 895), which includes neurological disorders probably associated with a ZIKV infection, and is available to the public as outlined in [ 65 , 66 , 67 ]. The website is: http://portalsivigila.ins.gov.co/Paginas/Vigilancia-Rutinaria.aspx .",
+   "urls": [
+    "http://portalsivigila.ins.gov.co/Paginas/Vigilancia-Rutinaria.aspx"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803092",
+   "doi": "10.1371/journal.pone.0271261",
+   "title": "Association between microbial composition, diversity, and function of the maternal gastrointestinal microbiome with impa",
+   "status": 200,
+   "xml_bytes": 157733,
+   "das": "Data Availability Metagenomic data are available from the NCBI SRA database at accession number PRJNA862188. Clinical data is available through the Obstetric and Neonatal Outcomes Study (ONOS) at the University of Virginia. Researchers interested in collaborating can email Amanda Urban ( AJR5Y@hscmail.mcc.virginia.edu ). Approval from the ONOS Data Access Committee is available for researchers who meet the criteria for access to confidential data.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803168",
+   "doi": "10.1371/journal.pone.0279823",
+   "title": "The neural correlates of context driven changes in the emotional response: An fMRI study.",
+   "status": 200,
+   "xml_bytes": 232425,
+   "das": "Data Availability All data underlying the findings described in the manuscript, i.e., post-scan valence and arousal ratings of the picture pairs and reaction times to the second pictures in the MR scanner along with main fMRI contrast maps, are fully available at https://osf.io/hgdky/ . However, we are not allowed to share raw imaging dataset publicly, because at the time our study started, there was no information on open access data availability in the consent forms (the study was approved by the Scientific and Research Ethics Committee of the Medical Research Council (Hungary)), therefore participants were not able to accept or refuse their assent to share imaging data in an open access repository. However, raw imaging data are available from the corresponding author (Gyöngyi Kökönyei, kokonyei.gyongyi@ppk.elte.hu ) or from the Department of Pharmacodynamics, Faculty of Pharmacy, Semmelweis University ( titkarsag.gyhat@pharma.semmelweis-univ.hu ) on reasonable request.",
+   "urls": [
+    "https://osf.io/hgdky/"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803098",
+   "doi": "10.1371/journal.pone.0267329",
+   "title": "Trypanosoma cruzi PARP is enriched in the nucleolus and is present in a thread connecting nuclei during mitosis.",
+   "status": 200,
+   "xml_bytes": 137278,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803240",
+   "doi": "10.1371/journal.pone.0278510",
+   "title": "Awareness of and interaction with physician rating websites: A cross-sectional study in Austria.",
+   "status": 200,
+   "xml_bytes": 301454,
+   "das": "Data Availability All data files are available from the figshare database ( 10.6084/m9.figshare.17694767 ).",
+   "urls": [],
+   "dois": [
+    "10.6084/m9.figshare.17694767"
+   ]
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803136",
+   "doi": "10.1371/journal.pone.0279644",
+   "title": "TBProfiler for automated calling of the association with drug resistance of variants in Mycobacterium tuberculosis.",
+   "status": 200,
+   "xml_bytes": 99009,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803242",
+   "doi": "10.1371/journal.pone.0278860",
+   "title": "Pollen samples from a bumble bee (Hymenoptera: Apidae) collection show historic foraging on introduced and native plants",
+   "status": 200,
+   "xml_bytes": 65510,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803213",
+   "doi": "10.1371/journal.pone.0278592",
+   "title": "Why health system diagnosis delay among tuberculosis patients in Illubabor, Oromia region, South West Ethiopia? A qualit",
+   "status": 200,
+   "xml_bytes": 167591,
+   "das": "Data Availability Data cannot be shared publicly because of the nature of the data being qualitative that contains personal quotes and clues to where the study occurred and can be potentially identifiable. However, data is available on request to the chair of Research and community Service Coordination Office (RCS) of Mettu University Faculty of Public Health and Medical Sciences (E-mail: mohammed.amin@meu.edu.et ).",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803224",
+   "doi": "10.1371/journal.pone.0279383",
+   "title": "Understanding the factors affecting teachers' burnout during the COVID-19 pandemic: A cross-sectional study.",
+   "status": 200,
+   "xml_bytes": 126919,
+   "das": "Data Availability All the data files are available from the OSF database - https://osf.io/74j3c/ .",
+   "urls": [
+    "https://osf.io/74j3c/"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803270",
+   "doi": "10.1371/journal.pone.0279884",
+   "title": "Association of dietary factors with noise-induced hearing loss in Korean population: A 3-year national cohort study.",
+   "status": 200,
+   "xml_bytes": 118663,
+   "das": "Data Availability Data are available from the Korea Centers for Disease Control and Prevention. of the policy of the Korea Centers for Disease Control and Prevention. The Korea Centers for Disease Control and Prevention has provisions in Chapter 4, Article 11, regarding the procedure for disclosure of raw data. “A researcher shall not allow a third party to view or make a copy of the provided raw data.” The English URL, address, and e-mail of the Korea Disease Control and Prevention Agency are: URL: https://knhanes.kdca.go.kr/knhanes/eng/index.do Adress: Osong Health Technology Administration Complex, 187 Osongsaengmyeong2(i)-ro, Osong-eup, Heungduk-gu, Cheongju-si, Chungcheongbuk-do, Korea 28159 Tel. +82-43-719-7463,91 E-mail. ysh0102@korea.kr .",
+   "urls": [
+    "https://knhanes.kdca.go.kr/knhanes/eng/index.do"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803297",
+   "doi": "10.1371/journal.pone.0279890",
+   "title": "Evaluation of the pediatric antiretroviral therapy service in Gondar city public health facilities-A case study design w",
+   "status": 200,
+   "xml_bytes": 125246,
+   "das": "Data Availability Data are available on Dryad ( doi.org/10.5061/dryad.fttdz08wm ).",
+   "urls": [],
+   "dois": [
+    "10.5061/dryad.fttdz08wm"
+   ]
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803231",
+   "doi": "10.1371/journal.pone.0279631",
+   "title": "Comparison of optimal bowel cleansing effects of 1L polyethylene glycol with ascorbic acid versus sodium picosulfate wit",
+   "status": 200,
+   "xml_bytes": 118006,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803275",
+   "doi": "10.1371/journal.pone.0279777",
+   "title": "Particulate matter 2.5, metropolitan status, and heart failure outcomes in US counties: A nationwide ecologic analysis.",
+   "status": 200,
+   "xml_bytes": 137963,
+   "das": "Data Availability All data are publicly available from the CDC and United States Census Bureau ( https://nccd.cdc.gov/DHDSPAtlas/?state=County&amp;ol=%5b10 ).",
+   "urls": [
+    "https://nccd.cdc.gov/DHDSPAtlas/?state=County&amp"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803311",
+   "doi": "10.1371/journal.pone.0270242",
+   "title": "Evaluation of the efficacy of Lactobacillus-containing feminine hygiene products on vaginal microbiome and genitourinary",
+   "status": 200,
+   "xml_bytes": 145077,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803236",
+   "doi": "10.1371/journal.pone.0279778",
+   "title": "Clinical features and outcomes of breakthrough vitreous hemorrhage secondary to polypoidal choroidal vasculopathy.",
+   "status": 200,
+   "xml_bytes": 113441,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803303",
+   "doi": "10.1371/journal.pone.0279471",
+   "title": "Assessment of the role of anthocyanin standardized elderberry (Sambucus nigra) extract as an immune-stimulating nutraceu",
+   "status": 200,
+   "xml_bytes": 146123,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803112",
+   "doi": "10.1371/journal.pone.0279605",
+   "title": "Emotional expression through musical cues: A comparison of production and perception approaches.",
+   "status": 200,
+   "xml_bytes": 255268,
+   "das": "Data Availability All data and stimuli used are available on OSF repository: https://osf.io/atxhk/ .",
+   "urls": [
+    "https://osf.io/atxhk/"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803146",
+   "doi": "10.1371/journal.pone.0278780",
+   "title": "Addressing the quality challenge of a human biospecimen biobank through the creation of a quality management system.",
+   "status": 200,
+   "xml_bytes": 152063,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2022,
+   "pmcid": "PMC9803271",
+   "doi": "10.1371/journal.pone.0279500",
+   "title": "Vaccines, media and politics: A corpus-assisted discourse study of press representations of the safety and efficacy of C",
+   "status": 200,
+   "xml_bytes": 119488,
+   "das": "Data Availability All collected files are available from the electronic database Factiva. URL: https://www.lib.polyu.edu.hk/databases/factiva . Others can access the database using the same methods as the authors.",
+   "urls": [
+    "https://www.lib.polyu.edu.hk/databases/factiva"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755752",
+   "doi": "10.1371/journal.pone.0340220",
+   "title": "Comparative study of advanced reasoning versus baseline large-language models for histopathological diagnosis in oral an",
+   "status": 200,
+   "xml_bytes": 91386,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755732",
+   "doi": "10.1371/journal.pone.0338801",
+   "title": "Exploring gut microbiome and nutritional status among children with Autism Spectrum Disorder (MY-ASD Microbiome): A stud",
+   "status": 200,
+   "xml_bytes": 125222,
+   "das": "Data Availability No datasets were generated or analysed during the current study. All relevant data from this study will be made available upon study completion.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755822",
+   "doi": "10.1371/journal.pone.0339975",
+   "title": "Inside the world of non-suicidal self-injury e-communities: Language, identity and need for belonging.",
+   "status": 200,
+   "xml_bytes": 148349,
+   "das": "Data Availability The minimum data set of frequency counts and sentiment analysis scores has been made available on a public repository. https://figshare.com/articles/dataset/NSSI-Slang_Project-Data-Analysis/28344107 The original Reddit posts and comments cannot be shared publicly to prevent potential re-identification of users and to respect the platform’s Terms of Service. The data underlying this study were obtained from a third-party source ( www.reddit.com ) using lawful access to publicly available information. Other researchers can access the same data using Reddit’s public API ( https://www.reddit.com/dev/api/ ) and the search parameters disclosed in the manuscript. The authors had no special access privileges.",
+   "urls": [
+    "https://figshare.com/articles/dataset/NSSI-Slang_Project-Data-Analysis/28344107",
+    "https://www.reddit.com/dev/api/",
+    "www.reddit.com"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755817",
+   "doi": "10.1371/journal.pone.0339479",
+   "title": "Apathy in patients with Neuromyelitis Optica Spectrum Disorder.",
+   "status": 200,
+   "xml_bytes": 128613,
+   "das": "Data Availability The anonymized data that support the findings of this study are available in the Supporting Information .",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755737",
+   "doi": "10.1371/journal.pone.0338891",
+   "title": "Candidate orphan genes: Reassessing uniqueness.",
+   "status": 200,
+   "xml_bytes": 161156,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755826",
+   "doi": "10.1371/journal.pone.0339900",
+   "title": "In vivo and in vitro susceptibility and inflammatory response of postnatal mouse cortical neurons and glial cells to zik",
+   "status": 200,
+   "xml_bytes": 204300,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files. However, raw data of cell counts, and numerical analysis can be found in a public repository: https://doi.org/10.7910/DVN/GT2BTZ .",
+   "urls": [
+    "https://doi.org/10.7910/DVN/GT2BTZ"
+   ],
+   "dois": [
+    "10.7910/DVN/GT2BTZ"
+   ]
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755813",
+   "doi": "10.1371/journal.pone.0339980",
+   "title": "Impacts of continuing education for health professionals in primary health care: A scoping review.",
+   "status": 200,
+   "xml_bytes": 147100,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755762",
+   "doi": "10.1371/journal.pone.0339961",
+   "title": "Biological studies on exogenous NO stress to improve the quality of Radix Scutellariae herbs.",
+   "status": 200,
+   "xml_bytes": 138068,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755748",
+   "doi": "10.1371/journal.pone.0335240",
+   "title": "Spoof detection with dynamic learnable sparse attention and tri-modal fusion in resource-constrained audio systems.",
+   "status": 200,
+   "xml_bytes": 302387,
+   "das": "Data Availability The datasets used in this study are publicly available benchmark corpora from the ASVspoof challenges. The ASVspoof 2019 Logical Access (LA) dataset is available at https://www.asvspoof.org/index2019.html and the ASVspoof 2021 Logical Access (LA) dataset is available at https://www.asvspoof.org/index2021.html . Both datasets are openly accessible upon free registration with the ASVspoof challenge organizers. No additional data were generated or analyzed in this study.",
+   "urls": [
+    "https://www.asvspoof.org/index2019.html",
+    "https://www.asvspoof.org/index2021.html"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755745",
+   "doi": "10.1371/journal.pone.0340223",
+   "title": "The impact of Pasifikas in Medicine on Pacific Islander medical student experiences.",
+   "status": 200,
+   "xml_bytes": 71827,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information file.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755774",
+   "doi": "10.1371/journal.pone.0339584",
+   "title": "Creole goat morphological diversity partially mirrors district-level variation in the seasonally dry forest of Piura in ",
+   "status": 200,
+   "xml_bytes": 156972,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755730",
+   "doi": "10.1371/journal.pone.0340007",
+   "title": "Evaluation of the reliability and risks of ChatGPT-4o in answering pediatric cough questions: A comparative analysis bet",
+   "status": 200,
+   "xml_bytes": 103970,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755739",
+   "doi": "10.1371/journal.pone.0340001",
+   "title": "The power of concentration: Antipredator responses to diluted frozen crayfish alarm cues provide insights on ecologicall",
+   "status": 200,
+   "xml_bytes": 188181,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755808",
+   "doi": "10.1371/journal.pone.0328722",
+   "title": "AI-driven approaches for dysgraphia diagnosis using online and offline handwriting data: A comprehensive scoping review.",
+   "status": 200,
+   "xml_bytes": 329223,
+   "das": "Data Availability The data supporting this review’s findings include publicly available and private datasets and articles from various sources. The datasets and papers reviewed in this study are specified in the respective sections of the paper. Public datasets include: ▪ Dysgraphia Detection Through Machine Learning: ( https://github.com/peet292929/Dysgraphia-detection-through-machine-learning ) ▪ Dysgraphia Handwriting Sample: Contact Association of Dyslexia Malaysia (ADM) ▪ IAM Handwriting Database: ( https://fki.tic.heia-fr.ch/databases/iam-handwriting-database ) ▪ Handwritten Digits: ( https://ijece.iaescore.com/index.php/IJECE ) The paper references these sources, and access to these materials is provided through the respective links. Access to additional papers and datasets mentioned in this review may require institutional access or a subscription. Additionally, any summary tables, figures, or supplementary materials created during the preparation of this review are included as Supporting information files with this article.",
+   "urls": [
+    "https://fki.tic.heia-fr.ch/databases/iam-handwriting-database",
+    "https://github.com/peet292929/Dysgraphia-detection-through-machine-learning",
+    "https://ijece.iaescore.com/index.php/IJECE"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755735",
+   "doi": "10.1371/journal.pone.0340016",
+   "title": "Correction: Omicron surge impact on acute kidney injury in ICU patients: A study using the ISARIC COVID-19 database.",
+   "status": 200,
+   "xml_bytes": 9491,
+   "das": null,
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755782",
+   "doi": "10.1371/journal.pone.0340003",
+   "title": "Correction: FedGAN: Federated diabetic retinopathy image generation.",
+   "status": 200,
+   "xml_bytes": 5302,
+   "das": null,
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12818874",
+   "doi": "10.1371/journal.pone.0338722",
+   "title": "Domain-specific physical activity and depressive symptoms in Korean adults: An isotemporal substitution study using KNHA",
+   "status": 200,
+   "xml_bytes": 155307,
+   "das": "Data Availability The minimal dataset underlying the results of this study is publicly available in the Figshare repository at https://doi.org/10.6084/m9.figshare.30230665 . The original raw data were obtained from the Korea National Health and Nutrition Examination Survey (KNHANES; https://knhanes.kdca.go.kr ).",
+   "urls": [
+    "https://doi.org/10.6084/m9.figshare.30230665",
+    "https://knhanes.kdca.go.kr"
+   ],
+   "dois": [
+    "10.6084/m9.figshare.30230665"
+   ]
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755744",
+   "doi": "10.1371/journal.pone.0322383",
+   "title": "Exposure to heavy metals, bisphenol A, and phthalates: Implications for precocious or delayed puberty.",
+   "status": 200,
+   "xml_bytes": 184088,
+   "das": "Data Availability The data are being reviewed and prepared for release, pending institutional approval. Currently data are available from the Environmental Health Research Department of National Institute of Environmental Research ( https://www.nier.go.kr , contact point: ojkim21@korea.kr) for researchers who meet the criteria for access to confidential data.",
+   "urls": [
+    "https://www.nier.go.kr"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755824",
+   "doi": "10.1371/journal.pone.0339602",
+   "title": "Polarity effects, resistance, and probiotic enhancement of intoxication of Salmonella enterica fraB mutants in murine mo",
+   "status": 200,
+   "xml_bytes": 189782,
+   "das": "Data Availability All relevant data are within the manuscript.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755777",
+   "doi": "10.1371/journal.pone.0339895",
+   "title": "Care needs of patients with chronic wounds for implementing a virtual care program: A qualitative study.",
+   "status": 200,
+   "xml_bytes": 130267,
+   "das": "Data Availability The data that support the findings of this study are the full interview transcripts, which contain potentially identifying and sensitive information. Due to participant confidentiality, these data are not publicly available. Relevant de-identified excerpts are included in the article.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755736",
+   "doi": "10.1371/journal.pone.0339462",
+   "title": "A pilot study for decellularizing porcine cornea for future use in corneal regeneration.",
+   "status": 200,
+   "xml_bytes": 103016,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755786",
+   "doi": "10.1371/journal.pone.0339675",
+   "title": "Meta-path guided policy distillation for resilient coordination in autonomous unmanned swarm.",
+   "status": 200,
+   "xml_bytes": 250197,
+   "das": "Data Availability The data that support the findings of this study are available from the corresponding author, Siwen Wei upon reasonable request.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755828",
+   "doi": "10.1371/journal.pone.0339286",
+   "title": "Trigonometric function transformation and its application in software reliability modeling.",
+   "status": 200,
+   "xml_bytes": 1243226,
+   "das": "Data Availability All relevant data are within the paper.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755768",
+   "doi": "10.1371/journal.pone.0339827",
+   "title": "Unmet needs and quality of life of adult patients while receiving cancer treatment in Uganda: A cross-sectional study.",
+   "status": 200,
+   "xml_bytes": 132565,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755812",
+   "doi": "10.1371/journal.pone.0340075",
+   "title": "Clostridioides difficile infection in Saudi Arabia: Prevalence, risk factors, and outcomes in a tertiary hospital settin",
+   "status": 200,
+   "xml_bytes": 152618,
+   "das": "Data Availability : The datasets generated and/or analyzed during the current study are not publicly available due to institutional privacy policies and ethical restrictions. However, data are available from the corresponding author on reasonable request. In addition, data access requests may be directed to the Unit of Biomedical Ethics at King Abdulaziz University Hospital (KAUH), email: med.rcommitte@kau.edu.sa , which serves as an independent institutional body ensuring long-term data accessibility in accordance with institutional and national regulations.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755810",
+   "doi": "10.1371/journal.pone.0338821",
+   "title": "KerSpecGen: Co-piloting formal Kernel specification synthesis with refined knowledge graphs and large language models.",
+   "status": 200,
+   "xml_bytes": 212620,
+   "das": "Data Availability The data are available at: https://github.com/zizzzw/KerSpecGen/tree/master .",
+   "urls": [
+    "https://github.com/zizzzw/KerSpecGen/tree/master"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755801",
+   "doi": "10.1371/journal.pone.0339962",
+   "title": "Work-related musculoskeletal disorder among midwives, a threat for maternity care.",
+   "status": 200,
+   "xml_bytes": 127927,
+   "das": "Data Availability The data and materials are included as supplementary information, and are fully accessible.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755765",
+   "doi": "10.1371/journal.pone.0339453",
+   "title": "A hybrid machine learning model for pulmonary tuberculosis forecasting of Chongqing with adjacent-region data.",
+   "status": 200,
+   "xml_bytes": 220680,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755756",
+   "doi": "10.1371/journal.pone.0338510",
+   "title": "Efficient removal of silver ions from wastewater via chelation with dithiooxamide-functionalized polymeric adsorbent.",
+   "status": 200,
+   "xml_bytes": 154955,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755746",
+   "doi": "10.1371/journal.pone.0339394",
+   "title": "Intelligence prediction of integrated circuit reliability based on SSA-LSTM fusion architecture.",
+   "status": 200,
+   "xml_bytes": 119272,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755759",
+   "doi": "10.1371/journal.pone.0339988",
+   "title": "Correction: Cost-sensitive multi-kernel ELM based on reduced expectation kernel auto-encoder.",
+   "status": 200,
+   "xml_bytes": 7839,
+   "das": null,
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755781",
+   "doi": "10.1371/journal.pone.0338602",
+   "title": "Growing third places: A qualitative study of experiences and perceived benefits of a campus community garden as a nature",
+   "status": 200,
+   "xml_bytes": 105014,
+   "das": "Data Availability All relevant data are within the manuscript.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755834",
+   "doi": "10.1371/journal.pone.0337687",
+   "title": "Unmasking the pathways to workplace incivility: A mediated moderation model of despotic leadership, workload stress, and",
+   "status": 200,
+   "xml_bytes": 231135,
+   "das": "Data Availability All relevant data can be found deposited on Figshare at the following DOI: https://doi.org/10.6084/m9.figshare.29430332.v1 .",
+   "urls": [
+    "https://doi.org/10.6084/m9.figshare.29430332.v1"
+   ],
+   "dois": [
+    "10.6084/m9.figshare.29430332.v1"
+   ]
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755835",
+   "doi": "10.1371/journal.pone.0338742",
+   "title": "Core components of emotional impulsivity: A mouse-cursor tracking study.",
+   "status": 200,
+   "xml_bytes": 222131,
+   "das": "Data Availability The data underlying the results presented in the study are available from https://osf.io/wgu6p/ .",
+   "urls": [
+    "https://osf.io/wgu6p/"
+   ],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755816",
+   "doi": "10.1371/journal.pone.0337900",
+   "title": "Fourth-order kinematic analysis: Advanced decomposition methods for particle motion in modified orthogonal frame.",
+   "status": 200,
+   "xml_bytes": 276152,
+   "das": "Data Availability All relevant data are within the manuscript.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755749",
+   "doi": "10.1371/journal.pone.0340193",
+   "title": "Temperature-dependence of early development of zebrafish and the consequences for laboratory use and animal welfare.",
+   "status": 200,
+   "xml_bytes": 136713,
+   "das": "Data Availability All datasets as well as the R (version 4.3.3) code used are provided as comma separated plain text value files and are publicly available on Zenodo ( https://doi.org/10.5281/zenodo.13905257 ).",
+   "urls": [
+    "https://doi.org/10.5281/zenodo.13905257"
+   ],
+   "dois": [
+    "10.5281/zenodo.13905257"
+   ]
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755763",
+   "doi": "10.1371/journal.pone.0338099",
+   "title": "Development and validation of the leisure lifestyle and satisfaction assessment: A comprehensive tool for evaluating lei",
+   "status": 200,
+   "xml_bytes": 142368,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755830",
+   "doi": "10.1371/journal.pone.0339598",
+   "title": "Scenario-based functional modularization framework for consumer electronics using MFD and AHP: A case study on audio pro",
+   "status": 200,
+   "xml_bytes": 148326,
+   "das": "Data Availability All relevant data are within the manuscript and its Supporting information files.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755760",
+   "doi": "10.1371/journal.pone.0339176",
+   "title": "Trixis angustifolia DC. as a potential plant for the co-management of diabetes mellitus and tuberculosis.",
+   "status": 200,
+   "xml_bytes": 144847,
+   "das": "Data Availability All relevant data are within the paper and its Supporting Information file.",
+   "urls": [],
+   "dois": []
+  },
+  {
+   "year": 2025,
+   "pmcid": "PMC12755803",
+   "doi": "10.1371/journal.pone.0336210",
+   "title": "The Peak Plasma Concentration (Cmax)/Minimum Inhibitory Concentration (MIC) of bedaquiline and levofloxacin with special",
+   "status": 200,
+   "xml_bytes": 158650,
+   "das": "Data Availability Data Availability: All relevant data are within the manuscript and its supporting Information files.",
+   "urls": [],
+   "dois": []
+  }
+ ]
+}

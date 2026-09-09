@@ -1,0 +1,638 @@
+{
+ "n": 60,
+ "results": [
+  {
+   "url": "https://www.ajtmh.org",
+   "host": "www.ajtmh.org",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "homepage",
+   "year": 2016
+  },
+  {
+   "url": "https://www.dhsprogram.com",
+   "host": "www.dhsprogram.com",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "homepage",
+   "year": 2016
+  },
+  {
+   "url": "https://nhiss.nhis.or.kr/",
+   "host": "nhiss.nhis.or.kr",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "homepage",
+   "year": 2016
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "smidr/plosone2016 1.0",
+   "url": "http://doi.org/10.5281/zenodo.167477",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2016
+  },
+  {
+   "endpoint": "https://api.github.com/repos/smidr/plosone2016",
+   "status": 200,
+   "state": "exists",
+   "archived": false,
+   "pushed_at": "2016-11-18T18:16:52Z",
+   "license": null,
+   "size_kb": 11,
+   "note": "No licence declared. Under default copyright that is all rights reserved.",
+   "url": "https://github.com/smidr/plosone2016",
+   "host": "github.com",
+   "shell_or_payload_class": "payload",
+   "year": 2016
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "smidr/plosone2016 1.0",
+   "url": "https://doi.org/10.5281/zenodo.167477",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2016
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "Investigating the function of play bows in dog and wolf puppies (Canis lupus fam",
+   "url": "https://dx.doi.org/10.6084/m9.figshare.4307765.v1",
+   "host": "dx.doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2016
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "Investigating the function of play bows in dog and wolf puppies (Canis lupus fam",
+   "url": "https://doi.org/10.6084/m9.figshare.4307765.v1",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2016
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "Multimodal spike data recorded from posterior parietal cortex of non-human prima",
+   "url": "http://dx.doi.org/10.6080/K0CZ353K",
+   "host": "dx.doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2016
+  },
+  {
+   "url": "https://crcns.org/data-sets/pc/ppc-1",
+   "host": "crcns.org",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "payload",
+   "year": 2016
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "Multimodal spike data recorded from posterior parietal cortex of non-human prima",
+   "url": "https://doi.org/10.6080/K0CZ353K",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2016
+  },
+  {
+   "state": "unknown-host",
+   "why": "no numeric article id in the path. figshare private-share links (/s/<hash>) have no public API form, which is itself why they cannot be verified.",
+   "url": "https://figshare.com/s/0a1ad979f3b2d59343a0",
+   "host": "figshare.com",
+   "shell_or_payload_class": "shell",
+   "year": 2016
+  },
+  {
+   "url": "https://www.ncbi.nlm.nih.gov/geo/",
+   "host": "www.ncbi.nlm.nih.gov",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "payload",
+   "year": 2019
+  },
+  {
+   "url": "http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000356",
+   "host": "www.ncbi.nlm.nih.gov",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "payload",
+   "year": 2019
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "X-Ray Diffraction data from p120RasGAP N-terminal SH2 domain, source of 6PXB str",
+   "url": "https://doi.org/10.15785/SBGRID/698",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2019
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "X-Ray Diffraction data from p120RasGAP N-terminal SH2 domain with p190RhoGAP pTy",
+   "url": "https://doi.org/10.15785/SBGRID/699",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2019
+  },
+  {
+   "endpoint": "https://api.osf.io/v2/guids/ysxuz/",
+   "status": 401,
+   "guid": "ysxuz",
+   "state": "private",
+   "status2": 200,
+   "public": false,
+   "title": "Age-dependent survival rate of the colonial Little Tern (Sternula albifrons)",
+   "why": "Reachable ONLY with the view_only token that was left in the printed URL. `public` is False. An anonymous-review token can be revoked by the owner at any time, and when it is, nothing about the printed link changes.",
+   "url": "https://osf.io/ysxuz/?view_only=d847c7e96f51428e9d70c942ae2af15b",
+   "host": "osf.io",
+   "shell_or_payload_class": "shell",
+   "year": 2019
+  },
+  {
+   "endpoint": "https://api.figshare.com/v2/articles/11339987",
+   "status": 200,
+   "state": "exists",
+   "n_files": 1,
+   "title": "Dataset_SUN COHORT_2019",
+   "is_embargoed": false,
+   "url": "https://figshare.com/articles/Dataset_SUN_COHORT_2019/11339987",
+   "host": "figshare.com",
+   "shell_or_payload_class": "shell",
+   "year": 2019
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "TwinLife",
+   "url": "http://dx.doi.org/10.4232/1.12665",
+   "host": "dx.doi.org",
+   "shell_or_payload_class": "blocked",
+   "year": 2019
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "TwinLife",
+   "url": "https://doi.org/10.4232/1.12665",
+   "host": "doi.org",
+   "shell_or_payload_class": "blocked",
+   "year": 2019
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "Measuring affect-related cognitive bias: do mice in opposite affective states re",
+   "url": "https://doi.org/10.6084/m9.figshare.10243400.v1",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2019
+  },
+  {
+   "endpoint": "https://zenodo.org/api/records/3526686",
+   "status": 200,
+   "state": "exists",
+   "n_files": 1,
+   "title": "ASSESSMENT OF KNOWLEDGE AND PRACTICE OF BREAST SELF-EXAMINATION AMONG REPRODUCTI",
+   "access": "open",
+   "url": "https://zenodo.org/record/3526686#.XfL3zht7nIV",
+   "host": "zenodo.org",
+   "shell_or_payload_class": "payload",
+   "year": 2019
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "ASSESSMENT OF KNOWLEDGE AND PRACTICE OF BREAST SELF-EXAMINATION AMONG REPRODUCTI",
+   "url": "https://doi.org/10.5281/zenodo.3526686",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2019
+  },
+  {
+   "endpoint": "https://zenodo.org/api/records/3571122",
+   "status": 200,
+   "state": "exists",
+   "n_files": 1,
+   "title": "Finkel_Randerath_PLOSOne_Adapting affordance judgments to altered body propertie",
+   "access": "open",
+   "url": "https://zenodo.org/record/3571122",
+   "host": "zenodo.org",
+   "shell_or_payload_class": "payload",
+   "year": 2019
+  },
+  {
+   "url": "https://dspace.nm-aist.ac.tz/handle/20.500.12479/1682",
+   "host": "dspace.nm-aist.ac.tz",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "shell",
+   "year": 2022
+  },
+  {
+   "url": "https://clinepidb.org/ce/app",
+   "host": "clinepidb.org",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "payload",
+   "year": 2022
+  },
+  {
+   "url": "http://bioinformatics.sdstate.edu/go/",
+   "host": "bioinformatics.sdstate.edu",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "payload",
+   "year": 2022
+  },
+  {
+   "url": "https://fuma.ctglab.nl/",
+   "host": "fuma.ctglab.nl",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "homepage",
+   "year": 2022
+  },
+  {
+   "endpoint": "https://api.github.com/repos/diptavo/METABRIC_analysis",
+   "status": 200,
+   "state": "exists",
+   "archived": false,
+   "pushed_at": "2022-03-26T12:35:19Z",
+   "license": null,
+   "size_kb": 4,
+   "note": "No licence declared. Under default copyright that is all rights reserved.",
+   "url": "https://github.com/diptavo/METABRIC_analysis",
+   "host": "github.com",
+   "shell_or_payload_class": "payload",
+   "year": 2022
+  },
+  {
+   "url": "https://maayanlab.cloud/Harmonizome/dataset/CHEA+Transcription+Factor+Targets",
+   "host": "maayanlab.cloud",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "payload",
+   "year": 2022
+  },
+  {
+   "url": "https://maayanlab.cloud/Harmonizome/dataset/ENCODE+Transcription+Factor+Targets",
+   "host": "maayanlab.cloud",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "payload",
+   "year": 2022
+  },
+  {
+   "url": "https://www.cbioportal.org/study/summary?id=brca_metabric",
+   "host": "www.cbioportal.org",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "shell",
+   "year": 2022
+  },
+  {
+   "url": "https://www.cbioportal.org/study/summary?id=brca_tcga",
+   "host": "www.cbioportal.org",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "shell",
+   "year": 2022
+  },
+  {
+   "endpoint": "https://api.osf.io/v2/guids/2ptz4/",
+   "status": 200,
+   "guid": "2ptz4",
+   "state": "exists",
+   "osf_type": "nodes",
+   "public": true,
+   "title": "Color Diversity Judgments in Peripheral Vision:  Evidence Against “Cost-Free” Representations",
+   "size": null,
+   "n_files_at_root": 2,
+   "url": "https://osf.io/2ptz4/",
+   "host": "osf.io",
+   "shell_or_payload_class": "shell",
+   "year": 2022
+  },
+  {
+   "endpoint": "https://zenodo.org/api/records/7364536",
+   "status": 200,
+   "state": "exists",
+   "n_files": 1,
+   "title": "L-fucose reduces gut inflammation due to T-regulatory response in Muc2 null mice",
+   "access": "open",
+   "url": "https://zenodo.org/record/7364536#.Y4HVVL1ByUk",
+   "host": "zenodo.org",
+   "shell_or_payload_class": "payload",
+   "year": 2022
+  },
+  {
+   "url": "http://portalsivigila.ins.gov.co/Paginas/Vigilancia-Rutinaria.aspx",
+   "host": "portalsivigila.ins.gov.co",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "dead",
+   "year": 2022
+  },
+  {
+   "endpoint": "https://api.osf.io/v2/guids/hgdky/",
+   "status": 200,
+   "guid": "hgdky",
+   "state": "exists",
+   "osf_type": "nodes",
+   "public": true,
+   "title": "The neural correlates of context-driven changes in the emotional response: an fMRI study",
+   "size": null,
+   "n_files_at_root": 2,
+   "url": "https://osf.io/hgdky/",
+   "host": "osf.io",
+   "shell_or_payload_class": "shell",
+   "year": 2022
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "Survey Data",
+   "url": "https://doi.org/10.6084/m9.figshare.17694767",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2022
+  },
+  {
+   "endpoint": "https://api.osf.io/v2/guids/74j3c/",
+   "status": 401,
+   "guid": "74j3c",
+   "state": "private",
+   "why": "OSF returns 401: the resource is not public and no token was supplied.",
+   "url": "https://osf.io/74j3c/",
+   "host": "osf.io",
+   "shell_or_payload_class": "shell",
+   "year": 2022
+  },
+  {
+   "url": "https://knhanes.kdca.go.kr/knhanes/eng/index.do",
+   "host": "knhanes.kdca.go.kr",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "blocked",
+   "year": 2022
+  },
+  {
+   "state": "never-existed",
+   "status": [
+    404,
+    404
+   ],
+   "why": "Neither Crossref nor DataCite has this DOI.",
+   "url": "https://doi.org/10.5061/dryad.fttdz08wm",
+   "host": "doi.org",
+   "shell_or_payload_class": "dead",
+   "year": 2022
+  },
+  {
+   "url": "https://nccd.cdc.gov/DHDSPAtlas/?state=County&amp",
+   "host": "nccd.cdc.gov",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "blocked",
+   "year": 2022
+  },
+  {
+   "endpoint": "https://api.osf.io/v2/guids/atxhk/",
+   "status": 200,
+   "guid": "atxhk",
+   "state": "exists",
+   "osf_type": "nodes",
+   "public": true,
+   "title": "Emotional expression through musical cues: A comparison of production and perception approaches. Dataset and stimuli.",
+   "size": null,
+   "n_files_at_root": 3,
+   "url": "https://osf.io/atxhk/",
+   "host": "osf.io",
+   "shell_or_payload_class": "shell",
+   "year": 2022
+  },
+  {
+   "url": "https://www.lib.polyu.edu.hk/databases/factiva",
+   "host": "www.lib.polyu.edu.hk",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "payload",
+   "year": 2022
+  },
+  {
+   "endpoint": "https://api.figshare.com/v2/articles/28344107",
+   "status": 200,
+   "state": "exists",
+   "n_files": 3,
+   "title": "NSSI-Slang Project-Data-Analysis",
+   "is_embargoed": false,
+   "url": "https://figshare.com/articles/dataset/NSSI-Slang_Project-Data-Analysis/28344107",
+   "host": "figshare.com",
+   "shell_or_payload_class": "shell",
+   "year": 2025
+  },
+  {
+   "url": "https://www.reddit.com/dev/api/",
+   "host": "www.reddit.com",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "payload",
+   "year": 2025
+  },
+  {
+   "url": "https://www.reddit.com",
+   "host": "www.reddit.com",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "homepage",
+   "year": 2025
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "In vivo and in vitro susceptibility and inflammatory response of postnatal mouse",
+   "url": "https://doi.org/10.7910/DVN/GT2BTZ",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2025
+  },
+  {
+   "url": "https://www.asvspoof.org/index2019.html",
+   "host": "www.asvspoof.org",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "blocked",
+   "year": 2025
+  },
+  {
+   "url": "https://www.asvspoof.org/index2021.html",
+   "host": "www.asvspoof.org",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "blocked",
+   "year": 2025
+  },
+  {
+   "url": "https://fki.tic.heia-fr.ch/databases/iam-handwriting-database",
+   "host": "fki.tic.heia-fr.ch",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "blocked",
+   "year": 2025
+  },
+  {
+   "endpoint": "https://api.github.com/repos/peet292929/Dysgraphia-detection-through-machine-learning",
+   "status": 200,
+   "state": "exists",
+   "archived": false,
+   "pushed_at": "2020-12-14T07:33:23Z",
+   "license": null,
+   "size_kb": 15952,
+   "note": "No licence declared. Under default copyright that is all rights reserved.",
+   "url": "https://github.com/peet292929/Dysgraphia-detection-through-machine-learning",
+   "host": "github.com",
+   "shell_or_payload_class": "payload",
+   "year": 2025
+  },
+  {
+   "url": "https://ijece.iaescore.com/index.php/IJECE",
+   "host": "ijece.iaescore.com",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "shell",
+   "year": 2025
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "Underlying dataset for Domain-Specific Physical Activity and Depressive Symptoms",
+   "url": "https://doi.org/10.6084/m9.figshare.30230665",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2025
+  },
+  {
+   "url": "https://knhanes.kdca.go.kr",
+   "host": "knhanes.kdca.go.kr",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "homepage",
+   "year": 2025
+  },
+  {
+   "url": "https://www.nier.go.kr",
+   "host": "www.nier.go.kr",
+   "state": "unknown-host",
+   "why": "No authoritative endpoint is implemented for this host. Saying `unknown` is the whole point: a link checker that reports `available` for a host it cannot interrogate is reporting that the host answered, and calling it something else.",
+   "shell_or_payload_class": "homepage",
+   "year": 2025
+  },
+  {
+   "endpoint": "https://api.github.com/repos/zizzzw/KerSpecGen",
+   "status": 200,
+   "state": "exists",
+   "archived": false,
+   "pushed_at": "2025-12-04T08:41:42Z",
+   "license": null,
+   "size_kb": 7679,
+   "note": "No licence declared. Under default copyright that is all rights reserved.",
+   "url": "https://github.com/zizzzw/KerSpecGen/tree/master",
+   "host": "github.com",
+   "shell_or_payload_class": "payload",
+   "year": 2025
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "Dataset.sav",
+   "url": "https://doi.org/10.6084/m9.figshare.29430332.v1",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2025
+  },
+  {
+   "endpoint": "https://api.osf.io/v2/guids/wgu6p/",
+   "status": 200,
+   "guid": "wgu6p",
+   "state": "exists",
+   "osf_type": "nodes",
+   "public": true,
+   "title": "The core component of emotional impulsivity: A mouse-tracking study",
+   "size": null,
+   "n_files_at_root": 9,
+   "url": "https://osf.io/wgu6p/",
+   "host": "osf.io",
+   "shell_or_payload_class": "shell",
+   "year": 2025
+  },
+  {
+   "endpoint": "datacite",
+   "status": 200,
+   "state": "exists",
+   "registrant": "datacite",
+   "datacite_state": "findable",
+   "title": "RWTH-IFER/DanioTemperatureData: Dataset on Temperature Dependent Development",
+   "url": "https://doi.org/10.5281/zenodo.13905257",
+   "host": "doi.org",
+   "shell_or_payload_class": "payload",
+   "year": 2025
+  }
+ ]
+}

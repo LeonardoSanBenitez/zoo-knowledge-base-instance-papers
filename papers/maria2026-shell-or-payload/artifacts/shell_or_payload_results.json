@@ -1,0 +1,1559 @@
+{
+ "n": 60,
+ "results": [
+  {
+   "url": "https://www.ajtmh.org",
+   "host": "www.ajtmh.org",
+   "klass": "homepage",
+   "why": "The URL carries no path. There is nothing to falsify and nothing specific to retrieve; Briney 2024 measures this category at 13.4% of shared URLs.",
+   "year": 2016,
+   "pmcid": "PMC5201252",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.dhsprogram.com",
+   "host": "www.dhsprogram.com",
+   "klass": "homepage",
+   "why": "The URL carries no path. There is nothing to falsify and nothing specific to retrieve; Briney 2024 measures this category at 13.4% of shared URLs.",
+   "year": 2016,
+   "pmcid": "PMC5201252",
+   "kind": "url"
+  },
+  {
+   "url": "https://nhiss.nhis.or.kr/",
+   "host": "nhiss.nhis.or.kr",
+   "klass": "homepage",
+   "why": "The URL carries no path. There is nothing to falsify and nothing specific to retrieve; Briney 2024 measures this category at 13.4% of shared URLs.",
+   "year": 2016,
+   "pmcid": "PMC5201261",
+   "kind": "url"
+  },
+  {
+   "url": "http://doi.org/10.5281/zenodo.167477",
+   "host": "doi.org",
+   "link": {
+    "url": "http://doi.org/10.5281/zenodo.167477",
+    "status": 200,
+    "final": "https://zenodo.org/records/167477",
+    "ctype": "text/html",
+    "bytes": 57480,
+    "sha256": "02be038b98eba0084f77a10a7910fe6e98ff7759039fd646a05724b2d6ddb7e8",
+    "is_lfs": false,
+    "clen": "57480"
+   },
+   "nonsense": "http://doi.org/10.5281/zzhhelasvj.167477",
+   "control": {
+    "url": "http://doi.org/10.5281/zzhhelasvj.167477",
+    "status": 404,
+    "final": "http://doi.org/10.5281/zzhhelasvj.167477",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2016,
+   "pmcid": "PMC5201286",
+   "kind": "url"
+  },
+  {
+   "url": "https://github.com/smidr/plosone2016",
+   "host": "github.com",
+   "link": {
+    "url": "https://github.com/smidr/plosone2016",
+    "status": 200,
+    "final": "https://github.com/smidr/plosone2016",
+    "ctype": "text/html",
+    "bytes": 270397,
+    "sha256": "f970bc9d0094ffd7d5b7a5c49ddee1887f2972f9db016c4e4d2697dde47813c7",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://github.com/smidr/zzn3lplx3d",
+   "control": {
+    "url": "https://github.com/smidr/zzn3lplx3d",
+    "status": 404,
+    "final": "https://github.com/smidr/zzn3lplx3d",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2016,
+   "pmcid": "PMC5201286",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.5281/zenodo.167477",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.5281/zenodo.167477",
+    "status": 200,
+    "final": "https://zenodo.org/records/167477",
+    "ctype": "text/html",
+    "bytes": 57480,
+    "sha256": "02be038b98eba0084f77a10a7910fe6e98ff7759039fd646a05724b2d6ddb7e8",
+    "is_lfs": false,
+    "clen": "57480"
+   },
+   "nonsense": "https://doi.org/10.5281/zzpwei3ywx.167477",
+   "control": {
+    "url": "https://doi.org/10.5281/zzpwei3ywx.167477",
+    "status": 404,
+    "final": "https://doi.org/10.5281/zzpwei3ywx.167477",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2016,
+   "pmcid": "PMC5201286",
+   "kind": "doi"
+  },
+  {
+   "url": "https://dx.doi.org/10.6084/m9.figshare.4307765.v1",
+   "host": "dx.doi.org",
+   "link": {
+    "url": "https://dx.doi.org/10.6084/m9.figshare.4307765.v1",
+    "status": 202,
+    "final": "https://figshare.com/articles/dataset/Investigating_the_function_of_play_bows_in_dog_and_wolf_puppies_Canis_lupus_familiaris_Canis_lupus_occidentalis_/4307765/1",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://dx.doi.org/10.6084/zzy06e0h4q.v1",
+   "control": {
+    "url": "https://dx.doi.org/10.6084/zzy06e0h4q.v1",
+    "status": 404,
+    "final": "https://dx.doi.org/10.6084/zzy06e0h4q.v1",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2016,
+   "pmcid": "PMC5199004",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.6084/m9.figshare.4307765.v1",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.6084/m9.figshare.4307765.v1",
+    "status": 202,
+    "final": "https://figshare.com/articles/dataset/Investigating_the_function_of_play_bows_in_dog_and_wolf_puppies_Canis_lupus_familiaris_Canis_lupus_occidentalis_/4307765/1",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://doi.org/10.6084/zz8b8x8hd6.v1",
+   "control": {
+    "url": "https://doi.org/10.6084/zz8b8x8hd6.v1",
+    "status": 404,
+    "final": "https://doi.org/10.6084/zz8b8x8hd6.v1",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2016,
+   "pmcid": "PMC5199004",
+   "kind": "doi"
+  },
+  {
+   "url": "http://dx.doi.org/10.6080/K0CZ353K",
+   "host": "dx.doi.org",
+   "link": {
+    "url": "http://dx.doi.org/10.6080/K0CZ353K",
+    "status": 200,
+    "final": "https://crcns.org/data-sets/pc/ppc-1",
+    "ctype": "text/html",
+    "bytes": 31488,
+    "sha256": "bb496f0a011b4b986a153ab039963141410b403c4f15841cff2721247ba41881",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "http://dx.doi.org/10.6080/zzd15enzo7",
+   "control": {
+    "url": "http://dx.doi.org/10.6080/zzd15enzo7",
+    "status": 404,
+    "final": "http://dx.doi.org/10.6080/zzd15enzo7",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2016,
+   "pmcid": "PMC5199055",
+   "kind": "url"
+  },
+  {
+   "url": "https://crcns.org/data-sets/pc/ppc-1",
+   "host": "crcns.org",
+   "link": {
+    "url": "https://crcns.org/data-sets/pc/ppc-1",
+    "status": 200,
+    "final": "https://crcns.org/data-sets/pc/ppc-1",
+    "ctype": "text/html",
+    "bytes": 31488,
+    "sha256": "bb496f0a011b4b986a153ab039963141410b403c4f15841cff2721247ba41881",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://crcns.org/data-sets/pc/zzcw490myk",
+   "control": {
+    "url": "https://crcns.org/data-sets/pc/zzcw490myk",
+    "status": 404,
+    "final": "https://crcns.org/data-sets/pc/zzcw490myk",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2016,
+   "pmcid": "PMC5199055",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.6080/K0CZ353K",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.6080/K0CZ353K",
+    "status": 200,
+    "final": "https://crcns.org/data-sets/pc/ppc-1",
+    "ctype": "text/html",
+    "bytes": 31488,
+    "sha256": "bb496f0a011b4b986a153ab039963141410b403c4f15841cff2721247ba41881",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://doi.org/10.6080/zz7mbc2txw",
+   "control": {
+    "url": "https://doi.org/10.6080/zz7mbc2txw",
+    "status": 404,
+    "final": "https://doi.org/10.6080/zz7mbc2txw",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2016,
+   "pmcid": "PMC5199055",
+   "kind": "doi"
+  },
+  {
+   "url": "https://figshare.com/s/0a1ad979f3b2d59343a0",
+   "host": "figshare.com",
+   "link": {
+    "url": "https://figshare.com/s/0a1ad979f3b2d59343a0",
+    "status": 202,
+    "final": "https://figshare.com/s/0a1ad979f3b2d59343a0",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://figshare.com/s/zz2wxouw31",
+   "control": {
+    "url": "https://figshare.com/s/zz2wxouw31",
+    "status": 202,
+    "final": "https://figshare.com/s/zz2wxouw31",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2016,
+   "pmcid": "PMC5199085",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.ncbi.nlm.nih.gov/geo/",
+   "host": "www.ncbi.nlm.nih.gov",
+   "link": {
+    "url": "https://www.ncbi.nlm.nih.gov/geo/",
+    "status": 200,
+    "final": "https://www.ncbi.nlm.nih.gov/geo/",
+    "ctype": "text/html",
+    "bytes": 21300,
+    "sha256": "ec918451ae753163010d3b77bd0a7155fea939c16e9375d772e4b78798e127f8",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://www.ncbi.nlm.nih.gov/zz5zhky87g",
+   "control": {
+    "url": "https://www.ncbi.nlm.nih.gov/zz5zhky87g",
+    "status": 404,
+    "final": "https://www.ncbi.nlm.nih.gov/zz5zhky87g",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2019,
+   "pmcid": "PMC6938408",
+   "kind": "url"
+  },
+  {
+   "url": "http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000356",
+   "host": "www.ncbi.nlm.nih.gov",
+   "link": {
+    "url": "http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000356",
+    "status": 200,
+    "final": "https://www.ncbi.nlm.nih.gov:443/projects/gap/cgi-bin/study.cgi?study_id=phs000356.v2.p1",
+    "ctype": "text/html",
+    "bytes": 32106,
+    "sha256": "adec4b09320604c434389fa5bf4f4456b2641ebfa87175cf6aa7832577631781",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/zzy35aoxcc.cgi",
+   "control": {
+    "url": "http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/zzy35aoxcc.cgi",
+    "status": 404,
+    "final": "http://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/zzy35aoxcc.cgi",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2019,
+   "pmcid": "PMC6938343",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.15785/SBGRID/698",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.15785/SBGRID/698",
+    "status": 200,
+    "final": "https://data.sbgrid.org/dataset/698/",
+    "ctype": "text/html",
+    "bytes": 34242,
+    "sha256": "be68649870a8a81ddff03e5440d8ddcb2d848fc30cbfedfcbb7294f055f66e8b",
+    "is_lfs": false,
+    "clen": "34242"
+   },
+   "nonsense": "https://doi.org/10.15785/SBGRID/zziqtc6dmr",
+   "control": {
+    "url": "https://doi.org/10.15785/SBGRID/zziqtc6dmr",
+    "status": 404,
+    "final": "https://doi.org/10.15785/SBGRID/zziqtc6dmr",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2019,
+   "pmcid": "PMC6938330",
+   "kind": "doi"
+  },
+  {
+   "url": "https://doi.org/10.15785/SBGRID/699",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.15785/SBGRID/699",
+    "status": 200,
+    "final": "https://data.sbgrid.org/dataset/699/",
+    "ctype": "text/html",
+    "bytes": 26439,
+    "sha256": "bd8ab32da4ef6bbb8063cb3e003928cad89505b8e826c8940475c76f9041dfee",
+    "is_lfs": false,
+    "clen": "26439"
+   },
+   "nonsense": "https://doi.org/10.15785/SBGRID/zzrlsc8gf7",
+   "control": {
+    "url": "https://doi.org/10.15785/SBGRID/zzrlsc8gf7",
+    "status": 404,
+    "final": "https://doi.org/10.15785/SBGRID/zzrlsc8gf7",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2019,
+   "pmcid": "PMC6938330",
+   "kind": "doi"
+  },
+  {
+   "url": "https://osf.io/ysxuz/?view_only=d847c7e96f51428e9d70c942ae2af15b",
+   "host": "osf.io",
+   "link": {
+    "url": "https://osf.io/ysxuz/?view_only=d847c7e96f51428e9d70c942ae2af15b",
+    "status": 200,
+    "final": "https://osf.io/ysxuz/?view_only=d847c7e96f51428e9d70c942ae2af15b",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "nonsense": "https://osf.io/zzmrwkgihc",
+   "control": {
+    "url": "https://osf.io/zzmrwkgihc",
+    "status": 200,
+    "final": "https://osf.io/zzmrwkgihc",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2019,
+   "pmcid": "PMC6938403",
+   "kind": "url"
+  },
+  {
+   "url": "https://figshare.com/articles/Dataset_SUN_COHORT_2019/11339987",
+   "host": "figshare.com",
+   "link": {
+    "url": "https://figshare.com/articles/Dataset_SUN_COHORT_2019/11339987",
+    "status": 202,
+    "final": "https://figshare.com/articles/Dataset_SUN_COHORT_2019/11339987",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://figshare.com/articles/Dataset_SUN_COHORT_2019/zzqhj3sv31",
+   "control": {
+    "url": "https://figshare.com/articles/Dataset_SUN_COHORT_2019/zzqhj3sv31",
+    "status": 202,
+    "final": "https://figshare.com/articles/Dataset_SUN_COHORT_2019/zzqhj3sv31",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2019,
+   "pmcid": "PMC6938338",
+   "kind": "url"
+  },
+  {
+   "url": "http://dx.doi.org/10.4232/1.12665",
+   "host": "dx.doi.org",
+   "link": {
+    "url": "http://dx.doi.org/10.4232/1.12665",
+    "status": 403,
+    "final": "http://dx.doi.org/10.4232/1.12665",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "blocked",
+   "why": "Could not look (http). NOT a classification.",
+   "year": 2019,
+   "pmcid": "PMC6938312",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.4232/1.12665",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.4232/1.12665",
+    "status": 403,
+    "final": "https://doi.org/10.4232/1.12665",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "blocked",
+   "why": "Could not look (http). NOT a classification.",
+   "year": 2019,
+   "pmcid": "PMC6938312",
+   "kind": "doi"
+  },
+  {
+   "url": "https://doi.org/10.6084/m9.figshare.10243400.v1",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.6084/m9.figshare.10243400.v1",
+    "status": 202,
+    "final": "https://figshare.com/articles/Measuring_affect-related_cognitive_bias_do_mice_in_opposite_affective_states_react_differently_to_negative_and_positive_stimuli_/10243400/1",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://doi.org/10.6084/zzmu122o8r.v1",
+   "control": {
+    "url": "https://doi.org/10.6084/zzmu122o8r.v1",
+    "status": 404,
+    "final": "https://doi.org/10.6084/zzmu122o8r.v1",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2019,
+   "pmcid": "PMC6936852",
+   "kind": "url"
+  },
+  {
+   "url": "https://zenodo.org/record/3526686#.XfL3zht7nIV",
+   "host": "zenodo.org",
+   "link": {
+    "url": "https://zenodo.org/record/3526686#.XfL3zht7nIV",
+    "status": 200,
+    "final": "https://zenodo.org/records/3526686",
+    "ctype": "text/html",
+    "bytes": 63993,
+    "sha256": "52bec285945b6a40fb93d90475c82c511dda56d15631325dd7a985bfa5bc188b",
+    "is_lfs": false,
+    "clen": "63993"
+   },
+   "nonsense": "https://zenodo.org/record/zzlw1h14vv",
+   "control": {
+    "url": "https://zenodo.org/record/zzlw1h14vv",
+    "status": 404,
+    "final": "https://zenodo.org/record/zzlw1h14vv",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2019,
+   "pmcid": "PMC6936838",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.5281/zenodo.3526686",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.5281/zenodo.3526686",
+    "status": 200,
+    "final": "https://zenodo.org/records/3526686",
+    "ctype": "text/html",
+    "bytes": 63993,
+    "sha256": "52bec285945b6a40fb93d90475c82c511dda56d15631325dd7a985bfa5bc188b",
+    "is_lfs": false,
+    "clen": "63993"
+   },
+   "nonsense": "https://doi.org/10.5281/zz5cgsgyuc.3526686",
+   "control": {
+    "url": "https://doi.org/10.5281/zz5cgsgyuc.3526686",
+    "status": 404,
+    "final": "https://doi.org/10.5281/zz5cgsgyuc.3526686",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2019,
+   "pmcid": "PMC6936838",
+   "kind": "doi"
+  },
+  {
+   "url": "https://zenodo.org/record/3571122",
+   "host": "zenodo.org",
+   "link": {
+    "url": "https://zenodo.org/record/3571122",
+    "status": 200,
+    "final": "https://zenodo.org/records/3571122",
+    "ctype": "text/html",
+    "bytes": 72395,
+    "sha256": "bb8b3e0b1699bc7840acc7057152ddaa23c919edcddac31a490f0a5921f78785",
+    "is_lfs": false,
+    "clen": "72395"
+   },
+   "nonsense": "https://zenodo.org/record/zzqaii7nc0",
+   "control": {
+    "url": "https://zenodo.org/record/zzqaii7nc0",
+    "status": 404,
+    "final": "https://zenodo.org/record/zzqaii7nc0",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2019,
+   "pmcid": "PMC6936784",
+   "kind": "url"
+  },
+  {
+   "url": "https://dspace.nm-aist.ac.tz/handle/20.500.12479/1682",
+   "host": "dspace.nm-aist.ac.tz",
+   "link": {
+    "url": "https://dspace.nm-aist.ac.tz/handle/20.500.12479/1682",
+    "status": 200,
+    "final": "https://dspace.nm-aist.ac.tz/handle/20.500.12479/1682",
+    "ctype": "text/html",
+    "bytes": 373954,
+    "sha256": "99890b60ec462bd40faeafe5d6323cb8aaec9cfd883bf39472b7e95b5330dbda",
+    "is_lfs": false,
+    "clen": "373954"
+   },
+   "nonsense": "https://dspace.nm-aist.ac.tz/handle/20.500.12479/zzedjipxr7",
+   "control": {
+    "url": "https://dspace.nm-aist.ac.tz/handle/20.500.12479/zzedjipxr7",
+    "status": 200,
+    "final": "https://dspace.nm-aist.ac.tz/handle/20.500.12479/zzedjipxr7",
+    "ctype": "text/html",
+    "bytes": 373996,
+    "sha256": "c094b2b91169d9954f9ec5e1a9c8ff4e07e51b17fff8077a9a97f78459a2444e",
+    "is_lfs": false,
+    "clen": "373996"
+   },
+   "klass": "shell",
+   "why": "A nonsense identifier on the same host returns 200 with the same content type and a size within 2%: 373954 vs 373996 bytes. Almost certainly the same application shell with a different token in it.",
+   "year": 2022,
+   "pmcid": "PMC9803277",
+   "kind": "url"
+  },
+  {
+   "url": "https://clinepidb.org/ce/app",
+   "host": "clinepidb.org",
+   "link": {
+    "url": "https://clinepidb.org/ce/app",
+    "status": 200,
+    "final": "https://clinepidb.org/ce/app",
+    "ctype": "text/html",
+    "bytes": 2674,
+    "sha256": "9bbf69c2b1cefb21e2b384161fb649dcf84e2a55b16efe7a7f40cb2212e4ea58",
+    "is_lfs": false,
+    "clen": "2674"
+   },
+   "nonsense": "https://clinepidb.org/ce/zz8cjtx59i",
+   "control": {
+    "url": "https://clinepidb.org/ce/zz8cjtx59i",
+    "status": 404,
+    "final": "https://clinepidb.org/ce/zz8cjtx59i",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2022,
+   "pmcid": "PMC9803187",
+   "kind": "url"
+  },
+  {
+   "url": "http://bioinformatics.sdstate.edu/go/",
+   "host": "bioinformatics.sdstate.edu",
+   "link": {
+    "url": "http://bioinformatics.sdstate.edu/go/",
+    "status": 200,
+    "final": "https://bioinformatics.sdstate.edu/go/",
+    "ctype": "text/html",
+    "bytes": 13591,
+    "sha256": "95edcd4e34c2775afbcbe7a5dc48384f1281fdd70baeba84a76b02d13d4240a4",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "http://bioinformatics.sdstate.edu/zzgraauc8d",
+   "control": {
+    "url": "http://bioinformatics.sdstate.edu/zzgraauc8d",
+    "status": 404,
+    "final": "http://bioinformatics.sdstate.edu/zzgraauc8d",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2022,
+   "pmcid": "PMC9803132",
+   "kind": "url"
+  },
+  {
+   "url": "https://fuma.ctglab.nl/",
+   "host": "fuma.ctglab.nl",
+   "klass": "homepage",
+   "why": "The URL carries no path. There is nothing to falsify and nothing specific to retrieve; Briney 2024 measures this category at 13.4% of shared URLs.",
+   "year": 2022,
+   "pmcid": "PMC9803132",
+   "kind": "url"
+  },
+  {
+   "url": "https://github.com/diptavo/METABRIC_analysis",
+   "host": "github.com",
+   "link": {
+    "url": "https://github.com/diptavo/METABRIC_analysis",
+    "status": 200,
+    "final": "https://github.com/diptavo/METABRIC_analysis",
+    "ctype": "text/html",
+    "bytes": 229152,
+    "sha256": "32a5b03a21adc46bacc99357bd39c274d369e78bf20ddbb6fbc0dafb686070cf",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://github.com/diptavo/zzaswv2686",
+   "control": {
+    "url": "https://github.com/diptavo/zzaswv2686",
+    "status": 404,
+    "final": "https://github.com/diptavo/zzaswv2686",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2022,
+   "pmcid": "PMC9803132",
+   "kind": "url"
+  },
+  {
+   "url": "https://maayanlab.cloud/Harmonizome/dataset/CHEA+Transcription+Factor+Targets",
+   "host": "maayanlab.cloud",
+   "link": {
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/CHEA+Transcription+Factor+Targets",
+    "status": 200,
+    "final": "https://maayanlab.cloud/Harmonizome/dataset/CHEA+Transcription+Factor+Targets",
+    "ctype": "text/html",
+    "bytes": 215671,
+    "sha256": "cacc36cc31034776303125e765f133b697d9b13334749aee94ce7d8d944f7c3b",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://maayanlab.cloud/Harmonizome/dataset/zz28nxeypg",
+   "control": {
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/zz28nxeypg",
+    "status": 404,
+    "final": "https://maayanlab.cloud/Harmonizome/dataset/zz28nxeypg",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2022,
+   "pmcid": "PMC9803132",
+   "kind": "url"
+  },
+  {
+   "url": "https://maayanlab.cloud/Harmonizome/dataset/ENCODE+Transcription+Factor+Targets",
+   "host": "maayanlab.cloud",
+   "link": {
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/ENCODE+Transcription+Factor+Targets",
+    "status": 200,
+    "final": "https://maayanlab.cloud/Harmonizome/dataset/ENCODE+Transcription+Factor+Targets",
+    "ctype": "text/html",
+    "bytes": 203240,
+    "sha256": "3ecdd6a068ae7f953db3910753aeb3081a346451fe92d5ee111aaa5e4832b03c",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://maayanlab.cloud/Harmonizome/dataset/zz626v4e8d",
+   "control": {
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/zz626v4e8d",
+    "status": 404,
+    "final": "https://maayanlab.cloud/Harmonizome/dataset/zz626v4e8d",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2022,
+   "pmcid": "PMC9803132",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.cbioportal.org/study/summary?id=brca_metabric",
+   "host": "www.cbioportal.org",
+   "link": {
+    "url": "https://www.cbioportal.org/study/summary?id=brca_metabric",
+    "status": 200,
+    "final": "https://www.cbioportal.org/study/summary?id=brca_metabric",
+    "ctype": "text/html",
+    "bytes": 17843,
+    "sha256": "78355284c0d1c8247d7a25f01d72070e48c081e43968e1d01a524dc741ffe771",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://www.cbioportal.org/study/zzo8jhi747",
+   "control": {
+    "url": "https://www.cbioportal.org/study/zzo8jhi747",
+    "status": 200,
+    "final": "https://www.cbioportal.org/study/zzo8jhi747",
+    "ctype": "text/html",
+    "bytes": 17843,
+    "sha256": "78355284c0d1c8247d7a25f01d72070e48c081e43968e1d01a524dc741ffe771",
+    "is_lfs": false,
+    "clen": null
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2022,
+   "pmcid": "PMC9803132",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.cbioportal.org/study/summary?id=brca_tcga",
+   "host": "www.cbioportal.org",
+   "link": {
+    "url": "https://www.cbioportal.org/study/summary?id=brca_tcga",
+    "status": 200,
+    "final": "https://www.cbioportal.org/study/summary?id=brca_tcga",
+    "ctype": "text/html",
+    "bytes": 17843,
+    "sha256": "78355284c0d1c8247d7a25f01d72070e48c081e43968e1d01a524dc741ffe771",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://www.cbioportal.org/study/zzrp988735",
+   "control": {
+    "url": "https://www.cbioportal.org/study/zzrp988735",
+    "status": 200,
+    "final": "https://www.cbioportal.org/study/zzrp988735",
+    "ctype": "text/html",
+    "bytes": 17843,
+    "sha256": "78355284c0d1c8247d7a25f01d72070e48c081e43968e1d01a524dc741ffe771",
+    "is_lfs": false,
+    "clen": null
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2022,
+   "pmcid": "PMC9803132",
+   "kind": "url"
+  },
+  {
+   "url": "https://osf.io/2ptz4/",
+   "host": "osf.io",
+   "link": {
+    "url": "https://osf.io/2ptz4/",
+    "status": 200,
+    "final": "https://osf.io/2ptz4/",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "nonsense": "https://osf.io/zzwfqm16c4",
+   "control": {
+    "url": "https://osf.io/zzwfqm16c4",
+    "status": 200,
+    "final": "https://osf.io/zzwfqm16c4",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2022,
+   "pmcid": "PMC9803108",
+   "kind": "url"
+  },
+  {
+   "url": "https://zenodo.org/record/7364536#.Y4HVVL1ByUk",
+   "host": "zenodo.org",
+   "link": {
+    "url": "https://zenodo.org/record/7364536#.Y4HVVL1ByUk",
+    "status": 200,
+    "final": "https://zenodo.org/records/7364536",
+    "ctype": "text/html",
+    "bytes": 82846,
+    "sha256": "f3518214117a50c7bcab0bfe9263017da303c7f904e5dd8d088063e45929f6d7",
+    "is_lfs": false,
+    "clen": "82846"
+   },
+   "nonsense": "https://zenodo.org/record/zzv053x7tx",
+   "control": {
+    "url": "https://zenodo.org/record/zzv053x7tx",
+    "status": 404,
+    "final": "https://zenodo.org/record/zzv053x7tx",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2022,
+   "pmcid": "PMC9803192",
+   "kind": "url"
+  },
+  {
+   "url": "http://portalsivigila.ins.gov.co/Paginas/Vigilancia-Rutinaria.aspx",
+   "host": "portalsivigila.ins.gov.co",
+   "link": {
+    "url": "http://portalsivigila.ins.gov.co/Paginas/Vigilancia-Rutinaria.aspx",
+    "status": 404,
+    "final": "http://portalsivigila.ins.gov.co/Paginas/Vigilancia-Rutinaria.aspx",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "dead",
+   "why": "HTTP 404.",
+   "year": 2022,
+   "pmcid": "PMC9803243",
+   "kind": "url"
+  },
+  {
+   "url": "https://osf.io/hgdky/",
+   "host": "osf.io",
+   "link": {
+    "url": "https://osf.io/hgdky/",
+    "status": 200,
+    "final": "https://osf.io/hgdky/",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "nonsense": "https://osf.io/zzhz3yrmd0",
+   "control": {
+    "url": "https://osf.io/zzhz3yrmd0",
+    "status": 200,
+    "final": "https://osf.io/zzhz3yrmd0",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2022,
+   "pmcid": "PMC9803168",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.6084/m9.figshare.17694767",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.6084/m9.figshare.17694767",
+    "status": 202,
+    "final": "https://figshare.com/articles/dataset/Survey_Data/17694767",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://doi.org/10.6084/zzpj7tzk9c.17694767",
+   "control": {
+    "url": "https://doi.org/10.6084/zzpj7tzk9c.17694767",
+    "status": 404,
+    "final": "https://doi.org/10.6084/zzpj7tzk9c.17694767",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2022,
+   "pmcid": "PMC9803240",
+   "kind": "doi"
+  },
+  {
+   "url": "https://osf.io/74j3c/",
+   "host": "osf.io",
+   "link": {
+    "url": "https://osf.io/74j3c/",
+    "status": 200,
+    "final": "https://osf.io/74j3c/",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "nonsense": "https://osf.io/zzcqyq95t6",
+   "control": {
+    "url": "https://osf.io/zzcqyq95t6",
+    "status": 200,
+    "final": "https://osf.io/zzcqyq95t6",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2022,
+   "pmcid": "PMC9803224",
+   "kind": "url"
+  },
+  {
+   "url": "https://knhanes.kdca.go.kr/knhanes/eng/index.do",
+   "host": "knhanes.kdca.go.kr",
+   "link": {
+    "url": "https://knhanes.kdca.go.kr/knhanes/eng/index.do",
+    "status": "EXC",
+    "final": "https://knhanes.kdca.go.kr/knhanes/eng/index.do",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "URLError"
+   },
+   "klass": "blocked",
+   "why": "Could not look (URLError). NOT a classification.",
+   "year": 2022,
+   "pmcid": "PMC9803270",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.5061/dryad.fttdz08wm",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.5061/dryad.fttdz08wm",
+    "status": 404,
+    "final": "https://doi.org/10.5061/dryad.fttdz08wm",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "dead",
+   "why": "HTTP 404.",
+   "year": 2022,
+   "pmcid": "PMC9803297",
+   "kind": "doi"
+  },
+  {
+   "url": "https://nccd.cdc.gov/DHDSPAtlas/?state=County&amp",
+   "host": "nccd.cdc.gov",
+   "link": {
+    "url": "https://nccd.cdc.gov/DHDSPAtlas/?state=County&amp",
+    "status": "EXC",
+    "final": "https://nccd.cdc.gov/DHDSPAtlas/?state=County&amp",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "URLError"
+   },
+   "klass": "blocked",
+   "why": "Could not look (URLError). NOT a classification.",
+   "year": 2022,
+   "pmcid": "PMC9803275",
+   "kind": "url"
+  },
+  {
+   "url": "https://osf.io/atxhk/",
+   "host": "osf.io",
+   "link": {
+    "url": "https://osf.io/atxhk/",
+    "status": 200,
+    "final": "https://osf.io/atxhk/",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "nonsense": "https://osf.io/zz465vzdfg",
+   "control": {
+    "url": "https://osf.io/zz465vzdfg",
+    "status": 200,
+    "final": "https://osf.io/zz465vzdfg",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2022,
+   "pmcid": "PMC9803112",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.lib.polyu.edu.hk/databases/factiva",
+   "host": "www.lib.polyu.edu.hk",
+   "link": {
+    "url": "https://www.lib.polyu.edu.hk/databases/factiva",
+    "status": 200,
+    "final": "https://www.lib.polyu.edu.hk/databases/factiva",
+    "ctype": "text/html",
+    "bytes": 123768,
+    "sha256": "7f786f652ab9fab89e04cef3ec944d533deee71c797987f75181dfd901bb4320",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://www.lib.polyu.edu.hk/databases/zz69usx9c7",
+   "control": {
+    "url": "https://www.lib.polyu.edu.hk/databases/zz69usx9c7",
+    "status": 404,
+    "final": "https://www.lib.polyu.edu.hk/databases/zz69usx9c7",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2022,
+   "pmcid": "PMC9803271",
+   "kind": "url"
+  },
+  {
+   "url": "https://figshare.com/articles/dataset/NSSI-Slang_Project-Data-Analysis/28344107",
+   "host": "figshare.com",
+   "link": {
+    "url": "https://figshare.com/articles/dataset/NSSI-Slang_Project-Data-Analysis/28344107",
+    "status": 202,
+    "final": "https://figshare.com/articles/dataset/NSSI-Slang_Project-Data-Analysis/28344107",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://figshare.com/articles/dataset/NSSI-Slang_Project-Data-Analysis/zzo1239z4w",
+   "control": {
+    "url": "https://figshare.com/articles/dataset/NSSI-Slang_Project-Data-Analysis/zzo1239z4w",
+    "status": 202,
+    "final": "https://figshare.com/articles/dataset/NSSI-Slang_Project-Data-Analysis/zzo1239z4w",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2025,
+   "pmcid": "PMC12755822",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.reddit.com/dev/api/",
+   "host": "www.reddit.com",
+   "link": {
+    "url": "https://www.reddit.com/dev/api/",
+    "status": 200,
+    "final": "https://www.reddit.com/dev/api/",
+    "ctype": "text/html",
+    "bytes": 303463,
+    "sha256": "b4a1697d1ca40666ca2a8bfaf9b1db30ea0d37bbd302edcad2159b599f892f1d",
+    "is_lfs": false,
+    "clen": "303463"
+   },
+   "nonsense": "https://www.reddit.com/dev/zzrfk7sh32",
+   "control": {
+    "url": "https://www.reddit.com/dev/zzrfk7sh32",
+    "status": 404,
+    "final": "https://www.reddit.com/dev/zzrfk7sh32",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2025,
+   "pmcid": "PMC12755822",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.reddit.com",
+   "host": "www.reddit.com",
+   "klass": "homepage",
+   "why": "The URL carries no path. There is nothing to falsify and nothing specific to retrieve; Briney 2024 measures this category at 13.4% of shared URLs.",
+   "year": 2025,
+   "pmcid": "PMC12755822",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.7910/DVN/GT2BTZ",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.7910/DVN/GT2BTZ",
+    "status": 202,
+    "final": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/GT2BTZ",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://doi.org/10.7910/DVN/zz7qqphffg",
+   "control": {
+    "url": "https://doi.org/10.7910/DVN/zz7qqphffg",
+    "status": 404,
+    "final": "https://doi.org/10.7910/DVN/zz7qqphffg",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2025,
+   "pmcid": "PMC12755826",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.asvspoof.org/index2019.html",
+   "host": "www.asvspoof.org",
+   "link": {
+    "url": "https://www.asvspoof.org/index2019.html",
+    "status": "EXC",
+    "final": "https://www.asvspoof.org/index2019.html",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "URLError"
+   },
+   "klass": "blocked",
+   "why": "Could not look (URLError). NOT a classification.",
+   "year": 2025,
+   "pmcid": "PMC12755748",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.asvspoof.org/index2021.html",
+   "host": "www.asvspoof.org",
+   "link": {
+    "url": "https://www.asvspoof.org/index2021.html",
+    "status": "EXC",
+    "final": "https://www.asvspoof.org/index2021.html",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "URLError"
+   },
+   "klass": "blocked",
+   "why": "Could not look (URLError). NOT a classification.",
+   "year": 2025,
+   "pmcid": "PMC12755748",
+   "kind": "url"
+  },
+  {
+   "url": "https://fki.tic.heia-fr.ch/databases/iam-handwriting-database",
+   "host": "fki.tic.heia-fr.ch",
+   "link": {
+    "url": "https://fki.tic.heia-fr.ch/databases/iam-handwriting-database",
+    "status": "EXC",
+    "final": "https://fki.tic.heia-fr.ch/databases/iam-handwriting-database",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "URLError"
+   },
+   "klass": "blocked",
+   "why": "Could not look (URLError). NOT a classification.",
+   "year": 2025,
+   "pmcid": "PMC12755808",
+   "kind": "url"
+  },
+  {
+   "url": "https://github.com/peet292929/Dysgraphia-detection-through-machine-learning",
+   "host": "github.com",
+   "link": {
+    "url": "https://github.com/peet292929/Dysgraphia-detection-through-machine-learning",
+    "status": 200,
+    "final": "https://github.com/peet292929/Dysgraphia-detection-through-machine-learning",
+    "ctype": "text/html",
+    "bytes": 236520,
+    "sha256": "fbd7cf2a4c2c12207975dfb6e5a0e4b5071af512231111c3d4970b978b1de7bb",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://github.com/peet292929/zzrcf8dwoe",
+   "control": {
+    "url": "https://github.com/peet292929/zzrcf8dwoe",
+    "status": 404,
+    "final": "https://github.com/peet292929/zzrcf8dwoe",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2025,
+   "pmcid": "PMC12755808",
+   "kind": "url"
+  },
+  {
+   "url": "https://ijece.iaescore.com/index.php/IJECE",
+   "host": "ijece.iaescore.com",
+   "link": {
+    "url": "https://ijece.iaescore.com/index.php/IJECE",
+    "status": 200,
+    "final": "https://ijece.iaescore.com/index.php/IJECE",
+    "ctype": "text/html",
+    "bytes": 116885,
+    "sha256": "eaa7cabb27fdfc22304d1e45e991f5d70e58ad62576657094dd9ee8764b53f28",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://ijece.iaescore.com/index.php/zz561tv87d",
+   "control": {
+    "url": "https://ijece.iaescore.com/index.php/zz561tv87d",
+    "status": 200,
+    "final": "https://ijece.iaescore.com/index.php/IJECE",
+    "ctype": "text/html",
+    "bytes": 116885,
+    "sha256": "eaa7cabb27fdfc22304d1e45e991f5d70e58ad62576657094dd9ee8764b53f28",
+    "is_lfs": false,
+    "clen": null
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2025,
+   "pmcid": "PMC12755808",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.6084/m9.figshare.30230665",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.6084/m9.figshare.30230665",
+    "status": 202,
+    "final": "https://figshare.com/articles/dataset/Underlying_dataset_for_Domain-Specific_Physical_Activity_and_Depressive_Symptoms_in_Korean_Adults_KNHANES_2014_2022_/30230665",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://doi.org/10.6084/zzemakszbe.30230665",
+   "control": {
+    "url": "https://doi.org/10.6084/zzemakszbe.30230665",
+    "status": 404,
+    "final": "https://doi.org/10.6084/zzemakszbe.30230665",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2025,
+   "pmcid": "PMC12818874",
+   "kind": "url"
+  },
+  {
+   "url": "https://knhanes.kdca.go.kr",
+   "host": "knhanes.kdca.go.kr",
+   "klass": "homepage",
+   "why": "The URL carries no path. There is nothing to falsify and nothing specific to retrieve; Briney 2024 measures this category at 13.4% of shared URLs.",
+   "year": 2025,
+   "pmcid": "PMC12818874",
+   "kind": "url"
+  },
+  {
+   "url": "https://www.nier.go.kr",
+   "host": "www.nier.go.kr",
+   "klass": "homepage",
+   "why": "The URL carries no path. There is nothing to falsify and nothing specific to retrieve; Briney 2024 measures this category at 13.4% of shared URLs.",
+   "year": 2025,
+   "pmcid": "PMC12755744",
+   "kind": "url"
+  },
+  {
+   "url": "https://github.com/zizzzw/KerSpecGen/tree/master",
+   "host": "github.com",
+   "link": {
+    "url": "https://github.com/zizzzw/KerSpecGen/tree/master",
+    "status": 200,
+    "final": "https://github.com/zizzzw/KerSpecGen/tree/master",
+    "ctype": "text/html",
+    "bytes": 258015,
+    "sha256": "673068af9a5ab19c2533cc3509845349a5a1e429bcc3370dacbce52102d8dbc5",
+    "is_lfs": false,
+    "clen": null
+   },
+   "nonsense": "https://github.com/zizzzw/KerSpecGen/tree/zzvrdeqa7k",
+   "control": {
+    "url": "https://github.com/zizzzw/KerSpecGen/tree/zzvrdeqa7k",
+    "status": 404,
+    "final": "https://github.com/zizzzw/KerSpecGen/tree/zzvrdeqa7k",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2025,
+   "pmcid": "PMC12755810",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.6084/m9.figshare.29430332.v1",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.6084/m9.figshare.29430332.v1",
+    "status": 202,
+    "final": "https://figshare.com/articles/dataset/Dataset_sav/29430332/1",
+    "ctype": "text/html",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "is_lfs": false,
+    "clen": "0"
+   },
+   "nonsense": "https://doi.org/10.6084/zz6tfntj88.v1",
+   "control": {
+    "url": "https://doi.org/10.6084/zz6tfntj88.v1",
+    "status": 404,
+    "final": "https://doi.org/10.6084/zz6tfntj88.v1",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2025,
+   "pmcid": "PMC12755834",
+   "kind": "url"
+  },
+  {
+   "url": "https://osf.io/wgu6p/",
+   "host": "osf.io",
+   "link": {
+    "url": "https://osf.io/wgu6p/",
+    "status": 200,
+    "final": "https://osf.io/wgu6p/",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "nonsense": "https://osf.io/zzhsxeg8da",
+   "control": {
+    "url": "https://osf.io/zzhsxeg8da",
+    "status": 200,
+    "final": "https://osf.io/zzhsxeg8da",
+    "ctype": "text/html",
+    "bytes": 4207,
+    "sha256": "b3b0023ca2d6e6503197b1d3b11485d4c2c9cec17d96903fcb818f7272b4cae6",
+    "is_lfs": false,
+    "clen": "4207"
+   },
+   "klass": "shell",
+   "why": "Byte-identical to a nonsense identifier on the same host (sha256 match). The host is not discriminating; the 200 means nothing.",
+   "year": 2025,
+   "pmcid": "PMC12755835",
+   "kind": "url"
+  },
+  {
+   "url": "https://doi.org/10.5281/zenodo.13905257",
+   "host": "doi.org",
+   "link": {
+    "url": "https://doi.org/10.5281/zenodo.13905257",
+    "status": 200,
+    "final": "https://zenodo.org/records/13905257",
+    "ctype": "text/html",
+    "bytes": 63047,
+    "sha256": "42e748805ff6186f73a9878e620ebcdc8078027afa14e7e16d9136839227c587",
+    "is_lfs": false,
+    "clen": "63047"
+   },
+   "nonsense": "https://doi.org/10.5281/zz7s7nwa4e.13905257",
+   "control": {
+    "url": "https://doi.org/10.5281/zz7s7nwa4e.13905257",
+    "status": 404,
+    "final": "https://doi.org/10.5281/zz7s7nwa4e.13905257",
+    "ctype": null,
+    "bytes": 0,
+    "sha256": null,
+    "is_lfs": false,
+    "err": "http"
+   },
+   "klass": "payload",
+   "why": "The nonsense control fails (HTTP 404) where the link succeeds, so the host discriminates and the 200 carries information.",
+   "year": 2025,
+   "pmcid": "PMC12755749",
+   "kind": "url"
+  }
+ ]
+}
