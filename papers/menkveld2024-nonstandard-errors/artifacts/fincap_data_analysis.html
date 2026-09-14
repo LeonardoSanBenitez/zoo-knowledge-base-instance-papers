@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>#fincap</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Font Awesome JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSRLP62N7F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NSRLP62N7F', {
+      'anonymize_ip': true
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div id="header">
+      <h1><a href="index.html">#fincap</a></h1>
+    </div>
+
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fa fa-bars"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+      </div>
+
+      <div class="sidebar-header">
+        <h1><a href="index.html">#fincap</a></h1>
+      </div>
+
+      <ul class="list-unstyled components">
+        <li class="active">
+          <a href="#aboutSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-info-circle icon"></i>About
+          </a>
+          <ul class="collapse list-unstyled" id="aboutSubmenu">
+            <!--
+            <li>
+              <a href="index.html#about">
+                <i class="fas fa-project-diagram icon"></i>The Project
+              </a>
+            </li>
+            -->
+            <li>
+              <a href="index.html#overview">
+                <i class="fas fa-sort-amount-down-alt icon"></i>Overview
+              </a>
+            </li>
+            <li>
+              <a href="index.html#schedule">
+                <i class="far fa-calendar-alt icon"></i>Schedule
+              </a>
+            </li>
+            <li>
+              <a href="index.html#team">
+                <i class="fas fa-users icon"></i>Project Coordinators
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#dataSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-database icon"></i>Data &amp; Analysis
+          </a>
+          <ul class="collapse list-unstyled" id="dataSubmenu">
+            <li>
+              <a href="data_analysis.html#overview">
+                <i class="fas fa-sort-amount-down-alt icon"></i>Overview
+              </a>
+            </li>
+            <li>
+              <a href="data_analysis.html#data">
+                <i class="fas fa-info-circle icon"></i>About the Data
+              </a>
+            </li>
+            <li>
+              <a href="data_analysis.html#hypotheses">
+                <i class="far fa-lightbulb icon"></i>Ex-ante Hypotheses
+              </a>
+            </li>
+            <li>
+              <a href="data_analysis.html#analysis">
+                <i class="fas fa-chart-bar icon"></i>Data Analysis &amp; Short Paper
+              </a>
+            </li>
+            <li>
+              <a href="data_analysis.html#usage">
+                <i class="fas fa-share-alt icon"></i>Data Usage &amp; Authorship
+              </a>
+            </li>
+            <li>
+              <a href="data_analysis.html#beliefs">
+                <i class="fas fa-filter icon"></i>Belief Elicitation
+              </a>
+            </li>
+            <li>
+              <a href="data_analysis.html#faqs">
+                <i class="fas fa-question icon"></i>FAQs
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#reviewsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="fas fa-search icon"></i>Peer Evaluation
+          </a>
+          <ul class="collapse list-unstyled" id="reviewsSubmenu">
+            <li>
+              <a href="peer_evaluation.html#overview">
+                <i class="fas fa-sort-amount-down-alt icon"></i>Overview
+              </a>
+            </li>
+            <li>
+              <a href="peer_evaluation.html#further">
+                <i class="fas fa-info-circle icon"></i>Further Information
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!--
+        <li>
+          <a href="_sign_up.html" class="highlight">
+            <i class="fas fa-user-plus icon"></i>Sign-up as Research Team
+          </a>
+        </li>
+        -->
+
+      </ul>
+    </nav>
+
+
+    <div id="content">
+
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <!-- overview -->
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <div id="overview" class="anchor"></div>
+      <h1>overview</h1>
+      <p>
+        <span class="par">What?</span> Research teams (RTs) are solicited to participate in a project examining the variability of empirical finance results. In particular, the project focuses on the variablity in results when the same data are analyzed by different research teams. As there are various choices to make along the way, results are likely to show some heterogeneity. The variation in results will allow for valuable metascientific insights.
+      </p>
+      <p>
+        All RTs will be given access to <a href="data_analysis.html#data">720 million trade records</a> pertaining to 2002-2018 trading in the most active European index futures contract: EuroStoxx 50 futures. What sets this data apart from other run-of-the-mill trade data is that, for each trade, one observes whether it was an agency or principal trade. In other words, one learns if the trade was for an exchange member's own account or for a client. Each RT will freely analyze the data using their own methodology and will provide effect sizes and standard errors regarding several specific a-priori hypotheses. All RTs will be anonymized prior to reporting or subsequent sharing of the submitted results.
+      </p>
+      <p>
+        In particular, in Stage 1, each RT will submit a <a href="data_analysis.html#analysis">“short paper”</a> summarizing their methodology and results (including the estimated effect size and its standard error for each of the hypotheses). In Stage 2, each short paper will be evaluated by two anonymous external researchers (<a href="peer_evaluation.html">peer evaluators</a>, who are not RTs) who will rate the quality of the papers and provide feedback for improvements, and the RTs will submit a revised version of the short paper after receiving the two peer evaluations. In Stage 3, all RTs will be asked to read the 5 short papers with the highest average peer evaluations (as rated after Stage 1), and thereafter submit another revised version of their short paper.
+      </p>
+      <p>
+        When applying to participate, RTs will fill out a survey with background information about the team. After reporting their Stage 1 results, they will fill out an incentivized survey about their beliefs about the variation in Stage 1 results across RTs for each hypothesis. <b>Sign-up as a research team!</b> [sign-up closed: see <a href="index.html#overview">Overview</a> for details]
+      </p>
+      <p>
+        We expect that the total workload for research teams participating in the project will be between two and three weeks.
+      </p>
+
+      <p>
+        <span class="par">When?</span> The project coordinators
+        <!--will start to recruit--> recruited research teams and peer evaluators
+        <!--in October 2020-->between October 2020 and December 2020. Research teams will analyze the data starting in January 2021. The overall project will last until June 2021. For a detailed schedule of the project, please refer to <a href="index.html#schedule">the schedule</a>.
+      </p>
+
+      <p>
+        <span class="par">Why participate?</span> In addition to being part of a fascinating landmark project, all members of all RTs will be listed as co-authors on the final paper. They will become co-author of a paper that targets publication in a top scientific journal. The organizers of this project pulled it off once before in neuroscience which yielded a 2020 publication in Nature (<a href="https://www.nature.com/articles/s41586-020-2314-9" target="_blank">article</a>). The current project improves the previous design by adding peer feedback and involves the cooperation of one of the world's most successful exchanges as data sponsor.
+      </p>
+
+      <p>
+        <span class="par">Who?</span> RTs consist of one or two participants. At least one of the members of the RT has to hold a PhD in finance or economics. The team should be sufficiently skilled in empirical finance, should have an understanding of market liquidity, and should be familiar with the analysis of large datasets. RTs need to apply to participate by filling out a brief survey about background characteristics and expertise in empirical finance and market liquidity. The project coordinators will decide whether the RT is sufficiently qualified to participate. After an RT is invited to participate, an agreement is signed where the project coordinators pledge to ensure anonymity (i.e., not revealing the identity of RTs and peer evaluators to anyone outside the project coordination team and the external researchers evaluating the short papers) and RTs promise to honor the non-disclosure agreement (NDA), to keep their analysis and report and all data pertaining to the project confidential, and to delete data within one year after receiving the data and send a confirmation email when done. <a href="peer_evaluation.html">Peer evaluators</a> will also have to honor the NDA.
+      </p>
+
+      <p>
+        <span class="par">Contact.</span> In case you have any questions, please contact the project coordinators via <a href="mailto:info@fincap.academy">info@fincap.academy</a>.
+      </p>
+
+
+
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <!-- about the data -->
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <div class="line"></div>
+      <div id="data" class="anchor"></div>
+      <h1>about the data</h1>
+
+      <p>
+        The data pertain to 17 years (2002-2018) of trading of <a href="https://www.eurex.com/ex-en/markets/idx/stx/blc/EURO-STOXX-50-Index-Futures-160088" target="_blank">EuroStoxx 50</a> futures, which are among the world’s most actively traded index derivatives. They give investors exposure to “Europe,” or, more precisely, to a basket of euro-area blue-chip equities. All trading is done through an electronic limit-order book (see, e.g., <a href="https://www.sciencedirect.com/science/article/pii/B9780444515582500076?via%3Dihub" target="_blank">Parlour and Seppi, 2008</a>). Please find more background information on the futures in this <a href="https://www.xetra.com/resource/blob/63488/437afcd347fb020377873dd1ceac10ba/EURO-STOXX-50-Factsheet-data.pdf" target="_blank">factsheet</a>.
+      </p>
+      <p>
+        The data consist of 720 million trade records and will be made available in monthly gzipped semicolon separated text files (“csv”). Each zipped monthly file is no larger than 50 MB. The data is clean in the sense that for all files the format is identical. Please find below the first ten lines of the December 2018 file as an example.
+      </p>
+      <p class="data">
+        DATETIME; EXPIRATION; BUY_SELL_ID; TRADE_SIZE; MATCH_PRICE; AGGRESSOR_FLAG;ACCOUNT_ROLE; EXEC_TYPE_ID <br />
+        2018-12-03 08:00:06.400; 201812; S; 2; 3229; N; A; F <br />
+        2018-12-03 08:00:06.410; 201812; S; 1; 3229; N; A; F <br />
+        2018-12-03 08:00:06.410; 201812; S; 1; 3229; N; A; F <br />
+        2018-12-03 08:00:06.410; 201812; B; 4; 3229; Y; A; F <br />
+        2018-12-03 08:00:06.540; 201812; S; 1; 3229; N; A; F <br />
+        2018-12-03 08:00:06.550; 201812; B; 2; 3229; Y; A; F <br />
+        2018-12-03 08:00:06.550; 201812; S; 1; 3229; N; A; F <br />
+        2018-12-03 08:00:06.630; 201812; B; 1; 3229; Y; A; F <br />
+        2018-12-03 08:00:06.630; 201812; S; 1; 3229; N; A; F <br />
+      </p>
+
+      <p>
+        The variables are defined as follows (the characterizations are short and therefore imprecise, please refer to any standard textbook on futures to get a detailed description of what futures are and how they are traded):
+      </p>
+      <ul>
+        <li>
+          <span class="par">DATETIME:</span> Time stamp of the trade denoted as YYYY-MM-DD hh:mm:ss.sss where ss.sss denotes seconds up to a third decimal (i.e., the precision is tens of milliseconds as the last digit is always zero).
+        </li>
+        <li>
+          <span class="par">EXPIRATION:</span> The expiration date of the futures contract being traded. All data pertain to Eurex trading in EuroStoxx 50 (SX5E) futures contracts. Expiration months are: March, June, September, and December. Contracts expire on the third Friday of the expiration month. The notation of expiration is YYYYMM (where MM is in [03, 06, 09, 12]).
+        </li>
+        <li>
+          <span class="par">BUY_SELL:</span> This indicator shows if the trade record is for a buyer “B” (who goes long the index) or for a seller “S” (who goes short the index).
+        </li>
+        <li>
+          <span class="par">TRADE_SIZE:</span> This is the size of the trade expressed in number of contracts. The contract value per index point is EUR 10 (e.g., per contract traded, the long side is entitled to receive 10 euro from the short side of the trade each time the index increases by one point).
+        </li>
+        <li>
+          <span class="par">MATCH_PRICE:</span> The price at which the trade between buyer and the seller is concluded (i.e., the long and the short side of the trade, respectively).
+        </li>
+        <li>
+          <span class="par">AGGRESSOR_FLAG:</span> If the trade record pertains to a market order (or marketable limit order) that is executed against a standing limit order, this flag takes the value “Y”. If the record pertains to a limit order, resting in the book before being matched with an incoming market order, or to an order in an auction (e.g., the opening and closing auction), then this flag takes the value “N”. This flag became available as of November 2009.
+        </li>
+        <li>
+          <span class="par">ACCOUNT_ROLE:</span> This variable is either:
+          <ul>
+            <li>A: Agency trade (i.e., a trade an exchange member does for a client).</li>
+            <li>M: Market-maker principal trade (i.e., a trade an exchange member does for his own account in his role as market maker).</li>
+            <li>P: Non-market-maker principal trade (i.e., a trade an exchange member does for his own account).</li>
+            <li>P.S.: The distinction between M and P is not an economically meaningful one for the purpose of this project.</li>
+          </ul>
+        </li>
+        <li>
+          <span class="par">EXEC_TYPE_ID:</span> This variable is:
+          <ul>
+            <li>F if the full order was executed in the trade.</li>
+            <li>P if the order was only partially executed in the trade.</li>
+            <li>N if not assigned.</li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <!-- hypotheses -->
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <div class="line"></div>
+      <div id="hypotheses" class="anchor"></div>
+      <h1>ex-ante hypotheses</h1>
+
+      <p>
+        In this project, the RTs will test six hypotheses. These hypotheses will be about price discovery, realized spread, the frequency of
+        <!--trades through intermediaries-->client trades, the use of market orders, and gross trading revenue. The RTs get precise details on the hypotheses
+        <!--once they receive-->upon reception of the data.
+      </p>
+
+
+
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <!-- data analysis & short paper -->
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <div class="line"></div>
+      <div id="analysis" class="anchor"></div>
+      <h1>data analysis &amp; short paper</h1>
+
+      <p>
+        For each hypothesis being tested, research teams will submit...
+      </p>
+      <ul>
+        <li>an effect size estimate for each hypothesis,</li>
+        <li>an estimate of the corresponding standard error, and</li>
+        <!--<li>z/t-statistics and corresponding p-values for each hypothesis</li>-->
+        <li>the analysis scripts used to generate the results
+          <!--and the processed data set-->
+        </li>
+      </ul>
+      <p>
+        After receiving the data and hypotheses, the RTs have time until March 26, 2021, to do the analyses and submit a short paper and the analysis code used for all the analyses. The paper is a maximum of 5 pages long.
+        <!--The paper reports the coefficient (effect size), the standard error, and the z/t-statistics for each hypothesis--> The paper reports the coefficient (effect size) and the standard error for each hypothesis, and uses the remainder to precisely describe the methodology (in contrast, motivation, summary statistics, etc. are not needed).
+        <!--To ensure comparability across RTs and to ensure that all variables are reported, RTs will receive a template for the short paper at the time they start the analysis - this will also save RTs time writing up the results.--> In addition to submitting the short paper in PDF format, RTs also have to fill in a web form, providing the
+        <!--effect sizes, standard errors, and z/t-statistics-->effect size and standard error for each hypothesis. Submission of the short paper and the required
+        <!--data/scripts--> analysis scripts will be administered via upload forms on the project webpage.
+      </p>
+
+
+
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <!-- data usage and authorship -->
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <div class="line"></div>
+      <div id="usage" class="anchor"></div>
+      <h1>data usage &amp; authorship</h1>
+
+      <p>
+        The <a href="data_analysis.html#data">data</a> are initially shared under a limited data use agreement; the principal restriction is that users of the data will not be allowed to release, publicize, or discuss their results until the end of a specified embargo period.
+        <!--The primary data will become publicly available once the primary paper is getting published.-->
+      </p>
+      <p>
+        For the final paper to be produced from this project (including analysis of RTs beliefs, RTs analysis, and the assessment by the reviewers of the analysis of the RTs), the project coordinators will draft the manuscript. All members of each RT will be offered co-authorship on the paper(s); each RT is limited to no more than two participants. Authorship will be limited to RTs who submit their results and reports for all stages by the respective deadlines. Co-authors from the RTs will be given two weeks to review any drafts of papers prior to submission.
+      </p>
+      <p>
+        Each member of the RTs must sign a consent form before obtaining access to the data. Sharing of data and/or results or discussing outcomes from the analyses with any other person during the embargo period is strictly forbidden (see <a href="index.html#about">information on the confidentiality agreement</a>). Sharing information during the embargo will compromise the entire belief elicitation and data analysis process of the research teams in the project.
+      </p>
+
+
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <!-- belief elicitation -->
+      <!-- ----------------------------------------------------------------------------------------- -->
+      <div class="line"></div>
+      <div id="beliefs" class="anchor"></div>
+      <h1>belief elicitation</h1>
+
+      <p>
+        After RTs have submitted their short paper in Stage 1, they will receive a survey to measure their beliefs about the variation in results across RTs in Stage 1. This survey includes
+        <!--one--> two belief questions per hypothesis:
+        <!--and in each belief question,--> RTs will be asked to predict the standard deviation (STD) of the effect size and the t-statistic estimates across the RTs.
+      </p>
+      <p>
+        Every one out of five RTs will be paid a monetary reward according to the precision of their belief about the variation across research teams. If a RT is randomly drawn for payout, another random draw determines which belief question will be paid out (i.e., only one hypothesis and the associated belief is randomly drawn for payout for a RT). The goal of the RT will be to as closely as possible guess the actual variation in results across RTs<!--: the closer the guess is to the actual variation, the higher the potential payout-->.
+        <!--In particular, the payment is based on a quadratic scoring rule according to the following specification (where the “actual_variation” is measured in terms of the standard deviation in the z/t-values reported by the RTs for an hypothesis and the “belief” is the guess of this standard deviation):--> Details about the scoring rule, which will be used to determine payments, will be provided in due time.
+      </p>
+      <!--
+      <p>
+        Payment (in US-$): max[300 - (belief - actual_variation)^2 * 1,000; 0]
+      </p>
+      <p>
+        For each randomly selected RT, the maximum payment will thus be $300; the minimum is set to $0 (i.e., negativ payoffs are not feasible).
+      </p>
+      -->
+      <p>
+        RTs will receive a link to the survey via e-mail. Importantly, each RT will only give one answer on each question, implying that the RT members should find a consensus when answering the survey.
+      </p>
+
+
+
+
+
+      <!-- ----------------------------------------------------------- -->
+      <!-- *** FAQ *** -->
+      <!-- ----------------------------------------------------------- -->
+      <div class="line"></div>
+      <div id="faqs" class="anchor"></div>
+      <h1>frequently asked questions</h1>
+
+      <div class="row">
+        <div class="col-lg-12 mx-auto">
+
+          <div id="accordion">
+
+            <div class="card mb-2">
+              <div class="card-header p-1">
+                <button class="btn btn-link question" data-toggle="collapse" data-target="#q1">
+                  <span class="hash">#1</span> Can we store and process the data on a cloud server, such as GitHub or AWS?
+                </button>
+              </div>
+              <div id="q1" class="collapse" data-parent="#accordion">
+                <div class="card-body py-3">
+                  Yes, you can store the data and your analysis scripts on a cloud server. However, the non-disclosure agreement signed by all research team members and the confidentiality agreement requires research teams to ensure that <i>nobody outside the research team</i> can access any of these files (i.e., neither data nor script files). Thus, research teams are required to comply with these requirements by means of using, e.g., a private and password-secured repository, preventing unrestricted access.
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-2">
+              <div class="card-header p-1">
+                <button class="btn btn-link question" data-toggle="collapse" data-target="#q2">
+                  <span class="hash">#2</span> Will you provide additional data, e.g., the daily settlement prices? Are research teams allowed to add additional data on their own?
+                </button>
+              </div>
+              <div id="q2" class="collapse" data-parent="#accordion">
+                <div class="card-body py-3">
+                  No, we will not provide any additional data. Research teams are required to address the six hypotheses based on measures they consider appropriate given the available data. Also note that research teams may not add any data themselves - the analyses must be solely based on the Deutsche Börse data provided by the #fincap coordinators.
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-2">
+              <div class="card-header p-1">
+                <button class="btn btn-link question" data-toggle="collapse" data-target="#q3">
+                  <span class="hash">#3</span> Can you please provide more information on the variable under consideration? Could you provide a reference where the variable is precisely defined or a formula for its definition?
+                </button>
+              </div>
+              <div id="q3" class="collapse" data-parent="#accordion">
+                <div class="card-body py-3">
+                  As described in the instructions sheet, proposing and motivating a measure to test the hypotheses is entirely left to the discretion of the research teams in #fincap. It is thus up to the research teams to choose a measure and to give reasons in support of why they consider it appropriate to address a particular hypothesis. A crucial aspect of the design of #fincap is that all information provided to research teams is exactly the same. We can thus neither provide additional information on methodological questions nor on the variables under consideration.
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-2">
+              <div class="card-header p-1">
+                <button class="btn btn-link question" data-toggle="collapse" data-target="#q4">
+                  <span class="hash">#4</span> The assignment in the instruction sheet asks research teams to propose a statistical measure, briefly motivate it, and present the formula to calculate it. Does this mean that teams are asked to introduce a novel measure or can teams apply existing measures?
+                </button>
+              </div>
+              <div id="q4" class="collapse" data-parent="#accordion">
+                <div class="card-body py-3">
+                  Research teams in #fincap are not required to introduce novel measures to address the hypotheses. Research teams can of course rely on existing measures based on the previous literature. In the short paper, research teams should provide a brief motivation (for each hypothesis) why they deem their choice appropriate to test the hypothesis, and they should briefly sketch how the proposed measure is calculated given the dataset by Deutsche Börse.
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-2">
+              <div class="card-header p-1">
+                <button class="btn btn-link question" data-toggle="collapse" data-target="#q5">
+                  <span class="hash">#5</span> The assignment asks for estimates in terms of average annualized changes (in percentage terms). Are research teams requested to consider annualized data only?
+                </button>
+              </div>
+              <div id="q5" class="collapse" data-parent="#accordion">
+                <div class="card-body py-3">
+                  Research teams are asked to report annualized effect size estimates (and the corresponding standard errors); research teams are not required, however, to consider only annualized data. As part of the assignment it is up to the research teams to choose a measure and to give reasons in support of why their choice is considered appropriate to address a particular hypothesis.
+                </div>
+              </div>
+            </div>
+            
+            <div class="card mb-2">
+              <div class="card-header p-1">
+                <button class="btn btn-link question" data-toggle="collapse" data-target="#q6">
+                  <span class="hash">#6</span> The assignment asks for estimates of the average per-year change in percentage terms. What exactly do you mean by “in percentage terms”?
+                </button>
+              </div>
+              <div id="q6" class="collapse" data-parent="#accordion">
+                <div class="card-body py-3">
+                  If you pick measure M and find its value to be 1 in year 1, and 2 in year 2, then its per-year change is +100%. This is true irrespective of what the units are that you picked for M (e.g., euro, percentage, basis points). 
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-2">
+              <div class="card-header p-1">
+                <button class="btn btn-link question" data-toggle="collapse" data-target="#q7">
+                  <span class="hash">#7</span> How can the timestamp values be different for trades that appear to have executed against one another?
+                </button>
+              </div>
+              <div id="q7" class="collapse" data-parent="#accordion">
+                <div class="card-body py-3">
+                  <!--For records recorded on or after November 29, 2018 the recorded timestamp (variable DATETIME) is not the time when the trade was recorded in the matching engine but when it was recorded by the clearing system. In rare cases the storage of a trade spans more than 10 ms and in those cases timestamps may differ.-->
+                  The timestamps for participants in a single trade could differ due to the processing of trades in the system. The reasons for this before November 29, 2018, are different than after November 29, 2018, because the Deutsche Boerse dataset uses exchange matching-engine timestamps before this date and clearing-house timestamps after this date. These timestamps, however, throughout the sample are typically within a few milliseconds because the entire process from executing a trade at the matching engine all the way through registering it in the clearing house is automated (Deutsche Boerse runs extremely low-latency systems to administer this process, by industry standards).
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#sidebarCollapse').on('click', function() {
+        $('#sidebar').toggleClass('active');
+        $('#content').toggleClass('active');
+        $('#header').toggleClass('active');
+      });
+    });
+  </script>
+</body></html>
