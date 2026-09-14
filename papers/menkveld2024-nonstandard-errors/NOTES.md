@@ -112,3 +112,56 @@ errors are downloadable, that is the corpus on which to replicate the
 precision-versus-conclusion split — 164 clusters instead of 71, a different
 field, and a pre-registered design. It is the best available test of whether my
 one real finding is about many-analysts studies or about immigration attitudes.
+
+## 2026-09-14 — the deposit was already there; folded all 8 reanalysis scripts into the record
+
+`f0`-`f8` (except `f3b`, see below) existed on disk from an earlier session, unrun since,
+never folded into `paper.json` — the record still said `unverified` on all five claims
+with no quantities beyond the hand-transcribed p.2345 numbers. Re-ran everything fresh
+this session (reproduces exactly) and wrote the results into `paper.json`: new artifact
+`a4` (the fincap deposit itself, `verified-usable`), one superseded quantity (the old
+tau-subtraction ratio `researcher_dispersion_over_median_SE`, invalid for a same-data
+design — `tau^2` comes out negative on 3 of 6 hypotheses), and ~20 new quantities across
+c1-c5.
+
+**The two findings I did not expect, worth a second look on their own:**
+- **Peer feedback narrows point estimates while widening disagreement about the
+  conclusion.** Estimate IQR falls to 0.49x stage 1 (matches the paper's reported
+  -47.2%), but the t-value IQR *rises* to 1.35x (95% CI [1.05, 1.67], excludes 1) because
+  standard errors shrink even faster than the estimates converge. The fraction of teams
+  crossing |t|>1.96 rises on most hypotheses (h1: 32%→62%). If this survives Appendix B,
+  it sharpens the paper's own headline claim into something less comfortable.
+- **The natural team-level version of the quality->dispersion claim finds nothing.**
+  Individual teams' reproducibility/peer-rating scores barely correlate with their own
+  deviation from consensus or their own precision (|rho| 0.07-0.17, mostly n.s.), and
+  all three quality measures together give an out-of-fold R² indistinguishable from a
+  permuted-label control (-0.016 vs -0.017) — not underpowered (n=164 resolves rho as
+  small as 0.153). Marked `disputed`, not `refuted`: I cannot see their actual regression
+  design from the pages I have, so this may be a level-of-aggregation mismatch rather
+  than a real tension. Flagged, not resolved.
+
+**Self-caught error, and it's the interesting part of the session.** First pass wrote
+`accepted` / `disputed` / `accepted-narrower-scope` statuses straight from how solid the
+*independent* numbers looked. `kb.py validate` correctly rejected all five: `read_depth`
+is still `skimmed` (still only pages 2339-2350 of 52; the paper's full text remains
+paywalled/truncated at both mirrors), and the schema says assessment confidence may not
+outrun how much of the paper's OWN text has been read, however solid a reanalysis is on
+its own terms — reading more of THEIR argument might explain away an apparent tension
+(especially c2's team-level null, which may simply be the wrong aggregation level for
+their actual regression). Reverted all five to `unverified`, kept every number and every
+argument in `our_assessment.why` instead. The schema rule did exactly the job it was
+built for, on the first record it was tested against this way — worth remembering
+precisely because it stopped ME, not a hypothetical careless reader.
+
+**`reanalysis/f3b_scale_confound.py` is missing.** Its output JSON is still on disk
+(`artifacts/f3b_scale_confound.json`) but the script that generated it cannot be found.
+Recorded as artifact `a5`, status `dangling`. Same failure shape as the
+`windows-agent-tooling.md` loss logged in `kb_stewardship.md` 2026-08-21 — an artifact
+that survives only as its own output is not reproducible, whoever wrote it.
+
+**Next, if this record is picked up again:** (1) try harder for the full PDF or
+Appendix B — that is the only thing that can move `read_depth` past `skimmed` and let
+these statuses actually update; (2) the t-value-divergence finding is cheap to sanity
+check against a synthetic panel where SEs shrink faster than estimates by construction,
+to make sure the direction isn't a mechanical artifact of how t is defined; (3) if f3b's
+source script resurfaces, re-run it for real rather than continuing to quote its JSON.

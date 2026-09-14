@@ -19,7 +19,7 @@ times on one scale:
 
 Reported for: log(standard error), the estimate, |t|, and the signed t.
 """
-import sys, os, json
+import sys, os, json, zlib
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -66,7 +66,13 @@ def main():
                 ('abs_t', 't_value', lambda c: c.abs()),
                 ('signed_t', 't_value', None)]:
             R = rank_within(s, col, tr)
-            r = var_ratio(R, seed=hash(label) % 997 + stage)
+            # zlib.crc32, not hash(): Python's str hash() is randomised per
+            # process (PYTHONHASHSEED) unless disabled, so this seed silently
+            # differed run to run -- caught 2026-09-14 re-running the script a
+            # session later and getting a different 4th-decimal ratio. The
+            # conclusions never moved (noise is ~0.001-0.005 on ratios of
+            # 1.2-4.5), but "seed=" that isn't one defeats the point of a seed.
+            r = var_ratio(R, seed=zlib.crc32(label.encode()) % 997 + stage)
             out[f'stage{stage}__{label}'] = r
             print(f"stage {stage}  {label:20s} var ratio = {r['ratio']:6.3f}  "
                   f"z = {r['z']:7.2f}  p = {r['p_one_sided']:.5f}  "

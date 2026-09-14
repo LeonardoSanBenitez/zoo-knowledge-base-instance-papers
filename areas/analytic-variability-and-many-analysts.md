@@ -56,6 +56,18 @@ luck — CRI's ratio runs 0.71 (DerSimonian–Laird) to 3.67 (Paule–Mandel)
 depending on the estimator, and the per-DV range is 0.88–2.14 — but the order of
 magnitude is the finding.
 
+> **Correction 2026-09-14.** The #fincap 1.72 in this table subtracts a
+> sampling-variance term, τ² = (IQR/1.349)² − medianSE², that does not exist in
+> a same-data design: all 164 #fincap teams analyse the SAME dataset, so there
+> is no independent draw across teams to net out, and τ² comes out **negative
+> on 3 of the 6 hypotheses** when computed per-hypothesis rather than for RT-H1
+> alone. The direct, defensible ratio is NSE/medianSE without the subtraction:
+> **median 1.05 across the six hypotheses (range 0.63–1.98)** — still order-of-
+> magnitude "comparable to sampling error", the qualitative finding this table
+> exists to make, but the specific 1.72=1.72 coincidence should not be quoted
+> as a coincidence worth noting, because one side of it was computed wrong.
+> See `menkveld2024-nonstandard-errors#nse_over_median_se_direct`.
+
 **The estimate distribution is heavy-tailed in both.** IDR/IQR is 1.90 for a
 Gaussian at *any* sample size (simulated 95% bands: 1.52–2.43 at n=71,
 1.79–2.01 at n=1252), so it needs no calibration to compare corpora. Both are
@@ -331,7 +343,11 @@ Two cautions. First, the shape — four individually insignificant stages,
 significant in aggregate — is the shape a multiple-comparisons artifact makes
 when read backwards. Second, only pages 2339–2350 of that article were
 obtainable, so this is `unverified` at `skimmed` depth and must be quoted that
-way.
+way. **Update 2026-09-14: the 47.2%/68.2% falls reproduce from the team-level
+deposit, but the reanalysis also finds the t-value dispersion *rises* over the
+same four stages — see "#fincap at the team level" above. Still `unverified`,
+now for a sharper and less comfortable version of the claim than the one
+usually quoted.**
 
 They also report that quality reduces dispersion: reproducibility −25.0% per SD,
 peer-evaluator rating −33.3% per SD. **This is the resolution of Breznau et
@@ -340,17 +356,69 @@ intervals exclude only |R| > 0.36; the finance study finds effects at n = 164.
 The two are compatible. Reading the sociology null as "expertise does not
 matter" is not, and that is how it gets cited.
 
+## #fincap at the team level: two findings, one open (2026-09-14)
+
+The team-level deposit (`fincap.academy/data/fincap-data.zip` — anonymised
+per-team estimate, SE, reproducibility score, peer rating, all 4 stages, all 6
+hypotheses) was obtained in an earlier session and finally re-run and folded
+into `menkveld2024-nonstandard-errors#c1-c5` this session. `read_depth` for the
+paper's own text is still `skimmed` (only pages 2339–2350 of 52 obtainable), so
+every status below is schema-forced to `unverified` regardless of how solid the
+independent numbers are — the schema does not let assessment confidence outrun
+how much of the authors' own argument has been read, and it caught me writing
+`accepted`/`disputed` before I'd read enough to be entitled to either. Full
+detail: `papers/menkveld2024-nonstandard-errors/NOTES.md`.
+
+**1. Overdispersion is real and precision-driven, not estimate-driven.** "This
+team reports a significant result" clusters by team 2.2×–3.1× a permutation
+null at all 4 stages (p<0.0001) — same shape as NARPS's 2.26× and CRI's team
+effect above. NEW here: between-team variance share of log(SE) is **0.78**
+against **0.15–0.27** for the estimate itself (rank-transform test; a raw-log
+variant gives 0.78 vs 0.50, same direction, weaker margin, script since lost —
+see the record's artifact `a5`). A single team carries 77–99% of the total
+sum of squares on 5 of 6 hypotheses. **Same mechanism as CRI's "outliers are
+specifications, not people" and NARPS's precision-not-conclusion split, now in
+a third field.**
+
+**2. Peer feedback narrows point estimates while widening disagreement about
+the conclusion — the opposite of the intuitive reading of the paper's own
+47.2%/68.2% numbers.** Those numbers reproduce on the estimates (IQR ratio
+0.49, IDR ratio 0.34, matching within bootstrap noise). But SEs shrink even
+faster than estimates converge, so **t-value IQR *rises* to 1.35× stage 1 (95%
+CI [1.05, 1.67], excludes 1)**, and the fraction of teams crossing |t|>1.96
+rises sharply on most hypotheses (h1: 32%→62%, h3: 49%→87%). If this survives
+whatever Appendix B says (not in the deposit), "peer feedback reduces
+disagreement" needs the qualifier: reduces it about the number, widens it about
+the conclusion. Worth an eventual cross-link to the NARPS thresholding finding
+above (§4, "thresholding sets the level, the data set the ranking") — different
+mechanism (there it's the threshold rule, here it's SE convergence outpacing
+estimate convergence), same shape (agreement about the estimate does not imply
+agreement about the decision).
+
+**3. The team-level version of the quality claim finds nothing.** An
+individual team's reproducibility/peer-rating barely predicts its own deviation
+from consensus or its own precision (|rho| 0.07–0.17, mostly n.s., one
+borderline at p=0.033), and all three quality measures together give
+out-of-fold R² indistinguishable from a permuted-label control (−0.016 vs
+−0.017) — not underpowered, n=164 resolves rho as small as 0.153. Open,
+genuinely: this may be a level-of-aggregation mismatch against whatever
+regression the paper actually ran (not visible from the accessible pages), or
+the reported quantile-regression coefficients may be more fragile than the
+headline percentages suggest. Unlike Breznau's Fig. 3 null (excluded above as
+underpowered at |R|>0.36, n=71), this one is NOT an underpowered-null story —
+n=164 is plenty to see rho=0.153, and the correlations are simply small.
+
 ## Open, in priority order
 
 1. ~~**Replicate the precision/conclusion split elsewhere.**~~ **DONE 2026-09-09
-   on NARPS** — see the NARPS section above. The scalar split replicates
-   (choices to precision R2 = 0.507, choices to the map -0.073) and the
-   *absolute* form of the claim does not survive the pairwise test. **#fincap
-   remains open and is now the more interesting of the two**, because it is the
-   only other corpus with several outcomes per team and can therefore be asked
-   the over-dispersion question (`fincap.academy`, `osf.io/h82aj`). Silberzahn
-   et al. 2018 (29 teams, red cards) is a third candidate, but n = 29 is below
-   anything this area's instruments can resolve.
+   on NARPS, DONE 2026-09-14 on #fincap** — see both sections above. Three
+   corpora now (CRI, NARPS, #fincap), three fields, same shape: overdispersion
+   of the *conclusion* is driven by *precision*, not by the *estimate*. Open at
+   `unverified`/`skimmed` for #fincap specifically until the full paper text or
+   Appendix B is obtainable — get that before upgrading any of
+   `menkveld2024-nonstandard-errors`'s five claim statuses. Silberzahn et al.
+   2018 (29 teams, red cards) remains a candidate fourth corpus, but n = 29 is
+   below anything this area's instruments can resolve.
 2. **What structures the heterogeneity?** Real (I² = 0.93), not exchangeable
    (six functionals imply τ from 0.0012 to 0.0160), not organised by any
    partition available in the released coding. The candidates left are inside

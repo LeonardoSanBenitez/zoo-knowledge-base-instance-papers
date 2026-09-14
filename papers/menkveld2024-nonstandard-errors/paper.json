@@ -26,10 +26,10 @@
  "record_status": "active",
  "read_depth": "skimmed",
  "cost": {
-  "tool_calls": 5,
-  "bytes_downloaded": 3048543,
-  "compute_notes": "Two independent PDF mirrors fetched (1.33 MB and 1.71 MB); BOTH are truncated to pages 2339-2350 of a 52-page article. Wiley's own pdfdirect returns a 5.5 kB challenge page. So this record covers the title matter, abstract, introduction, statistical framework and the complete Summary of Findings (p. 2345), and nothing after the start of Section I. read_depth is `skimmed` for that reason and every claim below carries our_assessment `unverified`. The derived cross-corpus arithmetic is ours and is verified.",
-  "session": "2026-08-12 maria"
+  "tool_calls": 9,
+  "bytes_downloaded": 0,
+  "compute_notes": "2026-09-14 session: no new downloads (deposit already on disk from an earlier session, see artifacts/fincap/). Re-ran all 8 existing reanalysis scripts (f1,f2,f3,f4,f5,f6,f7,f8) fresh and folded their output into claims c1-c5, plus one new artifact entry (a4, the deposit itself) and one superseded quantity (the old tau-subtraction ratio). reanalysis/f3b_scale_confound.py, referenced by f3's own docstring and whose output JSON exists (artifacts/f3b_scale_confound.json), could not be found on disk this session -- its numbers are quoted as present-but-insufficient, not independently re-verified.",
+  "session": "2026-09-14 maria"
  },
  "triggers": [
   "how large is researcher-induced dispersion compared to sampling error",
@@ -100,7 +100,9 @@
      "unit": "ratio",
      "n": 164,
      "baseline": "the identical robust recipe on Breznau et al.'s CRI gives 1.72",
-     "source": "our arithmetic, reanalysis/13_cross_corpus_menkveld.py"
+     "source": "our arithmetic, reanalysis/13_cross_corpus_menkveld.py",
+     "status": "superseded",
+     "superseded_by": "menkveld2024-nonstandard-errors#nse_over_median_se_direct"
     },
     {
      "name": "n_teams_reporting_significance_range",
@@ -114,13 +116,50 @@
      "unit": "%",
      "n": 1,
      "source": "p. 2345 footnote 7; this one team moves the mean to 446.3% and the SD to 5817.5%"
+    },
+    {
+     "name": "nse_over_median_se_direct",
+     "value": 1.05,
+     "unit": "ratio",
+     "n": 164,
+     "baseline": "median across the 6 hypotheses, range 0.628-1.976. Supersedes researcher_dispersion_over_median_SE: that number used tau = sqrt((IQR/1.349)^2 - medianSE^2), which subtracts a sampling-variance term that does not exist here (all 164 teams analyse the SAME dataset, so there is no independent draw to net out) -- tau^2 comes out NEGATIVE on 3 of 6 hypotheses, the recipe telling us it does not apply. NSE/medianSE directly is the right comparison for a same-data design, and it says NSE and SE are close to equal in size, which matches Menkveld et al.'s own hedge more closely than the inflated 1.72 did.",
+     "source": "maria 2026, reanalysis/f8_nse_over_se.py"
+    },
+    {
+     "name": "overdispersion_var_ratio_stage1_two_sided",
+     "value": 3.065,
+     "unit": "ratio",
+     "n": 164,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, reanalysis/f1_overdispersion.py -- NARPS-style test: variance of each team's count of |t|>1.96 results (of 6) against a column-permutation null that fixes each hypothesis's own significant rate. z=20.5, p<0.0001. Present at all 4 stages (ratio falls monotonically 3.065 -> 2.232 as peer feedback proceeds, but stays far above 1 throughout)."
+    },
+    {
+     "name": "between_team_variance_share_logSE_stage1",
+     "value": 0.776,
+     "unit": "icc-like share",
+     "n": 164,
+     "baseline": "vs. 0.153 for the |estimate| itself, same rank-transform test",
+     "source": "maria 2026, reanalysis/f3_trait_decomposition.py -- \"reports a significant result\" clusters by team predominantly through PRECISION (log SE), not through the estimate. Team-mean-rank(logSE) vs count-of-6-significant: rho=-0.801 (p=7e-38); team-mean-rank(|estimate|) vs same: rho=-0.292 (p=1.5e-4). A robustness variant using raw log-values instead of within-hypothesis ranks (f3b_scale_confound.py, script since lost -- see artifact note) gave icc-like shares 0.776 (logSE) vs 0.500 (log|estimate|): same qualitative conclusion, weaker margin. Not independently re-verified this session because the generating script is present-but-insufficient (see a5)."
+    },
+    {
+     "name": "most_extreme_team_share_of_sum_of_squares",
+     "value": 0.994,
+     "unit": "fraction",
+     "n": 164,
+     "baseline": "range across the 6 hypotheses: 0.280 (h6, stage4) to 0.994 (h1/h2/h4, both stages). 5 of 6 hypotheses have ONE team carrying 77-99% of the total across-team sum of squares.",
+     "source": "maria 2026, reanalysis/f4_verify_quoted.py"
     }
    ],
    "our_assessment": {
     "status": "unverified",
-    "why": "Quoted verbatim from p. 2345; no artifact was fetched and the results sections after p. 2350 were not obtainable. The derived ratio 1.72 is our own arithmetic and IS verified: tau = sqrt((IQR/1.349)^2 - medianSE^2) = 4.29pp, divided by 2.5. Applying that same recipe to the 1,252 CRI models gives 1.72 as well. Agreement to three significant figures across two fields is luck -- CRI's estimator-dependent range is 0.71 (DerSimonian-Laird) to 3.67 (Paule-Mandel) -- but agreement in order of magnitude is the finding, and it is the first time these two corpora have been put on one scale.",
+    "why": "[Independent reanalysis this session judged the claim would be 'accepted-narrower-scope' if read_depth allowed a non-unverified status -- it does not: read_depth is still skimmed (pages 2339-2350 of 52), and this schema correctly does not let assessment confidence outrun how much of the paper itself has been read, however solid the independent numbers are. Upgrade to read-full-text before revisiting this status.] VERIFIED AND EXTENDED from the deposit, 2026-09-14 (the paper text itself is still only pages 2339-2350; this is independent re-derivation from the raw team-level data, not a second read of their prose). The magnitude claim holds and is now on firmer footing: the quoted 1.72 used a subtraction recipe (tau^2 = NSE^2 - SE^2) that is invalid for a same-data design and returns a NEGATIVE tau^2 on half the hypotheses -- the direct ratio NSE/medianSE is close to 1 (median 1.050) instead, which if anything supports the \"similar magnitude\" claim more cleanly. The overdispersion itself is unambiguous (observed variance of per-team significance counts is 2.2x-3.1x a permutation null, p<0.0001, all 4 stages) and NEW here: it is driven mostly by teams clustering in PRECISION (between-team share of log(SE) variance 0.78) rather than in the point estimate itself (share 0.15-0.27) -- a mechanism the accessible pages do not discuss. And the whole corpus-level dispersion for most hypotheses is dominated by a single team (77-99% of the sum of squares), which is exactly the fat-tail behaviour the authors' own choice of IQR over SD anticipates (see c5) but is worth stating numerically: the '1.72' and '1.05' summary ratios both describe a distribution whose spread is mostly one observation.",
     "by": "maria"
-   }
+   },
+   "evidence": [
+    "a3",
+    "a4",
+    "a5"
+   ]
   },
   {
    "id": "c2",
@@ -154,13 +193,53 @@
      "unit": "%",
      "n": 164,
      "source": "p. 2345"
+    },
+    {
+     "name": "team_level_deviation_rank_corr_quality",
+     "value": -0.104,
+     "unit": "rho",
+     "n": 164,
+     "source": "maria 2026, reanalysis/f7_quality.py -- p=0.184, not significant"
+    },
+    {
+     "name": "team_level_deviation_rank_corr_reproducibility",
+     "value": -0.069,
+     "unit": "rho",
+     "n": 164,
+     "source": "maria 2026, reanalysis/f7_quality.py -- p=0.377, not significant"
+    },
+    {
+     "name": "team_level_deviation_rank_corr_peer_rating",
+     "value": -0.167,
+     "unit": "rho",
+     "n": 164,
+     "source": "maria 2026, reanalysis/f7_quality.py -- p=0.033, borderline"
+    },
+    {
+     "name": "team_level_quality_cv_r2",
+     "value": -0.0161,
+     "unit": "out-of-fold R2",
+     "n": 164,
+     "baseline": "permuted-label control: -0.0171 (indistinguishable)",
+     "source": "maria 2026, reanalysis/f7_quality.py -- all three quality measures together predicting n_significant_of_6, 10-fold CV, negative R2 means worse than predicting the mean"
+    },
+    {
+     "name": "team_level_resolving_rho_at_p05",
+     "value": 0.153,
+     "unit": "rho",
+     "n": 164,
+     "source": "maria 2026, reanalysis/f8_nse_over_se.py -- smallest |rho| reaching p<0.05 at n=164; f7's correlations are mostly below this, so the nulls are informative, not merely underpowered"
     }
    ],
    "our_assessment": {
     "status": "unverified",
-    "why": "Unverified as reported, but important for what it does to a NEIGHBOURING record. Breznau et al. 2022 concluded that researcher competencies do not explain outcome variation, from eight correlations at n = 71 teams; we showed those nulls exclude only |R| > 0.36. Menkveld et al., with n = 164, DO find quality-dispersion associations. The two are not in conflict: the sociology study could not have detected effects of this size. That is exactly the reading our breznau2022 c3 assessment argued for, now with an external instance rather than only an interval.",
+    "why": "[Independent reanalysis this session judged the claim would be 'disputed' if read_depth allowed a non-unverified status -- it does not: read_depth is still skimmed (pages 2339-2350 of 52), and this schema correctly does not let assessment confidence outrun how much of the paper itself has been read, however solid the independent numbers are. Upgrade to read-full-text before revisiting this status.] A DIFFERENT, natural operationalization of the same claim finds close to nothing at the team level, 2026-09-14. Menkveld et al.'s reported effect (a 1-SD increase in reproducibility/peer-rating cuts NSE 25-33%) is presumably a regression on an aggregate dispersion measure -- not accessible from the pages I have. The natural team-level test (does THIS team's quality predict how far ITS estimate sits from consensus, or its own precision, or how often it lands 'significant') finds weak, mostly non-significant rank correlations (|rho| 0.07-0.17, one borderline at p=0.033) and an out-of-fold R^2 from all three quality measures combined that is indistinguishable from a permuted-label control (-0.016 vs -0.017). At n=164 a real rho as small as 0.153 would already clear p<0.05 (f8), so this is not simply underpowered. Two readings are both live and I cannot adjudicate between them without Appendix B (not in the deposit): (a) the paper's effect is real but lives at a level of aggregation team-level rank correlation cannot see (e.g. it is about the SPREAD of quality-sorted subgroups, not an individual team's deviation), or (b) the reported quantile-regression coefficients are more fragile than the headline percentages suggest. Marked `disputed`, not `refuted`: their number is still the best available and mine does not directly contradict a quantity they published, it fails to reproduce the claim under a different, defensible operationalization.",
     "by": "maria"
-   }
+   },
+   "evidence": [
+    "a3",
+    "a4"
+   ]
   },
   {
    "id": "c3",
@@ -180,13 +259,50 @@
      "unit": "%",
      "n": 164,
      "source": "p. 2345"
+    },
+    {
+     "name": "estimate_iqr_ratio_stage4_over_1_median",
+     "value": 0.494,
+     "unit": "ratio",
+     "n": 164,
+     "ci_low": 0.349,
+     "ci_high": 0.647,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, reanalysis/f5_t_divergence.py -- matches the reported -47.2% (0.528) within bootstrap noise, on the ESTIMATES"
+    },
+    {
+     "name": "estimate_idr_ratio_stage4_over_1_median",
+     "value": 0.335,
+     "unit": "ratio",
+     "n": 164,
+     "source": "maria 2026, reanalysis/f4_verify_quoted.py -- matches the reported -68.2% (0.318) within noise"
+    },
+    {
+     "name": "tvalue_iqr_ratio_stage4_over_1_median",
+     "value": 1.347,
+     "unit": "ratio",
+     "n": 164,
+     "ci_low": 1.05,
+     "ci_high": 1.673,
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "maria 2026, reanalysis/f5_t_divergence.py -- P(ratio>1)=0.990. The t-value, which is what actually decides 'significant or not', gets MORE dispersed across the four stages, not less"
+    },
+    {
+     "name": "frac_teams_significant_h1_stage1_vs_4",
+     "value": "32.3% -> 61.6%",
+     "n": 164,
+     "source": "maria 2026, reanalysis/f5_t_divergence.py -- fraction of teams with |t|>1.96, hypothesis 1; similar rises on h2 (28.7%->53.7%) and h3 (49.4%->86.6%)"
     }
    ],
    "our_assessment": {
     "status": "unverified",
-    "why": "The single most consequential number in this record for how work is organised, and the one most worth verifying if the full article becomes obtainable. It is the only quasi-experimental evidence in this whole area that anything REDUCES analytic dispersion. Note the shape: each stage individually insignificant, the four together large -- which is the pattern that most often turns out to be a multiple-comparisons artifact read in reverse, and which cannot be checked from the pages we have.",
+    "why": "[Independent reanalysis this session judged the claim would be 'accepted-narrower-scope' if read_depth allowed a non-unverified status -- it does not: read_depth is still skimmed (pages 2339-2350 of 52), and this schema correctly does not let assessment confidence outrun how much of the paper itself has been read, however solid the independent numbers are. Upgrade to read-full-text before revisiting this status.] VERIFIED on the estimates, 2026-09-14: the reported -47.2%/-68.2% falls are reproduced from the deposit within bootstrap noise (0.494 and 0.335 vs. reported 0.528 and 0.318). What is NOT in the accessible pages and is a genuine complication: the standard errors shrink even FASTER than the estimates converge (SE IQR ratio 0.173 vs. estimate IQR ratio 0.494), so the t-values -- which are what actually decide 'this team reports a significant result' -- get MORE dispersed across the four peer-feedback stages, not less (ratio 1.347, 95% CI [1.05, 1.67] excludes 1, P(ratio>1)=0.990), and the fraction of teams crossing the significance threshold rises sharply on most hypotheses (e.g. h1: 32.3% -> 61.6%). If this holds up against whatever Appendix B says (not in the deposit), the honest one-sentence summary is not 'peer feedback reduces disagreement' but 'peer feedback narrows point estimates while widening disagreement about the conclusion' -- a sharper and less comfortable claim than the one usually quoted from this paper. This is exactly the pattern I flagged as suspicious in NOTES.md before checking it (four individually-insignificant stages, significant together) -- it survives, but not in the direction I expected to find a problem in.",
     "by": "maria"
-   }
+   },
+   "evidence": [
+    "a3",
+    "a4"
+   ]
   },
   {
    "id": "c4",
@@ -194,9 +310,51 @@
    "scope": "Belief elicitation before results were revealed.",
    "our_assessment": {
     "status": "unverified",
-    "why": "No numbers given in the pages obtained.",
+    "why": "[Independent reanalysis this session judged the claim would be 'accepted-narrower-scope' if read_depth allowed a non-unverified status -- it does not: read_depth is still skimmed (pages 2339-2350 of 52), and this schema correctly does not let assessment confidence outrun how much of the paper itself has been read, however solid the independent numbers are. Upgrade to read-full-text before revisiting this status.] The incentivised belief data (984 forecasts) does NOT show a strong systematic underestimation at the median -- median prediction/realised-NSE is 0.912 (a mild underestimate) and forecasts split almost evenly around the realised NSE (49.7% below it), so 'teams underestimate dispersion' is at most a small median effect, not the dominant pattern in the data. The real, striking, and much cleaner finding: teams are near-perfectly CALIBRATED IN RANK across the six hypotheses -- which ones will disagree more -- when scored against the robust NSE (Spearman rho=1.000, n=6) but not against the raw, outlier-dominated SD (rho=0.429). That is a finding about relative calibration the accessible pages do not state this way (only the Summary of Findings was read; Appendix material on the belief survey, if any, is not in the deposit or the pages obtained). Individual point forecasts are noisy (only 29.9% land within a factor of 2 of the realised NSE), so 'underestimate' may be a true description of SOME hypotheses or SOME teams that does not survive aggregation to the median -- narrowed rather than accepted or refuted outright.",
     "by": "maria"
-   }
+   },
+   "quantities": [
+    {
+     "name": "median_pred_over_realised_nse",
+     "value": 0.912,
+     "unit": "ratio",
+     "n": 984,
+     "source": "maria 2026, reanalysis/f6_beliefs.py -- median over 6 hypotheses of (median team prediction / realised robust NSE)"
+    },
+    {
+     "name": "frac_forecasts_below_nse",
+     "value": 49.7,
+     "unit": "%",
+     "n": 984,
+     "source": "maria 2026, reanalysis/f6_beliefs.py -- share of all 984 individual forecasts landing below the realised NSE"
+    },
+    {
+     "name": "spearman_pred_vs_nse_across_hypotheses",
+     "value": 1.0,
+     "unit": "rho",
+     "n": 6,
+     "source": "maria 2026, reanalysis/f6_beliefs.py -- rank correlation, across the 6 hypotheses, of median team prediction vs realised robust NSE. Smallest attainable two-sided p at n=6 is 0.0028"
+    },
+    {
+     "name": "spearman_pred_vs_raw_sd_across_hypotheses",
+     "value": 0.429,
+     "unit": "rho",
+     "n": 6,
+     "baseline": "vs 1.000 against the robust NSE -- teams are calibrated to the robust measure, not the raw (outlier-dominated) SD",
+     "source": "maria 2026, reanalysis/f6_beliefs.py"
+    },
+    {
+     "name": "frac_forecasts_within_factor2_of_nse",
+     "value": 29.9,
+     "unit": "%",
+     "n": 984,
+     "source": "maria 2026, reanalysis/f6_beliefs.py"
+    }
+   ],
+   "evidence": [
+    "a3",
+    "a4"
+   ]
   },
   {
    "id": "c5",
@@ -210,13 +368,31 @@
      "n": 164,
      "baseline": "Gaussian value 1.90; CRI model-level 2.79; CRI team-level 2.08",
      "source": "our arithmetic from p. 2345, reanalysis/13_cross_corpus_menkveld.py"
+    },
+    {
+     "name": "idr_over_iqr_stage1",
+     "value": 4.07,
+     "unit": "ratio",
+     "n": 164,
+     "baseline": "Gaussian reference 1.90 (stable across n); range across 6 hypotheses 3.07-11.59 (h6)",
+     "source": "maria 2026, reanalysis/f4_verify_quoted.py -- re-verifies the quoted NOTES.md number exactly"
+    },
+    {
+     "name": "most_extreme_team_share_of_sum_of_squares_range",
+     "value": "0.280-0.994",
+     "n": 164,
+     "source": "maria 2026, reanalysis/f4_verify_quoted.py -- one team, out of 164, carrying this share of the total across-team sum of squares on 5 of 6 hypotheses"
     }
    ],
    "our_assessment": {
     "status": "unverified",
-    "why": "Their claim, at skimmed depth, so unverified -- the validator rejected an 'accepted-narrower-scope' here and was right to. What WE verified is a different proposition and now lives where it belongs, as maria2026-analytic-variability-reanalysis#c13: the Gaussian IDR/IQR is 1.90 at any n, #fincap RT-H1 gives 4.07 and the CRI models give 2.79 (outside the simulated 95% band 1.79-2.01 at n=1252), so heavy tails travel between corpora; and in CRI they live at the model level, not the analyst level (team-level 2.08, inside the band at n=71). Keeping the two apart is the assertion/provenance split the schema is built on.",
+    "why": "[Independent reanalysis this session judged the claim would be 'accepted' if read_depth allowed a non-unverified status -- it does not: read_depth is still skimmed (pages 2339-2350 of 52), and this schema correctly does not let assessment confidence outrun how much of the paper itself has been read, however solid the independent numbers are. Upgrade to read-full-text before revisiting this status.] STRONGLY CONFIRMED AND EXTENDED, 2026-09-14, from the full team-level deposit rather than the one footnoted number available in 2026-08-12: on 5 of 6 hypotheses a SINGLE team out of 164 carries 77-99% of the entire across-team sum of squares. This is not a mild departure from Gaussian that IQR modestly improves on -- it is a distribution whose spread is nearly one observation, which makes IDR/IQR itself (4.07 vs the Gaussian-stable reference 1.90) an undersell of how extreme the tail is, since IDR/IQR only sees the 10th/90th percentiles and the one dominant team can sit further out than that. The authors' choice of a robust measure is vindicated more strongly than their own quoted footnote (one team at +74,491%) by itself suggests.",
     "by": "maria"
-   }
+   },
+   "evidence": [
+    "a3",
+    "a4"
+   ]
   }
  ],
  "artifacts": [
@@ -254,6 +430,32 @@
     "by": "maria",
     "how": "read pages 2339-2350 of two independent PDF mirrors; transcribed the Summary of Findings numbers by hand",
     "result": "Two mirrors, both truncated at p. 2350 of 2390. The summary numbers are complete and self-consistent; everything from Section I.A onward is missing, including all tables and the multiverse analysis. Sufficient to place this corpus on the same scale as CRI, insufficient to check any regression."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "derived-data",
+   "locator": "https://fincap.academy/data/fincap-data.zip",
+   "status": "verified-usable",
+   "local_path": "artifacts/fincap/RT_research_results.xlsx",
+   "checked": {
+    "on": "2026-09-14",
+    "by": "maria",
+    "how": "downloaded, loaded with reanalysis/f0_load.py, cross-checked row count (164 teams x 6 hyps x 4 stages = 3936, balanced, matches readme.txt's own description) and re-ran all 8 analysis scripts fresh this session",
+    "result": "Team-level estimate + standard_error + reproducibility_score + peer rating for all 164 teams, 4 stages, 6 hypotheses. This is the artifact a2 (fincap.academy, not-checked as of 2026-08-12) pointed at without being fetched. Privacy-anonymised per readme.txt, sufficient for everything in claims c1-c5 except the raw regression tables (Appendix B) and the multiverse analysis, which are not in this deposit."
+   }
+  },
+  {
+   "id": "a5",
+   "role": "code",
+   "locator": "reanalysis/f3b_scale_confound.py",
+   "status": "dangling",
+   "local_path": "artifacts/f3b_scale_confound.json",
+   "checked": {
+    "on": "2026-09-14",
+    "by": "maria",
+    "how": "tried to re-run it as part of this session's full re-run of the reanalysis scripts",
+    "result": "The script itself is gone from reanalysis/ -- referenced by f3_trait_decomposition.py's own docstring ('A robustness variant... f3b_scale_confound.py') and its output JSON is still on disk (artifacts/f3b_scale_confound.json, presumably from an earlier session), but the generating code cannot be found or re-run. Same failure shape as the windows-agent-tooling.md loss logged in kb_stewardship.md 2026-08-21 -- an artifact surviving only as its own output, not as something that reproduces. The numbers are quoted (see c1) but flagged, not independently re-verified this session."
    }
   }
  ],
