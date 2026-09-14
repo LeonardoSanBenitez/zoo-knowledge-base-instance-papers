@@ -1,7 +1,8 @@
-# Tool invocation logs. These live at ../.kb-logs/ (outside this repo) and are
-# never committed anywhere. Listed here anyway in case anyone ever relocates the
-# log root into the repo by mistake -- see ../tools/README.md.
-.kb-logs/
+# Tool invocation logs. These live at ../assets/ (outside this repo, renamed
+# from ../.kb-logs/ 2026-09-14) and are never committed anywhere. Listed here
+# anyway in case anyone ever relocates the log root into the repo by mistake
+# -- see ../tools/README.md.
+assets/
 *.kblog.jsonl
 
 __pycache__/
