@@ -60,3 +60,5 @@ These are notes from the literature, not a plan. Planning belongs to the ticket.
 4. **Keep the metric outside the producing agent**, and recompute headline numbers from rows the agent did
    not write. This applies to our own agents too (Huang c5).
 5. **State the unit an effect size was standardised on**, or report the risk difference instead (BODHI c2).
+6. **Pair every "influenced" arm with an honest arm** (peers asserting the correct answer, or the true
+   label), so a flag there is a measurable false positive rather than an identity (benchmaxxing c5).
