@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.4",
+  "id": "xiang2026-dojo",
+  "title": "Distributed open justice oversight (DOJO): A community-driven, modality-agnostic platform for adversarial evaluation of health AI",
+  "authors": [
+    "Takeshi Tohyama",
+    "Alexander Cole Bank",
+    "Quang Bui",
+    "Rahul Gorijavolu",
+    "John Anderson Garcia Henao",
+    "Nikhil Jaiswal",
+    "Akshay Kelshiker",
+    "Kaushik Madapati",
+    "Sebastian A. Cajas Ordonez",
+    "Milit S. Patel",
+    "Nina Prakash",
+    "Alexa Q. Xiang",
+    "Leo Anthony Celi"
+  ],
+  "year": 2026,
+  "venue": "SSRN preprint 6676818, not peer reviewed (version dated 2026-04-29)",
+  "area": [
+    "clinical-ai-evaluation-and-agent-oversight"
+  ],
+  "identifiers": {
+    "url": "https://ssrn.com/abstract=6676818"
+  },
+  "record_status": "active",
+  "read_depth": "read-full-text",
+  "cost": {
+    "tool_calls": 5,
+    "bytes_downloaded": 0,
+    "compute_notes": "PDF supplied at dojo/literature/xiang2026dojo.pdf (210,641 bytes, 11 pp), read in full. Checked the advertised install and the public repo with gh/curl; nothing to run.",
+    "session": "2026-09-30 maria"
+  },
+  "triggers": [
+    "what is DOJO distributed open justice oversight",
+    "platform for adversarial evaluation of clinical AI",
+    "data plane model plane clinical workflow plane",
+    "evaluator calibration with decoy tasks",
+    "who evaluates the evaluators",
+    "community participatory evaluation of health AI",
+    "shortcut detection agent for medical imaging",
+    "MCP based evaluation agents"
+  ],
+  "methods": [],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "DOJO is proposed as an open-source, containerised, MCP-based evaluation layer between data access and clinical deployment, with three planes (data: shortcuts, cohort bias, measurement equity; model: adversarial and out-of-distribution inputs; clinical workflow: latency, GPU, interoperability), a human-in-the-loop layer, and installation via `pip install dojo-health`.",
+      "scope": "A position/design paper. Version 1.0 'is planned to ship' three MCP agents across two planes; Aim 3's comparative study (5-10 models, blinded expert panels, pre-registered) is future work.",
+      "quantities": [],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "As a statement of intent, accurate. As of 2026-09-30 no platform is released: `dojo-health` returns 404 on PyPI (an invented-name control also 404s; bodhi-llm returns 200, so the check discriminates), and criticaldata/dojo is a static website. The empirical arms that exist are separate papers (cajas2026-agents-catching-agents, cajas2026-modalens)."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Evaluators are recalibrated by interleaving adversarial decoy results from randomised data at 5-10% of evaluations; misclassifying a decoy triggers disclosure and retraining, repeated failures down-weight the evaluator, and each evaluator's calibration score accompanies any certification they sign.",
+      "scope": "Proposed protocol (Aim 2), untested.",
+      "quantities": [
+        {
+          "name": "planned_decoy_rate",
+          "value": "0.05-0.10",
+          "unit": "proportion of evaluations",
+          "n": "not applicable",
+          "baseline": "design parameter",
+          "source": "Aim 2"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "The idea is sound and old in other fields: it is the catch-trial / attention-check logic of psychophysics and crowdsourcing, and the 'known-answer' test this KB applies to its own instruments. The paper names the second-order risk (evaluators learning to spot decoys) and proposes refreshing decoys; whether a 5-10% rate gives a usable per-evaluator calibration score depends on how many evaluations one evaluator does (at 50 evaluations, 2.5-5 decoys), which the paper does not address."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The BODHI framework, 'validated across 1,800 observations with very large effect sizes (Cohen's d = 16.38-19.54)', provides the measurement methodology for evaluator epistemic virtues.",
+      "scope": "Cited as evidence for Aim 2 (refs 25-27).",
+      "quantities": [
+        {
+          "name": "bodhi_observations_as_cited",
+          "value": 1800,
+          "unit": "count",
+          "n": "not applicable",
+          "baseline": "the cited source reports 2000",
+          "source": "Aim 2",
+          "status": "disputed"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "The cited BMJ paper reports 2,000 observations (200 vignettes x 5 seeds x 2 models), not 1,800, and its d values are standardised by seed-to-seed spread of 200-case means (arslan2026-bodhi-engineering#c2). Standardised per response, the same rates give d = 4.0 and 2.4. The acronym is also expanded differently: 'Bridging, Open, Discerning, Humble, Inquiring' here and in the library README, 'Balanced, Open-minded, Diagnostic, Humble, Inquisitive' in the BMJ paper.",
+        "by": "arslan2026-bodhi-engineering"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Background figures quoted as motivation: LMM performance on rare anatomical variants falls from about 74% to 29%; 'mirage' fabrication without image input exceeds 60% and reaches 90-100% under common prompting; only 3.6% of FDA-cleared AI/ML devices reported race/ethnicity, 81.6% omitted age, 9.0% had a post-market surveillance plan; MIMIC yields about 452 citations per million dollars against 14 (UK Biobank) and 0.4 (All of Us).",
+      "scope": "Secondary citations (refs 12, 13, 28, 29); none re-read here.",
+      "quantities": [
+        {
+          "name": "fda_ai_devices_reporting_race_ethnicity",
+          "value": 0.036,
+          "unit": "proportion of submissions",
+          "n": "not reported here",
+          "baseline": "Muralidharan et al. 2024 scoping review",
+          "source": "Why now?"
+        },
+        {
+          "name": "vlm_accuracy_rare_anatomical_variants",
+          "value": "0.74 typical vs 0.29 atypical",
+          "unit": "accuracy",
+          "n": "not reported here",
+          "baseline": "Mayer et al. 2025, arXiv:2512.04238",
+          "source": "Who evaluates the evaluators?"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "Recorded so they are findable, marked unverified so nobody quotes them from here. The citations-per-dollar ratio comes from a medRxiv preprint by overlapping authors (ref 28)."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "SSRN 6676818 (zoo copy: dojo/literature/xiang2026dojo.pdf, SHA-256 B7885253...)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "pdftotext -layout dojo/literature/xiang2026dojo.pdf; read in full",
+        "result": "Read. Note first-listed author is Tohyama; the file name and the citation used by the group (e.g. ref 21 of arXiv:2608.03744) put Xiang first. Record id follows the group's citation key."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "pip install dojo-health (advertised); https://github.com/criticaldata/dojo",
+      "status": "absent",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "curl -s -o /dev/null -w '%{http_code}' https://pypi.org/pypi/dojo-health/json (404); controls: .../bodhi-llm/json (200), .../zz-invented-pkg-qq/json (404); gh api repos/criticaldata/dojo/contents",
+        "result": "No PyPI package. The GitHub repo is a static website (index.html, styles.css; default branch feat/dojo-website-native, pushed 2026-09-30) that explicitly contains no evaluation services. The paper says 'planned', so this is not a broken promise, just nothing to run yet."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:citesAsEvidence",
+      "target": "arslan2026-bodhi-engineering",
+      "why": "Aim 2 rests on BODHI's measurement methodology.",
+      "asymmetric_note": "Cites 1,800 observations where the source says 2,000."
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "cajas2026-agents-catching-agents"
+    }
+  ],
+  "open_questions": [
+    "How many decoys does one evaluator see before their calibration score has a usable interval? At a 5-10% decoy rate that is a question about evaluator workload, and it decides whether the score is signal.",
+    "The zoo's own dojo/ workspace borrows the name for a contribution workflow; it is not the DOJO platform. Keep the two distinct in any writing."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-30",
+    "verified": "2026-09-30",
+    "notes_file": "NOTES.md"
+  }
+}

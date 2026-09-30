@@ -1,0 +1,241 @@
+{
+  "schema_version": "1.4",
+  "id": "arslan2026-bodhi-engineering",
+  "title": "Engineering framework for curiosity-driven and humble AI in clinical decision support",
+  "authors": [
+    "Janan Arslan",
+    "Kurt Benke",
+    "Sebastian Andres Cajas Ordonez",
+    "Rowell Castro",
+    "Leo Anthony Celi",
+    "Gustavo Adolfo Cruz Suarez",
+    "Roben Delos Reyes",
+    "Justin Engelmann",
+    "Ari Ercole",
+    "Almog Hilel",
+    "Leo Kinyera",
+    "Maximin Lange",
+    "Torleif Markussen Lunde",
+    "Mackenzie J Meni",
+    "Felipe Ocampo Osorio",
+    "Anna E Premo",
+    "Jana Sedlakova",
+    "Pritika Vig"
+  ],
+  "year": 2026,
+  "venue": "BMJ Health & Care Informatics 33(1):e101877 (article type: Perspective), first published 2026-03-23",
+  "area": [
+    "clinical-ai-evaluation-and-agent-oversight"
+  ],
+  "identifiers": {
+    "doi": "10.1136/bmjhci-2025-101877",
+    "url": "https://informatics.bmj.com/content/33/1/e101877"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 8,
+    "bytes_downloaded": 617240,
+    "compute_notes": "Open-access PDF fetched with `curl -sL -o bmj.pdf https://informatics.bmj.com/content/bmjhci/33/1/e101877.full.pdf`, main text and Table 1 read via pdftotext; online supplement (S2-S5, where prompts, the SD definition and the d formula live) NOT fetched. Crossref correction query run. Library code at dojo/bodhi-llms (PyPI bodhi-llm) inspected: prompts only, no evaluation data or scripts. Two stdlib scripts in reanalysis/.",
+    "session": "2026-09-30 maria"
+  },
+  "triggers": [
+    "does prompting make an LLM more humble or curious",
+    "BODHI framework effect size",
+    "Cohen's d of 16, is that possible",
+    "effect size on a proportion across seeds",
+    "clarifying questions rate as a humility metric",
+    "HealthBench Hard evaluation of a prompting strategy",
+    "is an instruction-following rate an outcome",
+    "epistemic virtues in clinical LLMs, measurement"
+  ],
+  "methods": [
+    "in-paper-table-transcription",
+    "estimator-bias-stress-test",
+    "synthetic-injected-effect-control",
+    "cannot-fail-predicate-screen"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "A two-pass BODHI prompt raises the HealthBench Hard overall score of GPT-4.1-mini from 2.5% to 19.1% (+16.6 pp, 95% CI 15.5-17.7) and of GPT-4o-mini from 0.0% to 2.2% (+2.2 pp) on 200 vignettes x 5 seeds, at the cost of communication quality (-12.5 and -11.3 pp).",
+      "scope": "Two small OpenAI models, temperature 0.7, HealthBench Hard (200 cases), rubric-graded. No non-BODHI 'think first' two-pass control, so the gain is BODHI-vs-single-pass, not BODHI-vs-any-scaffold.",
+      "quantities": [
+        {
+          "name": "healthbench_hard_overall_score_delta",
+          "value": 16.6,
+          "unit": "percentage points",
+          "n": 1000,
+          "ci_low": 15.5,
+          "ci_high": 17.7,
+          "ci_kind": "confidence",
+          "baseline": "GPT-4.1-mini single pass, 2.5%",
+          "source": "Table 1"
+        },
+        {
+          "name": "healthbench_hard_overall_score_delta",
+          "value": 2.2,
+          "unit": "percentage points",
+          "n": 1000,
+          "ci_low": 0.8,
+          "ci_high": 4.0,
+          "ci_kind": "confidence",
+          "baseline": "GPT-4o-mini single pass, 0.0%",
+          "source": "Table 1"
+        },
+        {
+          "name": "communication_quality_delta",
+          "value": -12.5,
+          "unit": "percentage points",
+          "n": 1000,
+          "baseline": "GPT-4.1-mini",
+          "source": "Table 1"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The risk differences are the informative numbers and they are reported. Missing: a matched two-pass control without the virtue content, which is what separates 'BODHI' from 'any chain-of-thought scaffold'."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "BODHI achieves very large effect sizes on curiosity and humility: context-seeking Cohen's d = 16.38 (GPT-4.1-mini) and 19.54 (GPT-4o-mini), hedging d = 5.80, computed 'with Hedges' g correction'.",
+      "scope": "Table 1. Values shown as mean +- SD across five seeds.",
+      "quantities": [
+        {
+          "name": "cohens_d_context_seeking_as_printed",
+          "value": 16.38,
+          "unit": "Cohen's d",
+          "n": 5,
+          "baseline": "seed-level means, n = 5 per arm",
+          "source": "Table 1",
+          "status": "measures-something-else"
+        },
+        {
+          "name": "cohens_d_context_seeking_per_response",
+          "value": 4.04,
+          "unit": "Cohen's d",
+          "n": 1000,
+          "baseline": "binary outcome per response, 7.8% vs 97.3%",
+          "source": "reanalysis/d_from_printed_table1.py"
+        },
+        {
+          "name": "cohens_d_hedging_as_printed",
+          "value": 5.8,
+          "unit": "Cohen's d",
+          "n": 5,
+          "baseline": "seed-level means",
+          "source": "Table 1",
+          "status": "measures-something-else"
+        },
+        {
+          "name": "cohens_d_hedging_per_response",
+          "value": 0.66,
+          "unit": "Cohen's d",
+          "n": 1000,
+          "baseline": "binary outcome per response, 1.7% vs 21.9%",
+          "source": "reanalysis/d_from_printed_table1.py"
+        },
+        {
+          "name": "cohens_d_hedging_per_response_gpt4o_mini",
+          "value": 0.29,
+          "unit": "Cohen's d",
+          "n": 1000,
+          "baseline": "0.0% vs 4.1%",
+          "source": "reanalysis/d_from_printed_table1.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "All eight printed d values in Table 1 reproduce to within rounding as (difference of seed means) / (pooled SD of the five seed means), e.g. context-seeking 89.5 / sqrt((6.8^2+3.7^2)/2) = 16.35 vs 16.38 printed. So the standardiser is the seed-to-seed spread of a 200-case AVERAGE, which measures how reproducible the mean is, not how large the behavioural change is; d computed this way grows with cases per seed without the effect changing. Standardised per response, the same rates give 4.04 (context-seeking) and 0.66 (hedging, 'humility'), and 0.29 for GPT-4o-mini hedging. The Hedges' correction said to be applied is not visible either: with n = 5 per arm it would shrink 16.35 to 14.77. Separately, context-seeking is defined as 'at least one clarifying question' and the BODHI prompt instructs the model to produce '1-2 specific clarifying questions', so the curiosity metric is largely a manipulation check (did it follow the instruction), not an outcome. The +89.6 pp risk difference is real; the adjective 'very large effect on curiosity' is not supported by these numbers.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Seed-level SDs in Table 1 are larger than the binomial ceiling for 200 responses on fixed cases: 6.8 pp printed for the GPT-4.1-mini baseline context-seeking rate (mean 7.8%) against at most 1.9 pp if each seed re-samples responses on the same 200 vignettes.",
+      "scope": "Our derivation from Table 1; the supplement defining the seed procedure was not read.",
+      "quantities": [
+        {
+          "name": "seed_sd_over_binomial_ceiling_context_seeking_baseline",
+          "value": 3.6,
+          "unit": "ratio",
+          "n": 5,
+          "baseline": "sqrt(p(1-p)/200) = 1.9 pp",
+          "source": "reanalysis/d_from_printed_table1.py"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "not-identifiable",
+        "why": "Either seeds change which cases are drawn, or per-seed n is not 200, or 'SD' is something other than between-seed SD. Each has a different consequence for the CIs. The implied per-seed n differs across rows (about 16 for one, about 80 for another), so no single reading fits. Needs the supplement S3."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "BMJ Health Care Inform 2026;33:e101877, Table 1 and Results",
+      "status": "verified-usable",
+      "fetch_cmd": "curl -sL -o bmj.pdf https://informatics.bmj.com/content/bmjhci/33/1/e101877.full.pdf",
+      "bytes": 617240,
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "pdftotext bmj.pdf; Table 1 transcribed into reanalysis/d_from_printed_table1.py; curl -s 'https://api.crossref.org/works?filter=updates:10.1136/bmjhci-2025-101877'",
+        "result": "Table 1 transcribed (8 rows). Crossref: 0 updates (no correction) on 2026-09-30. Licence CC BY-NC 4.0."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "https://github.com/criticaldata/bodhi (zoo copy: dojo/bodhi-llms, commit 51e1381); PyPI bodhi-llm",
+      "status": "present-but-insufficient",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "find dojo/bodhi-llms -type f; read bodhi/prompts.py; curl -s -o /dev/null -w '%{http_code}' https://pypi.org/pypi/bodhi-llm/json (200)",
+        "result": "The library ships the two-pass prompts and a wrapper. No evaluation harness, no HealthBench outputs, no per-response scores, so none of Table 1 can be recomputed from it."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "supplement",
+      "locator": "online supplemental material S2-S5 (prompts, seeds, d formula, metric definitions)",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "not fetched",
+        "result": "Would settle c3 and the Hedges question. Next step for this record."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "xiang2026-dojo"
+    }
+  ],
+  "open_questions": [
+    "Fetch the supplement: how are the five seeds defined, and what exactly is the SD in Table 1? (c3)",
+    "A matched two-pass control without the virtue content would show how much of the +16.6 pp is BODHI and how much is 'think first'.",
+    "Report context-seeking as a risk difference with a response-level or case-clustered interval; retire the seed-level d.",
+    "DOJO (xiang2026-dojo) cites this validation as '1,800 observations'; this paper says 2,000 (200 x 5 x 2). Which is right?"
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-30",
+    "verified": "2026-09-30",
+    "notes_file": "NOTES.md"
+  }
+}

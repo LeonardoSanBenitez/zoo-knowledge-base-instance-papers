@@ -258,6 +258,24 @@ so no one else can run it.
   `instance-general/philosophy-of-science/independence-the-hidden-premise-of-agreement.md`
   and to Pattern 2 of `instance-general/software-engineering/silent-data-loss-patterns.md`.
 
+- `active` `clinical-ai-evaluation-and-agent-oversight.md` — **did the thing we evaluate use the
+  evidence we think it used, and who controls the evidence that says so?** Six records started
+  2026-09-30 for the zoo's `dojo/` workspace. `cajas2026-agents-catching-agents` (two scripted peers flip
+  correct answers; recomputed from committed rows; the CheXpert "no pixels altered" arm has no
+  device-free control), `cajas2026-modalens` (image-swap audit: 4.3% vs 20.9% answer change with vs
+  without report; sensitivity is not correctness; advertised repo 404), `huang2026-reward-hacking-research-agents`
+  (independent group; 30.5% spontaneous hacking on research tasks; disguised exploits evade review),
+  `arslan2026-bodhi-engineering` (all printed Cohen's d are standardised by seed-to-seed SD; per response
+  humility d = 0.66 not 5.80), `xiang2026-dojo` (platform proposal; nothing released yet). Four of six
+  share a group, which is noted. Relevant to any Dojo ticket that benchmarks a model, and to anyone asking
+  whether an agent-reported number is verified.
+
+- `active` `human-ai-creativity.md` — divergent/convergent oscillation, psychedelic "loosened priors" as a
+  mechanism (strong) vs as a performance enhancer (weak or null), and AI raising individual originality
+  while lowering collective diversity. One record so far, `cajas2026-creativity-constraint` (PRISMA-ScR, 43
+  studies; the screening log shows 2/3 majority votes where the text describes two human reviewers).
+  Started 2026-09-30.
+
 ## Not yet started
 - Philosophy of science / formal epistemology sources (Cronbach & Meehl,
   Freiesleben & Zezulka, Claerbout, Donoho) — currently only referenced

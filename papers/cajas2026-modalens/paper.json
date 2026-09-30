@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.4",
+  "id": "cajas2026-modalens",
+  "title": "ModaLens: Measuring Image Sensitivity in Report-Conditioned Medical VLMs",
+  "authors": [
+    "Sebastian Andres Cajas Ordonez",
+    "Maximin Lange",
+    "Quang Bui",
+    "Anqi Peter Li",
+    "Felipe Ocampo Osorio",
+    "Rafi Al Attrach",
+    "Kushul Reddy Palakala",
+    "Sahil Kapadia",
+    "Zakaria Laouabdia Sellami",
+    "Xinyue Zhang",
+    "Ashley Zhang",
+    "Leo Anthony Celi"
+  ],
+  "year": 2026,
+  "venue": "arXiv preprint (cs.CV), under review",
+  "area": [
+    "clinical-ai-evaluation-and-agent-oversight"
+  ],
+  "identifiers": {
+    "arxiv": "2609.15635v1",
+    "url": "https://arxiv.org/abs/2609.15635v1"
+  },
+  "record_status": "active",
+  "read_depth": "read-full-text",
+  "cost": {
+    "tool_calls": 6,
+    "bytes_downloaded": 517404,
+    "compute_notes": "PDF (45 pp) fetched with `curl -sL -o modalens.pdf https://arxiv.org/pdf/2609.15635v1`; main text (Secs 1-6) read in full via pdftotext; appendices A-N not read. Code repository advertised in the abstract returned 404 (with an invented-name control also 404, and the repo absent from the org's public list), so nothing could be run.",
+    "session": "2026-09-30 maria"
+  },
+  "triggers": [
+    "does a medical vision-language model actually look at the image",
+    "radiology report present, does the VLM ignore the image",
+    "image swap test for modality reliance",
+    "how to measure whether a multimodal model uses a modality",
+    "flip rate under counterfactual image substitution",
+    "text dominance over pixels in VLMs, blind faith in text",
+    "labels derived from reports, circular evaluation",
+    "MedGemma image sensitivity",
+    "answer changes with the image, sensitivity versus correctness",
+    "benchmarking a VLM like cosmos-reason on medical images"
+  ],
+  "methods": [
+    "paired-counterfactual-input-swap",
+    "cluster-bootstrap-over-patients",
+    "baseline-arm-negative-control"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "With the radiology report in the prompt, swapping the image for another study's changes MedGemma-27B's generated answer on 4.26% of trials; without the report on 20.94%, a paired increase of 16.7 points (patient-clustered 95% CI [15.6, 17.7]).",
+      "scope": "MIMIC-CXR test split, 3,199 cases from 293 patients, 14 questions per case (44,786 paired trials), explicit Yes/No answer instruction, image first. Under the original prompt with a lowercase first-token readout: 4.70% vs 17.07%, +12.4 [11.2, 13.6]. One institution, frontal films, English reports.",
+      "quantities": [
+        {
+          "name": "image_swap_flip_rate_report_present",
+          "value": 0.0426,
+          "unit": "proportion of paired trials",
+          "n": 44786,
+          "ci_low": 0.0395,
+          "ci_high": 0.046,
+          "ci_kind": "confidence",
+          "baseline": "same trial, report absent",
+          "source": "Table 3"
+        },
+        {
+          "name": "image_swap_flip_rate_report_absent",
+          "value": 0.2094,
+          "unit": "proportion of paired trials",
+          "n": 44786,
+          "ci_low": 0.197,
+          "ci_high": 0.2213,
+          "ci_kind": "confidence",
+          "baseline": "same trial, report present",
+          "source": "Table 3"
+        },
+        {
+          "name": "report_effect_on_flip_rate_points",
+          "value": 16.7,
+          "unit": "percentage points",
+          "n": 44786,
+          "ci_low": 15.6,
+          "ci_high": 17.7,
+          "ci_kind": "confidence",
+          "baseline": "absent minus present, patient-clustered bootstrap over 293 patients",
+          "source": "Table 3"
+        },
+        {
+          "name": "report_effect_text_block_first",
+          "value": 7.8,
+          "unit": "percentage points",
+          "n": 44786,
+          "ci_low": 6.9,
+          "ci_high": 8.8,
+          "ci_kind": "confidence",
+          "baseline": "same trials, text before image",
+          "source": "Table 2"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Direction is robust across readouts, templates, option order, an Uncertain option, three model lineages and substitute redraws, per the authors. Magnitude is not: block order alone moves the report effect from +12.4 to +7.8 on identical trials, and the pooled rate is a mix of findings at ceiling (five findings answer yes on 97.8-100% of report-absent trials) and findings that flip 16.8-32%. Quote the direction and the range, not '16.7 points' alone."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Removing the report does not reveal competent image reading: on the label-conditioned one-question set no tested model (MedGemma, Qwen3.5 9B/27B, LLaVA-NeXT) reads the substituted image above chance, so what replicates across lineages is report anchoring, not image competence.",
+      "scope": "Secondary one-question design; on the all-14 unit MedGemma's image does carry signal (image adds 0.165 balanced accuracy without the report).",
+      "quantities": [
+        {
+          "name": "balanced_accuracy_report_only",
+          "value": 0.77,
+          "unit": "balanced accuracy vs report-derived labels",
+          "n": 44786,
+          "baseline": "all-14 design",
+          "source": "Sec 4.2"
+        },
+        {
+          "name": "balanced_accuracy_report_plus_image",
+          "value": 0.717,
+          "unit": "balanced accuracy vs report-derived labels",
+          "n": 44786,
+          "baseline": "all-14 design",
+          "source": "Sec 4.2"
+        },
+        {
+          "name": "image_x_report_interaction_balanced_accuracy",
+          "value": -0.218,
+          "unit": "balanced accuracy",
+          "n": 44786,
+          "baseline": "pooled over trials; macro-average -0.128",
+          "source": "Sec 4.2"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The authors state the circularity themselves: labels are report-derived, so 'adding the image lowers accuracy' means 'moves away from the report's label', not 'the image misleads'. This is the correct reading and the paper holds to it."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Warning the model that the report may not describe the image and may be wrong leaves report anchoring intact: one-question flip rate 1.50% under the warning vs 1.22% plain, +0.28 points [-0.13, 0.74]; under the warning the readout matches the substituted image's label on only 8.49% of label-changed pairs.",
+      "scope": "Framing intervention only, no temporal consistency enforced.",
+      "quantities": [
+        {
+          "name": "flip_rate_change_under_unreliability_warning",
+          "value": 0.28,
+          "unit": "percentage points",
+          "n": 3199,
+          "ci_low": -0.13,
+          "ci_high": 0.74,
+          "ci_kind": "confidence",
+          "baseline": "plain framing, same answer instruction",
+          "source": "Sec 4.1 Robustness; Appendix D"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "A prompt warning is not a control on modality reliance. Useful negative result for anyone who thinks 'tell it to look' is a fix."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Answer-bearing text drives the reduced sensitivity: length-matched neutral prose gives an 8.2% flip rate and boilerplate 7.1% (vs 10.3% no report, 1.4% full report); deleting the sentences that mention the queried finding raises it to 11.6%; a sentence stating the answer lowers it to 3.1%.",
+      "scope": "One-question design, text-content controls; the authors note these do not fully isolate content from length and context.",
+      "quantities": [
+        {
+          "name": "flip_rate_neutral_prose_length_matched",
+          "value": 0.082,
+          "unit": "proportion",
+          "n": 3199,
+          "baseline": "no report 0.103, full report 0.014",
+          "source": "Sec 4.1 Text content"
+        },
+        {
+          "name": "flip_rate_finding_sentences_removed",
+          "value": 0.116,
+          "unit": "proportion",
+          "n": 3199,
+          "baseline": "full report 0.014",
+          "source": "Sec 4.1 Text content"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The right negative controls. Note neutral prose alone lowers sensitivity from 10.3% to 8.2%: part of the 'report effect' is any-text-present, not report content."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "A cumulative attention block on report-token positions restores image-swap sensitivity when it begins at or below about layer 22 of 62 and not from layer 28 upward (flip rate 1.50% to 7.75% when blocked from layer 0, against 12.00% with no report); difference-of-means steering and a linear probe transfer are negative.",
+      "scope": "400 one-question cases; report-specific against controls only over layers 0-20. A bound on when direct access to report tokens matters, explicitly not a localisation of report use.",
+      "quantities": [
+        {
+          "name": "flip_rate_report_attention_blocked_from_layer0",
+          "value": 0.0775,
+          "unit": "proportion",
+          "n": 400,
+          "baseline": "untouched 0.015, no report 0.120",
+          "source": "Sec 4.5"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Carefully bounded by the authors; the negative steering and probe results are reported with the same care as positives, which is rare."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "arXiv:2609.15635v1, Tables 1-5, Figs 1-3, Secs 1-6",
+      "status": "verified-usable",
+      "fetch_cmd": "curl -sL -o modalens.pdf https://arxiv.org/pdf/2609.15635v1",
+      "bytes": 517404,
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "pdftotext -layout modalens.pdf; main text read in full",
+        "result": "arXiv API lists only v1 (2026-09-14) on 2026-09-30. Appendices A-N (run records, per-finding tables, mechanistic detail) not read."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "https://github.com/criticaldata/MODALENS (advertised: 'Code, the exact prompts and a run record for every number')",
+      "status": "dangling",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "git clone --depth 1 https://github.com/criticaldata/MODALENS.git; curl -s -o /dev/null -w '%{http_code}' https://github.com/criticaldata/MODALENS and .../modalens; control: https://github.com/criticaldata/this-repo-does-not-exist-zz; gh api orgs/criticaldata/repos --jq '.[].name'",
+        "result": "Repository not found (git) and 404 for both casings; the invented-name control is also 404, so 404 discriminates on this host. The org's public repo list contains bodhi, benchmaxxing, creativity-survey and dojo but no modalens. Most likely private pending review. Re-check before anyone quotes the run records."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "benchmark",
+      "locator": "MIMIC-CXR (PhysioNet credentialed), VQA-RAD, SLAKE, OmniMedVQA, ProbMed",
+      "status": "gated",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "not fetched",
+        "result": "MIMIC-CXR requires PhysioNet credentialing; not needed for this record."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "cajas2026-agents-catching-agents"
+    },
+    {
+      "type": "cito:qualifies",
+      "target": "cajas2026-agents-catching-agents#c4",
+      "why": "ModaLens measures a near-100% report-absent yes rate for support devices in MedGemma. If the benchmaxxing model (Gemini 2.5 Flash) shares such a prior, '143 of 150 correct alone' is a prior, not a reading.",
+      "asymmetric_note": "Different models. This raises a hypothesis about the benchmaxxing arm and does not confirm it; the benchmaxxing adoption rate is untouched."
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "xiang2026-dojo"
+    }
+  ],
+  "open_questions": [
+    "The code repository is advertised and 404 on 2026-09-30. Re-check; if it becomes public, the run records make most numbers here re-checkable without PhysioNet access.",
+    "The report effect halves with text-first block order. Is there any order-independent summary of modality reliance, or is 'flip rate' inherently a property of the prompt as well as the model?",
+    "Report-derived labels cannot score visual correctness. The classifier surrogate (TorchXRayVision) is the only image-level label. What is the smallest radiologist-annotated subset that would turn this sensitivity audit into a correctness audit?",
+    "For the Dojo CosmosReason2 ticket: the paired image-swap audit is a cheap, report-free test of whether a general VLM uses the image at all on medical inputs (VQA-RAD image-decisive questions: 61.5% flip for MedGemma)."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-30",
+    "verified": "2026-09-30",
+    "notes_file": "NOTES.md"
+  }
+}

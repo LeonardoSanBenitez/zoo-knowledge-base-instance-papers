@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.4",
+  "id": "cajas2026-creativity-constraint",
+  "title": "Loosening and Tightening: A Scoping Review of Constraint in Human-AI Creativity (SSRN title: Creativity in Human-AI Systems: A Neurosymbolic Architecture for Constraint Modulation)",
+  "authors": [
+    "Sebastian Cajas",
+    "Kacper Dobek",
+    "Krzysztof Krawiec",
+    "Torleif Markussen Lunde",
+    "Rawan Abulibdeh",
+    "Neha Nageswaran",
+    "Raffaele Giancotti",
+    "Janan Arslan",
+    "Rogers Mwavu",
+    "Milit S. Patel",
+    "Ricardo Kleinlein",
+    "Leo Anthony Celi"
+  ],
+  "year": 2026,
+  "venue": "SSRN preprint 7022759 (version dated 2026-09-14 supplied)",
+  "area": [
+    "human-ai-creativity"
+  ],
+  "identifiers": {
+    "doi": "10.2139/ssrn.7022759",
+    "url": "https://ssrn.com/abstract=7022759"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-ran-artifacts",
+  "cost": {
+    "tool_calls": 6,
+    "bytes_downloaded": 0,
+    "compute_notes": "PDF supplied at dojo/literature/cajas2026creativity.pdf (320,490 bytes), read in full via pdftotext. Repo checked out at dojo/creativity-survey (commit 5aebfcf); screening log and query CSVs tabulated with a stdlib one-liner; the LLM screening scripts were read, not run (they need API keys).",
+    "session": "2026-09-30 maria"
+  },
+  "triggers": [
+    "divergent and convergent thinking in AI systems",
+    "does AI make people more creative",
+    "AI homogenises ideas, collective diversity",
+    "psychedelics and creativity, what is the evidence",
+    "REBUS relaxed beliefs under psychedelics and AI",
+    "neurosymbolic creativity architecture",
+    "temperature is not creativity",
+    "LLM-assisted literature screening, PRISMA with an LLM",
+    "how to evaluate creativity of generated outputs"
+  ],
+  "methods": [
+    "systematic-literature-review",
+    "cross-table-checksum-reconciliation"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "A PRISMA-ScR scoping search (Google Scholar 18 queries, n = 870; PubMed Central via BigQuery vector search 5 queries, n = 232) yields 1,102 records, 1,013 after deduplication, 79 after automated filtering and 43 included after full-text screening; 72 references cited in total.",
+      "scope": "Queries run 2025-11-20, year filters 2020+ (AI) and 2015+ (neuroscience), top 50 results per query.",
+      "quantities": [
+        {
+          "name": "records_identified",
+          "value": 1102,
+          "unit": "count",
+          "n": 1102,
+          "baseline": "870 + 232",
+          "source": "Fig. 1"
+        },
+        {
+          "name": "studies_included",
+          "value": 43,
+          "unit": "count",
+          "n": 79,
+          "baseline": "after full-text screening of 79",
+          "source": "Fig. 1"
+        },
+        {
+          "name": "google_scholar_rows_in_repo",
+          "value": 870,
+          "unit": "count",
+          "n": 18,
+          "baseline": "sum of rows over the 18 query CSVs",
+          "source": "dojo/creativity-survey, recomputed"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Flow arithmetic closes (870+232=1102; 1102-89=1013; 1013-934=79; 79-36=43). The 870 Google Scholar rows are in the repo; the screening log holds exactly 43 rows, all 'Accept' (24 Google Scholar, 19 PubMed)."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Manual screening was performed by two independent human reviewers; an LLM pre-screening tool (ChatGPT) only flagged borderline records, and all inclusion decisions were made by humans, with a designated tiebreaker.",
+      "scope": "Supplementary Methods S2, titled 'Three-rater screening protocol'.",
+      "quantities": [
+        {
+          "name": "inclusions_decided_by_2_of_3_majority",
+          "value": 19,
+          "unit": "count",
+          "n": 43,
+          "baseline": "screening-log Final-Comment 'Majority vote (2/3)'",
+          "source": "results/screening-log.csv, recomputed"
+        },
+        {
+          "name": "inclusions_decided_by_tiebreaker",
+          "value": 6,
+          "unit": "count",
+          "n": 43,
+          "baseline": "Final-Comment 'Tie-breaker: ...'",
+          "source": "results/screening-log.csv, recomputed"
+        }
+      ],
+      "evidence": [
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "not-identifiable",
+        "why": "The log records majority votes out of THREE (2/3 on 19 inclusions, 3/3 on 13), plus 'Majority Maybe (2/3)' and tiebreaker rows. The repo ships two LLM reviewers that output Accept/Reject/Maybe decisions (google-scholar/4-chatgpt-screening, pubmed/5-gemini-crossvalidation). With two humans and one LLM voting, a 2/3 majority can be LLM-decided whenever the humans split, which is not what the text says. With three humans it is consistent, but the text names two. The log does not say who the three voters were. A question for the authors, not an accusation."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The evidence for the mechanism (psychedelics relax precision-weighting of priors and increase cross-network connectivity) is considerably stronger than the evidence that psychedelics enhance creative performance; a placebo-controlled LSD microdosing trial found no objective creativity improvement despite subjective reports of one.",
+      "scope": "The review's own synthesis of Carhart-Harris & Friston 2019, Daws et al. 2022, Murphy et al. 2025, Mason et al. 2021, Bonnieux et al. 2023. We have NOT read those primaries.",
+      "quantities": [],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "A candid and correct framing, and the right one to keep: the architecture borrows a mechanism, not an outcome. Worth a primary-source read of Murphy 2025 (in the screening log, PMC11775047) before quoting."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Generative AI assistance raises the originality of individual outputs while reducing the collective diversity of ideas across users (Doshi & Hauser 2024), so a divergent engine must be evaluated on ensemble-level diversity, and repeated sampling of one model is self-consistency, not ensemble diversity.",
+      "scope": "Design recommendation resting on a secondary citation.",
+      "quantities": [],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "Consistent with bommasani2022-homogenization and the zoo's correlated-error entries: diversity across instances of one model is mostly illusory. The review proposes but does not run the comparison (Table 3)."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Every claim of advantage in the proposed dual-engine (divergent engine / convergent neurosymbolic layer / ensemble / human oversight) architecture is conditional on comparisons not yet run; Table 3 states, per claim, the comparison and the outcome that would weaken it.",
+      "scope": "The architecture is a design proposal, with an illustrative scenario explicitly not offered as evidence.",
+      "quantities": [],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Rare honesty for a framework paper: falsification conditions written down in advance. They also note that natural-language self-verification is the loosest Kautz coupling (LLM self-critique) and that a strictly neurosymbolic convergent layer needs an executable formal core; this is the same distinction the zoo's formal-methods work lives on."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "SSRN 7022759, Fig. 1 (PRISMA flow), Tables 1-3, Supplementary Methods S1-S4 (zoo copy: dojo/literature/cajas2026creativity.pdf)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "pdftotext dojo/literature/cajas2026creativity.pdf; read in full; flow arithmetic checked by hand",
+        "result": "Read. Some page text (S2.1 LLM pre-screening details, S3 criteria) is truncated in the extracted text; the criteria list itself was not recovered. Crossref correction query not run for the SSRN DOI."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "https://github.com/criticaldata/creativity-survey (zoo copy: dojo/creativity-survey, commit 5aebfcf)",
+      "status": "present-but-insufficient",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "python -c \"import csv,collections; r=list(csv.DictReader(open('results/screening-log.csv',encoding='utf-8-sig'))); print(len(r), collections.Counter(x['Final-Comment'][:30] for x in r))\"; summed rows of google-scholar/1-keyword-search/queries/*.csv",
+        "result": "43 included rows with decision and comment; 870 Google Scholar rows. Only INCLUDED records are logged with votes, so the 36 full-text exclusions and the individual votes (who voted what) cannot be audited. Scripts need API keys; one hard-codes a path on an author's machine to load its .env."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:agreesWith",
+      "target": "bommasani2022-homogenization",
+      "why": "Both: outputs from one model family converge, so 'diverse candidates' from repeated sampling are not independent. Here as a design principle, there as a measured outcome-homogenization effect."
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "arslan2026-bodhi-engineering"
+    }
+  ],
+  "open_questions": [
+    "Who were the three voters in 'Majority vote (2/3)'? If one was an LLM, how many of the 19 majority inclusions did it decide? (c2)",
+    "Log the excluded records and per-rater votes too; an inclusion-only log cannot show selection.",
+    "Primary-source read of Murphy et al. 2025 (LSD microdosing null) and Doshi & Hauser 2024 (homogenization) before either enters instance-general.",
+    "The proposed measurement model (Table 2) separates originality, value, diversity, agency, learning, transformation. Does any existing human-AI creativity dataset measure more than two of these on the same participants?"
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-30",
+    "verified": "2026-09-30",
+    "notes_file": "NOTES.md"
+  }
+}

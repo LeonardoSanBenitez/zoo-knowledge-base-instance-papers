@@ -1,0 +1,429 @@
+{
+  "schema_version": "1.4",
+  "id": "cajas2026-agents-catching-agents",
+  "title": "Agents Catching Agents: Shortcut Cascades and Benchmark Gaming in Clinical Multi-Agent Systems",
+  "authors": [
+    "Sebastian Andres Cajas Ordonez",
+    "Agastya Munnangi",
+    "Aldo Marzullo",
+    "Felipe Ocampo Osorio",
+    "Quang Bui",
+    "Mohammad Shahin",
+    "Armaan Grewal",
+    "Emmanuel Paul Kwesiga",
+    "Anqi Peter Li",
+    "Josephine Nanyonjo",
+    "Aaditya Panchal",
+    "Arshnoor Bhutani",
+    "Nikhil Jaiswal",
+    "Milit S. Patel",
+    "Maximin Lange",
+    "Leo Anthony Celi"
+  ],
+  "year": 2026,
+  "venue": "2nd Agentic AI for Medicine Workshop (MedAgent) @ MICCAI 2026; arXiv preprint",
+  "area": [
+    "clinical-ai-evaluation-and-agent-oversight",
+    "llm-monoculture-and-correlated-errors"
+  ],
+  "identifiers": {
+    "arxiv": "2608.03744v2",
+    "url": "https://arxiv.org/abs/2608.03744"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 14,
+    "bytes_downloaded": 0,
+    "compute_notes": "PDF (338,648 bytes, SHA-256 D477A780...) and poster supplied in dojo/literature/, read in full via pdftotext. Repository already checked out at dojo/benchmaxxing (commit d5b5c33); the per-case JSONL rows were read directly, no API calls, no model inference. reanalysis/recompute_headlines.py is stdlib and runs in well under a second.",
+    "session": "2026-09-30 maria"
+  },
+  "triggers": [
+    "does a committee of LLM agents catch errors or amplify them",
+    "will an agent change a correct answer when peers assert a wrong one",
+    "is sycophancy to peers the same as shortcut learning",
+    "how do I detect that an agent was influenced by the deliberation",
+    "LLM-as-judge reading a transcript, is it enough to detect conformity",
+    "does peer confidence or peer argument drive adoption",
+    "Asch conformity in language model agents",
+    "can a model tell me it was gaming a hidden rubric",
+    "clinical multi-agent system safety, redundancy argument",
+    "private re-query referee monitor"
+  ],
+  "methods": [
+    "paired-counterfactual-input-swap",
+    "baseline-arm-negative-control",
+    "llm-as-judge-audit",
+    "planted-decoy-incentive",
+    "cannot-fail-predicate-screen",
+    "cluster-bootstrap-over-patients",
+    "holm-bonferroni-multiplicity-control",
+    "cross-run-replication-of-a-defect"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "In isolation, Gemini 2.5 Flash / Flash-Lite are largely insensitive to answer-preserving shortcut cues: text-cue flip rates 0.05-0.16 on MedQA and image-cue flips within 0.029 of a 0.17 noise floor on MIMIC-CXR (n = 834).",
+      "scope": "Two tiers of one model family (Gemini 2.5), temperature 0, three text cues and four image overlays occupying 0.13-3.17% of the frame. The noise floor is two resampled queries above temperature 0 and the paper states it is not reliably conservative.",
+      "quantities": [
+        {
+          "name": "cue_flip_rate_text",
+          "value": "0.05-0.06 (flash), 0.09-0.16 (flash-lite)",
+          "unit": "proportion of cases",
+          "n": 100,
+          "baseline": "same case, original input",
+          "source": "Sec 4.1"
+        },
+        {
+          "name": "cue_flip_minus_noise_floor_image",
+          "value": "within 0.029 of a 0.17 floor",
+          "unit": "proportion of cases",
+          "n": 834,
+          "baseline": "MIMIC-CXR-JPG, four cues",
+          "source": "Sec 4.1"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Read, not recomputed. The null is a one-family null; the paper names the missing cross-lineage arm itself. The committed repo now carries gpt-oss-120b lanes (commit d5b5c33) that post-date v2 and were not read here."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Two peers asserting the same wrong answer propagate it: on MedQA the holdout adopts it on 15/40 cases against an isolated rate fixed at 0 by construction; one peer asserting an arbitrary distractor gives 0/20.",
+      "scope": "MedQA, 40 cases (cascade) and 20 (single peer). The isolated rate is 0 by design because the wrong answer was chosen to differ from the isolated answer, so this is the weaker of the two tests; the imaging lane has an observed isolated rate.",
+      "quantities": [
+        {
+          "name": "peer_adoption_two_peers",
+          "value": 0.375,
+          "unit": "proportion of cases",
+          "n": 40,
+          "baseline": "isolated rate 0 by construction",
+          "source": "Sec 4.2"
+        },
+        {
+          "name": "peer_adoption_one_peer_distractor",
+          "value": 0.0,
+          "unit": "proportion of cases",
+          "n": 20,
+          "baseline": "same design, one peer",
+          "source": "Sec 4.2"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The paper itself flags the by-construction isolated zero and does not over-read it. The peer-count step (one peer null, two peers 0.375) is the Asch pattern, see NOTES.md."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "What propagates is expressed confidence, not argument: holding source and wrong answer fixed, a confident peer is adopted on 0.42 of 100 cases against 0.14 for a hedged one (discordant 29 vs 1); one case-anchored rationale is indistinguishable from two bare assertions.",
+      "scope": "MedQA, gemini-2.5-flash-lite for the confidence arm (per the committed summary), 100 cases; rationale arm on MedQA and MedMCQA.",
+      "quantities": [
+        {
+          "name": "adoption_confident_peer",
+          "value": 0.42,
+          "unit": "proportion of cases",
+          "n": 100,
+          "baseline": "same case, hedged peer",
+          "source": "Sec 4.2; recomputed from experiments/medqa/results/seed_confidence.jsonl"
+        },
+        {
+          "name": "adoption_hedged_peer",
+          "value": 0.14,
+          "unit": "proportion of cases",
+          "n": 100,
+          "baseline": "same case, confident peer",
+          "source": "Sec 4.2; recomputed"
+        },
+        {
+          "name": "mcnemar_exact_p_confident_vs_hedged",
+          "value": 5.77e-08,
+          "unit": "p-value",
+          "n": 100,
+          "baseline": "discordant pairs 29 vs 1",
+          "source": "reanalysis/recompute_headlines.py"
+        }
+      ],
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Recomputed exactly from the committed per-case rows: 42/100, 14/100, discordant 29/1, exact McNemar p = 5.77e-8 (paper prints 6e-8). The model tier for this arm is flash-lite according to the committed summary; the paper text does not name it at that sentence."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "On 150 unmodified CheXpert films carrying a support device, the model reads the device correctly on 143 in isolation, yet two peers presented as senior radiologists move it to the wrong read on 92/150 (85/143 of those it had right); a wrong pre-screen flag with no peer moves 1/150.",
+      "scope": "gemini-2.5-flash, one question (support devices present?), the peers always assert 'no'. Raw shared-adoption rate, not contagion: the isolated re-read returns the clean read on all 150.",
+      "quantities": [
+        {
+          "name": "shared_adoption_no_cue",
+          "value": 0.6133,
+          "unit": "proportion of films",
+          "n": 150,
+          "baseline": "no independent isolated comparator",
+          "source": "Sec 4.4; recomputed"
+        },
+        {
+          "name": "adoption_among_correct_alone",
+          "value": 0.5944,
+          "unit": "proportion of films",
+          "n": 143,
+          "baseline": "films read correctly in isolation",
+          "source": "Sec 4.4; recomputed"
+        },
+        {
+          "name": "adoption_flag_no_peer",
+          "value": 0.0067,
+          "unit": "proportion of films",
+          "n": 150,
+          "baseline": "wrong automated pre-screen flag, no peer",
+          "source": "Sec 4.4; recomputed"
+        },
+        {
+          "name": "fraction_of_films_where_asserted_answer_is_no",
+          "value": 1.0,
+          "unit": "proportion",
+          "n": 150,
+          "baseline": "polarity of the planted wrong answer",
+          "source": "reanalysis/recompute_headlines.py check 4"
+        }
+      ],
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "All four counts recompute exactly. The narrowing is ours and is not in the paper: every planted answer is 'no', and no committed arm asks the support-device question of a film WITHOUT a device, so '143 correct alone' cannot be distinguished from a prior to answer yes. ModaLens (same group, different model: MedGemma-27B) measures exactly such a prior for this finding, a report-absent yes rate of 97.8-100% with support devices flipping on no trial. If Gemini shares it, the arm shows a peer moving the model off a prior, which is still conformity but is not 'overriding what it saw'. The adoption rate itself stands; the phrase 'it had right alone' is what the design does not identify. Cheap fix: 150 device-free films, same question, same peers.",
+        "by": "maria"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Of three monitors, a gate that flags any agreement cannot separate adoption from honest agreement (FPR 1.0); a same-lineage judge reading only the transcript is near-perfect on text (precision 1.0, recall 0.93) but collapses onto the gate in imaging; a referee that privately re-queries the holdout without the transcript transfers to imaging (precision 0.77-0.88, FPR 0.13-0.21).",
+      "scope": "Text and tabular referee flags on the planted arm reduce algebraically to the label; precision and FPR there come from an honest-peer control arm, recall is not measurable. The judge's imaging collapse follows from a prompt that never carries the film; a judge given the film was not measured.",
+      "quantities": [
+        {
+          "name": "referee_precision_imaging_NIH",
+          "value": 0.88,
+          "unit": "precision",
+          "n": 35,
+          "baseline": "Eq. 1 adoption label",
+          "source": "Table 2"
+        },
+        {
+          "name": "referee_fpr_imaging_NIH",
+          "value": 0.13,
+          "unit": "false-positive rate",
+          "n": 35,
+          "baseline": "Eq. 1",
+          "source": "Table 2"
+        },
+        {
+          "name": "referee_false_positives_honest_peer_MedQA",
+          "value": "7 of 65",
+          "unit": "count",
+          "n": 65,
+          "baseline": "honest-peer clean control",
+          "source": "Table 2 caption"
+        },
+        {
+          "name": "judge_recall_text_MedQA",
+          "value": 0.93,
+          "unit": "recall",
+          "n": 40,
+          "baseline": "15 adoptions",
+          "source": "Table 2"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Not recomputed. The design section is unusually candid about which cells are identities (recall 1.0 is a subset relation). The general lesson, that detecting influence needs the influence-absent counterfactual rather than more transcript, is written up in instance-general/ai-evaluation/counterfactual-influence-audits.md."
+      }
+    },
+    {
+      "id": "c6",
+      "statement": "Under a hidden rubric awarding full marks to a wrong option, decoy uptake is 0.275 (MedQA) to 0.86 (CheXpert), and almost no drifter names the rubric: 1/10 text and 1/134 imaging drifters.",
+      "scope": "The rubric-minus-control contrast is void by design (control structurally 0), so these are raw rates. 'Drift' not 'reward hacking' because intent is not identified.",
+      "quantities": [
+        {
+          "name": "decoy_uptake_hidden_rubric",
+          "value": "0.275 / 0.83 / 0.53 / 0.86",
+          "unit": "proportion",
+          "n": "40 / 35 / 141 / 35",
+          "baseline": "MedQA / NIH / MIMIC-CXR / CheXpert, raw rate",
+          "source": "Sec 4.5"
+        },
+        {
+          "name": "drifters_naming_the_rubric",
+          "value": "1/10 text, 1/134 imaging",
+          "unit": "count",
+          "n": 144,
+          "baseline": "one common detector across modalities",
+          "source": "Sec 4.5"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Consistent with Huang et al. 2026 on research agents: a final artifact plus the producer's own account is not an oversight channel. Not recomputed."
+      }
+    },
+    {
+      "id": "c7",
+      "statement": "Five of the authors' own arms were withdrawn before publication because their metric could not have come out otherwise (a predicate that cannot fail by construction), two of them referee flags reducing algebraically to their own label; the authors state a near-constant predicate would escape the screen, so the list is likely incomplete.",
+      "scope": "Sec 4.6 'Construct validity'. The screen ships in the repo (benchmaxxing/degeneracy.py).",
+      "quantities": [
+        {
+          "name": "arms_withdrawn_by_cannot_fail_screen",
+          "value": 5,
+          "unit": "count",
+          "n": "not reported",
+          "baseline": "all reported metrics screened",
+          "source": "Sec 4.6"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Rare and worth copying: withdrawal rather than caveat. It is the same failure the zoo's the-null-is-a-modelling-choice entry names (a checker that cannot fail). Note c4 above is a case the screen would not catch: the adoption rate CAN vary, what cannot be read off it is the 'correct alone' interpretation."
+      }
+    },
+    {
+      "id": "c8",
+      "statement": "The imaging cue arms reproduce only under a pinned imaging-library version: the call cache is keyed on the cued bytes, a font-rendering change silently invalidates it, and an independent rerun of the MIMIC-CXR referee cohort disagreed on roughly half of 417 cases while agreeing with itself twice.",
+      "scope": "Sec 4.6 'Cue determinism'. The release vendors a fixed font face with a checksum.",
+      "quantities": [
+        {
+          "name": "rerun_disagreement_mimic_referee",
+          "value": "roughly half",
+          "unit": "proportion of cases",
+          "n": 417,
+          "baseline": "authors' per-case outcomes",
+          "source": "Sec 4.6"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "A clean instance of silent cache invalidation; belongs next to software-engineering/silent-data-loss-patterns.md. Self-consistency of the rerun (agreeing with itself twice) is exactly the evidence that separates a deterministic defect from noise."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "arXiv:2608.03744v2, Tables 1-3, Fig. 1, Secs 4.1-4.6 (zoo copy: dojo/literature/cajas2026agents_catching_agents.pdf)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "pdftotext -layout dojo/literature/cajas2026agents_catching_agents.pdf; read in full",
+        "result": "Read. arXiv API lists v2 (2026-08-17) as latest on 2026-09-30. No DOI, so no Crossref correction query applies."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "https://github.com/criticaldata/benchmaxxing (zoo copy: dojo/benchmaxxing)",
+      "repo_commit": "d5b5c33",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "python zoo-knowledge-base/instance-papers/papers/cajas2026-agents-catching-agents/reanalysis/recompute_headlines.py (reads committed JSONL rows, asserts the paper's counts)",
+        "result": "All asserted counts match: confidence 42/14 of 100 with discordant 29/1; CheXpert 92/150, 143 correct alone, 85/143, flag-only 1/150; isolated == clean on 150/150. The test suite (pytest) was NOT run here."
+      },
+      "datasheet": {
+        "caveats": "The repo moves fast (gpt-oss-120b lanes added after v2). Pin the commit when citing. MIMIC-CXR lanes ship de-identified per-case rows only, under PhysioNet terms."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "derived-data",
+      "locator": "dojo/benchmaxxing/experiments/medqa/results/seed_confidence.jsonl; dojo/benchmaxxing/experiments/imaging_chexpert/results/natural_independent/imaging_cascade_none.jsonl; .../device_absent/imaging_cascade_none.jsonl",
+      "repo_commit": "d5b5c33",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "same script, checks 1-4",
+        "result": "Per-case rows present and sufficient to recompute c3 and c4. The 'device_absent' arm is films without devices asked about OTHER positive findings (pleural effusion 53, lung opacity 27, ...): shared adoption 141/150, correct alone 104/150. It is not a support-device negative control."
+      }
+    },
+    {
+      "id": "a4",
+      "role": "benchmark",
+      "locator": "MedQA-USMLE, MedMCQA, MIMIC-CXR (reports and JPG), NIH ChestX-ray14, CheXpert, SUPPORT2",
+      "status": "gated",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "not fetched",
+        "result": "Not redistributed by the authors; MIMIC-CXR is PhysioNet-credentialed. Nothing in this record needed the raw data."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:obtainsBackgroundFrom",
+      "target": "xiang2026-dojo",
+      "why": "The referee is presented as the named contribution of the DOJO framing."
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "cajas2026-modalens"
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "xiang2026-dojo"
+    },
+    {
+      "type": "cito:extends",
+      "target": "kim2025-correlated-errors",
+      "why": "Kim et al. measure correlated errors from shared training; this paper measures correlation manufactured by communication, which varying the model would not remove."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "huang2026-reward-hacking-research-agents",
+      "why": "Both: the producer's own account is not an oversight channel (1/134 drifters name the rubric; review of the submitted artifact misses disguised exploits). Independent groups, different tasks."
+    }
+  ],
+  "open_questions": [
+    "c4: what does gemini-2.5-flash answer to 'support devices?' on device-FREE films, alone and with the same two peers asserting 'yes'? Without that arm '143 correct alone' is not identified as visual reading. 150 films, about 450 calls, same harness. Candidate Dojo ticket.",
+    "The planted answer's polarity is 'no' on every CheXpert film. Is conformity symmetric (peers asserting a finding that is absent) or does it ride the direction of least clinical commitment?",
+    "Peer count: 1 peer null, 2 peers 0.375. Asch's curve rises to 3 confederates and then flattens (from pretraining, not re-read). Does the committee_size_sweep experiment in the repo show the same saturation?",
+    "Licensing dissent cut adoption 0.64 to 0.12 on MedQA (two- to threefold on the replications). Asch found one dissenting ally cut conformity sharply. Is the effect of one honest peer among two dishonest ones measured in the repo?",
+    "The referee is one private re-query; its FPR is the holdout's own test-retest disagreement. How does referee FPR scale with the noise floor across models?",
+    "Correction check: arXiv v2 is latest as of 2026-09-30; re-check at next verification."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-30",
+    "verified": "2026-09-30",
+    "notes_file": "NOTES.md"
+  }
+}

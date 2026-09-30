@@ -1,0 +1,7 @@
+GPT-4.1-mini  case_sd=0.0  response=  4.06  case_mean=  9.09  case_paired_dz=  6.43  seed_mean= 68.15   reported=16.38
+GPT-4.1-mini  case_sd=0.1  response=  3.30  case_mean=  6.39  case_paired_dz=  4.52  seed_mean= 58.69   reported=16.38
+GPT-4.1-mini  case_sd=0.2  response=  2.50  case_mean=  4.25  case_paired_dz=  3.02  seed_mean= 45.04   reported=16.38
+GPT-4o-mini   case_sd=0.0  response=  2.37  case_mean=  5.24  case_paired_dz=  3.70  seed_mean= 41.55   reported=19.54
+GPT-4o-mini   case_sd=0.1  response=  2.02  case_mean=  4.08  case_paired_dz=  2.88  seed_mean= 35.16   reported=19.54
+GPT-4o-mini   case_sd=0.2  response=  1.75  case_mean=  3.01  case_paired_dz=  2.12  seed_mean= 32.22   reported=19.54
+null control (p0=p1=0.5): {'response': -0.0, 'case_mean': -0.01, 'case_paired_dz': -0.01, 'seed_mean': -0.06}

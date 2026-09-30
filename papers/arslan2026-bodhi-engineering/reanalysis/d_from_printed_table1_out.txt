@@ -1,0 +1,11 @@
+metric                        d_seed  g_seed  printed  d_response(binary)
+4.1-mini overall score         11.40   10.30    11.56 
+4.1-mini context-seeking       16.35   14.77    16.38                4.04
+4.1-mini hedging                5.83    5.26     5.80                0.66
+4.1-mini communication         -2.97   -2.69    -2.94 
+4o-mini overall score           1.56    1.41     1.56 
+4o-mini context-seeking        19.61   17.71    19.54                2.36
+4o-mini hedging                 1.16    1.05     1.16                0.29
+4o-mini communication          -2.01   -1.81    -2.02 
+4.1-mini context-seeking baseline: printed seed SD 6.8 pp vs binomial ceiling 1.9 pp
+4.1-mini hedging bodhi: printed seed SD 4.6 pp vs binomial ceiling 2.9 pp

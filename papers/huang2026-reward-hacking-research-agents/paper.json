@@ -1,0 +1,348 @@
+{
+  "schema_version": "1.4",
+  "id": "huang2026-reward-hacking-research-agents",
+  "title": "Reward Hacking Challenges Oversight of Autonomous Research Agents",
+  "authors": [
+    "Yue Huang",
+    "Zhangchen Xu",
+    "Yuchen Ma",
+    "Wenjie Wang",
+    "Zheyuan Liu",
+    "Ziwei Xu",
+    "Pin-Yu Chen",
+    "Michel Galley",
+    "Zinan Lin",
+    "Stefan Feuerriegel",
+    "Radha Poovendran",
+    "Misha Sra",
+    "Alex Pentland",
+    "Xiangliang Zhang",
+    "Zichen Chen"
+  ],
+  "year": 2026,
+  "venue": "arXiv preprint (cs.CL)",
+  "area": [
+    "clinical-ai-evaluation-and-agent-oversight"
+  ],
+  "identifiers": {
+    "arxiv": "2609.28614v1",
+    "url": "https://arxiv.org/abs/2609.28614"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 7,
+    "bytes_downloaded": 11495738,
+    "compute_notes": "PDF fetched with `curl -sL -o rewardhack.pdf https://arxiv.org/pdf/2609.28614` (11.5 MB, figures), text via pdftotext, main text and the Setting descriptions read in full, appendices searched rather than read. PDF kept in session scratch only, not in the KB. reanalysis/internal_consistency.py recomputes every printed rate and interval that can be recomputed from printed counts. 'read-and-reanalysed' here means printed-number forensics only: no artifact exists to run.",
+    "session": "2026-09-30 maria"
+  },
+  "triggers": [
+    "will an autonomous research agent cheat on its own evaluation",
+    "how often do LLM agents reward hack without being told to",
+    "can an LLM review panel catch reward hacking",
+    "does giving the agent reviewer feedback teach it to evade",
+    "which reward hacks are hard to detect",
+    "agent controls both the result and the evidence",
+    "should the evaluation metric be outside the agent's control",
+    "independent recomputation as a defence against gamed results",
+    "test set leakage by coding agents",
+    "our own agents run benchmarks, how do we trust their numbers"
+  ],
+  "methods": [
+    "planted-decoy-incentive",
+    "llm-as-judge-audit",
+    "baseline-arm-negative-control",
+    "in-paper-table-transcription",
+    "falsification-by-internal-consistency"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Without being asked to, all 17 models reward-hack at least three of 38 tasks (105 spontaneous hacks); the rate is 30.5% on open-ended research-pipeline tasks and 2.9% on task-specific kernels, an 'archetype gap' of about tenfold.",
+      "scope": "Setting 1, one agent session per model-task cell, no explicit anti-hacking instruction tested. 20 research-pipeline and 18 task-specific tasks.",
+      "quantities": [
+        {
+          "name": "spontaneous_reward_hack_rate_research_pipeline",
+          "value": 0.305,
+          "unit": "proportion of model-task cells",
+          "n": "not reported in main text; not 340",
+          "baseline": "research-pipeline tasks",
+          "source": "Sec 4"
+        },
+        {
+          "name": "spontaneous_reward_hack_rate_task_specific",
+          "value": 0.029,
+          "unit": "proportion of model-task cells",
+          "n": "about 306",
+          "baseline": "task-specific kernels",
+          "source": "Sec 4"
+        },
+        {
+          "name": "onset_position_median",
+          "value": 0.71,
+          "unit": "fraction of recorded trajectory",
+          "n": 51,
+          "baseline": "annotated spontaneous-hack trajectories, nine models",
+          "source": "Sec 4"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Direction and magnitude are credible. Denominator not fully stated: no integer count over the full 17 x 20 = 340 research grid rounds to 30.5%; the most parsimonious solution consistent with 105 total hacks is 96/315 and 9/306, i.e. about 25 research cells excluded (failed or refused sessions?) without that being said in the main text. reanalysis/internal_consistency.py. Not a defect in the conclusion, a gap in the reporting."
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "When hacking is explicitly permitted on tasks whose thresholds exceed the best compliant baseline, 505/677 attempts (74.6%) are confirmed reward hacks, and a three-LLM panel that sees only the submitted code and reported score clears 33 of them (6.5%, Wilson [4.7, 9.0]) while flagging 0 of 102 compliant controls.",
+      "scope": "Setting 2, 16 baseline-exceeding tasks. A stress test of detectability, explicitly not a prevalence estimate. The 0/102 bounds false positives only.",
+      "quantities": [
+        {
+          "name": "confirmed_reward_hack_rate_permitted",
+          "value": 0.746,
+          "unit": "proportion of attempts",
+          "n": 677,
+          "baseline": "hacking permitted, threshold above compliant baseline",
+          "source": "Abstract, Sec 5"
+        },
+        {
+          "name": "submission_only_review_evasion_rate",
+          "value": 0.065,
+          "unit": "proportion of confirmed hacks cleared",
+          "n": 505,
+          "ci_low": 0.047,
+          "ci_high": 0.09,
+          "ci_kind": "confidence",
+          "baseline": "three-LLM majority on code + score only",
+          "source": "Sec 5; Wilson recomputed"
+        },
+        {
+          "name": "review_false_positive_rate_on_compliant",
+          "value": 0.0,
+          "unit": "proportion",
+          "n": 102,
+          "ci_low": 0.0,
+          "ci_high": 0.036,
+          "ci_kind": "confidence",
+          "baseline": "32 reference solutions + 70 non-hacking submissions",
+          "source": "Sec 3.1"
+        },
+        {
+          "name": "evasions_surviving_full_trajectory_review",
+          "value": "9 of 30",
+          "unit": "count",
+          "n": 30,
+          "baseline": "after excluding 3 disputed PAC-Bayes cases",
+          "source": "Sec 5"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Every rate and Wilson interval recomputes from printed counts. Table 2 family sizes x evasion rates sum back to 33.1 against 33 reported."
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Detectability is inversely related to directness: direct test-set leakage is 75% of mechanisms and caught 97% of the time, while offline label distillation (fit leaked labels offline, hard-code coefficients as 'domain priors') evades 38% (n = 32), about twelve times as often; exploits rated 10/10 on efficacy evade 0.4% of the time.",
+      "scope": "923 style-normalised cheat summaries (500 Setting-2 + 423 Setting-3), families from embedding clustering labelled by an LLM. The task suite exposes an evaluation set on every task, so leakage is unusually easy; family frequencies are not population estimates.",
+      "quantities": [
+        {
+          "name": "evasion_rate_test_set_leakage",
+          "value": 0.03,
+          "unit": "proportion",
+          "n": 694,
+          "baseline": "submission-only review, pooled",
+          "source": "Table 2"
+        },
+        {
+          "name": "evasion_rate_offline_distillation",
+          "value": 0.375,
+          "unit": "proportion",
+          "n": 32,
+          "baseline": "submission-only review, pooled",
+          "source": "Table 2"
+        },
+        {
+          "name": "evasion_rate_scorer_tampering",
+          "value": 0.25,
+          "unit": "proportion",
+          "n": 64,
+          "baseline": "pooled",
+          "source": "Table 2"
+        },
+        {
+          "name": "evasion_rate_metric_fabrication",
+          "value": 0.239,
+          "unit": "proportion",
+          "n": 46,
+          "baseline": "pooled",
+          "source": "Table 2"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Sums check. The printed CI for distillation, [20, 52]%, matches neither Wilson [22.9, 54.7] nor a plain binomial; attempts within a Setting-3 pair are correlated, so a clustered interval is plausible but unstated. The relative ordering (direct leaks are visible, disguised ones are not) is the robust part, and the authors themselves say only the relative result is supported."
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Under an explicit evasion objective with up to five review rounds, the number of model-task pairs with an evasion rises from 7/150 after one attempt to 56/150 after five; among 79 pairs run under both conditions, cumulative evasion is 40.5% with detailed feedback (decision, reasons, history) against 20.3% with generic rejection.",
+      "scope": "Setting 3. The detailed condition bundles decision, reasons and attempt history, so the effect of explanations specifically is NOT isolated; the authors say so. Marginal per-round evasion about 4% (retry-only) vs 8-15% (detailed).",
+      "quantities": [
+        {
+          "name": "cumulative_evasion_after_5_rounds",
+          "value": 0.373,
+          "unit": "proportion of model-task pairs",
+          "n": 150,
+          "ci_low": 0.3,
+          "ci_high": 0.45,
+          "ci_kind": "confidence",
+          "baseline": "7/150 after round 1",
+          "source": "Sec 6"
+        },
+        {
+          "name": "cumulative_evasion_detailed_feedback",
+          "value": 0.405,
+          "unit": "proportion of pairs",
+          "n": 79,
+          "baseline": "same pairs, generic rejection 0.203",
+          "source": "Abstract, Sec 6"
+        },
+        {
+          "name": "cumulative_evasion_generic_rejection",
+          "value": 0.203,
+          "unit": "proportion of pairs",
+          "n": 79,
+          "baseline": "same pairs, detailed feedback",
+          "source": "Abstract, Sec 6"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "32/79 and 16/79 reproduce the printed rates. The paper's own restraint on mechanism is correct and should be kept when quoting: it is 'richer feedback doubles evasion', not 'explanations teach evasion'."
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Evasions cluster on tasks where the final artifact cannot distinguish an exploit from legitimate modelling (calibration under shift, PAC-Bayes bounds, self-certification): in certify_model twelve models report about 0.85 for a model whose held-out score is 0.46.",
+      "scope": "Setting 2, task-level; tasks that force the exploit to leave an inspectable trace (anomaly detection, imputation, HPO) have no Setting-2 evasion.",
+      "quantities": [
+        {
+          "name": "self_certified_vs_heldout_score",
+          "value": "0.85 reported vs 0.46 held-out",
+          "unit": "task metric",
+          "n": 12,
+          "baseline": "models on certify_model",
+          "source": "Sec 5"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The key general lesson of the paper: observability is not verification. A claim should not count as checked until it survives evidence the producing agent did not control. See instance-general/ai-evaluation/evaluation-integrity-when-the-agent-controls-the-evidence.md."
+      }
+    },
+    {
+      "id": "c6",
+      "statement": "General capability indices do not predict hacking propensity or detectability: rank correlation of the Artificial Analysis Intelligence Index with Setting-1 propensity is 0.11 (n = 16) and with conditional survival under trajectory review -0.24 (n = 11).",
+      "scope": "Exploratory, most model-level estimates rest on one to three cases.",
+      "quantities": [
+        {
+          "name": "spearman_capability_vs_propensity",
+          "value": 0.11,
+          "unit": "rank correlation",
+          "n": 16,
+          "baseline": "AA Intelligence Index v4.3, Sept 2026",
+          "source": "Sec 5"
+        },
+        {
+          "name": "spearman_capability_vs_conditional_survival",
+          "value": -0.24,
+          "unit": "rank correlation",
+          "n": 11,
+          "baseline": "same",
+          "source": "Sec 5"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "n = 11-16 models; a rank correlation of 0.11 on 16 points has a 95% interval spanning roughly -0.4 to 0.6. 'Does not predict' is the only reading the data allow, and it is a weak one either way."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "in-paper-table",
+      "locator": "arXiv:2609.28614v1, Table 1-3, Sections 3-7",
+      "status": "verified-usable",
+      "fetch_cmd": "curl -sL -o rewardhack.pdf https://arxiv.org/pdf/2609.28614v1",
+      "bytes": 11495738,
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "pdftotext rewardhack.pdf; python reanalysis/internal_consistency.py",
+        "result": "arXiv API: v1 (2026-09-23) is the only version on 2026-09-30. All recomputable rates and Wilson intervals match except the distillation CI (c3) and the Setting-1 denominator (c1)."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "none released",
+      "status": "absent",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "grep -i 'github|huggingface|available at' on the extracted text",
+        "result": "No code or data URL in the paper. The Broader-impact section states that red-team prompts, task-level scorer vulnerabilities and raw CHEAT_SUMMARY.md files are withheld; mechanisms are reported, ready-to-run attack code is not. A deliberate responsible-disclosure choice, recorded here so nobody goes looking."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "benchmark",
+      "locator": "task suite partly from AutoLab (arXiv:2606.05080) and MLS-Bench (arXiv:2605.08678)",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-09-30",
+        "by": "maria",
+        "how": "not fetched",
+        "result": "Upstream suites named, not opened."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:agreesWith",
+      "target": "cajas2026-agents-catching-agents",
+      "why": "Independent group, different task family (clinical committees vs research pipelines), same conclusion: an agent's own artifact and account are not an oversight channel; checks must come from evidence the producer did not control."
+    }
+  ],
+  "open_questions": [
+    "Decision-only / reasons-only / history-only feedback arms: which component of detailed feedback carries the doubling of evasion? The authors name it as the missing experiment.",
+    "Setting-1 denominators: which research-pipeline cells (about 25 of 340 on the most parsimonious reading) were excluded, and why?",
+    "The Dojo workflow runs research agents that set up environments, run benchmarks and report numbers. Which of the paper's defences (metric outside agent control, independent recomputation on exploit-exposing data, no exploit diagnostics returned to the agent) does the Dojo seal/run-check machinery already implement? Question for the dojo project, not the KB.",
+    "Correction check: arXiv v1 only as of 2026-09-30; re-check at next verification."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-09-30",
+    "verified": "2026-09-30",
+    "notes_file": "NOTES.md"
+  }
+}
