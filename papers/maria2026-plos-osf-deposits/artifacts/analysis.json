@@ -1,0 +1,295 @@
+{
+ "counts": {
+  "sampled": 60,
+  "das_no_osf": 11,
+  "das_osf": 49,
+  "paper_files": 44,
+  "paper_with_listed_files": 44,
+  "paper_visible_code": 21,
+  "paper_archive_only": 4,
+  "files": 2170,
+  "files_modified_after_pub": 13,
+  "paper_modified_after_pub_unverified": 5,
+  "das_view_only": 14,
+  "files_version_gt1": 27,
+  "paper_empty-or-children": 1,
+  "paper_private": 3,
+  "paper_any_private": 3,
+  "paper_empty": 1
+ },
+ "das_names_osf": {
+  "k": 49,
+  "n": 60,
+  "pct": 81.7,
+  "ci95": [
+   70.1,
+   89.4
+  ]
+ },
+ "files_reachable": {
+  "k": 44,
+  "n": 49,
+  "pct": 89.8,
+  "ci95": [
+   78.2,
+   95.6
+  ]
+ },
+ "view_only": {
+  "k": 14,
+  "n": 49,
+  "pct": 28.6,
+  "ci95": [
+   17.8,
+   42.4
+  ]
+ },
+ "private": {
+  "k": 3,
+  "n": 49,
+  "pct": 6.1,
+  "ci95": [
+   2.1,
+   16.5
+  ]
+ },
+ "empty_parent_children": {
+  "k": 1,
+  "n": 49,
+  "pct": 2.0,
+  "ci95": [
+   0.4,
+   10.7
+  ]
+ },
+ "empty": {
+  "k": 1,
+  "n": 49,
+  "pct": 2.0,
+  "ci95": [
+   0.4,
+   10.7
+  ]
+ },
+ "dead": {
+  "k": 0,
+  "n": 49,
+  "pct": 0.0,
+  "ci95": [
+   0.0,
+   7.3
+  ]
+ },
+ "visible_code": {
+  "k": 21,
+  "n": 44,
+  "pct": 47.7,
+  "ci95": [
+   33.8,
+   62.1
+  ]
+ },
+ "mod_after_pub_unverified": {
+  "k": 5,
+  "n": 44,
+  "pct": 11.4,
+  "ci95": [
+   5.0,
+   24.0
+  ]
+ },
+ "verified_classes_files": {
+  "late": 10,
+  "replaced": 3
+ },
+ "replaced_after_pub": {
+  "k": 2,
+  "n": 44,
+  "pct": 4.5,
+  "ci95": [
+   1.3,
+   15.1
+  ]
+ },
+ "late_after_pub": {
+  "k": 4,
+  "n": 44,
+  "pct": 9.1,
+  "ci95": [
+   3.6,
+   21.2
+  ]
+ },
+ "changed_7d_plus": {
+  "k": 2,
+  "n": 44,
+  "pct": 4.5,
+  "ci95": [
+   1.3,
+   15.1
+  ]
+ },
+ "lag_days_all": [
+  1,
+  2,
+  2,
+  2,
+  2,
+  4,
+  29,
+  33,
+  87,
+  87,
+  87,
+  94,
+  124
+ ],
+ "verified_files": [
+  {
+   "doi": "10.1371/journal.pone.0339846",
+   "guid": "2eh7m",
+   "path": "/Study 1/Study 1 (1).zip",
+   "pub": "2026-01-05",
+   "version_dates": [
+    "2026-01-07"
+   ],
+   "class": "late",
+   "lag_days": 2
+  },
+  {
+   "doi": "10.1371/journal.pone.0339846",
+   "guid": "2eh7m",
+   "path": "/data.bris/Data_Availability_Statement.docx",
+   "pub": "2026-01-05",
+   "version_dates": [
+    "2026-01-07"
+   ],
+   "class": "late",
+   "lag_days": 2
+  },
+  {
+   "doi": "10.1371/journal.pone.0339846",
+   "guid": "5cqha",
+   "path": "/data.bris/Data_Availability_data.bris.docx",
+   "pub": "2026-01-05",
+   "version_dates": [
+    "2026-01-09"
+   ],
+   "class": "late",
+   "lag_days": 4
+  },
+  {
+   "doi": "10.1371/journal.pone.0353453",
+   "guid": "5ad62",
+   "path": "/README.md",
+   "pub": "2026-07-29",
+   "version_dates": [
+    "2026-07-30"
+   ],
+   "class": "late",
+   "lag_days": 1
+  },
+  {
+   "doi": "10.1371/journal.pone.0345106",
+   "guid": "t3zrn",
+   "path": "/SAPs/SAP_CoMIT RCT Predictors of child endline hb and mn status_Zhao.pdf",
+   "pub": "2026-04-03",
+   "version_dates": [
+    "2026-01-28",
+    "2026-05-06"
+   ],
+   "class": "replaced",
+   "lag_days": 33
+  },
+  {
+   "doi": "10.1371/journal.pone.0345106",
+   "guid": "t3zrn",
+   "path": "/SAPs/SAP_CoMIT RCT urinary iodine_Kyereh.pdf",
+   "pub": "2026-04-03",
+   "version_dates": [
+    "2026-06-29"
+   ],
+   "class": "late",
+   "lag_days": 87
+  },
+  {
+   "doi": "10.1371/journal.pone.0345106",
+   "guid": "t3zrn",
+   "path": "/SAPs/SAP_CoMIT RCT longitudinal food water security and dietary diversity_Gyimah.pdf",
+   "pub": "2026-04-03",
+   "version_dates": [
+    "2026-07-06"
+   ],
+   "class": "late",
+   "lag_days": 94
+  },
+  {
+   "doi": "10.1371/journal.pone.0345106",
+   "guid": "t3zrn",
+   "path": "/Public datasets/publicdata_comit rct uid PSC_kyereh.csv",
+   "pub": "2026-04-03",
+   "version_dates": [
+    "2026-06-29"
+   ],
+   "class": "late",
+   "lag_days": 87
+  },
+  {
+   "doi": "10.1371/journal.pone.0345106",
+   "guid": "t3zrn",
+   "path": "/Public datasets/publicdata_comit rct uid WRA_kyereh.csv",
+   "pub": "2026-04-03",
+   "version_dates": [
+    "2026-06-29"
+   ],
+   "class": "late",
+   "lag_days": 87
+  },
+  {
+   "doi": "10.1371/journal.pone.0345106",
+   "guid": "t3zrn",
+   "path": "/Publication Supporting Material/Haskell_Effect of MMN bouillon on Lactating Women VB12 VA_effect modification_VeriXiv 2026.docx",
+   "pub": "2026-04-03",
+   "version_dates": [
+    "2026-08-05"
+   ],
+   "class": "late",
+   "lag_days": 124
+  },
+  {
+   "doi": "10.1371/journal.pone.0357714",
+   "guid": "auyvp",
+   "path": "/sessionInfo.txt",
+   "pub": "2026-10-07",
+   "version_dates": [
+    "2026-03-15",
+    "2026-10-09"
+   ],
+   "class": "replaced",
+   "lag_days": 2
+  },
+  {
+   "doi": "10.1371/journal.pone.0357714",
+   "guid": "auyvp",
+   "path": "/Code.R",
+   "pub": "2026-10-07",
+   "version_dates": [
+    "2026-03-15",
+    "2026-10-09"
+   ],
+   "class": "replaced",
+   "lag_days": 2
+  },
+  {
+   "doi": "10.1371/journal.pone.0331161",
+   "guid": "mws4b",
+   "path": "/ACSA Citizen Science Discussion Paper - Science for All [For Public Sharing].pdf",
+   "pub": "2026-07-01",
+   "version_dates": [
+    "2026-07-30"
+   ],
+   "class": "late",
+   "lag_days": 29
+  }
+ ]
+}

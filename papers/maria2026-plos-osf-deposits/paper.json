@@ -1,0 +1,328 @@
+{
+ "schema_version": "1.4",
+ "id": "maria2026-plos-osf-deposits",
+ "title": "What an OSF link in a PLOS Data Availability statement delivers: files, view-only tokens, private nodes, and deposits that changed after publication (60 papers, 2026)",
+ "authors": [
+  "maria (zoo)"
+ ],
+ "year": 2026,
+ "venue": "zoo knowledge base, instance-papers",
+ "area": [
+  "computational-reproducibility-and-artifact-reuse"
+ ],
+ "identifiers": {
+  "url": "instance-papers/papers/maria2026-plos-osf-deposits/"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 40,
+  "bytes_downloaded": 32000000,
+  "compute_notes": "60 PLOS JATS fetches (~25 MB, parsed then discarded; only the DAS text is kept) and OSF API listing only, no file downloads: three passes of about 35-45 min wall clock each, dominated by two very large nodes (531 and 194 files) and a 0.5-1 s politeness delay. Version checks for 13 flagged files: under 1 min. All stdlib.",
+  "session": "2026-10-14"
+ },
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Of sampled 2026 PLOS research articles whose Data Availability statement names an OSF identifier, 89.8% have at least one cited OSF GUID that lists one or more files. None cited only dead (404/410) GUIDs.",
+   "scope": "Population: 647 PLOS research articles published 2026-01-01 to 2026-10-14 whose full text mentions both 'osf.io' and 'code' (PLOS search API; query in every artifact row). Seeded random sample of 60 (seed 20261014); 49 have an OSF GUID in the DAS itself (references excluded). A paper counts if ANY cited GUID lists a file. Listing only: nothing was downloaded, so 'lists a file' is not 'the file is usable'.",
+   "quantities": [
+    {
+     "name": "das_names_osf_of_sample",
+     "value": 0.8167,
+     "unit": "proportion",
+     "count": 49,
+     "denominator": 60,
+     "ci_low": 0.701,
+     "ci_high": 0.894,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py; Wilson score 95% interval"
+    },
+    {
+     "name": "osf_das_paper_lists_files",
+     "value": 0.898,
+     "unit": "proportion",
+     "count": 44,
+     "denominator": 49,
+     "ci_low": 0.782,
+     "ci_high": 0.956,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py; Wilson score 95% interval"
+    },
+    {
+     "name": "osf_das_paper_all_guids_dead",
+     "value": 0.0,
+     "unit": "proportion",
+     "count": 0,
+     "denominator": 49,
+     "ci_low": 0.0,
+     "ci_high": 0.073,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py; Wilson score 95% interval"
+    },
+    {
+     "name": "osf_das_paper_best_guid_empty_with_children",
+     "value": 0.0204,
+     "unit": "proportion",
+     "count": 1,
+     "denominator": 49,
+     "ci_low": 0.004,
+     "ci_high": 0.107,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py; Wilson score 95% interval"
+    },
+    {
+     "name": "osf_das_paper_best_guid_empty_no_children",
+     "value": 0.0204,
+     "unit": "proportion",
+     "count": 1,
+     "denominator": 49,
+     "ci_low": 0.004,
+     "ci_high": 0.107,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py; Wilson score 95% interval"
+    }
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Instrument controls (osf.io/cbhdv = 1 file of 1,301,939 B; osf.io/3bzu8 = 0 files with a 404 add-on) held on all three passes, and the analysis self-test reproduces fixed counts and the sibling record's printed Wilson interval. Narrower scope: a keyword-filtered population, one host, 2026 only, and the complement of the filter was not sampled. Much higher than the sibling's 37.7% 'resolves without delivering' for all hosts and years, which is consistent with OSF's API being queryable and with recency, and is not a contradiction: the two instruments ask different questions."
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "28.6% of these DAS links carry an OSF view_only token, i.e. an anonymous-review link to a project that is private without it. An instrument that keeps the GUID and drops the token calls 7 of them private.",
+   "scope": "14 of 49 papers whose DAS names OSF. In the first pass, which dropped tokens, 10 papers had a GUID answering 401; 7 of those 10 printed a view_only key in the same URL, and all 7 opened with it. The token is public (it is in the paper), so the data is reachable today; it is also revocable by the owner without any change to the printed link.",
+   "quantities": [
+    {
+     "name": "osf_das_with_view_only_token",
+     "value": 0.2857,
+     "unit": "proportion",
+     "count": 14,
+     "denominator": 49,
+     "ci_low": 0.178,
+     "ci_high": 0.424,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py; Wilson score 95% interval"
+    },
+    {
+     "name": "token_dropping_false_private",
+     "value": 0.7,
+     "unit": "proportion",
+     "count": 7,
+     "denominator": 10,
+     "baseline": "papers whose DAS GUID answered 401 to a token-dropping probe",
+     "source": "pass 1 vs pass 3, dev-science-ops/paper-retrospective-reproducibility/papers/_scouting/plos_osf.v1-dropped-view_only.jsonl"
+    }
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Measured directly in both directions: the same GUIDs answer 401 without the token and 200 with it. The defect it describes was present in this zoo's own tools (gate.py V1, acquire.py, the scout) and is fixed there with tests."
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "6.1% of these papers cite an OSF node that the public cannot read, under a DAS that presents the data as available.",
+   "scope": "3 of 49 (ejy56, urpkm, 67n3h; no view_only token printed). Two independent OSF services agree: the v2 API answers 401 and WaterButler (files.osf.io) answers 403; controls cbhdv 200/200 and an invented GUID 404/404. As of 2026-10-14 only; a node can be made public at any time. Not contacted to anyone.",
+   "quantities": [
+    {
+     "name": "osf_das_cites_private_node",
+     "value": 0.0612,
+     "unit": "proportion",
+     "count": 3,
+     "denominator": 49,
+     "ci_low": 0.021,
+     "ci_high": 0.165,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py; WaterButler check in NOTES.md; Wilson score 95% interval"
+    }
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Reproduced by a second, independent service. Narrow: it is a state on one date, and 'private' does not distinguish an embargo, an oversight and a deliberate restriction."
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "Of these papers whose cited OSF deposit lists files, 9.1% had a file first uploaded after the paper was published, and 4.5% had a file replaced by a new version after publication. Counting only changes 7 or more days after publication, 4.5%.",
+   "scope": "Denominator 44 papers with listed files (2,170 files). 13 files had date_modified after the publication date; every one was classified from its version history (date_created per version), none from date_modified alone: 10 'late' (first version after publication), 3 'replaced', 0 'metadata-only'. Lags in days: 1, 2, 2, 2, 2, 4, 29, 33, 87, 87, 87, 94, 124. The short lags are plausibly authors finishing uploads around the publication date. The long ones are not: in pone.0345106 a 'Public datasets' folder was first uploaded 87 days after publication. In pone.0357714 'Code.R' and 'sessionInfo.txt' were replaced 2 days after publication, so a reader today gets a different Code.R from the one available on the day.",
+   "quantities": [
+    {
+     "name": "paper_file_first_uploaded_after_pub",
+     "value": 0.0909,
+     "unit": "proportion",
+     "count": 4,
+     "denominator": 44,
+     "ci_low": 0.036,
+     "ci_high": 0.212,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py --verify-dates; Wilson score 95% interval"
+    },
+    {
+     "name": "paper_file_replaced_after_pub",
+     "value": 0.0455,
+     "unit": "proportion",
+     "count": 2,
+     "denominator": 44,
+     "ci_low": 0.013,
+     "ci_high": 0.151,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py --verify-dates; Wilson score 95% interval"
+    },
+    {
+     "name": "paper_changed_7d_plus_after_pub",
+     "value": 0.0455,
+     "unit": "proportion",
+     "count": 2,
+     "denominator": 44,
+     "ci_low": 0.013,
+     "ci_high": 0.151,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py --verify-dates; Wilson score 95% interval"
+    },
+    {
+     "name": "files_with_more_than_one_version",
+     "value": 27,
+     "unit": "files",
+     "denominator": 2170,
+     "source": "artifacts/analysis.json counts.files_version_gt1 (any date)"
+    }
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The classifier was not trusted on date_modified: every flagged file was resolved against its version history, and all 13 resolved. Narrow: the publication date is PLOS's (day resolution, timezone unknown), so lags of 1-2 days are within noise; a file deleted after publication is invisible to a listing taken today, so these are lower bounds on change."
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "In 47.7% of these papers with listed OSF files, at least one file is visibly code by extension. This is a lower bound: code inside an archive is not visible to a listing.",
+   "scope": "21 of 44. Code extensions: .R .Rmd .qmd .py .ipynb .m .jl .do .sps .sas .stan .sh and others listed in reanalysis/scout_plos_osf.py CODE_EXT. The population was filtered on the word 'code' in the full text, which inflates this share relative to PLOS generally.",
+   "quantities": [
+    {
+     "name": "paper_with_visible_code_file",
+     "value": 0.4773,
+     "unit": "proportion",
+     "count": 21,
+     "denominator": 44,
+     "ci_low": 0.338,
+     "ci_high": 0.621,
+     "ci_kind": "confidence",
+     "source": "reanalysis/analyse.py; Wilson score 95% interval"
+    }
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Lower bound by construction, and the keyword filter biases it upward; the two biases do not cancel in any known way."
+   }
+  }
+ ],
+ "methods": [
+  "authoritative-api-resolution",
+  "link-checking-at-scale",
+  "per-host-null-calibration",
+  "synthetic-injected-effect-control",
+  "version-history-drift-check"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "derived-data",
+   "locator": "artifacts/plos_osf.jsonl",
+   "local_path": "artifacts/plos_osf.jsonl",
+   "status": "verified-usable",
+   "bytes": 280637,
+   "sha256": "b5b90635de1df6eae4934357d2c679b1575c115a53be9e871022b14f58472b63",
+   "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/scout_plos_osf.py --reprobe <pass1.jsonl> <out.jsonl>  (pass 1: --n 60 --seed 20261014)",
+   "checked": {
+    "on": "2026-10-14",
+    "by": "maria",
+    "how": "grep -c probe_version 3 = 60; controls printed ok at start of the pass",
+    "result": "60 rows, one per sampled paper, probe_version 3, DAS text kept verbatim"
+   }
+  },
+  {
+   "id": "a2",
+   "role": "derived-data",
+   "locator": "artifacts/analysis.json",
+   "local_path": "artifacts/analysis.json",
+   "status": "verified-usable",
+   "bytes": 5246,
+   "sha256": "b62c34fea75719b5e6f7d034191bdcd35f29a537ba48d0c74f3435b32ab7ca8c",
+   "fetch_cmd": "python reanalysis/analyse.py artifacts/plos_osf.jsonl --verify-dates --out artifacts/analysis.json",
+   "checked": {
+    "on": "2026-10-14",
+    "by": "maria",
+    "how": "ran the command; every claim quantity above is read from it",
+    "result": "13 of 13 flagged files classified from version history"
+   }
+  },
+  {
+   "id": "a3",
+   "role": "code",
+   "locator": "reanalysis/analyse.py",
+   "local_path": "reanalysis/analyse.py",
+   "status": "verified-usable",
+   "sha256": "ab47749da8e5c5d3805babe499f724737c76b13d062c8adbb7e268ff7c8069db",
+   "fetch_cmd": "python reanalysis/analyse.py --selftest",
+   "checked": {
+    "on": "2026-10-14",
+    "by": "maria",
+    "how": "--selftest on a 6-row synthetic sample with every count fixed by construction, plus the sibling record's printed Wilson CI [25.9, 51.2] for 20/53; then three mutations (best-of priority order, version threshold, z value)",
+    "result": "PASS; all three mutations FAIL the self-test (the first survived a weaker test, which was then strengthened)"
+   }
+  },
+  {
+   "id": "a4",
+   "role": "code",
+   "locator": "reanalysis/scout_plos_osf.py",
+   "local_path": "reanalysis/scout_plos_osf.py",
+   "status": "verified-usable",
+   "sha256": "38cedd4a8bcbdd41cbd4733f93b71a8ea2300d46f593db231823a6e9274c5fdb",
+   "fetch_cmd": "copy of dev-science-ops/paper-retrospective-reproducibility/tools/scout_plos_osf.py; imports that project's tools/acquire.py",
+   "checked": {
+    "on": "2026-10-14",
+    "by": "maria",
+    "how": "known-answer controls cbhdv and 3bzu8 at the start of every pass",
+    "result": "controls ok on passes 1, 2 and 3"
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:extends",
+   "target": "maria2026-shell-or-payload",
+   "why": "That record asks, for every host, whether a DAS link delivers anything; this asks it for OSF only, with the host's own API, and adds the question the sibling could not: whether what is delivered today is what was there at publication."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "maria2026-shell-or-payload",
+   "why": "Its authoritative.py already retried OSF with the view_only token on 2026-09-08. This study's first pass did not, and produced 7 false 'private' verdicts out of 10; recorded in NOTES.md failure 1."
+  },
+  {
+   "type": "cito:extends",
+   "target": "laurinavichyute2022-share-the-code",
+   "why": "osf.io/3bzu8, the node that paper's DAS names, is this study's negative control: 0 files, GitHub add-on 404."
+  }
+ ],
+ "open_questions": [
+  "Does the 28.6% view_only share mean authors forget to make the project public after review, or choose not to? A sample of DAS wording ('will be made fully public upon publication' appears in one) could separate the two, and a re-check in 6 months would show how many tokens were revoked.",
+  "Is 'first uploaded 87 days after publication' rare or the tail of something common? A larger sample with --verify-dates would give a lag distribution worth having; this one has 13 files.",
+  "The same drift question for Hugging Face datasets is mark's open TODO (main with no tag); OSF's version history answers it per file, HF's commit history per repository. One shared method would make the two comparable."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-10-14",
+  "verified": "2026-10-14",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "osf link in a paper is private",
+  "osf view only link in data availability",
+  "does the osf deposit have files",
+  "was the dataset changed after the paper was published",
+  "file uploaded to osf after publication",
+  "how many papers deposit code on osf",
+  "anonymous review link left in published paper",
+  "osf node 401 but paper says data is public",
+  "is the code I downloaded the version the paper used"
+ ]
+}

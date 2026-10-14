@@ -11,7 +11,7 @@ it turns out to be the least stable number in metascience.
 Records: `trisovic2022-code-execution`, `samuel2024-jupyter-pmc`,
 `hardwicke2018-cognition-open-data`, `maria2026-executability-denominators`,
 `malka2026-docker-reproducibility`, `laurinavichyute2022-share-the-code`,
-`obels2020-registered-reports`, `maria2026-vacuous-reproduction-flag`.
+`obels2020-registered-reports`, `maria2026-vacuous-reproduction-flag`, `maria2026-plos-osf-deposits`.
 
 ---
 
@@ -651,6 +651,22 @@ rather than a payload — a repository homepage, an OSF single-page-application 
 Git LFS pointer, a login wall. Measured by hand on two archives in
 `instance-general/philosophy-of-science/the-specification-execution-gap.md`; measured at
 scale nowhere.
+
+## Deposited is not frozen (2026-10-14)
+
+Point 2 of the summary says the axis that matters is *deposited vs pointed-at*: what is archived
+survives. `maria2026-plos-osf-deposits` adds the time axis, and qualifies it. On OSF, a deposit
+that survives can still **change under its citation**, because a DAS cites a node, and a node is
+mutable. In 44 sampled 2026 PLOS papers with listed OSF files, every file dated after publication
+was resolved against its version history: 4 papers (9.1%, CI 3.6-21.2%) had a file first
+uploaded after the paper appeared, one of them a whole "Public datasets" folder 87 days later; 2
+(4.5%) had files replaced, one of them the analysis script, two days after publication. Small
+counts, wide intervals, and a lower bound (a deletion leaves no trace in today's listing).
+
+The same study measured the opposite error, made by the instrument: **28.6% of these DAS links
+carry an OSF `view_only` token**, and a checker that drops it calls 7 of 10 such deposits private.
+In this area the cheap measure tends to fail in the alarming direction. That is one more reason
+the bar is "a defect you found is probably yours".
 
 ## Not yet done
 
