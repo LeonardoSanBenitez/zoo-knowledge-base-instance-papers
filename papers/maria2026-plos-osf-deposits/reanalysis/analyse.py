@@ -291,7 +291,10 @@ def main() -> None:
     if verified is not None:
         out["verified_files"] = verified
     if a.out:
-        pathlib.Path(a.out).write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        # newline="\n" so the output's sha256 does not depend on the host (Windows text mode
+        # wrote CRLF; found 2026-10-14 by kb.py health's artifact-hash check).
+        pathlib.Path(a.out).write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n",
+                                       encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

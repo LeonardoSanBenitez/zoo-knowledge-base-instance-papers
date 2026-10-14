@@ -229,6 +229,13 @@ regenerates it. Code, scripts and small tables stay. Record `bytes` and, where i
 matters, `sha256`, so a future check knows what it had. Bulk downloads live *outside*
 the KB; the record references them the way an RO-Crate references a remote data entity.
 
+**A sha256 is only worth recording on bytes nobody rewrites** (added 2026-10-14). Files under
+`papers/*/artifacts/` are stored byte-exact (`-text` in `.gitattributes`): an author's CRLF
+file stays CRLF. Code under `reanalysis/` is normalised to LF, so hash the LF bytes. And write
+your own outputs with `newline="\n"`: Python's text mode on Windows writes CRLF, so the same
+script gives a different hash on another host. `kb.py health` compares every recorded sha256
+with the disk *and* with the committed blob, and says which one disagrees.
+
 ## 8. Where things go
 
 ```

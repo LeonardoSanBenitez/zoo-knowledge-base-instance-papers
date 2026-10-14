@@ -245,8 +245,8 @@
    "locator": "artifacts/analysis.json",
    "local_path": "artifacts/analysis.json",
    "status": "verified-usable",
-   "bytes": 5246,
-   "sha256": "b62c34fea75719b5e6f7d034191bdcd35f29a537ba48d0c74f3435b32ab7ca8c",
+   "bytes": 4951,
+   "sha256": "739b6a4592ccce3d174a77510e1aba3b7d718b8fdcfa724f077ab3f0cfec6a15",
    "fetch_cmd": "python reanalysis/analyse.py artifacts/plos_osf.jsonl --verify-dates --out artifacts/analysis.json",
    "checked": {
     "on": "2026-10-14",
@@ -261,7 +261,7 @@
    "locator": "reanalysis/analyse.py",
    "local_path": "reanalysis/analyse.py",
    "status": "verified-usable",
-   "sha256": "e4435b29245c744cf6410310270b40f39707651e06889d77ce96670184704809",
+   "sha256": "e0ed20ea78c83a88e5f05850d3ca3152fe5b1e239938b97ee3ce19b24e6ed4c3",
    "fetch_cmd": "python reanalysis/analyse.py --selftest",
    "checked": {
     "on": "2026-10-14",
@@ -269,7 +269,7 @@
     "how": "--selftest on a 6-row synthetic sample with every count fixed by construction, plus the sibling record's printed Wilson CI [25.9, 51.2] for 20/53; then three mutations (best-of priority order, version threshold, z value)",
     "result": "PASS; all three mutations FAIL the self-test (the first survived a weaker test, which was then strengthened)"
    },
-   "bytes": 14685
+   "bytes": 14910
   },
   {
    "id": "a4",
