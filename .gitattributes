@@ -32,3 +32,14 @@
 *.db    binary
 *.sqlite binary
 *.sqlite3 binary
+
+# ARTIFACTS ARE BYTE-EXACT.  Added 2026-10-14 by maria (R1).
+# The rules above exist to stop an editor's CRLF flip from turning a 6-line change into a
+# 1,099-line diff in hand-written text.  They were never meant for artifacts, and they were
+# silently rewriting them: kkm2023-conflict-resolved/artifacts/kkm2023.csv is the authors' file
+# with CRLF line endings (33,391 lines), its paper.json records the sha256 of THOSE bytes, and
+# `*.csv text eol=lf` made git store LF -- so every fresh checkout held data that was no longer
+# the authors' and failed its own recorded checksum.  A checksum on a file the repository is
+# allowed to rewrite is the false defect this knowledge base exists to avoid.
+# Code under reanalysis/ stays normalized; only artifacts/ is exempt.
+papers/*/artifacts/** -text

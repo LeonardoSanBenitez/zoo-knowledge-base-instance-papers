@@ -261,14 +261,15 @@
    "locator": "reanalysis/analyse.py",
    "local_path": "reanalysis/analyse.py",
    "status": "verified-usable",
-   "sha256": "ab47749da8e5c5d3805babe499f724737c76b13d062c8adbb7e268ff7c8069db",
+   "sha256": "e4435b29245c744cf6410310270b40f39707651e06889d77ce96670184704809",
    "fetch_cmd": "python reanalysis/analyse.py --selftest",
    "checked": {
     "on": "2026-10-14",
     "by": "maria",
     "how": "--selftest on a 6-row synthetic sample with every count fixed by construction, plus the sibling record's printed Wilson CI [25.9, 51.2] for 20/53; then three mutations (best-of priority order, version threshold, z value)",
     "result": "PASS; all three mutations FAIL the self-test (the first survived a weaker test, which was then strengthened)"
-   }
+   },
+   "bytes": 14685
   },
   {
    "id": "a4",
@@ -276,14 +277,15 @@
    "locator": "reanalysis/scout_plos_osf.py",
    "local_path": "reanalysis/scout_plos_osf.py",
    "status": "verified-usable",
-   "sha256": "38cedd4a8bcbdd41cbd4733f93b71a8ea2300d46f593db231823a6e9274c5fdb",
+   "sha256": "f5839c14bc50b0d1d1bb8cb1d765f42c0b840d01871002dda0d3e0d80ff62639",
    "fetch_cmd": "copy of dev-science-ops/paper-retrospective-reproducibility/tools/scout_plos_osf.py; imports that project's tools/acquire.py",
    "checked": {
     "on": "2026-10-14",
     "by": "maria",
     "how": "known-answer controls cbhdv and 3bzu8 at the start of every pass",
     "result": "controls ok on passes 1, 2 and 3"
-   }
+   },
+   "bytes": 14467
   }
  ],
  "relations": [
