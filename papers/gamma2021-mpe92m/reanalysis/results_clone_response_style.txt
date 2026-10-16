@@ -1,0 +1,9 @@
+raw 5 {'real_mean': 0.806, 'clone_mean': 0.873, 'deficit': 0.067, 'real_ge95': 0}
+raw 8 {'real_mean': 0.806, 'clone_mean': 0.967, 'deficit': 0.161, 'real_ge95': 0}
+raw 12 {'real_mean': 0.759, 'clone_mean': 0.94, 'deficit': 0.181, 'real_ge95': 0}
+row-centered 5 {'real_mean': 0.931, 'clone_mean': 0.972, 'deficit': 0.041, 'real_ge95': 2}
+row-centered 8 {'real_mean': 0.827, 'clone_mean': 0.966, 'deficit': 0.139, 'real_ge95': 1}
+row-centered 12 {'real_mean': 0.759, 'clone_mean': 0.952, 'deficit': 0.193, 'real_ge95': 0}
+row-z 5 {'real_mean': 0.877, 'clone_mean': 0.968, 'deficit': 0.09, 'real_ge95': 0}
+row-z 8 {'real_mean': 0.826, 'clone_mean': 0.957, 'deficit': 0.131, 'real_ge95': 0}
+row-z 12 {'real_mean': 0.756, 'clone_mean': 0.93, 'deficit': 0.174, 'real_ge95': 0}
