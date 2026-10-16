@@ -105,7 +105,7 @@
     "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1613/jair.1.19087 -> 0 items.",
     "Within-person check of the HLMI-FAOL gap is impossible here (different respondents got the two blocks). Did the 2016 or 2022 ESPAI give any respondent both?",
     "Does the extinction subset effect (Q2 > Q1) replicate in the 2022 ESPAI (n = 149 / 162)? The printed medians are also 5% vs 10% there.",
-    "A pooled CDF of extrapolated individual tails: what is the pooled 90% point when every fixed-years fit is truncated at the longest asked horizon (treated as censored)? That is the honest upper quantile."
+    "ANSWERED 2026-10-16 (reanalysis/e5_bounds.py; out/e5_bounds_*.txt) by partial identification: each respondent's CDF is trusted only up to their information horizon (longest horizon asked, or their own 90% year) and bounded in [F(h), 1] beyond it. HLMI 50%: 2048, identified interval [2048, 2049] -- robust. HLMI 90%: extrapolated point 2200, identified only as [2073, never]; the answers support at most 0.731 pooled probability. FAOL 50%: point 2111 (paper 2116), identified interval [2073, 2202] -- 129 years wide; the fixed-years arm alone never reaches 50% (max identified 0.252). FAOL 90%: unidentified. ORIGINAL: A pooled CDF of extrapolated individual tails: what is the pooled 90% point when every fixed-years fit is truncated at the longest asked horizon (treated as censored)? That is the honest upper quantile."
   ],
   "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
 }

@@ -1,0 +1,3 @@
+FAOL ALL                  n= 792 | 50%: point 2111, identified interval [2073, 2202] | 90%: point 206138, interval [2223, never (unidentified)] | max identified pooled prob 0.590
+FAOL fixed-probabilities  n= 413 | 50%: point 2090, identified interval [2090, 2095] | 90%: point 2439, interval [2431, 95696] | max identified pooled prob 0.900
+FAOL fixed-years          n= 379 | 50%: point 2165, identified interval [2073, never (unidentified)] | 90%: point 774370, interval [2073, never (unidentified)] | max identified pooled prob 0.252

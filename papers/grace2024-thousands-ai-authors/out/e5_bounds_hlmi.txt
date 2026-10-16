@@ -1,0 +1,3 @@
+HLMI ALL                  n=1729 | 50%: point 2048, identified interval [2048, 2049] | 90%: point 2200, interval [2073, never (unidentified)] | max identified pooled prob 0.731
+HLMI fixed-probabilities  n= 862 | 50%: point 2041, identified interval [2041, 2042] | 90%: point 2121, interval [2118, 2574] | max identified pooled prob 0.912
+HLMI fixed-years          n= 867 | 50%: point 2057, identified interval [2057, 2057] | 90%: point 2378, interval [2063, never (unidentified)] | max identified pooled prob 0.551
