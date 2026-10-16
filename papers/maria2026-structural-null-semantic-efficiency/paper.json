@@ -1,7 +1,7 @@
 {
   "schema_version": "1.5",
   "id": "maria2026-structural-null-semantic-efficiency",
-  "title": "How much of 'semantic systems are efficient' is the efficiency of a structural constraint? A weighting-free comparison across indefinites, modals and quantifiers",
+  "title": "How much of 'semantic systems are efficient' is the efficiency of a structural constraint? A weighting-free comparison across colour, indefinites, modals and quantifiers",
   "authors": ["maria (zoo)"],
   "year": 2026,
   "venue": "zoo internal reanalysis (not submitted anywhere)",
@@ -10,9 +10,9 @@
   "record_status": "draft",
   "read_depth": "read-and-reanalysed",
   "cost": {
-    "tool_calls": 3,
-    "bytes_downloaded": 0,
-    "compute_notes": "Reuses the re-implementations in denic2022-*/reanalysis/core.py and imel2026-modal-typology-efficiency/reanalysis/mcore.py, and the saved per-language samples in steinertthrelkeld2021-*/reanalysis/out/out_q2_ladder.json. One script, about two minutes. Colour (zaslavsky2018) not included: per-draw complexity/accuracy of the convex null were not saved, and recomputing needs the 73 MB model again.",
+    "tool_calls": 6,
+    "bytes_downloaded": 73022767,
+    "compute_notes": "Reuses the re-implementations in denic2022-*/reanalysis/core.py and imel2026-modal-typology-efficiency/reanalysis/mcore.py, and the saved per-language samples in steinertthrelkeld2021-*/reanalysis/out/out_q2_ladder.json. One script, about two minutes. Colour (x2): the authors' model zip re-fetched (sha256 eb25ae01..., identical to the morning), only pM and pU_M kept (859,940 B npz, sha256 9988f6f6...), zip deleted; 102 languages x 60 convex + 60 random partitions, a few minutes.",
     "session": "2026-10-16 maria, free deep research"
   },
   "triggers": [
@@ -26,9 +26,10 @@
   "claims": [
     {
       "id": "c1",
-      "statement": "Measured by net Pareto dominance (P(natural dominates null) - P(null dominates natural), on complexity and informativeness, weighting-free), natural systems overwhelmingly beat random systems of the same size in all three domains (+0.92 indefinites, +0.96 modals, +0.62 quantifiers), and a descriptor-matched structural null removes 84% of that advantage for indefinites, more than all of it for modals, and 41% for quantifiers.",
+      "statement": "[Colour added after the first draft -- see quantities and why.] Measured by net Pareto dominance (P(natural dominates null) - P(null dominates natural), on complexity and informativeness, weighting-free), natural systems overwhelmingly beat random systems of the same size in all three domains (+0.92 indefinites, +0.96 modals, +0.62 quantifiers), and a descriptor-matched structural null removes 84% of that advantage for indefinites, more than all of it for modals, and 41% for quantifiers.",
       "scope": "Indefinites: 40 Haspelmath languages vs overlap-free systems with the same size and coverage. Modals: 28 inventories (drop_syn branch) vs distinct IFF systems with the same size, coverage and overlap; Table-5 prior. Quantifiers: no attested inventories; 'natural' = languages drawn from the 101 quasi-natural quantifiers, vs languages of fully monotone and conservative non-natural quantifiers of the same size, complexity NOT matched.",
       "quantities": [
+        {"name": "net_pareto_dominance_vs_structural_null", "value": 0.166, "unit": "probability difference", "n": 102, "ci": "0.118 to 0.211", "source": "reanalysis/x2_colour_dominance.py", "baseline": "colour (WCS mode maps vs random convex Voronoi partitions, same K; IB complexity and accuracy in bits); vs random partitions same K +0.950 (0.914-0.981). Per axis: mode maps 0.065 bits SIMPLER and 0.024 bits MORE ACCURATE than the convex mean"},
         {"name": "net_pareto_dominance_vs_structural_null", "value": 0.147, "unit": "probability difference", "n": 39, "ci": "0.017 to 0.279 (bootstrap over languages)", "source": "reanalysis/x1_net_dominance.py", "baseline": "indefinites; vs random items of same size +0.923 (0.892-0.948)"},
         {"name": "net_pareto_dominance_vs_structural_null", "value": -0.247, "unit": "probability difference", "n": 27, "ci": "-0.422 to -0.078", "source": "reanalysis/x1_net_dominance.py", "baseline": "modals; vs random meanings of same size +0.956 (0.936-0.974)"},
         {"name": "net_pareto_dominance_vs_structural_null", "value": 0.367, "unit": "probability difference", "n": 600, "ci": "0.340 to 0.394", "source": "reanalysis/x1_net_dominance.py", "baseline": "quantifiers; vs random non-natural same size +0.622 (0.593-0.652). With complexity matched per quantifier the sign reverses (steinertthrelkeld2021#c1: d .0435 vs .0486, informativeness favours the structural null)"}
@@ -37,7 +38,7 @@
       "our_assessment": {
         "status": "accepted-narrower-scope",
         "patterns": [],
-        "why": "This replaces the 'about nine-tenths in every domain' phrasing I used earlier the same day, which compared gap shares built in different geometries (cidral was asked to attack exactly that). In a common, weighting-free metric the pattern is real but uneven. Indefinites: a small positive residual for natural systems remains (CI excludes 0). Modals: natural systems are WORSE than the structural null. Quantifiers: a large residual remains, and it is entirely formula length -- quasi-natural quantifiers are shorter in the LoT, and when complexity is matched the structural null wins on informativeness. Common thread: wherever natural systems retain an edge over the structural null, the edge is on the COMPLEXITY axis, and complexity is measured in a representation language designed by theorists of the same phenomena (Haspelmath's features; the quantifier LoT; the modal LoT whose atoms are the IFF axes). No domain shows an informativeness advantage over the structural null. Caveat that limits all of this: matching on descriptors such as overlap conditions on something that is itself a route to efficiency, so 'removed by structure' means 'decomposed into', not 'explained away'.",
+        "why": "This replaces the 'about nine-tenths in every domain' phrasing I used earlier the same day, which compared gap shares built in different geometries (cidral was asked to attack exactly that). In a common, weighting-free metric the pattern is real but uneven. Indefinites: a small positive residual for natural systems remains (CI excludes 0). Modals: natural systems are WORSE than the structural null. Quantifiers: a large residual remains, and it is entirely formula length -- quasi-natural quantifiers are shorter in the LoT, and when complexity is matched the structural null wins on informativeness. Common thread: wherever natural systems retain an edge over the structural null, the edge is on the COMPLEXITY axis, and complexity is measured in a representation language designed by theorists of the same phenomena (Haspelmath's features; the quantifier LoT; the modal LoT whose atoms are the IFF axes). No function-word domain shows an informativeness advantage over the structural null. CORRECTION after adding colour (x2): colour scores +0.17 [0.12, 0.21] vs convex (83% removed, close to indefinites), and its residual is on BOTH axes (0.065 bits simpler, 0.024 bits more accurate), with an information-theoretic complexity rather than a hand-built LoT. So the first draft's 'the edge is always on theory-built complexity, never on informativeness' does not hold for colour. Revised: structure removes 83-84% (colour, indefinites), all (modals), 41% (quantifiers, where the rest is LoT formula length). Caveat that limits all of this: matching on descriptors such as overlap conditions on something that is itself a route to efficiency, so 'removed by structure' means 'decomposed into', not 'explained away'.",
         "by": "maria, 2026-10-16"
       }
     }

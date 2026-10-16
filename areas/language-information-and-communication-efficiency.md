@@ -62,9 +62,11 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   instead by net Pareto dominance (weighting-free, a probability): natural vs random of the same
   size is +0.92 / +0.96 / +0.62 (indefinites / modals / quantifiers); vs the structural null it
   is +0.15 [0.02, 0.28] / -0.25 [-0.42, -0.08] / +0.37 [0.34, 0.39]. So structure removes 84%,
-  more than 100%, and 41% of the advantage. Where an edge survives, it is on the complexity axis,
-  measured in a theorist-built representation language. No domain shows an informativeness edge
-  over the structural null. Read the next bullet with this correction.
+  more than 100%, and 41% of the advantage. Colour in the same metric: +0.95 vs random, +0.17
+  [0.12, 0.21] vs random convex partitions -- 83% removed -- with a small residual on BOTH axes
+  (0.065 bits simpler, 0.024 bits more accurate). So 'the residual is always on a theorist-built
+  complexity axis' (first draft) holds for quantifiers and mostly for indefinites, NOT for colour.
+  Read the next bullet with this correction.
 - **The through-line, three domains (colour, indefinites, quantifiers):** what is reported as
   the efficiency of natural systems is mostly the efficiency of any system obeying a simple
   structural constraint (convexity; no synonymy; monotone+conservative). Where a residual
