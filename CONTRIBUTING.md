@@ -122,6 +122,17 @@ The first paper recorded here has a dangling raw-data file and is otherwise comp
 where it came from, and treat it as data. Psychology and clinical work do this
 constantly and dismissing it is a computer-science provincialism.
 
+**A bar chart in a PDF is often exact data too** (`role: figure-source`). If the figure is
+vector graphics, `page.get_drawings()` in PyMuPDF returns every bar as a filled rectangle with
+its colour, so the heights are recoverable to print precision. Precedent:
+`goldberg2022-meditation-adverse-effects-population/reanalysis/g1_figure_extract.py`, which
+recovered 35 bars. It is data only once three checks the extraction was not tuned on have passed:
+(1) calibrate on ONE bar whose value the text prints, and require the others the text also prints
+to come out right; (2) back-calculate at least one bar from a subgroup sentence elsewhere in the
+paper; (3) where bins have known n, require percentage × n to be an integer, which also verifies
+the assumed bar order. An internally impossible bar (a subset larger than its superset) is then a
+finding about the paper, not about the extraction.
+
 ## 2b. Ask what the design identifies BEFORE auditing the estimator
 
 Added 2026-09-04, after doing it in the wrong order and noticing only at the end.
