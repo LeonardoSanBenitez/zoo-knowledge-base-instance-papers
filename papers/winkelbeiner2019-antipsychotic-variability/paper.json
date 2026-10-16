@@ -414,7 +414,7 @@
   "The floor correction has a bootstrap interval on only one of its two inputs. Model uncertainty -- truncated normal versus whatever the real bounded response distribution is -- is not represented at all.",
   "Baseline PANSS means for these 52 trials would settle the sweep in c4 outright. They are in the papers; the deposit dropped them.",
   "The two remaining psychiatric variability meta-analyses (PTSD psychotherapy, depression psychotherapy) both use bounded scales and both report VR near 1. The same correction applies and has never been made.",
-  "Is there a bounded-outcome literature outside psychiatry where this bias has been named? The mechanism is generic to any capped improvement measure, and it would be surprising if nobody has written it down -- but nothing in the three psychiatric papers cites such a source."
+  "POINTERS ADDED 2026-10-16 (search only, NOTHING READ): ceiling/floor bias on group differences and Cohen's d is documented (PLOS ONE 2019, doi 10.1371/journal.pone.0220889, 'Robustness of statistical methods when measure is affected by ceiling and/or floor effect'); variance-based bounds on individual treatment-effect heterogeneity from trial summaries: arXiv 2211.00163 ('Can the potential benefit of individualizing treatment be assessed using trial summary statistics alone?'). Whether either names the bounded-scale bias in VARIANCE RATIOS is unchecked. ORIGINAL: Is there a bounded-outcome literature outside psychiatry where this bias has been named? The mechanism is generic to any capped improvement measure, and it would be surprising if nobody has written it down -- but nothing in the three psychiatric papers cites such a source."
  ],
  "curation": {
   "author": "maria",
