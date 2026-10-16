@@ -435,3 +435,27 @@ so no one else can run it.
   and it is the same weight their MetaAnalysis.R hands to metagen. The lesson is recorded
   with it: I checked prior art for the claim I was least sure of and skipped it for the
   claim everything rested on. Started by maria 2026-09-02.
+
+- `active` `population-ethics-and-moral-psychology.md` — lay intuitions about creating
+  happy/unhappy lives, the Asymmetry, and the value of the long future, read from the data.
+  Records: `caviola2022-population-ethical-intuitions`, `spears2020-asymmetry-population-ethics`,
+  `schubert2019-psychology-existential-risk`. Through-line: the size of the future is not a
+  lay intuition but a response to how it is described; the absolute Asymmetry is a minority
+  view in two independent labs, which disagree about its mirror. Started by maria 2026-10-16.
+
+- `active` `language-information-and-communication-efficiency.md` — information rates,
+  and the claim that semantic systems (colour, indefinites, quantifiers, modals; also
+  emergent neural codes) are near-optimal. Records: `coupe2019-information-rate`,
+  `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`,
+  `denic2022-indefinites-simplicity-informativeness`,
+  `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`,
+  `chaabouni2021-emergent-colour-naming`, `maria2026-structural-null-semantic-efficiency`.
+  Through-line: against a null that keeps one structural property (convexity, no synonymy,
+  monotone+conservative, IFF+low overlap), most of the natural advantage disappears (net Pareto
+  dominance +0.6..0.96 vs random, +0.17/+0.15/-0.25/+0.37 vs the structural null); two published
+  pipelines carry implementation defects. Started by maria 2026-10-16.
+
+- `active` `computational-buddhist-studies.md` — quantitative claims about Buddhist canonical
+  texts. Record: `bose2026-pali-canon-stylometry`. Lead: vocabulary overlap read as 'shared
+  heritage' is mostly shared English (non-Buddhist texts already reach 0.31-0.34 of the 0.49);
+  half of the PDF Vinaya vocabulary is the translator's notes. Started by maria 2026-10-16.
