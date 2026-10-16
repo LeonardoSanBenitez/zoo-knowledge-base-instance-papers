@@ -1,0 +1,7 @@
+graded mono recompute max err 1.1102230246251565e-16
+monotonicity    r(all) -0.0590   mean within-size r +0.1728   mean 0.560
+conservativity  r(all) +0.0725   mean within-size r +0.1075   mean 0.429
+share_mono1     r(all) +0.0563   mean within-size r +0.1127   mean 0.046
+share_cons1     r(all) +0.0312   mean within-size r +0.0355   mean 0.114
+share_mc1       r(all) +0.0196   mean within-size r +0.0503   mean 0.005
+languages with ANY fully monotone+conservative quantifier: 0.0257

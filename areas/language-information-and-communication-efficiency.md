@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Language, information and communication efficiency
 
-Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`.
+Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`.
 
 **Scope.** Quantitative claims about how languages encode and transmit information -- rates,
 densities, efficiency trade-offs -- read for what is measured versus what is named. Includes, as
@@ -47,6 +47,21 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   space. Indefinites: alignment with the theory's feature vocabulary. Both residuals are
   alignment effects, and a hue-rotation-type relabelling is the tool that isolates them. In both
   cases ask whether the thing aligned with was estimated from the same data.
+- **Third domain, and the one that claimed the opposite (quantifiers).** `steinertthrelkeld2021`
+  reads "degrees of monotonicity/conservativity are not correlated with optimality" as evidence
+  that universals are epiphenomenal. Reanalysed on the author's own deposit: the printed CIs
+  exclude zero; the single correlation pools sizes 1-10 and hides a sign change (monotonicity
+  r -0.21 at one quantifier, +0.57 at nine); the Exp-1-sample degree correlations (0.19/0.23)
+  were computed and not reported; and languages built from non-natural quantifiers that HAVE
+  both universals, complexity-matched, beat the quasi-natural ones (d 0.0435 vs 0.0486). The
+  structural constraint carries the efficiency here too.
+- **The through-line, three domains (colour, indefinites, quantifiers):** what is reported as
+  the efficiency of natural systems is mostly the efficiency of any system obeying a simple
+  structural constraint (convexity; no synonymy; monotone+conservative). Where a residual
+  exists it is an alignment effect (with a prior, or with a feature theory built on the same
+  languages). Units differ across the three, so this is a pattern, not a pooled estimate.
+  **Before citing any "languages are near-optimal" result from this programme, ask what the
+  structural null gets.**
 
 ## Method notes for this area
 

@@ -1,0 +1,6 @@
+Q quantifiers at complexity levels where MC exists: 89 of 101
+Qm   mean d 0.0486 cost 0.8133 comp 0.3400 share BELOW the estimated frontier 0.001
+MCm  mean d 0.0435 cost 0.8051 comp 0.3400 share BELOW the estimated frontier 0.002
+paired (same sizes/complexities) MCm - Qm: mean d diff -0.0051 TtestResult(statistic=np.float64(-11.538940668749584), pvalue=np.float64(2.0326297247589555e-30), df=np.int64(4999))
+cost diff -0.0082 complexity diff 0.0
+authors natural_data rows strictly below their own frontier: 7 of 80000

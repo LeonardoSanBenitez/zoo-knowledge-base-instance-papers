@@ -1,0 +1,14 @@
+n 80000 20000
+natural_gradual {'naturalness': np.float64(0.2516), 'monotonicity': np.float64(0.191), 'conservativity': np.float64(0.235), 'mxc': np.float64(0.2656), 'complexity': np.float64(-0.1303), 'comm_cost': np.float64(-0.5329)}
+  SD {'monotonicity': np.float64(0.153), 'conservativity': np.float64(0.234), 'complexity': np.float64(0.235), 'comm_cost': np.float64(0.05), 'optimality': np.float64(0.019)} means {'monotonicity': np.float64(0.672), 'conservativity': np.float64(0.712)}
+random {'monotonicity': np.float64(-0.059), 'conservativity': np.float64(0.0725), 'mxc': np.float64(0.0337), 'complexity': np.float64(-0.2604), 'comm_cost': np.float64(-0.4818)}
+  SD {'monotonicity': np.float64(0.141), 'conservativity': np.float64(0.155), 'complexity': np.float64(0.273), 'comm_cost': np.float64(0.043), 'optimality': np.float64(0.017)} means {'monotonicity': np.float64(0.56), 'conservativity': np.float64(0.429)}
+natural: corr(naturalness, complexity) -0.261 corr(naturalness, comm_cost) 0.055
+optimality ~ naturalness                                     {'naturalness': 0.252} R2 0.063
+optimality ~ naturalness + complexity                        {'naturalness': 0.234, 'complexity': -0.069} R2 0.068
+optimality ~ naturalness + monotonicity + conservativity     {'naturalness': 0.193, 'monotonicity': 0.079, 'conservativity': 0.02} R2 0.069
+comm_cost ~ naturalness + complexity                         {'naturalness': -0.117, 'complexity': -0.656} R2 0.404
+complexity ~ naturalness + comm_cost                         {'naturalness': -0.227, 'comm_cost': -0.613} R2 0.443
+random optimality ~ monotonicity + conservativity              {'monotonicity': -0.099, 'conservativity': 0.109} R2 0.014
+random optimality ~ monotonicity + conservativity + complexity {'monotonicity': -0.097, 'conservativity': 0.107, 'complexity': -0.26} R2 0.081
+random comm_cost ~ monotonicity + conservativity + complexity  {'monotonicity': 0.094, 'conservativity': -0.085, 'complexity': -0.633} R2 0.41

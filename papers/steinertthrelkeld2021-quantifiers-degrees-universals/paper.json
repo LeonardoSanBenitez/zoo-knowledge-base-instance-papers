@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.5",
+  "id": "steinertthrelkeld2021-quantifiers-degrees-universals",
+  "title": "Quantifiers in Natural Language: Efficient Communication and Degrees of Semantic Universals",
+  "authors": ["Shane Steinert-Threlkeld"],
+  "year": 2021,
+  "venue": "Entropy 23(10):1335",
+  "area": ["language-information-and-communication-efficiency"],
+  "identifiers": {
+    "doi": "10.3390/e23101335",
+    "pmcid": "PMC8570335",
+    "url": "https://github.com/shanest/SimInf_Quantifiers"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 22,
+    "bytes_downloaded": 56000000,
+    "compute_notes": "Full text from Europe PMC JATS XML (MDPI PDF answered Access Denied); numbers inside MathML recovered by flattening mml tokens. Code: github shanest/SimInf_Quantifiers @ a0df2a5 (no licence file). Data: OSF y58k4 results.zip 50,538,787 B -> 340 MB unpacked (meanings.dill 95 MB); looked at, used, unpacked files deleted after the session, fetch_cmd kept. Informativeness re-implemented vectorised (the authors' triple loop is pure Python); all language-level measures for ~40k new languages in a few minutes.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "are semantic universals of quantifiers epiphenomenal to efficient communication",
+    "monotonicity conservativity and simplicity informativeness trade-off",
+    "degree of monotonicity information-theoretic measure",
+    "quantifier languages Pareto frontier evolutionary estimate",
+    "Simpson's paradox pooling across language size",
+    "does a structural universal deliver efficiency on its own",
+    "efficient communication in function words quantifiers"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "output-diff-reproduction-check",
+    "null-ladder"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Artificial languages' degree of naturalness (share of quasi-natural quantifiers: generalized existential, intersective or proportional) correlates with optimality, Pearson r = 0.2516 (bootstrap CI 0.2444-0.2589), so efficient communication can explain the typology of quantifiers.",
+      "scope": "No attested language inventories: 80,000 artificial languages of 1-10 quantifiers, each a mix of quantifiers from a fixed quasi-natural pool and random quantifiers of formula length <= 12; models up to size 10 collapsed to cardinality tuples (Quantity assumed); uniform need over 286 models; frontier by a 100-generation GA plus interpolation.",
+      "quantities": [
+        {"name": "pearson_r_naturalness_optimality", "value": 0.2516, "unit": "r", "n": 80000, "ci": "0.2444-0.2589 (paper)", "source": "reanalysis/q1.py reproduces analysis_output.txt", "baseline": "mean within-language-size r = 0.442 (q5): pooling over sizes 1-10 halves it"},
+        {"name": "n_quasi_natural_quantifiers", "value": 101, "unit": "distinct quantifiers (list has 114 entries with duplicates)", "n": 279120, "source": "natural_expression_indices.dill", "baseline": "mean formula complexity 0.60 vs 0.95 for the 279,019 others; only 36% are fully monotone, 99% fully conservative"},
+        {"name": "mean_distance_to_estimated_frontier", "value": 0.0486, "unit": "Euclidean, (comm cost, complexity) both in [0,1]", "n": 5000, "source": "reanalysis/q3_matched.py (quasi-natural pool restricted to the 89 quantifiers at complexity levels where matches exist)", "baseline": "same sizes and same per-quantifier complexities, drawn from non-natural quantifiers that are fully monotone AND conservative (1,336 exist): 0.0435, paired t = -11.5; they are also more informative (cost 0.805 vs 0.813)"},
+        {"name": "mean_distance_to_estimated_frontier_ladder", "value": 0.0514, "unit": "Euclidean", "n": 3000, "source": "reanalysis/q2_ladder.py (300 languages per size 1-10, unmatched complexity)", "baseline": "random non-natural 0.0710; fully conservative 0.0684; fully monotone 0.0597; monotone+conservative 0.0563; quasi-natural 0.0514 -- the two universals alone cover 75% of the random-to-quasi-natural gap"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["missing-adequate-control", "centre-hides-distribution"],
+        "why": "Reproduces exactly from the shared tables, and my re-implementation reproduces the authors' informativeness to 2e-13. The correlation is real, and within language size it is larger (0.44). But 'naturalness' here is membership in a pool of 101 quantifiers that are much shorter formulas than the random alternatives (complexity 0.60 vs 0.95), and the comparison never asks what a quantifier needs besides being simple and well-behaved. Matched on complexity, non-natural quantifiers that are fully monotone and conservative make languages that are closer to the frontier and more informative than quasi-natural ones. So the naturalness effect is simplicity plus the universals, with nothing left that is specific to the attested classes. There are also no attested languages: the 'typology' is a theory of which quantifiers are natural, not data on inventories, which the author says plainly (6.3).",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "In a random sample of languages, neither the degree of monotonicity (r = -0.0590, CI -0.0746 to -0.0426) nor of conservativity (r = 0.0725, CI 0.0565 to 0.0883) nor their product (r = 0.0337, CI 0.0171 to 0.0500) is significantly correlated with optimality.",
+      "scope": "20,000 random languages, 2,000 per size 1-10, pooled into one Pearson correlation; degrees are normalised mutual-information measures averaged over a language's quantifiers.",
+      "quantities": [
+        {"name": "pearson_r_monotonicity_optimality_pooled", "value": -0.059, "unit": "r", "n": 20000, "ci": "-0.0746 to -0.0426 (paper; excludes 0)", "source": "reanalysis/q1.py", "baseline": "mean within-size r = +0.173 (CI 0.160-0.189); per size from -0.214 (1 quantifier) to +0.570 (9 quantifiers)"},
+        {"name": "pearson_r_conservativity_optimality_pooled", "value": 0.0725, "unit": "r", "n": 20000, "ci": "0.0565-0.0883 (paper; excludes 0)", "source": "reanalysis/q1.py", "baseline": "positive in every size stratum (0.064-0.188); mean within-size r = +0.108"},
+        {"name": "pearson_r_degrees_optimality_exp1_sample_unreported", "value": 0.191, "unit": "r (monotonicity; conservativity 0.235; product 0.266)", "n": 80000, "source": "the authors' own analysis_output.txt, 'natural data' block; computed by analyze.py, not reported in the paper", "baseline": "naturalness in the same sample: 0.2516 (reported)"},
+        {"name": "share_random_languages_with_any_fully_monotone_and_conservative_quantifier", "value": 0.0257, "unit": "proportion", "n": 20000, "source": "reanalysis/q4_graded_vs_binary.py", "baseline": "4.6% of random quantifiers are fully monotone; 0.5% fully monotone and conservative"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "refuted",
+        "patterns": ["text-contradicts-own-materials", "centre-hides-distribution", "missing-adequate-control"],
+        "why": "Three separate problems, each on the authors' own files. (1) The text says 'not significantly correlated', but every printed bootstrap CI excludes zero; the correlations are small and significant, and monotonicity's is significantly negative. (2) The single correlation pools languages of 1 to 10 quantifiers. Size sets both the optimality band and the spread of a mean-of-n degree, so the pooled r averages strata of opposite sign. For monotonicity, r is negative for 1-4 quantifiers and +0.29 to +0.57 for 6-10; conservativity is positive in every stratum. (3) The same analysis script computes the degree correlations on the Experiment-1 sample, where they are 0.19 / 0.23 / 0.27, about as large as the headline naturalness correlation (0.25). The paper reports only the random-sample ones. And the direct test, comparing languages made of quantifiers that HAVE the universals with ones that do not, shows the universals doing most of the work (c1 ladder). The random sample almost never contains such quantifiers: 2.6% of languages have even one fully monotone and conservative quantifier, so it cannot answer the question. The author's own caveat (5.4) points at this; the reanalysis says it is decisive, not a footnote.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Taken together, the results suggest that semantic universals for quantifiers may be epiphenomenal: a by-product of the pressure for efficient communication that does not need independent explanation.",
+      "scope": "Stated as a conjecture the results 'suggest, but by no means force' (6.1).",
+      "quantities": [],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "disputed",
+        "patterns": ["nonsignificance-read-as-absence"],
+        "why": "The conjecture rests on c2's null, which does not survive (see c2). On the evidence here the inference runs the other way: with complexity matched, the universals by themselves give languages that are at least as efficient as the 'natural' ones. So efficiency is what monotonicity and conservativity deliver, not something that merely co-occurs with them. That is consistent with the universals being explained BY efficiency, which is a different claim from their being epiphenomenal to it. It is also consistent with the same result in two other domains (colour convexity, indefinite non-overlap): a structural constraint carries most of the measured efficiency.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "code", "locator": "https://github.com/shanest/SimInf_Quantifiers", "repo_commit": "a0df2a53666a8943e9765530d7e2e28120174c6b", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "git clone; PYTHONPATH=repo python reanalysis/q1.py; informativeness/complexity of 300 random Exp-1 languages recomputed with reanalysis/qcore.py against natural_gradual/informativeness_simmax.dill and complexity_wordcomplexity.dill; frontier distance against tables/natural_data.csv", "result": "max error 2.4e-13 (informativeness), 0 (complexity), 1.7e-13 (pareto_closeness); every r in analysis_output.txt reproduced. Pipeline itself not re-run (pygmo, pathos, 8-process setup); README still says 'This code accompanies XXX'."},
+     "license": "none stated"},
+    {"id": "a2", "role": "derived-data", "locator": "https://doi.org/10.17605/OSF.IO/Y58K4 results.zip (osf file id 610852e5e380130045962b8c)", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "curl -sL -o results.zip https://osf.io/download/610852e5e380130045962b8c/; sha256sum; unzip -l", "result": "200, 50,538,787 B, 55 entries: all 279,120 quantifier meanings, complexities, per-quantifier degrees, the sampled languages (indices and strings), the measured tables, the estimated frontier, the analysis output. Unusually complete."},
+     "bytes": 50538787, "sha256": "4dd9b263956848ea7342f4353a00205764ff954e4e823b8831c58f3edb3623ea",
+     "fetch_cmd": "curl -sL -o results.zip https://osf.io/download/610852e5e380130045962b8c/",
+     "datasheet": {"caveats": "Python pickles (dill); unpickling the meanings needs only numpy, but the languages/expressions pickles need the repo's siminf package on PYTHONPATH. natural_expression_indices has 114 entries for 101 distinct quantifiers."}}
+  ],
+  "relations": [
+    {"type": "cito:disagreesWith", "target": "denic2022-indefinites-simplicity-informativeness", "why": "Both from the same group and programme. Denic et al. read the universal (Haspelmath's map) as SUPPORTING efficiency; this paper reads its own null as showing universals are epiphenomenal and cites Denic's smaller universal effect as consistent. Reanalysed, both domains point the same way: structural constraints carry most of the efficiency."},
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "zaslavsky2018-color-naming-ib", "why": "Closeness to an estimated optimum read as evidence for a communicative pressure without a structurally minimal null. Here the structural null is the paper's own universals, and it delivers the efficiency."},
+    {"type": "cito:sharesAuthorWith", "target": "denic2022-indefinites-simplicity-informativeness", "why": "Shane Steinert-Threlkeld on both."}
+  ],
+  "open_questions": [
+    "Why is monotonicity negatively related to optimality in languages of 1-4 quantifiers? A guess to test: a single monotone quantifier is true in about half the models and is uninformative alone, but monotone quantifiers tile the space well together. Check informativeness of monotone vs non-monotone singletons at matched complexity.",
+    "Does the structural-null result survive without the Quantity assumption (Reference [66] measured simplicity without it)?",
+    "The GA frontier is an estimate: 7 of 80,000 authors' languages and 0.1-0.2% of mine fall below it. Small here, but the indefinites frontier from the same method was far from the exact one -- worth checking how far this one is with a longer or seeded search.",
+    "Vocabulary: no pattern slug names 'a pooled correlation across strata whose within-stratum relations differ in sign' (Simpson's reversal). Recorded here under centre-hides-distribution; decide at the next vocabulary review whether it earns its own slug."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

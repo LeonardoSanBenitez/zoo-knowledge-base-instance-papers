@@ -1,0 +1,10 @@
+per-size r(opt, monotonicity), random sample: [np.float64(-0.214), np.float64(-0.175), np.float64(-0.127), np.float64(-0.037), np.float64(0.119), np.float64(0.292), np.float64(0.452), np.float64(0.458), np.float64(0.57), np.float64(0.39)]
+per-size r(opt, conservativity), random sample: [np.float64(0.09), np.float64(0.08), np.float64(0.069), np.float64(0.064), np.float64(0.102), np.float64(0.147), np.float64(0.116), np.float64(0.12), np.float64(0.099), np.float64(0.188)]
+random           monotonicity    pooled r -0.0590 | mean within-size r +0.1728 CI [+0.1597,+0.1894] | OLS slope with size FE -0.00721 (t -9.7)
+random           conservativity  pooled r +0.0725 | mean within-size r +0.1075 CI [+0.0939,+0.1216] | OLS slope with size FE +0.00746 (t 11.1)
+natural_gradual  naturalness     pooled r +0.2516 | mean within-size r +0.4418 CI [+0.4355,+0.4481] | OLS slope with size FE +0.01327 (t 78.7)
+natural_gradual  monotonicity    pooled r +0.1910 | mean within-size r +0.3639 CI [+0.3581,+0.3700] | OLS slope with size FE +0.02414 (t 59.2)
+natural_gradual  conservativity  pooled r +0.2350 | mean within-size r +0.4172 CI [+0.4112,+0.4238] | OLS slope with size FE +0.01930 (t 73.4)
+SD of optimality by size (random): [np.float64(0.0171), np.float64(0.0316), np.float64(0.0221), np.float64(0.0148), np.float64(0.0093), np.float64(0.0061), np.float64(0.0041), np.float64(0.004), np.float64(0.0037), np.float64(0.0058)]
+mean optimality by size (random): [np.float64(0.9464), np.float64(0.9461), np.float64(0.9608), np.float64(0.9641), np.float64(0.9572), np.float64(0.9514), np.float64(0.949), np.float64(0.9442), np.float64(0.943), np.float64(0.9359)]
+SD of monotonicity by size (random): [np.float64(0.261), np.float64(0.184), np.float64(0.152), np.float64(0.128), np.float64(0.116), np.float64(0.105), np.float64(0.098), np.float64(0.088), np.float64(0.09), np.float64(0.083)]
