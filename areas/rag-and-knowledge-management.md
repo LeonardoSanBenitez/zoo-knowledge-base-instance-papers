@@ -303,6 +303,7 @@ afterwards.
   variance and proposes a calibration procedure for how many topics give stable
   trends. That is n\* from the other side, arrived at independently. PDF already
   on disk; the highest-value next read in this area.
-- Wu et al. 2026, *How Does Chunking Affect Retrieval-Augmented Code
-  Completion?* (arXiv:2605.04763) — 864 experimental settings, and a reported
-  Cliff's δ of exactly −1.0, which is complete separation and worth chasing.
+- DONE 2026-10-16 (`wu2026-chunking-rag-code-completion`): the −1.0 is a paired sign
+  statistic mislabelled as Cliff's δ (true δ −0.82 to −0.94; still large). Honest headline:
+  function chunking was worse in 144/144 matched configurations. Configurations are the
+  inferential units; no per-item outputs are shipped. Zenodo concept DOI cited (single version so far).

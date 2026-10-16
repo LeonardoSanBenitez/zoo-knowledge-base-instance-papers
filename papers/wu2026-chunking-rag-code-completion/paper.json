@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.5",
+  "id": "wu2026-chunking-rag-code-completion",
+  "title": "How Does Chunking Affect Retrieval-Augmented Code Completion? A Controlled Empirical Study",
+  "authors": ["Xinjian Wu", "Jingzhi Gong", "Gunel Jahangirova", "Jie M. Zhang"],
+  "year": 2026,
+  "venue": "arXiv:2605.04763",
+  "area": ["rag-and-knowledge-management"],
+  "identifiers": {"arxiv": "2605.04763", "url": "https://doi.org/10.5281/zenodo.19228777"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 14,
+    "bytes_downloaded": 2700000,
+    "compute_notes": "arXiv PDF (10 pp) read. Zenodo replication package chunk.zip 2,180,133 B (md5 85caa874d297e5a395d63f0059f5b999) from version record 19228778; the paper cites the CONCEPT DOI 19228777, which today resolves to the same single version. Statistics recomputed from the shipped result CSVs in seconds; the inference pipeline (vLLM, 5 generators) not re-run.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "does chunking strategy matter for RAG code completion",
+    "function-level chunking versus sliding window",
+    "Cliff's delta of -1.0 complete separation",
+    "paired sign statistic mislabelled as Cliff's delta",
+    "cross-file context length effect on code completion",
+    "configurations as units of analysis in benchmark studies"
+  ],
+  "methods": ["manual-reanalysis-from-shared-materials", "output-diff-reproduction-check"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Function-level chunking underperforms all other strategies by 3.57-5.64 pp EM on RepoEval (Cliff's delta = -1.0, large effect); pairwise Wilcoxon tests with Bonferroni correction are significant.",
+      "scope": "RepoEval API and line splits; 144 matched configurations per strategy (4 retrievers x 4 generators x 9 chunk-size/context settings); StarCoder2 excluded from RepoEval because its technical report has no RAG results there.",
+      "quantities": [
+        {"name": "cliffs_delta_function_vs_others_true_unpaired", "value": -0.82, "unit": "Cliff's delta, P(x>y) - P(x<y) over 144 x 144 configuration pairs (API; -0.823/-0.847/-0.820 vs Declaration/Sliding/cAST)", "n": 144, "source": "reanalysis/w1_cliff.py", "baseline": "line split: -0.766/-0.943/-0.937. The paper's -1.0 reproduces exactly as the PAIRED SIGN statistic (#x>y - #x<y)/n computed by the notebook's cliffs_delta()"},
+        {"name": "paired_em_difference_function_minus_sliding_api", "value": -3.96, "unit": "EM percentage points, mean over 144 matched configurations", "n": 144, "source": "reanalysis/w1_cliff.py", "baseline": "range -6.50 to -0.32; Function lower in 144/144"},
+        {"name": "paired_sign_function_vs_others_with_starcoder2", "value": -0.772, "unit": "paired sign statistic (API, vs Declaration), 180 configurations", "n": 180, "source": "reanalysis/w1_cliff.py, first run (StarCoder2 included)", "baseline": "-0.917 vs Sliding, -0.961 vs cAST: 'worse in every configuration' holds only with StarCoder2 excluded"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["text-contradicts-own-materials", "units-of-analysis-inflated"],
+        "why": "The ranking is real and large: the true Cliff's delta is -0.82 to -0.94, 'large' by the usual thresholds, and Function is lower in all 144 matched configurations. But the -1.0 the abstract headlines is not Cliff's delta. The notebook function named cliffs_delta, commented 'for paired samples', computes the paired sign statistic; it then reads it against Cliff's delta thresholds. The notebook applies Holm correction where the text says Bonferroni. The Wilcoxon p-values (~1e-25) treat 144 configurations as independent units, although every configuration is scored on the same benchmark items. Configuration-level p-values say nothing about generalisation to new tasks, and no per-item outputs are shipped to compute item-level uncertainty. 'Worse in every configuration' also depends on excluding StarCoder2, which was excluded for a stated reason; with it included the sign statistic is -0.77 to -0.96. The authors' own explanation (function chunks are shorter than the smallest chunk size, so the token budget goes unused) predicts this ordering; their Pareto analysis, in which Function is never optimal even at its lower token cost, partly answers the budget confound.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "derived-data", "locator": "https://zenodo.org/records/19228778 (chunk.zip; paper cites concept DOI 10.5281/zenodo.19228777)", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "curl api/records/19228777 -> 302 to 19228778; conceptrecid 19228777; one version; curl .../files/chunk.zip/content; md5sum; python reanalysis/w1_cliff.py", "result": "md5 matches the record; configuration-level result CSVs (api/line_all_results.csv, 725 rows each) reproduce every value in eval/figure/output/repoeval_rq1_statistical_tests.csv once StarCoder2 is dropped as in the notebook. No per-item predictions shipped (examples/outputs holds 3 sample files)."},
+     "bytes": 2180133, "fetch_cmd": "curl -sL -o chunk.zip https://zenodo.org/api/records/19228778/files/chunk.zip/content", "license": "cc-by-4.0"}
+  ],
+  "relations": [
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "mazuryk2026-powerless-noise", "why": "Both report effects over a grid of model/retriever/parameter configurations scored on one benchmark, and both treat configurations as the units of inference; the uncertainty that matters for a practitioner (over tasks) is not what the tests measure."}
+  ],
+  "open_questions": [
+    "Item-level reanalysis: needs per-task predictions (not shipped). Ask whether they exist.",
+    "Budget-matched comparison: Function vs Sliding Window at equal retrieved tokens across the grid (avg_token_cost is in the CSVs; a matched-cost regression is cheap and was not done here)."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}
