@@ -67,7 +67,7 @@
   "open_questions": [
     "Train the colour game with a NONLINEAR Listener (or one that sees chip indices, not CIELAB) and check whether emergent systems stay convex and stay within the human Inef range. That separates 'communication produces efficiency' from 'a linear readout of CIELAB produces convexity'.",
     "Retrieve the SI (PNAS DCSupplemental) for the NN Inef values and the convexity comparison (SI 10); compare NN Inef with the convex null directly.",
-    "Crossref correction check not run this session; PMC lists a 2021-03-16 licence update only."
+    "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1073/pnas.2016569118 -> 0 items; PMC lists a 2021-03-16 licence update only."
   ],
   "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
 }
