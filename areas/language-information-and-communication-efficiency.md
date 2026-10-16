@@ -73,6 +73,13 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   (0.065 bits simpler, 0.024 bits more accurate). So 'the residual is always on a theorist-built
   complexity axis' (first draft) holds for quantifiers and mostly for indefinites, NOT for colour.
   Read the next bullet with this correction.
+- **Colour's residual is prior-dependent (19:40).** Under a uniform source, instead of the LI prior
+  estimated from the WCS naming data, mode maps no longer beat random convex partitions (net
+  dominance -0.048 [-0.072, -0.025]; simpler but less accurate). So the one domain with a residual
+  informativeness edge owes it to a prior built from the same languages. Working hypothesis for
+  the area (tested only for colour): **every surviving edge over the structural null comes from a
+  quantity estimated from the systems being judged** (need priors from usage, features or LoTs from
+  the same typology).
 - **Neuralese (`chaabouni2021-emergent-colour-naming`).** Emergent NN colour codes are called
   efficient because their distance to the IB bound falls within the human range. 93.5% of random
   convex partitions of CIELAB also fall within it (random partitions 0%). With a linear Listener
