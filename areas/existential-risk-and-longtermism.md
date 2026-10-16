@@ -192,3 +192,8 @@ Extinction: the control-problem wording (a subset event) gets median 10% against
 general wording (p = 0.008, small effect) -- unpacking adds probability. Same lesson as the
 format table above, from a third manipulation: **an elicited probability of an unresolvable
 event is a function of its instrument.** Query: `kb.py query --pattern instrument-relative`.
+
+**Identified vs extrapolated (added 2026-10-16 evening, `grace2024#` open question 3).** Trusting each
+respondent's curve only up to the horizon they actually answered: the HLMI 50% year (2048) is
+identified to within a year, but the 90% years are not identified at all, and the FAOL 50% year
+(the paper's 2116) is identified only as [2073, 2202]. Quote FAOL as an interval or not at all.
