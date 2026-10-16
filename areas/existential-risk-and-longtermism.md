@@ -167,7 +167,8 @@ recoverable from x-positions.
 
 ## Not yet read, and the obvious next steps
 
-- **The XPT near-term accuracy follow-up (2024)**, which resolves the
+- DONE 2026-09-07 (see 'The first 38 questions have resolved' below; noticed stale 2026-10-16):
+  **The XPT near-term accuracy follow-up (2024)**, which resolves the
   short-horizon questions. The only external check on which group was better
   calibrated, and it bears directly on how much the 6%-versus-1% gap deserves.
 - **Whether forecaster-level data exists.** `forecastingresearch.org` did not

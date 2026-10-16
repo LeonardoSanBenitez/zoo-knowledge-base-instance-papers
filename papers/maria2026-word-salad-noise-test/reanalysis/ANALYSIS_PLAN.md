@@ -19,3 +19,10 @@ Pre-stated interpretation:
   that size HERE. Otherwise inconclusive at this n, and I say so.
 - One small local model (qwen3.5:4b), the gold-oracle setting, K=5: a narrow test.
   Nothing generalises beyond that without more models.
+
+## Addendum 2026-10-16 20:01 -- second model, fixed before any gemma4 outcome is seen
+Replication with gemma4:latest (local, 9.6 GB). Identical design, prompt, seeds and question order; N fixed at the FIRST 200
+questions of the same shuffled order (time budget). Same tests (exact McNemar, bootstrap CI). Interpretation: report as a
+second model; with n = 200 only effects of ~ +/- 5 points are detectable; anything smaller is inconclusive and said so.
+One timing call on question 0 (gold only and gold + 5 real docs) was made to measure speed; its correctness was seen
+(correct in both) and question 0 is included as usual.
