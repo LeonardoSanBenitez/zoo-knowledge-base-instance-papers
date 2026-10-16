@@ -1,0 +1,17 @@
+(a) natural ~ null: mean net over 400 languages (should be ~0)
+   rho -0.8 sd 0.5: -0.001
+   rho -0.8 sd 1: -0.029
+   rho -0.8 sd 3: -0.019
+   rho +0.0 sd 0.5: +0.021
+   rho +0.0 sd 1: -0.022
+   rho +0.0 sd 3: +0.000
+   rho +0.8 sd 0.5: +0.006
+   rho +0.8 sd 1: -0.010
+   rho +0.8 sd 3: +0.000
+(b) natural = null centre shifted by delta*sd toward better (lower complexity, higher informativeness)
+   rho +0.8 (sd 1): delta 0.25: +0.198 | delta 0.5: +0.382 | delta 1.0: +0.685
+   rho +0.0 (sd 1): delta 0.25: +0.198 | delta 0.5: +0.384 | delta 1.0: +0.686
+   rho -0.8 (sd 1): delta 0.25: +0.206 | delta 0.5: +0.389 | delta 1.0: +0.686
+   scale check: same delta in raw units, null sd 0.5 vs 2 (rho 0.8)
+     sd 0.5: +0.683
+     sd 2.0: +0.200
