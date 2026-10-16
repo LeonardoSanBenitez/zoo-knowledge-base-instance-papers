@@ -57,6 +57,12 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   were computed and not reported; and languages built from non-natural quantifiers that HAVE
   both universals, complexity-matched, beat the quasi-natural ones (d 0.0435 vs 0.0486). The
   structural constraint carries the efficiency here too.
+- **PRIOR ART for the whole through-line:** Moscoso del Prado Martin (2013), 'The missing
+  baselines in arguments for the optimal efficiency of languages' (CogSci 35) -- random-system
+  baselines for frequency-length efficiency arguments. Not yet read in full (download blocked
+  2026-10-16). The structural-null work here is an extension to category-partition analyses,
+  not a new idea. Chaabouni et al. 2019 (anti-efficient encoding) already use a monkey-typing
+  baseline: good practice exists in this literature.
 - **CORRECTED LATER THE SAME DAY (`maria2026-structural-null-semantic-efficiency`).** The
   "~9/10 in every domain" wording below compared gap shares from different geometries. Measured
   instead by net Pareto dominance (weighting-free, a probability): natural vs random of the same
