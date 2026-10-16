@@ -292,6 +292,7 @@ Even when it feels more convenient to leave a note here.
 
 ```
 python tools/kb.py validate                       # after every edit
+python tools/kb.py transcription --record <id>    # do the numbers you typed appear in the outputs you saved?
 python tools/kb.py index                          # regenerate the index
 python tools/kb.py query --method <slug>          # precedent for a method
 python tools/kb.py quantities --about <phenomenon> # what has anyone MEASURED
