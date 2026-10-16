@@ -1,0 +1,16 @@
+tokens 219054, types 16956, p0 0.187, char entropy 2.836 nats
+  l= 1  real I0   4.42   random-typing I0   4.57   (n tokens 9201)
+  l= 2  real I0   4.68   random-typing I0   7.67   (n tokens 35688)
+  l= 3  real I0   4.81   random-typing I0  10.78   (n tokens 49728)
+  l= 4  real I0   7.01   random-typing I0  13.88   (n tokens 42293)
+  l= 5  real I0   8.11   random-typing I0  16.98   (n tokens 26710)
+  l= 6  real I0   9.36   random-typing I0  20.08   (n tokens 17120)
+  l= 7  real I0   9.58   random-typing I0  23.18   (n tokens 14561)
+  l= 8  real I0  10.14   random-typing I0  26.28   (n tokens 10006)
+  l= 9  real I0  10.45   random-typing I0  29.38   (n tokens 6443)
+  l=10  real I0  10.79   random-typing I0  32.48   (n tokens 3524)
+  l=11  real I0  11.09   random-typing I0  35.58   (n tokens 1880)
+  l=12  real I0  11.18   random-typing I0  38.68   (n tokens 1056)
+  l=13  real I0  11.17   random-typing I0  41.78   (n tokens 564)
+real text: slope 0.632 intercept 4.256 R2 0.891 | random typing with same character statistics: slope 3.101 intercept 1.473
+ratio real/random slope: 0.204

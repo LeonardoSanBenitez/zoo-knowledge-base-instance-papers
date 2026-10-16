@@ -1,0 +1,2 @@
+real text: slope 0.492 intercept 4.557 R2 0.797 | random typing with same character statistics: slope 3.061 intercept 1.572
+ratio real/random slope: 0.161
