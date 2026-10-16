@@ -1,54 +1,85 @@
 {
-  "schema_version": "1.5",
-  "id": "boldt2024-elcc-emergent-language-corpora",
-  "title": "ELCC: the Emergent Language Corpus Collection",
-  "authors": ["Brendon Boldt", "David Mortensen"],
-  "year": 2024,
-  "venue": "arXiv:2407.04158v2 (preprint)",
-  "area": ["language-information-and-communication-efficiency"],
-  "identifiers": {"arxiv": "2407.04158", "url": "https://huggingface.co/datasets/bboldt/elcc"},
-  "record_status": "active",
-  "read_depth": "skimmed",
-  "cost": {
-    "tool_calls": 9,
-    "bytes_downloaded": 1500000,
-    "compute_notes": "arXiv PDF: introduction, analysis section and figure captions read. HF dataset listed at revision f69cc6d49d02c1645344d7186f266588168aed22 (333 files); all 73 per-corpus metadata.json fetched at that revision (a few kB each). Corpora themselves not downloaded.",
-    "session": "2026-10-16 maria, free deep research"
-  },
-  "triggers": [
-    "collection of emergent language corpora",
-    "neuralese corpora for analysis without running agents",
-    "XferBench emergent language humanlikeness",
-    "unigram entropy predicts transfer learning value of emergent languages",
-    "emergent communication corpora entropy metrics"
-  ],
-  "methods": [],
-  "claims": [
-    {
-      "id": "c1",
-      "statement": "There is a strong correlation between a corpus's unigram entropy and its XferBench score (usefulness as pretraining data for human-language modelling), for emergent and human languages alike, while task success rate is not well correlated with XferBench.",
-      "scope": "73 corpora from 7 emergent-communication systems plus XferBench's human-language baselines; Figure 4 (raster images).",
-      "quantities": [],
-      "evidence": ["a1"],
-      "our_assessment": {
-        "status": "unverified",
-        "patterns": [],
-        "why": "No correlation coefficient is reported, and the per-corpus XferBench scores are not in the released dataset (the 73 metadata.json files carry size and entropy metrics only); Figures 2 and 4 are raster images, so the points cannot be recovered or matched to corpora. If the claim holds, it matters for neuralese research: a 'humanlikeness' metric that tracks unigram entropy would rank a structureless high-entropy token stream as human-like. The decisive test is cheap in design but needs GPU time: run XferBench on each corpus with its tokens shuffled (same unigram distribution, no structure). If shuffled corpora score like the originals, XferBench measures entropy, not language.",
-        "by": "maria, 2026-10-16"
-      }
-    }
-  ],
-  "artifacts": [
-    {"id": "a1", "role": "benchmark", "locator": "https://huggingface.co/datasets/bboldt/elcc (revision f69cc6d49d02c1645344d7186f266588168aed22)", "status": "verified-usable",
-     "checked": {"on": "2026-10-16", "by": "maria", "how": "HF API listing; curl .../resolve/<sha>/<path>/metadata.json for all 73 corpora", "result": "73 corpora (corpus.jsonl + metadata.json each; 25 with corpus.structured.jsonl), 7 systems with code; metrics = token/line counts, unique tokens/lines, 1- and 2-gram entropies, entropy per line, task success/reward. XferBench scores NOT included. Licences: data CC BY 4.0, code MIT."},
-     "license": "CC BY 4.0 (data), MIT (code)", "fetch_cmd": "curl -sL https://huggingface.co/datasets/bboldt/elcc/resolve/f69cc6d49d02c1645344d7186f266588168aed22/systems/<system>/data/<run>/corpus.jsonl"}
-  ],
-  "relations": [
-    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "chaabouni2021-emergent-colour-naming", "why": "Both judge emergent codes 'human-like' by a criterion that a structure-free or minimally structured null may already satisfy (convex partitions there; high-entropy token streams here, if the entropy correlation is as strong as described)."}
-  ],
-  "open_questions": [
-    "Shuffled-token control for XferBench (needs a GPU and the XferBench code): does a corpus with its own unigram distribution but no sequential structure score like the original?",
-    "Get the per-corpus XferBench scores from the authors or the XferBench repository and compute the entropy correlation, with and without the human baselines."
-  ],
-  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+ "schema_version": "1.5",
+ "id": "boldt2024-elcc-emergent-language-corpora",
+ "title": "ELCC: the Emergent Language Corpus Collection",
+ "authors": [
+  "Brendon Boldt",
+  "David Mortensen"
+ ],
+ "year": 2024,
+ "venue": "arXiv:2407.04158v2 (preprint)",
+ "area": [
+  "language-information-and-communication-efficiency"
+ ],
+ "identifiers": {
+  "arxiv": "2407.04158",
+  "url": "https://huggingface.co/datasets/bboldt/elcc"
+ },
+ "record_status": "active",
+ "read_depth": "skimmed",
+ "cost": {
+  "tool_calls": 9,
+  "bytes_downloaded": 1500000,
+  "compute_notes": "arXiv PDF: introduction, analysis section and figure captions read. HF dataset listed at revision f69cc6d49d02c1645344d7186f266588168aed22 (333 files); all 73 per-corpus metadata.json fetched at that revision (a few kB each). Corpora themselves not downloaded.",
+  "session": "2026-10-16 maria, free deep research"
+ },
+ "triggers": [
+  "collection of emergent language corpora",
+  "neuralese corpora for analysis without running agents",
+  "XferBench emergent language humanlikeness",
+  "unigram entropy predicts transfer learning value of emergent languages",
+  "emergent communication corpora entropy metrics"
+ ],
+ "methods": [],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "There is a strong correlation between a corpus's unigram entropy and its XferBench score (usefulness as pretraining data for human-language modelling), for emergent and human languages alike, while task success rate is not well correlated with XferBench.",
+   "scope": "73 corpora from 7 emergent-communication systems plus XferBench's human-language baselines; Figure 4 (raster images).",
+   "quantities": [],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "patterns": [],
+    "why": "No correlation coefficient is reported, and the per-corpus XferBench scores are not in the released dataset (the 73 metadata.json files carry size and entropy metrics only); Figures 2 and 4 are raster images, so the points cannot be recovered or matched to corpora. If the claim holds, it matters for neuralese research: a 'humanlikeness' metric that tracks unigram entropy would rank a structureless high-entropy token stream as human-like. The decisive test is cheap in design but needs GPU time: run XferBench on each corpus with its tokens shuffled (same unigram distribution, no structure). If shuffled corpora score like the originals, XferBench measures entropy, not language.",
+    "by": "maria, 2026-10-16"
+   }
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "benchmark",
+   "locator": "https://huggingface.co/datasets/bboldt/elcc (revision f69cc6d49d02c1645344d7186f266588168aed22)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-10-16",
+    "by": "maria",
+    "how": "HF API listing; curl .../resolve/<sha>/<path>/metadata.json for all 73 corpora",
+    "result": "73 corpora (corpus.jsonl + metadata.json each; 25 with corpus.structured.jsonl), 7 systems with code; metrics = token/line counts, unique tokens/lines, 1- and 2-gram entropies, entropy per line, task success/reward. XferBench scores NOT included. Licences: data CC BY 4.0, code MIT."
+   },
+   "license": "CC BY 4.0 (data), MIT (code)",
+   "fetch_cmd": "curl -sL https://huggingface.co/datasets/bboldt/elcc/resolve/f69cc6d49d02c1645344d7186f266588168aed22/systems/<system>/data/<run>/corpus.jsonl"
+  }
+ ],
+ "relations": [
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "chaabouni2021-emergent-colour-naming",
+   "why": "Both judge emergent codes 'human-like' by a criterion that a structure-free or minimally structured null may already satisfy (convex partitions there; high-entropy token streams here, if the entropy correlation is as strong as described)."
+  }
+ ],
+ "open_questions": [
+  "Shuffled-token control for XferBench (needs a GPU and the XferBench code): does a corpus with its own unigram distribution but no sequential structure score like the original?",
+  "Get the per-corpus XferBench scores from the authors or the XferBench repository and compute the entropy correlation, with and without the human baselines.",
+  "NOT WELL-POSED as found 2026-10-16: a cross-system Zipf's-law-of-abbreviation test (cf. Chaabouni et al. 2019 anti-efficient encoding). Of 73 corpora, the message-level signalling games have fixed message length (Tokens per Line SD = 0); the 42 variable-length corpora under 3M tokens are BabyAI navigation, nav-to-center and RL-Lupus, whose lines look like episodes (e.g. 21 tokens/line, SD 12), not single messages, and carry no input-frequency information. A ZLA test needs message-level units with known referent frequencies; corpus.structured.jsonl (25 corpora) may carry them -- check before trying."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-10-16",
+  "verified": "2026-10-16",
+  "notes_file": "NOTES.md"
+ }
 }
