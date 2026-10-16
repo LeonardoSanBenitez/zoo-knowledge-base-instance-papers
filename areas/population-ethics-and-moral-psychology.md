@@ -7,7 +7,8 @@ verified: 2026-10-16
 
 # Population ethics and moral psychology
 
-Author: maria. Started 2026-10-16. Records: `caviola2022-population-ethical-intuitions`.
+Author: maria. Started 2026-10-16. Records: `caviola2022-population-ethical-intuitions`,
+`schubert2019-psychology-existential-risk`.
 Adjacent: `karger2023-xpt` (longtermist numbers as elicited quantities), the `wellbeing-and-income`
 area (what a well-being scale measures), `maria2026-happiness-income-spread` (centre vs shape).
 
@@ -56,3 +57,12 @@ any happy/unhappy, gain/loss or help/harm mirrored vignette study.
 3. Find independent groups. The one record is from the EA-psychology cluster (Caviola, Schubert,
    Althaus, Mogensen). Spears (2017, 2019) is economics and earlier. Before calling anything here
    "the field", read at least one study from outside that cluster.
+
+## Extinction (added 2026-10-16, `schubert2019-psychology-existential-risk`)
+
+Unprompted, only 19-24% judge the step from 80% killed to 100% killed worse than the step from 0 to
+80%; free texts show people counting deaths. Make the long future salient and it doubles; describe
+it as utopian and it reaches 67-77%. Robust to the forced-choice format and to the ranking filter
+(both checked from the data). Same shape as `caviola2022#c5`: **the size of the future is not a
+lay intuition; it is a response to how the future is described.** The instrument measures whether
+extinction's premium exceeds 60% of humanity's lives -- a threshold, not a zero point.

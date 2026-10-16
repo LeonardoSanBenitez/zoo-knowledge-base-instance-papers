@@ -1,0 +1,2 @@
+2a: texts 621 of 1050 ranked; "equal/cannot compare" signals 22 (3.5%); by condition {'control': 1, 'goodfuture': 19, 'salientfuture': 2}
+2b: texts 448 of 760 ranked; "equal/cannot compare" signals 20 (4.5%); by condition {'control': 3, 'goodfuture': 15, 'salientfuture': 2}

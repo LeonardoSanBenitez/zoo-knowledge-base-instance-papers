@@ -1,0 +1,75 @@
+{
+ "archive": "osf",
+ "persistent_id": "https://osf.io/erp2z/",
+ "guid": "erp2z",
+ "guid_type": "nodes",
+ "files": [
+  {
+   "filename": "osfstorage/Parfit 2a - five conditions UK sample.pdf",
+   "provider": "osfstorage",
+   "size": 175838,
+   "osf_file_id": "5c6d356a82a3950017c97d74",
+   "guid": "sbw9z",
+   "current_version": 1,
+   "published_md5": "5f7ae49a5c996cdb8977e3ab3b4b94c0",
+   "published_sha256": "9478dc0e059bdc0aafe06942e42da4a0b6ab40f6c8b544cd671dcc9c8dc630ad",
+   "fetched_from": "https://osf.io/download/sbw9z/?version=1",
+   "local_path": "files/osfstorage/Parfit 2a - five conditions UK sample.pdf",
+   "bytes_downloaded": 175838,
+   "sha256": "9478dc0e059bdc0aafe06942e42da4a0b6ab40f6c8b544cd671dcc9c8dc630ad",
+   "computed_md5": "5f7ae49a5c996cdb8977e3ab3b4b94c0",
+   "verdict": "verified"
+  },
+  {
+   "filename": "osfstorage/Parfit2a.R",
+   "provider": "osfstorage",
+   "size": 4365,
+   "osf_file_id": "5c6d356a62c82a0017d79082",
+   "guid": "x5agp",
+   "current_version": 1,
+   "published_md5": "a5222fc2794ab0a7e79391bbc1bd8f4c",
+   "published_sha256": "9ef213f08272713b88fa587f70b26c19f627d899a682733b495efe848b9fc58a",
+   "fetched_from": "https://osf.io/download/x5agp/?version=1",
+   "local_path": "files/osfstorage/Parfit2a.R",
+   "bytes_downloaded": 4365,
+   "sha256": "9ef213f08272713b88fa587f70b26c19f627d899a682733b495efe848b9fc58a",
+   "computed_md5": "a5222fc2794ab0a7e79391bbc1bd8f4c",
+   "verdict": "verified"
+  },
+  {
+   "filename": "osfstorage/Parfit2a.csv",
+   "provider": "osfstorage",
+   "size": 423511,
+   "osf_file_id": "5c6d356a82a3950017c97d78",
+   "guid": "p8rny",
+   "current_version": 1,
+   "published_md5": "f5fad9a67e3846c552e9b1d603a15f39",
+   "published_sha256": "a3f251d49f3d5424e863c6bc978db262ebfc1def1b04c31b6ea3f9c4034529d0",
+   "fetched_from": "https://osf.io/download/p8rny/?version=1",
+   "local_path": "files/osfstorage/Parfit2a.csv",
+   "bytes_downloaded": 423511,
+   "sha256": "a3f251d49f3d5424e863c6bc978db262ebfc1def1b04c31b6ea3f9c4034529d0",
+   "computed_md5": "f5fad9a67e3846c552e9b1d603a15f39",
+   "verdict": "verified"
+  }
+ ],
+ "unreadable_listings": [],
+ "child_components": [],
+ "view_only": null,
+ "title": "Study 2a (5 conditions UK sample)",
+ "date_modified": "2024-05-31T21:56:45.847197",
+ "public": true,
+ "license_id": null,
+ "providers": [
+  "osfstorage"
+ ],
+ "n_files_in_deposit": 3,
+ "summary": {
+  "backend": "osf",
+  "rows": 3,
+  "verified": 3,
+  "mismatched": 0,
+  "skipped": 0,
+  "no_published_checksum": 0
+ }
+}

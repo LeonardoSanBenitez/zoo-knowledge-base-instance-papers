@@ -1,0 +1,30 @@
+== Study 2a: N=1251 (excluded 50)
+ main coding: {0.0: 543, 1.0: 507, nan: 201}
+                 N  ranked  second_greater
+condition                                 
+control        257     213              50
+goodfuture     248     215             165
+salientfuture  248     193              97
+sterilization  252     208              97
+zebras         246     221              98
+  control vs zebras: Yates chi2 = 20.10
+  control vs sterilization: Yates chi2 = 23.83
+  control vs salientfuture: Yates chi2 = 30.30
+  control vs goodfuture: Yates chi2 = 119.33
+  salient vs good: Yates chi2 = 29.90
+  CRT logistic: B = 0.138, Exp(B) = 1.148, p = 0.0274
+== Study 2b: N=855 (excluded 139)
+ main coding: {0.0: 471, 1.0: 289, nan: 95}
+                 N  ranked  second_greater
+condition                                 
+control        164     144              27
+goodfuture     175     157             105
+salientfuture  177     147              58
+sterilization  167     153              44
+zebras         172     159              55
+  control vs zebras: Yates chi2 = 8.82
+  control vs sterilization: Yates chi2 = 3.55
+  control vs salientfuture: Yates chi2 = 14.10
+  control vs goodfuture: Yates chi2 = 68.72
+  salient vs good: Yates chi2 = 21.87
+  CRT logistic: B = 0.194, Exp(B) = 1.215, p = 0.0092

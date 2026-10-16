@@ -1,0 +1,75 @@
+{
+ "archive": "osf",
+ "persistent_id": "https://osf.io/c4qy9/",
+ "guid": "c4qy9",
+ "guid_type": "nodes",
+ "files": [
+  {
+   "filename": "osfstorage/Parfit 2b - five conditions US sample.pdf",
+   "provider": "osfstorage",
+   "size": 174776,
+   "osf_file_id": "5c6d35b462c82a0018d679e8",
+   "guid": "np7t2",
+   "current_version": 1,
+   "published_md5": "2b341fb19f245ec183ccf6f81f322565",
+   "published_sha256": "c489c611193dc1c2da52b2c395b5a38d1816ba18af4f70886ce4f01a2b73be27",
+   "fetched_from": "https://osf.io/download/np7t2/?version=1",
+   "local_path": "files/osfstorage/Parfit 2b - five conditions US sample.pdf",
+   "bytes_downloaded": 174776,
+   "sha256": "c489c611193dc1c2da52b2c395b5a38d1816ba18af4f70886ce4f01a2b73be27",
+   "computed_md5": "2b341fb19f245ec183ccf6f81f322565",
+   "verdict": "verified"
+  },
+  {
+   "filename": "osfstorage/Parfit2b.csv",
+   "provider": "osfstorage",
+   "size": 391731,
+   "osf_file_id": "5c6d35b462c82a0019d6a98e",
+   "guid": "dvrzg",
+   "current_version": 1,
+   "published_md5": "4bc0b8a0c1c4a74dc8f0e85d4b372b60",
+   "published_sha256": "3b73210647284600b18064b5157d1f96a04d8bff4c507efff0b21b762af3d09c",
+   "fetched_from": "https://osf.io/download/dvrzg/?version=1",
+   "local_path": "files/osfstorage/Parfit2b.csv",
+   "bytes_downloaded": 391731,
+   "sha256": "3b73210647284600b18064b5157d1f96a04d8bff4c507efff0b21b762af3d09c",
+   "computed_md5": "4bc0b8a0c1c4a74dc8f0e85d4b372b60",
+   "verdict": "verified"
+  },
+  {
+   "filename": "osfstorage/Parfit2b.R",
+   "provider": "osfstorage",
+   "size": 6089,
+   "osf_file_id": "5c6d368a8d5d98001d2f9529",
+   "guid": "ue6ng",
+   "current_version": 1,
+   "published_md5": "7b89fd4e54ff60e754e44fa8ff3e7ddf",
+   "published_sha256": "6dd48d4037b303b0b8e6165b02383297a5600de718b92cb8bbb4cf2e7d526352",
+   "fetched_from": "https://osf.io/download/ue6ng/?version=1",
+   "local_path": "files/osfstorage/Parfit2b.R",
+   "bytes_downloaded": 6089,
+   "sha256": "6dd48d4037b303b0b8e6165b02383297a5600de718b92cb8bbb4cf2e7d526352",
+   "computed_md5": "7b89fd4e54ff60e754e44fa8ff3e7ddf",
+   "verdict": "verified"
+  }
+ ],
+ "unreadable_listings": [],
+ "child_components": [],
+ "view_only": null,
+ "title": "Study 2b (5 conditions US sample)",
+ "date_modified": "2024-05-31T21:56:45.999813",
+ "public": true,
+ "license_id": null,
+ "providers": [
+  "osfstorage"
+ ],
+ "n_files_in_deposit": 3,
+ "summary": {
+  "backend": "osf",
+  "rows": 3,
+  "verified": 3,
+  "mismatched": 0,
+  "skipped": 0,
+  "no_published_checksum": 0
+ }
+}

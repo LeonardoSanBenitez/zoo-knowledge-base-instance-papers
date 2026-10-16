@@ -1,0 +1,22 @@
+2a animals       vs control : printed   8.820 | recomputed  21.02 (no Yates)  20.10 (Yates)   <-- MATCHES NEITHER
+2a sterilization vs control : printed  23.830 | recomputed  24.84 (no Yates)  23.83 (Yates)
+2a salience      vs control : printed  29.900 | recomputed  31.45 (no Yates)  30.30 (Yates)   <-- MATCHES NEITHER
+2a utopia        vs control : printed  30.300 | recomputed 121.45 (no Yates) 119.33 (Yates)   <-- MATCHES NEITHER
+2a utopia        vs salience: printed  29.900 | recomputed  31.05 (no Yates)  29.90 (Yates)
+2b animals       vs control : printed   8.820 | recomputed   9.61 (no Yates)   8.82 (Yates)
+2b salience      vs control : printed  14.100 | recomputed  15.08 (no Yates)  14.10 (Yates)
+2b utopia        vs control : printed  68.720 | recomputed  70.66 (no Yates)  68.72 (Yates)
+2b utopia        vs salience: printed  21.868 | recomputed  22.96 (no Yates)  21.87 (Yates)
+2b sterilization vs control : printed   3.550 | recomputed   4.08 (no Yates)   3.55 (Yates)
+
+unconditional share (uniquely bad AND expected ranking) / everyone in the condition, and ranking-filter pass rate:
+  2a control       conditional 0.235  unconditional 0.195  pass-rate 0.829
+  2a animals       conditional 0.443  unconditional 0.398  pass-rate 0.898
+  2a sterilization conditional 0.466  unconditional 0.385  pass-rate 0.825
+  2a salience      conditional 0.503  unconditional 0.391  pass-rate 0.778
+  2a utopia        conditional 0.767  unconditional 0.665  pass-rate 0.867
+  2b control       conditional 0.188  unconditional 0.165  pass-rate 0.878
+  2b animals       conditional 0.346  unconditional 0.320  pass-rate 0.924
+  2b sterilization conditional 0.288  unconditional 0.263  pass-rate 0.916
+  2b salience      conditional 0.395  unconditional 0.328  pass-rate 0.831
+  2b utopia        conditional 0.669  unconditional 0.600  pass-rate 0.897

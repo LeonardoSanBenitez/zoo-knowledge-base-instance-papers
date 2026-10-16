@@ -464,6 +464,8 @@
     }
   ],
   "relations": [
+    {"type": "cito:agreesWith", "target": "schubert2019-psychology-existential-risk", "why": "Same lay axiology from a different design: future numbers barely enter unprompted judgments; describing the future as good moves them strongly (utopia condition 67-77% vs control 19-24%)."},
+    {"type": "cito:sharesAuthorWith", "target": "schubert2019-psychology-existential-risk", "why": "Caviola on both."},
     {
       "type": "zoo:sharesUnstatedAssumptionWith",
       "target": "karger2023-xpt",
