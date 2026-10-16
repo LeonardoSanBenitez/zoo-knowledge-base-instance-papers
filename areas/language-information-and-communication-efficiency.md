@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Language, information and communication efficiency
 
-Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`.
+Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`, `maria2026-structural-null-semantic-efficiency`.
 
 **Scope.** Quantitative claims about how languages encode and transmit information -- rates,
 densities, efficiency trade-offs -- read for what is measured versus what is named. Includes, as
@@ -57,6 +57,14 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   were computed and not reported; and languages built from non-natural quantifiers that HAVE
   both universals, complexity-matched, beat the quasi-natural ones (d 0.0435 vs 0.0486). The
   structural constraint carries the efficiency here too.
+- **CORRECTED LATER THE SAME DAY (`maria2026-structural-null-semantic-efficiency`).** The
+  "~9/10 in every domain" wording below compared gap shares from different geometries. Measured
+  instead by net Pareto dominance (weighting-free, a probability): natural vs random of the same
+  size is +0.92 / +0.96 / +0.62 (indefinites / modals / quantifiers); vs the structural null it
+  is +0.15 [0.02, 0.28] / -0.25 [-0.42, -0.08] / +0.37 [0.34, 0.39]. So structure removes 84%,
+  more than 100%, and 41% of the advantage. Where an edge survives, it is on the complexity axis,
+  measured in a theorist-built representation language. No domain shows an informativeness edge
+  over the structural null. Read the next bullet with this correction.
 - **The through-line, three domains (colour, indefinites, quantifiers):** what is reported as
   the efficiency of natural systems is mostly the efficiency of any system obeying a simple
   structural constraint (convexity; no synonymy; monotone+conservative). Where a residual

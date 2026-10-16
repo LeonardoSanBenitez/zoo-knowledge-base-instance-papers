@@ -1,0 +1,3 @@
+indefinites {'random items, same size': (0.9233333333333333, [0.892, 0.948], 40), 'overlap-free, same size & coverage': (0.147008547008547, [0.017, 0.279], 39)}
+modals {'random meanings, same size': (0.9561904761904761, [0.936, 0.974], 28), 'IFF distinct, same size, coverage & overlap': (-0.24660701605561128, [-0.422, -0.078], 27)}
+quantifiers {'random non-natural, same size': (0.6219055555555556, [0.593, 0.652], 600), 'monotone+conservative non-natural, same size': (0.3671277777777778, [0.34, 0.394], 600)}
