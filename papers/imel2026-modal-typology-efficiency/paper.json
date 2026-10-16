@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.5",
+  "id": "imel2026-modal-typology-efficiency",
+  "title": "An Efficient Communication Analysis of Modal Typology",
+  "authors": ["Nathaniel Imel", "Qingxia Guo", "Shane Steinert-Threlkeld"],
+  "year": 2026,
+  "venue": "Open Mind 10:1-28",
+  "area": ["language-information-and-communication-efficiency"],
+  "identifiers": {
+    "doi": "10.1162/OPMI.a.313",
+    "pmcid": "PMC13053023",
+    "url": "https://github.com/nathimel/modals-effcomm"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 40,
+    "bytes_downloaded": 960000000,
+    "compute_notes": "Full text from Europe PMC JATS XML. Repo cloned in full (916 MB .git -- the history carries outputs; a shallow fetch of branch drop_syn would have sufficed). Published-run outputs located on branch drop_syn @ dbe09dc (N = 32,301 matches the paper); revisions @ a1cad7f also read. Measures re-implemented (reanalysis/mcore.py); small inputs copied to artifacts/. Clone deleted after the session. All analyses run in seconds to a few minutes.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "modal typology efficient communication",
+    "independence of force and flavor universal",
+    "are attested modal systems near-optimal",
+    "bug in published efficiency analysis prior reversed",
+    "complexity measure in code differs from the paper",
+    "structural null for semantic efficiency analyses",
+    "efficient communication in function words modals"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "output-diff-reproduction-check",
+    "null-ladder",
+    "exact-permutation-test"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Every Pareto-optimal modal system (on the estimated frontier) consists only of modals satisfying the Independence of Force and Flavor (IFF).",
+      "scope": "Meaning space 2 forces x 3 flavours; 63 possible modal meanings; GA-estimated frontier; MDL complexity in a Boolean LoT whose atoms are the force and flavour values.",
+      "quantities": [
+        {"name": "share_exact_frontier_languages_all_iff", "value": 1.0, "count": 10, "denominator": 10, "unit": "frontier languages", "n": 10, "source": "reanalysis/m3_frontier_cardinality.py (enumeration of all <= 4-meaning languages and all partial partitions)", "baseline": "same under the Table-5 prior and the as-run prior, and under both complexity measures (atoms, as written; nodes-1, as run)"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted",
+        "patterns": [],
+        "why": "Holds on the EXACT frontier, which I enumerated, and survives both implementation defects in c4/c5. Read it for what it is: the LoT's atoms are the two axes, so IFF meanings (Cartesian products) are the short formulas. The fact is real, but much of it is a property of the representation language.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "A language's degree of naturalness (share of IFF modals) correlates strongly with simplicity (r = .484), informativeness (r = .576) and optimality (r = .537), and these correlations are robust across eight informativeness settings.",
+      "scope": "Population of 32,301 languages: random samples stratified by size and IFF count PLUS languages found by four GA runs, three of which explore the corners that MAXIMISE cost and/or complexity.",
+      "quantities": [
+        {"name": "pearson_r_iff_share_informativeness_uniform_binary_random", "value": 0.207, "unit": "r", "n": 20000, "source": "reanalysis/m3_frontier_cardinality.py (my random population, sizes 1-10, uniform prior, binary utility)", "baseline": "controlling mean meaning size, number of modals and overlap: IFF coefficient 0.0003 (t = 0.31). In this setting informativeness is invariant to relabelling the 6 points, so the IFF link can only be cardinality: all 6 singletons are IFF and r(IFF share, mean meaning size) = -0.46"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["missing-adequate-control", "population-bound-effect"],
+        "why": "The direction reproduces in my own random population. Two qualifications. (1) The authors' population includes languages the GA was steering toward MAXIMAL cost and complexity, which inflates every naturalness correlation and every natural-vs-population gap by construction; it cannot be separated in the shipped table (all named sampled_lang_*). (2) In the uniform-prior/binary-utility setting that the paper calls 'relatively unsophisticated' yet still reproducing, the IFF-informativeness link is entirely meaning cardinality (t = 0.31 once size and overlap are controlled). There it says nothing about force/flavour structure, and the paper's 'robust across settings' partly counts the same cardinality effect eight times. The simplicity correlation depends on the LoT; the authors show themselves that it is r = -.006 and -.070 under vocabulary entropy and size.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The 27 attested modal systems are more efficient than merely possible systems: simpler (.790 vs .647), more informative (.786 vs .536) and more optimal (.937 vs .776).",
+      "scope": "Natural vs the whole 32,301-language population (Table 6).",
+      "quantities": [
+        {"name": "informativeness_natural_minus_size_matched_iff_null", "value": 0.154, "unit": "literal half-credit informativeness, Table-5 prior", "n": 28, "source": "reanalysis/m1_structural.py (drop_syn inventories; random IFF-only languages of the same size, with replacement)", "baseline": "as-run (reversed) prior: 0.192; uniform: 0.176. Same-size IFF-null languages Pareto-dominate a natural one 8% of the time; natural dominates null 35%"},
+        {"name": "informativeness_natural_minus_iff_null_matched_size_coverage_overlap", "value": -0.019, "unit": "literal half-credit informativeness, Table-5 prior", "n": 27, "source": "reanalysis/m2_tight_null.py (distinct IFF meanings, same size, coverage AND overlap as each natural language)", "baseline": "p = .04; complexity difference +0.18 atoms (p .27); null dominates natural 50.5%, natural dominates null 25.2%. Revisions-branch inventories (with synonyms): -0.029, p .002; 54% vs 20%"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["null-model-misspecified", "missing-adequate-control"],
+        "why": "This was the domain I chose to try to break the cross-domain pattern (zaslavsky2018, denic2022, steinertthrelkeld2021), and the first null did break it. Natural systems beat random IFF systems of the same size clearly, on informativeness and on Pareto dominance. But matching the null on the structural descriptors used for indefinites (coverage and overlap) removes the advantage entirely: random IFF systems with the same size, coverage and overlap are slightly MORE informative than real ones and dominate them twice as often as the reverse. So attested modal systems are efficient in exactly the respects summarised by IFF + low overlap + coverage, and in no further respect measured here. Caveat I cannot remove: matching on overlap conditions on something that is itself a route to informativeness (avoiding synonymy), so this decomposes the efficiency rather than explaining it away. Table 6's population comparison is uninformative for the reason in c2.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Complexity of a modal meaning is the number of atoms in its shortest formula in the Boolean LoT (Table 2: may = w AND (e OR d) -> 3; notcirc = NOT c -> 1).",
+      "scope": "Methods, Simplicity section, and Equation 1.",
+      "quantities": [
+        {"name": "languages_whose_published_complexity_equals_nodes_minus_one", "value": 1.0, "count": 28, "denominator": 28, "unit": "natural languages", "n": 28, "source": "reanalysis/out/verify_bugs.txt (complexity_code vs natural.yml data.complexity: max diff 0; atom count: max diff 4)", "baseline": "mean meaning complexity IFF vs non-IFF: atoms 1.62 vs 3.14; as run 1.90 vs 4.71 -- the implemented measure widens the IFF advantage"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "disputed",
+        "patterns": ["text-contradicts-own-materials"],
+        "why": "The published numbers do not use this definition. src/modals/modal_measures.py num_atoms() is commented 'Helper function because _len_ of GrammaticalExpression is not the number of atoms', but it adds len(child) -- the child's NODE count -- instead of recursing. The result is the node count minus the root operator, so inner AND/OR/NOT are counted. That measure reproduces all 28 natural complexities exactly; the paper's atom count misses by up to 4 (Cantonese 16 vs 20, Basque 9 vs 13). Direction of the bias: non-IFF meanings need nested operators, so the implemented measure penalises them more (4.71 vs 3.14), favouring IFF. c1 survives either measure; c2's simplicity correlation and every distance are computed with the unintended one.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Informativeness is computed under a communicative-need prior estimated from the GME modality corpus (Table 5: weak e .139 d .042 c .143; strong e .104 d .254 c .318).",
+      "scope": "Main analysis and all 'estimated prior' rows of Tables 7-8.",
+      "quantities": [
+        {"name": "max_abs_error_reproducing_published_informativeness_with_reversed_prior", "value": 3.3e-16, "unit": "informativeness", "n": 28, "source": "reanalysis/out/verify_bugs.txt; unique among all 720 assignments of the six prior values to points", "baseline": "with Table 5 as printed: max error 0.162 (Mapudungun). Re-derived from the shipped corpus (m0_prior_check.py, 1,531 tokens): weak .135/.041/.142, strong .103/.268/.310 -- Table 5 is right"},
+        {"name": "inflation_of_natural_vs_null_informativeness_gap_by_prior_error", "value": 0.25, "unit": "relative ((0.192 - 0.154) / 0.154)", "n": 28, "source": "reanalysis/m1_structural.py", "baseline": "conclusions unchanged in direction under the correct prior"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "disputed",
+        "patterns": ["text-contradicts-own-materials"],
+        "why": "The published run did not use Table 5. Of the 720 ways to assign the six Table-5 probabilities to the six meaning points, exactly one reproduces all 28 natural-language informativeness values in the published output (to 3e-16), plus a GA-dominant language checked separately. It is Table 5 in REVERSED point order: weak+epistemic received .318 (strong+circumstantial's mass), weak+deontic .254, strong+deontic .042. The corpus itself agrees with Table 5, so the table is right and the run is not. I did not locate the line responsible; the prior file and the universe file list the points in the same order, so the reversal happens inside the universe/prior plumbing. Impact measured: under the correct prior every qualitative conclusion here still holds; the natural-vs-null informativeness gap shrinks by about a quarter. Uniform-prior rows are unaffected.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "code", "locator": "https://github.com/nathimel/modals-effcomm (branch drop_syn)", "repo_commit": "dbe09dc", "status": "present-but-insufficient",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "git clone; git log per branch; git show origin/drop_syn:<path> for outputs; python reanalysis/mcore.py checks (out/verify_bugs.txt)", "result": "The default branch (main, 2023-07-20) predates the paper; the published numbers live on drop_syn (2026-05-03, N = 32,301 matches) and partly on revisions (2025-06-08, N = 33,569). Neither reproduces Table 6's natural row exactly (drop_syn natural is the synonym-dropped variant: .830/.784/.954). Contains the two implementation defects in c4 and c5. Pipeline not re-run (hydra, ultk not on PyPI)."},
+     "license": "MIT (LICENSE file on main)"},
+    {"id": "a2", "role": "derived-data", "locator": "artifacts/ (copied from drop_syn multirun/universe=cognition/prior=modality_corpus/utility=half_credit/agent_type=literal/: languages/natural.yml, languages/dominant.yml, analysis/pareto_data.csv; data/prior/modality_corpus.csv; revisions natural.yml as natural_revisions.yml)", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "sha256sum artifacts/*", "result": "natural.yml 12ef5508..., natural_revisions.yml c73c7361..., prior.csv 61c349ce..., dominant.yml 8ea0d25f..., pareto.csv d56d7934..."},
+     "fetch_cmd": "git clone https://github.com/nathimel/modals-effcomm && git -C modals-effcomm show origin/drop_syn:'multirun/universe=cognition/prior=modality_corpus/utility=half_credit/agent_type=literal/languages/natural.yml'"}
+  ],
+  "relations": [
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "denic2022-indefinites-simplicity-informativeness", "why": "Same design (6 meaning points, 63 meanings, literal agents, GA frontier, LoT whose primitives are the axes the universal is stated over). Same outcome under a structural null matched on coverage and overlap: no residual advantage for attested systems."},
+    {"type": "cito:extends", "target": "steinertthrelkeld2021-quantifiers-degrees-universals", "why": "Same programme and senior author. Here the universal (IFF) is found to SUPPORT efficiency, the opposite of the quantifier paper's 'epiphenomenal' reading; the reanalysis of both points the same way."},
+    {"type": "cito:sharesAuthorWith", "target": "imel2026-convexity-efficiency", "why": "Nathaniel Imel on both."}
+  ],
+  "open_questions": [
+    "Locate the line that reverses the prior (universe construction vs prior_numpy vs ultk Universe ordering) and report it upstream. Candidate for dev-science-ops/paper-retrospective-reproducibility; no externally visible action taken.",
+    "Recompute the paper's Tables 6-8 with the correct prior and the intended (atom) complexity over the authors' own population. Needs the population's meanings, which the shipped table does not contain; regenerate with their sampler.",
+    "Separate the GA-maximising languages from the random sample in the population (not possible from all_data.csv); recompute naturalness correlations on random-only languages.",
+    "Does the matched-null result hold under pragmatic agents and IB informativeness?"
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

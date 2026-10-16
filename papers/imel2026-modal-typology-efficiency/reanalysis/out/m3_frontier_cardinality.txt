@@ -1,0 +1,7 @@
+correct  atoms  frontier pts 10; all-IFF: True; non-IFF frontier langs: []
+correct  code   frontier pts 10; all-IFF: True; non-IFF frontier langs: []
+as-run   atoms  frontier pts 10; all-IFF: True; non-IFF frontier langs: []
+as-run   code   frontier pts 10; all-IFF: True; non-IFF frontier langs: []
+uniform+binary: r(IFF share, informativeness) = 0.207
+  OLS inf ~ IFFshare + mean meaning size + n + overlap: IFF coef 0.0003 t 0.31 | msize t 2.5
+  r(IFF share, mean meaning size) = -0.46

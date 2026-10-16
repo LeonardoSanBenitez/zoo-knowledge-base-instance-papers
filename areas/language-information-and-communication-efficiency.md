@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Language, information and communication efficiency
 
-Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`.
+Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`.
 
 **Scope.** Quantitative claims about how languages encode and transmit information -- rates,
 densities, efficiency trade-offs -- read for what is measured versus what is named. Includes, as
@@ -64,6 +64,19 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   languages). Units differ across the three, so this is a pattern, not a pooled estimate.
   **Before citing any "languages are near-optimal" result from this programme, ask what the
   structural null gets.**
+- **Fourth domain, chosen to break it (modals, `imel2026-modal-typology-efficiency`).** A loose
+  structural null (random IFF-only systems of the same size) IS beaten by attested systems,
+  clearly. Matched also on coverage and overlap, the advantage disappears (real systems -0.02
+  informativeness; random IFF systems dominate them 50% vs 25%). So the through-line survives,
+  but only once the null is matched on descriptors, and **which descriptors to match is the
+  unexamined choice**: low overlap is itself a route to informativeness, so matching on it
+  decomposes efficiency rather than dissolving it. Stated precisely, then: attested systems show
+  no efficiency advantage beyond a handful of structural descriptors.
+- **Implementation defects are a live risk in this literature.** In `imel2026-modal-typology-efficiency` the
+  published run used the need prior in REVERSED point order (1 of 720 assignments reproduces the
+  outputs to 3e-16), and a complexity function that counts nodes, not atoms. Neither overturned a
+  conclusion. Both were found only by re-deriving a single number from raw inputs. **Do that
+  first, before any reanalysis.**
 
 ## Method notes for this area
 

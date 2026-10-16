@@ -1,0 +1,3 @@
+weak {'epistemic': 0.135, 'deontic': 0.041, 'circumstantial': 0.142} {'epistemic': 207, 'deontic': 63, 'circumstantial': 218}
+strong {'epistemic': 0.103, 'deontic': 0.268, 'circumstantial': 0.31} {'epistemic': 158, 'deontic': 411, 'circumstantial': 474}
+total 1531

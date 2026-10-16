@@ -1,0 +1,1 @@
+from artifacts: max inf diff as-run 3.3306690738754696e-16 | with Table-5 prior 0.16153957250144413 | max cplx diff code-measure 0 | atoms-measure 4

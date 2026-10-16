@@ -1,0 +1,122 @@
+{
+ "drop_syn natural (28) | Table5 prior (correct) | atoms (paper)": {
+  "nat_minus_IFFnull_complexity": 0.9824714260434936,
+  "p_c": 7.051177338915508e-05,
+  "nat_minus_IFFnull_inf": 0.15377273265875918,
+  "p_i": 9.704425535009342e-13,
+  "share_null_dominating_nat": 0.08328837063876078,
+  "share_null_dominated_by_nat": 0.35032155288038114,
+  "r_IFFshare_inf_random": 0.3575481776552565,
+  "r_IFFshare_simplicity_random": 0.38947131796157164
+ },
+ "drop_syn natural (28) | Table5 prior (correct) | nodes-1 (code)": {
+  "nat_minus_IFFnull_complexity": 0.6480237650755956,
+  "p_c": 0.064637317227972,
+  "nat_minus_IFFnull_inf": 0.15377273265875918,
+  "p_i": 9.704425535009342e-13,
+  "share_null_dominating_nat": 0.05689284481992484,
+  "share_null_dominated_by_nat": 0.43726346602116944,
+  "r_IFFshare_inf_random": 0.3575481776552565,
+  "r_IFFshare_simplicity_random": 0.4390969540157566
+ },
+ "drop_syn natural (28) | as-run (reversed) prior | atoms (paper)": {
+  "nat_minus_IFFnull_complexity": 0.9824714260434936,
+  "p_c": 7.051177338915508e-05,
+  "nat_minus_IFFnull_inf": 0.19239769945980478,
+  "p_i": 1.3251821646365365e-14,
+  "share_null_dominating_nat": 0.041347613094984755,
+  "share_null_dominated_by_nat": 0.3625473725951992,
+  "r_IFFshare_inf_random": 0.36198710984968013,
+  "r_IFFshare_simplicity_random": 0.38947131796157164
+ },
+ "drop_syn natural (28) | as-run (reversed) prior | nodes-1 (code)": {
+  "nat_minus_IFFnull_complexity": 0.6480237650755956,
+  "p_c": 0.064637317227972,
+  "nat_minus_IFFnull_inf": 0.19239769945980478,
+  "p_i": 1.3251821646365365e-14,
+  "share_null_dominating_nat": 0.027812737745990235,
+  "share_null_dominated_by_nat": 0.4612658545784346,
+  "r_IFFshare_inf_random": 0.36198710984968013,
+  "r_IFFshare_simplicity_random": 0.4390969540157566
+ },
+ "drop_syn natural (28) | uniform | atoms (paper)": {
+  "nat_minus_IFFnull_complexity": 0.9824714260434936,
+  "p_c": 7.051177338915508e-05,
+  "nat_minus_IFFnull_inf": 0.1764075995984597,
+  "p_i": 1.2308448513029633e-14,
+  "share_null_dominating_nat": 0.04420012017338731,
+  "share_null_dominated_by_nat": 0.3685292543360475,
+  "r_IFFshare_inf_random": 0.4205739024211567,
+  "r_IFFshare_simplicity_random": 0.38947131796157164
+ },
+ "drop_syn natural (28) | uniform | nodes-1 (code)": {
+  "nat_minus_IFFnull_complexity": 0.6480237650755956,
+  "p_c": 0.064637317227972,
+  "nat_minus_IFFnull_inf": 0.1764075995984597,
+  "p_i": 1.2308448513029633e-14,
+  "share_null_dominating_nat": 0.029732743014306555,
+  "share_null_dominated_by_nat": 0.46513947537289635,
+  "r_IFFshare_inf_random": 0.4205739024211567,
+  "r_IFFshare_simplicity_random": 0.4390969540157566
+ },
+ "revisions natural (28) | Table5 prior (correct) | atoms (paper)": {
+  "nat_minus_IFFnull_complexity": 1.3390560684710473,
+  "p_c": 1.4359942650304874e-05,
+  "nat_minus_IFFnull_inf": 0.13260815409625362,
+  "p_i": 3.102027532958917e-11,
+  "share_null_dominating_nat": 0.1032753763143824,
+  "share_null_dominated_by_nat": 0.2971226495473395,
+  "r_IFFshare_inf_random": 0.41862033458013986,
+  "r_IFFshare_simplicity_random": 0.3100209928792275
+ },
+ "revisions natural (28) | Table5 prior (correct) | nodes-1 (code)": {
+  "nat_minus_IFFnull_complexity": 0.8449902753399557,
+  "p_c": 0.04064582702683321,
+  "nat_minus_IFFnull_inf": 0.13260815409625362,
+  "p_i": 3.102027532958917e-11,
+  "share_null_dominating_nat": 0.06765638287183606,
+  "share_null_dominated_by_nat": 0.4126264412345875,
+  "r_IFFshare_inf_random": 0.41862033458013986,
+  "r_IFFshare_simplicity_random": 0.3632830964885392
+ },
+ "revisions natural (28) | as-run (reversed) prior | atoms (paper)": {
+  "nat_minus_IFFnull_complexity": 1.3390560684710473,
+  "p_c": 1.4359942650304874e-05,
+  "nat_minus_IFFnull_inf": 0.17153496228670637,
+  "p_i": 4.450837018794544e-13,
+  "share_null_dominating_nat": 0.056466578091732327,
+  "share_null_dominated_by_nat": 0.3139360655966881,
+  "r_IFFshare_inf_random": 0.4146475069332827,
+  "r_IFFshare_simplicity_random": 0.3100209928792275
+ },
+ "revisions natural (28) | as-run (reversed) prior | nodes-1 (code)": {
+  "nat_minus_IFFnull_complexity": 0.8449902753399557,
+  "p_c": 0.04064582702683321,
+  "nat_minus_IFFnull_inf": 0.17153496228670637,
+  "p_i": 4.450837018794544e-13,
+  "share_null_dominating_nat": 0.03648726829693438,
+  "share_null_dominated_by_nat": 0.44274304500307793,
+  "r_IFFshare_inf_random": 0.4146475069332827,
+  "r_IFFshare_simplicity_random": 0.3632830964885392
+ },
+ "revisions natural (28) | uniform | atoms (paper)": {
+  "nat_minus_IFFnull_complexity": 1.3390560684710473,
+  "p_c": 1.4359942650304874e-05,
+  "nat_minus_IFFnull_inf": 0.1555767008101728,
+  "p_i": 2.526140488694664e-12,
+  "share_null_dominating_nat": 0.06108100715177509,
+  "share_null_dominated_by_nat": 0.318314517463864,
+  "r_IFFshare_inf_random": 0.4723185010876916,
+  "r_IFFshare_simplicity_random": 0.3100209928792275
+ },
+ "revisions natural (28) | uniform | nodes-1 (code)": {
+  "nat_minus_IFFnull_complexity": 0.8449902753399557,
+  "p_c": 0.04064582702683321,
+  "nat_minus_IFFnull_inf": 0.1555767008101728,
+  "p_i": 2.526140488694664e-12,
+  "share_null_dominating_nat": 0.0405182487285649,
+  "share_null_dominated_by_nat": 0.4444613567408194,
+  "r_IFFshare_inf_random": 0.4723185010876916,
+  "r_IFFshare_simplicity_random": 0.3632830964885392
+ }
+}

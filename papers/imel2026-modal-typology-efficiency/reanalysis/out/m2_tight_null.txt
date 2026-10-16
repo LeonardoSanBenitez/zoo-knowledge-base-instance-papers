@@ -1,0 +1,8 @@
+C:/Users/Leonardo/Desktop/zoo/.research/2026-10-16-modals/ds\natural.yml natural: mean size 4.93 coverage 5.79 overlap 2.18 IFF share 0.973
+  IFF, distinct                            langs matched 28 | inf nat-null +0.1365 (p 1.2e-11) | complexity(atoms) nat-null +0.980 (p 0.00) | null dominates nat 0.100, nat dominates null 0.326
+  IFF, distinct, same coverage             langs matched 28 | inf nat-null +0.1307 (p 9.1e-12) | complexity(atoms) nat-null +1.055 (p 0.00) | null dominates nat 0.096, nat dominates null 0.295
+  IFF, distinct, same coverage & overlap   langs matched 27 | inf nat-null -0.0194 (p 4.3e-02) | complexity(atoms) nat-null +0.180 (p 0.27) | null dominates nat 0.505, nat dominates null 0.252
+C:/Users/Leonardo/Desktop/zoo/.research/2026-10-16-modals/ds\natural_revisions.yml natural: mean size 6.11 coverage 5.79 overlap 3.71 IFF share 0.975
+  IFF, distinct                            langs matched 28 | inf nat-null +0.1187 (p 5.5e-10) | complexity(atoms) nat-null +1.322 (p 0.00) | null dominates nat 0.114, nat dominates null 0.280
+  IFF, distinct, same coverage             langs matched 28 | inf nat-null +0.1185 (p 2.4e-11) | complexity(atoms) nat-null +1.352 (p 0.00) | null dominates nat 0.103, nat dominates null 0.257
+  IFF, distinct, same coverage & overlap   langs matched 24 | inf nat-null -0.0293 (p 1.5e-03) | complexity(atoms) nat-null +0.149 (p 0.44) | null dominates nat 0.542, nat dominates null 0.200
