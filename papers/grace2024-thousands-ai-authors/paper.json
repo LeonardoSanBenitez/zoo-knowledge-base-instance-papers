@@ -34,8 +34,7 @@
   "methods": [
     "manual-reanalysis-from-shared-materials",
     "multiverse-analysis",
-    "falsification-by-internal-consistency"
-  ],
+    "falsification-by-internal-consistency", "manski-partial-identification-bounds"],
   "claims": [
     {
       "id": "c1",
