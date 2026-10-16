@@ -1,0 +1,6 @@
+== api: mean token cost by method {'cast': 4854.0, 'declaration': 4875.0, 'function': 4223.0, 'sliding': 4987.0}
+  no cost term  : Function - Sliding = -3.96 pp (cluster SE 0.17)
+  with log cost : Function - Sliding = -3.50 pp (cluster SE 0.17), per doubling of tokens +2.40 pp
+== line: mean token cost by method {'cast': 4693.0, 'declaration': 4611.0, 'function': 4024.0, 'sliding': 4923.0}
+  no cost term  : Function - Sliding = -5.64 pp (cluster SE 0.25)
+  with log cost : Function - Sliding = -5.15 pp (cluster SE 0.26), per doubling of tokens +2.06 pp

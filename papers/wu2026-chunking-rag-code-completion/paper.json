@@ -10,7 +10,7 @@
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
   "cost": {
-    "tool_calls": 14,
+    "tool_calls": 16,
     "bytes_downloaded": 2700000,
     "compute_notes": "arXiv PDF (10 pp) read. Zenodo replication package chunk.zip 2,180,133 B (md5 85caa874d297e5a395d63f0059f5b999) from version record 19228778; the paper cites the CONCEPT DOI 19228777, which today resolves to the same single version. Statistics recomputed from the shipped result CSVs in seconds; the inference pipeline (vLLM, 5 generators) not re-run.",
     "session": "2026-10-16 maria, free deep research"
@@ -32,6 +32,7 @@
       "quantities": [
         {"name": "cliffs_delta_function_vs_others_true_unpaired", "value": -0.82, "unit": "Cliff's delta, P(x>y) - P(x<y) over 144 x 144 configuration pairs (API; -0.823/-0.847/-0.820 vs Declaration/Sliding/cAST)", "n": 144, "source": "reanalysis/w1_cliff.py", "baseline": "line split: -0.766/-0.943/-0.937. The paper's -1.0 reproduces exactly as the PAIRED SIGN statistic (#x>y - #x<y)/n computed by the notebook's cliffs_delta()"},
         {"name": "paired_em_difference_function_minus_sliding_api", "value": -3.96, "unit": "EM percentage points, mean over 144 matched configurations", "n": 144, "source": "reanalysis/w1_cliff.py", "baseline": "range -6.50 to -0.32; Function lower in 144/144"},
+        {"name": "function_minus_sliding_em_cost_adjusted", "value": -3.5, "unit": "EM pp, OLS with generator x retriever FE and log2 token cost, cluster SE 0.17", "n": 576, "source": "reanalysis/w2_budget.py (API; line -5.15, SE 0.26)", "baseline": "unadjusted -3.96 (API), -5.64 (line): token budget accounts for ~10%"},
         {"name": "paired_sign_function_vs_others_with_starcoder2", "value": -0.772, "unit": "paired sign statistic (API, vs Declaration), 180 configurations", "n": 180, "source": "reanalysis/w1_cliff.py, first run (StarCoder2 included)", "baseline": "-0.917 vs Sliding, -0.961 vs cAST: 'worse in every configuration' holds only with StarCoder2 excluded"}
       ],
       "evidence": ["a1"],
@@ -53,7 +54,7 @@
   ],
   "open_questions": [
     "Item-level reanalysis: needs per-task predictions (not shipped). Ask whether they exist.",
-    "Budget-matched comparison: Function vs Sliding Window at equal retrieved tokens across the grid (avg_token_cost is in the CSVs; a matched-cost regression is cheap and was not done here)."
+    "ANSWERED 2026-10-16 (reanalysis/w2_budget.py): with generator x retriever fixed effects and log2(token cost), Function - Sliding goes from -3.96 to -3.50 pp (API) and -5.64 to -5.15 pp (line); a doubling of tokens is worth +2.4/+2.1 pp and Function uses ~15% fewer. The token budget explains ~10% of the deficit; the rest fits the authors' second explanation (function chunks drop module-level code), not their first."
   ],
   "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
 }
