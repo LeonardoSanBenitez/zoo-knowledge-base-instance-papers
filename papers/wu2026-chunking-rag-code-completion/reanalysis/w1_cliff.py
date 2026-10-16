@@ -10,7 +10,8 @@ def sign_paired(x, y): return float((np.sum(x > y) - np.sum(x < y)) / len(x))
 M = ['function', 'declaration', 'sliding', 'cast']
 for split in ['api', 'line']:
     df = pd.read_csv(os.path.join(PKG, 'eval', 'repoeval', 'result', f'{split}_all_results.csv'))
-    df = df[df.method.isin(M) & (df.llm != 'starcoder2-7b')]  # the notebook drops StarCoder2 for RepoEval (paper: 4 x 4 x 9 = 144)
+    keep_sc2 = os.environ.get('INCLUDE_STARCODER2') == '1'   # variant: include StarCoder2 (180 configurations)
+    df = df[df.method.isin(M) & (keep_sc2 | (df.llm != 'starcoder2-7b'))]  # the notebook drops StarCoder2 for RepoEval (paper: 4 x 4 x 9 = 144)
     pv = df.pivot_table(index=['retriever', 'llm', 'max_chunk_size', 'max_crossfile_context'], columns='method', values='EM')
     print(f'== RepoEval {split}: {len(pv)} matched configurations')
     for a, b in combinations(M, 2):

@@ -1,0 +1,16 @@
+== RepoEval api: 180 matched configurations
+  function    vs declaration paired-sign -0.772 | TRUE Cliff delta -0.525 | paired diff pp mean -2.86 [min -6.31, max +0.25]
+  function    vs sliding     paired-sign -0.917 | TRUE Cliff delta -0.565 | paired diff pp mean -3.20 [min -6.50, max +0.25]
+  function    vs cast        paired-sign -0.961 | TRUE Cliff delta -0.553 | paired diff pp mean -2.97 [min -5.75, max +0.25]
+  declaration vs sliding     paired-sign -0.422 | TRUE Cliff delta -0.108 | paired diff pp mean -0.34 [min -2.37, max +1.93]
+  declaration vs cast        paired-sign -0.333 | TRUE Cliff delta -0.054 | paired diff pp mean -0.11 [min -1.13, max +1.13]
+  sliding     vs cast        paired-sign +0.233 | TRUE Cliff delta +0.050 | paired diff pp mean +0.22 [min -1.87, max +2.13]
+  SD of marginal means (pp): generator 20.01 | method 1.51 | context length 0.90
+== RepoEval line: 180 matched configurations
+  function    vs declaration paired-sign -0.856 | TRUE Cliff delta -0.501 | paired diff pp mean -2.89 [min -6.12, max +0.44]
+  function    vs sliding     paired-sign -0.722 | TRUE Cliff delta -0.589 | paired diff pp mean -4.43 [min -8.69, max +1.62]
+  function    vs cast        paired-sign -1.000 | TRUE Cliff delta -0.640 | paired diff pp mean -4.57 [min -7.81, max -0.88]
+  declaration vs sliding     paired-sign -0.644 | TRUE Cliff delta -0.333 | paired diff pp mean -1.55 [min -5.31, max +1.94]
+  declaration vs cast        paired-sign -0.989 | TRUE Cliff delta -0.343 | paired diff pp mean -1.68 [min -3.81, max +0.06]
+  sliding     vs cast        paired-sign -0.083 | TRUE Cliff delta +0.033 | paired diff pp mean -0.13 [min -3.62, max +3.50]
+  SD of marginal means (pp): generator 22.30 | method 2.12 | context length 0.72
