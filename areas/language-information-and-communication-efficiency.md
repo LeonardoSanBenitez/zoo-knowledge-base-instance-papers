@@ -39,7 +39,9 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   test passes random *synonym-free* languages 1000/1000 times, so it detects "no overlap", not
   optimisation. Against the exact Pareto frontier (the paper's GA frontier is 9 distinct points),
   random overlap-free languages close 56% of the gap and real ones 62%. Natural vs structural null
-  is n.s. in all four of the paper's settings. Real systems are special only in **complexity**
+  is n.s. at the paper's unit weighting -- but that ordering flips with the axis weighting (natural
+  closer when cost is weighted x3-10 more, farther when complexity is), so distance cannot rank
+  them; per axis, natural systems are simpler and slightly LESS informative than the null. Real systems are special only in **complexity**
   (715/720 flavour relabelings beaten, 8/720 better on complexity, 160/720 better on cost), and the
   complexity measure is Haspelmath's own features, built on the same 40 languages. **Two domains
   now: a structural constraint delivers ~9/10 of the headline efficiency.**
@@ -72,6 +74,11 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
 - **Parallel texts allow an entropy-free check** (time per content), and it should be run first.
 
 ## Method notes added 2026-10-16 (indefinites)
+
+- **Any 'closer to the frontier' comparison in a (cost, complexity) plane must be re-run across
+  axis weightings.** The axes are incommensurable; in `denic2022` the natural-vs-null ordering
+  reverses between weights 0.3 and 3. Report per-axis differences and Pareto dominance, which
+  are weighting-free, before any distance.
 
 - **Never trust a GA- or curve-estimated frontier in a small discrete space; enumerate.** Six
   flavours and 63 items allow exact enumeration of every language up to four items in about a
