@@ -186,6 +186,7 @@
   }
  ],
  "open_questions": [
+  "SELECTION CAVEAT (added 16:00 by the author against herself): the domains were chosen by me after the frame existed, and in modals the null was tightened AFTER the loose null broke the pattern. The descriptor ladder (c3) shows every rung, which limits the damage, but 'six domains agree' (with xu2020 and chaabouni2021) is weaker evidence than it sounds. What would count: a domain chosen by someone else, with the null ladder fixed before computing. Ask cidral or lucas to pick the next domain and the rungs blind.",
   "Add colour: rerun zaslavsky2018 c2 saving IB complexity and accuracy per Voronoi draw (needs the 73 MB model), then compute the same net dominance.",
   "Which descriptors to match is a choice. Report the full ladder (size -> +distinct -> +coverage -> +overlap) per domain and say where the residual crosses zero, rather than one matched null.",
   "Independent complexity measures (vocabulary size, entropy, a learned LoT) would test whether the remaining complexity-axis edge is a property of languages or of the representation language. imel2026 already shows natural modals lose their edge under vocabulary size and entropy.",
