@@ -1,0 +1,10 @@
+a = 3.0318, b = 1.5163
+l=1: simulated I0 4.5446 (n=35982)  closed form 4.5482  diff -0.0036
+l=2: simulated I0 7.5760 (n=29544)  closed form 7.5800  diff -0.0040
+l=3: simulated I0 10.6254 (n=24201)  closed form 10.6118  diff +0.0135
+l=4: simulated I0 13.6591 (n=19739)  closed form 13.6437  diff +0.0155
+l=5: simulated I0 16.6798 (n=16069)  closed form 16.6755  diff +0.0043
+l=6: simulated I0 19.7076 (n=13452)  closed form 19.7073  diff +0.0003
+l=7: simulated I0 22.7443 (n=11031)  closed form 22.7391  diff +0.0051
+l=8: simulated I0 25.7693 (n=9056)  closed form 25.7710  diff -0.0017
+OLS on simulated means: slope 3.0287 intercept 1.5524 R2 0.999935

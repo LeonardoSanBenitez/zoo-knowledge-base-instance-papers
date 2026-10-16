@@ -1,0 +1,74 @@
+{
+ "schema_version": "1.5",
+ "id": "ferrericancho2011-information-content-random-typing",
+ "title": "Information content versus word length in random typing",
+ "authors": [
+  "Ramon Ferrer-i-Cancho",
+  "Fermin Moscoso del Prado Martin"
+ ],
+ "year": 2011,
+ "venue": "Journal of Statistical Mechanics: Theory and Experiment 2011(12):L12002 (arXiv:1209.1751)",
+ "area": [
+  "language-information-and-communication-efficiency"
+ ],
+ "identifiers": {
+  "doi": "10.1088/1742-5468/2011/12/L12002",
+  "arxiv": "1209.1751"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 5,
+  "bytes_downloaded": 300000,
+  "compute_notes": "arXiv PDF (8 pp) read in full. Closed form checked by simulating 200,000 words of generalized random typing (reanalysis/rt1_check.py); about a minute.",
+  "session": "2026-10-16 maria, free deep research"
+ },
+ "triggers": [
+  "is the linear relation between information content and word length evidence of optimization",
+  "random typing baseline for language efficiency claims",
+  "Piantadosi word length information content critique",
+  "monkey typing produces Zipf's law of abbreviation",
+  "missing baselines efficiency of languages"
+ ],
+ "methods": [
+  "analytic-identifiability-derivation",
+  "synthetic-injected-effect-control"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "For a generalized random typing process (unequal character probabilities, minimum word length l0), the expected information content of words of length l is exactly linear, I0(l) = a*l + b with a = (H(S) + p0 ln p0)/(1 - p0) and b = ln((1 - p0)^l0 / p0); with word-level context I(l) = I0(l). Hence a linear information-length relation does not by itself indicate any optimization (contra Piantadosi et al. 2011).",
+   "scope": "Analytic; context defined by neighbouring words (or characters with l0 = 0). Does not test whether real texts' slopes and intercepts match random typing.",
+   "quantities": [
+    {
+     "name": "random_typing_information_length_linearity_r2",
+     "value": 0.99994,
+     "unit": "R2 of OLS of simulated mean -ln p(w) on word length l = 1..8",
+     "n": 200000,
+     "source": "reanalysis/rt1_check.py (27 symbols, p0 = 0.18, Zipf-like letter probabilities, l0 = 1)",
+     "baseline": "simulated means match the closed form a*l + b (a = 3.032, b = 1.516) within 0.016 nats at every length"
+    }
+   ],
+   "evidence": [],
+   "our_assessment": {
+    "status": "accepted",
+    "patterns": [],
+    "why": "Derivation read in full and checked by simulation: exact up to sampling noise. This is the prior art for the structural-null argument recorded in maria2026-structural-null-semantic-efficiency, in a different object (word length, not category partitions): a process with no pressure toward efficiency reproduces the signature read as efficiency. The authors themselves mark the open part: whether real texts' slope and intercept match random typing's.",
+    "by": "maria, 2026-10-16"
+   }
+  }
+ ],
+ "artifacts": [],
+ "relations": [],
+ "open_questions": [
+  "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1088/1742-5468/2011/12/L12002 -> 0 items.",
+  "Do real texts' I(l) slopes and intercepts match random typing with the same character statistics? The authors leave it open; corpora with letter-level statistics would answer it cheaply.",
+  "Moscoso del Prado 2013 (CogSci, 'The missing baselines...') remains unread in full -- download blocked 2026-10-16."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-10-16",
+  "verified": "2026-10-16",
+  "notes_file": "NOTES.md"
+ }
+}

@@ -168,6 +168,7 @@
   }
  ],
  "relations": [
+   {"type": "cito:obtainsBackgroundFrom", "target": "ferrericancho2011-information-content-random-typing", "why": "Prior art (2011) for the structural-null argument: random typing reproduces the linear information-length signature read as optimization. Read in full and the closed form verified by simulation; the 2026 analysis extends the argument to category partitions."},
   {
    "type": "cito:usesDataFrom",
    "target": "denic2022-indefinites-simplicity-informativeness",
