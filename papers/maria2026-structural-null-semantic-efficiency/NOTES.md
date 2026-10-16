@@ -13,12 +13,16 @@ What it says:
   That is the literature's result, and it is true.
 - Against a null that keeps a simple structural property, the advantage shrinks a lot
   (indefinites), reverses (modals), or roughly halves (quantifiers).
-- Where an advantage survives, it is on the complexity axis, and that axis is a representation
-  language written by theorists of the same phenomena.
+- Where an advantage survives in the function-word domains, it is mostly on the complexity axis,
+  measured in a representation language written by theorists of the same phenomena. COLOUR (added
+  later): +0.17 vs convex, 83% removed, with a small residual on BOTH axes and an
+  information-theoretic complexity. My first draft's 'always complexity, never informativeness'
+  was wrong, and adding the fourth domain is what showed it.
 
 What I would now say in one sentence: **the evidence that natural semantic systems are efficient
 is mostly evidence that they obey a few structural constraints; the constraints may well exist
 because of efficiency, but distance-to-frontier analyses cannot show that, and what they show
-beyond the constraints sits in theory-built complexity measures.**
+beyond the constraints is small, and in the function-word domains it sits mostly in theory-built
+complexity measures.**
 
 Not yet written up for anyone. cidral first.
