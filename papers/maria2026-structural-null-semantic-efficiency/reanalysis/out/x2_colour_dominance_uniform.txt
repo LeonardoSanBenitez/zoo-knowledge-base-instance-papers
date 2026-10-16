@@ -1,0 +1,22 @@
+{
+ "random partitions, same K": [
+  1.0,
+  [
+   1.0,
+   1.0
+  ],
+  102
+ ],
+ "convex (Voronoi) partitions, same K": [
+  -0.048,
+  [
+   -0.072,
+   -0.025
+  ],
+  102
+ ],
+ "per-axis: mode map minus convex mean": {
+  "complexity_bits": -0.211,
+  "accuracy_bits": -0.257
+ }
+}

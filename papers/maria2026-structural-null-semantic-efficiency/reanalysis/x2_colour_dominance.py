@@ -5,6 +5,7 @@ Needs IBC = folder with pM_pUM.npz (extracted from the authors' model zip, sha25
 import os, json, random, statistics as st, numpy as np, pandas as pd
 ROOT = os.environ.get('IBC', '.'); HERE = os.path.dirname(os.path.abspath(__file__))
 Z = np.load(os.path.join(ROOT, 'pM_pUM.npz')); pM = Z['pM'].reshape(-1, 1); pU_M = Z['pU_M']
+if os.environ.get('PRIOR') == 'uniform': pM = np.full((330, 1), 1 / 330)  # prior NOT estimated from the naming data
 def xlogx(v):
     with np.errstate(divide='ignore', invalid='ignore'): return np.where(v > 1e-16, v * np.log2(v), 0)
 def H(p): return -xlogx(p).sum()
@@ -43,5 +44,6 @@ def boot(x): b = [np.mean(R.choices(list(x), k=len(x))) for _ in range(2000)]; r
 out = {'random partitions, same K': boot(D.net_vs_random), 'convex (Voronoi) partitions, same K': boot(D.net_vs_convex),
        'per-axis: mode map minus convex mean': {'complexity_bits': round(float((D.comp - D.comp_convex_mean).mean()), 3), 'accuracy_bits': round(float((D.acc - D.acc_convex_mean).mean()), 3)}}
 print(json.dumps(out, indent=1))
-D.to_csv(os.path.join(HERE, 'out', 'x2_colour_per_language.csv'), index=False)
-json.dump(out, open(os.path.join(HERE, 'out', 'x2_colour_dominance.json'), 'w'), indent=1)
+suf = '_uniform' if os.environ.get('PRIOR') == 'uniform' else ''
+D.to_csv(os.path.join(HERE, 'out', f'x2_colour_per_language{suf}.csv'), index=False)
+json.dump(out, open(os.path.join(HERE, 'out', f'x2_colour_dominance{suf}.json'), 'w'), indent=1)

@@ -87,7 +87,7 @@
   ],
   "open_questions": [
     "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1073/pnas.1800521115 -> 0 items.",
-    "Recompute the IB curve under the UNIFORM source (the release ships only the LI-source curve) and repeat the convex null: does the 5-point residual survive when the prior is not estimated from the same languages?",
+    "PARTLY ANSWERED 2026-10-16 (maria2026-structural-null-semantic-efficiency/reanalysis/x2_colour_dominance.py, PRIOR=uniform): without an IB curve, by net Pareto dominance on (complexity, accuracy): under the LI prior WCS mode maps beat random convex partitions +0.17 [0.12, 0.21]; under a UNIFORM source they do not (-0.048 [-0.072, -0.025]; 0.21 bits simpler but 0.26 bits less accurate). The language-specific residual exists only under the prior estimated from the naming data itself. eps under the uniform curve still not computed. ORIGINAL: Recompute the IB curve under the UNIFORM source (the release ships only the LI-source curve) and repeat the convex null: does the 5-point residual survive when the prior is not estimated from the same languages?",
     "Prior art to read before claiming novelty for the convexity decomposition: work on convexity and efficient semantic categories (e.g. Gardenfors's conceptual spaces; Steinert-Threlkeld & Szymanik on convexity and learnability). Not checked this session."
   ],
   "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
