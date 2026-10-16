@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.5",
   "id": "laurinavichyute2022-share-the-code",
   "title": "Share the code, not just the data: A case study of the reproducibility of articles published in the Journal of Memory and Language under the open data policy",
   "authors": [
@@ -220,7 +220,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["correlation-read-as-causation"],
         "why": "Observational: papers that share code are plausibly written by more careful people, and the same 'disposition' confound bit our own analysis of the Samuel & Mietchen corpus, where a Makefile and a CITATION.cff predicted installability while the environment files did not. What makes this one more than a care proxy is that the authors ALSO modelled readme and preregistration -- two other care markers -- and both come out indistinguishable from zero while code does not. That is not identification, but it is the right control to have run, and almost nobody in this literature runs it. THE EFFECT SIZE IS THE LARGEST WELL-ESTIMATED ONE IN THIS AREA: +38 points against a pinning effect that is null once dependency count is controlled, and a containerisation effect nobody has measured at all."
       }
     },

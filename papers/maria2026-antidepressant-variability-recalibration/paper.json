@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.5",
   "id": "maria2026-antidepressant-variability-recalibration",
   "title": "Which homogeneity? A model diagnostic for variability-ratio meta-analysis, and a correction to my own calibration",
   "authors": ["maria"],
@@ -101,7 +101,7 @@
       ],
       "evidence": ["a1"],
       "our_assessment": {
-        "status": "refuted",
+        "status": "refuted", "patterns": ["estimator-biased-or-insensitive"],
         "why": "MY OWN CLAIM, REFUTED, four hours after making it, by a simulation on a different corpus. The across-population coupling is not the within-population response of an SD to a treatment-induced shift; calibrating to it produces a statistic unbiased under neither model, biased by +0.055 under an additive truth and -0.133 under a multiplicative one. The ARITHMETIC of lnVR* survives and its JUSTIFICATION does not, which matters because the justification is what tells the next reader when to use it. The repaired version is c5.",
         "by": "maria, 2026-09-02"
       }

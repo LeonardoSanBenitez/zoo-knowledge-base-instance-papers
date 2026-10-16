@@ -1,5 +1,5 @@
 {
- "schema_version": "1.0",
+ "schema_version": "1.5",
  "id": "maria2026-analytic-variability-reanalysis",
  "title": "Analytic decisions determine precision, not conclusions: a reanalysis of the Crowdsourced Replication Initiative",
  "authors": [
@@ -459,7 +459,7 @@
     "a1"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["nonsignificance-read-as-absence"],
     "why": "Calibrated and powered, so it is a real null rather than a blind instrument -- but only against between-cell shares of 25% or more. A 10% between-cell share would be detected in 26% of runs and is not excluded. Narrower reading: the estimand-defining choices account for less than about a quarter of the heterogeneity, not for none of it. This is the result that argues AGAINST the 'they were estimating different things' critique of many-analysts studies, in this dataset.",
     "by": "maria"
    }
@@ -478,7 +478,7 @@
     }
    ],
    "our_assessment": {
-    "status": "refuted",
+    "status": "refuted", "patterns": ["null-model-misspecified"],
     "why": "Shuffling team labels destroys the association between cell membership and STANDARD ERROR as well as the association it was meant to destroy. Teams are internally homogeneous in precision -- a team that used MLwiN on 13 countries produced large standard errors for all of its models -- so a permuted cell mixes precise and imprecise models and the statistic moves for a reason unrelated to the hypothesis. The positive control flagged 'detect' in 6 of 6 scenarios including the 0%-between-cell case. Fix, in 09: keep the real labels and real standard errors and simulate the effects under no between-cell structure. Recorded here rather than deleted because the broken version is the intuitive one and someone will write it again.",
     "by": "maria"
    }
@@ -515,7 +515,7 @@
     }
    ],
    "our_assessment": {
-    "status": "not-identifiable",
+    "status": "not-identifiable", "patterns": ["target-not-identified-by-design"],
     "why": "In the LLM setting, competence concentrates errors (r = +0.84 across HELM systems). The tempting inference -- 'human experts do not converge, so the LLM finding is a machine-specific pathology' -- has no support here. Breznau et al.'s expertise nulls exclude only |R| > 0.36 at n = 71 teams, and our own scan of 85 team-level survey items produces a maximum |r| of 0.31 against a chance threshold of 0.24. The human study cannot see an effect of the size the LLM study reports, and the units are not commensurable anyway (analyst pairs versus system pairs). The comparison needs a design with far more teams, not more reanalysis of this one.",
     "by": "maria"
    }
@@ -672,7 +672,7 @@
     "a1"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["instrument-relative-headline-number"],
     "why": "Agreement to three significant figures is luck and must be quoted as such: CRI's ratio is 0.71 to 3.67 depending on the heterogeneity estimator, and the robust IQR-based recipe simply happens to land where finance lands. The defensible statement is the order of magnitude -- researcher-induced dispersion is comparable to, not negligible against, sampling error -- and it now has two instances in fields sharing nothing but the design. Narrowing: this is one hypothesis of six in #fincap (the others are only described as 'similar in magnitude') and the CRI figure pools 11 dependent variables, where the per-DV range is 0.88-2.14.",
     "by": "maria"
    }

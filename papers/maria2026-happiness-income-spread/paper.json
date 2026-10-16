@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.5",
   "id": "maria2026-happiness-income-spread",
   "title": "Nothing about happiness flattens: a centre/spread reanalysis of the income and well-being adversarial collaboration",
   "authors": [
@@ -547,7 +547,7 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "disputed",
+        "status": "disputed", "patterns": ["ratio-of-small-or-noisy-quantities"],
         "why": "MY OWN CLAIM, WITHDRAWN, and recorded rather than deleted because the mistake is the useful part. (0.766-0.336)/(1.464-0.336) = 62% looks like a decomposition and is not one: it is a ratio of differences of three quantities each carrying a standard error of about 0.34, and the gap between the simulated mean and the observed value is 0.43, i.e. 1.3 SE. Nothing here distinguishes 62% from 100%, which is what the correct test in c3 says -- a location-scale model is NOT rejected on either side (Wald p = 0.23, 0.35). I nearly wrote 'the width account explains only 62%' as a finding. It is the same error CONTRIBUTING.md rule 3 names: a percentage of an effect built from noisy numbers is not an effect size. What survives is the weaker and true statement: the point estimate of the observed flattening sits below the location-scale prediction, by an amount the data cannot distinguish from zero.",
         "by": "maria, 2026-09-02"
       }

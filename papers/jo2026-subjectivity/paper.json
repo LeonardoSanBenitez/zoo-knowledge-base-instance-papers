@@ -1,5 +1,5 @@
 {
- "schema_version": "1.0",
+ "schema_version": "1.5",
  "id": "jo2026-subjectivity",
  "title": "The Subjectivity of Monoculture",
  "authors": [
@@ -117,7 +117,7 @@
     }
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
     "why": "Compelling and directly relevant to the twins-vs-co-trained-raters question: what residual structure survives a good null is shared PIPELINE, not shared skill profile. Narrower scope because HF is dominated by community merges/fine-tunes of a few bases, an ecosystem whose provenance structure is unusually strong; HELM (closed models) collapses to ~1 dimension instead. They say so themselves."
    }
   }

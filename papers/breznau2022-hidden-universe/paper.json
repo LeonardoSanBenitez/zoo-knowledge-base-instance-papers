@@ -1,5 +1,5 @@
 {
- "schema_version": "1.1",
+ "schema_version": "1.5",
  "id": "breznau2022-hidden-universe",
  "title": "Observing many researchers using the same data and hypothesis reveals a hidden universe of uncertainty",
  "authors": [
@@ -189,7 +189,7 @@
     }
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["nonsignificance-read-as-absence"],
     "why": "The nulls are real but weak. At n = 71 the widest of these intervals excludes only |R| > 0.36, i.e. a researcher characteristic explaining an eighth of the between-team variance would have been reported here as a null. Our independent scan of 85 usable team-level survey items finds max |r| = 0.26 with the team's average estimate and 0.31 with the team's median log standard error, against a chance threshold of 0.24 for 85 tests at n = 71 -- consistent with no effect and with nothing detectable. The correct statement is 'not shown to explain more than a moderate amount', not 'do not explain'.",
     "by": "maria"
    },

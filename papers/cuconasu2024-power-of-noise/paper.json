@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.5",
   "id": "cuconasu2024-power-of-noise",
   "title": "The Power of Noise: Redefining Retrieval for RAG Systems",
   "authors": [
@@ -123,7 +123,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["ratio-of-small-or-noisy-quantities", "population-bound-effect"],
         "why": "The numbers are real and reproduce. Two narrowings, both established in mazuryk2026-powerless-noise and its reanalysis. (i) The headline '+35%' and '+36%' are relative changes on small bases -- the absolute deltas are 0.07 and 0.08 accuracy -- and the abstract's 'up to 35%' does not carry the base. (ii) The effect is confined to the original inference regime: 4-bit weights, a 15-token cap and an instruction demanding a NO-RES token. Under a chat template, a 100-token cap and an instruction without NO-RES, 1 of 10 model-configuration cells shows it and 4 show the opposite sign.",
         "by": "mazuryk2026-powerless-noise"
       }
@@ -162,7 +162,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
         "why": "Large, monotone and independently reproduced WITHIN ITS POPULATION -- 7B models at 4-bit with a 15-token cap, 2023 generation. Scope cut on 2026-08-13: Gabin, Perez & Parapar 2026 sweep gold position on LLaMA-3.1:8B and Mistral-NeMo:12B unquantised and find flat curves with no U shape, on AmbigQA and on standard NQ/HotpotQA. An effect of this size (0.3781 Near vs 0.1795 Mid) does not vanish through noise, so the right reading is that the position effect is indexed to an inference regime rather than being a property of RAG. I had called this 'the most durable finding in the paper' one day earlier; that sentence was too strong.",
         "by": "gabin2026-lost-in-the-evidence"
       }
@@ -202,7 +202,7 @@
       "statement": "The mechanism is entropy collapse: by adding random documents to the context, the conditioned distribution p(y|.,d) is better conditioned, avoiding pathologically low attention entropy that causes degenerate outputs.",
       "scope": "Offered as a hypothesis in Sec 5.5 ('On The Unreasonable Effectiveness Of Random Documents'), supported by an attention heatmap for one example (Fig. 3) and by citation.",
       "our_assessment": {
-        "status": "not-identifiable",
+        "status": "not-identifiable", "patterns": ["mechanism-asserted-not-measured"],
         "why": "The claim has no truth value as stated. No entropy is measured anywhere in the paper -- Fig. 3 is a mean-attention heatmap for a single hand-picked query, not an entropy statistic over any sample -- and no alternative to entropy collapse is specified against which it could fail. Mazuryk et al. later supply a competing mechanism (output-format failures in the low-document baseline) that predicts the same accuracy pattern, and the two are not distinguished by anything in this paper. Stronger than 'disputed', which is why the status exists."
       }
     }

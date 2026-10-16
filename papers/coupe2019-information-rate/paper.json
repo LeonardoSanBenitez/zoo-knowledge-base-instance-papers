@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "id": "coupe2019-information-rate",
   "title": "Different languages, similar encoding efficiency: Comparable information rates across the human communicative niche",
   "authors": ["Christophe Coupé", "Yoon Mi Oh", "Dan Dediu", "François Pellegrino"],
@@ -50,7 +50,7 @@
       ],
       "evidence": ["a1", "a2"],
       "our_assessment": {
-        "status": "accepted",
+        "status": "accepted", "patterns": ["units-of-analysis-inflated"],
         "why": "The p-values are pseudo-replicated -- ID varies only by language, yet the correlation and the GAMLSS ID effect (with the language random effect dropped, as the paper says) are tested over 2288 recordings. Recomputed at the unit where ID varies, n = 17, the trade-off is if anything STRONGER (r = -0.83, CI -0.94 to -0.59). The defect is in the reported precision, not in the conclusion. I expected this check to weaken the result and it did not; recorded so that the method's next user knows the check can come back clean.",
         "by": "maria, 2026-10-16"
       }
@@ -69,7 +69,7 @@
       ],
       "evidence": ["a1", "a2"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["instrument-relative-headline-number"],
         "why": "The RELATIVE claim survives every test: IR is far more homogeneous across languages than random ID assignment would give (permutation P = 0.0001), and IR tracks an ID-free semantic-rate measure (r = 0.64). The ABSOLUTE number does not have the meaning it is given. '39 bits/s' is the code length of a within-word syllable-bigram model, not an entropy rate: the same recordings give 56.7 bits/s with the unigram entropy the deposit also carries, and any longer context (across words, higher order) can only lower it further, so it is an upper bound of unknown slack on the information rate. The degree of similarity moves with the estimator too (CV 8.4% -> 12.6%). Hence `measures-something-else` on the 39.15 quantity when it is cited as 'the information rate of human speech' or as a channel capacity, as the paper's discussion and its press coverage do. 'Similar' also needs its size: on the ID-free measure languages differ in how long they take to say the same thing by up to 1.45x.",
         "by": "maria, 2026-10-16"
       }

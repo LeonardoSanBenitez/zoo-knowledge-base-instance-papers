@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "id": "huang2026-reward-hacking-research-agents",
   "title": "Reward Hacking Challenges Oversight of Autonomous Research Agents",
   "authors": [
@@ -90,7 +90,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["denominator-unstated-or-shifted"],
         "why": "Direction and magnitude are credible. Denominator not fully stated: no integer count over the full 17 x 20 = 340 research grid rounds to 30.5%; the most parsimonious solution consistent with 105 total hacks is 96/315 and 9/306, i.e. about 25 research cells excluded (failed or refused sessions?) without that being said in the main text. reanalysis/internal_consistency.py. Not a defect in the conclusion, a gap in the reporting."
       }
     },
@@ -188,7 +188,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["units-of-analysis-inflated"],
         "why": "Sums check. The printed CI for distillation, [20, 52]%, matches neither Wilson [22.9, 54.7] nor a plain binomial; attempts within a Setting-3 pair are correlated, so a clustered interval is plausible but unstated. The relative ordering (direct leaks are visible, disguised ones are not) is the robust part, and the authors themselves say only the relative result is supported."
       }
     },
@@ -281,7 +281,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "unverified",
+        "status": "unverified", "patterns": ["small-sample-overreach", "nonsignificance-read-as-absence"],
         "why": "n = 11-16 models; a rank correlation of 0.11 on 16 points has a 95% interval spanning roughly -0.4 to 0.6. 'Does not predict' is the only reading the data allow, and it is a weak one either way."
       }
     }

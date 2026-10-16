@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "id": "karger2023-xpt",
   "title": "Forecasting Existential Risks: Evidence from a Long-Run Forecasting Tournament",
   "authors": [
@@ -239,7 +239,7 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["instrument-relative-headline-number"],
         "why": "The conditional is the sharpest way to show the format effect, because unlike a bare probability it has a meaning anyone can argue with: given eight hundred million dead in five years, does it finish? Four groups say roughly one time in three to one in nine. The same people, asked in different units, say one time in ten thousand. NARROWER SCOPE and the reason matters: this is a ratio of two MEDIANS taken over different questions, so it is not any individual's conditional probability -- see c4, where exactly that non-additivity turns out to be large. It is a property of the numbers as published and as used, which is the level at which policy consumes them.",
         "by": "maria, 2026-09-04"
       }
@@ -354,7 +354,7 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "disputed",
+        "status": "disputed", "patterns": ["instrument-relative-headline-number"],
         "why": "DISPUTED BY ME, deliberately, and the reason is in the numbers: the Gaussian family gives 0.66-0.67 and a heavy-tailed t-copula gives 0.47, so the point estimate is partly a property of my copula rather than of their forecasters. Only the direction should be quoted -- substantial positive correlation, somewhere around a half to two-thirds -- and it is confirmed independently by the report's own key takeaway 5, that predictions about risk were highly correlated across topics. WHY IT MATTERS ANYWAY: five domain judgements correlated at 0.5+ are not five pieces of independent evidence, and averaging them as if they were overstates the information by a large factor. This is the same structure as kim2025-correlated-errors, where nominally independent models agree on the same wrong answer, and bommasani2022-homogenization. ONE FINDING I DID NOT EXPECT AND CANNOT EXPLAIN: domain experts imply a HIGHER cross-domain correlation (0.93) than superforecasters (0.67). Domain expertise should differentiate a person's judgements across domains, not homogenise them.",
         "by": "maria, 2026-09-04"
       }
@@ -397,7 +397,7 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["centre-hides-distribution"],
         "why": "The inversion is standard and the inputs are all printed in the report, but it assumes an approximately log-normal population and reads the brackets as 95% bootstrap intervals of the median, which is what the caption says they are. NARROWER SCOPE for one real reason: the implied upper end exceeds 100% for several causes, which a log-normal permits and reality does not, so the true distribution must be truncated and my sigma is an overestimate at the top. The DIRECTION is safe and is the point -- the extinction questions have spreads four times the catastrophe questions, so the disagreement the paper reports between GROUPS is small next to the disagreement WITHIN them. A reader who sees '1% [0.55, 1.23]' will imagine a group that roughly agrees. They do not.",
         "by": "maria, 2026-09-04"
       }
@@ -436,7 +436,7 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["instrument-relative-headline-number"],
         "why": "Classic anchoring predicts clustering on the presented values and no systematic extrapolation past the extremes. Both predictions fail here. What remains, and what I now think is the same mechanism described from the other end, is that the anchors work BY MAKING SMALL NUMBERS SAYABLE: entering the elicited extinction probability as a percentage requires seven decimal places, and nobody types that into a 0-100 box. NARROWER SCOPE because the decisive experiment does not exist: the same question in 1-in-X format under two DIFFERENT anchor ladders. Until someone runs it, the SIZE of the format effect is known and its cause is not. I record this as a partial answer to my own open question rather than deleting the question.",
         "by": "maria, 2026-09-04"
       }
@@ -486,7 +486,7 @@
         "a5"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["nonsignificance-read-as-absence"],
         "why": "Both reported nulls are statements about sample size. The design can exclude a skill gap above 0.471 SD and no smaller one, and it had 19% power against the 0.18 SD it actually observed. The same design has 100% power against the 1.82 SD public-participant gap it did detect, so it separates forecasters from the public and cannot separate forecasters from each other -- and both facts sit in the same analysis. The correlation null is weaker still: 0.214 at n = 169 before attenuation, and an accuracy score built from 38 questions (many of them, by the authors' description, low-probability events that did not occur, on which everyone scores alike) caps any observable correlation well below 1. The honest statement is not 'the two groups are equally accurate' but 'no skill difference large enough for this design to see has appeared in the first 38 of 172 questions'."
       }
     },

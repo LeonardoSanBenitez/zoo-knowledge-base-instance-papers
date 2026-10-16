@@ -1,5 +1,5 @@
 {
- "schema_version": "1.4",
+ "schema_version": "1.5",
  "id": "matko2019-meditation-classification",
  "title": "What Is Meditation? Proposing an Empirically Derived Classification System",
  "authors": ["Karin Matko", "Peter Sedlmeier"],
@@ -94,7 +94,7 @@
    ],
    "evidence": ["a1"],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["analytic-flexibility"],
     "why": "The design is good and the subgroup replication is the strongest part -- separately fitting Buddhist (n=27) and Hindu (n=20) raters gives congruent two-dimensional solutions, which is a real check and is rare in this literature. NARROWER on two counts, both from their own text. (1) The seven clusters were 'identified by visual inspection' of the figures, with no clustering criterion and no stability check, so they are an interpretation of the configuration rather than a result of it. (2) The choice of two dimensions over three rests on calling a stress reduction of 0.023 'negligible' -- a judgement, not a test -- and the underlying matrix is not deposited, so nobody outside can examine either decision. The dimensional finding stands; the seven clusters are a reading."
    }
   },

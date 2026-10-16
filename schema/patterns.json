@@ -1,0 +1,139 @@
+{
+  "vocabulary": "zoo-paper-record defect patterns",
+  "version": "1.0",
+  "created": "2026-10-16",
+  "author": "maria",
+  "purpose": "What KIND of problem a claim's assessment found -- the axis that transfers across fields. `methods` records what was done to check; `our_assessment.status` records the verdict; `patterns` records the shape of the defect, so that 'every place this corpus found pseudo-replication', or 'every headline number that belongs to its instrument', is one query regardless of discipline. A pattern may sit on an ACCEPTED claim: a defect that did not change the conclusion is still a defect, and the cases where the check came back clean are what calibrate how often it matters.",
+  "anchors": {
+    "makin2019": "Makin TR & Orban de Xivry J-J (2019) Ten common statistical mistakes to watch out for when writing or reviewing a manuscript. eLife 8:e48175, doi:10.7554/eLife.48175. Numbered 1-10 in the paper's order (headings verified from PMC6785265 on 2026-10-16).",
+    "validity": "Shadish, Cook & Campbell (2002) Experimental and Quasi-Experimental Designs for Generalized Causal Inference: statistical-conclusion, internal, construct, external validity. 'reporting' is ours: defects in what is written rather than in what was inferred."
+  },
+  "rules": [
+    "A slug enters only with at least one real instance in the corpus. No slots for patterns nobody has found.",
+    "Assign from the assessment you actually made. If the 'why' text does not describe the defect, do not tag it.",
+    "Several patterns per claim are fine; the first is the one that carries the verdict.",
+    "Before coining a new slug, run `kb.py vocab patterns` and read the definitions below."
+  ],
+  "patterns": {
+    "units-of-analysis-inflated": {
+      "validity": "statistical-conclusion", "maps_to": ["makin2019:3 Inflating the units of analysis"],
+      "definition": "Inference treats observations as independent when the predictor, the treatment or the outcome-generating process varies at a coarser level (pseudo-replication; clustered units analysed as independent).",
+      "check": "Recompute at the level where the predictor varies, or cluster-bootstrap over that level; report the ICC."
+    },
+    "nonsignificance-read-as-absence": {
+      "validity": "statistical-conclusion", "maps_to": ["makin2019:9 Over-interpreting non-significant results"],
+      "definition": "A non-significant test is reported as 'no effect', 'flat', 'no difference' or 'no interaction' without the interval or the smallest effect the design could detect.",
+      "check": "Print the CI and the minimum detectable effect at the design's n."
+    },
+    "difference-in-significance-not-tested": {
+      "validity": "statistical-conclusion", "maps_to": ["makin2019:2 Interpreting comparisons between two effects without directly comparing them"],
+      "definition": "Two effects are said to differ because one is significant and the other is not, without a direct test of the difference.",
+      "check": "Test the difference (interaction or contrast) directly."
+    },
+    "small-sample-overreach": {
+      "validity": "statistical-conclusion", "maps_to": ["makin2019:5 Use of small samples"],
+      "definition": "A rate, correlation or ranking is stated as general from a handful of units whose interval spans the substantive range.",
+      "check": "Exact or bootstrap interval at the true n; leave-one-out influence."
+    },
+    "circular-analysis": {
+      "validity": "statistical-conclusion", "maps_to": ["makin2019:6 Circular analysis"],
+      "definition": "Units are selected, split or excluded using the outcome (or a function of it) and the same data are then used to estimate the effect, so the selection manufactures the result.",
+      "check": "Run the full pipeline, selection rule included, on a null world; the result should vanish."
+    },
+    "analytic-flexibility": {
+      "validity": "statistical-conclusion", "maps_to": ["makin2019:7 Flexibility of analysis: p-hacking"],
+      "definition": "A result depends on an analytic or processing choice that was made by inspection, changed during the project, or not disclosed, among several defensible alternatives.",
+      "check": "Rerun across the defensible alternatives; recover the undisclosed choice from code history."
+    },
+    "null-model-misspecified": {
+      "validity": "statistical-conclusion", "maps_to": [],
+      "definition": "The comparison distribution, baseline or permutation scheme does not represent the absence of the hypothesised effect, so departures from it are not evidence for the effect.",
+      "check": "Build the null so that it differs from the alternative ONLY in the hypothesised mechanism; calibrate it on synthetic data with the effect absent."
+    },
+    "estimator-biased-or-insensitive": {
+      "validity": "statistical-conclusion", "maps_to": [],
+      "definition": "The estimator is biased in the design's regime, or returns nearly the same value whatever the true quantity, so its output cannot carry the claim made from it.",
+      "check": "Known-answer simulation over a grid of true values; plot estimate against truth."
+    },
+    "standardiser-misdefines-effect-size": {
+      "validity": "statistical-conclusion", "maps_to": [],
+      "definition": "A standardised effect size is divided by a spread that is not the outcome's spread across units (e.g. SD of seed means, standardised dummy predictors), so its magnitude measures precision or coding rather than effect.",
+      "check": "Recompute with the per-unit outcome SD and say which denominator the field means."
+    },
+    "ratio-of-small-or-noisy-quantities": {
+      "validity": "statistical-conclusion", "maps_to": [],
+      "definition": "A headline is a ratio (relative change, fold-change, share-of-a-difference) whose numerator or denominator is near zero or carries a standard error comparable to itself.",
+      "check": "Report absolute differences with intervals; propagate the uncertainty into the ratio."
+    },
+    "scale-dependent-conclusion": {
+      "validity": "statistical-conclusion", "maps_to": [],
+      "definition": "A conclusion about interaction, additivity, homogeneity or 'no difference in effect' holds on the chosen scale and reverses or vanishes under a monotone transformation (removable interaction; additive vs multiplicative models).",
+      "check": "Repeat on the scale the paper itself uses to interpret the result (log-ratio, logit, raw); state which scale the claim is about."
+    },
+    "centre-hides-distribution": {
+      "validity": "statistical-conclusion", "maps_to": [],
+      "definition": "A mean, median or pooled rate is reported as if it described individuals, while the distribution is a mixture, heavy-tailed, or changes shape -- the content is in the spread or the clusters.",
+      "check": "Plot the distribution; report the share at salient values and the quantiles; test for a mixture."
+    },
+    "mixing-incommensurable-units": {
+      "validity": "statistical-conclusion", "maps_to": [],
+      "definition": "Quantities measured on different scales, funnels or denominators are pooled or compared as if commensurable, and the mixing produces the pattern.",
+      "check": "Stratify by unit or scale; compare within strata before pooling."
+    },
+    "missing-adequate-control": {
+      "validity": "internal", "maps_to": ["makin2019:1 Absence of an adequate control condition/group"],
+      "definition": "The design lacks the condition that differs from the treatment only in the ingredient credited with the effect (matched scaffold without the content; the target absent).",
+      "check": "Name the counterfactual condition; if absent, the claim is about the package, not the ingredient."
+    },
+    "post-treatment-conditioning": {
+      "validity": "internal", "maps_to": [],
+      "definition": "Analysis adjusts for, differences against, or selects on a variable that is itself affected by the treatment or the outcome (post-treatment baselines, outcome-dependent exclusion, survivorship).",
+      "check": "Show the conditioning variable does not differ by arm; otherwise use a pre-treatment or separately randomised measure."
+    },
+    "mirrored-design-common-bias": {
+      "validity": "internal", "maps_to": [],
+      "definition": "In a valence-mirrored design (happy/unhappy, gain/loss, help/harm) one arm is reverse-coded before comparison, so any common directional preference appears as a valence asymmetry.",
+      "check": "A separately randomised neutral arm; or show two worlds (common bias vs true asymmetry) give different cell means under the design."
+    },
+    "correlation-read-as-causation": {
+      "validity": "internal", "maps_to": ["makin2019:10 Correlation and causation"],
+      "definition": "An observational association (or an untested recommendation derived from one) is presented as the effect of the practice or property.",
+      "check": "Name the confounder (often a 'care' or 'disposition' proxy) and test it with a second marker of the same disposition."
+    },
+    "instrument-relative-headline-number": {
+      "validity": "construct", "maps_to": [],
+      "definition": "A headline number is fixed by the measurement procedure -- elicitation format, estimator, model order, factor-retention rule, block order -- and is cited as a property of the world.",
+      "check": "Recompute under a second defensible instrument from the same data; report the spread, cite only what survives."
+    },
+    "ceiling-or-floor-artifact": {
+      "validity": "construct", "maps_to": [],
+      "definition": "A bounded measurement scale compresses or distorts a mean, a variance or a slope near its limits, and the distortion is read as substantive.",
+      "check": "Simulate the bounded scale with the effect absent; compare the artifact's size to the reported effect."
+    },
+    "mechanism-asserted-not-measured": {
+      "validity": "construct", "maps_to": [],
+      "definition": "An explanatory mechanism is offered without measuring the quantity it names or specifying an alternative it could lose to; or the paper's own data run against it.",
+      "check": "Find the quantity the mechanism predicts and check its direction in the paper's own tables."
+    },
+    "target-not-identified-by-design": {
+      "validity": "construct", "maps_to": [],
+      "definition": "The quantity reported is not identified by the design that produced the data: any value is compatible with the observations given an assumption the authors did not make explicit.",
+      "check": "Write 'design that produced it' and 'what that design identifies' (CONTRIBUTING 2b) before auditing the estimator."
+    },
+    "population-bound-effect": {
+      "validity": "external", "maps_to": [],
+      "definition": "The effect holds in the tested population or regime (one model generation, quantisation, institution, practitioner group) and is cited as general.",
+      "check": "Name the regime in every citation; find an out-of-regime replication."
+    },
+    "denominator-unstated-or-shifted": {
+      "validity": "reporting", "maps_to": [],
+      "definition": "A rate is reported without the set it is over, or the denominator changes between stages, versions or comparisons without being said.",
+      "check": "Reconstruct the funnel; find integer counts consistent with the printed rate; report every rung."
+    },
+    "text-contradicts-own-materials": {
+      "validity": "reporting", "maps_to": [],
+      "definition": "A statement in the paper is contradicted by its own code, data, appendix, logs or materials.",
+      "check": "Read the code and the materials against the text, line by line, for the claims that carry the conclusion."
+    }
+  }
+}

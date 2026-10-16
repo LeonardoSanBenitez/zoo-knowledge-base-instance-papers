@@ -1,5 +1,5 @@
 {
- "schema_version": "1.4",
+ "schema_version": "1.5",
  "id": "ploderl2019-personalised-antidepressants",
  "title": "What are the chances for personalised treatment with antidepressants? Detection of patient-by-treatment interaction with a variance ratio meta-analysis",
  "authors": [
@@ -261,7 +261,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "refuted",
+    "status": "refuted", "patterns": ["estimator-biased-or-insensitive"],
     "why": "It is not a fact about variance. Both statistics carry the identical Nakagawa small-sample correction, which cancels, so per trial lnCVR_i - lnVR_i = ln(m_PL,i / m_AD,i) EXACTLY -- measured max absolute deviation 2.8e-16 across all 169 trials. CVR is VR divided by the ratio of mean symptom reductions and contains no further information. The drug reduces symptoms more than placebo in 159 of 169 trials; on HAMD17 the reduction is 10.99 vs 9.11 points, ratio 1.207, reciprocal 0.829. Their own Table 1 gives VR/CVR = 1.2317 against an n-weighted mean-change ratio of 1.2286, and the identity predicts every subgroup row including the tricyclic outlier (CVR/VR 0.613 vs mean ratio 0.603). The 'no immediately plausible explanation' is the treatment effect. Their code carries the tell: 'for the calculations of CVR, it was necessary to use the absolute values of the pre-post differences' -- a coefficient of variation requires a mean on a ratio scale, and a pre-post change has an arbitrary zero and either sign. FURTHER, 2026-09-06 (see c10): the sign of the result flips with the reporting convention. Their own supplementary table 1 runs the identical analysis on the 84 endpoint-score trials and gets CVR = 1.15, above 1, while VR stays at 0.98. PRIORITY CORRECTED 2026-09-07: this is NOT new. Mills et al. (2021, Epidemiology, `mills2021-differences-in-variance`) state it, with R code deposited, and cite the psychiatric variability meta-analyses as the examples of the violation. I found their paper on the third search of the same session, after writing this record. What remains mine is quantitative and is stated separately below. Specifically: Mills et al. say the coefficient of variation requires a ratio scale with a meaningful zero and name HAMD and MADRS as failing it. What is still mine here is the exact identity -- lnCVR minus lnVR equals the log ratio of arm means EXACTLY, the small-sample corrections cancelling, measured to 2.8e-16 over 169 trials -- which is stronger than 'the scale does not support it', because it says the statistic carries no information at all beyond lnVR and the treatment effect. And the reporting-convention sign flip in c10, which is in neither paper.",
     "by": "ploderl2019-personalised-antidepressants (maria's p02)"
    }
@@ -306,7 +306,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "refuted",
+    "status": "refuted", "patterns": ["mixing-incommensurable-units"],
     "why": "Two independent failures. (1) The corpus mixes HAMD17 (k=71), HAMD21 (52), MADRS (24), HAMD24 (12) and four more scales with different ranges, so trials on longer scales have both larger means and larger SDs for reasons unrelated to the drug. Within scale the correlation is +0.045, +0.311, -0.136, +0.421; pooled +0.135. 75% of the cited correlation is between-scale mixing. (2) An ACROSS-TRIAL correlation cannot license a WITHIN-TRIAL, BETWEEN-ARM division. The relevant statistic is r(ln mean ratio, ln SD ratio) = +0.110, p = 0.154, not significant. PRIORITY CORRECTED 2026-09-07: this is NOT new. Mills et al. (2021, Epidemiology, `mills2021-differences-in-variance`) state it, with R code deposited, and cite the psychiatric variability meta-analyses as the examples of the violation. I found their paper on the third search of the same session, after writing this record. What remains mine is quantitative and is stated separately below. Specifically: Mills et al. show by simulation (their eAppendix 3) that a mean-SD correlation across trials does not indicate whether the CoV differs between arms, and conclude that the CoV should be used only when the scale qualifies, irrespective of that correlation. What is still mine is the decomposition on this corpus: 75% of the cited r = 0.55 is between-SCALE mixing (within-scale pooled 0.135), and the within-trial between-arm correlation that would actually license the division is +0.110 with p = 0.154.",
     "by": "ploderl2019-personalised-antidepressants (maria's p04C)"
    }
@@ -436,7 +436,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["estimator-biased-or-insensitive"],
     "why": "Three falsifiable predictions of the proposed mechanism were stated before running and all three held: equal arm sizes shrink the bias from +0.585 to +0.064; swapping the arms reverses it to -0.567; a weight built from the across-arm pooled variance (which does not contain the difference) removes it, -0.003 with 96.6% coverage. Re-verified at D = +5 and D = -5 (bias -0.070 and +0.125, coverage 96.6% and 95.0%). A common-scale weight also works (bias +0.054) but is less efficient, SD 1.119 against 0.787. The mechanism is the same shape as the coupling artifact in mccutcheon2022: a quantity on both sides of its own estimator. NOVELTY NARROWED 2026-09-07, after running the prior-art check that two other claims of mine failed today. **The MECHANISM is textbook and long known.** Inverse-variance weighting is biased whenever the sampling variance is a function of the effect estimate, and the standard teaching example is the standardised mean difference, whose variance contains d^2 -- so studies with larger |d| are down-weighted and the pool is biased toward zero. The classic remedies are exactly the two variants tested here: substitute a common or pooled estimate into the weight, or weight by sample size alone (the Hunter-Schmidt scheme, which is this record's `common` variant, measured unbiased and less efficient). What I have NOT found is anyone applying it to the DIFFERENCE OF VARIANCES, quantifying it, or noticing that the reference implementation for that method uses the effect-dependent weight. **How hard I looked, so the absence is readable:** four keyword searches on Europe PMC, which indexes biomedical literature and is a poor instrument for a methods-statistics question -- the relevant venues are Research Synthesis Methods, Statistics in Medicine and Biometrics. Treat this as weak evidence of absence. The measurement and the corrected estimator stand regardless of who first stated the principle."
    }
   },
@@ -511,7 +511,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["target-not-identified-by-design", "mixing-incommensurable-units"],
     "why": "Accepted as an estimate of D on HAMD17 with the corrected estimator of c5. NOT accepted as a statement about sigma_TE, which is not identified by a parallel-group design (senn2016) and moves by a factor of eight over the rho values this literature has used. The scale restriction is not fastidiousness: the unit-mixed pool over all 169 trials gives +1.188 [-0.477, +2.854], so mixing units moves the answer by more than any difference between the arms does. PRIORITY CORRECTED 2026-09-07: reporting D from summary data is Mills et al. (2021), not new here, and their guidance that D may only be pooled within one measurement scale is also theirs. What is mine is c5 -- their own deposited code uses the biased weight -- and the numbers on this corpus."
    }
   },
@@ -600,7 +600,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["estimator-biased-or-insensitive"],
     "why": "The criticism is correct in direction and immaterial in size, and it is recorded because I expected it to matter and it did not. Averaging SDs is downward-biased twice over (Jensen, plus the omission of the between-arm mean spread) and it is one-sided here because the placebo side is always a single arm. But dose arms of one drug have nearly identical means, so the between-arm term is near zero: the pooled VR moves 1.0060 -> 1.0077, well inside its own interval. Anyone re-deriving this objection should stop at the measurement, not at the argument."
    }
   },

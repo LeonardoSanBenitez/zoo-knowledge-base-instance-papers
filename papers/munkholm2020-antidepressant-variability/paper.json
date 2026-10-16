@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.5",
   "id": "munkholm2020-antidepressant-variability",
   "title": "Individual response to antidepressants for depression in adults — a meta-analysis and simulation study",
   "authors": [
@@ -135,7 +135,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["scale-dependent-conclusion"],
         "why": "The conclusion is correct FOR THE MODEL THE STATISTIC TESTS, and the paper does not say which model that is. lnVR tests ADDITIVE homogeneity (the treatment subtracts the same amount from everyone); lnCVR tests MULTIPLICATIVE homogeneity (it multiplies everyone by the same factor). Simulated on this corpus's own sample sizes, each is unbiased under its own model and badly biased under the other: with zero individual variation, an additive truth gives lnVR 0.999 and lnCVR 1.204, and a multiplicative truth gives lnVR 0.829 and lnCVR 0.999. On these 104 comparisons the implied ceiling on how much individual responses can differ is therefore either 0.00 or 4.91 HAMD points, against an average drug-placebo difference of 2.70. The paper reports 'cannot reject the null' where it could have reported a bound, and the bound is model-dependent by a factor that spans the whole clinical question. THE CHOICE IS DEFENSIBLE HERE, and see maria2026-antidepressant-variability-recalibration#c3: a diagnostic these data support says additive is the right model for this corpus. So the conclusion stands. What is missing is the statement that a choice was made and the test that it was the right one.",
         "by": "maria, 2026-09-02"
       }

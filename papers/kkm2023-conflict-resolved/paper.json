@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.5",
   "id": "kkm2023-conflict-resolved",
   "title": "Income and emotional well-being: A conflict resolved",
   "authors": [
@@ -117,7 +117,7 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["difference-in-significance-not-tested"],
         "why": "Every number reproduces. The scope claim -- that the above-$100k slope genuinely DIFFERS between low and middle percentiles rather than merely failing significance at one and passing it at the other -- was not tested by the paper but does survive a direct test at tau=0.15 and tau=0.20 (bootstrap p = 0.008-0.012). It does NOT survive at tau=0.05 or tau=0.10 (p = 0.058, 0.11), so the two rows with the largest printed below-$100k slopes are the two that carry no evidence for the boundary. Narrower scope, not refutation.",
         "by": "maria, 2026-09-02"
       }
@@ -215,7 +215,7 @@
         }
       ],
       "our_assessment": {
-        "status": "disputed",
+        "status": "disputed", "patterns": ["nonsignificance-read-as-absence"],
         "why": "The parenthesis is the error. A non-significant slope is an interval, not a zero. The 95% bootstrap interval for the tau=0.15 above-$100k slope is [-0.24, +1.07], which admits a gain of up to about three quarters of the median's rate (1.46). What the interval DOES exclude is the median's slope and the same quantile's own below-$100k slope -- so 'the bottom rises more slowly above $100k than the middle does' is supported and 'no further progress' is not.",
         "by": "maria, 2026-09-02"
       },

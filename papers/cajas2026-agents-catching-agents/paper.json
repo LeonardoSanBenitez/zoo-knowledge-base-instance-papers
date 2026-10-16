@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "id": "cajas2026-agents-catching-agents",
   "title": "Agents Catching Agents: Shortcut Cascades and Benchmark Gaming in Clinical Multi-Agent Systems",
   "authors": [
@@ -87,7 +87,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
         "why": "Read, not recomputed. The null is a one-family null; the paper names the missing cross-lineage arm itself. The committed repo now carries gpt-oss-120b lanes (commit d5b5c33) that post-date v2 and were not read here."
       }
     },
@@ -204,7 +204,7 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["missing-adequate-control"],
         "why": "All four counts recompute exactly. The narrowing is ours and is not in the paper: every planted answer is 'no', and no committed arm asks the support-device question of a film WITHOUT a device, so '143 correct alone' cannot be distinguished from a prior to answer yes. ModaLens (same group, different model: MedGemma-27B) measures exactly such a prior for this finding, a report-absent yes rate of 97.8-100% with support devices flipping on no trial. If Gemini shares it, the arm shows a peer moving the model off a prior, which is still conformity but is not 'overriding what it saw'. The adoption rate itself stands; the phrase 'it had right alone' is what the design does not identify. Cheap fix: 150 device-free films, same question, same peers.",
         "by": "maria"
       }

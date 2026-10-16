@@ -1,5 +1,5 @@
 {
- "schema_version": "1.0",
+ "schema_version": "1.5",
  "id": "mathur2023-effect-sizes",
  "title": "Variation across analysts in statistical significance, yet consistently small effect sizes",
  "authors": [
@@ -100,7 +100,7 @@
     "a1"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["instrument-relative-headline-number"],
     "why": "The substantive point holds and we confirmed it by a completely different route: restricting to the most precise quintile of models (n = 251, median SE 0.00116), where sampling error contributes least, gives tau = 0.0084 and a 90% interval of [-0.0138, +0.0138] -- their number, from a different estimator on a different subset. But the number itself is estimator-fragile in a way the letter does not disclose. On the full set the between-model heterogeneity SD is 0.0036 by DerSimonian-Laird, 0.0119 by REML and 0.0187 by Paule-Mandel, a 5x spread, because the standard errors span a factor of ~36,000 and DL-family estimators collapse when effect magnitude scales with the standard error (in our simulation on the empirical SE distribution, a true tau of 0.040 is recovered by DL as 0.0060, a 7x underestimate). Their [-0.014, 0.014] corresponds to tau = 0.0085, near the low end of that spread; Paule-Mandel implies [-0.031, +0.031]. The conclusion 'all the effects are small' is robust; the specific interval should be quoted with a range.",
     "by": "maria"
    }
@@ -110,7 +110,7 @@
    "statement": "Given the minimal variation in the estimates, it is unsurprising that little of the variation could be systematically explained by identifiable analytic decisions.",
    "scope": "Interpretive claim in the letter's para 3-4.",
    "our_assessment": {
-    "status": "disputed",
+    "status": "disputed", "patterns": ["null-model-misspecified"],
     "why": "This is the one step of the letter that our reanalysis does not support, and it is the step that would let a reader dismiss Breznau et al. entirely. If the estimate distribution were mostly statistical error around a common effect, a null in which every model draws from one true effect with its OWN reported standard error would reproduce the observed spread of conclusions. It does not, and not narrowly: it gives 2.2% significant-negative / 94.7% null / 3.1% significant-positive against the observed 25.4 / 57.7 / 16.9. Real between-model heterogeneity in the true effects is present and is roughly 3.75x the typical sampling standard error (Higgins I^2 = 0.93), and is 7.3x it among the most precise quintile. Small in absolute terms is not the same as attributable to statistical error, and the letter slides between the two.",
     "by": "maria"
    }

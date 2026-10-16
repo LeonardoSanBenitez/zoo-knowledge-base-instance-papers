@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.5",
   "id": "mazuryk2026-powerless-noise",
   "title": "The Powerless Noise: How Experimental Settings Shape the Reported Power of Noise",
   "authors": ["Michal Mazuryk", "Fleur Dolmans", "Louis Gehringer", "Ina Klaric", "Jia-Huei Ju", "Mohammad Aliannejadi"],
@@ -54,7 +54,7 @@
       ],
       "evidence": ["a1", "a4"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
         "why": "The numbers reproduce and the Delta(%) against the original is under 1% in the Near column, which is a genuine replication. The narrowing: the effect is +0.0224 accuracy at n=10,000, i.e. about 2.1 standard errors, and it exists only in the Near position for one quantisation of one 7B model. Nothing in Table 2 licenses 'random documents improve RAG'."
       }
     },
@@ -83,7 +83,7 @@
       ],
       "evidence": ["a1", "a3"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["analytic-flexibility"],
         "why": "The diagnosis is right and important. The narrowing is a provenance finding the paper does not make: the repository at commit d99e9d5 (2025-12-01) contained an output-cleaning block that stripped exactly these underscore placeholder lines, and commit 56dcbda (2025-12-15, message 'final experiments') deleted it. So the flagship anomaly is downstream of an undocumented post-processing choice that the project itself had made the other way a fortnight earlier. Verified by `git diff d99e9d5 56dcbda -- src/generate_answers_llm.py`."
       }
     },
@@ -97,7 +97,7 @@
       ],
       "evidence": ["a1", "a2"],
       "our_assessment": {
-        "status": "refuted",
+        "status": "refuted", "patterns": ["text-contradicts-own-materials"],
         "why": "The paper's own appendix contradicts it. Table 7 (HuggingFace, FP16) and Table 4 (the Base column, which Sec 4.2 says uses FP16 in all subsequent experiments) are the same nominal specification. They agree to 2 questions in 10,000 at k=0 and disagree by 1251, 748 and 745 questions at k=10, 12, 14. The Power-of-Noise effect computed from the two tables has opposite signs (+0.0012 vs -0.0731). A further code check makes the comparison unidentified rather than merely wrong: every vLLM job in the repository sets DTYPE=bfloat16, so the 'FP16' of the ablation and the float format of Tables 4-6 are different numeric formats, and framework, dtype, stop-token list and batching all change together.",
         "by": "maria2026-rag-specification-dispersion"
       }
@@ -112,7 +112,7 @@
       ],
       "evidence": ["a1", "a3"],
       "our_assessment": {
-        "status": "disputed",
+        "status": "disputed", "patterns": ["mechanism-asserted-not-measured"],
         "why": "The mechanism is plausible and partly supported, but the paper's own Figure 2 runs against it for the configuration it is invoked to explain: for Llama-2 Instruct the trimmed-output rate RISES from 53.6% to 68.8% as random documents are added, while accuracy also rises from 9.10% to 22.87%. If truncation relief were the mechanism, truncation should fall. The repo's own hallucination report shows the same direction: TRIMMED_RESPONSE rises from 22.6% to 36.6% of errors between 1-DOC and 15-DOC while accuracy rises from 55.42% to 62.33%. What does fall sharply is DUAL_RESPONSE (42.5% -> 1.4%), i.e. the model hedging with NO-RES after a correct answer. The instruction-hedging channel is supported; the truncation channel is not, and the paper conflates them."
       }
     },
@@ -125,7 +125,7 @@
       ],
       "evidence": ["a2"],
       "our_assessment": {
-        "status": "disputed",
+        "status": "disputed", "patterns": ["text-contradicts-own-materials"],
         "why": "The repository exists and contains the pipeline, the SLURM job scripts and the prompt construction, which is more than most. But 4 of its 16 Python files raise SyntaxError or IndentationError under py_compile, including both generation entry points (src/generate_answers_llm.py, src/generate_answers_llm_mixed.py) and the vLLM wrapper (src/llm_vllm.py). Three of the four were broken by the single commit named 'final experiments'. The per-question generation results are not in the repository at all; the README points at a Google Drive folder. So the artifact is present-but-insufficient and, at HEAD, not executable."
       }
     }

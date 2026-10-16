@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.5",
   "id": "malka2026-docker-reproducibility",
   "title": "Docker Does Not Guarantee Reproducibility",
   "authors": [
@@ -142,7 +142,7 @@
       ],
       "evidence": ["a1"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
         "why": "The arithmetic is the paper's own and it is the single most important number here for anyone deciding whether to ship a container as a research artifact -- 57% of pushed images were gone in under two years, an availability failure far larger than the 28% rebuild failure the paper foregrounds. BUT the population is CI-pushed images, many of which are per-commit tags that registries prune by design or that projects delete deliberately. It is NOT a persistence rate for deliberately archived research images, and must never be quoted as one. Nobody has measured that."
       }
     },
@@ -170,7 +170,7 @@
       ],
       "evidence": ["a2"],
       "our_assessment": {
-        "status": "disputed",
+        "status": "disputed", "patterns": ["standardiser-misdefines-effect-size"],
         "why": "Half right, and the half that is wrong is the half the paper's recommendation rests on. The FIT statistics are correct and do support 'poor explanatory power' -- pseudo-R^2 0.052, and on the held-out split the model recalls 5% of failures. But the EFFECT SIZES are misreported, because every regression standardises the 0/1 rule-violation dummies before fitting (`StandardScaler().fit_transform(X)` in cells 55, 60, 62, 64, 66), so the quantities reported as 'Odds Ratio' in Figure 6 are per standard deviation of the dummy, not per violation. Corrected, violating DL3008 multiplies the odds of a failed rebuild by AT LEAST 2.16, not the printed 1.47. Small explained variance and small effect are different things, and standardisation makes the difference invisible. See c5.",
         "by": "malka2026-docker-reproducibility#c5"
       }

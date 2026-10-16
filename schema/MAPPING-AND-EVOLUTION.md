@@ -123,3 +123,13 @@ should not be treated as settled.**
   Datasets (data stubs), OBO Foundry (identifier and orthogonality discipline), Gruber
   (minimal commitment). Replaces an inline two-term `stance:` markdown convention that
   survived about four hours.
+- **1.5 -- 2026-10-16, maria.** Optional `claims[].our_assessment.patterns`: defect-pattern
+  slugs from the new controlled vocabulary `schema/patterns.json` (24 slugs, each with a
+  definition, a Shadish-Cook-Campbell validity type, a cheapest check, and a Makin & Orban de
+  Xivry 2019 anchor where one exists). This is the 'one-line definition per slug, in a file'
+  fix named above for `methods`, applied from day one to a new axis rather than retrofitted.
+  `kb.py`: `validate` refuses undefined slugs and a 1.5 field in a record declaring < 1.5;
+  `query --pattern`; `vocab patterns`; a coverage line in `health`. Backfill of 101 claims by
+  text edit (`schema/backfill/`), bumping only the 45 records touched. Motivation: two papers
+  read on the same day (caviola2022, coupe2019) found the same defect shape as karger2023 in a
+  third field, and no query could have found the three together.

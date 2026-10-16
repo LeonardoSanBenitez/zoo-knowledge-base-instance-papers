@@ -1,5 +1,5 @@
 {
- "schema_version": "1.4",
+ "schema_version": "1.5",
  "id": "trisovic2022-code-execution",
  "title": "A large-scale study on research code quality and execution",
  "authors": [
@@ -143,7 +143,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "disputed",
+    "status": "disputed", "patterns": ["denominator-unstated-or-shifted", "post-treatment-conditioning"],
     "why": "Both printed percentages reproduce to the file from the released logs, so this is not a reproduction failure. The dispute is the denominator. The authors' combining rule counts a file as a success if ANY of three R versions succeeded but as a failure only if ALL THREE reported, so a file that one version never reached is deleted rather than counted. That drops 51.5% of the corpus in the cleaning condition and 50.8% without. A symmetric rule over the same logs gives 19.3% and 11.9%; a calibrated MAR imputation gives 23.6% and 12.6%. Manski bounds are [19.3%, 69.0%] and [11.9%, 62.6%], so the quantity is not point-identified by this design and the paper's number is one imputation among several, not the estimate.",
     "by": "trisovic2022-code-execution#c5"
    }
@@ -200,7 +200,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "refuted",
+    "status": "refuted", "patterns": ["text-contradicts-own-materials"],
     "why": "Checkable directly against the released logs and false in the direction that matters. Without code cleaning, 98.6% of the bucket labelled TLE contains no 'time limit exceeded' string at all; 94.6% of it consists of files with a recorded execution ERROR that are missing a result from at least one R version. With cleaning the label is right for 23.8% of the bucket. The exclusion is therefore not a conservative handling of slow scripts; it is the removal of observed failures."
    }
   },
@@ -250,7 +250,7 @@
     "a6"
    ],
    "our_assessment": {
-    "status": "refuted",
+    "status": "refuted", "patterns": ["text-contradicts-own-materials"],
     "why": "The universal negative is false: 25 of 1,729 comparable (file, version) cells that succeeded as deposited did not succeed after cleaning, and the modal breakage message is 'Error in file(file, \"rt\") : cannot open the connection' -- exactly what the cleaner's basename() path-flattening does to a package whose data genuinely sits in a subdirectory. Under the authors' own combining rule the breakage count is 0, because the rows that would reveal it are the rows the rule drops; the universal negative is an artifact of the same asymmetry as c1. The practical recommendation survives untouched: 618 fixed against 23 broken is 27:1. What is refuted is the word 'no', which is what licenses running a rewriter over someone else's deposited code unreviewed."
    }
   },
@@ -318,7 +318,7 @@
     "a6"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["small-sample-overreach"],
     "why": "The direction is real and survives the denominator change that breaks c1-c3: rho = +0.67 under the symmetric rule, +0.72 under the paper's. But the paper reports no statistic at all, and the inference is n = 11 journals with six tied at level 3, which collapses the permutation space so that p = 0.026 sits near its floor. Leave-one-out: two journals, one at each end, carry most of it. And a covariate the paper never tests -- mean R files per dataset, present in the same released metadata -- correlates with the outcome MORE strongly (rho = +0.736) than policy strictness does; the partial correlation given it is +0.633, so it does not explain the effect away, but at n = 11 nothing separates from anything. One observation with a consistent direction, not a rate."
    }
   },
@@ -403,7 +403,7 @@
     "a1"
    ],
    "our_assessment": {
-    "status": "unverified",
+    "status": "unverified", "patterns": ["small-sample-overreach"],
     "why": "Not checked here and not worth checking as stated. n = 3, sampled from the best-behaved stratum (all files successful), and even within it one of the three produced decimal-level discrepancies traced to a library missing under R 3.6 and another could not save its plot. The paper hedges appropriately. Recorded so that nobody later cites this paper for a reproduction rate: it does not contain one."
    }
   },
@@ -543,7 +543,7 @@
     "a8"
    ],
    "our_assessment": {
-    "status": "not-identifiable",
+    "status": "not-identifiable", "patterns": ["correlation-read-as-causation", "units-of-analysis-inflated"],
     "why": "Not 'the recommendations are wrong' -- the corpus cannot say that -- but 'the recommendations are untested, and where this corpus can test them it finds nothing convincing'. On the correct unit of analysis (packages, by cluster bootstrap) only R Markdown has an interval excluding zero, +9.2 points [+0.3, +20.4], and its lower bound is a rounding error away from nothing. Documentation gives +2.6 [-1.4, +6.4]. Tests give +4.6 [-2.6, +12.6]. TWO CORRECTIONS OF MY OWN FIRST ANALYSIS ARE PART OF THE FINDING. First, at the PACKAGE level with outcome 'at least one file ran', documentation looked overwhelming (35.8% vs 22.2%, z = 6.66) -- an artifact of my own outcome definition, because a package with twenty files has twenty chances, and package size is the largest association in the table (z = +16.8). Second, z statistics on 9 or 22 clusters are arithmetic and not evidence; the cluster bootstrap removed .Rproj's apparent z = 4.42 entirely. THE NULLS ARE HONEST ABOUT THEIR SIZE: a 20-assignment power curve gives 35% power at the observed +2.6 points and 75% at +5.1, with a 5% false-positive rate at a planted zero. So the documentation null is inconclusive, not strong. THE MOST POLICY-RELEVANT NUMBER HERE IS A DENOMINATOR, NOT AN EFFECT: containerisation, the recommendation with the best theoretical case, appears in 9 of 2,060 packages (0.44%), and workflow and provenance libraries in zero. It is not that these were tried and failed. After a decade of advice they have never been tried at a scale anyone could measure."
    }
   },

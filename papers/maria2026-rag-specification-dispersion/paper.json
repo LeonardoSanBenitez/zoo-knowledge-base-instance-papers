@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.5",
   "id": "maria2026-rag-specification-dispersion",
   "title": "Specification dispersion in RAG evaluation: nonstandard errors, benchmark saturation, and an artifact audit of a SIGIR reproduction",
   "authors": [
@@ -414,7 +414,7 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["mechanism-asserted-not-measured"],
         "why": "Two independent sources point the same way, which is why I record it rather than filing it as a doubt. The narrowing: this refutes the truncation channel as the explanation for those specific configurations, not for every configuration in the paper -- Figure 2's underlying counts are only partly quoted in prose and the per-question outputs are in a gated artifact, so a regression of accuracy on truncation rate across all cells cannot be run."
       }
     }

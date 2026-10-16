@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.5",
   "id": "liu2024-lost-in-the-middle",
   "title": "Lost in the Middle: How Language Models Use Long Contexts",
   "authors": ["Nelson F. Liu", "Kevin Lin", "John Hewitt", "Ashwin Paranjape", "Michele Bevilacqua", "Fabio Petroni", "Percy Liang"],
@@ -48,7 +48,7 @@
       ],
       "evidence": ["a1", "a2"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
         "why": "The effect is real, enormous and cleanly designed -- resolved at 15.9 standard errors on 2,655 items, when 69 items would have sufficed at p<0.01 (reanalysis/08). The scope narrowing is not a criticism of this paper but a fact established after it: Gabin, Perez & Parapar 2026 sweep gold position on LLaMA-3.1:8B and Mistral-NeMo:12B and find flat curves. See c3 -- this paper's own Section 4.1 PREDICTS that.",
         "by": "gabin2026-lost-in-the-evidence"
       }

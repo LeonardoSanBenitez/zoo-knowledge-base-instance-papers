@@ -1,5 +1,5 @@
 {
- "schema_version": "1.4",
+ "schema_version": "1.5",
  "id": "hope2019-not-so-proportional",
  "title": "Recovery after stroke: not so proportional after all?",
  "authors": [
@@ -229,7 +229,7 @@
     "a4"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["ceiling-or-floor-artifact"],
     "why": "The mechanism is real and their simulation reproduces. The EMPHASIS does not survive. Their setting uses a 33-point mean improvement on a 66-point scale; the improvements these studies actually report are 10-25 points, and there the ceiling alone yields a ratio between 0.731 and 1.002. Every fitters-only value in the literature (0.158, 0.36, 0.438, 0.48) is BELOW that band and every whole-sample value (0.80, 0.88, 1.20) is inside or above it. So the ceiling is not what makes the fitter ratios small."
    }
   },
@@ -272,7 +272,7 @@
     "a4"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["circular-analysis"],
     "why": "Accepted for the direction and rejected for completeness, and the route there is recorded because it was wrong twice. Attempt 1 asked whether the ceiling could REACH each published ratio and answered yes for seven of eight -- vacuous, because the sweep ran the mean improvement to 55 points on a 66-point scale and the reachable band became 0.13-1.03, i.e. everything. Attempt 2 modelled non-fitter removal as dropping the most negative residuals, moved the ratio by 0.09 against Zarahn's 0.52, and I wrote 'a comparable amount' with the contradicting table directly above. The residual model removes a TAIL where the literature removes a SUBPOPULATION. The mixture is the right shape: four targets fitted to L1 = 0.084 and one held-out statistic matched. But the other held-out statistic, whole-sample r(X,Y), misses by 0.23 -- real non-fitters are more predictable from baseline than 'recovers nothing plus noise' allows. Right shape, not the right world."
    }
   },
@@ -406,7 +406,7 @@
     "a4"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["circular-analysis"],
     "why": "AGAINST MY OWN EXPECTATION WHEN I STARTED, which is why it is worth recording. No world in which recovery is drawn independently of baseline -- with the ceiling, with a non-fitter subpopulation, and with the field's own fitter rule applied -- comes near Zarahn's fitters statistics: the best reaches ratio 0.68 and r(X,Y-X) = -0.73 against an observed 0.36 and -0.95, while the h03 mixture WITH 70% proportional recovery matches to L1 = 0.084. On the one dataset in this literature with individual data, proportional recovery among fitters is SUPPORTED. Narrower scope for two reasons: it is one dataset of 30 patients, and the whole-sample claim goes the other way -- with no non-fitters the constraint alone gives -0.51 and the observed -0.49 is indistinguishable from it, while with 30% non-fitters the null is -0.20. The null moves by 0.31 on a parameter the analysis itself chooses and no study reports."
    }
   }

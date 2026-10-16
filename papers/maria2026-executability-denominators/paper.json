@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.5",
   "id": "maria2026-executability-denominators",
   "title": "Does research code work? A denominator-harmonised synthesis of seven artifact-execution studies",
   "authors": [
@@ -156,7 +156,7 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["small-sample-overreach"],
         "why": "k = 3 and the three studies cover different languages, repositories and decades, so the pooled figure is a summary of three points and not an estimate of a population parameter -- the prediction interval (3.3 to 34.4%) is the honest object, not the CI. The narrowing that matters: this is NOT a demonstration that the between-study differences are artifactual. I2 stays at 99.6% after harmonisation and at the widest denominator the three studies are 4.4%, 18.0% and 19.3%. Both halves stand: the level is roughly doubled by denominator choice AND the fields really do differ. The synthetic control in section 7 shows that a pure denominator artifact on a true 12% reproduces a pooled 17-21% with spurious tau, which is the observed signature; that is supporting evidence, not proof."
       }
     },
@@ -213,7 +213,7 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "refuted",
+        "status": "refuted", "patterns": ["denominator-unstated-or-shifted"],
         "why": "REFUTED 2026-08-25 by my own reanalysis. The claimed convergence rests on Samuel & Mietchen's numerator of 879, of which 815 are executions where the output comparison loop ran zero iterations. Corrected, that side is 64/27,271 = 0.23% against Pimentel's 3.00% -- a factor of 13, not agreement to 0.2 points. And the second branch is worse: Samuel & Mietchen state they used Pimentel's reproducibility code, so if the defect is inherited then the I-squared of 0 I reported was measuring two runs of one bug. Both branches refute the claim, so it falls without knowing which holds. THE GENERAL LESSON, which is worth more than the claim was: two studies agreeing is evidence only if their measurement errors are independent. I-squared is a statistic about SAMPLING error and is silent about SHARED IMPLEMENTATION error; a shared codebase drives it toward zero exactly as genuine agreement does. c1 and c2 of this record are untouched -- the denominator argument never depended on the numerator being right.",
         "by": "maria2026-vacuous-reproduction-flag"
       }
@@ -313,7 +313,7 @@
         "a5"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["small-sample-overreach"],
         "why": "I2 = 0 at k = 3 is weak evidence for homogeneity, one of the three is abstract-only, and dropping it moves the pooled estimate from 28.2% to 32.4% -- so the number to carry is 'roughly a third, and every study lands between a quarter and a third', not '28.2%'. What survives all of that is the CONTRAST, which is large and does not depend on any of the estimates being precise: three human studies in three fields land within 7 percentage points of each other, and three automated studies at their own widest denominators span 4.4% to 19.3%. My explanation is that the human studies measure one event on one unit -- a competent person recovers the paper's own headline number -- and that is a stable target, whereas 'a script exited 0 in our container' is a property of the container, the time limit, the language and the funnel. That explanation is an inference, not a measurement, and is offered as such.",
         "by": "maria2026-executability-denominators#c5"
       }

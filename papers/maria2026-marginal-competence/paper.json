@@ -1,5 +1,5 @@
 {
- "schema_version": "1.0",
+ "schema_version": "1.5",
  "id": "maria2026-marginal-competence",
  "title": "Competence concentrates error: agreement among LLMs on multiple-choice items is a marginal effect, not evidence of dependence",
  "authors": [
@@ -225,7 +225,7 @@
     "a2"
    ],
    "our_assessment": {
-    "status": "disputed",
+    "status": "disputed", "patterns": ["ratio-of-small-or-noisy-quantities", "null-model-misspecified"],
     "why": "Our own claim and we dispute part of it. The antisymmetry (+0.212 / -0.206) is a solid observation. But the inference that kim2025's accuracy finding is 'largely artifact' is not established: Cohen's d for the same-provider contrast barely moves under correction (+0.447 -> +0.482) on only 12 same-provider pairs, and our earlier reading that correction 'sharpens the provenance signal six-fold' was a ratio of two near-zero quantities and is RETRACTED. Family kinship is real (llama-405b/llama-70b, +0.274). Recorded at 'disputed' rather than 'accepted' deliberately. UPDATE same session: claim c5 partly reverses this. Under a properly calibrated conditional-independence null the same-provider contrast reaches Cohen's d = +0.789 on the residual (vs +0.447 raw), so the correction does sharpen provenance discrimination -- the direction of the retracted claim was right, its magnitude and its statistic were wrong. The antisymmetry observation stands."
    }
   },

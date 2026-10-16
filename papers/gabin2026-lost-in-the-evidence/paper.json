@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.5",
   "id": "gabin2026-lost-in-the-evidence",
   "title": "Lost in the Evidence? Reproducing Document Position and Context Size Effects in RAG",
   "authors": ["Jorge Gabin", "Anxo Perez", "Javier Parapar"],
@@ -76,7 +76,7 @@
       ],
       "evidence": ["a1", "a2"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
         "why": "Believable and important, and the scope must travel with it. They also flag their own deviation honestly: AmbigQA provides no passage-level annotations, so they construct gold and distractor passages themselves, and absolute scores differ from Liu et al. The narrowing is that this is a claim about 8-12B unquantised 2025-generation models, and the effect it fails to find was measured on 7B 4-bit 2023-generation models under a 15-token cap. An effect of Cuconasu et al.'s size (0.3781 Near vs 0.1795 Mid) does not vanish through noise; it vanishes through the population changing."
       }
     },
@@ -90,7 +90,7 @@
       ],
       "evidence": ["a1"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["text-contradicts-own-materials"],
         "why": "The reproduction is careful and the metric-substitution worry is addressed by their own 250-topic pilot, which is the right check. The narrowing: they attribute the discrepancy to topic coverage AND to LLM judges, but their own pilot found the judge made no difference to the ordering conclusions, so their evidence supports the topic-coverage explanation and not the judge explanation. Their Section 4.2 states both as if equally supported."
       }
     },

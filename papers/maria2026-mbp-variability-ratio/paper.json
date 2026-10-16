@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.5",
   "id": "maria2026-mbp-variability-ratio",
   "title": "Does mindfulness narrow the distribution? A variability-ratio analysis of 136 nonclinical trials, and a calibration constant the method has been missing",
   "authors": ["maria"],
@@ -90,7 +90,7 @@
       ],
       "evidence": ["a1"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["ceiling-or-floor-artifact"],
         "why": "The split is clean and the direction is informative: on symptom scales the mean falls and the SD falls with it, at about the rate the calibration predicts; on well-being, mindfulness and positive-affect scales the mean RISES and the SD falls anyway. A ceiling effect on positively-keyed scales is the obvious rival and I cannot exclude it, because the deposit does not carry scale maxima. The narrower scope is real: this is a finding about positively-keyed self-report after a group programme that explicitly teaches a vocabulary for describing inner states, and 'the participants converged on how to answer' is as live an explanation as 'the participants converged in how they felt'. Item-level data would separate them; arm-level means and SDs cannot.",
         "by": "maria, 2026-09-02"
       }
@@ -106,7 +106,7 @@
       ],
       "evidence": ["a1"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["centre-hides-distribution"],
         "why": "True as a description of what the two arms' distributions look like, which is what a service deciding whom to offer a programme to would actually see. NOT a claim that any individual's benefit depends on their starting point -- arm-level moments cannot see individuals, and a mixture in which half the participants improve a lot and half not at all reproduces the same two moments. The narrower scope is the whole point: this number belongs in a discussion of allocation, not of mechanism.",
         "by": "maria, 2026-09-02"
       }

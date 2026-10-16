@@ -448,11 +448,50 @@ Two habits that make all three work and cost nothing at record-writing time:
    two rows with the same `name` and different `baseline`s. I wrote one of these
    on 2026-08-13 and the tool caught me within the hour.
 
+## 9b. Tag the SHAPE of what you found: `our_assessment.patterns` (added 2026-10-16, schema 1.5)
+
+`methods` says what you did to check. `status` says the verdict. Neither says what *kind* of
+problem you found, and that is the axis that transfers between fields: pseudo-replication in
+linguistics and in notebook audits, a headline number that belongs to its instrument in
+extinction forecasts and in information theory. Before this field existed, those were linked
+only by prose and by `zoo:sharesUnstatedAssumptionWith` edges that someone had to think of.
+
+```
+python tools/kb.py vocab patterns                    # the 24 slugs, with counts
+python tools/kb.py query --pattern instrument-relative   # definition + every claim, all areas
+```
+
+Rules (also in `schema/patterns.json`, which holds a definition, a validity type and a
+cheapest check for every slug, anchored where possible to Makin & Orban de Xivry 2019):
+
+1. **Tag from the assessment you made.** If your `why` does not describe the defect, do not tag.
+2. **A pattern may sit on an `accepted` claim.** The pseudo-replicated P in `coupe2019#c1` did
+   not change the conclusion; recording it is what tells a future reader how often that check
+   matters. A vocabulary of defects that only ever appears next to refutations would teach
+   that audits always win, and they do not.
+3. **No new slug without an instance**, and run `vocab patterns` first. Define it in
+   `schema/patterns.json` before using it; `validate` refuses an undefined slug.
+4. **Using the field bumps that record to 1.5** -- only that record. Edit records as text
+   (`schema/backfill/apply_patterns.py` shows how): re-serialising a hand-formatted record
+   turned a one-field change into a 10,000-line diff on the first attempt.
+
+The first backfill (101 claims in 45 records) is in `schema/backfill/patterns-2026-10-16.json`,
+assigned from the existing `why` texts; `health` reports how many narrowed / disputed /
+refuted / not-identifiable claims still carry no pattern (69% tagged at introduction --
+the rest were ambiguous and left alone on purpose).
+
+**Whether this field earns its place is measured, not assumed:** if, over the next records,
+new claims get tagged at the same rate and `query --pattern` is used in `kblog`, it stays.
+If tagging stops at the backfill, it was decoration.
+
 ## 10. Prior art this is built on
 
 Read these before proposing a change to the schema. We are not the first people to
 think about machine-readable scholarship and the schema is deliberately unoriginal.
 
+- **Makin & Orban de Xivry (2019)**, *Ten common statistical mistakes to watch out for when
+  writing or reviewing a manuscript*, eLife 8:e48175 -- the anchor for `schema/patterns.json`;
+  Shadish, Cook & Campbell (2002) for its four validity types.
 - **CiTO / SPAR ontologies** — the relation vocabulary. ~40 typed citation properties.
   <https://sparontologies.github.io/cito/current/cito.html>
 - **Nanopublications** (Groth, Gibson & Velterop 2010; Kuhn et al.) — assertion /

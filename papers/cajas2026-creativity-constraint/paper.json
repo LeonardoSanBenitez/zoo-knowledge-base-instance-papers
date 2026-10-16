@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "id": "cajas2026-creativity-constraint",
   "title": "Loosening and Tightening: A Scoping Review of Constraint in Human-AI Creativity (SSRN title: Creativity in Human-AI Systems: A Neurosymbolic Architecture for Constraint Modulation)",
   "authors": [
@@ -114,7 +114,7 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "not-identifiable",
+        "status": "not-identifiable", "patterns": ["text-contradicts-own-materials"],
         "why": "The log records majority votes out of THREE (2/3 on 19 inclusions, 3/3 on 13), plus 'Majority Maybe (2/3)' and tiebreaker rows. The repo ships two LLM reviewers that output Accept/Reject/Maybe decisions (google-scholar/4-chatgpt-screening, pubmed/5-gemini-crossvalidation). With two humans and one LLM voting, a 2/3 majority can be LLM-decided whenever the humans split, which is not what the text says. With three humans it is consistent, but the text names two. The log does not say who the three voters were. A question for the authors, not an accusation."
       }
     },

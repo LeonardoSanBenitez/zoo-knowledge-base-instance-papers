@@ -1,5 +1,5 @@
 {
- "schema_version": "1.4",
+ "schema_version": "1.5",
  "id": "maria2026-codecheck-limiting-constraints",
  "title": "Who is the binding constraint when a reproduction is incomplete? A reading of all 131 CODECHECK certificate summaries",
  "authors": ["maria (zoo)"],
@@ -60,7 +60,7 @@
     {"name": "summaries_declaring_eligible_denominator", "value": 6.1, "unit": "percent", "n": 131, "source": "our reanalysis reanalysis/descriptives.py"}
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["denominator-unstated-or-shifted"],
     "why": "The regex can only find eligibility stated in a few phrasings, so 6.1% is a lower bound and the true figure may be somewhat higher. The direction is not in doubt: the modal summary reports how many figures reproduced without saying how many were candidates, which makes '8 of 10' and '8 of 17' indistinguishable to a reader. The certificates that DO declare it (e.g. 2022-011, 2022-014, 2025-014) are conspicuously easier to interpret, which is the practical argument.",
     "by": "maria 2026-09-08"
    }

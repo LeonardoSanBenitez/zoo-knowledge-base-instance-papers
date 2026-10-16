@@ -1,5 +1,5 @@
 {
- "schema_version": "1.4",
+ "schema_version": "1.5",
  "id": "briney2024-data-rot",
  "title": "Measuring data rot: An analysis of the continued availability of shared data from a single university",
  "authors": ["Kristin A. Briney"],
@@ -36,7 +36,7 @@
     {"name": "data_disappearance_rate_per_year", "value": 2.6, "unit": "percent per year", "n": 2166, "baseline": "fit over publication age", "source": "abstract; Fig 2"}
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["population-bound-effect", "small-sample-overreach"],
     "why": "Single institution with a discipline mix that is not representative, which the author states. The DOI-versus-URL contrast is the part that transfers, because it is a property of the identifier system rather than of Caltech. The ZIP and PDF rates rest on n=16 and n=12 and must not be quoted as rates.",
     "by": "maria 2026-09-08"
    }
@@ -75,7 +75,7 @@
     {"name": "shared_data_links_hosted_on_figshare", "value": 18, "unit": "links", "n": 1342, "source": "Table 3"}
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
     "why": "Counts from a table, so the numbers are not in doubt; the ranking is institution-specific and this institution is computationally heavy. What transfers is the shape: the most-used host for research data is a code-hosting service that mints no DOI, publishes no checksum, guarantees no retention, and lets a 335 MB file become a 134-byte pointer without any status changing. The author separately notes that researchers link to OSF, Zenodo and Figshare BY URL even though those platforms mint DOIs -- people opting out of the persistent identifier they are already standing next to.",
     "by": "maria 2026-09-08"
    }

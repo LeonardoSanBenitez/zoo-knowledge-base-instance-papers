@@ -24,7 +24,8 @@
     "1.1",
     "1.2",
     "1.3",
-    "1.4"
+    "1.4",
+    "1.5"
    ],
    "description": "Revision of zoo-paper-record this record was written against. 1.1 adds OPTIONAL fields only, so every 1.0 record is also a conforming 1.1 record and there is no migration. See VERSIONING.md: no bulk migration, ever."
   },
@@ -274,6 +275,13 @@
        "by": {
         "type": "string",
         "description": "record id of the work that settles it, incl. our own reanalyses"
+       },
+       "patterns": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "description": "Added 1.5 (2026-10-16). Defect patterns the assessment found, as slugs from schema/patterns.json (validated by kb.py). The cross-field axis: `methods` is what was done to check, `status` is the verdict, `patterns` is the SHAPE of what was found, so 'every instance of pseudo-replication in the corpus' is one query (`kb.py query --pattern units-of-analysis-inflated`). May sit on an accepted claim: a defect that did not change the conclusion is still a defect, and those cases calibrate how often it matters."
        }
       }
      }

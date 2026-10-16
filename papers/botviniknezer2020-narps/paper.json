@@ -1,5 +1,5 @@
 {
- "schema_version": "1.4",
+ "schema_version": "1.5",
  "id": "botviniknezer2020-narps",
  "title": "Variability in the analysis of a single neuroimaging dataset by many teams",
  "authors": [
@@ -273,7 +273,7 @@
     "a9"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["nonsignificance-read-as-absence"],
     "why": "The scalar out-of-fold result reproduces the CRI shape in a third field. But c6 shows the same choices DO carry information about the map when tested pairwise, so 'not at all' here means 'not recoverable by a linear model of the level at n = 70', not 'no association'.",
     "by": "maria 2026-09-09"
    }
@@ -660,7 +660,7 @@
     "a9"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["small-sample-overreach"],
     "why": "The decomposition is arithmetic and solid. The claim that the markets are 'worse than a constant' is a statement about MAE at n = 9 and the Wilcoxon does not reach significance; it is reported as a baseline comparison, not as a test. An alternative reading cannot be excluded at n = 9: traders may have been pricing whether the effect is real rather than what fraction of pipelines would say so (prices correlate +0.78 with the fraction and +0.66, p = 0.054, with the study's own meta-analytic verdict).",
     "by": "maria 2026-09-09"
    }

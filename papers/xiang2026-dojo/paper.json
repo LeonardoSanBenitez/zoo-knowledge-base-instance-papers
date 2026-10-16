@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "id": "xiang2026-dojo",
   "title": "Distributed open justice oversight (DOJO): A community-driven, modality-agnostic platform for adversarial evaluation of health AI",
   "authors": [
@@ -100,7 +100,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "disputed",
+        "status": "disputed", "patterns": ["text-contradicts-own-materials", "standardiser-misdefines-effect-size"],
         "why": "The cited BMJ paper reports 2,000 observations (200 vignettes x 5 seeds x 2 models), not 1,800, and its d values are standardised by seed-to-seed spread of 200-case means (arslan2026-bodhi-engineering#c2). Standardised per response, the same rates give d = 4.0 and 2.4. The acronym is also expanded differently: 'Bridging, Open, Discerning, Humble, Inquiring' here and in the library README, 'Balanced, Open-minded, Diagnostic, Humble, Inquisitive' in the BMJ paper.",
         "by": "arslan2026-bodhi-engineering"
       }

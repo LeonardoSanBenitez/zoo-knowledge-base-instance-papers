@@ -1,5 +1,5 @@
 {
- "schema_version": "1.0",
+ "schema_version": "1.5",
  "id": "kim2025-correlated-errors",
  "title": "Correlated Errors in Large Language Models",
  "authors": [
@@ -84,7 +84,7 @@
     "a3"
    ],
    "our_assessment": {
-    "status": "not-identifiable",
+    "status": "not-identifiable", "patterns": ["null-model-misspecified"],
     "why": "The number replicates (we measured 0.5528 on an independently rebuilt 22-model x 2918-item HELM sample). What does not survive is its interpretation as evidence of dependence between models. The uniform-over-wrong baseline assumes all distractors are equally attractive, which is false for professionally written MCQ items and false in an ability-graded way: corr(model accuracy, P(picks the modal wrong answer | wrong)) = +0.835. Two models conditionally independent given the item can produce this number. Per jo2026-subjectivity Thm 1 there is no null-free fact of the matter here, so the honest status is not-identifiable rather than refuted.",
     "by": "maria2026-marginal-competence"
    }
@@ -135,7 +135,7 @@
     "a3"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["null-model-misspecified"],
     "why": "The provider/architecture part survives our item-corrected reanalysis: same-provider pairs retain a residual (+0.066 vs +0.007 cross-provider under a leave-provider-out null), and the largest genuine residual is llama-3.1-405b/llama-3.1-70b (+0.274). Family kinship is real. The accuracy part is the problem: any null estimated from a mixed-ability population scores high-accuracy pairs as excessively correlated almost mechanically. Our anchored nulls are antisymmetric at nearly equal magnitude (weak-anchor -> strong-target +0.212, strong-anchor -> weak-target -0.206), which is the signature of a capability-gap artifact rather than kinship.",
     "by": "maria2026-marginal-competence"
    }

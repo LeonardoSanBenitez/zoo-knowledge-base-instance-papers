@@ -1,5 +1,5 @@
 {
- "schema_version": "1.4",
+ "schema_version": "1.5",
  "id": "mccutcheon2022-reappraising-variability",
  "title": "Reappraising the variability of effects of antipsychotic medication in schizophrenia: a meta-analysis",
  "authors": [
@@ -159,7 +159,7 @@
     "a6"
    ],
    "our_assessment": {
-    "status": "refuted",
+    "status": "refuted", "patterns": ["estimator-biased-or-insensitive"],
     "why": "The claim is falsifiable and false. Each of the three estimators returns a NEGATIVE value when the true rho is exactly zero, and each does so for the same structural reason: a quantity estimated from the placebo arm appears on both sides of the correlation with opposite signs. Open-label: Y(DBend) closes the placebo period and opens the drug period, so occasion noise in it contributes -Var(e) to the covariance. Linear model: the placebo response carries Y0 with coefficient (beta_base - 1) where beta_base is the placebo-arm slope, and the fitted TE carries Y0 with coefficient gamma_base = drug slope minus placebo slope, so the placebo-arm slope's own estimation noise enters both with opposite signs -- this one needs NO measurement error, which is why it survives at reliability 1.00. Study level: T_s = D_s - P_s is correlated with P_s. Confirmed by construction in m04: splitting the placebo information into two independent halves and using one on each side drives every bias to zero (open-label -0.169 to +0.003; LM -0.141 to +0.002; study-level -0.222 to -0.003). The three methods are not three independent checks. They are one error in three costumes, which is why they agree.",
     "by": "maria, 2026-09-04"
    }
@@ -210,7 +210,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "refuted",
+    "status": "refuted", "patterns": ["estimator-biased-or-insensitive"],
     "why": "This is the sharpest single finding and it is worse than bias. The LM method is not a conservative estimator of rho; it is not an estimator of rho at all. It returns about -0.15 whether the true idiosyncratic correlation is 0, -0.29 or -0.58 -- it has NO SENSITIVITY to the quantity it names, because the individual treatment effect it constructs is a deterministic linear function of age, sex and baseline severity and therefore contains no information about a patient's idiosyncratic response. Where the correlation does run through baseline severity, the method sees it and overstates it by 65%. Both failure modes push |rho| up, hence sigma_TE up. And the circularity is exact: the heterogeneity the paper concludes exists (13.5 PANSS points, far more than three demographic covariates could ever explain) is precisely the idiosyncratic kind that this method is blind to. The method used to license the conclusion could not have detected the phenomenon the conclusion asserts.",
     "by": "maria, 2026-09-04"
    }
@@ -264,7 +264,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "refuted",
+    "status": "refuted", "patterns": ["circular-analysis", "post-treatment-conditioning"],
     "why": "This is selection on the outcome, and it is the load-bearing error -- which is NOT what I expected when I started. The compatibility condition is VR >= sqrt(1 - rho^2), so the deleted trials are exactly those whose drug arm was LEAST variable relative to placebo, i.e. those providing the strongest evidence against heterogeneity of treatment effect. Every surviving trial then yields a strictly positive sigma_TE by construction. In a world built with individual treatment effects identical for every patient (sigma_TE = 0.000 exactly), the deletion alone -- with rho FIXED AT ITS TRUE VALUE OF ZERO, so no correlation artifact whatever -- produces a pooled estimate of 11.5 PANSS points. Turning deletion off on the same data gives 0.08. The correlation artifact then adds on top: 11.5 at rho = 0, 17.3 at their -0.32, 18.9 at their -0.39. The paper does not report how many trials were removed; simulation at their arm sizes puts it near a third of the corpus.",
     "by": "maria, 2026-09-04"
    }
@@ -477,7 +477,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["target-not-identified-by-design"],
     "why": "D is estimable without assumption, unbiased, has a known sampling distribution, can legitimately be negative, and needs no square root, no branch choice and no deletion -- every pathology in the published pipeline enters when the identity is inverted for sigma_TE BEFORE pooling rather than after. Narrower scope for two reasons I want on the record. First, my own estimator's interval coverage falls to 72% at sigma_TE = 20 because the normality assumption behind Var(s^2) fails when the drug arm is a mixture; a bootstrap is needed there, and I have not built it. Second, and more important: this does not rescue the question. It reports honestly that the question is unanswerable from aggregate data. McCutcheon et al. are RIGHT that assuming rho = 0 is not innocuous -- it is the assumption my own munkholm2020 record made silently, and it is the third open question I had already written down there on 2026-09-02. Their diagnosis of the gap is correct. Their instrument for filling it is not.",
     "by": "maria, 2026-09-04"
    }

@@ -1,5 +1,5 @@
 {
- "schema_version": "1.0",
+ "schema_version": "1.5",
  "id": "gamma2021-mpe92m",
  "title": "The Minimal Phenomenal Experience questionnaire (MPE-92M): Towards a phenomenological profile of 'pure awareness' experiences in meditators",
  "authors": [
@@ -47,7 +47,7 @@
     }
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["instrument-relative-headline-number", "analytic-flexibility"],
     "why": "The sample filter and N reproduce exactly from the released .dta. The 12 is accepted as an accurate description of what the authors chose, not as an estimate of a number of dimensions in the phenomenon -- see c2 and c3. The authors' own wording ('joint conceptual and statistical considerations') already concedes that the 12th factor is a conceptual addition.",
     "by": "maria 2026-07-31, extended 2026-08-16"
    }
@@ -304,7 +304,7 @@
     "a5"
    ],
    "our_assessment": {
-    "status": "not-identifiable",
+    "status": "not-identifiable", "patterns": ["target-not-identified-by-design"],
     "why": "Two values of c produce the same mean phi, so the statistic does not determine c. Recorded rather than deleted because a three-decimal match is exactly the kind of too-clean agreement that gets quoted as a finding. The only defensible reading is directional: matching the deficit by two-group heterogeneity would require between-group loading differences about twice the mean loading itself, which is not credible and therefore argues against the mixture explanation rather than for it.",
     "by": "maria 2026-08-16"
    }

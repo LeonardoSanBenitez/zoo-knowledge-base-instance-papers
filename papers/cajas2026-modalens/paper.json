@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "id": "cajas2026-modalens",
   "title": "ModaLens: Measuring Image Sensitivity in Report-Conditioned Medical VLMs",
   "authors": [
@@ -105,7 +105,7 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["instrument-relative-headline-number", "centre-hides-distribution"],
         "why": "Direction is robust across readouts, templates, option order, an Uncertain option, three model lineages and substitute redraws, per the authors. Magnitude is not: block order alone moves the report effect from +12.4 to +7.8 on identical trials, and the pooled rate is a mix of findings at ceiling (five findings answer yes on 97.8-100% of report-absent trials) and findings that flip 16.8-32%. Quote the direction and the range, not '16.7 points' alone."
       }
     },

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.5",
   "id": "hardwicke2018-cognition-open-data",
   "title": "Data availability, reusability, and analytic reproducibility: evaluating the impact of a mandatory open data policy at the journal Cognition",
   "authors": ["Tom E. Hardwicke", "Maya B. Mathur", "Kyle MacDonald", "Gustav Nilsonne", "George C. Banks", "Mallory C. Kidwell", "Alicia Hofelich Mohr", "Elizabeth Clayton", "Erica J. Yoon", "Michael Henry Tessler", "Richie L. Lenne", "Sara Altman", "Bria Long", "Michael C. Frank"],
@@ -77,7 +77,7 @@
       ],
       "evidence": ["a1", "a3", "a5"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
         "why": "Reproduces exactly: 35 articles, 1,324 values, 64 major, 146 minor, 2 insufficient-information, 0 decision errors, and the 11 / 11 / 13 outcome split. The narrowing is about what the sample IS. Checked against the coding data, all 35 were coded as having all needed data and as understandable -- that is the triage criterion -- and 34 of 35 shared no analysis script. So no sharing practice can be tested on this sample; the variables have no variance. What it does establish is stronger than a correlation: this is the friendliest possible stratum and 13 of 35 (37%) could not be reproduced even with the original authors helping. Also 63% of articles had NO major error while the top 10 hold 95% of them, so the value-level rate must never be read as a per-paper hazard."
       }
     },
@@ -96,7 +96,7 @@
       ],
       "evidence": ["a3", "a5"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["small-sample-overreach"],
         "why": "Arithmetic over the released per-type counts, so the point estimates are not in doubt; the ORDERING mostly is. The article-level bootstrap intervals overlap heavily and at 35 clusters the middle of the table is not separable. What IS separable is the two ends: means [0.0, 3.8] against p-values [2.5, 17.9]. The pattern -- descriptive location survives, inference and dispersion do not -- has a mechanism: a mean is a near-direct function of the shared data, while a p-value is a function of the whole model specification, and the specification is exactly what was not shared, since 6% of these articles shared an analysis script. It should be repeated on another corpus with per-value coding before being quoted as a rule. If it holds twice it is the single most useful thing in this literature for someone reusing a published number, and it is currently nobody's finding."
       }
     },
@@ -115,7 +115,7 @@
       ],
       "evidence": ["a2", "a3", "a5"],
       "our_assessment": {
-        "status": "accepted-narrower-scope",
+        "status": "accepted-narrower-scope", "patterns": ["small-sample-overreach"],
         "why": "The counts are theirs; the reading is mine and the denominators are small -- 33 resolved values in total. Narrowed accordingly: this is what the resolved subset looks like, and nine articles had causes never identified at all. What survives the smallness is the shape, because it is the same shape as the code-side result. There an artifact fails because the ENVIRONMENT was described rather than preserved; here an analysis fails because the PROCEDURE was described rather than preserved. In both cases the materials are fine and the executable specification is missing, and the whole open-science toolkit optimises the materials. The corroborating number is that a mandatory data policy tripled data completeness (29% to 78%) and moved script sharing from 8.7% to 6.0%, i.e. not at all."
       }
     },

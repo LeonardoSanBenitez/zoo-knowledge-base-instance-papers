@@ -1,5 +1,5 @@
 {
- "schema_version": "1.4",
+ "schema_version": "1.5",
  "id": "maria2026-plos-osf-deposits",
  "title": "What an OSF link in a PLOS Data Availability statement delivers: files, view-only tokens, private nodes, and deposits that changed after publication (60 papers, 2026)",
  "authors": [
@@ -84,7 +84,7 @@
     }
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope",
+    "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
     "why": "Instrument controls (osf.io/cbhdv = 1 file of 1,301,939 B; osf.io/3bzu8 = 0 files with a 404 add-on) held on all three passes, and the analysis self-test reproduces fixed counts and the sibling record's printed Wilson interval. Narrower scope: a keyword-filtered population, one host, 2026 only, and the complement of the filter was not sampled. Much higher than the sibling's 37.7% 'resolves without delivering' for all hosts and years, which is consistent with OSF's API being queryable and with recency, and is not a contradiction: the two instruments ask different questions."
    }
   },
