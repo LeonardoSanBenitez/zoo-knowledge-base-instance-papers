@@ -1,0 +1,15 @@
+retreat OR adjusted for years band: 1.68 [1.25, 2.27] p=0.0006
+             size        mean       
+retreat         0    1      0      1
+yb                                  
+(0.159, 1.0]  127   62  0.181  0.274
+(1.0, 2.0]     56   57  0.250  0.281
+(10.0, 20.0]   44  161  0.205  0.280
+(2.0, 5.0]    104  169  0.221  0.308
+(20.0, 80.0]   13  150  0.308  0.273
+(5.0, 10.0]   106  183  0.142  0.306
+constant hazard, no attrition                        [0.018 0.053 0.108 0.211 0.366 0.624]
+constant hazard + quit after event (k=0.09/yr)       [0.015 0.046 0.088 0.156 0.207 0.241]
+susceptible 26% experience within first months       [0.213 0.263 0.264 0.258 0.257 0.261]
+recall decay (events forgotten at 10%/yr)            [0.034 0.092 0.17  0.273 0.337 0.371]
+OBSERVED                                             [0.212 0.265 0.275 0.246 0.263 0.276]

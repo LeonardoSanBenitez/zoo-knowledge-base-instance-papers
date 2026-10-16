@@ -1,0 +1,59 @@
+{
+ "archive": "osf",
+ "persistent_id": "https://osf.io/d6mgj/",
+ "guid": "d6mgj",
+ "guid_type": "nodes",
+ "files": [
+  {
+   "filename": "osfstorage/UnpleasantMeditation_Raw data.xlsx",
+   "provider": "osfstorage",
+   "size": 724604,
+   "osf_file_id": "5c62f23ee16f5500188fff14",
+   "guid": "wcu9b",
+   "current_version": 1,
+   "published_md5": "309ba48ab261af766e77794712b16e4e",
+   "published_sha256": "ff39fc18fc5024a8a1198a97020d43a59b63f376a8cc9744eb6d55b9e70f04c4",
+   "fetched_from": "https://osf.io/download/wcu9b/?version=1",
+   "local_path": "files/osfstorage/UnpleasantMeditation_Raw data.xlsx",
+   "bytes_downloaded": 724604,
+   "sha256": "ff39fc18fc5024a8a1198a97020d43a59b63f376a8cc9744eb6d55b9e70f04c4",
+   "computed_md5": "309ba48ab261af766e77794712b16e4e",
+   "verdict": "verified"
+  },
+  {
+   "filename": "osfstorage/UnpleasantMeditation_Clean data.xlsx",
+   "provider": "osfstorage",
+   "size": 458064,
+   "osf_file_id": "5c62f240832ca6001aad66a4",
+   "guid": "j4rkt",
+   "current_version": 1,
+   "published_md5": "325d09d2c796197205bdf5abde925396",
+   "published_sha256": "03b6791d8af5f92fc90d9bd7d4422fd9e04dcaef4c62da3ea782fd82783bc210",
+   "fetched_from": "https://osf.io/download/j4rkt/?version=1",
+   "local_path": "files/osfstorage/UnpleasantMeditation_Clean data.xlsx",
+   "bytes_downloaded": 458064,
+   "sha256": "03b6791d8af5f92fc90d9bd7d4422fd9e04dcaef4c62da3ea782fd82783bc210",
+   "computed_md5": "325d09d2c796197205bdf5abde925396",
+   "verdict": "verified"
+  }
+ ],
+ "unreadable_listings": [],
+ "child_components": [],
+ "view_only": null,
+ "title": "Data",
+ "date_modified": "2019-02-12T16:20:16.851166",
+ "public": true,
+ "license_id": null,
+ "providers": [
+  "osfstorage"
+ ],
+ "n_files_in_deposit": 2,
+ "summary": {
+  "backend": "osf",
+  "rows": 2,
+  "verified": 2,
+  "mismatched": 0,
+  "skipped": 0,
+  "no_published_checksum": 0
+ }
+}

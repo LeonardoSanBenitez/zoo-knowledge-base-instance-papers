@@ -1,0 +1,27 @@
+--- per-SD odds ratios (Table 2 labels these "1 SD"; the code fits raw units)
+ptq: per raw unit OR 1.015; per SD (9.49) OR 1.156 [1.018,1.313]
+mindsens: per raw unit OR 1.021; per SD (0.66) OR 1.014 [0.892,1.152]
+scs: per raw unit OR 0.933; per SD (0.61) OR 0.958 [0.844,1.089]
+age: per SD (13.8) OR 0.892
+years: per SD (10.9) OR 1.022
+freq: per SD (6.6) OR 1.071
+dura: per SD (16.0) OR 1.100
+--- deconstructive-only vs retreat: are they the same signal?
+retreat    0    1   All
+medtype                
+-1.0     110  389   499
+ 0.0     306  251   557
+ 1.0      34  142   176
+ All     450  782  1232
+retreat share by medtype: {-1.0: 0.78, 0.0: 0.451, 1.0: 0.807}
+negative~C(medtype)                                                    n=722  C(medtype)[T.1.0] OR 1.60 [1.09,2.37] p=0.017
+negative~C(medtype)+C(retreat)                                         n=722  C(medtype)[T.1.0] OR 1.41 [0.93,2.12] p=0.102; C(retreat)[T.1] OR 1.48 [1.01,2.16] p=0.042
+negative~C(medtype)+C(retreat)+C(sex)+C(rel)+ptq+age+years             n=722  C(medtype)[T.1.0] OR 1.33 [0.86,2.06] p=0.203; C(retreat)[T.1] OR 1.73 [1.16,2.58] p=0.008
+--- the 499 excluded "mixed" practitioners
+                           n   prev  retreat  years
+mt3                                                
+deconstructive only      176  0.295    0.807   7.75
+mixed (excluded)         499  0.301    0.780   7.00
+non-deconstructive only  557  0.203    0.451   5.00
+{'Intercept': 0.255, "C(mt3, Treatment('non-deconstructive only'))[T.deconstructive only]": 1.648, "C(mt3, Treatment('non-deconstructive only'))[T.mixed (excluded)]": 1.689}
+{'Intercept': 0.0, "C(mt3, Treatment('non-deconstructive only'))[T.deconstructive only]": 0.0108, "C(mt3, Treatment('non-deconstructive only'))[T.mixed (excluded)]": 0.0003}

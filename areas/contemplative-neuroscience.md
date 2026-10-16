@@ -377,3 +377,14 @@ version overstated CAT's novelty):
 5. NEW: build the CAT-10 ↔ Lutz-7 crosswalk (see the Lutz15 block and the
    psychology-of-meditation KB entry). This is now the single most important
    Related Work task and the honest basis for any novelty claim. Unstarted.
+
+## Harms and unpleasant experiences (added 2026-10-16)
+
+Record: `schlosser2019-unpleasant-meditation`. 25.6% of 1,232 regular meditators report a
+particularly unpleasant experience they attribute to practice -- and the rate is already 21% in
+the first year and stays flat to 20+ years, which only an early-onset susceptible minority
+reproduces (known-answer stories in its `reanalysis/m4.py`). Retreat experience is the robust
+correlate (OR 1.68, survives years and type); "deconstructive-only" is not separable from it,
+and the excluded mixed-practice group has the same rate. The design cannot see people who
+stopped, so every prevalence here is conditioned on survivors. Open thread: does the flat
+years curve replicate in Cebolla 2017 / Vieten 2018?

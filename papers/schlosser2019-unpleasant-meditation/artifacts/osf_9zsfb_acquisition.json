@@ -1,0 +1,43 @@
+{
+ "archive": "osf",
+ "persistent_id": "https://osf.io/9zsfb/",
+ "guid": "9zsfb",
+ "guid_type": "nodes",
+ "files": [
+  {
+   "filename": "osfstorage/UnpleasantMeditation_code.do",
+   "provider": "osfstorage",
+   "size": 2155,
+   "osf_file_id": "5c66af1a16506900190f86b2",
+   "guid": "p2exw",
+   "current_version": 1,
+   "published_md5": "9ffc44f5986474a9898d142385aba1ad",
+   "published_sha256": "f44c23d3636e04905c98b1f2d78752c0a306a551e1bf42b8aac247ea38a0fa0b",
+   "fetched_from": "https://osf.io/download/p2exw/?version=1",
+   "local_path": "files/osfstorage/UnpleasantMeditation_code.do",
+   "bytes_downloaded": 2155,
+   "sha256": "f44c23d3636e04905c98b1f2d78752c0a306a551e1bf42b8aac247ea38a0fa0b",
+   "computed_md5": "9ffc44f5986474a9898d142385aba1ad",
+   "verdict": "verified"
+  }
+ ],
+ "unreadable_listings": [],
+ "child_components": [],
+ "view_only": null,
+ "title": "Analysis script",
+ "date_modified": "2019-02-15T12:22:51.433800",
+ "public": true,
+ "license_id": null,
+ "providers": [
+  "osfstorage"
+ ],
+ "n_files_in_deposit": 1,
+ "summary": {
+  "backend": "osf",
+  "rows": 1,
+  "verified": 1,
+  "mismatched": 0,
+  "skipped": 0,
+  "no_published_checksum": 0
+ }
+}

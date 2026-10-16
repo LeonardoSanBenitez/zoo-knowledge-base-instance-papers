@@ -126,6 +126,7 @@
   }
  ],
  "relations": [
+   {"type": "zoo:sharesUnstatedAssumptionWith", "target": "schlosser2019-unpleasant-meditation", "why": "Practitioner-level 'meditation type' as a category: in Schlosser 48% practise more than one family and the mixed group behaves exactly like the deconstructive-only group, so the type variable is mostly a proxy for depth of engagement (retreats)."},
   {"type": "cito:extends", "target": "lutz2015-phenomenological-matrix", "why": "Lutz et al. propose a phenomenological matrix of dimensions derived from theory and first-person report; this study derives dimensions bottom-up from practitioners' similarity judgements and arrives at two rather than a matrix. Their Discussion explicitly frames the result as expanding focused attention and open monitoring."},
   {"type": "zoo:sharesUnstatedAssumptionWith", "target": "lutz2015-phenomenological-matrix", "why": "Both name dimensions after what a practice ASKS FOR while the evidence concerns what practitioners EXPERIENCE or EXPECT. Neither states the step. It is the same gap that instance-general/philosophy-of-science/the-specification-execution-gap.md records for text-based meditation instruments."},
   {"type": "cito:obtainsBackgroundFrom", "target": "nave2021-self-boundary-dissolution", "why": "Both take practitioner report as the primary data for structuring contemplative practice, and both face the question of whether a reported structure belongs to the practice or to the vocabulary available for describing it."}

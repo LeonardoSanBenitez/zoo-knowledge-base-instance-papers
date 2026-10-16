@@ -1,0 +1,16 @@
+import os, pandas as pd, numpy as np, statsmodels.formula.api as smf
+from scipy import stats
+B=os.environ.get('SCHLOSSER_DATA','osf_d6mgj/files/osfstorage/')
+r=pd.read_excel(B+'UnpleasantMeditation_Raw data.xlsx')
+r['reached_outcome']=r.Q14.notna()
+print('starters %d; answered outcome %d (%.1f%%)'%(len(r),r.reached_outcome.sum(),100*r.reached_outcome.mean()))
+print('reached outcome by continent:'); print(r.groupby(r.Q3.fillna('missing')).reached_outcome.agg(['size','mean']).round(3).sort_values('size',ascending=False).head(7))
+print('reached outcome by Q4 (religious?):', r.groupby(r.Q4.fillna('missing')).reached_outcome.agg(['size','mean']).round(3).to_dict())
+d=pd.read_csv('re/clean.csv')
+print('--- lifetime prevalence by years of regular practice (constant hazard predicts a rising curve)')
+bins=[0.16,1,2,5,10,20,80]; d['yb']=pd.cut(d.years,bins,include_lowest=True)
+t=d.groupby('yb',observed=True).negative.agg(['size','mean']).round(3); print(t)
+lam=-np.log(1-d.negative.mean())/d.years.median()
+print('constant-hazard benchmark: hazard fitted at median years gives', {str(k):round(1-np.exp(-lam*m),3) for k,m in zip(t.index,[0.6,1.5,3.5,7.5,15,30])})
+m=smf.logit('negative~np.log(years)',d).fit(disp=0); print('logit on log(years): OR per e-fold %.3f p=%.3f'%(np.exp(m.params.iloc[1]),m.pvalues.iloc[1]))
+print('starting age vs outcome:', smf.logit('negative~I(age-years)',d).fit(disp=0).params.round(4).to_dict())

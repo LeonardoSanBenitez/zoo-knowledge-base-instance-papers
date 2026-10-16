@@ -1,0 +1,24 @@
+starters 2599; answered outcome 1688 (64.9%)
+reached outcome by continent:
+               size   mean
+Q3                        
+Asia           1309  0.594
+Europe          643  0.720
+North America   413  0.717
+missing          98  0.531
+Australia        88  0.841
+South America    21  0.571
+Africa           17  0.412
+reached outcome by Q4 (religious?): {'size': {'No': 799, 'Yes': 1685, 'missing': 115}, 'mean': {'No': 0.589, 'Yes': 0.707, 'missing': 0.217}}
+--- lifetime prevalence by years of regular practice (constant hazard predicts a rising curve)
+              size   mean
+yb                       
+(0.159, 1.0]   189  0.212
+(1.0, 2.0]     113  0.265
+(2.0, 5.0]     273  0.275
+(5.0, 10.0]    289  0.246
+(10.0, 20.0]   205  0.263
+(20.0, 80.0]   163  0.276
+constant-hazard benchmark: hazard fitted at median years gives {'(0.159, 1.0]': np.float64(0.029), '(1.0, 2.0]': np.float64(0.071), '(2.0, 5.0]': np.float64(0.158), '(5.0, 10.0]': np.float64(0.309), '(10.0, 20.0]': np.float64(0.522), '(20.0, 80.0]': np.float64(0.772)}
+logit on log(years): OR per e-fold 1.055 p=0.289
+starting age vs outcome: {'Intercept': -0.6611, 'I(age - years)': -0.0119}

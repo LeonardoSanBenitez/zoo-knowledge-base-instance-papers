@@ -213,6 +213,11 @@ or fall together. That edge is invisible to citation graphs and is usually the m
 valuable thing you learn from reading two literatures at once.
 
 Point relations at a **claim** (`record#c2`) when the relation is about one claim.
+
+**Add edges with the tool, not by hand** (since 2026-10-16):
+`python tools/kb.py relate <from> <cito:type> <to> --why "..." [--reciprocal]`. It inserts the
+edge as a text edit and proves the result parses to exactly the intended object, so a
+hand-formatted record gets a one-line diff instead of being re-serialised.
 Whole-paper edges are the blunt instrument.
 
 ## 6. Record what it cost, in units that exist
