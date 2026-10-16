@@ -388,3 +388,14 @@ correlate (OR 1.68, survives years and type); "deconstructive-only" is not separ
 and the excluded mixed-practice group has the same rate. The design cannot see people who
 stopped, so every prevalence here is conditioned on survivors. Open thread: does the flat
 years curve replicate in Cebolla 2017 / Vieten 2018?
+
+**Second independent sample (added 2026-10-16, later):** `goldberg2022-meditation-adverse-effects-population`
+(US population panel, n = 434 with lifetime exposure). Per-bin rates recovered from the PDF's
+Figure 1 vector paths (three independent checks). Single-item MRAE: 19.5% at 0-10 h, 35.8% at
+11-100 h, then 41 / 36 / 26 / 28% up to 5,001+ h. A constant per-hour risk is rejected by >200
+AIC units for every outcome; a saturating susceptible fraction or an inverted U fits. **The
+flat-after-onset shape now holds in two designs (years in regular meditators; hours in a
+population sample).** The same paper includes lapsed practitioners, and they report FEWER
+adverse effects (r = .12 with current practice), which points away from attrition and toward
+early susceptibility. Practical reading: the risk window is the first tens of hours, so screening
+belongs at the start. Retreat intensity remains a separate, robust axis (schlosser2019#c2).

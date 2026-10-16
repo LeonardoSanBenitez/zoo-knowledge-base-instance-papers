@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.5",
+  "id": "goldberg2022-meditation-adverse-effects-population",
+  "title": "Prevalence of meditation-related adverse effects in a population-based sample in the United States",
+  "authors": ["Simon B. Goldberg", "Sin U Lam", "Willoughby B. Britton", "Richard J. Davidson"],
+  "year": 2022,
+  "venue": "Psychotherapy Research 32(3):291-305 (online 2021)",
+  "area": ["contemplative-neuroscience"],
+  "identifiers": {
+    "doi": "10.1080/10503307.2021.1933646",
+    "url": "https://osf.io/sjmpu"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 14,
+    "bytes_downloaded": 1500000,
+    "compute_notes": "Author-hosted PDF (15 pp). No individual data located: the paper cites two OSF preregistrations; the OSF API did not answer within 60 s on 2026-10-16 ~15:30 (it served other requests at 14:52), so availability is unchecked, not negative. Per-bin rates are not in the main text; recovered from Figure 1's vector paths with PyMuPDF (reanalysis/g1_figure_extract.py) and checked three independent ways. Dose-response fits and 400 known-answer simulations: about a minute.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "how common are meditation adverse effects in the general population",
+    "does more meditation practice increase risk of adverse effects",
+    "dose-response of meditation-related adverse effects on lifetime hours",
+    "do people stop meditating after adverse effects",
+    "meditation harms population-based survey Prolific",
+    "early-onset susceptibility versus cumulative risk meditation",
+    "recovering data from a vector figure in a PDF"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "synthetic-injected-effect-control"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Among US adults with lifetime meditation exposure (n = 434 of 953 screened, Prolific representative sampling), 32.3% endorsed any meditation-related adverse effect on a single item, 50.0% at least one MRAES-MBP item, 10.4% effects lasting >= 1 month, and 10.6% some functional impairment (1.2% lasting >= 1 month).",
+      "scope": "Online panel, quota-matched on age, gender and race; lifetime-ever items; self-attributed causation.",
+      "quantities": [
+        {"name": "prevalence_any_mrae_single_item", "value": 0.323, "count": 140, "denominator": 434, "unit": "proportion, lifetime", "n": 434, "source": "Table I; Figure 1 Total bar reproduces it (calibration bar)"},
+        {"name": "prevalence_mraes_mbp_1plus", "value": 0.5, "count": 217, "denominator": 434, "unit": "proportion, lifetime", "n": 434, "source": "Table I; Figure 1 recovered 50.0 independently"},
+        {"name": "prevalence_any_impairment", "value": 0.106, "count": 46, "denominator": 434, "unit": "proportion, lifetime", "n": 434, "source": "Table I; Figure 1 recovered 10.6 independently"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "patterns": [],
+        "why": "Internally consistent: the figure, the table and the text agree, and every per-bin percentage times its bin size is an integer. Read beside schlosser2019 (25.6% single item, regular meditators, Europe/US): a population sample with modest practice reports MORE, not less. That is one more sign that a lifetime-ever item is not a cumulative-exposure measure.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Factors that may increase risk include practice-related variables (amount of meditation): greater lifetime hours was associated with MRAE (single item r = .10; MRAES-MBP total r = .14; impairment > 1 day r = .10).",
+      "scope": "Correlations with lifetime hours coded 1 = 0-10, 2 = 11-100, 3 = 101+ (Table I note), i.e. everyone from 101 to over 5,000 hours (n = 173) at one level.",
+      "quantities": [
+        {"name": "prevalence_any_mrae_single_item_by_lifetime_hours", "value": 0.195, "count": 16, "denominator": 82, "unit": "proportion, 0-10 h", "n": 434, "source": "reanalysis/figure1_bars.json (Figure 1 recovered)", "baseline": "11-100 h 64/179 = .358; 101-500 h 29/71 = .408; 501-1000 h 14/39 = .359; 1001-5000 h 8/31 = .258; 5001+ h 9/32 = .281"},
+        {"name": "delta_aic_cumulative_hazard_vs_best", "value": 668.3, "unit": "AIC units (single-item outcome)", "n": 434, "source": "reanalysis/g2_dose_response.py", "baseline": "constant per-hour hazard predicts .001 -> .98 across bins; best models are a saturating susceptible fraction (pi = .35 reached by 11-100 h) and an inverted U; quadratic vs linear in log hours LR chi2 8.56, p = .003 (impairment: p = .026; 1+ MRAES: p = .27, undecided)"},
+        {"name": "known_answer_recovery_rate", "value": 0.92, "unit": "share of 200 simulated datasets in which AIC picks the generating model (susceptible-fraction generator; cumulative-hazard generator: 0.895)", "n": 200, "source": "reanalysis/g2_dose_response.py", "baseline": "same bin sizes as the paper"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["centre-hides-distribution", "mechanism-asserted-not-measured"],
+        "why": "The association exists, but it is a step at the START of practice, not a dose-response. Prevalence nearly doubles from 0-10 h to 11-100 h and then stops rising; single-item MRAE and impairment are, if anything, LOWER above 1,000 h (inverted U, p = .003 and .026). A constant per-hour hazard is rejected by over 200 AIC units for every outcome. The three-level coding with a 101+ ceiling cannot show any of this, and 'amount of meditation' as a risk factor reads as a gradient that the data do not have. This is the second independent sample showing the shape found in schlosser2019 (flat lifetime prevalence by years of practice). It favours early-onset susceptibility, OR selective continuation by people who did not have adverse effects -- which c4 partly speaks to. High-hour bins are small (31-39), so the decline is suggestive, not established.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Figure 1 (and Supplemental Table 6) give the frequency of each MRAE outcome by lifetime meditation hours.",
+      "scope": "Figure 1 bars, 7 groups x 5 outcomes.",
+      "quantities": [
+        {"name": "impairment_gt_1day_minus_any_impairment_5001plus", "value": 0.063, "unit": "proportion (12.5% = 4/32 minus 6.2% = 2/32)", "n": 32, "source": "reanalysis/figure1_bars.json", "baseline": "'impairment > 1 day' is a subset of 'any impairment' by construction, so this must be <= 0; it is <= 0 in the other six groups"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "disputed",
+        "patterns": ["text-contradicts-own-materials"],
+        "why": "One group of bars is logically impossible: among the 32 participants with 5,001+ hours, 4 report impairment lasting more than a day but only 2 report any impairment. Either a bar is mis-drawn, the two outcomes are swapped in that group, or the underlying coding differs for that bin. It does not move any headline (totals agree with Table I), but it is a defect in the only place the per-bin data are published. Supplemental Table 6 would settle it; not retrieved.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Any meditation practice in the past 30 days was associated with greater likelihood of MRAE (single item r = .12; MRAES-MBP total r = .15); participants reporting MRAE were equally glad to have practised (87.9-88.2% vs 88.7% overall).",
+      "scope": "34.8% of the sample had not meditated in the past 30 days.",
+      "quantities": [
+        {"name": "r_current_practice_mrae_single_item", "value": 0.12, "unit": "point-biserial r", "n": 434, "source": "main text, Results", "baseline": "did not survive FDR for the single item; r = .15 for MRAES total"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "patterns": [],
+        "why": "Not reanalysed (no individual data). It bears on an open question of schlosser2019: whether adverse effects make people stop, which a survey of current meditators cannot see. If MRAE drove discontinuation, lapsed practitioners would report MORE MRAE; here they report LESS. That argues against selective attrition as the explanation of the flat curve in c2, unless recall fades after stopping (salience). A weak, cross-sectional signal, but the first one on that question in this corpus.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "figure-source", "locator": "Figure 1 vector paths in the author-hosted PDF https://jimhopper.com/pdf/goldberg_britton_et_al_2021.pdf (sha256 ec19d133...4af2749e); recovered values in reanalysis/figure1_bars.json", "status": "regenerated-from-upstream",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "python reanalysis/g1_figure_extract.py goldberg2021.pdf", "result": "35 bars recovered. Calibrated on ONE bar (Total, single item = 32.26%). The other four Total bars reproduce Table I (50.0, 10.6, 6.0, 1.2); the 0-10 h group reproduces values back-calculated from the text's >= 11 h subgroup (19.5, 37.8, 6.1, 0.0); every percentage times its bin n is an integer, confirming the assumed group order."},
+     "fetch_cmd": "curl -sL -o goldberg2021.pdf https://jimhopper.com/pdf/goldberg_britton_et_al_2021.pdf"},
+    {"id": "a2", "role": "raw-data", "locator": "https://osf.io/sjmpu ; https://osf.io/4h86s/?view_only=0e5d7ad85f87468ea40e047b3cf7c795 (preregistrations; data deposit not stated)", "status": "not-checked",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "curl api.osf.io/v2/nodes/<g>/ and /files/osfstorage/ (view_only key carried)", "result": "no response within 60 s twice; unknown whether individual data are deposited"}}
+  ],
+  "relations": [
+    {"type": "cito:agreesWith", "target": "schlosser2019-unpleasant-meditation", "why": "Independent population sample with the same structural result: lifetime prevalence of meditation-related adverse effects does not accumulate with practice; it appears early and plateaus (here, possibly declines). Also partly answers schlosser2019's open question about discontinuation (c4)."}
+  ],
+  "open_questions": [
+    "Retry OSF (sjmpu, 4h86s with view_only key) for individual data; if present, refit c2 with continuous hours and check the 5001+ impairment bars (c3).",
+    "Supplemental Table 6 (tabular Figure 1) -- would settle c3.",
+    "Van Dam et al. 2025 (n = 886 representative US meditators): does the same onset-then-plateau shape appear? Third independent sample.",
+    "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1080/10503307.2021.1933646 -> 0 items; author list confirmed from Crossref (Goldberg, Lam, Britton, Davidson)."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

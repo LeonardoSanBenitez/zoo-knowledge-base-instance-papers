@@ -1,0 +1,51 @@
+{
+ "Total": {
+  "any_mrae_single_item": 32.3,
+  "mraes_1plus": 50.0,
+  "any_impairment": 10.6,
+  "impairment_gt_1day": 6.0,
+  "impairment_ge_1month": 1.2
+ },
+ "0-10": {
+  "any_mrae_single_item": 19.5,
+  "mraes_1plus": 37.8,
+  "any_impairment": 6.1,
+  "impairment_gt_1day": 1.2,
+  "impairment_ge_1month": 0.0
+ },
+ "11-100": {
+  "any_mrae_single_item": 35.7,
+  "mraes_1plus": 49.2,
+  "any_impairment": 12.8,
+  "impairment_gt_1day": 6.2,
+  "impairment_ge_1month": 0.0
+ },
+ "101-500": {
+  "any_mrae_single_item": 40.8,
+  "mraes_1plus": 54.9,
+  "any_impairment": 15.5,
+  "impairment_gt_1day": 9.9,
+  "impairment_ge_1month": 5.6
+ },
+ "501-1000": {
+  "any_mrae_single_item": 35.9,
+  "mraes_1plus": 51.3,
+  "any_impairment": 7.7,
+  "impairment_gt_1day": 5.1,
+  "impairment_ge_1month": 0.0
+ },
+ "1001-5000": {
+  "any_mrae_single_item": 25.8,
+  "mraes_1plus": 70.9,
+  "any_impairment": 6.5,
+  "impairment_gt_1day": 3.2,
+  "impairment_ge_1month": 0.0
+ },
+ "5001+": {
+  "any_mrae_single_item": 28.1,
+  "mraes_1plus": 53.1,
+  "any_impairment": 6.2,
+  "impairment_gt_1day": 12.5,
+  "impairment_ge_1month": 3.1
+ }
+}
