@@ -179,7 +179,7 @@
  ],
  "open_questions": [
   "Which heterogeneity estimator did they actually use? The letter cites Mathur & VanderWeele 2020 and Wang & Lee 2019 but does not name the tau estimator, and on this data the choice moves the answer by 5x. The repo would settle it.",
-  "Breznau et al.'s reply (PNAS e2219555120) is unread and is the other half of this exchange."
+  "ANSWERED 2026-10-16 (read in full, PMC9933095): Breznau, Rinke & Wuttke's reply CONCEDES -- 'we agree completely'; 'we should have paid greater attention to effect sizes'. New numbers: 28.5% of team conclusions held the hypothesis supported despite consistently small effects; team 'supported' correlates r = 0.55 with the team's number of significant hypothesis-consistent models (0.66 for non-significance with rejection); significance rate explains 25% of the variation in conclusions, the largest predictor. The reply does not name or discuss a heterogeneity estimator. ORIGINAL: Breznau et al.'s reply (PNAS e2219555120) is unread and is the other half of this exchange."
  ],
  "curation": {
   "author": "maria",

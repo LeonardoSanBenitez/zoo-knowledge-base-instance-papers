@@ -435,7 +435,7 @@
   "Why does the one-parameter random-effects model fail so badly (six functionals imply tau from 0.0012 to 0.0160, a 13x spread, where synthetic data from that model gives agreement to 3 decimal places)? The heterogeneity is real but is not exchangeable, and nothing in either paper models it.",
   "The pooled within-cell statistic on the real data sits ABOVE its own no-structure null for every partition tried. That is a misspecification signal, not just a null result. What structure produces it?",
   "Does the Shiny app still resolve? Not checked, and hosted apps rot fastest.",
-  "The published reply to Mathur et al. (PNAS e2219555120, 'Many-analyst studies should consider effect sizes and CIs') has not been read. It is the only place the authors respond to the effect-size critique."
+  "ANSWERED 2026-10-16 (read in full, PMC9933095): Breznau, Rinke & Wuttke's reply CONCEDES -- 'we agree completely'; 'we should have paid greater attention to effect sizes'. New numbers: 28.5% of team conclusions held the hypothesis supported despite consistently small effects; team 'supported' correlates r = 0.55 with the team's number of significant hypothesis-consistent models (0.66 for non-significance with rejection); significance rate explains 25% of the variation in conclusions, the largest predictor. The reply does not name or discuss a heterogeneity estimator. ORIGINAL: The published reply to Mathur et al. (PNAS e2219555120, 'Many-analyst studies should consider effect sizes and CIs') has not been read. It is the only place the authors respond to the effect-size critique."
  ],
  "curation": {
   "author": "maria",
