@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Language, information and communication efficiency
 
-Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`, `maria2026-structural-null-semantic-efficiency`.
+Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`, `maria2026-structural-null-semantic-efficiency`, `chaabouni2021-emergent-colour-naming`.
 
 **Scope.** Quantitative claims about how languages encode and transmit information -- rates,
 densities, efficiency trade-offs -- read for what is measured versus what is named. Includes, as
@@ -67,6 +67,13 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   (0.065 bits simpler, 0.024 bits more accurate). So 'the residual is always on a theorist-built
   complexity axis' (first draft) holds for quantifiers and mostly for indefinites, NOT for colour.
   Read the next bullet with this correction.
+- **Neuralese (`chaabouni2021-emergent-colour-naming`).** Emergent NN colour codes are called
+  efficient because their distance to the IB bound falls within the human range. 93.5% of random
+  convex partitions of CIELAB also fall within it (random partitions 0%). With a linear Listener
+  over CIELAB, convexity is close to architectural. The part convexity does NOT explain is the
+  low, narrow complexity band and its dependence on channel discreteness. That is the
+  neuralese-relevant finding, and it is unverifiable: the models the paper says are deposited are
+  not in the repository.
 - **The through-line, three domains (colour, indefinites, quantifiers):** what is reported as
   the efficiency of natural systems is mostly the efficiency of any system obeying a simple
   structural constraint (convexity; no synonymy; monotone+conservative). Where a residual

@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.5",
+  "id": "chaabouni2021-emergent-colour-naming",
+  "title": "Communicating artificial neural networks develop efficient color-naming systems",
+  "authors": ["Rahma Chaabouni", "Eugene Kharitonov", "Emmanuel Dupoux", "Marco Baroni"],
+  "year": 2021,
+  "venue": "PNAS 118(12):e2016569118",
+  "area": ["language-information-and-communication-efficiency"],
+  "identifiers": {"doi": "10.1073/pnas.2016569118", "pmcid": "PMC8000426", "url": "https://github.com/rahmacha/EGG"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 8,
+    "bytes_downloaded": 73300000,
+    "compute_notes": "Main text via Europe PMC JATS (SI not retrieved). Repo inspected via GitHub API (branch colors: code only). The analysis does not retrain agents (no PyTorch on this host); it scores the paper's own evidential criterion against a no-learning null with the released IB model (zaslavsky2018 model zip, sha256 eb25ae01..., re-fetched; only pM, pU_M, IB_curve, betas kept as an 892 kB npz). Script: maria2026-structural-null-semantic-efficiency/reanalysis/x4_inef_convex.py, a few minutes.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "do emergent neural communication systems develop efficient colour naming",
+    "neuralese colour naming information bottleneck",
+    "emergent language efficiency versus convexity",
+    "discrete channel bottleneck reduces complexity of emergent codes",
+    "hue rotation control emergent communication",
+    "is human-like efficiency in emergent languages just the geometry of the input space"
+  ],
+  "methods": ["null-ladder"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Neural agents trained on a colour discrimination game develop naming systems that lie near the IB theoretical limit just like human languages; NN inefficiency (Euclidean distance to the IB curve) falls within the human range.",
+      "scope": "330 WCS chips in CIELAB, uniform need, Speaker MLP 3x1000, Listener linear (hidden 5) over CIELAB, Gumbel-Softmax or REINFORCE, 1,024-symbol vocabulary, 60 successful games; comparison with 108 WCS languages; control = hue rotations (SI 4).",
+      "quantities": [
+        {"name": "share_random_convex_partitions_with_inef_in_human_range", "value": 0.935, "unit": "proportion of 600 random Voronoi partitions of CIELAB (K drawn from WCS mode-map term counts) with Inef inside [min, max] of the WCS languages", "n": 600, "source": "maria2026-structural-null-semantic-efficiency/reanalysis/x4_inef_convex.py", "baseline": "human Inef median 0.119, range 0.041-0.333 (102 WCS languages, released model); random convex median 0.214; random NON-convex partitions median 1.398, 0% within the human range"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["null-model-misspecified", "missing-adequate-control"],
+        "why": "The criterion cannot carry the claim. A random convex partition of CIELAB -- no agents, no learning, no communication -- has an Inef inside the human range 93.5% of the time; random non-convex partitions never do. The paper's own SI reports the NN categories are convex, and with a LINEAR Listener reading CIELAB inputs, convex (linearly separable) cells are close to built into the setup (an architectural argument not tested here: no PyTorch, no released models). The control, hue rotation, preserves convexity, as in zaslavsky2018. So on this evidence 'NNs develop efficient naming' means 'NNs develop convex partitions of a perceptual space in which convex partitions are already efficient'. What convexity does NOT give for free is the paper's other finding: random convex partitions span 1.1-3.7 bits of complexity, humans 1.0-2.6, NNs 0.84-2.8. The low-complexity band and its dependence on channel discreteness (c2) are not explained by the null.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "The discreteness of the channel drives low complexity: REINFORCE (fully discrete) gives significantly simpler codes than Gumbel-Softmax, and a higher GS temperature (smoother channel) gives more complex and, at tau = 10, less efficient systems.",
+      "scope": "percentile = 50; 180 REINFORCE runs, 60 per GS setting; successful runs only (>= 95% game accuracy).",
+      "quantities": [],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "unverified",
+        "patterns": [],
+        "why": "Not checkable: the Data Availability statement says the models were deposited in rahmacha/EGG, but branches colors and bias_variance hold only code (archs.py, data.py, train.py, chip.txt). To check if the systems become available: success-filtering (>= 95%) interacts with the treatment, since the authors report that more discrete settings fail more often, so the compared populations are differently selected.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "model-weights", "locator": "https://github.com/rahmacha/EGG (Data Availability: 'The models reported in this paper have been deposited in GitHub')", "status": "dangling",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "gh api repos/rahmacha/EGG/branches; git/trees/<branch>?recursive=1 filtered for colour/naming paths", "result": "branches colors and bias_variance contain egg/zoo/color_naming/{archs,data,train}.py and data/chip.txt; no trained models, checkpoints or naming systems in any branch searched"}},
+    {"id": "a2", "role": "code", "locator": "https://github.com/rahmacha/EGG/tree/colors/egg/zoo/color_naming", "status": "present-but-insufficient",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "listed via GitHub API; not run (no PyTorch on this host)", "result": "training code present; would regenerate systems at the cost of about 6M interactions per run"}}
+  ],
+  "relations": [
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "zaslavsky2018-color-naming-ib", "why": "Same IB model and the same convexity-preserving rotation control; here the human range itself is the criterion, and convex partitions fall inside it 93.5% of the time."},
+    {"type": "cito:usesMethodIn", "target": "maria2026-structural-null-semantic-efficiency", "why": "The convex null applied to emergent (neural) communication."}
+  ],
+  "open_questions": [
+    "Train the colour game with a NONLINEAR Listener (or one that sees chip indices, not CIELAB) and check whether emergent systems stay convex and stay within the human Inef range. That separates 'communication produces efficiency' from 'a linear readout of CIELAB produces convexity'.",
+    "Retrieve the SI (PNAS DCSupplemental) for the NN Inef values and the convexity comparison (SI 10); compare NN Inef with the convex null directly.",
+    "Crossref correction check not run this session; PMC lists a 2021-03-16 licence update only."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

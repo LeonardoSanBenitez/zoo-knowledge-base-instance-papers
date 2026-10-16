@@ -1,0 +1,29 @@
+{
+ "human_WCS_soft": {
+  "n": 102,
+  "inef_median": 0.119,
+  "inef_range": [
+   0.041,
+   0.333
+  ],
+  "complexity_range_bits": [
+   0.97,
+   2.64
+  ]
+ },
+ "random_convex_voronoi": {
+  "n": 600,
+  "inef_median": 0.214,
+  "share_within_human_range": 0.935,
+  "share_below_human_max": 0.935,
+  "complexity_range_bits": [
+   1.11,
+   3.74
+  ]
+ },
+ "random_partition": {
+  "n": 600,
+  "inef_median": 1.398,
+  "share_below_human_max": 0.0
+ }
+}
