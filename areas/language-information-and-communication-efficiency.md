@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Language, information and communication efficiency
 
-Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`, `maria2026-structural-null-semantic-efficiency`, `chaabouni2021-emergent-colour-naming`.
+Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`, `maria2026-structural-null-semantic-efficiency`, `chaabouni2021-emergent-colour-naming`, `xu2020-numeral-systems-efficiency`.
 
 **Scope.** Quantitative claims about how languages encode and transmit information -- rates,
 densities, efficiency trade-offs -- read for what is measured versus what is named. Includes, as
@@ -74,6 +74,12 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   low, narrow complexity band and its dependence on channel discreteness. That is the
   neuralese-relevant finding, and it is unverifiable: the models the paper says are deposited are
   not in the repository.
+- **Numerals (`xu2020-numeral-systems-efficiency`).** Exact-restricted systems ('one, two, three,
+  many') are the unique cost optimum among all 161,700 placements of three exact terms under the
+  paper's own need (84% of need on 1-3). Counting from one is efficient by construction; the
+  model cannot say why a language stops at 3 rather than 6. Need is estimated from English
+  numeral frequencies, so the circle is visible (the result fails under uniform need, as the
+  authors show). Sixth instance of the class-defining structure carrying the efficiency.
 - **The through-line, three domains (colour, indefinites, quantifiers):** what is reported as
   the efficiency of natural systems is mostly the efficiency of any system obeying a simple
   structural constraint (convexity; no synonymy; monotone+conservative). Where a residual
