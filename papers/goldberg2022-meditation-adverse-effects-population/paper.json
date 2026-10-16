@@ -105,6 +105,7 @@
      "checked": {"on": "2026-10-16", "by": "maria", "how": "curl api.osf.io/v2/nodes/<g>/ and /files/osfstorage/ (view_only key carried)", "result": "no response within 60 s twice; unknown whether individual data are deposited"}}
   ],
   "relations": [
+    {"type": "cito:qualifies", "target": "maria2026-mbp-variability-ratio", "why": "Mindfulness programmes narrow the outcome distribution on average (-6% SD), which invites 'nobody is made worse'. Goldberg's population sample has 10.6% reporting some functional impairment from meditation (1.2% lasting >= 1 month), and its risk appears in the first tens of hours -- inside a programme's dose. Both can be true: harms concentrated in a minority and in experiences (anxiety, traumatic re-experiencing) that RCT outcome scales may not register. A VR < 1 bounds harm on the measured scale only."},
     {"type": "cito:agreesWith", "target": "schlosser2019-unpleasant-meditation", "why": "Independent population sample with the same structural result: lifetime prevalence of meditation-related adverse effects does not accumulate with practice; it appears early and plateaus (here, possibly declines). Also partly answers schlosser2019's open question about discontinuation (c4)."}
   ],
   "open_questions": [
