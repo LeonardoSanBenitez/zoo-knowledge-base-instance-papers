@@ -204,3 +204,21 @@ in `repro-contrib`, and it arrived by accident while I was looking for something
 else. Two of the three things that made it findable were: they released the
 database, and they released the code that wrote it. Neither the paper nor a
 badge scheme would have surfaced it.
+
+## 2026-10-16 evening: Pimentel's code located and audited (c5)
+
+The "original execution code could not be located" note above is now out of date. GitHub
+`gems-uff/jupyter-archaeology` holds only the JupArc library; its README points to Zenodo concept
+2538876, whose 2019 versions (2538877, 2546834, 2592524) carry `jupyter_reproducibility.tar.bz2`
+(the MSR 2019 code; 2592524's copy has md5 e35b9fd702cc9048a227ce7dc23bdb0c, matching the record).
+NB: the concept DOI resolves to version 3519618 (2020), which does NOT contain this code.
+
+`archaeology/run_notebook.py` has the defect's exact shape: `last_try` starts at (-1, -1), `count`
+is stored as `last_try[0] + 1`, the comparison loop runs `range(last_try[0] + 1 - timeout)` times,
+and `E_SAME_RESULTS` is set whenever `diff` is empty -- including after zero iterations. So the
+defect is INHERITED at source level. But in Pimentel's own pipeline `last_try` is updated before
+each cell (`NewPreprocessor.preprocess`), so zero iterations without an exception or timeout need
+a notebook with nothing to run. The defect should therefore be latent there, and it fires
+massively in Samuel & Mietchen only because their declared-dependency arm never advanced the
+tracker. Prediction: few vacuous 'same' rows in Pimentel's data. Being tested by
+`reanalysis/pimentel2019_stream.py` against the 2019 dump.

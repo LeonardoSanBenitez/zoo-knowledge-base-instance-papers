@@ -399,3 +399,11 @@ population sample).** The same paper includes lapsed practitioners, and they rep
 adverse effects (r = .12 with current practice), which points away from attrition and toward
 early susceptibility. Practical reading: the risk window is the first tens of hours, so screening
 belongs at the start. Retreat intensity remains a separate, robust axis (schlosser2019#c2).
+
+**MPE-92M benchmark (added 2026-10-16 evening, `gamma2021-mpe92m`).** The "no discrete factors"
+reading now has an external yardstick: the Big Five run through the identical split-half pipeline at
+the same n gives all five factors at Tucker phi >= .95 at k = 5 and a sharp cliff when
+over-extracted; MPE-92M gives none at any k >= 5 and decays smoothly. And it is not a response-style
+artifact: the clone deficit persists (.13-.19 at k >= 8) after within-person centring or
+z-scoring. For CAT: a dimensional instrument of meditative experience should EXPECT this smooth
+profile, and should report it rather than a factor count.
