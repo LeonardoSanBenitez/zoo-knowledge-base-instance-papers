@@ -1,0 +1,25 @@
+between-language CV: SR 0.140 | IR 0.084 | semantic rate (1/text-normalised duration) 0.109 | NS per text 0.183
+max/min across languages: SR 1.71 | IR 1.36 | semantic rate 1.45
+does IR track semantic rate? r(IR, semantic rate) = 0.644 p=0.005 (n=17)
+r(SR, semantic rate) = -0.146 p=0.577
+implied bits per (average) text: CV 0.083, range 495-695
+r(ID, NS) = -0.885 p=0.0000  (denser syllables -> fewer syllables for the same text)
+PM2 permutation: observed CV(IR) 0.0845; null median 0.2055; P(null<=obs) = 0.0001
+Language   ID    SR     IR  srate      NS  bits_per_text
+     HUN 5.90 5.868 34.623  0.876 103.267        609.273
+     THA 7.19 4.701 33.797  0.896  81.600        586.704
+     JPN 5.03 8.035 40.415  0.901 138.133        694.811
+     CAT 5.49 7.065 38.789  0.935 116.800        641.232
+     KOR 5.56 7.119 39.581  0.946 115.933        644.589
+     TUR 5.34 7.046 37.625  0.961 114.174        609.692
+     DEU 6.08 6.092 37.039  0.989  95.400        580.032
+     SRP 5.47 7.154 39.132  1.027 107.600        588.572
+     SPA 5.43 7.727 41.957  1.028 117.200        636.396
+     EUS 4.83 7.540 36.420  1.041 112.333        542.570
+     FIN 5.49 7.171 39.371  1.062 104.000        570.960
+     YUE 6.53 5.572 36.385  1.070  80.733        527.189
+     ITA 5.29 7.162 37.889  1.088 101.833        538.698
+     VIE 8.02 5.304 42.535  1.151  73.067        585.995
+     FRA 6.68 6.876 45.933  1.159  91.333        610.107
+     ENG 7.09 6.338 44.938  1.193  81.667        579.017
+     CMN 6.96 5.858 40.770  1.271  71.133        495.088

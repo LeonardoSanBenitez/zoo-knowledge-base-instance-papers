@@ -1,0 +1,6 @@
+NS constant within language x text? True
+slope d log(duration)/d log(NS), text FE, n=255 cells: 0.460 (cluster SE 0.077)
+language-cluster bootstrap 95% CI for slope: [0.280, 0.607]; compensation = 1 - slope = 0.54
+language-level slope 0.350, 95% CI [0.103, 0.597], n=17
+adding log ID at language level: lNS 0.697 (p=0.022), lID 0.499 (p=0.182)
+WITHIN-language slope across texts (control, expect ~1): 0.978

@@ -1,0 +1,8 @@
+IR mean 39.15 sd 5.10 CV 0.130
+ShIR mean 56.71 sd 9.35 CV 0.165
+between-language CV: IR 0.084 ShIR 0.126
+ratio ID/ShE per language: mean 0.698 range 0.575-0.829
+r(SR, ShE) language level = -0.553 p=0.0212
+Language   CAT   CMN   DEU   ENG   EUS   FIN   FRA   HUN   ITA   JPN   KOR   SPA   SRP   THA   TUR   VIE   YUE
+ShE       8.10  8.69  9.30  9.51  8.32  9.54  8.39  9.83  8.32  6.07  8.05  8.32  8.79  9.13  9.19  9.72  7.97
+ID        5.49  6.96  6.08  7.09  4.83  5.49  6.68  5.90  5.29  5.03  5.56  5.43  5.47  7.19  5.34  8.02  6.53

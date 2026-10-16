@@ -1,0 +1,4 @@
+from data: language SD of log NS 0.189, translation-noise SD 0.103, residual duration SD 0.038
+true b=0.00: text-FE estimator mean 0.252 [0.132,0.445] | language-level estimator mean 0.021 [-0.057,0.092]
+true b=0.35: text-FE estimator mean 0.510 [0.436,0.609] | language-level estimator mean 0.361 [0.306,0.413]
+true b=1.00: text-FE estimator mean 1.000 [0.979,1.022] | language-level estimator mean 1.000 [0.975,1.027]

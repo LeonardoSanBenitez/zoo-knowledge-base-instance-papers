@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.4",
+  "id": "coupe2019-information-rate",
+  "title": "Different languages, similar encoding efficiency: Comparable information rates across the human communicative niche",
+  "authors": ["Christophe Coupé", "Yoon Mi Oh", "Dan Dediu", "François Pellegrino"],
+  "year": 2019,
+  "venue": "Science Advances 5(9):eaaw2594",
+  "area": ["language-information-and-communication-efficiency"],
+  "identifiers": {
+    "doi": "10.1126/sciadv.aaw2594",
+    "pmcid": "PMC6984970",
+    "pmid": "32047854",
+    "url": "https://github.com/keruiduo/SupplMatInfoRate"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 26,
+    "bytes_downloaded": 57800000,
+    "compute_notes": "Full text as JATS XML from Europe PMC (124,605 B; HAL served an anti-bot HTML page instead of the PDF), rendered with tools/jats2txt.py and read in full. Repository cloned at 00798db (55 MB of git history, mostly the 12 MB HTML report across commits; clone deleted after use, fetch_cmd kept). InfoRateData.csv (96,064 B, CC-BY 4.0) is kept in artifacts/. No R on host: analyses rebuilt in Python; the paper's descriptive statistics reproduce exactly (IR 39.15 / 5.10, SR 6.63 / 1.15, CVs 13.0% / 17.3%). Five scripts, all seconds; the cluster bootstrap (4000 x 17 languages) is the slowest.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "do all languages transmit information at the same rate",
+    "39 bits per second speech",
+    "information density versus speech rate trade-off across languages",
+    "do fast-spoken languages carry less information per syllable",
+    "how fast do humans communicate in bits per second",
+    "channel capacity of human speech",
+    "correlation computed on rows when the predictor varies only by group (pseudoreplication)",
+    "a rate in bits per second that depends on the entropy estimator",
+    "how long does it take different languages to say the same text",
+    "uniform information density across languages"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "unit-of-analysis-pseudoreplication-check",
+    "shared-term-coupling-decomposition",
+    "multiverse-analysis",
+    "synthetic-injected-effect-control"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Across 17 languages, information density per syllable (ID) and speech rate (SR, syllables/s) trade off: languages with denser syllables are spoken more slowly (Pearson r = -0.71, P < 2.2e-16; GAMLSS beta = -0.89, P < 2.2e-16).",
+      "scope": "17 languages (9 families, Europe and Asia), 170 speakers (10 per language, 5F/5M), 15 semantically parallel read texts; 2288 recordings. ID = syllable conditional entropy (previous syllable within the word) from written lexical databases, one value per language.",
+      "quantities": [
+        {"name": "speech_rate_information_density_correlation", "value": -0.834, "unit": "Pearson r", "n": 17, "ci": "95% CI [-0.94, -0.59], p < 1e-4 (Fisher z)", "ci_low": -0.94, "ci_high": -0.59, "ci_kind": "confidence", "source": "reanalysis/r1.py", "baseline": "LANGUAGE level: 17 language means of SR against the 17 IDs (Spearman -0.871)"},
+        {"name": "speech_rate_information_density_correlation", "value": -0.688, "unit": "Pearson r", "n": 2288, "ci": "printed P < 2.2e-16 treats 2288 recordings as independent; ID takes 17 values", "source": "reanalysis/r1.py; paper prints -0.71 (difference unexplained, possibly rounding/subset)", "baseline": "recording level, as the paper computed it (InfoRate.Rmd line 678: cor.test on all rows)", "status": "measures-something-else"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "The p-values are pseudo-replicated -- ID varies only by language, yet the correlation and the GAMLSS ID effect (with the language random effect dropped, as the paper says) are tested over 2288 recordings. Recomputed at the unit where ID varies, n = 17, the trade-off is if anything STRONGER (r = -0.83, CI -0.94 to -0.59). The defect is in the reported precision, not in the conclusion. I expected this check to weaken the result and it did not; recorded so that the method's next user knows the check can come back clean.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Languages are much more similar in information rate (IR = ID x SR, ~39 bits/s) than in speech rate; human languages encode similar average information rates of about 39 bits/s, a 'universal attractor' plausibly set by neurocognitive channel capacity.",
+      "scope": "Same corpus. IR is computed per recording; ID is a language constant, so within a language IR and SR have identical CVs by construction and all compression is between languages.",
+      "quantities": [
+        {"name": "speech_information_rate_mean", "value": 39.15, "unit": "bits/s (syllable conditional entropy x syllables/s)", "n": 2288, "ci": "SD 5.10", "source": "reanalysis/r1.py; paper 39.15", "baseline": "recording level, ID = within-word syllable-bigram conditional entropy", "status": "measures-something-else"},
+        {"name": "speech_information_rate_mean", "value": 56.71, "unit": "bits/s (unigram syllable Shannon entropy x syllables/s)", "n": 2288, "ci": "SD 9.35", "source": "reanalysis/r4.py, from the deposit's own ShE column", "baseline": "same recordings, unigram entropy instead of conditional", "status": "measures-something-else"},
+        {"name": "between_language_cv_information_rate", "value": 0.084, "unit": "CV of 17 language means", "n": 17, "source": "reanalysis/r1.py", "baseline": "IR with conditional ID; with unigram ShE the CV is 0.126; SR 0.140"},
+        {"name": "between_language_cv_information_rate_permutation_null", "value": 0.2055, "unit": "median CV under ID shuffled among languages (20,000 permutations)", "n": 17, "ci": "P(null <= observed 0.0845) = 0.0001", "source": "reanalysis/r2.py", "baseline": "authors' PM2 logic, recomputed on language means"},
+        {"name": "between_language_cv_semantic_rate", "value": 0.109, "unit": "CV of 17 language means of 1/(text-normalised duration)", "n": 17, "source": "reanalysis/r2.py", "baseline": "ID-free: time each language takes to say the same 15 texts; max/min ratio 1.45 (Mandarin fastest, Hungarian slowest); includes translation-length noise, so an upper bound"},
+        {"name": "information_rate_tracks_semantic_rate", "value": 0.644, "unit": "Pearson r, language means of IR vs 1/text-normalised duration", "n": 17, "ci": "p = 0.005", "source": "reanalysis/r2.py", "baseline": "SR alone vs semantic rate: r = -0.146, p = 0.58"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The RELATIVE claim survives every test: IR is far more homogeneous across languages than random ID assignment would give (permutation P = 0.0001), and IR tracks an ID-free semantic-rate measure (r = 0.64). The ABSOLUTE number does not have the meaning it is given. '39 bits/s' is the code length of a within-word syllable-bigram model, not an entropy rate: the same recordings give 56.7 bits/s with the unigram entropy the deposit also carries, and any longer context (across words, higher order) can only lower it further, so it is an upper bound of unknown slack on the information rate. The degree of similarity moves with the estimator too (CV 8.4% -> 12.6%). Hence `measures-something-else` on the 39.15 quantity when it is cited as 'the information rate of human speech' or as a channel capacity, as the paper's discussion and its press coverage do. 'Similar' also needs its size: on the ID-free measure languages differ in how long they take to say the same thing by up to 1.45x.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "(Ours, from the deposit.) The trade-off can be stated without any entropy estimate: across languages, for the same text, duration grows with the number of syllables much less than proportionally -- languages that need more syllables say them faster -- and the compensation is partial, about two thirds.",
+      "scope": "Language x text cell means (255), text fixed effects; language-level regression on 17 means; known-answer simulation with the data's own noise levels.",
+      "quantities": [
+        {"name": "duration_elasticity_wrt_syllable_count_across_languages", "value": 0.35, "unit": "d log(duration) / d log(syllables), same content", "n": 17, "ci": "95% CI [0.103, 0.597] (OLS on language means)", "ci_low": 0.103, "ci_high": 0.597, "ci_kind": "confidence", "source": "reanalysis/r3.py", "baseline": "1 = no compensation (every language at the same syllable rate); 0 = full compensation (equal time for equal content)"},
+        {"name": "duration_elasticity_wrt_syllable_count_across_languages", "value": 0.46, "unit": "same, cells with text fixed effects", "n": 255, "ci": "language-cluster bootstrap 95% [0.280, 0.607]", "ci_low": 0.28, "ci_high": 0.607, "ci_kind": "confidence", "source": "reanalysis/r3.py", "baseline": "biased toward 1 by uncompensated translation-length noise: known-answer simulation turns a true 0.35 into 0.51 and a true 0 into 0.25, while the language-level estimator recovers 0.36 and 0.02 (reanalysis/r5_known_answer.py)"},
+        {"name": "duration_elasticity_wrt_syllable_count_within_language", "value": 0.978, "unit": "same, across texts within a language", "n": 255, "source": "reanalysis/r3.py", "baseline": "positive control: within a language, a longer text takes proportionally longer"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Ours; stated with its controls. Both ends excluded: no compensation (slope 1) and full compensation (slope 0). Adding log ID to the language-level model does not improve on syllable count (ID p = 0.18): for the duration question, ID carries little beyond 'how many syllables this language needs for this content', which is unsurprising since ID x NS is nearly constant across languages (CV 8.3%; r(ID, NS) = -0.885). This is the paper's result with the written-corpus entropy taken out, and it is the form I would cite.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "raw-data", "locator": "https://github.com/keruiduo/SupplMatInfoRate/blob/00798db1687a429349370e40e1a726deb35c1ef6/InfoRateData.csv", "repo_commit": "00798db1687a429349370e40e1a726deb35c1ef6", "path_in_repo": "InfoRateData.csv", "status": "present-but-insufficient",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "git clone https://github.com/keruiduo/SupplMatInfoRate; sh reanalysis/run_all.sh", "result": "2288 rows = 170 speakers x 15 texts minus 262 missing; every descriptive statistic reproduces. Insufficient for one question: ID and ShE are given as one number per language with no corpus, no syllabification and no code, so the entropy estimates themselves cannot be re-derived or varied."},
+     "bytes": 96064, "sha256": "f4dde6def980ed4c461ad8fd666af64cbbaa967a2ac73702855fc70484c0732a", "license": "CC-BY-4.0", "local_path": "artifacts/InfoRateData.csv", "fetch_cmd": "git clone https://github.com/keruiduo/SupplMatInfoRate && git -C SupplMatInfoRate checkout 00798db",
+     "datasheet": {"composition": "Speaker, Language, Text, Sex, Duration (s, pauses >150 ms removed), NS (canonical syllables of the text in that language), ShE and ID (per language), Age.", "caveats": "NS is the CANONICAL dictionary syllable count, identical for every speaker of a language-text pair; SR is therefore 'canonical articulation rate', not realised syllables. ID and ShE come from heterogeneous written lexical databases (sizes, syllabification and tone conventions differ by language) and are not re-derivable from the deposit."}},
+    {"id": "a2", "role": "code", "locator": "https://github.com/keruiduo/SupplMatInfoRate/blob/00798db1687a429349370e40e1a726deb35c1ef6/InfoRate.Rmd", "repo_commit": "00798db1687a429349370e40e1a726deb35c1ef6", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "read InfoRate.Rmd (150,828 B); not executed (no R on host); key computations ported", "result": "Line 678: cor.test(info.rate.data$SR, info.rate.data$ID) on all rows -- the source of the pseudo-replicated P. The pairwise-divergence randomisation t-tests are over 136 language PAIRS, which are not independent either."},
+     "derived_from": ["a1"]}
+  ],
+  "relations": [
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "karger2023-xpt", "why": "A headline number ('39 bits/s'; an extinction probability) that is a property of the measurement procedure -- the entropy estimator, the elicitation format -- and travels as if it were a property of the world. Here the estimator moves it 39 -> 57; there the format moves it by orders of magnitude."}
+  ],
+  "open_questions": [
+    "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1126/sciadv.aaw2594 -> 0 items; 172 citing works.",
+    "Re-derive ID with a longer context (cross-word, or a modern language model's per-syllable surprisal on the 15 texts themselves). Prediction from c2: the absolute rate falls well below 39 bits/s and the cross-language CV changes; whether it falls or rises is the real test of 'universal attractor'. Needs the texts' transcriptions, which are not in the deposit.",
+    "Does compensation hold in spontaneous speech? The corpus is read speech after rehearsal. Spontaneous corpora (e.g. multilingual conversational sets) would test whether the ~two-thirds compensation is a reading-style property.",
+    "Popular coverage repeats 'Italians speak ~9 syllables/s'; the deposit's Italian mean is 7.16 (SPA 7.73, JPN 8.03 are the fastest). Where does 9 come from? Probably the paper's fastest SPEAKER (9.1), misattributed to a language."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

@@ -652,6 +652,11 @@
       "type": "zoo:sharesUnstatedAssumptionWith",
       "target": "caviola2022-population-ethical-intuitions",
       "why": "Both treat an elicited number (extinction probability here, a happiness/suffering trade ratio there) as a measurement of a format-independent quantity. Here the format moves it up to 800,000x; Caviola et al. report unpublished preliminary studies in which framing 'heavily' moves the trade ratio. Both feed longtermist priority arguments."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "coupe2019-information-rate",
+      "why": "A headline number belonging to the measurement procedure (here elicitation format, there the entropy estimator: 39 vs 57 bits/s from the same recordings) cited as a property of the world."
     }
   ],
   "open_questions": [

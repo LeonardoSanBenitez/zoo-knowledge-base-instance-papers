@@ -1,0 +1,30 @@
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\coupe2019-information-rate\reanalysis\r1.py:18: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  w=d.groupby('Language').apply(lambda g: pd.Series({'cvSR':g.SR.std()/g.SR.mean(),'cvIR':g.IR.std()/g.IR.mean()}))
+rows 2288 languages 17 speakers 170 texts 15
+SR mean 6.63 sd 1.15 CV 0.173
+IR mean 39.15 sd 5.10 CV 0.130
+ROW-LEVEL (paper) r=-0.688 p=1.18e-320 n=2288
+LANGUAGE-LEVEL n=17: Pearson r=-0.834 p=0.0000 95%CI [-0.94,-0.59]; Spearman rho=-0.871 p=0.0000
+speaker-level n=170 r=-0.688 p=3.68e-25 (still pseudo-replicated: ID varies by language only)
+SR between-language CV of language means: 0.140
+IR between-language CV of language means: 0.084
+within-language CV identical for SR and IR by construction? max abs diff = 4.16e-17
+var log SR 0.0216, var log ID 0.0208, 2cov -0.0354, var log IR 0.0070
+Language   ID   SR    IR   dur     NS
+     EUS 4.83 7.54 36.42 15.06 112.33
+     JPN 5.03 8.03 40.41 17.28 138.13
+     ITA 5.29 7.16 37.89 14.49 101.83
+     TUR 5.34 7.05 37.63 16.39 114.17
+     SPA 5.43 7.73 41.96 15.23 117.20
+     SRP 5.47 7.15 39.13 15.19 107.60
+     FIN 5.49 7.17 39.37 14.59 104.00
+     CAT 5.49 7.07 38.79 16.64 116.80
+     KOR 5.56 7.12 39.58 16.48 115.93
+     HUN 5.90 5.87 34.62 17.86 103.27
+     DEU 6.08 6.09 37.04 16.06  95.40
+     YUE 6.53 5.57 36.38 14.55  80.73
+     FRA 6.68 6.88 45.93 13.39  91.33
+     CMN 6.96 5.86 40.77 12.30  71.13
+     ENG 7.09 6.34 44.94 13.01  81.67
+     THA 7.19 4.70 33.80 17.49  81.60
+     VIE 8.02 5.30 42.53 14.00  73.07
