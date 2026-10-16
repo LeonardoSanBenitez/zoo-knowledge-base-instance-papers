@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.5",
+  "id": "maria2026-awareness-acceptance-distress",
+  "title": "Awareness without acceptance and distress: a test on an open mindfulness dataset (Antunes, Chiodelli & Jesus, Zenodo 14946661)",
+  "authors": ["maria (zoo)"],
+  "year": 2026,
+  "venue": "zoo internal reanalysis (not submitted anywhere)",
+  "area": ["contemplative-neuroscience"],
+  "identifiers": {"doi": "10.5281/zenodo.14946661", "url": "https://zenodo.org/records/14946661"},
+  "record_status": "draft",
+  "read_depth": "read-and-ran-artifacts",
+  "cost": {
+    "tool_calls": 6,
+    "bytes_downloaded": 4109,
+    "compute_notes": "Data-only deposit (no paper found via web search or Crossref title query, 2026-10-16; probably a manuscript under review). DataBase.sav (4,109 B, md5 6f7482871f1f5f8c24acf6139f24e1c9, CC BY 4.0) kept in artifacts/. pyreadstat + statsmodels; seconds.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "does mindful awareness without acceptance increase distress",
+    "Philadelphia Mindfulness Scale awareness acceptance anxiety depression",
+    "mechanism of meditation adverse effects awareness acceptance",
+    "DERS and PHLMS construct overlap",
+    "open individual data mindfulness emotion regulation DASS"
+  ],
+  "methods": [],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "In this sample (n = 114), mindful acceptance, not awareness, carries the association with distress (DASS-21 total: r = -0.42 vs -0.06), and there is no 'awareness without acceptance' penalty: the awareness x acceptance interaction is small, non-significant and of the opposite sign (std beta +0.08, p = .30; anxiety +0.16, p = .058).",
+      "scope": "Cross-sectional, one sample of adults (ages ~20-49 in the rows inspected), no meditation-practice variable, scale totals only; PHLMS awareness and acceptance correlate r = 0.12.",
+      "quantities": [
+        {"name": "r_acceptance_dass_total", "value": -0.42, "unit": "Pearson r", "n": 114, "source": "reanalysis/a1_awareness_acceptance.py", "baseline": "awareness r = -0.06; simple slope of awareness on DASS: -1.09 points/SD at low acceptance, +1.86 at high"},
+        {"name": "r_phlms_awareness_ders_lack_of_awareness", "value": -0.62, "unit": "Pearson r", "n": 114, "source": "reanalysis/out/a1.txt and the overlap check in NOTES.md", "baseline": "PHLMS awareness vs DERS clarity -0.52; PHLMS acceptance vs DERS non-acceptance -0.53; awareness vs DERS total -0.52, -0.43 with the awareness subscale removed"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": [],
+        "why": "My own analysis, recorded as a draft because the authors' paper is not yet findable and their claims are unknown. The harms-literature hypothesis (heightened awareness without equanimity -> distress) gets no support here, but the sample is not selected for meditation practice, n is modest, and the design is cross-sectional, so this is weak evidence against a mechanism that, if real, would show up in practitioners. The more durable point is for whoever reads the eventual paper: PHLMS awareness and DERS 'lack of awareness'/'clarity', and PHLMS acceptance and DERS 'non-acceptance', partly measure the same constructs, so any mediation 'mindfulness -> emotion regulation -> outcome' on these scales is inflated by measurement overlap.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "raw-data", "locator": "artifacts/DataBase.sav (from https://zenodo.org/records/14946661; concept record 14946660, single version)", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "curl -sL -o DataBase.sav https://zenodo.org/api/records/14946661/files/DataBase.sav/content; md5sum; python reanalysis/a1_awareness_acceptance.py", "result": "md5 matches; 114 rows x 17 columns (sex, age, employment, PHLMS awareness/acceptance, six DERS subscales + total (total = sum of subscales, checked), SWLS, optimism, DASS-21 subscales); missing: age 3, employment 5"},
+     "bytes": 4109, "license": "CC BY 4.0", "fetch_cmd": "curl -sL -o DataBase.sav https://zenodo.org/api/records/14946661/files/DataBase.sav/content"}
+  ],
+  "relations": [
+    {"type": "cito:obtainsBackgroundFrom", "target": "goldberg2022-meditation-adverse-effects-population", "why": "Goldberg et al. and schlosser2019 locate meditation harms early and in a minority; this tests one proposed mechanism (awareness without acceptance) on independent data."}
+  ],
+  "open_questions": [
+    "Find the Antunes, Chiodelli & Jesus paper when it appears and compare their model with c1 and with the construct-overlap caveat.",
+    "The awareness-without-acceptance test belongs in a sample of PRACTITIONERS with harms measured (MRAES); no such open dataset located yet."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

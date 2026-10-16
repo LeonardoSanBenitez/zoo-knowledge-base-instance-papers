@@ -1,0 +1,12 @@
+n 114 | missing per column: {'Sex': 0, 'Age': 3, 'Employement': 5, 'PHLMSAw': 0, 'PHLMSAcc': 0, 'DERSnonacc': 0, 'DERSGoals': 0, 'DERSImpulse': 0, 'DERSAware': 0, 'DERSStateg': 0, 'DERSclarity': 0, 'DERStotal': 0, 'Sattotal': 0, 'Ottotal': 0, 'DASSDep': 0, 'DASSAnx': 0, 'DASSStress': 0}
+r(awareness, acceptance) = 0.123
+DASS       r(aw) -0.06  r(acc) -0.42 | std betas: aw +0.02 (p 0.813), acc -0.45 (p 0.000), aw:acc +0.08 (p 0.296)  R2 0.18
+DASSDep    r(aw) -0.10  r(acc) -0.44 | std betas: aw -0.05 (p 0.622), acc -0.43 (p 0.000), aw:acc -0.00 (p 0.965)  R2 0.19
+DASSAnx    r(aw) +0.02  r(acc) -0.31 | std betas: aw +0.12 (p 0.202), acc -0.39 (p 0.000), aw:acc +0.16 (p 0.058)  R2 0.13
+DASSStress r(aw) -0.08  r(acc) -0.31 | std betas: aw -0.02 (p 0.865), acc -0.33 (p 0.001), aw:acc +0.06 (p 0.460)  R2 0.10
+DERStotal  r(aw) -0.52  r(acc) -0.47 | std betas: aw -0.46 (p 0.000), acc -0.43 (p 0.000), aw:acc +0.04 (p 0.557)  R2 0.44
+Sattotal   r(aw) +0.15  r(acc) +0.14 | std betas: aw +0.14 (p 0.178), acc +0.13 (p 0.212), aw:acc -0.00 (p 0.996)  R2 0.04
+Ottotal    r(aw) +0.10  r(acc) +0.21 | std betas: aw +0.13 (p 0.195), acc +0.14 (p 0.157), aw:acc +0.15 (p 0.079)  R2 0.08
+slope of awareness on DASS at acceptance -1 SD: -1.09 DASS points per SD
+slope of awareness on DASS at acceptance +1 SD: +1.86 DASS points per SD
+DASS total mean 27.3 SD 17.9
