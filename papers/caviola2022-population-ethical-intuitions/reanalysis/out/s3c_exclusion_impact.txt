@@ -1,0 +1,2 @@
+paper (check == correct)         happy: 0.273 [0.037, 0.495] n=213 | unhappy: 1.327 [0.960, 1.879] n=248 | pooled: 0.763 [0.568, 0.984] n=461
++ the 96 "extremely unhappy"     happy: 0.234 [0.048, 0.419] n=278 | unhappy: 1.366 [0.980, 1.974] n=278 | pooled: 0.698 [0.504, 0.919] n=556
