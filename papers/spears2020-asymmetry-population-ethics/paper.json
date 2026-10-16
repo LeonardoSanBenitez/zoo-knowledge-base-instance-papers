@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.5",
+  "id": "spears2020-asymmetry-population-ethics",
+  "title": "The Asymmetry of population ethics: experimental social choice and dual-process moral reasoning",
+  "authors": ["Dean Spears"],
+  "year": 2020,
+  "venue": "Economics and Philosophy 36(3) (2020); read as IZA Discussion Paper 12537 (August 2019), the version available to us",
+  "area": ["population-ethics-and-moral-psychology"],
+  "identifiers": {
+    "doi": "10.1017/s0266267119000221",
+    "pmcid": "PMC11178026",
+    "url": "https://docs.iza.org/dp12537.pdf"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 9,
+    "bytes_downloaded": 690000,
+    "compute_notes": "Europe PMC full text for PMC11178026 returned an empty body (not open access via the API); the IZA working paper (40 pp, 68,168 chars) was read in full instead. No data or code located. Table 1 transcribed (artifacts/table1_transcribed.csv); counts reconstructed from shares and n and checked to round back. One script (reanalysis/a1.py), milliseconds.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "is the procreation asymmetry intuitive to ordinary people",
+    "McMahan asymmetry survey evidence",
+    "is a good life a reason to have a child according to lay people",
+    "quantitative asymmetry happiness suffering procreation",
+    "dual-process moral reasoning population ethics",
+    "questionnaire-experimental method social choice population",
+    "share of inattentive or perverse answers in moral vignette surveys"
+  ],
+  "methods": [
+    "in-paper-table-transcription",
+    "falsification-by-internal-consistency"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Few respondents endorse the absolute Asymmetry: about three quarters say both a good and a bad expected life are moral reasons (for and against) a couple's having a child; the Asymmetry pattern (bad life relevant, good life irrelevant) is held by 12.5% (Study 1a) and 15.1% (Study 1b).",
+      "scope": "US MTurk, 2014-2015; Study 1a trichotomous relevance (n = 232), Study 1b nine-point scale (n = 186), within respondents, order of the two facts randomised; 10.1% of completers excluded for 'perverse' answers (e.g. a good life as a reason against).",
+      "quantities": [
+        {"name": "share_both_additions_count", "value": 0.741, "unit": "proportion", "n": 232, "source": "Table 1 (artifacts/table1_transcribed.csv)", "baseline": "Study 1a: good and bad expected life both morally relevant (reasons framing)"},
+        {"name": "share_procreation_asymmetry_mcmahan", "value": 0.125, "unit": "proportion", "n": 232, "source": "Table 1", "baseline": "Study 1a: bad life relevant, good life irrelevant"},
+        {"name": "share_procreation_asymmetry_mcmahan", "value": 0.151, "unit": "proportion", "n": 186, "source": "Table 1", "baseline": "Study 1b (nine-point scale, 'relevant' = nonzero rating)"},
+        {"name": "share_reverse_procreation_asymmetry", "value": 0.047, "unit": "proportion", "n": 232, "source": "Table 1", "baseline": "Study 1a: good life relevant, bad life irrelevant; Study 1b 3.2%"},
+        {"name": "share_full_neutrality_about_creating_people", "value": 0.086, "unit": "proportion", "n": 232, "source": "Table 1", "baseline": "Study 1a: neither fact relevant; Study 1b 7.0%"},
+        {"name": "share_wrong_sign_responders", "value": 0.101, "unit": "proportion of completers", "n": "not printed", "source": "footnote 7", "baseline": "excluded before analysis as inattentive"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Table 1 is internally consistent (the printed marginals 78.9 / 86.6 and 78.0 / 89.8 are the sums of the cells within rounding). Accepted as a description of reasons-framed judgments. Note the exclusion rule: Spears drops the ~10% who answer in the 'wrong' direction; Caviola et al. (2022, Study 2a) keep their 11.5%, and in that study those respondents carry half of a reported effect. Two independent MTurk samples, two framings, the same ~10% rate of reversed answers -- a base rate worth carrying into any vignette study on procreation.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "A quantitative asymmetry: across respondents assigned a life quality Q on a 0-10 ladder (Study 2), the probability that Q counts in favour rises less steeply over good lives than the probability that it counts against rises over bad lives (interaction t = 3.2, p < 0.01).",
+      "scope": "Study 2, MTurk 2015, Q randomised on 0-10, three-option response; linear-probability slopes compared. The author himself warns the comparison 'cannot be interpreted quantitatively literally'.",
+      "quantities": [
+        {"name": "asymmetry_slope_interaction_t", "value": 3.2, "unit": "t statistic", "n": "not printed in the text read", "source": "Section 3.2", "baseline": "slope of P(favour) on good lives vs slope of P(against) on bad lives"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["scale-dependent-conclusion"],
+        "why": "Comparing slopes of two bounded proportions over an ordinal ladder whose cardinal meaning respondents supply themselves is a scale-dependent comparison, and the author says so (Decancq et al.). Not checkable further without data. The robust part is qualitative and needs no slope comparison: good and even great lives count in favour, increasingly so (Q 8-10 above 6-7).",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "(Ours, cross-paper.) The Asymmetry is stronger when people judge REASONS for a procreative decision than when they judge whether an addition makes the WORLD better: here the Asymmetry pattern outnumbers its mirror image 57:17 (sign test p < 0.0001); in Caviola et al. 2022 Study 2a (world-betterness ratings) 12:10 (p = 0.83).",
+      "scope": "Spears Studies 1a+1b pooled (counts reconstructed from Table 1 shares) vs the type classification in caviola2022-population-ethical-intuitions#c3 (139 consistent responders). Different populations, years, wording and response formats.",
+      "quantities": [
+        {"name": "asymmetry_to_mirror_odds_ratio_reasons_vs_betterness", "value": 2.79, "unit": "odds ratio (asymmetry:mirror, Spears vs Caviola)", "n": 96, "ci": "Fisher exact p = 0.058", "source": "reanalysis/a1.py", "baseline": "57:17 vs 12:10 discordant respondents"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["small-sample-overreach"],
+        "why": "Suggestive, not established, and tagged with the pattern it is most at risk of: Caviola's side has 22 discordant respondents, and the cross-study test is p = 0.058 with every design difference between the studies confounded with the framing. What it does is give a number to a conjecture Caviola et al. state in their own discussion (section 16.4: the asymmetry may live in deontic judgments, not axiological ones) and point at the decisive design: one sample, randomised to a reasons framing or a betterness framing, same scenario.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "in-paper-table", "locator": "IZA DP 12537 (2019), Table 1, p. 27; counts reconstructed from printed shares and n", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "curl -sL https://docs.iza.org/dp12537.pdf; PyMuPDF text; transcribed to artifacts/table1_transcribed.csv; python reanalysis/a1.py (asserts every reconstructed count rounds back to the printed share)", "result": "consistent; marginals equal cell sums within 0.1 pt"},
+     "local_path": "artifacts/table1_transcribed.csv", "fetch_cmd": "curl -sL -o iza.pdf https://docs.iza.org/dp12537.pdf",
+     "datasheet": {"caveats": "Working-paper version; the published 2020 article may differ. No respondent-level data or code located; the paper refers to a 'supplementary statistical appendix' (regression tables A1-A4) not found."}},
+    {"id": "a2", "role": "raw-data", "locator": "none located (no DAS in the working paper)", "status": "absent",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "searched the PDF text for osf/github/dataverse/openicpsr links; Europe PMC full text for PMC11178026 returned an empty body", "result": "absent"}}
+  ],
+  "relations": [
+    {"type": "cito:agreesWith", "target": "caviola2022-population-ethical-intuitions#c3", "why": "Independent group, different instrument, same conclusion: the absolute Asymmetry is a minority view (12-15% here, 7.6% there); about three quarters count both good and bad lives. They disagree on the MIRROR (see c3 here), which is the more interesting fact."}
+  ],
+  "open_questions": [
+    "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1017/s0266267119000221 -> 0 items. Numbers here are from the 2019 working paper; check the published version before citing them.",
+    "One sample randomised between a reasons framing ('should this fact count for or against having the child?') and a betterness framing ('is the world better or worse?') with identical scenarios would decide c3. Neither group has run it."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

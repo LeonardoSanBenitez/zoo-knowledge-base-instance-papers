@@ -8,7 +8,7 @@ verified: 2026-10-16
 # Population ethics and moral psychology
 
 Author: maria. Started 2026-10-16. Records: `caviola2022-population-ethical-intuitions`,
-`schubert2019-psychology-existential-risk`.
+`schubert2019-psychology-existential-risk`, `spears2020-asymmetry-population-ethics`.
 Adjacent: `karger2023-xpt` (longtermist numbers as elicited quantities), the `wellbeing-and-income`
 area (what a well-being scale measures), `maria2026-happiness-income-spread` (centre vs shape).
 
@@ -54,9 +54,11 @@ any happy/unhappy, gain/loss or help/harm mirrored vignette study.
    framing "heavily" moves it. Karger shows format moving extinction probabilities by 10^5-10^6.
    Is there a published, data-sharing study of the trade ratio under reversed wording (Bruers'
    Unjournal suggestion) or a matching-vs-choice format?
-3. Find independent groups. The one record is from the EA-psychology cluster (Caviola, Schubert,
-   Althaus, Mogensen). Spears (2017, 2019) is economics and earlier. Before calling anything here
-   "the field", read at least one study from outside that cluster.
+3. PARTLY ANSWERED 2026-10-16 (`spears2020-asymmetry-population-ethics`): an independent lab (economics,
+   reasons framing) agrees the absolute Asymmetry is a minority view (12-15%), and DISAGREES on its mirror:
+   57:17 there vs 12:10 in Caviola's betterness ratings -- consistent with the asymmetry being deontic rather
+   than axiological (Fisher p = 0.058; underpowered). ~10% reversed answers in both labs. Original thread:
+   find independent groups before calling anything here "the field".
 
 ## Extinction (added 2026-10-16, `schubert2019-psychology-existential-risk`)
 

@@ -464,6 +464,7 @@
     }
   ],
   "relations": [
+    {"type": "cito:agreesWith", "target": "spears2020-asymmetry-population-ethics", "why": "Independent lab (economics, reasons framing) finds the absolute Asymmetry a minority view too (12-15%); but there the Asymmetry outnumbers its mirror 57:17, here 12:10 -- see spears2020#c3."},
     {"type": "cito:agreesWith", "target": "schubert2019-psychology-existential-risk", "why": "Same lay axiology from a different design: future numbers barely enter unprompted judgments; describing the future as good moves them strongly (utopia condition 67-77% vs control 19-24%)."},
     {"type": "cito:sharesAuthorWith", "target": "schubert2019-psychology-existential-risk", "why": "Caviola on both."},
     {

@@ -1,0 +1,7 @@
+Spears 1a   n=232 both 0.741 asym 0.125 reverse 0.047 neither 0.086  asym:reverse = 29:11 = 2.64
+Spears 1b   n=186 both 0.747 asym 0.151 reverse 0.032 neither 0.070  asym:reverse = 28:6 = 4.67
+Caviola 2a  n=139 both 0.705 asym 0.086 reverse 0.072 neither 0.137  asym:reverse = 12:10 = 1.20
+asymmetry vs its mirror, Spears pooled 57:17 vs Caviola 12:10: odds ratio 2.79, Fisher p = 0.0577
+Spears pooled: asym 57 vs reverse 17 -> sign test p = 0.0000
+Caviola 2a: asym 12 vs reverse 10 -> sign test p = 0.8318
+perverse/wrong-sign rate: Spears 10.1 pct of completers excluded (text, fn 7); Caviola 2a 18/157 = 0.115 kept
