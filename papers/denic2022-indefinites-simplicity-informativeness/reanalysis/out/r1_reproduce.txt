@@ -1,0 +1,12 @@
+languages in cc file 519 matched+reproduced 519 max abs diff (complexity,cost,rsacost) [0, 5.329070518200751e-15, 5.329070518200751e-15]
+ENGLISH 4 1.983 1.619 [(0, 0, 0, 1, 1, 0), (0, 0, 0, 0, 0, 1), (1, 1, 1, 0, 0, 0)]
+RUSSIAN 16 1.266 1.183 [(0, 0, 0, 1, 0, 0), (1, 0, 0, 0, 0, 0), (0, 0, 1, 1, 0, 0), (0, 0, 0, 0, 0, 1), (0, 0, 1, 0, 0, 0), (0, 1, 1, 0, 0, 0), (0, 0, 0, 0, 1, 0)]
+natural 40 mean overlap 0.675 mean coverage 5.575 mean n items 3.27
+artificial 479 mean overlap 0.681 mean coverage 5.52 mean n items 1.82
+pre-match artificial 10000 7.05 5.16
+overlap dist natural [(0, 22), (1, 11), (2, 5), (3, 2)]
+overlap dist matched art [(0, 265), (1, 102), (2, 112)]
+coverage dist natural [(4, 4), (5, 9), (6, 27)]
+coverage dist matched art [(4, 1), (5, 228), (6, 250)]
+n items natural [(2, 6), (3, 24), (4, 6), (5, 2), (6, 1), (7, 1)]
+n items matched art [(1, 183), (2, 205), (3, 85), (4, 6)]

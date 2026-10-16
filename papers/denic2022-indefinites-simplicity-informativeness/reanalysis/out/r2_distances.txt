@@ -1,0 +1,4 @@
+fit a,b [ 3.93228453 -0.88857137] n dominant 2011 unique pts 9
+max |mine - theirs| 1.5667558371984525e-05
+M nat 0.47987547633504574 M art 1.5500666586658813
+TtestResult(statistic=np.float64(-16.004382786907524), pvalue=np.float64(4.583382745935523e-27), df=np.float64(82.7928185120998))

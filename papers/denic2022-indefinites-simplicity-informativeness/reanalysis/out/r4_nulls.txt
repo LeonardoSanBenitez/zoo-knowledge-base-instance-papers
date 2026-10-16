@@ -1,0 +1,21 @@
+natural (40)                       n=   40 c=5.800 k=2.170 d_ga=0.480 d_ex=0.716 dk=0.602 dc=1.800 share_on_exact_front=0.000
+matched artificial (479)           n=  479 c=5.073 k=4.345 d_ga=1.550 d_ex=1.865 dk=2.232 dc=3.207 share_on_exact_front=0.000
+null1: overlap-free, (n,cov) as natural n= 4000 c=8.214 k=2.048 d_ga=0.649 d_ex=0.833 dk=0.834 dc=3.724 share_on_exact_front=0.036
+null2: random items, exact (n,cov,ovl) match n= 4000 c=8.566 k=2.976 d_ga=1.566 d_ex=1.879 dk=1.772 dc=5.960 share_on_exact_front=0.001
+null3: full partitions, n as natural n= 4000 c=8.482 k=2.021 d_ga=0.628 d_ex=0.818 dk=0.819 dc=4.000 share_on_exact_front=0.043
+d_ga  nat 0.480 vs art   1.550  t= -16.00  P(null 40-mean <= nat mean)=0.000
+d_ga  nat 0.480 vs null1 0.649  t=  -3.03  P(null 40-mean <= nat mean)=0.011
+d_ga  nat 0.480 vs null2 1.566  t= -19.45  P(null 40-mean <= nat mean)=0.000
+d_ga  nat 0.480 vs null3 0.628  t=  -2.67  P(null 40-mean <= nat mean)=0.009
+d_ex  nat 0.716 vs art   1.865  t=  -8.90  P(null 40-mean <= nat mean)=0.000
+d_ex  nat 0.716 vs null1 0.833  t=  -0.95  P(null 40-mean <= nat mean)=0.077
+d_ex  nat 0.716 vs null2 1.879  t=  -9.35  P(null 40-mean <= nat mean)=0.000
+d_ex  nat 0.716 vs null3 0.818  t=  -0.83  P(null 40-mean <= nat mean)=0.089
+dk    nat 0.602 vs art   2.232  t= -20.51  P(null 40-mean <= nat mean)=0.000
+dk    nat 0.602 vs null1 0.834  t=  -3.89  P(null 40-mean <= nat mean)=0.001
+dk    nat 0.602 vs null2 1.772  t= -19.58  P(null 40-mean <= nat mean)=0.000
+dk    nat 0.602 vs null3 0.819  t=  -3.64  P(null 40-mean <= nat mean)=0.001
+dc    nat 1.800 vs art   3.207  t=  -4.33  P(null 40-mean <= nat mean)=0.000
+dc    nat 1.800 vs null1 3.724  t=  -6.29  P(null 40-mean <= nat mean)=0.000
+dc    nat 1.800 vs null2 5.960  t= -13.55  P(null 40-mean <= nat mean)=0.000
+dc    nat 1.800 vs null3 4.000  t=  -7.19  P(null 40-mean <= nat mean)=0.000

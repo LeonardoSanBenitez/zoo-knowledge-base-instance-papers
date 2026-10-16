@@ -1,0 +1,11 @@
+identity {'c': 5.8, 'k': 2.17, 'd': 0.716, 'dk': 0.602, 'dc': 1.8}
+c   real 5.800 | perm median 9.100 min 5.200 | permutations strictly better than real: 8/720
+k   real 2.170 | perm median 2.225 min 2.080 | permutations strictly better than real: 160/720
+d   real 0.716 | perm median 1.304 min 0.596 | permutations strictly better than real: 5/720
+dk  real 0.602 | perm median 1.074 min 0.563 | permutations strictly better than real: 2/720
+dc  real 1.800 | perm median 5.050 min 1.450 | permutations strictly better than real: 7/720
+best-d perm ['fci', 'npi', 'nq', 'su', 'sk', 'ns'] 0.596 5.2 2.252
+best-d perm ['nq', 'npi', 'fci', 'su', 'sk', 'ns'] 0.634 5.35 2.238
+best-d perm ['nq', 'npi', 'fci', 'su', 'ns', 'sk'] 0.687 5.53 2.245
+best-d perm ['fci', 'npi', 'nq', 'su', 'ns', 'sk'] 0.696 5.47 2.263
+best-d perm ['npi', 'fci', 'nq', 'su', 'sk', 'ns'] 0.699 5.75 2.252

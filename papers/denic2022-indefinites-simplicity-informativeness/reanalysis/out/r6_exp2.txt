@@ -1,0 +1,16 @@
+Haspel-ok 5000 mean n 4.04 cov 4.58 ovl 5.66 complexity 11.34 cost 3.288 dk 1.915
+Not Haspel-ok 2881 mean n 3.29 cov 4.63 ovl 5.61 complexity 10.79 cost 4.133 dk 2.698
+distinct Haspel-ok item types (flavour level): 38 of 63
+items with 1 flavours: ok-types n=6 mean c=1.83 | other n=0 mean c=nan
+items with 2 flavours: ok-types n=13 mean c=3.08 | other n=2 mean c=3.00
+items with 3 flavours: ok-types n=13 mean c=3.31 | other n=7 mean c=4.14
+items with 4 flavours: ok-types n=5 mean c=2.80 | other n=10 mean c=3.60
+items with 5 flavours: ok-types n=1 mean c=1.00 | other n=5 mean c=2.40
+items with 6 flavours: ok-types n=0 mean c=nan | other n=1 mean c=2.00
+n=1: cost ok 5.375 vs not 5.879 | complexity ok 2.75 vs not 3.28 | N 725/712
+n=2: cost ok 3.561 vs not 4.142 | complexity ok 5.61 vs not 6.53 | N 687/603
+n=3: cost ok 3.069 vs not 3.412 | complexity ok 8.43 vs not 10.07 | N 712/490
+n=4: cost ok 2.897 vs not 3.236 | complexity ok 11.33 vs not 13.10 | N 691/286
+n=5: cost ok 2.761 vs not 3.298 | complexity ok 14.03 vs not 16.22 | N 677/168
+n=6: cost ok 2.721 vs not 3.395 | complexity ok 16.78 vs not 19.42 | N 748/260
+n=7: cost ok 2.636 vs not 3.287 | complexity ok 19.73 vs not 23.07 | N 760/362

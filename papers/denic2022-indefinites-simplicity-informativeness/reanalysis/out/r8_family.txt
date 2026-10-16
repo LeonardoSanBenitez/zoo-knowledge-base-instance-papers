@@ -1,0 +1,17 @@
+families 14 IE share 0.55
+family-weighted mean d_ex real 0.624 perms better 9 /720
+plain mean d_ex real 0.716 perms better 5 /720
+Indo-European   n=22 mean c= 6.23 cost=2.153
+Uralic          n= 2 mean c= 5.50 cost=1.829
+Turkic          n= 3 mean c= 5.33 cost=2.095
+Tungusic        n= 1 mean c= 7.00 cost=2.349
+Kartvelian      n= 1 mean c= 9.00 cost=2.217
+NE-Caucasian    n= 1 mean c= 5.00 cost=2.092
+Afroasiatic     n= 3 mean c= 4.00 cost=2.539
+Isolate-Basque  n= 1 mean c= 7.00 cost=1.696
+Sino-Tibetan    n= 1 mean c= 6.00 cost=1.491
+Japonic         n= 1 mean c= 5.00 cost=2.092
+Koreanic        n= 1 mean c= 5.00 cost=2.092
+Dravidian       n= 1 mean c= 6.00 cost=1.798
+Quechuan        n= 1 mean c= 3.00 cost=3.221
+Niger-Congo     n= 1 mean c= 3.00 cost=2.824

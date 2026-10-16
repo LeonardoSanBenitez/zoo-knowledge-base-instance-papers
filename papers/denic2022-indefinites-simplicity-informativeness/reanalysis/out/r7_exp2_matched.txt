@@ -1,0 +1,18 @@
+orig_cost              3.240
+orig_c                 11.605
+orig_rsacost           2.602
+orig_ovl               5.836
+orig_cov               4.691
+swap_nonok_cost        3.793
+swap_nonok_c           13.861
+swap_nonok_rsacost     2.824
+swap_nonok_ovl         5.817
+swap_nonok_cov         4.711
+redraw_ok_cost         3.469
+redraw_ok_c            11.809
+redraw_ok_rsacost      2.686
+redraw_ok_ovl          5.630
+redraw_ok_cov          4.898
+cost paired t redraw_ok vs swap_nonok TtestResult(statistic=np.float64(-13.759970405749604), pvalue=np.float64(2.7401351323471944e-42), df=np.int64(4849))
+rsacost paired t redraw_ok vs swap_nonok TtestResult(statistic=np.float64(-5.876208517200497), pvalue=np.float64(4.478209692739093e-09), df=np.int64(4849))
+c paired t redraw_ok vs swap_nonok TtestResult(statistic=np.float64(-44.687572825460656), pvalue=np.float64(0.0), df=np.int64(4849))

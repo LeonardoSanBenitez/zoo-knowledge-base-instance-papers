@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.5",
+  "id": "denic2022-indefinites-simplicity-informativeness",
+  "title": "Indefinite pronouns optimize the simplicity/informativeness trade-off",
+  "authors": ["Milica Denic", "Shane Steinert-Threlkeld", "Jakub Szymanik"],
+  "year": 2022,
+  "venue": "Cognitive Science 46(5):e13142",
+  "area": ["language-information-and-communication-efficiency"],
+  "identifiers": {
+    "doi": "10.1111/cogs.13142",
+    "url": "https://github.com/milicaden/indefinite-pronouns-simplicity-informativeness"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 30,
+    "bytes_downloaded": 40000000,
+    "compute_notes": "Paper: lingbuzz/006192 current.pdf (26 pp, 2,030,611 B) read in full. Code+data: git clone of the authors' repo @ 1e5c5cc (38 MB; R + one Python GA script). R is not installed on this host, so the measures were re-implemented in Python (reanalysis/core.py, mdl.py) and checked against the authors' output CSVs to 5e-15. Exact Pareto frontier by enumeration (~650k languages) takes about a minute per setting; the 720-permutation null is seconds.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "do indefinite pronoun systems optimize simplicity and informativeness",
+    "efficient communication in function words",
+    "Haspelmath indefinite pronoun universals explained by efficiency",
+    "Pareto frontier estimated by evolutionary algorithm is it the true frontier",
+    "artificial languages matched for overlap and coverage as a baseline",
+    "is near-optimality in semantic typology just the absence of synonymy",
+    "complexity measure built from the same theory as the universals it explains",
+    "flavour permutation control for semantic efficiency"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "output-diff-reproduction-check",
+    "null-ladder",
+    "exact-permutation-test",
+    "synthetic-injected-effect-control"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Natural languages' indefinite pronoun systems are significantly closer to the simplicity/informativeness Pareto frontier than artificial languages matched for degree of overlap and coverage (M = 0.48 vs 1.55, t(82.8) = -16, p < .001), and the result replicates under 3-operator complexity and pragmatic (RSA) cost.",
+      "scope": "Haspelmath's (1997) 40-language sample, PERSON indefinites, six semantic flavours, prior from an English corpus (Beekhuizen et al. 2017); 479 artificial languages kept from 10,000 by mean-matching on overlap and coverage; frontier = curve a/(b+cost) fitted to GA-dominant languages; distance = Euclidean in (cost, complexity).",
+      "quantities": [
+        {"name": "mean_distance_to_fitted_frontier", "value": 0.48, "unit": "Euclidean, (cost, feature-count) plane", "n": 40, "source": "reanalysis/r2_distances.py (0.4799; reproduces the paper)", "baseline": "479 matched artificial languages: 1.55; t(82.8) = -16.0"},
+        {"name": "mean_items_per_language", "value": 3.27, "unit": "items", "n": 40, "source": "reanalysis/r1_reproduce.py", "baseline": "matched artificial languages: 1.82 (183 of 479 have ONE item); matching equalised mean overlap (0.68) and coverage (5.58 vs 5.52) but not size"},
+        {"name": "mean_distance_to_exact_frontier", "value": 0.716, "unit": "Euclidean, (cost, feature-count) plane", "n": 40, "source": "reanalysis/r4_nulls.py, r10_four_settings.py", "baseline": "null ladder: random items with exact (n, coverage, overlap) match 1.88; random OVERLAP-FREE languages with natural (n, coverage) 0.84 (Welch p = .33); natural 0.72; frontier 0"},
+        {"name": "share_of_gap_to_frontier_closed_by_absence_of_overlap", "value": 0.557, "unit": "(d_random_items - d_overlap_free) / d_random_items = (1.879 - 0.833) / 1.879; same definition as zaslavsky2018#c1", "n": 40, "source": "reanalysis/r4_nulls.py (setting 1, exact frontier)", "baseline": "real languages close (1.879 - 0.716) / 1.879 = 0.619; so the structural null gets 0.90 of what real languages get. Unlike colour (0.85 / 0.90 of the gap), even real systems stay far from the frontier."},
+        {"name": "natural_languages_on_exact_frontier", "value": 0, "count": 0, "denominator": 40, "unit": "languages", "n": 40, "source": "reanalysis/r3_exact_frontier.py, r10_four_settings.py (all 4 settings)", "baseline": "overlap-free random languages: 3.6% on the frontier"},
+        {"name": "known_answer_rejection_rate", "value": 1.0, "unit": "share of 1000 draws of 40 random overlap-free languages that the paper's Exp-1 test declares closer than the artificial set at p < .001", "n": 1000, "source": "reanalysis/r9_known_answer.py", "baseline": "median t = -10.8 (natural: -16.0)"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["null-model-misspecified", "missing-adequate-control", "mixing-incommensurable-units", "estimator-biased-or-insensitive"],
+        "why": "Reproduces exactly (every language's cost and complexity to 5e-15; t = -16.0). But the comparison set cannot carry the conclusion. (1) Matching random languages on MEAN overlap 0.68 forces them to be tiny: 1.82 items vs 3.27, 38% single-item languages, so the test compares real systems with mostly degenerate ones. Known-answer test: 40 random OVERLAP-FREE languages pass the paper's test at p < .001 in 100% of 1000 draws -- the test detects 'no synonymy, near-full coverage', not optimisation. (2) Against that structural null, with the frontier computed exactly, natural languages are not distinguishable in any of the four settings (p = .33, .21, .60, .46). (3) The GA frontier is not the frontier: 1,998 of its 2,011 'dominant' points are one point (cost 4.78, complexity 1), only 9 distinct points exist, and the exact frontier reaches cost 1.00 at complexity 11 where the GA reached 1.21 (1.19 vs 1.49 at complexity 8); no natural language is on the exact frontier. (4) Euclidean distance adds feature counts to units of 1/informativeness; the ranking depends on that arbitrary scale. What survives is c2's sharper form: real systems are special in COMPLEXITY, not informativeness.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "There is variability in which point of the frontier natural languages approach (e.g. English: complexity 4, cost 1.98; Russian: 16, 1.27), so some cross-linguistic variation is languages finding different optimal solutions.",
+      "scope": "Same 40 languages, literal cost, 2-operator complexity.",
+      "quantities": [
+        {"name": "share_flavour_permutations_better_than_real_on_complexity", "value": 0.0111, "count": 8, "denominator": 720, "unit": "relabelings of the 6 flavours with lower mean complexity than the real 40 languages", "n": 40, "source": "reanalysis/r5_permute.py", "baseline": "on literal cost: 160/720 better; on exact-frontier distance: 5/720; family-weighted (14 families): 9/720 (r8_family.py)"},
+        {"name": "mean_complexity_excess_at_achieved_cost", "value": 1.8, "unit": "features above the exact frontier at the language's own cost", "n": 40, "source": "reanalysis/r4_nulls.py", "baseline": "overlap-free random languages 3.7; full random partitions 4.0; matched artificial 3.2"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["circular-analysis"],
+        "why": "The variability is real and English/Russian reproduce (4/1.983 and 16/1.266). The informative control is the indefinite-pronoun analogue of hue rotation: relabel the six flavours of every real language (720 permutations; size, overlap, coverage unchanged). Real languages beat 715/720 relabelings -- but entirely through complexity (8/720 better) and not through informativeness (160/720 better, about the 22nd percentile). Same in all four settings (complexity 6-8/720; cost 160-270/720). So what is special about real indefinite systems is that their items are short formulas in Haspelmath's feature vocabulary. That vocabulary was devised by Haspelmath (1997, ch. 5) to analyse the same 40-language sample, so the complexity advantage is partly an internal-consistency check of his theory rather than independent evidence of a simplicity pressure. Not decidable from these data; an independently motivated feature set (e.g. Chierchia 2013, which the authors name) would decide it.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Artificial languages satisfying Haspelmath's implicational universals are closer to the Pareto frontier than those that do not (M = 1.61 vs 2.26, t(4819.4) = -34.3), so the trade-off may explain some of Haspelmath's universals.",
+      "scope": "5000 Haspel-ok languages (items drawn from map-connected function sets) vs 2881 Not-Haspel-ok (items from all function sets), mean-matched on overlap and coverage.",
+      "quantities": [
+        {"name": "mean_items_per_language", "value": 4.04, "unit": "items", "n": 5000, "source": "reanalysis/r6_exp2.py", "baseline": "Not Haspel-ok: 3.29 (size again not matched)"},
+        {"name": "paired_cost_difference_flavour_count_matched", "value": -0.324, "unit": "literal cost, Haspel-ok redraw minus non-ok swap with identical per-item flavour counts", "n": 4850, "source": "reanalysis/r7_exp2_matched.py (3.469 vs 3.793; paired t = -13.8)", "baseline": "RSA cost 2.686 vs 2.824 (t = -5.9); complexity 11.81 vs 13.86 (t = -44.7)"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["missing-adequate-control", "circular-analysis"],
+        "why": "Survives the control the design lacked. The Haspel-ok item pool is skewed to small items (32 of its 38 flavour-level types carry 1-3 flavours; all 6 singletons are Haspel-ok) and Haspel-ok languages have more items, so I swapped each item for a random NON-ok item with the same number of flavours and compared with a same-count redraw from the ok pool: ok remains better on literal cost (t = -13.8), pragmatic cost (t = -5.9) and complexity (t = -44.7). The complexity part shares a source with the universals (Haspelmath's map and his features); the informativeness part depends only on the English-corpus prior, so it is the theory-independent half of the result, and it is about a sixth the size of the complexity part in t terms.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "code", "locator": "https://github.com/milicaden/indefinite-pronouns-simplicity-informativeness", "repo_commit": "1e5c5cc78e2eb5bbc7c28ff828dca4abc260c663", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "git clone; R absent, so measures re-implemented: python reanalysis/r1_reproduce.py (519 languages vs data/all_complexity_cost_exp1.csv), python -c 'from mdl import *' DP closure vs data/minimum-desc-indef.csv and Experiment_1i_and_2i/data/minimum-desc-indef-with-compl.csv", "result": "complexity, literal cost and RSA cost reproduce to 5e-15 for all 519 Exp-1 languages; both 63-item complexity tables reproduce with 0 mismatches; frontier fit and distances reproduce to 1.6e-5; t(82.8) = -16.0. All scripts named in the README are present under Experiment_1_and_2/src (generation, matching, cost/complexity, GA, pareto)."},
+     "datasheet": {"caveats": "Outputs of the stochastic steps (language generation, 24h-timeout integer-programming matching, GA) are shipped as CSVs, so the analysis is reproducible from them but the matched sets cannot be regenerated identically. Natural-language flavour coding (incl. the authors' negative-fragment data) is in data/languages_real_40_updated.csv and appendix_negative_indefinites.pdf."},
+     "license": "none stated"},
+    {"id": "a2", "role": "raw-data", "locator": "repo data/languages_real_40_updated.csv (Haspelmath 1997 functions per item, 40 languages, 140 items) + data/Beekhuizen_priors.csv", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "python reanalysis/r1_reproduce.py; r8_family.py asserts the 40 language names", "result": "140 items / 40 languages; flavour coding reproduces the authors' languages_exp1.csv natural rows"},
+     "bytes": 5318}
+  ],
+  "relations": [
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "zaslavsky2018-color-naming-ib", "why": "Both read distance to an optimum as evidence of a communicative pressure without a structurally minimal null. Colour: random CONVEX partitions close 85% of the gap to the IB bound, real systems 90%. Indefinites (same definition): random OVERLAP-FREE languages close 56% of the random-to-frontier gap, real languages 62% -- the structural null delivers ~90% of what real systems achieve, as convexity does for colour (85 of 90 points). Both papers' own controls (hue rotations; mean-matched random languages) cannot show it."},
+    {"type": "cito:agreesWith", "target": "imel2026-convexity-efficiency", "why": "Imel & Zaslavsky show structural properties (convexity) and efficiency come apart in principle; here the structural property (no synonymy) accounts for most of the measured efficiency in practice, and the residual is in the complexity measure's alignment with the theory that produced it."}
+  ],
+  "open_questions": [
+    "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1111/cogs.13142 -> 0 items; 11 citing works.",
+    "Recompute complexity under an independently motivated feature theory (Chierchia 2013 for NPI/FCI; or a learned/minimal-description feature set fitted on a held-out sample) and repeat the 720-permutation test. If real languages stop beating their relabelings on complexity, c2 and the complexity half of c3 are features-fitted-to-data.",
+    "Does a non-European-dominated sample (Haspelmath is 22/40 Indo-European) give the same flavour coding? The family-weighted test barely moves (9/720), but family weighting is not a new sample.",
+    "Prior sensitivity: the need distribution comes from one English corpus with two 50/50 imputations (specific known/unknown; conditional/comparative split). Permutation shows cost is not where the effect is, but c3's cost half depends on it.",
+    "Read before generalising the null-ladder point across function-word domains: Steinert-Threlkeld 2021 (Entropy 23:1335, quantifiers: degrees of universals NOT correlated with optimality in random artificial languages) and the modal-typology efficiency analysis in Open Mind (doi 10.1162/opmi.a.313)."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

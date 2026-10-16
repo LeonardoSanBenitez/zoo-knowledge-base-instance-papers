@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Language, information and communication efficiency
 
-Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`.
+Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`.
 
 **Scope.** Quantitative claims about how languages encode and transmit information -- rates,
 densities, efficiency trade-offs -- read for what is measured versus what is named. Includes, as
@@ -35,6 +35,18 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   (and the text and Algorithm 1 disagree on the search's direction). Read beside the null ladder
   above: convexity is neither necessary nor sufficient in principle, and gets most of the way in
   practice for colour.
+- **Second domain, same shape (function words).** Indefinite pronouns (`denic2022`): the paper's
+  test passes random *synonym-free* languages 1000/1000 times, so it detects "no overlap", not
+  optimisation. Against the exact Pareto frontier (the paper's GA frontier is 9 distinct points),
+  random overlap-free languages close 56% of the gap and real ones 62%. Natural vs structural null
+  is n.s. in all four of the paper's settings. Real systems are special only in **complexity**
+  (715/720 flavour relabelings beaten, 8/720 better on complexity, 160/720 better on cost), and the
+  complexity measure is Haspelmath's own features, built on the same 40 languages. **Two domains
+  now: a structural constraint delivers ~9/10 of the headline efficiency.**
+- **Where to look for the real residual.** Colour: alignment with the prior and the stimulus
+  space. Indefinites: alignment with the theory's feature vocabulary. Both residuals are
+  alignment effects, and a hue-rotation-type relabelling is the tool that isolates them. In both
+  cases ask whether the thing aligned with was estimated from the same data.
 
 ## Method notes for this area
 
@@ -43,6 +55,14 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   at the level where the predictor varies before reading any P. In `coupe2019` the conclusion
   survived; that is not guaranteed.
 - **Parallel texts allow an entropy-free check** (time per content), and it should be run first.
+
+## Method notes added 2026-10-16 (indefinites)
+
+- **Never trust a GA- or curve-estimated frontier in a small discrete space; enumerate.** Six
+  flavours and 63 items allow exact enumeration of every language up to four items in about a
+  minute.
+- **Matching on means is not matching on structure.** Check the matched null's size distribution
+  before reading any distance comparison.
 
 ## Open threads
 

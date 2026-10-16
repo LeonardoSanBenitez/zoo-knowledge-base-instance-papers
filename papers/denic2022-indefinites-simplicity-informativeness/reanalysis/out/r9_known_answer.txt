@@ -1,0 +1,2 @@
+null1: paper's Exp1 test (Welch, GA frontier, vs 479 matched artificial) rejects at p<.001 in 100.0% of 1000 draws; median t -10.8 (paper's natural: -16.0)
+null3: paper's Exp1 test (Welch, GA frontier, vs 479 matched artificial) rejects at p<.001 in 100.0% of 1000 draws; median t -11.9 (paper's natural: -16.0)
