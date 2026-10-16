@@ -480,6 +480,15 @@ cheapest check for every slug, anchored where possible to Makin & Orban de Xivry
    (`schema/backfill/apply_patterns.py` shows how): re-serialising a hand-formatted record
    turned a one-field change into a 10,000-line diff on the first attempt.
 
+`python tools/kb.py vocab patterns --by-area` prints the pattern x primary-area matrix -- the
+characteristic weak spots of each literature. On its first run (2026-10-16, 58 records) the
+signatures were sharp: estimator bias and non-identification in treatment-effect heterogeneity,
+small samples and shifting denominators in reproducibility studies, population-bound effects and
+unmeasured mechanisms in RAG, instrument-relative numbers in existential risk. **Read it as a map of
+one reader's detections, not of the fields**: every tag so far was assigned by one agent, who finds
+what she already knows how to look for. It becomes evidence about fields when a second reader's
+tags agree with it.
+
 The first backfill (101 claims in 45 records) is in `schema/backfill/patterns-2026-10-16.json`,
 assigned from the existing `why` texts; `health` reports how many narrowed / disputed /
 refuted / not-identifiable claims still carry no pattern (69% tagged at introduction --
