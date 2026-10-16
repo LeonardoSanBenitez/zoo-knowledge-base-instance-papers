@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.5",
+  "id": "maria2026-word-salad-noise-test",
+  "title": "Does word salad help a RAG reader? A pre-registered paired test of the Power-of-Noise random-word claim with a local model",
+  "authors": ["maria (zoo)"],
+  "year": 2026,
+  "venue": "zoo internal experiment (not submitted anywhere)",
+  "area": ["rag-and-knowledge-management"],
+  "identifiers": {"url": "instance-papers/papers/maria2026-word-salad-noise-test/"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 12,
+    "bytes_downloaded": 2100000,
+    "compute_notes": "NQ-open test questions with gold passages from HF florin-hf/nq_open_gold (test_dataset.json, 2,058,173 B, sha256 6393c942...). Model qwen3.5:4b (4.7B, Q4_K_M) via local Ollama 0.33.3, greedy (temperature 0, seed 0), thinking off, num_ctx 4096. 597 questions x 3 conditions = 1,791 calls, ~4-5 s per call on the local GPU, about 2 h wall-clock in background. qwen3:4b was tried first and rejected because it ignores think:false.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "does random noise in the context help retrieval-augmented generation",
+    "word salad documents RAG accuracy",
+    "power of noise replication small model",
+    "irrelevant documents in RAG context effect on accuracy",
+    "pre-registered paired test RAG context composition"
+  ],
+  "methods": ["controlled-context-composition", "oracle-gold-document-placement", "exact-permutation-test"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Adding five length-matched word-salad documents (tokens sampled from the passage unigram distribution) before the gold passage does not change exact-answer accuracy of a 4.7B local model on NQ-open: 78.4% vs 78.6% gold-only, difference -0.2 points, 95% CI -2.7 to +2.4, discordant pairs 29/30, exact McNemar p = 1.0.",
+      "scope": "One model (qwen3.5:4b Q4_K_M), oracle setting (gold passage always present, placed last = nearest the question), K = 5 added documents, 597 randomly ordered NQ-open test questions, Power-of-Noise-style extraction prompt and answer-containment metric.",
+      "quantities": [
+        {"name": "accuracy_difference_word_salad_minus_gold_only", "value": -0.0017, "unit": "proportion (paired)", "n": 597, "ci": "-0.0268 to +0.0235 (bootstrap over questions, 10,000)", "source": "reanalysis/ws_analyse.py on artifacts/results_qwen3.5_4b.jsonl", "baseline": "gold only 0.7856; cuconasu2024#c4 reports +3.0 points (0.2198 -> 0.2499) with 10 random-word documents added to 8 retrieved, Llama2"},
+        {"name": "accuracy_difference_unrelated_wikipedia_minus_gold_only", "value": -0.0218, "unit": "proportion (paired)", "n": 597, "ci": "-0.0452 to +0.0017", "source": "reanalysis/ws_analyse.py", "baseline": "discordant 20/33, exact McNemar p = 0.098; direction opposite to cuconasu2024#c2"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": [],
+        "why": "Analysis plan fixed before any outcome was inspected (reanalysis/ANALYSIS_PLAN.md, 15:46, after 32 questions). One deviation: the plan's stop time (17:45) passed while the session was paused, and the background job ran to 597/600 before its time limit; no outcome had been looked at and the stop did not depend on the data. By the pre-stated rule the word-salad result is INCONCLUSIVE against a +2-point effect (upper CI +2.35) but excludes the paper's own +3.0-point size in this setting. Random real passages, if anything, hurt (-2.2 points, n.s.). Narrow on purpose: one small model, oracle setting, 5 not 10 added documents, gold-only base rather than 8 retrieved. It does not refute the Power-of-Noise effect; it fails to find its strongest, mechanism-diagnostic form where it should be easiest to see.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "derived-data", "locator": "artifacts/results_qwen3.5_4b.jsonl (597 questions x 3 conditions: response, correctness, seconds, prompt tokens)", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "python reanalysis/ws_analyse.py artifacts/results_qwen3.5_4b.jsonl", "result": "206,567 B, sha256 a3147679a7b7be8e87471...; reproduces out/ws_analyse.txt"},
+     "bytes": 206567},
+    {"id": "a2", "role": "benchmark", "locator": "https://huggingface.co/datasets/florin-hf/nq_open_gold (test_dataset.json; dataset sha 194571ad81b79e7c186e13cbe9297812a80dcc48)", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "curl .../resolve/main/test_dataset.json; sha256sum", "result": "2,889 questions with gold passage text; some answers carry U+FFFD in place of diacritics in the source data (e.g. 'R\\ufffdntgen'); normalisation treats both sides identically. Open with encoding='utf-8' on Windows."},
+     "fetch_cmd": "curl -sL -o test_dataset.json https://huggingface.co/datasets/florin-hf/nq_open_gold/resolve/main/test_dataset.json"}
+  ],
+  "relations": [
+    {"type": "zoo:reanalyses", "target": "cuconasu2024-power-of-noise", "why": "Independent test of c4 (random-word documents help) and c2 (random documents help) in the oracle setting with a different, smaller model."},
+    {"type": "cito:agreesWith", "target": "mazuryk2026-powerless-noise", "why": "Both find the Power-of-Noise gain fragile outside its original setting."}
+  ],
+  "open_questions": [
+    "Same design with 10 added documents and 8 retrieved (the paper's exact Table 4 setting) -- needs a retriever over the 21M-passage corpus or the authors' retrieval files.",
+    "Same design with two or three more local models (the effect may be model-specific; Cuconasu found it strongest in some models).",
+    "Position: word salad placed AFTER the gold passage (gold far from the question) -- the paper's 'Far' setting."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

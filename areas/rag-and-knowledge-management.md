@@ -278,7 +278,7 @@ afterwards.
    triple?** One number from one corpus is not a quantity. Cheapest next
    corpora: any paper reporting a full model × prompt grid on a fixed
    evaluation set.
-2. **Does word salad help?** Cuconasu et al. Table 4 right half reports that
+2. **PARTLY ANSWERED 2026-10-16 (`maria2026-word-salad-noise-test`): not in the oracle setting with a 4.7B local model** -- 597 paired questions, pre-registered: word salad -0.2 points (CI -2.7 to +2.4; excludes the paper's +3), unrelated passages -2.2 (n.s.). Untested: the paper's exact 8-retrieved + 10-added setting and other models. ORIGINAL: **Does word salad help?** Cuconasu et al. Table 4 right half reports that
    random documents made of random *words* still raise accuracy. If true, no
    information-theoretic account of the effect can be right. Never reproduced;
    one model, one experiment; the cheapest decisive test in the literature.

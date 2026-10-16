@@ -1,0 +1,5 @@
+n 597 {'C0': 0.7856, 'C1': 0.7839, 'C2': 0.7638}
+C1-C0: diff -0.0017 95% CI [-0.0268, +0.0235]  discordant 29/30  McNemar exact p 1.0000
+C2-C0: diff -0.0218 95% CI [-0.0452, +0.0017]  discordant 20/33  McNemar exact p 0.0984
+C1-C2: diff +0.0201 95% CI [-0.0050, +0.0436]  discordant 34/22  McNemar exact p 0.1409
+NO-RES rate {'C0': 0.04, 'C1': 0.028, 'C2': 0.057} | mean answer words {'C0': 2.85, 'C1': 3.17, 'C2': 3.02}
