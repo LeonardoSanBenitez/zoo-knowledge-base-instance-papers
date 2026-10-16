@@ -1,0 +1,7 @@
+translation only: 7418 types; notes: 56570 tokens, 10894 types
+Brahmali Vinaya: 505305 tokens, 15170 types (paper: 480,385 tokens / 18,067 types, from PDF)
+St Benedict Rule (monastic law, Christian) {'tokens': 11573, 'types': 2459, 'overlap_at_2282_types': 0.642, 'containment_at_2282_types': 0.642, 'jaccard_at_2282_types': 0.092, 'overlap_at_11515_types': None, 'overlap_full': 0.632}
+Moby-Dick (novel) {'tokens': 128969, 'types': 16877, 'overlap_at_2282_types': 0.486, 'containment_at_2282_types': 0.486, 'jaccard_at_2282_types': 0.068, 'overlap_at_11515_types': 0.336, 'containment_at_11515_types': 0.336, 'jaccard_at_11515_types': 0.169, 'overlap_full': 0.313}
+Gibbon vol 1 (history) {'tokens': 144749, 'types': 15959, 'overlap_at_2282_types': 0.529, 'containment_at_2282_types': 0.529, 'jaccard_at_2282_types': 0.074, 'overlap_at_11515_types': 0.307, 'containment_at_11515_types': 0.307, 'jaccard_at_11515_types': 0.153, 'overlap_full': 0.269}
+Federalist Papers (political/legal) {'tokens': 97763, 'types': 8527, 'overlap_at_2282_types': 0.541, 'containment_at_2282_types': 0.541, 'jaccard_at_2282_types': 0.076, 'overlap_at_11515_types': None, 'overlap_full': 0.386}
+paper: Dharmaguptaka (2,282 types) overlap 0.816, Jaccard 0.082; Mulasarvastivada (11,515 types) overlap 0.491, Jaccard 0.200

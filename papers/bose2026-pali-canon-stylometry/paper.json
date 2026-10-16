@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.5",
+  "id": "bose2026-pali-canon-stylometry",
+  "title": "Three Buddhist Vocabularies: Computational Stylometry of the English Pali Canon across Sutta, Vinaya, and Abhidhamma",
+  "authors": ["Joy Bose"],
+  "year": 2026,
+  "venue": "arXiv:2606.25372",
+  "area": ["computational-buddhist-studies"],
+  "identifiers": {"arxiv": "2606.25372", "url": "https://arxiv.org/abs/2606.25372"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 12,
+    "bytes_downloaded": 16000000,
+    "compute_notes": "arXiv PDF (16 pp) read in full. The paper's code/data are said to be released as extensions of the Darshana Graph corpus (arXiv:2606.18222); not located this session. Own null built from open sources: Brahmali's Theravada Vinaya translation AND notes from SuttaCentral bilara-data @ 10ad8c831fe5 (sparse checkout, translation/en/brahmali/vinaya + comment/en/brahmali/vinaya, ~11 MB, CC0) and four Project Gutenberg texts (50040, 2701, 731, 1404; sha256 in reanalysis/out/gutenberg_sha256.txt). Seconds to run.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "computational stylometry of the Pali Canon",
+    "vocabulary overlap between Vinaya traditions Theravada Mulasarvastivada",
+    "lexical diversity MATTR Sutta Vinaya Abhidhamma",
+    "does vocabulary overlap show shared heritage between Buddhist schools",
+    "baseline for vocabulary overlap between English translations",
+    "translator notes inflating corpus vocabulary"
+  ],
+  "methods": ["null-ladder"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "The Mulasarvastivada Vinaya shares 20.0% vocabulary (Jaccard) and 49.1% (overlap coefficient) with the Theravada Vinaya, 'suggesting substantial shared legal heritage across two millennia of separate development'; the Dharmaguptaka (partial) shares 81.6% (overlap coefficient).",
+      "scope": "English translations: Brahmali 2026 (Theravada, PDF-extracted, 18,067 types) vs 84000 (Mulasarvastivada, 11,515 types) vs a 185-segment Dharmaguptaka rite (2,282 types); stopwords removed; point estimates, no baseline.",
+      "quantities": [
+        {"name": "containment_in_theravada_vinaya_vocab_nonbuddhist_null_11515_types", "value": 0.336, "unit": "share of the null text's first 11,515 types found in Brahmali's Vinaya vocabulary (translation + notes, 15,170 types)", "n": 11515, "source": "reanalysis/p1_overlap_null.py", "baseline": "Moby-Dick 0.336, Gibbon vol 1 0.307 vs Mulasarvastivada 0.491 (paper); the paper's OWN Sutta-Vinaya overlap coefficient is 0.563 at a similar vocabulary size (11,927 Sutta types)"},
+        {"name": "containment_in_theravada_vinaya_vocab_nonbuddhist_null_2282_types", "value": 0.642, "unit": "share of the null text's first 2,282 types found in Brahmali's Vinaya vocabulary", "n": 2282, "source": "reanalysis/p1_overlap_null.py", "baseline": "Rule of St Benedict (Christian monastic law) 0.642; Federalist 0.541; Gibbon 0.529; Moby-Dick 0.486 vs Dharmaguptaka 0.816 (paper)"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["missing-adequate-control", "null-model-misspecified"],
+        "why": "The overlaps are above what shared English alone gives, but most of each number IS shared English, and the comparison that would isolate 'legal heritage' points the other way. At the Mulasarvastivada's vocabulary size, texts with no Buddhist connection already have 31-34% of their vocabulary inside Brahmali's Vinaya, so the heritage-plus-register excess is about 0.15 of the 0.491. The paper's own Table 3 has the Theravada SUTTA (not a legal text) at 0.563 against the Theravada Vinaya, more than the other school's Vinaya at a similar size. So overlap tracks Buddhist English and the SuttaCentral translation project at least as much as monastic law; 'shared legal heritage' is not identified by these numbers. The Dharmaguptaka excess (0.816 vs <= 0.642) is real, and a Christian monastic rule reaching 0.64 shows how much of it is the monastic-law register. My Brahmali vocabulary (15,170 types) is smaller than the paper's PDF extraction (18,067), which biases my null containment DOWN, so the nulls are, if anything, conservative.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Under MATTR-500 the Sutta and the Theravada Vinaya have nearly identical lexical diversity (0.399 vs 0.400), so their raw-TTR difference is a segmentation artefact; the Sangaha compendium is genuinely more diverse (0.560).",
+      "scope": "Sutta = Sujato's bilara-data translation segments; Vinaya = text extracted from Brahmali's PDF edition with pdftotext.",
+      "quantities": [
+        {"name": "brahmali_vinaya_types_translation_only", "value": 7418, "unit": "types (stopwords removed, same tokenizer)", "n": 448735, "source": "reanalysis/p1_overlap_null.py (bilara-data translation JSON)", "baseline": "with Brahmali's notes added: 15,170 types (notes alone 10,894 types in 56,570 tokens); paper's PDF extraction: 18,067 types"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["mixing-incommensurable-units"],
+        "why": "The paper handles segmentation well (MATTR, explicit caveats). It does not mention corpus composition. The Vinaya side was extracted from the PDF edition, which carries Brahmali's notes and front matter. In the bilara-data JSON the translation alone has 7,418 types; the notes add about 7,800 more. So roughly half of the 'Vinaya vocabulary' is a modern scholar's English apparatus. The Sutta side has no notes (bilara segments). Every type-based comparison across the two -- TTR, Jaccard, overlap, translation shift -- therefore compares a translation with a translation-plus-commentary. MATTR on the token stream is less affected, but the notes are ~11% of tokens in a register more diverse than the translation. Whether the 0.399/0.400 equality survives a notes-free Vinaya is untested here (the paper's PDF corpus is not in hand).",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "raw-data", "locator": "https://github.com/suttacentral/bilara-data (branch published @ 10ad8c831fe5851301d46381b8ac446bf9ed931b): translation/en/brahmali/vinaya (422 files) + comment/en/brahmali/vinaya (280 files)", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "git clone --filter=blob:none --no-checkout --depth 1 --branch published; git sparse-checkout set translation/en/brahmali/vinaya; add comment/en/brahmali; python reanalysis/p1_overlap_null.py", "result": "448,735 translation tokens (paper's PDF: 480,385) and 7,418 translation types; notes 10,894 types; CC0"},
+     "license": "CC0", "fetch_cmd": "git clone --filter=blob:none --no-checkout --depth 1 --branch published https://github.com/suttacentral/bilara-data bilara && git -C bilara sparse-checkout set translation/en/brahmali/vinaya comment/en/brahmali && git -C bilara checkout published"},
+    {"id": "a2", "role": "derived-data", "locator": "Darshana Graph corpus extensions (paper: 'Code and data are released as open-source extensions to the Darshana Graph corpus (arXiv:2606.18222)')", "status": "not-checked",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "noted from the PDF; no URL printed in this paper", "result": "location of the PDF-extracted Vinaya/MSV/Dharmaguptaka corpora not established"}}
+  ],
+  "relations": [
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "maria2026-structural-null-semantic-efficiency", "why": "Same shape in a different field: a similarity number is read as a substantive relation (shared heritage) without the baseline that any two texts of the same language and register already achieve."}
+  ],
+  "open_questions": [
+    "Run the same containment with a notes-free Brahmali corpus against the 84000 Mulasarvastivada text, and with a Buddhist NON-Vinaya null (e.g. a Sujato Sutta sample of 11,515 types) to separate monastic-law heritage from Buddhist English.",
+    "Locate the Darshana Graph release (arXiv:2606.18222) and check whether its Vinaya corpus includes notes.",
+    "Pali-original version: overlap of Pali vocabularies (Theravada Vinaya vs the Sanskrit/Tibetan-derived parallels) would remove the translator layer entirely; needs aligned parallels (SuttaCentral has parallel tables)."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}
