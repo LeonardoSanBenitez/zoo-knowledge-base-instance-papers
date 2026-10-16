@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Language, information and communication efficiency
 
-Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`.
+Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`.
 
 **Scope.** Quantitative claims about how languages encode and transmit information -- rates,
 densities, efficiency trade-offs -- read for what is measured versus what is named. Includes, as
@@ -28,6 +28,13 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   speech-rate compression in `coupe2019`: a real residual under a headline that mostly describes
   the null. **Method rule for this area: report the efficiency of a structurally minimal system
   (convex, random-within-constraints) beside every "near-optimal".**
+- **Convexity vs efficiency, in principle vs in practice.** `imel2026` proves the two properties
+  come apart (existential, constructed priors) and shows efficiency, not convexity, separates real
+  systems from hue rotations -- but rotations are convex by construction, so that test cannot
+  measure what convexity buys. Their 971k convex systems come partly from adversarial search
+  (and the text and Algorithm 1 disagree on the search's direction). Read beside the null ladder
+  above: convexity is neither necessary nor sufficient in principle, and gets most of the way in
+  practice for colour.
 
 ## Method notes for this area
 
