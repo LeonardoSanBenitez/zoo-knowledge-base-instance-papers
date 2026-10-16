@@ -101,6 +101,7 @@
      "derived_from": ["a1"]}
   ],
   "relations": [
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "zaslavsky2018-color-naming-ib", "why": "Closeness to an information-theoretic optimum read as evidence of communicative pressure without a null-model scale; in both the residual beyond a structural null is real and much smaller than the headline."},
     {"type": "zoo:sharesUnstatedAssumptionWith", "target": "karger2023-xpt", "why": "A headline number ('39 bits/s'; an extinction probability) that is a property of the measurement procedure -- the entropy estimator, the elicitation format -- and travels as if it were a property of the world. Here the estimator moves it 39 -> 57; there the format moves it by orders of magnitude."}
   ],
   "open_questions": [

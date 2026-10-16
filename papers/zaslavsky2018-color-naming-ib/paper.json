@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.5",
+  "id": "zaslavsky2018-color-naming-ib",
+  "title": "Efficient compression in color naming and its evolution",
+  "authors": ["Noga Zaslavsky", "Charles Kemp", "Terry Regier", "Naftali Tishby"],
+  "year": 2018,
+  "venue": "PNAS 115(31):7937-7942",
+  "area": ["language-information-and-communication-efficiency"],
+  "identifiers": {
+    "doi": "10.1073/pnas.1800521115",
+    "pmcid": "PMC6077716",
+    "url": "https://github.com/nogazs/ib-color-naming"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 28,
+    "bytes_downloaded": 85000000,
+    "compute_notes": "Paper PDF (6 pp) from the first author's site (PNAS and PMC PDFs answered 403; Europe PMC has no OA full text); SI not retrievable (403). Code: github nogazs/ib-color-naming @ 0b8ad05 (MIT). Model: authors' Dropbox zip 73,022,767 B -> pickle 349,200,089 B (all 1,501 optimal encoders); looked at, used, deleted -- fetch_cmd kept. WCS data 10.2 MB from linguistics.berkeley.edu (the code's ICSI URLs time out). The package cannot be imported as shipped on this host (it fetches from the dead host at import and needs scikit-image), so the four needed functions were re-implemented. Controls: 102 languages x (39 rotations + 40 Voronoi + 40 weighted Voronoi) fits plus 20 random partitions per K; a few minutes.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "are color naming systems optimally efficient",
+    "information bottleneck color naming",
+    "World Color Survey efficiency analysis",
+    "near-optimal compression semantic categories",
+    "is semantic efficiency just convexity",
+    "what is the right null model for efficient communication claims",
+    "hue rotation control color naming",
+    "efficient communication semantic typology"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "null-ladder"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Colour-naming systems across languages achieve near-optimal compression in the information-bottleneck sense: mean efficiency loss eps = 0.18 (+-0.07) bits at a fitted trade-off beta_l = 1.03 (+-0.01), on the steep part of the IB curve.",
+      "scope": "World Color Survey (110 languages; those with >= 5 responses per chip), English; 330 chips; meanings = isotropic Gaussians in CIELAB (sigma^2 = 64); 'least informative' (LI) source prior estimated from the naming data (5-fold cross-validated over languages); beta_l chosen per language to minimise its distance to the curve.",
+      "quantities": [
+        {"name": "ib_efficiency_loss_eps_mean", "value": 0.184, "unit": "bits (eps_l = DeltaF / beta_l)", "n": 102, "ci": "SD 0.075; beta_l mean 1.035 (SD 0.011)", "source": "reanalysis/c1.py, released model (LI source, not cross-validated); paper Table 1 LI/IB 0.18 +- 0.07", "baseline": "real soft encoders (speaker-averaged naming distributions)"},
+        {"name": "ib_efficiency_loss_eps_median", "value": 0.189, "unit": "bits", "n": 102, "source": "reanalysis/c2.py", "baseline": "real MODE MAPS (hard partitions)"},
+        {"name": "ib_efficiency_loss_eps_median", "value": 0.294, "unit": "bits", "n": 102, "source": "reanalysis/c2.py", "baseline": "random CONVEX partitions: Voronoi cells in CIELAB around K random chips, K = the language's number of modal terms, 40 draws per language (prior-weighted centres: 0.284, c4.py)"},
+        {"name": "ib_efficiency_loss_eps_median", "value": 1.934, "unit": "bits", "n": 102, "source": "reanalysis/c3.py", "baseline": "random NON-convex partitions, same K"},
+        {"name": "share_of_gap_to_ib_bound_closed_by_convexity", "value": 0.85, "unit": "(eps_random - eps_convex) / eps_random, median over languages", "n": 102, "source": "reanalysis/c3.py", "baseline": "real languages close a further 0.05 beyond the median random convex partition"},
+        {"name": "share_random_convex_partitions_as_efficient_as_language", "value": 0.221, "unit": "mean share of Voronoi draws with eps <= the language's mode map", "n": 102, "source": "reanalysis/c2.py", "baseline": "the real mode map beats the median Voronoi draw in 84/102 languages (87/102 with prior-weighted centres)"}
+      ],
+      "evidence": ["a1", "a2", "a3"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["null-model-misspecified"],
+        "why": "Reproduces from the released model (eps 0.184 vs 0.18; beta 1.035 vs 1.03). 'Near-optimal' needs its scale, which the paper does not give: a random assignment of chips to the same number of terms sits at about 1.9 bits; a random CONVEX partition of perceptual space (Voronoi cells, no language involved) already sits at 0.29; real systems at 0.19. Convexity alone closes about 85% of the distance to the bound; actual languages close about 5 points more. That residual is real -- real systems beat the median convex partition in 84-87 of 102 languages -- but it is the language-specific part of the result, and it is small. The paper's own control (39 hue rotations of each language) cannot show this, because rotations are convex too: it tests alignment with the irregular stimulus distribution and the source prior, not efficiency against systems 'that evolved independently of F_beta'. Untested here and worth testing: the LI prior is estimated from the same naming data, which can only favour the real systems over rotations and random partitions; the uniform-source analysis (paper: eps 0.24) needs an IB curve the release does not include.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "To rule out that IB is too permissive, each language was compared with 39 hue-rotated variants of itself: 93% of languages achieve better trade-offs than any of their variants and the rest better than most.",
+      "scope": "Rotation across the 40 chromatic columns of the WCS palette; achromatic column fixed.",
+      "quantities": [
+        {"name": "share_languages_beating_all_hue_rotations", "value": 0.941, "count": 96, "denominator": 102, "unit": "proportion", "n": 102, "source": "reanalysis/c2.py; paper 93%", "baseline": "soft encoder vs all 39 rotations; median rotated eps 0.296 vs real 0.166"}
+      ],
+      "evidence": ["a1", "a2", "a3"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["null-model-misspecified"],
+        "why": "Reproduces (96/102 = 94%). Narrower in what it tests: a rotation keeps the system's convexity, number of terms and internal geometry and moves only its alignment with hue, so 'beats its rotations' shows that real categories sit where the perceptual space and the prior favour them -- not that languages are near-optimal compared with arbitrary alternatives. Random convex partitions score the same as rotations (0.294 vs 0.296), which is consistent with that reading.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "code", "locator": "https://github.com/nogazs/ib-color-naming", "repo_commit": "0b8ad05f4f3183645af88743a18a17d6884a3875", "status": "present-but-insufficient",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "git clone; python -c 'from src import ib_naming_model' (fails: needs scikit-image, and figures.py fetches http://www1.icsi.berkeley.edu at import, which times out); MI/complexity/accuracy/fit re-implemented in reanalysis/c1.py from src/tools.py and src/ib_naming_model.py", "result": "Provides the model loader and evaluation, not the analysis that produced the paper (no LI-source estimation, no cross-validation, no annealing code, no rotation control). The evaluation functions, re-implemented, reproduce Table 1's LI/IB row."},
+     "license": "MIT"},
+    {"id": "a2", "role": "model-weights", "locator": "https://www.dropbox.com/s/70w953orv27kz1o/IB_color_naming_model.zip?dl=1 (the repo's DEFAULT_MODEL_URL)", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "curl -sL -o temp.zip <url>; unzip; pickle.load", "result": "200, 73,022,767 B; pickle 349,200,089 B with pM, pU_M, 1,501 betas (0-8192), IB_curve, qW_M. Looked at, used, deleted (above 50 MB)."},
+     "bytes": 73022767, "sha256": "eb25ae01a009b2d8aeac5e5c14fa6b630ddc38203782420489c3e96724a8558a", "fetch_cmd": "curl -sL -o temp.zip 'https://www.dropbox.com/s/70w953orv27kz1o/IB_color_naming_model.zip?dl=1'",
+     "datasheet": {"caveats": "A personal Dropbox link is the only host of the model the paper's results rest on; no DOI, no archive deposit."}},
+    {"id": "a3", "role": "raw-data", "locator": "World Color Survey: https://linguistics.berkeley.edu/wcs/data/20021219/txt/term.txt (+ chip.txt, cnum-maps/cnum-vhcm-lab-new.txt). Paper and code cite www1.icsi.berkeley.edu/wcs, which times out", "status": "regenerated-from-upstream",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "curl --max-time 60 http://www1.icsi.berkeley.edu/wcs/data/20021219/txt/term.txt -> 000 (timeout); same path at https://linguistics.berkeley.edu/wcs/ -> 200, 10,216,919 B", "result": "data recovered from the archive's new host; the paper's DAS URL and the code's hard-coded URLs are dangling"},
+     "bytes": 10216919, "sha256": "5498b156aed2f82599e81e54af49d546d3e98695fb16ac9b31efb1d810cca971", "fetch_cmd": "curl -sL -o term.txt https://linguistics.berkeley.edu/wcs/data/20021219/txt/term.txt"}
+  ],
+  "relations": [
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "coupe2019-information-rate", "why": "Both read closeness to an information-theoretic optimum as evidence of a communicative pressure without giving the distance a null-model scale. Here a random convex partition is already most of the way to the bound; there, a quantity built as a product of two negatively related factors is compressed partly by construction. In both, the residual beyond the null is real and much smaller than the headline suggests."}
+  ],
+  "open_questions": [
+    "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1073/pnas.1800521115 -> 0 items.",
+    "Recompute the IB curve under the UNIFORM source (the release ships only the LI-source curve) and repeat the convex null: does the 5-point residual survive when the prior is not estimated from the same languages?",
+    "Prior art to read before claiming novelty for the convexity decomposition: work on convexity and efficient semantic categories (e.g. Gardenfors's conceptual spaces; Steinert-Threlkeld & Szymanik on convexity and learnability). Not checked this session."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

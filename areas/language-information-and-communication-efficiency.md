@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Language, information and communication efficiency
 
-Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`.
+Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`.
 
 **Scope.** Quantitative claims about how languages encode and transmit information -- rates,
 densities, efficiency trade-offs -- read for what is measured versus what is named. Includes, as
@@ -21,6 +21,13 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
 - **Absolute bits-per-second figures belong to the estimator.** The same recordings give 39 or 57
   bits/s depending on one step of context in the entropy model. Cite relative comparisons, never
   the absolute number as a property of speech. `coupe2019#c2`.
+
+- **"Near-optimal" needs a null ladder.** Colour-naming systems sit 0.19 bits from the IB bound;
+  random CONVEX partitions of perceptual space sit at 0.29, random partitions at 1.9. Convexity
+  closes ~85% of the distance, languages ~5 points more (`zaslavsky2018#c1`). Same shape as the
+  speech-rate compression in `coupe2019`: a real residual under a headline that mostly describes
+  the null. **Method rule for this area: report the efficiency of a structurally minimal system
+  (convex, random-within-constraints) beside every "near-optimal".**
 
 ## Method notes for this area
 

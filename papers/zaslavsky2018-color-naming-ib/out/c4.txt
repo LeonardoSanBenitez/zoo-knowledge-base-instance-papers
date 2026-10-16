@@ -1,0 +1,22 @@
+model: pM (330, 1) pU_M (330, 330) betas 1501 range 0.0 8192.0 I(M;U)=4.371
+median eps: Voronoi uniform centres 0.294 | Voronoi pM-weighted centres 0.284 | mode maps 0.189
+mode map beats median pM-weighted Voronoi in 87/102 languages
+by K:
+    eps_modemap  eps_median_voronoi  ...  eps_random_nonconvex   n
+K                                    ...                          
+3         0.084               0.182  ...                 1.248   3
+4         0.172               0.203  ...                 1.494   7
+5         0.159               0.251  ...                 1.699   8
+6         0.154               0.268  ...                 1.819  19
+7         0.175               0.294  ...                 1.934  24
+8         0.207               0.324  ...                 2.064  14
+9         0.210               0.307  ...                 2.116   9
+10        0.258               0.352  ...                 2.191   4
+11        0.256               0.342  ...                 2.227   6
+12        0.335               0.361  ...                 2.249   3
+13        0.207               0.371  ...                 2.305   1
+14        0.329               0.382  ...                 2.325   2
+15        0.348               0.367  ...                 2.369   1
+16        0.287               0.369  ...                 2.392   1
+
+[14 rows x 5 columns]

@@ -1,0 +1,4 @@
+model: pM (330, 1) pU_M (330, 330) betas 1501 range 0.0 8192.0 I(M;U)=4.371
+{'eps_random_nonconvex': 1.934, 'eps_median_voronoi': 0.294, 'eps_modemap': 0.189}
+share of the distance from random partitions to the IB bound closed by CONVEXITY alone: median 0.85
+additional share closed by the real language beyond a random convex partition: median 0.05

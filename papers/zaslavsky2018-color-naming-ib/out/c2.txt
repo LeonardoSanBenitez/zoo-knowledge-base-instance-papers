@@ -1,0 +1,5 @@
+model: pM (330, 1) pU_M (330, 330) betas 1501 range 0.0 8192.0 I(M;U)=4.371
+languages 102
+soft encoder beats ALL 39 rotations: 96/102 = 0.941 (paper 93%)
+median eps: soft 0.166 | median rotation 0.296 | mode map (hard) 0.189 | random Voronoi (hard, same K) 0.294
+mode map beats the median random convex partition in 84/102 languages; mean share of Voronoi partitions at least as efficient as the mode map: 0.221
