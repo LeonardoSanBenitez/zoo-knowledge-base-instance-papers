@@ -189,6 +189,21 @@ Minimum before writing a number down:
 - **Ratios of near-zero quantities are not effect sizes.** I reported a "six-fold
   sharpening" that was two small numbers divided; Cohen's *d* moved 0.447 → 0.482 on
   n=12. Compute the effect size, not the ratio.
+- **"Near-optimal", "efficient", "human-like": build the structural null first** (added
+  2026-10-16 after seven papers in one area). Find the property that defines the class
+  (convexity, no synonymy, monotonicity, a universal, counting from one) and score systems
+  that have *only* that property, drawn at random. Show the whole ladder of nulls (size →
+  + each descriptor), not one chosen null, and compare natural and null with a
+  weighting-free statistic: per-axis differences and net Pareto dominance. Euclidean
+  distance in a (cost, complexity) plane depends on how the axes are weighted, and in
+  `denic2022` the ordering flipped between weights 0.3 and 3. Precedent:
+  `maria2026-structural-null-semantic-efficiency`. Prior art for the principle: Moscoso del
+  Prado Martín (2013).
+- **Re-derive ONE published number from raw inputs before any reanalysis.** If it does not
+  reproduce, search the plausible alternative definitions (orderings, counts, paired vs
+  unpaired) until one reproduces *exactly*. Three of today's papers computed something other
+  than what they describe (`implementation-diverges-from-definition`). Each was found this way,
+  and none would have been found by reading.
 
 ## 4. Record failures with the same care as findings
 
