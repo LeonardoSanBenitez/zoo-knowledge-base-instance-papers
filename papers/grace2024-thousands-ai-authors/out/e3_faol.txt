@@ -1,0 +1,8 @@
+complete fixed-probabilities 413  fixed-years 379  total 792 (paper n=1,714)
+fitted 792 of 792 (non-monotone or zero-year answers dropped)
+ALL (paper headline)     pooled-CDF 10%: 2036  50%: 2111  90%: 206246 | median respondent 50% year: 2117
+fixed-probabilities      pooled-CDF 10%: 2035  50%: 2090  90%: 2439 | median respondent 50% year: 2094
+fixed-years              pooled-CDF 10%: 2040  50%: 2165  90%: 772424 | median respondent 50% year: 2171
+fixed-years: P(FAOL within 50y) < 50%: 281 of 379 (74.1%) -> their 50% year is a gamma EXTRAPOLATION beyond any year they answered
+fixed-years: P(within 10y) >= 50%: 4.5%
+NO-FIT checks: fixed-probabilities median of the 50% answer = 75 years; fixed-years median P(within 20y)=2%, P(within 50y)=10%

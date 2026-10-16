@@ -1,0 +1,5 @@
+('hlmi', 'gamma', 2041, 2057, 2048)
+('hlmi', 'lognormal', 2042, 2057, 2048)
+('hlmi', 'weibull', 2041, 2057, 2048)
+('faol', 'gamma', 2090, 2165, 2111)
+('faol', 'lognormal', 2091, 2222, 2117)

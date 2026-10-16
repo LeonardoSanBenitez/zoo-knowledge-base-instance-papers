@@ -623,6 +623,7 @@
     }
   ],
   "relations": [
+    {"type": "cito:agreesWith", "target": "grace2024-thousands-ai-authors", "why": "Same object (elicited probabilities and dates of transformative or catastrophic AI), same finding by other manipulations: fixed-years vs fixed-probabilities framing (16 years on the HLMI median), HLMI vs FAOL wording (55 years model-free), and a subset event judged more probable than its superset."},
     {
       "type": "cito:agreesWith",
       "target": "kim2025-correlated-errors",

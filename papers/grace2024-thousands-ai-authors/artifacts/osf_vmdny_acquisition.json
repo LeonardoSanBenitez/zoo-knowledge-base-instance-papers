@@ -1,0 +1,75 @@
+{
+ "archive": "osf",
+ "persistent_id": "https://osf.io/vmdny/",
+ "guid": "vmdny",
+ "guid_type": "nodes",
+ "files": [
+  {
+   "filename": "osfstorage/2023 Survey flow(3).png",
+   "provider": "osfstorage",
+   "size": 829988,
+   "osf_file_id": "65272ff48a28b10154ffcfb6",
+   "guid": "u32ah",
+   "current_version": 1,
+   "published_md5": "4f2c10861e431ccbcedf7d8bbfeec85b",
+   "published_sha256": "aec688cfb7cbb6ac6754fa0d5279ad45cd65f93239f300cf529d05b5d42a7b00",
+   "fetched_from": "https://osf.io/download/u32ah/?version=1",
+   "local_path": "files/osfstorage/2023 Survey flow(3).png",
+   "bytes_downloaded": 829988,
+   "sha256": "aec688cfb7cbb6ac6754fa0d5279ad45cd65f93239f300cf529d05b5d42a7b00",
+   "computed_md5": "4f2c10861e431ccbcedf7d8bbfeec85b",
+   "verdict": "verified"
+  },
+  {
+   "filename": "osfstorage/2023survey.pdf",
+   "provider": "osfstorage",
+   "size": 1054217,
+   "osf_file_id": "65273485164d32015da5d7e0",
+   "guid": "26bym",
+   "current_version": 1,
+   "published_md5": "7f7fd489fcde93ad80f6033b7a9c2990",
+   "published_sha256": "37b9b533141d2bbeb863cc99d55e040e858b75a59e76c9a32f4e21e4f9841ca8",
+   "fetched_from": "https://osf.io/download/26bym/?version=1",
+   "local_path": "files/osfstorage/2023survey.pdf",
+   "bytes_downloaded": 1054217,
+   "sha256": "37b9b533141d2bbeb863cc99d55e040e858b75a59e76c9a32f4e21e4f9841ca8",
+   "computed_md5": "7f7fd489fcde93ad80f6033b7a9c2990",
+   "verdict": "verified"
+  },
+  {
+   "filename": "osfstorage/2023 ESPAI - Cleaned and Anonymized Responses - espai2023 2024-01-08 redacted and clean data.csv",
+   "provider": "osfstorage",
+   "size": 10499415,
+   "osf_file_id": "65c104363280d80863a3affc",
+   "guid": "jbnpk",
+   "current_version": 1,
+   "published_md5": "c588991971a9f66355a14579a3926747",
+   "published_sha256": "a29c4df0c0f7b53ba092e694beb5cfd8d1e89ccd0172fe7e78a37e29a9827a80",
+   "fetched_from": "https://osf.io/download/jbnpk/?version=1",
+   "local_path": "files/osfstorage/2023 ESPAI - Cleaned and Anonymized Responses - espai2023 2024-01-08 redacted and clean data.csv",
+   "bytes_downloaded": 10499415,
+   "sha256": "a29c4df0c0f7b53ba092e694beb5cfd8d1e89ccd0172fe7e78a37e29a9827a80",
+   "computed_md5": "c588991971a9f66355a14579a3926747",
+   "verdict": "verified"
+  }
+ ],
+ "unreadable_listings": [],
+ "child_components": [],
+ "view_only": null,
+ "title": "2023 Expert Survey on Progress in AI (Thousands of AI Authors on the Future of AI)",
+ "date_modified": "2025-06-04T14:47:18.881155",
+ "public": true,
+ "license_id": "5ad7979bc69830002d8190e2",
+ "providers": [
+  "osfstorage"
+ ],
+ "n_files_in_deposit": 3,
+ "summary": {
+  "backend": "osf",
+  "rows": 3,
+  "verified": 3,
+  "mismatched": 0,
+  "skipped": 0,
+  "no_published_checksum": 0
+ }
+}

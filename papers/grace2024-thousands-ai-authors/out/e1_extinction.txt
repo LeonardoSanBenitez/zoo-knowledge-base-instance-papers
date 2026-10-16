@@ -1,0 +1,6 @@
+Q1 any AI advances -> extinction                           n=1321 mean  16.2 median  5.0 share>=10% 0.471 share==0 0.153
+Q2 inability to control AI -> extinction (SUBSET of Q1)    n= 661 mean  19.4 median 10.0 share>=10% 0.514 share==0 0.130
+Q3 Q1 within 100 years (SUBSET of Q1)                      n= 655 mean  14.4 median  5.0 share>=10% 0.412 share==0 0.215
+Q2 vs Q1 (subset judged MORE likely?): Mann-Whitney p=8.15e-03; Hodges-Lehmann shift 0.0 pts; P(Q2 draw > Q1 draw)=0.536
+Q3 vs Q1: Mann-Whitney p=0.002
+overlap check (each respondent at most one question): 1

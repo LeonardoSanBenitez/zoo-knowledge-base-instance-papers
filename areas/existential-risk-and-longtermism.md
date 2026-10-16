@@ -180,3 +180,15 @@ recoverable from x-positions.
 - **Discount-rate expert surveys** (Drupp et al. and successors) and the
   empirical population-ethics literature. Both report elicited numbers, and the
   format finding here applies to them directly.
+
+## AI researchers' timelines and extinction probabilities (added 2026-10-16)
+
+Record: `grace2024-thousands-ai-authors` (ESPAI 2023, n = 2,778). Rebuilt from the data without
+the authors' code. **The 2047 HLMI median is the average of two randomised framings 16 years
+apart** (2041 / 2057); robust to the distribution family. **FAOL's 2116 is not**: 74% of the
+fixed-years arm never reach 50% within the asked horizon, and that arm's 50% year moves
+2143-2222 with the family. The HLMI-FAOL gap is real without any model (20 vs 75 years).
+Extinction: the control-problem wording (a subset event) gets median 10% against 5% for the
+general wording (p = 0.008, small effect) -- unpacking adds probability. Same lesson as the
+format table above, from a third manipulation: **an elicited probability of an unresolvable
+event is a function of its instrument.** Query: `kb.py query --pattern instrument-relative`.

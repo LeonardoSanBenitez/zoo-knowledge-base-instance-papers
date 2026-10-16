@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.5",
+  "id": "grace2024-thousands-ai-authors",
+  "title": "Thousands of AI Authors on the Future of AI",
+  "authors": ["Katja Grace", "Harlan Stewart", "Julia Fabienne Sandkühler", "Stephen Thomas", "Ben Weinstein-Raun", "Jan Brauner", "Richard C. Korzekwa"],
+  "year": 2024,
+  "venue": "Journal of Artificial Intelligence Research 84, article 9 (2025); arXiv:2401.02843 (v3, 2025-10-08, read here)",
+  "area": ["existential-risk-and-longtermism"],
+  "identifiers": {
+    "doi": "10.1613/jair.1.19087",
+    "arxiv": "2401.02843",
+    "url": "https://osf.io/vmdny/"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 30,
+    "bytes_downloaded": 14400000,
+    "compute_notes": "arXiv v3 PDF (38 pp) read via PyMuPDF; survey instrument PDF (75 pp) searched for exact wordings. OSF vmdny: 3 files, 12.4 MB, 3/3 hash-verified (cleaned anonymised response CSV, 3,270 rows x 461 cols; survey PDF; flow chart). NO analysis code deposited (paper: 'R 4.3.1, SPSS 29, Google Sheets'), so the aggregation was rebuilt from the text: per-respondent least-squares CDF fit to three year-probability pairs, mean of CDFs. About 5,000 fits per family; the whole run_all.sh takes a few minutes. A first Nelder-Mead implementation (12 starts) and the final trust-region one agree to the year on every HLMI quantile.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "when do AI researchers expect human-level AI",
+    "50% chance of HLMI by 2047",
+    "full automation of labor 2116",
+    "probability AI causes human extinction according to AI researchers",
+    "expert survey on progress in AI ESPAI",
+    "fixed-years versus fixed-probabilities framing effect",
+    "aggregating expert forecast distributions by averaging CDFs",
+    "headline year that is an extrapolation of a fitted distribution",
+    "subset event judged more probable than its superset",
+    "how much does the distribution family change an aggregated forecast"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "multiverse-analysis",
+    "falsification-by-internal-consistency"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Aggregate forecast of AI researchers: 10% chance of High-Level Machine Intelligence (unaided machines better and cheaper than humans at every task) by 2027 and 50% by 2047, thirteen years earlier than the 2022 survey.",
+      "scope": "2,778 respondents (15% of 18,459 reachable authors at six venues, $50 incentive), October 2023; HLMI block n = 1,714; half randomised to fixed-probabilities (years at 10/50/90%), half to fixed-years (probabilities at 10/20/40 years). Aggregate = mean of per-respondent gamma CDFs, both framings with equal weight.",
+      "quantities": [
+        {"name": "hlmi_50pct_year_pooled", "value": 2048, "unit": "calendar year (50% point of mean-of-CDFs)", "n": 1729, "source": "reanalysis/e3.py hlmi; paper 2047 (n = 1,714)", "baseline": "both framings pooled, gamma family; identical under lognormal and Weibull (reanalysis/e4.py)", "status": "measures-something-else"},
+        {"name": "hlmi_50pct_year_pooled", "value": 2041, "unit": "calendar year", "n": 891, "source": "reanalysis/e3.py hlmi", "baseline": "fixed-PROBABILITIES arm only; model-free median of the stated 50% answer: 20 years (2043)"},
+        {"name": "hlmi_50pct_year_pooled", "value": 2057, "unit": "calendar year", "n": 867, "source": "reanalysis/e3.py hlmi", "baseline": "fixed-YEARS arm only; model-free median P(HLMI within 40 years) = 50%"},
+        {"name": "hlmi_fixed_years_share_below_50pct_at_longest_horizon", "value": 0.363, "count": 315, "denominator": 867, "unit": "proportion", "n": 867, "source": "reanalysis/e3.py hlmi", "baseline": "fixed-years respondents giving < 50% at 40 years: their 50% year is extrapolated by the fitted family, not stated"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["instrument-relative-headline-number"],
+        "why": "Rebuilt from the data without the authors' code: 2048 (10% at 2027-2028) against the printed 2047 / 2027, and robust to the distribution family. But 2047 is the midpoint of two randomised framings that disagree by sixteen years (2041 vs 2057); the paper reports the framing effect and says it does not know which is more accurate, then averages them with equal weight. So the headline is a property of a 1:1 allocation ratio as much as of the respondents. The comparison with 2022 (-13 years) is valid only because both surveys used the same 1:1 mix; the within-survey framing gap is larger than the between-survey shift. Status `measures-something-else` on the pooled number when it is cited as 'when AI researchers expect HLMI' without the framing.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Full Automation of Labor (all occupations automatable) is forecast at 50% by 2116, about 70 years after HLMI although the two describe nearly the same event; the authors call the gap a possible framing effect.",
+      "scope": "FAOL block n = 774 (paper); fixed-years horizons 10/20/50 years.",
+      "quantities": [
+        {"name": "faol_50pct_year_pooled", "value": 2111, "unit": "calendar year", "n": 792, "source": "reanalysis/e3.py faol; paper 2116 (n = 774)", "baseline": "both framings, gamma; lognormal 2117, Weibull 2105", "status": "measures-something-else"},
+        {"name": "faol_50pct_year_fixed_years_arm", "value": 2165, "unit": "calendar year", "n": 379, "ci": "2143 (Weibull) - 2222 (lognormal) across families", "ci_low": 2143, "ci_high": 2222, "ci_kind": "range-of-specifications", "source": "reanalysis/e4.py", "baseline": "fixed-years arm; not identified by the answers (see next row)"},
+        {"name": "faol_fixed_years_share_below_50pct_at_longest_horizon", "value": 0.741, "count": 281, "denominator": 379, "unit": "proportion", "n": 379, "source": "reanalysis/e3.py faol", "baseline": "fixed-years respondents giving < 50% at 50 years; median P(FAOL within 50 years) = 10%"},
+        {"name": "hlmi_faol_gap_model_free", "value": 55, "unit": "years (median stated 50% year: FAOL 75 vs HLMI 20)", "n": 1304, "source": "reanalysis/e3.py, fixed-probabilities arms only (891 HLMI + 413 FAOL respondents, different people)", "baseline": "no distribution fitting involved"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["target-not-identified-by-design", "instrument-relative-headline-number"],
+        "why": "The HLMI-FAOL gap is real and needs no model: in the arm where respondents state years directly, the median 50% year is 20 years for HLMI and 75 for FAOL. What is NOT in the answers is the fixed-years half of the FAOL headline: 74% of those respondents never reach 50% within the 50 years they were asked about (median 10%), so their 50% year is set entirely by the tail of whichever distribution is fitted -- 2143, 2165 or 2222 for Weibull, gamma or lognormal -- and the pooled 90% point runs to the year 200,000+. The paper's sentence 'our analysis was insensitive to the value of this upper bound' (about 'never' coded as 100,000,000 years) is true of the 50% point and silent about the family. Quote FAOL from the fixed-probabilities arm (2090) or as a range, never as 2116 alone.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "Answers to the three extinction questions were 'mostly consistent', with medians of 5% or 10%: AI advances causing human extinction or severe disempowerment (mean 16.2%, median 5%, n = 1,321); human inability to control future advanced AI causing it (19.4%, 10%, n = 661); the first within 100 years (14.4%, 5%, n = 655).",
+      "scope": "Each respondent saw at most one of the three (checked in the data). Wording verified in the deposited survey instrument.",
+      "quantities": [
+        {"name": "ai_extinction_probability_median", "value": 5, "unit": "percent", "n": 1321, "source": "reanalysis/e1.py; paper Table 2", "baseline": "Q1: 'future AI advances causing human extinction or similarly permanent and severe disempowerment'"},
+        {"name": "ai_extinction_probability_median", "value": 10, "unit": "percent", "n": 661, "source": "reanalysis/e1.py; paper Table 2", "baseline": "Q2: 'human inability to control future advanced AI systems causing ...' -- a SUBSET of the Q1 event"},
+        {"name": "ai_extinction_probability_median", "value": 5, "unit": "percent", "n": 655, "source": "reanalysis/e1.py; paper Table 2", "baseline": "Q3: Q1 restricted to the next 100 years -- also a subset"},
+        {"name": "subset_superset_probability_of_superiority", "value": 0.536, "unit": "P(random Q2 answer > random Q1 answer), ties half", "n": 1982, "ci": "Mann-Whitney p = 0.008", "source": "reanalysis/e1.py", "baseline": "0.5 = no difference; coherence requires <= 0.5"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["instrument-relative-headline-number"],
+        "why": "Every number reproduces. 'Mostly consistent' hides the one direction that matters: the control-problem question names a subset of the general question's event and receives the HIGHER probabilities (median 10 vs 5, p = 0.008), while the time-restricted subset is coherently lower. A between-subjects violation of extension, the signature of support-theory unpacking: naming a mechanism adds probability. The effect is small (probability of superiority 0.536) and must be quoted as small, but it means 'AI researchers put about 5% on extinction' and 'about 10%' are both instrument-relative: which one a reader hears depends on which wording they read.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "raw-data", "locator": "https://osf.io/vmdny/ '2023 ESPAI - Cleaned and Anonymized Responses - espai2023 2024-01-08 redacted and clean data.csv'", "status": "present-but-insufficient",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py osf:vmdny --out work/osf; sh reanalysis/run_all.sh", "result": "3/3 files verified. 3,270 rows, of which 2,758 carry at least one cleaned answer and 512 carry none (paper: 2,778 responses; the file's 2,634 'Finished' rows are 94.8% of 2,778, matching the paper's '95%'). Checked 2026-10-16 after first writing an unverified sentence here. SPSS missing code '#NULL!'. Every extinction statistic in Table 2 reproduces exactly; HLMI/FAOL aggregates rebuild to within 1-5 years with n within 3% of the paper's. Insufficient in one respect: no analysis code, so the paper's exact fitting criterion and exclusion set cannot be confirmed -- the residual gaps (2048 vs 2047; 2111 vs 2116) are of that size."},
+     "bytes": 10499415, "sha256": "a29c4df0c0f7b53ba092e694beb5cfd8d1e89ccd0172fe7e78a37e29a9827a80", "license": "CC-BY-SA-4.0", "local_path": "artifacts/osf_vmdny_acquisition.json", "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py osf:vmdny --out work/osf",
+     "datasheet": {"composition": "One row per respondent; *_clean columns are the authors' cleaned answers; fixedprobabilities = framing arm (1/0).", "collection": "Qualtrics, 5-24 October 2023, $50 or donation; 15% response rate.", "caveats": "'never' answers coded 100,000,000 years. Decreasing probability sequences were removed by the authors. Fixed-years HLMI horizon is 40 years, FAOL 50 (the paper explains the 40 as an inherited mistake)."}}
+  ],
+  "relations": [
+    {"type": "cito:agreesWith", "target": "karger2023-xpt", "why": "Same object -- elicited probabilities and dates of transformative or catastrophic AI -- and the same finding from a different manipulation: the response format moves the number. Karger: percentage vs 1-in-X, up to 800,000x on extinction. Here: fixed-years vs fixed-probabilities (16 years on the HLMI median), HLMI vs FAOL wording (55 years model-free), and a subset event judged more likely than its superset."}
+  ],
+  "open_questions": [
+    "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1613/jair.1.19087 -> 0 items.",
+    "Within-person check of the HLMI-FAOL gap is impossible here (different respondents got the two blocks). Did the 2016 or 2022 ESPAI give any respondent both?",
+    "Does the extinction subset effect (Q2 > Q1) replicate in the 2022 ESPAI (n = 149 / 162)? The printed medians are also 5% vs 10% there.",
+    "A pooled CDF of extrapolated individual tails: what is the pooled 90% point when every fixed-years fit is truncated at the longest asked horizon (treated as censored)? That is the honest upper quantile."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}
