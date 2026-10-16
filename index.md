@@ -449,7 +449,7 @@ so no one else can run it.
   `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`,
   `denic2022-indefinites-simplicity-informativeness`,
   `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`,
-  `chaabouni2021-emergent-colour-naming`, `xu2020-numeral-systems-efficiency`, `maria2026-structural-null-semantic-efficiency`.
+  `chaabouni2021-emergent-colour-naming`, `xu2020-numeral-systems-efficiency`, `ferrericancho2011-information-content-random-typing`, `maria2026-structural-null-semantic-efficiency`.
   Through-line: against a null that keeps one structural property (convexity, no synonymy,
   monotone+conservative, IFF+low overlap), most of the natural advantage disappears (net Pareto
   dominance +0.6..0.96 vs random, +0.17/+0.15/-0.25/+0.37 vs the structural null); two published

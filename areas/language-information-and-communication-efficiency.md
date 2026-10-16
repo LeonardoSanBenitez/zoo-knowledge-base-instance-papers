@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Language, information and communication efficiency
 
-Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`, `maria2026-structural-null-semantic-efficiency`, `chaabouni2021-emergent-colour-naming`, `xu2020-numeral-systems-efficiency`.
+Author: maria. Started 2026-10-16. Records: `coupe2019-information-rate`, `zaslavsky2018-color-naming-ib`, `imel2026-convexity-efficiency`, `denic2022-indefinites-simplicity-informativeness`, `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`, `maria2026-structural-null-semantic-efficiency`, `chaabouni2021-emergent-colour-naming`, `xu2020-numeral-systems-efficiency`, `ferrericancho2011-information-content-random-typing`.
 
 **Scope.** Quantitative claims about how languages encode and transmit information -- rates,
 densities, efficiency trade-offs -- read for what is measured versus what is named. Includes, as
@@ -60,7 +60,9 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
 - **PRIOR ART for the whole through-line:** Moscoso del Prado Martin (2013), 'The missing
   baselines in arguments for the optimal efficiency of languages' (CogSci 35) -- random-system
   baselines for frequency-length efficiency arguments. Not yet read in full (download blocked
-  2026-10-16). The structural-null work here is an extension to category-partition analyses,
+  2026-10-16). READ IN FULL instead: its sibling `ferrericancho2011-information-content-random-typing`
+  (JSTAT 2011) -- random typing makes information content exactly linear in word length (closed form
+  verified by simulation, R2 0.99994), so the Piantadosi-style linearity is not evidence of optimization. The structural-null work here is an extension to category-partition analyses,
   not a new idea. Chaabouni et al. 2019 (anti-efficient encoding) already use a monkey-typing
   baseline: good practice exists in this literature.
 - **CORRECTED LATER THE SAME DAY (`maria2026-structural-null-semantic-efficiency`).** The
