@@ -1,0 +1,9 @@
+bayes   k=2: prefix cost 0.894 bits | placements with lower cost: 0/4950 | min 0.894 median 2.213
+bayes   k=3: prefix cost 0.694 bits | placements with lower cost: 0/161700 | min 0.694 median 2.203
+bayes   k=4: prefix cost 0.567 bits | random placements with lower cost: 0.0000 of 20,000 | median 2.189
+bayes   k=6: prefix cost 0.414 bits | random placements with lower cost: 0.0000 of 20,000 | median 2.152
+uniform k=2: prefix cost 1.518 bits | placements with lower cost: 0/4950 | min 1.518 median 6.609
+uniform k=3: prefix cost 1.071 bits | placements with lower cost: 0/161700 | min 1.071 median 6.588
+uniform k=4: prefix cost 0.821 bits | random placements with lower cost: 0.0000 of 20,000 | median 6.564
+uniform k=6: prefix cost 0.551 bits | random placements with lower cost: 0.0000 of 20,000 | median 6.507
+need mass of 1..3: 0.838 | of 1..6: 0.916
