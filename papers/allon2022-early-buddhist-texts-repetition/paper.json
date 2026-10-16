@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.5",
+  "id": "allon2022-early-buddhist-texts-repetition",
+  "title": "Early Buddhist Texts: Their Composition and Transmission",
+  "authors": ["Mark Allon"],
+  "year": 2022,
+  "venue": "Journal of Indian Philosophy 50:523-556 (online 2021)",
+  "area": ["computational-buddhist-studies"],
+  "identifiers": {"doi": "10.1007/s10781-021-09499-6", "pmcid": "PMC8789374"},
+  "record_status": "active",
+  "read_depth": "skimmed",
+  "cost": {
+    "tool_calls": 6,
+    "bytes_downloaded": 900000,
+    "compute_notes": "Europe PMC JATS full text; read the passages restating the 1997 quantitative result and the method framing, not the whole article (hence 'skimmed'). Allon 1997 (Style and Function) itself not available. Pali root texts of DN and MN (186 suttas) from SuttaCentral bilara-data @ 10ad8c831fe5 (sparse checkout root/pli/ms/sutta/dn, mn). Seconds to run.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "how repetitive are the Pali suttas",
+    "87 percent repetition Buddhist suttas",
+    "oral transmission formulaic repetition early Buddhist texts",
+    "Allon Style and Function quantitative repetition",
+    "is DN 25 typical of the Digha and Majjhima"
+  ],
+  "methods": ["synthetic-injected-effect-control"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "In the Udumbarikasihanada Sutta (DN 25), about 30% of the text consists of passages repeated verbatim two, three or four times, another 35% involves repetition with minor modifications at a primary level, and in total almost 87% involves quantifiable repetition of one kind or another (restating Allon 1997).",
+      "scope": "One discourse, hand analysis of the Pali prose; 'primary level' repetition; 13% does not recur within the sutta (much of it recurs in other suttas).",
+      "quantities": [
+        {"name": "dn25_share_words_in_within_sutta_repeated_8grams", "value": 0.539, "unit": "share of words covered by an 8-word sequence occurring >= 2 times in the same sutta (Pali root text)", "n": 3619, "source": "reanalysis/p2_repetition.py", "baseline": "n=12: 0.452; n=6: 0.586; n=4: 0.649; n=3: 0.695. Shuffled-word control: 0.000 at n>=4 (0.002 at n=3)"},
+        {"name": "dn25_rank_among_dn_mn_by_repetition", "value": 0.516, "unit": "share of the 186 DN+MN suttas with LOWER 8-gram coverage than DN 25 (90/186 lower, 96 higher)", "n": 186, "source": "reanalysis/p2_repetition.py", "baseline": "corpus median 0.546 (IQR 0.413-0.652) vs DN 25 0.539; corr(log length, coverage) = 0.15"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["instrument-relative-headline-number"],
+        "why": "The structure holds up, and DN 25 is a fair choice: by within-sutta repeated n-grams it sits at the median of all 186 Digha and Majjhima suttas, so 'a typical sutta is mostly repetition' is supported -- 54% of a median sutta's words lie in 8-word sequences it repeats. The absolute numbers depend on what counts as repetition. Verbatim n-gram coverage of DN 25 (45-54% for 8-12-word repeats) is HIGHER than Allon's 30% verbatim figure, probably because coverage counts first occurrences too, or because his 'passages' are larger primary units. His verbatim + minor-modification total (65%) matches 4-gram coverage (0.649) closely. His 87% is not reached by any contiguous n-gram measure (0.695 at n=3), because it includes structural repetition with several substitutions. So '87% of Buddhist suttas are repetitions', as the figure is often re-quoted, mixes one sutta with all suttas (here harmless: the sutta is typical) and a structural definition with a verbatim one (not harmless: the number belongs to the definition).",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "raw-data", "locator": "https://github.com/suttacentral/bilara-data (branch published @ 10ad8c831fe5851301d46381b8ac446bf9ed931b): root/pli/ms/sutta/dn, root/pli/ms/sutta/mn", "status": "verified-usable",
+     "checked": {"on": "2026-10-16", "by": "maria", "how": "git sparse-checkout add root/pli/ms/sutta/dn root/pli/ms/sutta/mn; python reanalysis/p2_repetition.py", "result": "186 suttas (DN 34 + MN 152); DN 25 = 383 segments, 3,619 words; CC0 Mahasangiti edition"},
+     "license": "CC0", "fetch_cmd": "git clone --filter=blob:none --no-checkout --depth 1 --branch published https://github.com/suttacentral/bilara-data bilara && git -C bilara sparse-checkout set root/pli/ms/sutta/dn root/pli/ms/sutta/mn && git -C bilara checkout published"}
+  ],
+  "relations": [
+    {"type": "cito:agreesWith", "target": "bose2026-pali-canon-stylometry", "why": "Bose's low MATTR for the Sutta (0.399) is the lexical shadow of the within-sutta repetition measured here; both say the text is built from recurring formulas."}
+  ],
+  "open_questions": [
+    "Read Allon 1997 (Style and Function) to recover the exact counting unit and redo DN 25 with it.",
+    "Oral-transmission hypothesis as redundancy: compare within-text repetition of the canonical prose with Pali commentaries (written, 5th c.) at matched length; bilara-data does not carry the atthakatha -- VRI or GRETIL texts would.",
+    "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1007/s10781-021-09499-6 -> 0 items."
+  ],
+  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+}

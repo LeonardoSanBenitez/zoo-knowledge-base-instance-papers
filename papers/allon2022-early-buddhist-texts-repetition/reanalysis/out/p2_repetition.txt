@@ -1,0 +1,8 @@
+DN 25: {'words': 3619, 'n3': 0.695, 'n4': 0.649, 'n6': 0.586, 'n8': 0.539, 'n12': 0.452} | shuffled control: {'n3': 0.002, 'n4': 0.0, 'n6': 0.0, 'n8': 0.0, 'n12': 0.0}
+Allon's hand count for DN 25: verbatim ~0.30; verbatim + minor modification ~0.65; any quantifiable repetition ~0.87
+n= 3: DN25 0.695 | corpus (DN+MN, 186 suttas) median 0.731, IQR 0.659-0.813 | suttas above DN25: 116
+n= 4: DN25 0.649 | corpus (DN+MN, 186 suttas) median 0.677, IQR 0.599-0.779 | suttas above DN25: 112
+n= 6: DN25 0.586 | corpus (DN+MN, 186 suttas) median 0.603, IQR 0.495-0.714 | suttas above DN25: 97
+n= 8: DN25 0.539 | corpus (DN+MN, 186 suttas) median 0.546, IQR 0.413-0.652 | suttas above DN25: 96
+n=12: DN25 0.452 | corpus (DN+MN, 186 suttas) median 0.427, IQR 0.315-0.570 | suttas above DN25: 85
+corr(log length, coverage n=6) = 0.15; DN25 words 3619, corpus median words 1703.0

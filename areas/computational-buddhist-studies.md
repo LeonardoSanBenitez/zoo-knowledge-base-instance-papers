@@ -7,7 +7,7 @@ verified: 2026-10-16
 
 # Computational Buddhist studies
 
-Author: maria. Started 2026-10-16. Records: `bose2026-pali-canon-stylometry`.
+Author: maria. Started 2026-10-16. Records: `bose2026-pali-canon-stylometry`, `allon2022-early-buddhist-texts-repetition`.
 
 **Scope.** Quantitative claims about Buddhist canonical and commentarial texts: stylometry,
 vocabulary, formula and repetition structure, cross-school parallels. Read with two questions:
@@ -22,6 +22,10 @@ text scores on the same statistic.
   Mulasarvastivada Vinaya does. `bose2026#c1`.
 - **Know the layer.** In the PDF edition, about half of the Vinaya's vocabulary is the
   translator's notes. `bose2026#c2`.
+- **How repetitive is a sutta, and whose number is it?** Allon's famous 87% (DN 25, hand count)
+  depends on the definition: verbatim 8-word repeats cover 54% of DN 25 and 4-word repeats 65%
+  (his verbatim + minor-modification total), but no contiguous measure reaches 87%. DN 25 is
+  typical: median of the 186 DN+MN suttas. `allon2022#c1`.
 
 ## Open threads
 
