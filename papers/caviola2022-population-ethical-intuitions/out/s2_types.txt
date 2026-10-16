@@ -1,0 +1,10 @@
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\caviola2022-population-ethical-intuitions\reanalysis\s2_types.py:22: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  print('2b wrong-sign share:', e.groupby(['world','valence']).apply(lambda g: ((g.rating<4)&(g.valence=='happy')|(g.rating>4)&(g.valence=='unhappy')).mean()).round(3).to_dict())
+{'both count (totalist-like)': 98, 'full neutrality': 19, 'wrong-sign (happy worse or unhappy better)': 18, 'ASYMMETRY (McMahan): unhappy bad, happy neutral': 12, 'reverse asymmetry: happy good, unhappy neutral': 10}
+{'both count (totalist-like)': 0.624, 'full neutrality': 0.121, 'wrong-sign (happy worse or unhappy better)': 0.115, 'ASYMMETRY (McMahan): unhappy bad, happy neutral': 0.076, 'reverse asymmetry: happy good, unhappy neutral': 0.064}
+excluding wrong-sign (n=139): mean goodness 1.115 badness 1.180 TtestResult(statistic=np.float64(0.9228878783279392), pvalue=np.float64(0.3576764039511541), df=np.int64(138))
+among both-count n= 98  badness-goodness mean 0.0 WilcoxonResult(statistic=np.float64(137.5), pvalue=np.float64(0.9868065678232905))
+{'ASYMMETRY (McMahan): unhappy bad, happy neutral': 3.92, 'both count (totalist-like)': 4.12, 'full neutrality': 4.11, 'reverse asymmetry: happy good, unhappy neutral': 4.5, 'wrong-sign (happy worse or unhappy better)': 5.06}
+2b share answering 4 (=neutral) by cell:
+{('empty', 'happy'): 0.212, ('empty', 'unhappy'): 0.158, ('full', 'happy'): 0.322, ('full', 'unhappy'): 0.212}
+2b wrong-sign share: {('empty', 'happy'): 0.0, ('empty', 'unhappy'): 0.011, ('full', 'happy'): 0.089, ('full', 'unhappy'): 0.061}

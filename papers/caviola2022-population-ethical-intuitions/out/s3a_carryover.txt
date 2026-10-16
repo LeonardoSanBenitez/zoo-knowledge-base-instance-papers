@@ -1,0 +1,8 @@
+neutral size trend (1k minus 1b) by arm: 1.483 0.84 TtestResult(statistic=np.float64(4.784928964691278), pvalue=np.float64(2.0426269150627195e-06), df=np.float64(787.0))
+neutral level by arm: 3.893 4.183 TtestResult(statistic=np.float64(-2.6003720973296205), pvalue=np.float64(0.009486958716573733), df=np.float64(787.0))
+happy corr(main trend, neutral trend)=0.762  identical on all 3 sizes: 141/402 = 0.351
+    copiers 141 main [4.48 4.   3.6 ] neutral [4.48 4.   3.6 ]
+    non-copiers 261 main [5.46 4.5  3.77] neutral [4.77 3.73 2.96]
+unhappy corr(main trend, neutral trend)=0.517  identical on all 3 sizes: 83/387 = 0.214
+    copiers 83 main [3.65 3.14 2.95] neutral [3.65 3.14 2.95]
+    non-copiers 304 main [2.88 2.4  2.15] neutral [4.89 4.42 4.01]

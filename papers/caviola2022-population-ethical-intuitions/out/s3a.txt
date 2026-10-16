@@ -1,0 +1,12 @@
+3a N 789 excl 79 {'happy': 402, 'unhappy': 387}
+      cond    size    raw  neutral   diff     sd    n  t_raw_vs4  t_diff
+0    happy  1k_10k  5.117    4.669  0.448  1.474  402     12.180   6.090
+1    happy  1m_10m  4.326    3.823  0.502  1.578  402      3.382   6.385
+2    happy  1b_10b  3.714    3.187  0.527  1.407  402     -2.888   7.513
+3  unhappy  1k_10k  3.041    4.623 -1.581  2.090  387     -9.499 -14.885
+4  unhappy  1m_10m  2.558    4.145 -1.587  2.019  387    -17.057 -15.457
+5  unhappy  1b_10b  2.323    3.783 -1.460  2.021  387    -22.171 -14.213
+happy differenced 1k->1b change 0.08 TtestResult(statistic=np.float64(1.128938229965526), pvalue=np.float64(0.2595988071902244), df=np.int64(401))
+unhappy differenced 1k->1b change 0.121 TtestResult(statistic=np.float64(1.4080625111631526), pvalue=np.float64(0.15991742442518203), df=np.int64(386))
+authors diff_kb by condition (raw): {'happy': 1.403, 'unhappy': 0.718} TtestResult(statistic=np.float64(5.036905753134822), pvalue=np.float64(5.8706904591401e-07), df=np.float64(787.0))
+same, neutral-differenced: {'happy': -0.08, 'unhappy': -0.121} TtestResult(statistic=np.float64(0.3769058146571035), pvalue=np.float64(0.7063452018891375), df=np.float64(787.0))

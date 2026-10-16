@@ -1,0 +1,17 @@
+1a N 474 excl 55
+inter 75.62 16.99 227
+intra 74.98 16.84 247
+t vs 50 TtestResult(statistic=np.float64(32.585281700183224), pvalue=np.float64(5.587922517906897e-123), df=np.int64(473))
+sum!=100: 0
+--- 1a pooled n=474 mean=75.29 median=75.0 mode=[80.0]
+   <50 (happiness weighs MORE)                     16 0.034
+   50-51 symmetric                                 44 0.093
+   51<x<100 weighted asym                         390 0.823
+   100 (no happiness suffices / strict NU-like)    24 0.051
+   ratio-of-means implied rate 3.05; median individual rate 3.00; geometric mean rate (h<100) 3.66; mean individual rate 9.19
+   top values {80.0: np.int64(70), 70.0: np.int64(66), 90.0: np.int64(60), 75.0: np.int64(52), 60.0: np.int64(48), 50.0: np.int64(26), 100.0: np.int64(24), 95.0: np.int64(23), 99.0: np.int64(19), 85.0: np.int64(19)}
+  happiness unhappiness
+0      mild        mild
+1   extreme     extreme
+2      mild     extreme
+3   extreme        mild 431

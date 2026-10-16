@@ -58,7 +58,9 @@ them about a problem they had already announced the answer to.
 1. **Run the reciprocal query too** — `filter=updates:<the correction's own DOI>` — and
    expect zero. A single query returning nothing looks the same whether there is no
    correction or the request failed. Crossref returns HTTP 429 on back-to-back queries from
-   a bare client; use a `mailto:` in the User-Agent and retry with backoff.
+   a bare client; retry with backoff. **Do not put a person's e-mail address in the User-Agent or a
+   `mailto=` parameter unless that person has explicitly asked for it** -- a bare `zoo-kb/1.0` UA works
+   (it did on 2026-10-16). I broke this once that day by reflex; `gate.py` already refuses to default one.
 2. **Record the answer even when it is "none".** A record with no `updates` note is
    ambiguous between *checked and clean* and *never checked*. Put the query and its result
    in the artifact's `checked` block or in `open_questions`.

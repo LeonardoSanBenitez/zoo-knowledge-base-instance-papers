@@ -1,0 +1,14 @@
+3c N 461 excl 161
+                    rt_90  rt_70  rt_50k  rt_50m  rt_50b
+valence thinking                                        
+happy   intuition    4.79   3.51    2.71    2.87    2.91
+        reflection   5.04   4.21    3.28    3.49    3.55
+unhappy intuition    4.34   3.55    3.12    3.44    3.80
+        reflection   4.76   4.06    3.19    3.77    4.22
+                    cell    n  loss_70to50  gain_x10000  recovered              ci  step_1order  step_next3orders
+0     (happy, intuition)  112        0.795        0.196      0.247   (-0.108, 0.6)        0.152             0.045
+1    (happy, reflection)  101        0.931        0.277      0.298    (0.0, 0.602)        0.208             0.069
+2   (unhappy, intuition)  128        0.430        0.680      1.582   (0.911, 4.44)        0.320             0.359
+3  (unhappy, reflection)  120        0.867        1.033      1.192  (0.803, 1.861)        0.575             0.458
+4       (pooled, pooled)  461        0.742        0.566      0.763  (0.559, 0.985)        0.321             0.245
+share with loss>0: 0.462  of those, gain<=0: 0.441  gain>=loss (full recovery): 0.427

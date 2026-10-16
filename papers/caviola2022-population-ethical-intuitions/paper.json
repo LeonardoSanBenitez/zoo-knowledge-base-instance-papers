@@ -1,0 +1,492 @@
+{
+  "schema_version": "1.4",
+  "id": "caviola2022-population-ethical-intuitions",
+  "title": "Population ethical intuitions",
+  "authors": [
+    "Lucius Caviola",
+    "David Althaus",
+    "Andreas L. Mogensen",
+    "Geoffrey P. Goodwin"
+  ],
+  "year": 2022,
+  "venue": "Cognition 218:104941 (online 2021-11-05); preprint PsyArXiv 10.31234/osf.io/wdbr8 (2021-04-01); evaluated by The Unjournal 2025 (Evaluation Summary + 2 evaluations, RePEc bjn:evalua:e2popintuitions)",
+  "area": [
+    "population-ethics-and-moral-psychology",
+    "existential-risk-and-longtermism"
+  ],
+  "identifiers": {
+    "doi": "10.1016/j.cognition.2021.104941",
+    "url": "https://luciuscaviola.com/Caviola-et-al_2022_Population-ethical-intuitions.pdf"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 70,
+    "bytes_downloaded": 48961570,
+    "compute_notes": "PDF 1,405,630 B (author's site) read in full via PyMuPDF text extraction. OSF deposit qt65w: 40 files, 47,555,940 B (mostly figure TIFFs), fetched with dev-science-ops/.../tools/acquire.py, 40/40 sha256+md5 verified, version-pinned. No R on this host: the authors' nine R scripts were PORTED to Python (pandas/scipy/statsmodels) line by line for exclusions; every reported N, exclusion count, mean, SD and the t-tests checked reproduce to the printed decimals. 15 analysis scripts in reanalysis/, all run by reanalysis/run_all.sh; slowest job (1b known-answer simulation, 2 x 500 reps) under a minute. Author data are NOT committed (no licence declared on the OSF node); run_all.sh re-fetches them with hash verification.",
+    "session": "2026-10-16 maria, free deep research"
+  },
+  "triggers": [
+    "do ordinary people weigh suffering more than happiness",
+    "how many happy people does it take to outweigh one unhappy person",
+    "do lay people accept the intuition of neutrality about creating happy people",
+    "do people endorse the procreation asymmetry",
+    "are lay intuitions averagist or totalist",
+    "does the public find the repugnant conclusion repugnant",
+    "lay population ethics evidence for longtermism",
+    "do people care about the size of a happy future population",
+    "scope insensitivity for numbers of future people",
+    "reverse coding creates an apparent asymmetry",
+    "post-treatment control variable used as a baseline",
+    "is an interaction real or an artifact of the response scale",
+    "a mean that describes nobody: mixture of response types in moral judgment",
+    "careless responders who answer the wrong direction on a Likert item"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "transformation-dependence-of-interaction",
+    "post-treatment-baseline-check",
+    "individual-response-typology",
+    "synthetic-injected-effect-control",
+    "falsification-by-internal-consistency"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "People weigh suffering more than happiness when judging whether a population is net positive: on average 1.5-3 times as many happy as unhappy people are required, and the asymmetry persists (smaller) when the two experiences are stipulated to be equally intense (Studies 1a-1c).",
+      "scope": "US MTurk adults (Positly), 2019-2020; single free-response percentage item 'what % happy vs unhappy for this world to be overall positive (better to exist than not)'; Study 1a extreme intensities (N=474), 1b 2x2 intensities with a -100..+100 scale (N=356), 1c mild and stipulated-equal intensities (N=278).",
+      "quantities": [
+        {
+          "name": "happiness_share_required_for_net_positive_population",
+          "value": 75.29,
+          "unit": "% of population happy",
+          "n": 474,
+          "source": "reanalysis/s1.py (paper: 75.62 inter / 74.98 intra)",
+          "baseline": "Study 1a, extreme happiness ('falling in love') vs extreme suffering ('torture'), pooled inter- and intra-individual conditions; 50 = symmetric weighting"
+        },
+        {
+          "name": "happiness_share_required_for_net_positive_population",
+          "value": 61.11,
+          "unit": "% of population happy",
+          "n": 278,
+          "source": "reanalysis/s1c.py (paper: 61.84 inter / 60.37 intra)",
+          "baseline": "Study 1c, mild intensities STIPULATED equal and accepted by the participant; pooled conditions"
+        },
+        {
+          "name": "happiness_per_unhappiness_trade_ratio_median",
+          "value": 3.0,
+          "unit": "happy people per unhappy person (individual h/(100-h), median)",
+          "n": 450,
+          "source": "reanalysis/s1.py; responses of exactly 100 (n=24) have an infinite ratio and are excluded from the ratio but not from the median's ordering",
+          "baseline": "Study 1a pooled; ratio of means 3.05, geometric mean 3.66, arithmetic mean of individual ratios 9.19 -- the paper's '3 times' is the median and the ratio-of-means, not the mean person"
+        },
+        {
+          "name": "happiness_per_unhappiness_trade_ratio_median",
+          "value": 1.5,
+          "unit": "happy people per unhappy person (individual, median)",
+          "n": 277,
+          "source": "reanalysis/s1c.py",
+          "baseline": "Study 1c pooled (stipulated equal intensity)"
+        },
+        {
+          "name": "share_symmetric_weighting_50_or_51",
+          "value": 0.371,
+          "count": 103,
+          "denominator": 278,
+          "unit": "proportion",
+          "n": 278,
+          "source": "reanalysis/s1c.py; paper prints 37.0%",
+          "baseline": "Study 1c; modal response is 51 (n=67)"
+        },
+        {
+          "name": "share_symmetric_weighting_50_or_51",
+          "value": 0.093,
+          "count": 44,
+          "denominator": 474,
+          "unit": "proportion",
+          "n": 474,
+          "source": "reanalysis/s1.py",
+          "baseline": "Study 1a (extreme intensities)"
+        },
+        {
+          "name": "share_requiring_100pct_happiness",
+          "value": 0.051,
+          "count": 24,
+          "denominator": 474,
+          "unit": "proportion",
+          "n": 474,
+          "source": "reanalysis/s1.py",
+          "baseline": "Study 1a: no amount of happiness offsets any torture-level suffering (strict-negative-utilitarian-like answer)"
+        },
+        {
+          "name": "share_weighting_happiness_more_than_suffering",
+          "value": 0.034,
+          "count": 16,
+          "denominator": 474,
+          "unit": "proportion",
+          "n": 474,
+          "source": "reanalysis/s1.py",
+          "baseline": "Study 1a, responses < 50"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Every N, exclusion count, mean, SD and t reproduces from the deposit. The 'average person' framing is the soft part: in 1c the answers are a two-cluster mixture -- 37% at 50/51 (symmetric) and a spread of asymmetric weighters -- and the mean (61) is a value few people gave. The centre is honestly reported (the paper mentions the mode of 51); the decomposition is what a reader citing '1.5x' should carry. Individual trade ratios are heavy-tailed (1a: median 3.0, arithmetic mean 9.2), so 'people require 3x' is a median statement.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "In Study 1b (2 happiness intensity x 2 suffering intensity), intensity of suffering and of happiness both matter, with no significant interaction (F(1,352)=2.85, p=.09): the required share of happy people rises when suffering is extreme and when happiness is mild.",
+      "scope": "Study 1b, N=356, between-subjects, ANOVA on the raw percentage.",
+      "quantities": [
+        {
+          "name": "intensity_interaction_on_logit_happiness_share",
+          "value": 0.976,
+          "unit": "log-odds (HC3 OLS interaction mild-happiness x extreme-suffering)",
+          "n": 356,
+          "ci": "SE 0.346, p=0.0048; clipping 0.1-2.0 points gives 0.76-1.11, p=0.004-0.011; excluding 0/100 answers 0.70, p=0.030",
+          "source": "reanalysis/s1b_scale.py",
+          "baseline": "logit of the stated % happy, i.e. log of the implied trade ratio -- the scale on which the paper itself interprets the result ('1.5-3 times')"
+        },
+        {
+          "name": "intensity_interaction_on_percentage_scale",
+          "value": 7.28,
+          "unit": "percentage points",
+          "n": 356,
+          "ci": "p=0.092",
+          "source": "reanalysis/s1b_scale.py (reproduces the paper's F test)",
+          "baseline": "raw percentage, authors' ANOVA"
+        },
+        {
+          "name": "median_trade_ratio_mild_happiness_vs_extreme_suffering",
+          "value": 9.0,
+          "unit": "happy per unhappy (individual median)",
+          "n": 86,
+          "source": "reanalysis/s1c.py (1b cells)",
+          "baseline": "1b cell; the other three cells: extreme/extreme 3.0, extreme-happy/mild-suffering 1.86, mild/mild 1.5"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The 'no interaction' is a property of the percentage scale. On the log-ratio scale -- the one the paper uses to state its conclusion -- the interaction is positive and significant across every clipping choice and in a median-based bootstrap (1.31, 95% CI 0.30-1.79). Read on that scale: the intensity of HAPPINESS barely matters when suffering is mild (log-odds +0.05) and matters a great deal when suffering is extreme. A known-answer simulation (no true log-scale interaction, cell effects matched to the data) gives a 5.2% rejection rate for the logit test and 5.4% for the percentage test, so the logit result is not a transformation artifact; with a true interaction of 0.7 the percentage ANOVA has 72% power and the logit test 91%. Which scale is 'right' is not decidable from the data (an interaction without crossover is removable by a monotone transform); the paper simply did not say which scale its null was on.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "People do not regard creating new people as neutral: adding an extremely happy person makes a world better and adding an extremely unhappy person makes it worse, symmetrically (no procreation asymmetry), and there is a weak general preference to add even a neutral person (Studies 2a-2b).",
+      "scope": "2a: within-subjects, N=157, world of 1 million neutral people (the paper's Study 2b section says '10 million' -- the materials say 1 million). 2b: between-subjects 2x2 (empty vs 10 billion; happy vs unhappy), Prolific, N=369. 7-point scale.",
+      "quantities": [
+        {
+          "name": "share_full_neutrality_about_creating_people",
+          "value": 0.121,
+          "count": 19,
+          "denominator": 157,
+          "unit": "proportion",
+          "n": 157,
+          "source": "reanalysis/s2_types.py",
+          "baseline": "Study 2a: rated BOTH the +100 and the -100 addition as 'equally good' (4)"
+        },
+        {
+          "name": "share_procreation_asymmetry_mcmahan",
+          "value": 0.076,
+          "count": 12,
+          "denominator": 157,
+          "unit": "proportion",
+          "n": 157,
+          "source": "reanalysis/s2_types.py",
+          "baseline": "Study 2a: unhappy addition worse, happy addition exactly neutral"
+        },
+        {
+          "name": "share_reverse_procreation_asymmetry",
+          "value": 0.064,
+          "count": 10,
+          "denominator": 157,
+          "unit": "proportion",
+          "n": 157,
+          "source": "reanalysis/s2_types.py",
+          "baseline": "Study 2a: happy addition better, unhappy addition exactly neutral -- the mirror of McMahan"
+        },
+        {
+          "name": "share_both_additions_count",
+          "value": 0.624,
+          "count": 98,
+          "denominator": 157,
+          "unit": "proportion",
+          "n": 157,
+          "source": "reanalysis/s2_types.py",
+          "baseline": "Study 2a: happy better AND unhappy worse; among these the magnitude asymmetry is exactly 0.00 (Wilcoxon p=0.99)"
+        },
+        {
+          "name": "share_wrong_sign_responders",
+          "value": 0.115,
+          "count": 18,
+          "denominator": 157,
+          "unit": "proportion",
+          "n": 157,
+          "source": "reanalysis/s2_types.py",
+          "baseline": "Study 2a: rated adding a -100 life as an improvement (15) or a +100 life as a worsening (6); 3 did both"
+        },
+        {
+          "name": "neutral_person_addition_preference_d",
+          "value": 0.279,
+          "unit": "Cohen's d vs midpoint",
+          "n": 139,
+          "source": "reanalysis/s2_neutral.py",
+          "baseline": "Study 2a EXCLUDING the 18 wrong-sign responders (paper, all 157: d=0.35). The 11.5% wrong-sign group supplies 51.4% of the total excess above 4."
+        },
+        {
+          "name": "neutral_person_addition_mean_full_world",
+          "value": 4.023,
+          "unit": "7-point scale (4 = equally good)",
+          "n": 175,
+          "ci": "p=0.21 vs 4",
+          "source": "reanalysis/s2_neutral.py",
+          "baseline": "Study 2b, world of 10 billion, consistent responders; empty world 4.246, p<0.0001"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The symmetry survives at the level of individual types, which is a stronger result than the paper reports: the McMahan asymmetry (7.6%) is matched by its own mirror image (6.4%), and among people who count both additions the magnitudes are identical. Two qualifications. (1) 'People reject the intuition of neutrality' is a majority statement: 12% hold full neutrality and another 7.6% are neutral about the happy addition -- about one in five are neutral about creating a maximally happy person. (2) The 'weak general preference to add a neutral person' is half carried by the 11.5% who also answered in the wrong direction on the main items, and in 2b it exists only for the EMPTY world (4.25) and not for a world of 10 billion (4.02, p=0.21): it is a preference for there being someone, not for there being more people.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Asymmetric scope sensitivity (Study 3a): people prefer larger happy and smaller unhappy populations, the preference for smaller unhappy populations is stronger, and the asymmetry GROWS with absolute size -- preference for larger happy populations declines and even reverses at 1 billion vs 10 billion, while preference for smaller unhappy populations persists.",
+      "scope": "Study 3a, N=789 (402 happy arm, 387 unhappy arm), three 10x comparisons (1k/10k, 1M/10M, 1B/10B), 7-point preference; each participant then answered the SAME three comparisons for neutral populations.",
+      "quantities": [
+        {
+          "name": "size_trend_asymmetry_raw",
+          "value": 0.685,
+          "unit": "difference between arms in (1k-minus-1b) raw preference, 7-pt scale",
+          "n": 789,
+          "ci": "t(787)=5.04, p<1e-6",
+          "source": "reanalysis/s3a.py (reproduces the paper's t(773)=5.05 to rounding; the paper's df differs)",
+          "baseline": "authors' test of 'asymmetry grows with size'"
+        },
+        {
+          "name": "size_trend_asymmetry_neutral_differenced",
+          "value": 0.041,
+          "unit": "same, after subtracting each participant's own neutral answer at the same size",
+          "n": 789,
+          "ci": "t(787)=0.38, p=0.71",
+          "source": "reanalysis/s3a.py",
+          "baseline": "using the neutral items as a per-size baseline, as the paper's own covariate logic does in aggregate"
+        },
+        {
+          "name": "neutral_item_size_trend_difference_between_arms",
+          "value": 0.643,
+          "unit": "7-pt scale; identical neutral items, happy arm 1.483 vs unhappy arm 0.840",
+          "n": 789,
+          "ci": "t(787)=4.78, p=2.0e-6",
+          "source": "reanalysis/s3a_carryover.py",
+          "baseline": "the neutral items are identical in both arms and asked after the main task; any difference is carry-over (or chance)"
+        },
+        {
+          "name": "share_identical_answers_happy_and_neutral_populations",
+          "value": 0.351,
+          "count": 141,
+          "denominator": 402,
+          "unit": "proportion",
+          "n": 402,
+          "source": "reanalysis/s3a_carryover.py",
+          "baseline": "happy arm: same answer for happy and neutral populations at all three sizes (unhappy arm: 83/387 = 0.214)"
+        },
+        {
+          "name": "welfare_attributable_preference_for_larger_happy_population",
+          "value": 0.527,
+          "unit": "7-pt scale, happy minus own neutral answer",
+          "n": 402,
+          "ci": "t=7.51",
+          "source": "reanalysis/s3a.py",
+          "baseline": "1B vs 10B; the raw answer (3.71) is BELOW 4 -- the 'reversal' -- while the differenced answer is positive at every size (0.45, 0.50, 0.53)"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "not-identifiable",
+        "why": "Reverse-coding the unhappy arm turns any valence-neutral preference for SMALLER populations (crowding, which the paper's own participants mention) into an apparent valence asymmetry that grows with size. Built two worlds that give the identical six cell means -- one with perfectly SYMMETRIC welfare scope sensitivity plus a common size aversion rising from -0.08 to 0.98 scale points, one with asymmetric welfare and no size aversion -- and the authors' test rejects in 98% and 99.7% of simulated studies in both (reanalysis/s3a_identifiability.py). The neutral items that could separate the worlds are post-treatment: identical across arms, yet their size trend differs by arm (p=2e-6) and 35% of the happy arm copied their answers verbatim. They therefore cannot be used as a baseline -- neither for my per-size differencing (under which the growing asymmetry and the 1B reversal vanish completely) nor for the authors' size-averaged covariate. What the data DO support: a LEVEL asymmetry (unhappy effect ~3x the happy effect at every size, in raw and in differenced scores alike), and a size aversion that both arms' neutral answers show (below 4 at 1B in both arms, whichever way carry-over pushed). What they cannot support: that sensitivity to the number of happy people specifically decays with scale. The fix is cheap and future-facing: a separately randomised neutral arm.",
+        "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "When average and total conflict, people apply both principles, with a threshold for minimally acceptable average: 1000 people at +100 is roughly as good as 100,000 at +70, but even 1 billion at +50 does not outweigh 1000 at +100; reflection shifts answers toward totalism (Study 3c, N=461; Study 3d mere addition, N=482; Study 3b equal totals, N=825).",
+      "scope": "Studies 3b-3d, MTurk, 7-point preference between two specified civilisations on a -100..+100 scale; 3c excluded 159/622 (26%) for failing 'how does someone at level 0 feel' (96 of them said 'extremely unhappy').",
+      "quantities": [
+        {
+          "name": "fraction_of_average_loss_recovered_by_10000x_population",
+          "value": 0.247,
+          "unit": "(r[1B@50] - r[100k@50]) / (r[100k@70] - r[100k@50])",
+          "n": 112,
+          "ci": "bootstrap 95%: -0.11 to 0.60",
+          "ci_low": -0.108,
+          "ci_high": 0.6,
+          "ci_kind": "confidence",
+          "source": "reanalysis/s3c.py",
+          "baseline": "Study 3c happy populations, intuition condition; reflection 0.298 (0.00-0.60, n=101)"
+        },
+        {
+          "name": "fraction_of_average_loss_recovered_by_10000x_population",
+          "value": 1.192,
+          "unit": "same ratio, reverse-coded unhappy arm",
+          "n": 120,
+          "ci": "bootstrap 95%: 0.80 to 1.86",
+          "ci_low": 0.803,
+          "ci_high": 1.861,
+          "ci_kind": "confidence",
+          "source": "reanalysis/s3c.py",
+          "baseline": "Study 3c UNHAPPY populations, reflection condition; intuition 1.58 (0.91-4.44, n=128). Confounded with size aversion exactly as c4 is."
+        },
+        {
+          "name": "marginal_preference_per_log10_population_happy_beyond_1m",
+          "value": 0.02,
+          "unit": "7-pt scale per factor of 10 (million@50 -> billion@50, 3 orders)",
+          "n": 213,
+          "source": "reanalysis/s3c.py (steps 0.045 intuition, 0.069 reflection over 3 orders)",
+          "baseline": "happy populations at +50; the first order of magnitude (100k -> 1M) moves 0.15-0.21"
+        },
+        {
+          "name": "averagist_preference_equal_totals",
+          "value": 2.31,
+          "unit": "7-pt (1 = smaller population with higher average, 4 = indifferent)",
+          "n": 825,
+          "source": "reanalysis/s3b.py; paper 2.28 happy / 2.34 unhappy",
+          "baseline": "Study 3b, totals equal by construction"
+        },
+        {
+          "name": "averagist_preference_equal_totals",
+          "value": 2.18,
+          "unit": "7-pt",
+          "n": 46,
+          "source": "reanalysis/s3b.py",
+          "baseline": "Study 3b, ONLY the 46 of 825 (5.6%) who answered both principle questions AND all four calculations correctly"
+        },
+        {
+          "name": "share_correct_on_average_and_total_comprehension",
+          "value": 0.056,
+          "count": 46,
+          "denominator": 825,
+          "unit": "proportion",
+          "n": 825,
+          "source": "reanalysis/s3b.py",
+          "baseline": "Study 3b: both principle-check questions and all four calculation checks correct"
+        }
+      ],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Reproduces. The averagist preference in 3b is not a comprehension artifact: it is at least as strong among the 5.6% who demonstrably understood that totals were equal (2.18 vs 2.31). The quantitative content worth carrying for longtermist arguments: for HAPPY populations, multiplying the population by 10,000 recovers about a quarter of what a 20-point drop in average costs, and beyond a million people each further factor of ten moves the answer by ~0.02 scale points -- lay value of happy numbers is saturated. For unhappy populations the same multiplication recovers more than the whole loss; that valence contrast carries the same reverse-coding confound as c4 and should not be cited as a welfare asymmetry. 3d gender test: the printed t(571) and means are those of the UNEXCLUDED sample (N=613), not the reported N=482 (reanalysis/s3bd.py); same conclusion either way.",
+        "by": "maria, 2026-10-16"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "https://osf.io/qt65w/ (osfstorage, nine Qualtrics exports 'PopEthics Study *.csv', all version 1)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-16",
+        "by": "maria",
+        "how": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py osf:qt65w --out <dir>; then sh reanalysis/run_all.sh",
+        "result": "40/40 files sha256+md5 verified against OSF's published hashes; every reported N and exclusion count reproduces from the R exclusion rules (ported). Version history checked for all 10 multi-version files: last version 2021-10-09, before online publication 2021-11-05 -- nothing changed after publication."
+      },
+      "bytes": 1349467,
+      "local_path": "artifacts/osf_acquisition.json",
+      "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py osf:qt65w --out work/osf",
+      "datasheet": {
+        "composition": "One row per Qualtrics response, raw (incl. later-excluded rows); free-text comments retained; Study 1a file is misspelt 'Sudy'.",
+        "collection": "MTurk via Positly (Studies 1a-3d except 2b), Prolific (2b), US, 2019-2020; $0.35-$0.45 per participant.",
+        "caveats": "No licence declared on the node, so the data are not redistributed here. 2a has no attention check; its exclusions are the two scale-acceptance items only. Exclusion rates vary from 2% (1c) to 26% (3c) and 21% (3d)."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "https://osf.io/qt65w/ (one R script per study)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-16",
+        "by": "maria",
+        "how": "read all nine; exclusion and scoring logic ported to Python in reanalysis/*.py (no R on host)",
+        "result": "Ported exclusions reproduce every N. Notable: the 3a script contains a commented-out per-participant neutral adjustment ('score_adj'); the 1b script's '% at 50/51' line divides by all conditions (14.9%), while the printed 19.6% is the mild-mild cell -- the text is right, the line is not what produced it."
+      },
+      "derived_from": [
+        "a1"
+      ]
+    },
+    {
+      "id": "a3",
+      "role": "supplement",
+      "locator": "https://osf.io/qt65w/ 'Supplementary Materials for Population ethical intuitions.pdf' (v2, 2021-08-23)",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-10-16",
+        "by": "maria",
+        "how": "downloaded and hash-verified by acquire.py; not read",
+        "result": "present; contents not reviewed this session"
+      }
+    },
+    {
+      "id": "a4",
+      "role": "protocol",
+      "locator": "https://osf.io/qt65w/ 'PopEthics Study *.docx' (survey materials)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-16",
+        "by": "maria",
+        "how": "unzip word/document.xml for Studies 2a, 2b, 3d; grep world sizes",
+        "result": "Study 2a materials say 'a world filled with 1 million people'; the paper's Study 2b section says Study 2a used '10 million'. Methods section of 2a is correct; the cross-reference is the slip."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "karger2023-xpt",
+      "why": "Both treat an elicited number (a trade ratio here, an extinction probability there) as a measurement of a format-independent quantity behind the elicitation. Karger's own data show the format moves the number by up to 800,000x; this paper reports in passing that 'in additional preliminary studies the trade ratio can also heavily depend on the framing of the question' and does not report those studies. Both literatures feed longtermist priority arguments with numbers whose format-dependence is acknowledged and unmeasured."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-happiness-income-spread",
+      "why": "Same lesson from a different construct: the centre of a distribution of judgments (here the mean trade ratio, there the conditional mean of well-being) is reported as the finding while the shape -- a 37% cluster at exact symmetry, a heavy tail of ratios -- carries the substantive content."
+    }
+  ],
+  "open_questions": [
+    "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1016/j.cognition.2021.104941 -> 0 items on 2026-10-16; known-answer control filter=updates:10.1371/journal.pone.0253694 -> 1 item (expected 1).",
+    "Unjournal evaluations (2025; Evaluation Summary + 2 evaluations, RePEc bjn:evalua:e2popintuitions) could not be read in full: unjournal.pubpub.org answered Cloudflare 403 to curl and WebFetch on 2026-10-16. Per the EA Forum summary (forum.effectivealtruism.org/posts/poZwKfPPtgCmTQcBk), Evaluator 2 questioned the neutral-person result (M=4.23, d=0.35) -- which c3 here finds half-carried by wrong-sign responders -- and neither evaluator raised the reverse-coding / post-treatment-baseline issue of c4 or the scale-dependence of c2. That summary is secondary; verify against the reports before citing it.",
+    "Does a separately randomised neutral arm (not asked after the valenced items) show the size aversion that World S in reanalysis/s3a_identifiability.py predicts (4.08, 3.44, 3.02 at 1k/1M/1B)? That one arm decides c4.",
+    "The paper's 'preliminary studies' in which the trade ratio 'heavily depends on the framing' and in which a deontic (button-press) framing gave higher ratios are not in the OSF deposit. Their size is the size of the format effect on the paper's headline number.",
+    "Study 3c's 26% comprehension exclusion (96 participants read level 0 as 'extremely unhappy'): is the -100..+100 scale read by many as 0..100? If so, Studies 1b, 3b-3d inherit a scale-reading problem only 3c tested for.",
+    "Bruers (Unjournal E1) proposed reversing the 1a question ('...for this world to be overall NEGATIVE'). If the threshold moves, c1's 1.5-3x is partly an anchoring effect of the question's direction."
+  ],
+  "curation": {
+    "created": "2026-10-16",
+    "verified": "2026-10-16",
+    "author": "maria",
+    "notes_file": "NOTES.md"
+  }
+}

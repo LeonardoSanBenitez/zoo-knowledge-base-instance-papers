@@ -1,0 +1,53 @@
+1c N 278 excl 5
+            mean    std  median  count
+condition                             
+inter      61.84  12.70    60.0    139
+intra      60.38  13.49    60.0    139
+share 50/51 0.3705
+attn_check
+2    232
+1     25
+3     21
+Name: count, dtype: int64
+--- 1c pooled n=278 mean=61.11 median=60.0 mode=[51.0]
+   <50 (happiness weighs MORE)                      9 0.032
+   50-51 symmetric                                103 0.371
+   51<x<100 weighted asym                         165 0.594
+   100 (no happiness suffices / strict NU-like)     1 0.004
+   ratio-of-means implied rate 1.57; median individual rate 1.50; geometric mean rate (h<100) 1.65; mean individual rate 2.73
+   top values {51.0: np.int64(67), 60.0: np.int64(50), 50.0: np.int64(34), 80.0: np.int64(27), 70.0: np.int64(22), 55.0: np.int64(17), 75.0: np.int64(16), 65.0: np.int64(15), 90.0: np.int64(8), 40.0: np.int64(5)}
+--- 1c assumed-equal-intensity only n=232 mean=60.81 median=60.0 mode=[51.0]
+   <50 (happiness weighs MORE)                      4 0.017
+   50-51 symmetric                                 93 0.401
+   51<x<100 weighted asym                         134 0.578
+   100 (no happiness suffices / strict NU-like)     1 0.004
+   ratio-of-means implied rate 1.55; median individual rate 1.50; geometric mean rate (h<100) 1.61; mean individual rate 2.43
+   top values {51.0: np.int64(65), 60.0: np.int64(40), 50.0: np.int64(26), 80.0: np.int64(21), 70.0: np.int64(17), 55.0: np.int64(14), 65.0: np.int64(14), 75.0: np.int64(13), 90.0: np.int64(6), 40.0: np.int64(3)}
+--- 1b extreme-happy/extreme-unhappy n=91 mean=72.03 median=75.0 mode=[75]
+   <50 (happiness weighs MORE)                      5 0.055
+   50-51 symmetric                                 17 0.187
+   51<x<100 weighted asym                          66 0.725
+   100 (no happiness suffices / strict NU-like)     3 0.033
+   ratio-of-means implied rate 2.58; median individual rate 3.00; geometric mean rate (h<100) 3.33; mean individual rate 11.15
+   top values {75: np.int64(12), 90: np.int64(11), 50: np.int64(9), 70: np.int64(9), 80: np.int64(8), 51: np.int64(8), 60: np.int64(7), 99: np.int64(6), 95: np.int64(5), 100: np.int64(3)}
+--- 1b extreme-happy/mild-unhappy n=82 mean=61.90 median=65.0 mode=[50]
+   <50 (happiness weighs MORE)                     15 0.183
+   50-51 symmetric                                 13 0.159
+   51<x<100 weighted asym                          52 0.634
+   100 (no happiness suffices / strict NU-like)     2 0.024
+   ratio-of-means implied rate 1.62; median individual rate 1.86; geometric mean rate (h<100) 1.78; mean individual rate 7.20
+   top values {50: np.int64(10), 75: np.int64(9), 80: np.int64(8), 70: np.int64(7), 60: np.int64(7), 95: np.int64(4), 85: np.int64(4), 55: np.int64(4), 30: np.int64(3), 65: np.int64(3)}
+--- 1b mild-happy/extreme-unhappy n=86 mean=81.97 median=90.0 mode=[99]
+   <50 (happiness weighs MORE)                      4 0.047
+   50-51 symmetric                                  4 0.047
+   51<x<100 weighted asym                          69 0.802
+   100 (no happiness suffices / strict NU-like)     9 0.105
+   ratio-of-means implied rate 4.54; median individual rate 9.00; geometric mean rate (h<100) 7.52; mean individual rate 25.68
+   top values {99: np.int64(15), 90: np.int64(14), 80: np.int64(10), 100: np.int64(9), 95: np.int64(6), 70: np.int64(6), 75: np.int64(5), 60: np.int64(4), 50: np.int64(4), 98: np.int64(3)}
+--- 1b mild-happy/mild-unhappy n=97 mean=64.56 median=60.0 mode=[70]
+   <50 (happiness weighs MORE)                      7 0.072
+   50-51 symmetric                                 19 0.196
+   51<x<100 weighted asym                          70 0.722
+   100 (no happiness suffices / strict NU-like)     1 0.010
+   ratio-of-means implied rate 1.82; median individual rate 1.50; geometric mean rate (h<100) 2.00; mean individual rate 3.93
+   top values {70: np.int64(16), 60: np.int64(15), 50: np.int64(10), 75: np.int64(10), 51: np.int64(9), 55: np.int64(7), 80: np.int64(6), 40: np.int64(5), 65: np.int64(4), 90: np.int64(4)}

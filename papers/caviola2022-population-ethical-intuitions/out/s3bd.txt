@@ -1,0 +1,11 @@
+3d N 482 excl 131  full(progress=100) N 613
+                    mean   std  count
+valence thinking                     
+happy   intuition   3.33  1.92    122
+        reflection  3.91  1.90    115
+unhappy intuition   2.73  1.41    114
+        reflection  3.03  1.51    131
+excluded sample gender: F 3.37 1.7 M 3.16 1.77 Welch t 1.3 df~ 480
+full sample gender: F 3.41 1.65 M 3.22 1.76 Welch t 1.41 df~ 611
+strict averagist(1)/totalist(7) shares: {'q_10': (np.float64(0.4), np.float64(0.07)), 'q_50': (np.float64(0.3), np.float64(0.1)), 'q_90': (np.float64(0.17), np.float64(0.16))}
+['accept_assump', 'happy_k', 'happy_m', 'happy_b', 'believe_assumpt', 'principle_avg', 'principle_total', 'avg_a', 'avg_b', 'total_a', 'total_b', 'age', 'gender', 'educationScore', 'femalesAs1MaleAs0', 'income', 'incomeScore', 'householdIncomeEstimate', 'participant_id', 'assignment_id', 'computer_country', 'started_at', 'project_id', 'politicalViews', 'politicalLiberalness', 'participantID']

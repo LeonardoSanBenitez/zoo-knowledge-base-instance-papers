@@ -1,0 +1,10 @@
+percentage scale (authors):
+{'Intercept': 61.902, 'mh': 2.654, 'eu': 10.131, 'mh:eu': 7.278} p_int=0.092
+logit clip=0.5: int=0.976 se=0.346 p=0.0048 | mh=0.048 eu=0.644
+logit clip=0.1: int=1.114 se=0.384 p=0.0037 | mh=0.025 eu=0.658
+logit clip=1.0: int=0.916 se=0.333 p=0.0060 | mh=0.058 eu=0.638
+logit clip=2.0: int=0.761 se=0.300 p=0.0110 | mh=0.078 eu=0.610
+logit excluding 0/100 (n=341): int=0.700 p=0.0299
+median-based log interaction 1.312, 95% boot CI [0.300,1.792]
+sim true log-interaction 0.0 -> rejection rate (pct-scale, logit-scale): (np.float64(0.054), np.float64(0.052))
+sim true log-interaction 0.7 -> rejection rate (pct-scale, logit-scale): (np.float64(0.724), np.float64(0.906))

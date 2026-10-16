@@ -1,0 +1,6 @@
+2a all 157 4.236 d=0.351 4.4 0.0
+2a wrong-sign 18 5.056 d=0.838 3.56 0.0024
+2a consistent 139 4.129 d=0.279 3.29 0.0013
+share of excess from wrong-sign group 0.514  group share of N 0.115
+2b empty all 4.25 consistent 4.246 p=0.0000 179
+2b full all 4.037 consistent 4.023 p=0.2068 175

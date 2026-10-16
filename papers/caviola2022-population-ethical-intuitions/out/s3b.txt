@@ -1,0 +1,15 @@
+3b N 825 excl 41
+           mean   std  count
+condition                   
+happy      2.28  1.42    427
+unhappy    2.34  1.10    398
+all                          n= 825 mean=2.31 sd=1.27 share<4=0.87 share==4=0.06
+    by condition {'happy': 2.28, 'unhappy': 2.34}
+correct calc                 n= 232 mean=2.10 sd=1.14 share<4=0.91 share==4=0.04
+    by condition {'happy': 2.14, 'unhappy': 2.04}
+correct principle            n= 343 mean=2.12 sd=1.13 share<4=0.93 share==4=0.02
+    by condition {'happy': 2.06, 'unhappy': 2.18}
+both                         n=  46 mean=2.18 sd=1.14 share<4=0.93 share==4=0.00
+    by condition {'happy': 2.15, 'unhappy': 2.22}
+computed total=avg (60/40)   n= 288 mean=2.26 sd=1.19 share<4=0.89 share==4=0.05
+    by condition {'happy': 2.2, 'unhappy': 2.31}

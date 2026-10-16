@@ -1,0 +1,19 @@
+C:\Users\Leonardo\Desktop\zoo\zoo-knowledge-base\instance-papers\papers\caviola2022-population-ethical-intuitions\reanalysis\s1b.py:14: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  print(e.groupby(['happiness','unhappiness']).apply(lambda g: ((g.numbers_1>49)&(g.numbers_1<52)).mean()).round(3))
+1b N 356 excl 75
+                        mean    std  count
+happiness unhappiness                     
+extreme   extreme      72.03  19.84     91
+          mild         61.90  25.62     82
+mild      extreme      81.97  20.57     86
+          mild         64.56  14.61     97
+authors code: share 50/51 over ALL conditions = 0.1489
+share 50/51 within mild-mild (what the text says) = 0.1959 97
+happiness  unhappiness
+extreme    extreme        0.187
+           mild           0.159
+mild       extreme        0.047
+           mild           0.196
+dtype: float64
+numbers_1+numbers_2 !=100: 0
+['StartDate', 'EndDate', 'Status', 'Progress', 'Duration (in seconds)', 'Finished', 'RecordedDate', 'ResponseId', 'RecipientLastName', 'RecipientFirstName', 'RecipientEmail', 'ExternalReference', 'DistributionChannel', 'UserLanguage', 'accept_assum', 'inter_1', 'inter_2', 'accept_assum.1', 'intra_1', 'intra_2', 'attn_check', 'age', 'gender', 'educationScore', 'femalesAs1MaleAs0', 'income', 'incomeScore', 'householdIncomeEstimate', 'participant_id', 'assignment_id', 'computer_country', 'started_at', 'project_id', 'politicalViews', 'politicalLiberalness', 'participantID', 'assignmentID', 'employmentStatus', 'condition', 'Q_TotalDuration']

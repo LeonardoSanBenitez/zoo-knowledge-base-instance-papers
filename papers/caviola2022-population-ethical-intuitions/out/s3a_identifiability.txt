@@ -1,0 +1,7 @@
+World S implied symmetric welfare w(s): [1.038 0.884 0.696]  common size aversion a(s): [-0.079  0.558  0.982]
+World A implied w_h: [ 1.117  0.326 -0.286]  w_u: [0.959 1.442 1.677]
+World S cell means [5.117 4.326 3.714] [3.041 2.558 2.323]
+World A cell means [5.117 4.326 3.714] [3.041 2.558 2.323]
+authors trend-asymmetry test, World S (symmetric welfare): rejection rate, mean diff = (np.float64(0.98), np.float64(0.6687583333333333))
+authors trend-asymmetry test, World A (asymmetric welfare): rejection rate, mean diff = (np.float64(0.9966666666666667), np.float64(0.676625))
+=> the six means do not distinguish the worlds; a non-post-treatment neutral arm would (World S predicts neutral = 4 - a(s) = [4.08 3.44 3.02] ; World A predicts 4,4,4).

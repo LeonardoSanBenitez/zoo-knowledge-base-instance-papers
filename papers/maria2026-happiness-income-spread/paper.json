@@ -684,6 +684,11 @@
       "type": "zoo:sharesUnstatedAssumptionWith",
       "target": "maria2026-mbp-variability-ratio",
       "why": "Reciprocal. Both rest on treating a change in the second moment of a cross-sectional distribution as licence for a statement about differences between people. Neither can see an individual."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "caviola2022-population-ethical-intuitions",
+      "why": "Third construct (after well-being by income and mindfulness outcomes) where a reported centre hides the content: Caviola's 1.5x trade ratio is the median of a mixture with 37% at exact symmetry."
     }
   ],
   "open_questions": [
