@@ -134,6 +134,12 @@
       "validity": "reporting", "maps_to": [],
       "definition": "A statement in the paper is contradicted by its own code, data, appendix, logs or materials.",
       "check": "Read the code and the materials against the text, line by line, for the claims that carry the conclusion."
+    },
+    "implementation-diverges-from-definition": {
+      "validity": "construct",
+      "maps_to": [],
+      "definition": "The code computes a quantity different from the one the paper defines or names, and the published numbers carry the difference -- not a misdescription of a correct computation (that is text-contradicts-own-materials) but a different computation. Instances 2026-10-16: a need prior applied in reversed point order; a complexity counting formula nodes where the text counts atoms (imel2026-modal-typology-efficiency); a paired sign statistic reported as Cliff's delta (wu2026-chunking-rag-code-completion).",
+      "check": "Recompute one published number from the raw inputs with the paper's OWN definition. If it does not reproduce, search the space of plausible alternative definitions (orderings, counts, paired vs unpaired) until one reproduces exactly -- a unique exact match identifies what was actually computed."
     }
   }
 }

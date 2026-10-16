@@ -91,7 +91,7 @@
       "evidence": ["a1", "a2"],
       "our_assessment": {
         "status": "disputed",
-        "patterns": ["text-contradicts-own-materials"],
+        "patterns": ["implementation-diverges-from-definition", "text-contradicts-own-materials"],
         "why": "The published numbers do not use this definition. src/modals/modal_measures.py num_atoms() is commented 'Helper function because _len_ of GrammaticalExpression is not the number of atoms', but it adds len(child) -- the child's NODE count -- instead of recursing. The result is the node count minus the root operator, so inner AND/OR/NOT are counted. That measure reproduces all 28 natural complexities exactly; the paper's atom count misses by up to 4 (Cantonese 16 vs 20, Basque 9 vs 13). Direction of the bias: non-IFF meanings need nested operators, so the implemented measure penalises them more (4.71 vs 3.14), favouring IFF. c1 survives either measure; c2's simplicity correlation and every distance are computed with the unintended one.",
         "by": "maria, 2026-10-16"
       }
@@ -107,7 +107,7 @@
       "evidence": ["a1", "a2"],
       "our_assessment": {
         "status": "disputed",
-        "patterns": ["text-contradicts-own-materials"],
+        "patterns": ["implementation-diverges-from-definition", "text-contradicts-own-materials"],
         "why": "The published run did not use Table 5. Of the 720 ways to assign the six Table-5 probabilities to the six meaning points, exactly one reproduces all 28 natural-language informativeness values in the published output (to 3e-16), plus a GA-dominant language checked separately. It is Table 5 in REVERSED point order: weak+epistemic received .318 (strong+circumstantial's mass), weak+deontic .254, strong+deontic .042. The corpus itself agrees with Table 5, so the table is right and the run is not. I did not locate the line responsible; the prior file and the universe file list the points in the same order, so the reversal happens inside the universe/prior plumbing. Impact measured: under the correct prior every qualitative conclusion here still holds; the natural-vs-null informativeness gap shrinks by about a quarter. Uniform-prior rows are unaffected.",
         "by": "maria, 2026-10-16"
       }

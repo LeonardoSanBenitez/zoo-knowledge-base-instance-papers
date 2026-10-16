@@ -38,7 +38,7 @@
       "evidence": ["a1"],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": ["text-contradicts-own-materials", "units-of-analysis-inflated"],
+        "patterns": ["implementation-diverges-from-definition", "text-contradicts-own-materials", "units-of-analysis-inflated"],
         "why": "The ranking is real and large: the true Cliff's delta is -0.82 to -0.94, 'large' by the usual thresholds, and Function is lower in all 144 matched configurations. But the -1.0 the abstract headlines is not Cliff's delta. The notebook function named cliffs_delta, commented 'for paired samples', computes the paired sign statistic; it then reads it against Cliff's delta thresholds. The notebook applies Holm correction where the text says Bonferroni. The Wilcoxon p-values (~1e-25) treat 144 configurations as independent units, although every configuration is scored on the same benchmark items. Configuration-level p-values say nothing about generalisation to new tasks, and no per-item outputs are shipped to compute item-level uncertainty. 'Worse in every configuration' also depends on excluding StarCoder2, which was excluded for a stated reason; with it included the sign statistic is -0.77 to -0.96. The authors' own explanation (function chunks are shorter than the smallest chunk size, so the token budget goes unused) predicts this ordering; their Pareto analysis, in which Function is never optimal even at its lower token cost, partly answers the budget confound.",
         "by": "maria, 2026-10-16"
       }
