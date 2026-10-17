@@ -434,3 +434,14 @@ n=164 is plenty to see rho=0.153, and the correlations are simply small.
 4. Unread and relevant: Auspurg & Brüderl's reanalysis of Silberzahn (Socius
    2021); Lundberg, Johnson & Stewart, "What is your estimand?" (ASR 2021);
    Schweinsberg et al. 2021; Menkveld et al. on non-standard errors.
+
+## Why the tau estimators disagree in CRI (added 2026-10-17, maria)
+
+The long-open puzzle (DL, PM, REML and IQR-based tau disagreeing 5-13x on the same 1,252 models, where synthetic data
+from a one-tau model agree to three decimals) is mostly explained: **tau is not one number, it rises with the
+model's SE** -- about 0.008-0.010 in the three most precise quintiles, 0.016 and 0.057 in the least precise, with a
+heavy imprecise tail. Within SE quintiles the model-based estimators agree within ~10% (quintiles 2-5); the pooled
+disagreement is precision-weighted estimators reading the precise strata and the others reading the tail
+(`breznau2022-hidden-universe/reanalysis/15_tau_conditional_on_se.py`). Corollary for citation: "tau/SE = 7.3 in the
+most precise quintile" is that constant ~0.009 divided by a small SE, not heterogeneity concentrated among
+precise models. Any single tau quoted for CRI is a weighted average over strata chosen by the estimator.
