@@ -1,0 +1,21 @@
+KNOWN-ANSWER (synthetic, real predictors, outcome generated with a planted interaction):
+  planted -3.0: recovered mean -3.02 (SD 0.49)
+  planted +0.0: recovered mean +0.02 (SD 0.44)
+
+REAL DATA n = 815 (complete cases)
+correlations:
+         cur    dec   maas   dass
+cur   1.000  0.451 -0.000 -0.018
+dec   0.451  1.000  0.320 -0.282
+maas -0.000  0.320  1.000 -0.554
+dass -0.018 -0.282 -0.554  1.000
+  dass   ~ zc * zd: zc +2.672 (p 0.000231) | zd -6.481 (p 6.72e-17) | interaction -0.698 (p 0.350) | simple slope of zc: dec -1SD +3.370, +1SD +1.973
+  dass   ~ zm * zd: zm -9.362 (p 1.64e-26) | zd -2.231 (p 0.00298) | interaction +1.269 (p 0.202) | simple slope of zm: dec -1SD -10.630, +1SD -8.093
+  ldass  ~ zc * zd: zc +0.149 (p 0.000865) | zd -0.399 (p 6.81e-21) | interaction -0.109 (p 0.010) | simple slope of zc: dec -1SD +0.257, +1SD +0.040
+  ldass  ~ zm * zd: zm -0.544 (p 2.64e-58) | zd -0.136 (p 4.97e-05) | interaction -0.016 (p 0.623) | simple slope of zm: dec -1SD -0.528, +1SD -0.561
+
+EXPLORATORY (not in the plan): does curiosity's partial association survive MAAS? and per DASS subscale
+  dass ~ zc + zd + zm: zc +0.820 (p 0.134), zd -2.539, zm -9.287
+  dass_dep: zc +0.633 (p 0.0235), interaction -0.054 (p 0.853)
+  dass_anx: zc +0.979 (p 3.07e-05), interaction -0.154 (p 0.486)
+  dass_str: zc +1.059 (p 0.000354), interaction -0.490 (p 0.084)
