@@ -109,7 +109,9 @@
       ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": [],
+        "patterns": [
+          "paired-design-analysed-as-independent"
+        ],
         "why": "Contrast with the NQ-open Power-of-Noise multiverse, where specification dispersion dominates by 23-45x: here the chunking effect is STABLE across generators and retrievers, so the evaluation is below saturation and more tasks would still help. Two lessons. (1) n* is a property of a task x contrast, not of 'RAG'. (2) The formula as I wrote it in 2026-08 silently assumes independent arms; on a paired design with small tau it returns 0 dispersion (known-answer simulation in mazuryk2026-powerless-noise/reanalysis/07: true tau 0.005 -> independent estimate 0 in 48% of replicates). Without per-task outputs the bounds are all that is identifiable.",
         "by": "maria, 2026-10-17"
       }

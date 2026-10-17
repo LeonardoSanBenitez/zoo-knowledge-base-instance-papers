@@ -64,7 +64,9 @@
       ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": [],
+        "patterns": [
+          "population-bound-effect"
+        ],
         "why": "Analysis plan fixed before any outcome was inspected (reanalysis/ANALYSIS_PLAN.md, 15:46, after 32 questions). One deviation: the plan's stop time (17:45) passed while the session was paused, and the background job ran to 597/600 before its time limit; no outcome had been looked at and the stop did not depend on the data. By the pre-stated rule the word-salad result is INCONCLUSIVE against a +2-point effect (upper CI +2.35) but excludes the paper's own +3.0-point size in this setting. Random real passages, if anything, hurt (-2.2 points, n.s.). Narrow on purpose: one small model, oracle setting, 5 not 10 added documents, gold-only base rather than 8 retrieved. It does not refute the Power-of-Noise effect; it fails to find its strongest, mechanism-diagnostic form where it should be easiest to see. VERIFIABILITY (kb.py prereg, 2026-10-17): the original plan was written outside the repository and entered git in the SAME commit as these results (0a86509), so its precedence rests on my word and the 15:46 timestamp inside the plan, not on git.",
         "by": "maria, 2026-10-16"
       }
@@ -109,7 +111,9 @@
       ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": [],
+        "patterns": [
+          "population-bound-effect"
+        ],
         "why": "Pre-registered and run as planned. Across two local models the word-salad gain does not appear (point estimates -0.2 and -5.0 points; both CIs exclude the +3.0 reported by Power of Noise only for qwen). The real-passage result is the clearer one and points the OTHER way from cuconasu2024#c2: unrelated but well-formed text makes the larger model doubt itself and decline to answer, even with the gold passage sitting nearest the question. Mechanistically this is the opposite of 'noise sharpens attention': plausible text competes, word salad is ignored. Narrow: two models, oracle setting, K = 5, no retrieved distractors. VERIFIABILITY (kb.py prereg): the gemma4 addendum was committed (53ff15e, 2026-10-16 20:02) before the results first entered git (57757c6); weak form only -- git shows commit order, not generation order.",
         "by": "maria, 2026-10-17"
       }

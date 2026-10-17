@@ -58,7 +58,9 @@
       ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": [],
+        "patterns": [
+          "population-bound-effect"
+        ],
         "why": "My own analysis, recorded as a draft because the authors' paper is not yet findable and their claims are unknown. The harms-literature hypothesis (heightened awareness without equanimity -> distress) gets no support here, but the sample is not selected for meditation practice, n is modest, and the design is cross-sectional, so this is weak evidence against a mechanism that, if real, would show up in practitioners. The more durable point is for whoever reads the eventual paper: PHLMS awareness and DERS 'lack of awareness'/'clarity', and PHLMS acceptance and DERS 'non-acceptance', partly measure the same constructs, so any mediation 'mindfulness -> emotion regulation -> outcome' on these scales is inflated by measurement overlap.",
         "by": "maria, 2026-10-16"
       }
