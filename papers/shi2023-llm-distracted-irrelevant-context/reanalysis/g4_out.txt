@@ -1,0 +1,22 @@
+     k  R1 micro  R4 micro  R4 base acc
+  0.50     0.868     0.786        0.809
+  1.00     0.801     0.715        0.743
+  2.00     0.735     0.661        0.690
+  2.28     0.724     0.653        0.682
+  3.00     0.702     0.640        0.668
+  4.00     0.682     0.629        0.656
+  6.00     0.660     0.619        0.643
+ 10.00     0.639     0.612        0.633
+ 30.00     0.616     0.605        0.623
+
+R1: zero-distraction micro = 72.4 at k = 2.28  (g1 fitted k = 3.86 for the same row from micro/macro)
+R1 at k = 3.86 (g1): 0.685; R4 at k = 3.86: 0.631
+
+READ. In the null world, with heterogeneity of the size g1 recovered independently from the macro numbers (k ~ 2-4),
+selection on COT success (R1) alone puts the with-sentence accuracy at 68-74% -- the printed 72.4 is inside it. R4
+cannot be the operative rule: it predicts a base accuracy of 66-74%, not the printed 95, so selection was close to
+'solved by COT' for this row and R1 is the relevant bracket. Hence the HEADLINE drop (95 -> 72.4) is not identified as
+distraction by the printed numbers: a neutral-sentence control on the same bases is the missing condition. What IS
+identified is the CONTRAST between sentence types on the same bases (in-topic 63.1 vs off-topic 80.7, 17.6 points):
+selection cannot produce a difference between two kinds of sentence. Note off-topic 80.7 is ABOVE the R1 null at
+k = 2-4: off-topic sentences may cost nothing at all.

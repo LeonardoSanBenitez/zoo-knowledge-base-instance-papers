@@ -1,0 +1,18 @@
+Counter({'pure insertion': 39800, 'other change': 18252}) share other = 31.441%
+bases with any edited variant: 32 | edited variants per such base (min/med/max): 240 640 640
+
+ORIG: Steve is 5'6". He grows 6 inches. How tall is he in inches?
+NEW : Steve is 5'6". He grows 6 inches. The height of Emma is 8 feet. How tall is Steve in inches?
+nonoverlapped in_topic
+
+ORIG: A magazine costs $3 each. Jewel bought 10 magazines to be sold at $3.50 each. How much will be Jewel gain from selling these?
+NEW : A magazine costs $3 each. Jewel bought 10 magazines to be sold at $3.50 each. Jewel's neighbor bought 1000 newspapers. How much will Jewel gain from selling her magazines?
+overlapped in_topic
+
+ORIG: bar of French soap that lasts her for 2 months. She spends $8.00 per bar of soap. If she wants to stock up for the entire year, how much will she spend on soap?
+NEW : rench soap that lasts her for 2 months. She spends $8.00 per bar of soap. Maria's father bought a shampoo 5 months ago. If Maria wants to stock up for the entire year, how much will she spend on soap?
+overlapped in_topic
+
+ORIG: 0 sq ft. If he wants to add a home office/personal gym divided space that is twice as large as his bedroom and bathroom, how much sq ft will this new room have?
+NEW : th is 150 sq ft. The shoe size of Mary is 3. If Holden wants to add a home office/personal gym divided space that is twice as large as his bedroom and bathroom, how much sq ft will this new room have?
+nonoverlapped out_topic

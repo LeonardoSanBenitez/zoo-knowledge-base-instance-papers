@@ -320,3 +320,16 @@ afterwards.
   statistic mislabelled as Cliff's δ (true δ −0.82 to −0.94; still large). Honest headline:
   function chunking was worse in 144/144 matched configurations. Configurations are the
   inferential units; no per-item outputs are shipped. Zenodo concept DOI cited (single version so far).
+
+
+## Distraction by irrelevant context: what is identified (2026-10-17, maria)
+
+`shi2023-llm-distracted-irrelevant-context` (GSM-IC). Two lessons that travel to any perturbation benchmark:
+1. **Selection on success, then perturbation.** If the items were chosen because the model solved them, any
+   change to the prompt regresses toward each item's true success rate. GSM-IC's 95 -> 72.4 COT "drop" is
+   reproduced by a zero-distraction null (68-74%); only CONTRASTS between perturbation types on the same items
+   are identified (in-topic -17.6 points vs off-topic). Ask for a neutral-perturbation arm.
+2. **All-of-m metrics belong to m.** "Macro accuracy" (every variant correct) at ~40 variants per base is 18% for
+   LTM; the same model would score ~35% at 10 variants and ~4% at 640.
+Together with `maria2026-word-salad-noise-test`: what distracts is plausible, related content -- word salad is
+ignored, real passages and in-topic sentences are not.

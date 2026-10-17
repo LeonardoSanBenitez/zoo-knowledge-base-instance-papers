@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.5",
+  "id": "shi2023-llm-distracted-irrelevant-context",
+  "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
+  "authors": [
+    "Freda Shi",
+    "Xinyun Chen",
+    "Kanishka Misra",
+    "Nathan Scales",
+    "David Dohan",
+    "Ed Chi",
+    "Nathanael Schärli",
+    "Denny Zhou"
+  ],
+  "year": 2023,
+  "venue": "ICML 2023 (PMLR 202); arXiv:2302.00093v3",
+  "area": [
+    "rag-and-knowledge-management"
+  ],
+  "identifiers": {
+    "arxiv": "2302.00093",
+    "url": "https://github.com/google-research-datasets/GSM-IC"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 22,
+    "bytes_downloaded": 50700000,
+    "compute_notes": "arXiv PDF (18 pp) read: main text, Tables 2-7, Appendix A; Appendix B/C (sample outputs, full prompts) not read. GSM-IC repo at commit 0c1da13552afcc5d995d6f1ad5288417cb110246: GSM-IC_2step.json (26.1 MB, sha256 0a8c2ae7991feeef...), GSM-IC_mstep.json (22.9 MB, 152897a5df9ff1aa...), gsm8k_validation.jsonl (283 kB). Data kept outside the KB (regenerable with fetch_cmd). No model outputs are released. g1-g5 run in seconds; g2 known-answer test about a minute.",
+    "session": "2026-10-17 maria, free deep research"
+  },
+  "triggers": [
+    "do irrelevant sentences hurt LLM math reasoning",
+    "GSM-IC distractibility benchmark",
+    "macro accuracy all variants solved depends on number of variants",
+    "selection on success regression to the mean benchmark construction",
+    "neutral perturbation control for distractor studies",
+    "in-topic versus off-topic distractor sentence"
+  ],
+  "methods": [
+    "in-paper-table-transcription",
+    "analytic-identifiability-derivation",
+    "synthetic-injected-effect-control",
+    "survivorship-conditioning-diagnosis"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Among base problems solved by the baseline prompts, no more than 18% are consistently solved across all types of irrelevant information (macro accuracy; best overall macro, with self-consistency, 45%), showing the models are easily distracted.",
+      "scope": "code-davinci-002 and text-davinci-003, GSM-IC-4K (4,000 variants sampled uniformly from 58,052; on average 40 per base, about 10-60), 100 base problems.",
+      "quantities": [
+        {
+          "name": "macro_accuracy_ltm_gsmic4k",
+          "value": 0.18,
+          "unit": "share of 100 bases with every sampled variant correct",
+          "n": 100,
+          "source": "Table 3",
+          "baseline": "micro 0.775"
+        },
+        {
+          "name": "gsmic_variants_per_base",
+          "value": 640,
+          "unit": "variants per base (median; min 192, max 640)",
+          "n": 100,
+          "source": "reanalysis/g1_macro_classsize.py on the released data",
+          "baseline": "8 templates x 10 role names x 8 numbers; a uniform 4K sample gives a mean of 40 per base"
+        },
+        {
+          "name": "predicted_macro_ltm_at_10_variants",
+          "value": 0.348,
+          "unit": "share of bases",
+          "n": 100,
+          "ci": "0.293-0.406 (90%, binomial redraw of the printed macro)",
+          "source": "reanalysis/g1_macro_classsize.py, reanalysis/g2_breaktest.py",
+          "baseline": "printed 4K value 0.18; predicted on the full 58K set 0.043 (0.016-0.090)"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "instrument-relative-headline-number"
+        ],
+        "why": "Macro accuracy is an all-of-m criterion, so its value is set by m, the number of variants sampled per base, as much as by the model. A Beta model of per-base accuracy, pinned to each row's printed micro and macro, says LTM's 18% would be about 35% if each base had 10 variants and about 4% on the full 58K dataset, with the model unchanged. Known-answer test (g2): with exchangeable variants the method recovers the true full-set and m = 10 macro within 0.01-0.02; with template-level heterogeneity it under-predicts at small m, so the m = 10 figures are if anything conservative. The qualitative claim (few bases are fully robust) stands; the number 18% belongs to GSM-IC-4K's sampling density and must not be compared with a macro accuracy computed at another m.",
+        "by": "maria, 2026-10-17"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Model performance is dramatically decreased when irrelevant information is included: e.g. code-davinci-002 COT from 95.0% on the base problems to 72.4% micro accuracy on GSM-IC-4K.",
+      "scope": "The 100 base problems were selected from 1,000 GSM8K training problems as those 'that can be correctly solved by at least one of the prompting techniques'; the same COT prompt scores 60.3% on all 1,000 (Table 5).",
+      "quantities": [
+        {
+          "name": "cot_accuracy_unselected_dev_set",
+          "value": 0.603,
+          "unit": "accuracy",
+          "n": 1000,
+          "source": "Table 5",
+          "baseline": "base set 0.950 (Table 2); GSM-IC-4K micro 0.724 (Table 3)"
+        },
+        {
+          "name": "zero_distraction_micro_under_selection_null",
+          "value": 0.685,
+          "unit": "predicted accuracy with an added sentence that has NO effect",
+          "n": 100,
+          "source": "reanalysis/g4_selection_regression.py (rule R1, k = 3.86 from g1)",
+          "baseline": "printed 0.724, reproduced exactly at k = 2.28; k = 2-4 gives 0.68-0.74"
+        },
+        {
+          "name": "variants_with_question_rewritten",
+          "value": 0.314,
+          "count": 18252,
+          "denominator": 58052,
+          "unit": "share of GSM-IC variants that change the base text beyond inserting one sentence",
+          "n": 58052,
+          "source": "reanalysis/g5_question_edits.py",
+          "baseline": "32 of 100 bases, usually all their variants; e.g. pronoun -> name, and 'How much will be Jewel gain' -> 'How much will Jewel gain'"
+        },
+        {
+          "name": "in_topic_minus_off_topic_micro_cot",
+          "value": -0.176,
+          "unit": "accuracy difference",
+          "n": 4000,
+          "source": "Table 4 (63.1 vs 80.7)",
+          "baseline": "the identified part: selection cannot create a difference between two sentence types on the same bases"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "not-identifiable",
+        "patterns": [
+          "missing-adequate-control",
+          "circular-analysis",
+          "target-not-identified-by-design"
+        ],
+        "why": "The size of the headline drop is not identified as distraction. Bases were chosen for having been solved, so ANY change to the prompt is a fresh draw that regresses toward each problem's true success rate. In a null world with no distraction at all, per-problem heterogeneity of the size the paper's own micro/macro numbers imply (k = 2-4, g1) plus selection on COT success predicts 68-74% with-sentence accuracy; the printed 72.4% is inside that range (g4). The weaker selection rule ('any of four techniques') cannot be the operative one, since it predicts a base accuracy near 70%, not 95%. A second confound sits inside the treatment: 31.4% of variants also reword the question (g5), usually disambiguating it. The missing condition is a neutral extra sentence on the same bases. What IS identified is the contrast between sentence types on the same bases: in-topic sentences cost 17.6 points more than off-topic ones for COT, and off-topic 80.7% is ABOVE the zero-distraction null, so off-topic sentences may cost nothing. A pre-registered local test of this decomposition is in reanalysis/PLAN.md.",
+        "by": "maria, 2026-10-17"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "benchmark",
+      "locator": "https://github.com/google-research-datasets/GSM-IC (commit 0c1da13552afcc5d995d6f1ad5288417cb110246)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-17",
+        "by": "maria",
+        "how": "curl the raw files; python reanalysis/g1_macro_classsize.py <dir>; python reanalysis/g5_question_edits.py",
+        "result": "58,052 variants over 100 bases (60 two-step), class sizes 192-640; role/number/topic labels as documented. The GSM-IC-4K sample used in the paper is NOT released, nor any model output, so no table cell can be recomputed. 31.4% of variants carry question edits beyond the inserted sentence (Appendix A step 4)."
+      },
+      "bytes": 49292899,
+      "license": "see repository (Google research datasets)",
+      "fetch_cmd": "for f in GSM-IC_2step.json GSM-IC_mstep.json gsm8k_validation.jsonl; do curl -sL -o $f https://raw.githubusercontent.com/google-research-datasets/GSM-IC/0c1da13552afcc5d995d6f1ad5288417cb110246/$f; done"
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:agreesWith",
+      "target": "maria2026-word-salad-noise-test",
+      "why": "Both find that what distracts is plausible, related content: in-topic sentences hurt far more than off-topic ones here; real passages hurt and word salad does not there."
+    },
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "cuconasu2024-power-of-noise",
+      "why": "Both read a context manipulation's effect off a comparison without a content-free control of matched length and position."
+    }
+  ],
+  "open_questions": [
+    "Pre-registered local decomposition (reanalysis/PLAN.md, qwen3.5:4b): selection effect, neutral-sentence drop, content-specific drop. Running 2026-10-17.",
+    "Do bases with rewritten questions (32 of 100) behave differently? Exploratory, from the same local run.",
+    "Ask the authors for the GSM-IC-4K sample ids and per-variant outputs; with them c2 becomes testable on codex itself (now deprecated) -- probably not obtainable."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-10-17",
+    "verified": "2026-10-17",
+    "notes_file": "NOTES.md"
+  }
+}
