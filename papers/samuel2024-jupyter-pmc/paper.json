@@ -176,7 +176,10 @@
         "a6"
       ],
       "our_assessment": {
-        "status": "disputed", "patterns": ["denominator-unstated-or-shifted"],
+        "status": "disputed",
+        "patterns": [
+          "denominator-unstated-or-shifted"
+        ],
         "why": "The 2021 funnel reproduces to the file from the shipped SQLite database (4,169 attempted / 396 finished / 245 identical / 151 different, against the paper's printed 4,169 / 396 / 245 / 151). Accepted without qualification, and this study is the best-instrumented in this area: it prints EVERY stage of the funnel rather than one ratio, so a reader can choose the denominator instead of inheriting one. The multiple values recorded above are not a criticism of the paper -- they are the paper's own ladder, written down so that a future citation cannot lose which rung it came from. || 2026-08-25: the EXECUTION half of this claim stands; the REPRODUCTION half does not. Of the 879 'identical results', 815 had no cells compared. See maria2026-vacuous-reproduction-flag.",
         "by": "maria2026-vacuous-reproduction-flag"
       }
@@ -323,7 +326,10 @@
         "a6"
       ],
       "our_assessment": {
-        "status": "disputed", "patterns": ["units-of-analysis-inflated"],
+        "status": "disputed",
+        "patterns": [
+          "units-of-analysis-inflated"
+        ],
         "why": "Not a claim the paper makes explicitly, which is the problem: it is an unstated design assumption underneath every percentage in the Results. Every notebook in a repository shares one conda environment, one set of data paths and one author, and the measured ICC is 0.435. 77.2% of repositories contributing three or more executions had a completely homogeneous outcome -- a repository is close to one Bernoulli trial. The effective n is about a third of the printed one, and the finer the slice (per journal, per field, per year) the more likely it reports a single repository. All 396 successes of the 2021 run come from 130 repositories, with the top 20 supplying 57%. This does not touch the headline rate, which is a simple proportion; it undermines every comparison built on top of it."
       }
     },
@@ -404,7 +410,10 @@
         "a7"
       ],
       "our_assessment": {
-        "status": "disputed", "patterns": ["correlation-read-as-causation"],
+        "status": "disputed",
+        "patterns": [
+          "correlation-read-as-causation"
+        ],
         "why": "The first half is true and reproduces; the recommendation attached to it had never been tested when this record was written (CORRECTED 2026-08-25: it has now been, by malka2026-docker-reproducibility, on a different substrate and with the opposite sign -- see that record and NOTES.md section 4), and this is the dataset that can test it because it ships the verbatim CONTENT of every requirements file next to the outcome. Restricting to the 191 repositories that declared requirements -- repositories with none are not a control, they receive a large default conda environment -- the point estimate runs AGAINST the recommendation at every stratum: OR 0.435 unadjusted (Fisher p = 0.29), adjusted log-odds -0.392 (z = -0.61), and all six pre-specified strata by licence / releases / stars negative (z between -0.99 and -2.08). With 22 events this cannot establish that pinning HURTS and I do not claim it does. It does establish that the field's most repeated recommendation is untested and that the only data able to test it fail to support it. The mechanism is visible at the install stage (23.4% vs 40.4%, z = -1.77) and is not mysterious: 'numpy==1.16.4' instructs a 2023 toolchain to build a 2019 wheel. A pin is a PROVENANCE record and a PORTABILITY liability, and the guidance literature conflates the two. What preserves executability is a built environment, not a list of version numbers."
       }
     },
@@ -461,7 +470,10 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["mixing-incommensurable-units"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "mixing-incommensurable-units"
+        ],
         "why": "The low rates do agree in the sense that all of them are low. They do not agree numerically, and the appearance that they do is partly manufactured by quoting across incommensurable funnels. Documented instance: Pimentel et al. write that their 24.11% 'is close to the reproducibility rate of 24.9% that Collberg et al. achieved'; the Collberg TR I read reports 32.3% / 48.3% / 54.0% of 402 code-backed papers, and 24.9% comes from the superseded 2014 version they cite. The two events are also not the same event -- a C/C++ project BUILDING versus a notebook RUNNING TO COMPLETION -- on populations that share nothing. Every one of these numbers is a proportion whose denominator was chosen partway down a funnel, and the choices differ between studies. See maria2026-executability-denominators for the pooled version."
       }
     },
@@ -774,7 +786,7 @@
   "open_questions": [
     "Redo the pinning test (c4) on the 2023 corpus, where n is about 3x larger. 22 events is not enough to say anything and the 2023 run might reach the point where it is.",
     "Name the one or two repositories driving the 2013 cohort's 10.5x jump between runs. That would settle whether the entire 'old code reproduces better' pattern is a single artifact.",
-    "Nobody has measured executability for artifacts that ship a BUILT environment (a container image) rather than a declared one. If Trisovic's recommendation #4 is right, that rate should be far above 12%, and it is the only version of this measurement that would change anyone's behaviour.",
+    "PARTLY ANSWERED 2026-10-17 (pointer: malka2026-docker-reproducibility#c3, #c2): the built image is itself perishable -- of 3,620 historical images whose registry location could be recovered, only 1,541 (42.6%) were still retrievable less than two years later, and of 1,537 retrieved, functional reproducibility held only in a minority. So executability-from-a-shipped-image is CAPPED at roughly the image-survival rate before any code runs; Trisovic's #4 helps only where the image is archived somewhere that does not expire (Zenodo/Software Heritage, not a registry). Still unmeasured: the run-success rate of notebooks executed inside archived images. ORIGINAL: Nobody has measured executability for artifacts that ship a BUILT environment (a container image) rather than a declared one. If Trisovic's recommendation #4 is right, that rate should be far above 12%, and it is the only version of this measurement that would change anyone's behaviour.",
     "The paper reports exception rates by journal ranging above 50% and below 20%. Given ICC 0.435 and 130 repositories producing all successes, most of those are one-repository differences. Recomputing them at repository level is cheap and would probably delete a table.",
     "The FAIR Jupyter knowledge graph (arXiv 2404.12935, same authors) is this dataset as RDF with a SPARQL endpoint. Whether querying it is genuinely cheaper than sqlite3 over the dump is an open and directly testable question about whether semantic publishing pays for itself -- and it is a knowledge-management question, not a biomedical one.",
     "A Makefile (OR 1.86) and a CITATION.cff (OR 2.66) predict whether the DECLARED dependencies install, adjusted for repository size, while the environment-specific artifacts do not. Neither can install anything. If installability is a repository-level disposition rather than a property of the environment file, then the whole 'ship X' genre of guidance is mostly selecting for the kind of project that does things properly, and the specific X matters less than the literature assumes. Testable: do these markers predict re-execution in a corpus whose reproduction outcome is trustworthy?"
