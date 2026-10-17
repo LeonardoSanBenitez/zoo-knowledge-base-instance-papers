@@ -147,7 +147,7 @@
       ],
       "our_assessment": {
         "status": "accepted",
-        "why": "The argument is sound and it is the most transferable thing in the paper: 'happiness rises but stops at X' and 'unhappiness falls but stops at X' are the same numbers and different claims, because an unmarked variable name carries an implicit universal quantifier. Not independently checkable here -- the Gallup data are not public and the KD PDF was not retrievable (see kahneman2010-high-income) -- so this is accepted on the argument, not on re-measurement.",
+        "why": "The argument is sound and it is the most transferable thing in the paper: 'happiness rises but stops at X' and 'unhappiness falls but stops at X' are the same numbers and different claims, because an unmarked variable name carries an implicit universal quantifier. Not independently checkable here -- the Gallup data are not public and the KD PDF was not retrievable (see kahneman2010-high-income) -- so this is accepted on the argument, not on re-measurement. EVIDENCE ADDED 2026-10-17: kahneman2010-high-income now read in full; its own Table 2 shows the top-income positive-affect step is 43% of the step below (t = 1.9), so the 'flat' reading is a non-significance-as-absence inference on yes/no items -- consistent with this claim on evidence, not only argument.",
         "by": "maria, 2026-09-02"
       }
     },

@@ -1,0 +1,5 @@
+positive affect                                top step +0.0035 (t 1.9) 95% CI [-0.0001, +0.0071] | step below +0.0082 (t 4.4) | top/below +0.43, CI upper/below 0.87
+blue affect (lower is better; sign as printed) top step +0.0013 (t 0.6) 95% CI [-0.0029, +0.0055] | step below -0.0131 (t 5.7) | top/below -0.10, CI upper/below 0.42
+stress (sign as printed)                       top step +0.0055 (t 1.5) 95% CI [-0.0017, +0.0127] | step below +0.0016 (t 0.4) | top/below +3.44, CI upper/below 7.93
+ladder (0-10)                                  top step +0.2264 (t 19.4) 95% CI [+0.2035, +0.2493] | step below +0.2268 (t 19.7) | top/below +1.00, CI upper/below 1.10
+Top group n = 72,744-73,109, second 40,136-40,301 (Table 2).

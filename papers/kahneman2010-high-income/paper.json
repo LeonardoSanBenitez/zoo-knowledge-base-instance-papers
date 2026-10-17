@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.5",
   "id": "kahneman2010-high-income",
   "title": "High income improves evaluation of life but not emotional well-being",
   "authors": [
@@ -17,11 +17,11 @@
     "url": "https://www.pnas.org/doi/10.1073/pnas.1011492107"
   },
   "record_status": "draft",
-  "read_depth": "abstract-only",
+  "read_depth": "read-and-reanalysed",
   "cost": {
     "tool_calls": 6,
     "bytes_downloaded": 9000,
-    "compute_notes": "Six retrieval attempts, all failed; see artifact a1. No assessments are carried in this record because none may be.",
+    "compute_notes": "Six retrieval attempts, all failed; see artifact a1. No assessments are carried in this record because none may be. 2026-10-17: full text read from PMC2944762 (pmc.ncbi.nlm.nih.gov served it; the publisher site bot-blocks). Table 2 transcribed into reanalysis/k1_satiation_ci.py.",
     "session": "2026-09-02 maria"
   },
   "triggers": [
@@ -42,12 +42,33 @@
           "unit": "USD/year (2008-9)",
           "n": "450,000+",
           "source": "SECOND-HAND, quoted in kkm2023-conflict-resolved. KKM note that $75,000 'is simply the midpoint of the 60 to 90K income category' and that 'a more precise statement would be that there is no further progress in average happiness beyond a threshold at or below 90K'."
+        },
+        {
+          "name": "positive_affect_step_top_vs_second_income_group",
+          "value": 0.0035,
+          "unit": "difference in share reporting positive affect (Table 2)",
+          "n": 112880,
+          "ci": "-0.0001 to +0.0071 (from the printed t = 1.9)",
+          "source": "Table 2; reanalysis/k1_satiation_ci.py",
+          "baseline": "second vs third group +0.0082 (t 4.4); the top step is 43% of it, CI up to 87%"
+        },
+        {
+          "name": "ladder_step_top_vs_second_income_group",
+          "value": 0.2264,
+          "unit": "Cantril ladder points (0-10)",
+          "n": 112868,
+          "source": "Table 2",
+          "baseline": "t 19.4; equal to the step below (0.2268)"
         }
       ],
       "our_assessment": {
-        "status": "unverified",
-        "why": "The primary source was not retrieved, so nothing here is assessed. Every number in this record is second-hand from KKM 2023, marked as such in its source field. Recording the paper anyway, because it is the anchor of a literature this corpus now holds three records on, and because a stub that says WHY it is a stub is more useful than a silent gap.",
-        "by": "maria, 2026-09-02"
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "nonsignificance-read-as-absence",
+          "ceiling-or-floor-artifact"
+        ],
+        "why": "Read in full 2026-10-17. The $75,000 is an inference chain, not an estimate: the top two income groups 'do not differ', so satiation must lie 'somewhere in the third category from the top' ($60-90k), whence 'beyond about $75,000/y, there is no improvement whatever'. The first link reads a borderline non-significant step as zero: for positive affect the top step is +0.0035 (t = 1.9, p ~ .06, n ~ 113,000), 43% of the step below, with a 95% CI reaching 87% of it (k1_satiation_ci.py). Blue affect flattens more convincingly (CI excludes more than 42% of the previous step). The items are yes/no reports about yesterday, averaged into fractions -- the ceiling structure kkm2023-conflict-resolved#c2 builds on is in the paper's own definitions. Correct reading: emotional well-being gains SHRINK markedly above ~$75k on these dichotomous items; 'no improvement whatever' is not what Table 2 can show. This now supports kkm2023#c2 on evidence, not only argument.",
+        "by": "maria, 2026-10-17"
       }
     }
   ],
@@ -77,12 +98,12 @@
     }
   ],
   "open_questions": [
-    "Leonardo has offered to fetch paywalled papers before. This one is not paywalled; it is bot-blocked, which is a different failure and may be easier to solve. Until it is read, kkm2023-conflict-resolved#c2 is accepted on argument rather than on evidence."
+    "ANSWERED 2026-10-17: read in full via PMC (pmc.ncbi.nlm.nih.gov/articles/PMC2944762/) -- PMC serves what the publisher's bot wall blocks. See c1. ORIGINAL: Leonardo has offered to fetch paywalled papers before. This one is not paywalled; it is bot-blocked, which is a different failure and may be easier to solve. Until it is read, kkm2023-conflict-resolved#c2 is accepted on argument rather than on evidence."
   ],
   "curation": {
     "author": "maria",
     "created": "2026-09-02",
-    "verified": "2026-09-02",
+    "verified": "2026-10-17",
     "notes_file": "NOTES.md"
   }
 }

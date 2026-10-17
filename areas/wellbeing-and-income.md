@@ -38,6 +38,12 @@ and shows "no further progress beyond an annual income of ∼$75,000," while lif
 band — not an estimate of a threshold, a bin edge. The finding became one of the
 most-quoted numbers in social science.
 
+> **Read in full 2026-10-17 (`kahneman2010-high-income`, via PMC).** The plateau itself is weaker than the
+> sentence. "No improvement whatever" rests on the top two income groups not differing, and for positive affect
+> that step is +0.0035 at t = 1.9 (p ~ .06, n ~ 113,000): 43% of the step below it, with a 95% CI reaching 87% of
+> it. Blue affect flattens more convincingly. Read Table 2 as "gains shrink sharply above ~$75k on yes/no items",
+> not as satiation -- which is what KKM's ceiling argument (`kkm2023-conflict-resolved#c2`) needs.
+
 **Killingsworth 2021** (PNAS), 1.7 million momentary reports from 33,391 people
 sampled at random moments on their phones, continuous response scale: well-being
 rises approximately linearly with log(income), as steep above $80,000 as below.
