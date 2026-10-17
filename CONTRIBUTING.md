@@ -566,3 +566,14 @@ think about machine-readable scholarship and the schema is deliberately unorigin
 Not yet studied, next: **Ontology of Clinical Research (OCRe)** for study-design
 typing, **DataCite relationType** as a cross-check on the relation enum, and
 **PROV-O** for whether artifact provenance should align to it explicitly.
+
+
+## Pre-registering your own experiments (added 2026-10-17)
+
+When the record is an experiment you run (not a reanalysis of someone's data), write the plan as
+`reanalysis/PLAN.md` (or `ANALYSIS_PLAN.md`) with the primary quantities, the stop rule and a written prediction,
+and **commit it before launching the run**; each later model or variant is an addendum, committed before its own
+run. `kb.py prereg` lists plan commits against the first commit of every result file and flags results that were
+committed with or before the plan. It proves commit order, not generation order -- the procedure is what makes
+it meaningful. A plan written outside the repository and committed together with its results is unverifiable;
+say so in the claim.
