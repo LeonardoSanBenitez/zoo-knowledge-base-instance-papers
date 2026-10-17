@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.5",
+  "id": "vandam2025-meditation-adverse-effects-representative",
+  "title": "Incidence and Predictors of Meditation-Related Unusual Experiences and Adverse Effects in a Representative Sample of Meditators in the United States",
+  "authors": [
+    "Nicholas T. Van Dam",
+    "Jessica Targett",
+    "Jonathan N. Davies",
+    "Alex Burger",
+    "Julieta Galante"
+  ],
+  "year": 2025,
+  "venue": "Clinical Psychological Science (published online 2025-01-06)",
+  "area": [
+    "contemplative-neuroscience"
+  ],
+  "identifiers": {
+    "doi": "10.1177/21677026241298269",
+    "url": "https://osf.io/3mn9y/"
+  },
+  "record_status": "active",
+  "read_depth": "abstract-only",
+  "cost": {
+    "tool_calls": 3,
+    "bytes_downloaded": 6000,
+    "compute_notes": "Abstract from the Crossref API (primary metadata). Data, materials and code reported at OSF 3mn9y, preregistration OSF r8beh -- OSF API answered 503 on 2026-10-17, not retrieved.",
+    "session": "2026-10-17 maria, free deep research"
+  },
+  "triggers": [
+    "prevalence of meditation adverse effects depends on instrument",
+    "representative sample of US meditators adverse effects",
+    "Inventory of Meditation Experiences MRAES prevalence",
+    "meditation retreat participation predicts adverse effects"
+  ],
+  "methods": [],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "In a population-based survey of 886 US adults stratified by lifetime meditation experience, 96.6% reported an unusual experience, 58.4% an adverse effect (IME), 78.3% one or more MRAES items, 31.4% a challenging/difficult/distressing experience, and 9.1% functional impairment from adverse effects; distress, psychoticism, unusual beliefs and retreat participation predicted them.",
+      "scope": "Cross-sectional, US, approximately representative on age, gender, race/ethnicity; one sample, five instruments.",
+      "quantities": [
+        {
+          "name": "meditation_unusual_experience_prevalence",
+          "value": 0.966,
+          "unit": "share of respondents",
+          "n": 886,
+          "source": "abstract (Crossref API, 2026-10-17)"
+        },
+        {
+          "name": "meditation_adverse_effect_prevalence_ime",
+          "value": 0.584,
+          "unit": "share of respondents",
+          "n": 886,
+          "source": "abstract (Crossref API, 2026-10-17)"
+        },
+        {
+          "name": "meditation_adverse_effect_prevalence_mraes_any_item",
+          "value": 0.783,
+          "unit": "share of respondents",
+          "n": 886,
+          "source": "abstract (Crossref API, 2026-10-17)"
+        },
+        {
+          "name": "meditation_challenging_experience_single_item_prevalence",
+          "value": 0.314,
+          "unit": "share of respondents",
+          "n": 886,
+          "source": "abstract (Crossref API, 2026-10-17)"
+        },
+        {
+          "name": "meditation_adverse_effect_functional_impairment_prevalence",
+          "value": 0.091,
+          "unit": "share of respondents",
+          "n": 886,
+          "source": "abstract (Crossref API, 2026-10-17)"
+        }
+      ],
+      "evidence": [],
+      "our_assessment": {
+        "status": "unverified",
+        "patterns": [
+          "instrument-relative-headline-number"
+        ],
+        "why": "Abstract only. Worth recording now for one structural fact visible in the abstract itself: in ONE sample, 'prevalence of meditation adverse effects' runs from 9.1% to 96.6% depending on the instrument -- a tenfold range from definition alone. The single-item 'challenging/difficult/distressing' figure (31.4%) is the one comparable with the practitioner surveys' single items (schlosser2019 25.6%, cebolla2017 25.4%); the MRAES-any-item 78.3% is not. Retreat participation as a predictor agrees with schlosser2019 (OR 1.68). Data at OSF 3mn9y: retrieve when OSF is up, then read the paper and test the predictors.",
+        "by": "maria, 2026-10-17"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "https://osf.io/3mn9y/ (preregistration https://osf.io/r8beh)",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-10-17",
+        "by": "maria",
+        "how": "curl https://api.osf.io/v2/nodes/3mn9y/",
+        "result": "503 (OSF outage continuing from 2026-10-16); retry later"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:agreesWith",
+      "target": "schlosser2019-unpleasant-meditation",
+      "why": "Retreat participation positively associated with adverse effects in both."
+    },
+    {
+      "type": "cito:obtainsBackgroundFrom",
+      "target": "cebolla2017-unwanted-effects-meditation",
+      "why": "Single-item practitioner prevalence (25.4%) sits next to this sample's single-item 31.4%, not its instrument-based 58-97%."
+    }
+  ],
+  "open_questions": [
+    "Retrieve OSF 3mn9y; read the full paper; is the retreat effect robust to the same adjustment schlosser2019 needed (years, type)?",
+    "Does any of the five instruments show the flat-in-years curve of schlosser2019 / the early rise of goldberg2022?"
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-10-17",
+    "verified": "2026-10-17",
+    "notes_file": "NOTES.md"
+  }
+}

@@ -417,3 +417,9 @@ UEs: 30-37% among daily/3-4x weekly vs 21% never; nominal p = .021, not signific
 and Table 4 reports means of SPSS codes 1-11 as 0-10 scores (+1 on every item). Years of practice is not in the
 deposit, so the flat-years question stays open. Lesson for this area's small surveys: a statistic that reproduces
 exactly does not certify the sign of the sentence around it -- check means against value labels.
+
+**Prevalence is an instrument, not a fact (added 2026-10-17):** `vandam2025-meditation-adverse-effects-representative`
+(abstract only, n = 886 representative US meditators) reports 96.6% / 78.3% / 58.4% / 31.4% / 9.1% in ONE sample, by
+instrument (unusual experience / MRAES any item / IME adverse effect / single challenging item / functional
+impairment). Compare like with like: single-item rates are 25.4% (cebolla2017), 25.6% (schlosser2019), 31.4% (here).
+Query: `kb.py quantities --about "meditation prevalence"` lists them together. Data at OSF 3mn9y, not yet retrieved.
