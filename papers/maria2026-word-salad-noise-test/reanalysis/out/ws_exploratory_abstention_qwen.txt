@@ -1,0 +1,4 @@
+EXPLORATORY abstention C1 vs C0: C1-only 5, C0-only 12, exact p 0.143
+EXPLORATORY abstention C2 vs C0: C2-only 18, C0-only 8, exact p 0.076
+EXPLORATORY abstention C2 vs C1: C2-only 21, C1-only 4, exact p 0.001
+C0 abstained 24 -> correct under C1 9 under C2 4

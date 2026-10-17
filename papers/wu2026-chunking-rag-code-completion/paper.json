@@ -2,11 +2,21 @@
   "schema_version": "1.5",
   "id": "wu2026-chunking-rag-code-completion",
   "title": "How Does Chunking Affect Retrieval-Augmented Code Completion? A Controlled Empirical Study",
-  "authors": ["Xinjian Wu", "Jingzhi Gong", "Gunel Jahangirova", "Jie M. Zhang"],
+  "authors": [
+    "Xinjian Wu",
+    "Jingzhi Gong",
+    "Gunel Jahangirova",
+    "Jie M. Zhang"
+  ],
   "year": 2026,
   "venue": "arXiv:2605.04763",
-  "area": ["rag-and-knowledge-management"],
-  "identifiers": {"arxiv": "2605.04763", "url": "https://doi.org/10.5281/zenodo.19228777"},
+  "area": [
+    "rag-and-knowledge-management"
+  ],
+  "identifiers": {
+    "arxiv": "2605.04763",
+    "url": "https://doi.org/10.5281/zenodo.19228777"
+  },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
   "cost": {
@@ -23,38 +33,120 @@
     "cross-file context length effect on code completion",
     "configurations as units of analysis in benchmark studies"
   ],
-  "methods": ["manual-reanalysis-from-shared-materials", "output-diff-reproduction-check"],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "output-diff-reproduction-check"
+  ],
   "claims": [
     {
       "id": "c1",
       "statement": "Function-level chunking underperforms all other strategies by 3.57-5.64 pp EM on RepoEval (Cliff's delta = -1.0, large effect); pairwise Wilcoxon tests with Bonferroni correction are significant.",
       "scope": "RepoEval API and line splits; 144 matched configurations per strategy (4 retrievers x 4 generators x 9 chunk-size/context settings); StarCoder2 excluded from RepoEval because its technical report has no RAG results there.",
       "quantities": [
-        {"name": "cliffs_delta_function_vs_others_true_unpaired", "value": -0.82, "unit": "Cliff's delta, P(x>y) - P(x<y) over 144 x 144 configuration pairs (API; -0.823/-0.847/-0.820 vs Declaration/Sliding/cAST)", "n": 144, "source": "reanalysis/w1_cliff.py", "baseline": "line split: -0.766/-0.943/-0.937. The paper's -1.0 reproduces exactly as the PAIRED SIGN statistic (#x>y - #x<y)/n computed by the notebook's cliffs_delta()"},
-        {"name": "paired_em_difference_function_minus_sliding_api", "value": -3.96, "unit": "EM percentage points, mean over 144 matched configurations", "n": 144, "source": "reanalysis/w1_cliff.py", "baseline": "range -6.50 to -0.32; Function lower in 144/144"},
-        {"name": "function_minus_sliding_em_cost_adjusted", "value": -3.5, "unit": "EM pp, OLS with generator x retriever FE and log2 token cost, cluster SE 0.17", "n": 576, "source": "reanalysis/w2_budget.py (API; line -5.15, SE 0.26)", "baseline": "unadjusted -3.96 (API), -5.64 (line): token budget accounts for ~10%"},
-        {"name": "paired_sign_function_vs_others_with_starcoder2", "value": -0.772, "unit": "paired sign statistic (API, vs Declaration), 180 configurations", "n": 180, "source": "reanalysis/w1_cliff.py with INCLUDE_STARCODER2=1 -> out/w1_cliff_with_starcoder2.txt", "baseline": "-0.917 vs Sliding, -0.961 vs cAST: 'worse in every configuration' holds only with StarCoder2 excluded"}
+        {
+          "name": "cliffs_delta_function_vs_others_true_unpaired",
+          "value": -0.82,
+          "unit": "Cliff's delta, P(x>y) - P(x<y) over 144 x 144 configuration pairs (API; -0.823/-0.847/-0.820 vs Declaration/Sliding/cAST)",
+          "n": 144,
+          "source": "reanalysis/w1_cliff.py",
+          "baseline": "line split: -0.766/-0.943/-0.937. The paper's -1.0 reproduces exactly as the PAIRED SIGN statistic (#x>y - #x<y)/n computed by the notebook's cliffs_delta()"
+        },
+        {
+          "name": "paired_em_difference_function_minus_sliding_api",
+          "value": -3.96,
+          "unit": "EM percentage points, mean over 144 matched configurations",
+          "n": 144,
+          "source": "reanalysis/w1_cliff.py",
+          "baseline": "range -6.50 to -0.32; Function lower in 144/144"
+        },
+        {
+          "name": "function_minus_sliding_em_cost_adjusted",
+          "value": -3.5,
+          "unit": "EM pp, OLS with generator x retriever FE and log2 token cost, cluster SE 0.17",
+          "n": 576,
+          "source": "reanalysis/w2_budget.py (API; line -5.15, SE 0.26)",
+          "baseline": "unadjusted -3.96 (API), -5.64 (line): token budget accounts for ~10%"
+        },
+        {
+          "name": "paired_sign_function_vs_others_with_starcoder2",
+          "value": -0.772,
+          "unit": "paired sign statistic (API, vs Declaration), 180 configurations",
+          "n": 180,
+          "source": "reanalysis/w1_cliff.py with INCLUDE_STARCODER2=1 -> out/w1_cliff_with_starcoder2.txt",
+          "baseline": "-0.917 vs Sliding, -0.961 vs cAST: 'worse in every configuration' holds only with StarCoder2 excluded"
+        }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": ["implementation-diverges-from-definition", "text-contradicts-own-materials", "units-of-analysis-inflated"],
+        "patterns": [
+          "implementation-diverges-from-definition",
+          "text-contradicts-own-materials",
+          "units-of-analysis-inflated"
+        ],
         "why": "The ranking is real and large: the true Cliff's delta is -0.82 to -0.94, 'large' by the usual thresholds, and Function is lower in all 144 matched configurations. But the -1.0 the abstract headlines is not Cliff's delta. The notebook function named cliffs_delta, commented 'for paired samples', computes the paired sign statistic; it then reads it against Cliff's delta thresholds. The notebook applies Holm correction where the text says Bonferroni. The Wilcoxon p-values (~1e-25) treat 144 configurations as independent units, although every configuration is scored on the same benchmark items. Configuration-level p-values say nothing about generalisation to new tasks, and no per-item outputs are shipped to compute item-level uncertainty. 'Worse in every configuration' also depends on excluding StarCoder2, which was excluded for a stated reason; with it included the sign statistic is -0.77 to -0.96. The authors' own explanation (function chunks are shorter than the smallest chunk size, so the token budget goes unused) predicts this ordering; their Pareto analysis, in which Function is never optimal even at its lower token cost, partly answers the budget confound.",
         "by": "maria, 2026-10-16"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "(zoo reanalysis, not the authors' claim) The saturation size n* cannot be computed from Wu et al.'s tables with the independent-arms formula: across the 144-192 generator x retriever configurations the effects of chunking strategy and context length vary LESS than the independent-arms standard error of one configuration (observed SD 0.76-1.52 pp vs 1.75 pp), so tau^2 <= 0 and n* = infinity. Because the arms are paired (same 1,600 tasks), the true SE is smaller and only lower bounds follow: n* >= 2,143-8,606 tasks, all above the N = 1,600 evaluated.",
+      "scope": "RepoEval API and line splits, Exact Match; N = 1,600 tasks per split recovered from printed EM decimals (88% exactly k/1600 rounded half-up, the rest +0.0001). Lower bound uses observed SD as an upper bound on tau.",
+      "quantities": [
+        {
+          "name": "benchmark_saturation_size_lower_bound",
+          "value": 2143,
+          "unit": "tasks (smallest across six contrasts; largest 8,606)",
+          "n": 144,
+          "source": "reanalysis/w3_nstar.py -> reanalysis/out/w3_nstar.txt",
+          "baseline": "N = 1,600; NQ-open (Mazuryk) n* about 220-435 calibrated"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": [],
+        "why": "Contrast with the NQ-open Power-of-Noise multiverse, where specification dispersion dominates by 23-45x: here the chunking effect is STABLE across generators and retrievers, so the evaluation is below saturation and more tasks would still help. Two lessons. (1) n* is a property of a task x contrast, not of 'RAG'. (2) The formula as I wrote it in 2026-08 silently assumes independent arms; on a paired design with small tau it returns 0 dispersion (known-answer simulation in mazuryk2026-powerless-noise/reanalysis/07: true tau 0.005 -> independent estimate 0 in 48% of replicates). Without per-task outputs the bounds are all that is identifiable.",
+        "by": "maria, 2026-10-17"
       }
     }
   ],
   "artifacts": [
-    {"id": "a1", "role": "derived-data", "locator": "https://zenodo.org/records/19228778 (chunk.zip; paper cites concept DOI 10.5281/zenodo.19228777)", "status": "verified-usable",
-     "checked": {"on": "2026-10-16", "by": "maria", "how": "curl api/records/19228777 -> 302 to 19228778; conceptrecid 19228777; one version; curl .../files/chunk.zip/content; md5sum; python reanalysis/w1_cliff.py", "result": "md5 matches the record; configuration-level result CSVs (api/line_all_results.csv, 725 rows each) reproduce every value in eval/figure/output/repoeval_rq1_statistical_tests.csv once StarCoder2 is dropped as in the notebook. No per-item predictions shipped (examples/outputs holds 3 sample files)."},
-     "bytes": 2180133, "fetch_cmd": "curl -sL -o chunk.zip https://zenodo.org/api/records/19228778/files/chunk.zip/content", "license": "cc-by-4.0"}
+    {
+      "id": "a1",
+      "role": "derived-data",
+      "locator": "https://zenodo.org/records/19228778 (chunk.zip; paper cites concept DOI 10.5281/zenodo.19228777)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-16",
+        "by": "maria",
+        "how": "curl api/records/19228777 -> 302 to 19228778; conceptrecid 19228777; one version; curl .../files/chunk.zip/content; md5sum; python reanalysis/w1_cliff.py",
+        "result": "md5 matches the record; configuration-level result CSVs (api/line_all_results.csv, 725 rows each) reproduce every value in eval/figure/output/repoeval_rq1_statistical_tests.csv once StarCoder2 is dropped as in the notebook. No per-item predictions shipped (examples/outputs holds 3 sample files)."
+      },
+      "bytes": 2180133,
+      "fetch_cmd": "curl -sL -o chunk.zip https://zenodo.org/api/records/19228778/files/chunk.zip/content",
+      "license": "cc-by-4.0"
+    }
   ],
   "relations": [
-    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "mazuryk2026-powerless-noise", "why": "Both report effects over a grid of model/retriever/parameter configurations scored on one benchmark, and both treat configurations as the units of inference; the uncertainty that matters for a practitioner (over tasks) is not what the tests measure."}
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "mazuryk2026-powerless-noise",
+      "why": "Both report effects over a grid of model/retriever/parameter configurations scored on one benchmark, and both treat configurations as the units of inference; the uncertainty that matters for a practitioner (over tasks) is not what the tests measure."
+    }
   ],
   "open_questions": [
     "Item-level reanalysis: needs per-task predictions (not shipped). Ask whether they exist.",
     "ANSWERED 2026-10-16 (reanalysis/w2_budget.py): with generator x retriever fixed effects and log2(token cost), Function - Sliding goes from -3.96 to -3.50 pp (API) and -5.64 to -5.15 pp (line); a doubling of tokens is worth +2.4/+2.1 pp and Function uses ~15% fewer. The token budget explains ~10% of the deficit; the rest fits the authors' second explanation (function chunks drop module-level code), not their first."
   ],
-  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+  "curation": {
+    "author": "maria",
+    "created": "2026-10-16",
+    "verified": "2026-10-16",
+    "notes_file": "NOTES.md"
+  }
 }

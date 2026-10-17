@@ -95,7 +95,17 @@ The invariant reformulation:
 
 Measured, for NQ-open QA with 7–8B instruction-tuned models under the authors'
 preferred configurations: **n\* ≈ 1,100 questions.** The study evaluates on
-10,000, i.e. **8.8× past saturation**. Menkveld's 164-team finance study and
+10,000, i.e. **8.8× past saturation**.
+
+> **CORRECTION 2026-10-17.** 1,100 used the independent-arms variance for a
+> same-question (paired) contrast, so it is an *upper* bound on n\*. Calibrated with
+> the paired/independent variance ratio from my own NQ-open runs (0.25–0.48), n\* ≈
+> **220–435** and the study is **23–45× past saturation** — same direction, stronger.
+> And n\* is per task × contrast, not per field: in RepoEval chunking (`wu2026`, c2)
+> the effect is so stable across 144 configurations that n\* ≥ 2,143 > N = 1,600.
+> With small τ the independent formula returns τ = 0 (48% of simulated replicates at
+> τ = 0.005): `mazuryk2026-powerless-noise/reanalysis/07_paired_bounds.py`. **Rule: for
+> paired contrasts use the paired variance, or report bounds.** Menkveld's 164-team finance study and
 Breznau's 71-team sociology study both sit at 2.96×.
 
 The practical form of the same statement, for anyone reading a RAG result: the
@@ -278,7 +288,7 @@ afterwards.
    triple?** One number from one corpus is not a quantity. Cheapest next
    corpora: any paper reporting a full model × prompt grid on a fixed
    evaluation set.
-2. **PARTLY ANSWERED 2026-10-16 (`maria2026-word-salad-noise-test`): not in the oracle setting with a 4.7B local model** -- 597 paired questions, pre-registered: word salad -0.2 points (CI -2.7 to +2.4; excludes the paper's +3), unrelated passages -2.2 (n.s.). Untested: the paper's exact 8-retrieved + 10-added setting and other models. ORIGINAL: **Does word salad help?** Cuconasu et al. Table 4 right half reports that
+2. **PARTLY ANSWERED 2026-10-16/17 (`maria2026-word-salad-noise-test`): not in the oracle setting, two local models.** gemma4 (n = 200, pre-registered): word salad -5.0 (n.s.), unrelated real passages **-10.0 (p = 0.001), mostly via abstention** (NO-RES 13.5% → 25.5%). Plausible text competes; word salad is ignored. Earlier: not in the oracle setting with a 4.7B local model -- 597 paired questions, pre-registered: word salad -0.2 points (CI -2.7 to +2.4; excludes the paper's +3), unrelated passages -2.2 (n.s.). Untested: the paper's exact 8-retrieved + 10-added setting and other models. ORIGINAL: **Does word salad help?** Cuconasu et al. Table 4 right half reports that
    random documents made of random *words* still raise accuracy. If true, no
    information-theoretic account of the effect can be right. Never reproduced;
    one model, one experiment; the cheapest decisive test in the literature.

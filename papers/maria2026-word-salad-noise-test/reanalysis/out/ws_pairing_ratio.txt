@@ -1,0 +1,6 @@
+results_qwen3.5_4b.jsonl         C1-C0 n=597 p0=0.786 p1=0.784 Var_paired=0.0988 Var_indep=0.3378 ratio=0.293 corr=0.707
+results_qwen3.5_4b.jsonl         C2-C0 n=597 p0=0.786 p1=0.764 Var_paired=0.0883 Var_indep=0.3488 ratio=0.253 corr=0.747
+results_qwen3.5_4b.jsonl         C2-C1 n=597 p0=0.784 p1=0.764 Var_paired=0.0934 Var_indep=0.3498 ratio=0.267 corr=0.733
+results_gemma4_latest.jsonl      C1-C0 n=200 p0=0.705 p1=0.655 Var_paired=0.2075 Var_indep=0.4340 ratio=0.478 corr=0.522
+results_gemma4_latest.jsonl      C2-C0 n=200 p0=0.705 p1=0.605 Var_paired=0.1700 Var_indep=0.4470 ratio=0.380 corr=0.620
+results_gemma4_latest.jsonl      C2-C1 n=200 p0=0.655 p1=0.605 Var_paired=0.1475 Var_indep=0.4649 ratio=0.317 corr=0.683

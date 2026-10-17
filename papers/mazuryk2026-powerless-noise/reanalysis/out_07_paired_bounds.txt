@@ -1,0 +1,21 @@
+subset                                  k   SD(E)  tau_ind  n*_ind  tau_lo  n*_lo    n/n* range
+all 19 specifications                  19  0.1560   0.1480      16  0.1560      1   639.4-9719.4x
+Table 6, balanced 5x3                  15  0.1444   0.1399      18  0.1443      1   570.9-9599.0x
+Table 6 minus llama3/Base              14  0.0233   0.0202     811  0.0233     38    12.3-265.2x
+preferred configs only (FinalP01/02)   10  0.0187   0.0164    1134  0.0187     46     8.8-218.9x
+
+READ. n*_ind is script 05's number (an UPPER bound on n* if the arms are non-negatively
+correlated); n*_lo is the smallest n* consistent with the printed accuracies. Every
+conclusion of 05 of the form 'the benchmark is past saturation' gets STRONGER under
+pairing, never weaker: the true saturation factor is at least 05's figure.
+
+CALIBRATED (ratio r = paired / independent per-item variance, from my own NQ-open runs)
+  all 19 specifications                  n* = 4 (r=0.25) to 7 (r=0.48)  ->  n/n* = 1478.9x to 2840.4x
+  Table 6, balanced 5x3                  n* = 4 (r=0.25) to 8 (r=0.48)  ->  n/n* = 1266.0x to 2431.7x
+  Table 6 minus llama3/Base              n* = 155 (r=0.25) to 302 (r=0.48)  ->  n/n* = 33.1x to 64.5x
+  preferred configs only (FinalP01/02)   n* = 222 (r=0.25) to 435 (r=0.48)  ->  n/n* = 23.0x to 45.0x
+
+KNOWN-ANSWER TEST (true tau planted; rho=0.85 latent item correlation)
+  true tau 0.0000: mean tau_hat independent 0.0001 (zero in 95% of reps) | paired 0.0011 | realised ratio 0.51
+  true tau 0.0050: mean tau_hat independent 0.0020 (zero in 48% of reps) | paired 0.0043 | realised ratio 0.51
+  true tau 0.0187: mean tau_hat independent 0.0171 (zero in 0% of reps) | paired 0.0177 | realised ratio 0.51

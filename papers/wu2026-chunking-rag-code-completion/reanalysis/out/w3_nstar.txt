@@ -1,0 +1,14 @@
+api  function - sliding     k=144 mean effect -3.96 pp | tau 0.00 pp | single-config SE 1.75 pp | n* = inf | N/n* = 0.00
+api  cast - sliding         k=144 mean effect -0.29 pp | tau 0.00 pp | single-config SE 1.76 pp | n* = inf | N/n* = 0.00
+api  context 8192 - 2048    k=192 mean effect +2.21 pp | tau 0.00 pp | single-config SE 1.76 pp | n* = inf | N/n* = 0.00
+line function - sliding     k=144 mean effect -5.64 pp | tau 0.00 pp | single-config SE 1.76 pp | n* = inf | N/n* = 0.00
+line cast - sliding         k=144 mean effect -0.37 pp | tau 0.00 pp | single-config SE 1.75 pp | n* = inf | N/n* = 0.00
+line context 8192 - 2048    k=192 mean effect +1.85 pp | tau 0.00 pp | single-config SE 1.76 pp | n* = inf | N/n* = 0.00
+
+BOUNDS (paired arms: true sampling variance of a difference is unknown without per-item outputs, between 0 and the independent value)
+api  function - sliding     observed SD of effect across configs 1.33 pp (< independent SE 1.75 pp) | n* >= 2,794 (N = 1600)
+api  cast - sliding         observed SD of effect across configs 0.76 pp (< independent SE 1.76 pp) | n* >= 8,606 (N = 1600)
+api  context 8192 - 2048    observed SD of effect across configs 1.39 pp (< independent SE 1.76 pp) | n* >= 2,581 (N = 1600)
+line function - sliding     observed SD of effect across configs 1.52 pp (< independent SE 1.76 pp) | n* >= 2,143 (N = 1600)
+line cast - sliding         observed SD of effect across configs 1.16 pp (< independent SE 1.75 pp) | n* >= 3,647 (N = 1600)
+line context 8192 - 2048    observed SD of effect across configs 1.15 pp (< independent SE 1.76 pp) | n* >= 3,711 (N = 1600)
