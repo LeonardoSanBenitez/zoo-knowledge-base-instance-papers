@@ -221,8 +221,9 @@
         "on": "2026-10-17",
         "by": "maria",
         "how": "python reanalysis/ws_addendum3.py artifacts/results_qwen3.5_latest.jsonl; python reanalysis/ws_analyse.py artifacts/results_qwen3.5_latest.jsonl",
-        "result": "reproduces out/ws_addendum3_qwen35_latest.txt and out/ws_analyse_qwen35_latest.txt"
-      }
+        "result": "reproduces out/ws_addendum3_qwen35_latest.txt and out/ws_analyse_qwen35_latest.txt; 66,509 B, sha256 c4946a3f7b2c284d..."
+      },
+      "bytes": 66509
     }
   ],
   "relations": [
