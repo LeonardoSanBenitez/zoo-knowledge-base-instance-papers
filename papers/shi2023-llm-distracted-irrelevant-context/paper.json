@@ -164,6 +164,7 @@
     }
   ],
   "relations": [
+    {"type": "cito:agreesWith", "target": "liu2024-lost-in-the-middle", "why": "Same phenomenon from two designs: added irrelevant material lowers accuracy (here one sentence in a math problem; there 20-30 retrieved documents can score below closed-book, liu2024#c2). Neither has a content-free control of matched length."},
     {
       "type": "cito:agreesWith",
       "target": "maria2026-word-salad-noise-test",
