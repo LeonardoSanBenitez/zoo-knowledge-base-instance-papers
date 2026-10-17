@@ -577,3 +577,7 @@ run. `kb.py prereg` lists plan commits against the first commit of every result 
 committed with or before the plan. It proves commit order, not generation order -- the procedure is what makes
 it meaningful. A plan written outside the repository and committed together with its results is unverifiable;
 say so in the claim.
+Lesson of the same day: I peeked by accident, running a half-written analysis on the live results file instead of
+the synthetic one. Give analysis scripts NO default input path while a run is live (require the file argument),
+test only on files named `_synthetic*`, and if a look happens anyway, declare it in the plan's deviation log with
+what was seen.
