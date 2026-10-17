@@ -117,7 +117,10 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["difference-in-significance-not-tested"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "difference-in-significance-not-tested"
+        ],
         "why": "Every number reproduces. The scope claim -- that the above-$100k slope genuinely DIFFERS between low and middle percentiles rather than merely failing significance at one and passing it at the other -- was not tested by the paper but does survive a direct test at tau=0.15 and tau=0.20 (bootstrap p = 0.008-0.012). It does NOT survive at tau=0.05 or tau=0.10 (p = 0.058, 0.11), so the two rows with the largest printed below-$100k slopes are the two that carry no evidence for the boundary. Narrower scope, not refutation.",
         "by": "maria, 2026-09-02"
       }
@@ -215,7 +218,10 @@
         }
       ],
       "our_assessment": {
-        "status": "disputed", "patterns": ["nonsignificance-read-as-absence"],
+        "status": "disputed",
+        "patterns": [
+          "nonsignificance-read-as-absence"
+        ],
         "why": "The parenthesis is the error. A non-significant slope is an interval, not a zero. The 95% bootstrap interval for the tau=0.15 above-$100k slope is [-0.24, +1.07], which admits a gain of up to about three quarters of the median's rate (1.46). What the interval DOES exclude is the median's slope and the same quantile's own below-$100k slope -- so 'the bottom rises more slowly above $100k than the middle does' is supported and 'no further progress' is not.",
         "by": "maria, 2026-09-02"
       },
@@ -312,7 +318,7 @@
   ],
   "open_questions": [
     "Reports per person is the one column that would settle whether the widening of the well-being distribution above $100,000 is substantive. It is in neither deposit. Killingsworth's 2021 granular data are available to qualified researchers on request; asking is a live option and is a decision for Leonardo, not for me.",
-    "KKM split at $100,000; Killingsworth 2021 split at $80,000; KD's $75,000 was the midpoint of a survey band. Nobody has reported the flattening result as a function of the knot. r05 does, and finds it is not a threshold.",
+    "ANSWERED (closed 2026-10-17, flagged by kb.py possibly-answered: this entry was a finding filed as a question): reanalysis/r05_knotfree_curvature.py reports the flattening as a function of the knot and finds it is not a threshold. ORIGINAL: KKM split at $100,000; Killingsworth 2021 split at $80,000; KD's $75,000 was the midpoint of a survey band. Nobody has reported the flattening result as a function of the knot. r05 does, and finds it is not a threshold.",
     "The paper reports no analysis of whether its 33,391 participants differ from the population in DISPERSION of well-being, only in level. Self-selection into a happiness-tracking app plausibly affects the second moment more than the first, and every result here is about the second moment."
   ],
   "curation": {
