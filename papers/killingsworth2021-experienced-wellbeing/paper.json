@@ -194,6 +194,20 @@
         "how": "python tools/jats2txt.py PMC7848527.xml --tables",
         "result": "Three columns of slopes with sample sizes, extracted from JATS with row and column labels intact. Column 3 is the one worth keeping: it is the only place the below/above-$80k equality visibly fails."
       }
+    },
+    {
+      "id": "a6",
+      "role": "supplement",
+      "locator": "artifacts/pnas.2016976118.sapp.pdf (from https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7848527/supplementaryFiles, zip)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-17",
+        "by": "maria",
+        "how": "curl the supplementaryFiles zip; unzip; PyMuPDF text extraction",
+        "result": "18 pp; Table S1 (observations per feeling), Table S2 (slopes per feeling overall / below / above $80,000) read"
+      },
+      "bytes": 960252,
+      "fetch_cmd": "curl -sL -o s.zip https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7848527/supplementaryFiles && unzip s.zip pnas.2016976118.sapp.pdf"
     }
   ],
   "relations": [
@@ -219,7 +233,8 @@
   ],
   "open_questions": [
     "ANSWERED 2026-10-17 (full text, Europe PMC PMC7848527): 1,725,994. Table 1 -- the regression table itself, 'Main results' column (overall slope 0.113) -- reports 'No. of observations 1,725,994' for 33,391 people, as do the Abstract and the Results paragraph; only the Methods sentence ('All other results ... are based on all 1,704,162 reports') says otherwise. Three places against one, and the one that IS the regression output agrees with the majority: the Methods figure is the inconsistent one (21,832 fewer; plausibly from an earlier data cut). Minor text-contradicts-own-materials. ORIGINAL: Which report total is right, 1,725,994 or 1,704,162? The Methods sentence says the smaller one is what the regressions use, and the Abstract uses the larger. Neither deposit contains report counts, so it cannot be settled from the public materials.",
-    "SI Appendix Table S1 gives responses per secondary feeling. That number would sharpen the measurement-artifact bound in maria2026-happiness-income-spread#c5 considerably. The SI was 503 on the day; retry."
+    "ANSWERED 2026-10-17, negatively: the SI (Europe PMC supplementaryFiles for PMC7848527 -> artifacts/pnas.2016976118.sapp.pdf, 18 pp) Table S1 gives only TOTAL observations per secondary feeling (Good and Bad 71,577 each; Inspired 50,022; Proud 49,693; Interested 50,269; Confident 18,765; Bored 34,097; Upset 49,672; Afraid 49,782; Angry 49,839; Sad 49,159; Stressed 50,214) -- no per-person or per-income breakdown, so it does NOT sharpen the c5 bound of maria2026-happiness-income-spread. Reports-per-person by income remains the missing column. ORIGINAL: SI Appendix Table S1 gives responses per secondary feeling. That number would sharpen the measurement-artifact bound in maria2026-happiness-income-spread#c5 considerably. The SI was 503 on the day; retry.",
+    "NOTED 2026-10-17 from SI Table S2 (not a claim of the paper's main text): above $80,000 the slopes for stressed (-0.071, p = .888), afraid (-0.0048, p = .992) and angry (-0.35, p = .438) are flat while all five positive feelings keep rising -- the Kahneman-Deaton pattern (negative affect flattens) visible inside this dataset, and the substance of kkm2023's unhappiness reading. Worth a claim if this record is revisited."
   ],
   "curation": {
     "author": "maria",
