@@ -1,0 +1,65 @@
+file rows 1309 teams 73
+A1. drop non-converged (AME_Z missing): 1301 rows, 72 teams
+A2. drop u_teamid==0 (the PI reference block, 48 models): 1253 rows, 71 teams
+    paper states n = 1,253 models from 71 teams -> MATCH
+
+B. Fig. 1 percentages
+   published (corrected Fig.1, 2024): 25.4 neg / 57.7 ns / 16.9 pos
+   reproduced INVERSE-TEAM-SIZE WEIGHTED: 25.40 / 57.69 / 16.92
+   same data UNWEIGHTED (per model):    19.47 / 64.41 / 16.12
+   team-level (a team counts once, its modal outcome):
+    {'ns': 61.97, 'neg': 25.35, 'pos': 12.68}
+
+C. Mathur, Covington & VanderWeele 2023 (PNAS letter)
+   they report 90%% of standardized estimates in [-0.037, 0.037]
+   reproduced 5th/95th pct of AME_Z: [-0.0420, 0.0300]
+   (their number is a symmetric summary; |AME_Z| 90th pct = 0.0373)
+
+D. dispersion decomposition (n usable = 1252 of 1253)
+   observed SD of AME_Z          = 0.07361
+   observed VAR of AME_Z         = 5.419e-03
+   mean sampling variance (SE^2) = 5.532e-03  (mean SE = 0.01686)
+   DL tau^2 = 1.316e-05  (tau = 0.00363);  Q = 18848.4 on 1251 df;  I^2 = 0.9336
+   share of observed variance that is NOT sampling error: 0.0024
+   two-level REML: mu = -0.00237, tau2_between = 6.592e-05, tau2_within = 8.636e-05
+   -> of TRUE heterogeneity, between-team = 43.3%, within-team = 56.7%
+   -> of OBSERVED variance: sampling 102.1%, between-team 1.2%, within-team 1.6%
+   90% prediction interval for a TRUE effect: [-0.0227, 0.0179]
+   (Mathur et al. report [-0.014, 0.014] from a one-level model)
+
+D2. by chosen DV (different estimands, cf. Lundberg et al. 2021)
+         DV   n     mean      SD     tau      I2
+    IncDiff 203 -0.01085 0.05989 0.00345 0.83573
+     OldAge 203  0.00378 0.04488 0.00108 0.81310
+       Jobs 203 -0.00549 0.05937 0.00322 0.83302
+      Unemp 202 -0.00337 0.05573 0.00496 0.89650
+     Health 123  0.01095 0.11585 0.00417 0.90211
+      House 123  0.01593 0.12420 0.00424 0.84516
+    Scale_6 114 -0.00942 0.04178 0.00639 0.76719
+    Scale_4  33 -0.01405 0.06643 0.01109 0.80136
+Scale_Desrv  18  0.03181 0.08996 0.00836 0.97075
+ Scale_Univ  18  0.03941 0.09591 0.00702 0.97373
+    Scale_5  12  0.02352 0.02910 0.01591 0.99001
+
+E. outlier sensitivity of the raw (unstandardized) AME
+   top  1 models contribute 14.0% of total sum of squares
+   top  5 models contribute 44.4% of total sum of squares
+   top 10 models contribute 60.7% of total sum of squares
+   top 25 models contribute 77.8% of total sum of squares
+   AME range [-1.354, 2.470]; AME_Z range [-0.570, 1.300]
+   [AME_Z] top  1 models contribute 24.9% of total SS
+   [AME_Z] top  5 models contribute 60.6% of total SS
+   [AME_Z] top 10 models contribute 73.0% of total SS
+   [AME_Z] top 25 models contribute 89.8% of total SS
+
+F. self-tests of the estimators (must pass before believing D)
+    null_tau2 = 1.9686059069455053e-06
+    null_I2 = 0.04516911765438696
+    injected_tau2_true = 0.0001
+    injected_tau2_hat = 0.00010057450950281837
+    injected_ratio = 1.0057450950281837
+    two_level_true = (6.4e-05, 2.5e-05)
+    two_level_hat = (np.float64(5.7812582715789556e-05), np.float64(1.9513768670368056e-05))
+    two_level_ratio = (np.float64(0.9033216049342119), np.float64(0.7805507468147223))
+    two_level_null_hat = (np.float64(1.2605376150563264e-07), np.float64(1.154254256993613e-06))
+    two_level_null_as_frac_of_sampling_var = 0.008404985740865133

@@ -1,0 +1,149 @@
+19 specifications, each measured at k = [0, 10, 12, 14] on n = 10,000 items
+
+model    config       acc@0  acc@14        E      SE    E/SE
+llama3   Instruct    0.6753  0.3515  -0.3238  0.0067   -48.4
+qwen2.5  Base        0.5955  0.5227  -0.0728  0.0070   -10.4
+llama2   FinalP02    0.7732  0.7231  -0.0501  0.0061    -8.2
+mistral  Base        0.7586  0.7237  -0.0349  0.0062    -5.6
+falcon3  Base        0.7126  0.6862  -0.0264  0.0065    -4.1
+falcon3  FinalP01    0.8573  0.8316  -0.0257  0.0051    -5.0
+llama2   FinalP01    0.8131  0.7893  -0.0238  0.0056    -4.2
+llama3   FinalP01    0.8703  0.8508  -0.0195  0.0049    -4.0
+mistral  FinalP01    0.8566  0.8436  -0.0130  0.0050    -2.6
+falcon3  FinalP02    0.7859  0.7730  -0.0129  0.0059    -2.2
+mistral  FinalP02    0.8246  0.8184  -0.0062  0.0054    -1.1
+llama3   FinalP02    0.8024  0.7978  -0.0046  0.0057    -0.8
+qwen2.5  FinalP01    0.8706  0.8683  -0.0023  0.0048    -0.5
+llama2   Base        0.6091  0.6103  +0.0012  0.0069     0.2
+qwen2.5  FinalP02    0.7613  0.7835  +0.0222  0.0059     3.7
+llama3   Max         0.7774  0.8077  +0.0303  0.0057     5.3
+llama2   Instruct    0.0910  0.2287  +0.1377  0.0051    27.1
+llama2   Max         0.5467  0.6893  +0.1426  0.0068    21.0
+llama3   Base        0.1462  0.6793  +0.5331  0.0059    91.1
+
+==============================================================================
+1. THE NONSTANDARD ERROR
+==============================================================================
+  specifications                       19
+  median  E                            -0.0129
+  mean    E                            +0.0132
+  NONSTANDARD ERROR (IQR of E)         0.0377   [Menkveld's definition]
+  SD of E                              0.1560
+  median STANDARD error of one E       0.0059   [upper bound, see se_unpaired]
+  Cochran Q                            11,972 on 18 df
+  DerSimonian-Laird tau                0.1480
+
+  NSE / median SE                         6.4
+  tau / median SE                        25.3   <-- the cross-corpus quantity
+
+  For comparison, the same quantity as I computed it on 2026-08-12:
+      finance,   Menkveld 164 teams, 6 hypotheses      tau/median SE =   1.72
+      sociology, Breznau CRI 71 teams                  tau/median SE =   1.72
+      RAG,       Mazuryk 19 specifications             tau/median SE =  25.29
+
+  Two orders of magnitude. That is the result, and it is not a subtlety of
+  estimation -- it survives any reasonable definition of either term, because
+  the numerator is tenths and the denominator is thousandths.
+
+==============================================================================
+2. WHY THE RATIO IS SO LARGE -- and why that is not a trick
+==============================================================================
+
+  The denominator is small BY DESIGN, and this is the structural difference
+  between a computational multiverse and a many-analysts study:
+
+  * In Breznau's CRI and in Menkveld's fincap, every team chose its own sample.
+    Sample size, exclusions and clustering varied across teams, so the standard
+    error varied across teams by a factor of five. My 2026-08-12 grouped-CV
+    result was that team identity predicts log(SE) with R^2 = 0.194 +- 0.024 and
+    predicts the ESTIMATE with R^2 = -0.005. Analytic choice moved precision and
+    not the answer.
+
+  * Here every specification is evaluated on the identical 10,000 questions.
+    The standard error is pinned to sqrt(p(1-p)/n) and can only move between
+    0.0048 and 0.0070: a range of 1.47x, entirely a
+    function of where accuracy sits on the p(1-p) parabola. There is no
+    precision channel to absorb anything.
+
+  So the RAG multiverse is the mirror image of the sociology one. Analytic
+  choice there could only move precision; analytic choice here can ONLY move the
+  estimate. Neither field is 'worse'. But the tools imported from one to the
+  other must be re-derived, and the reflex of reporting a heterogeneity ratio
+  without saying which channel was available is how that gets missed.
+
+==============================================================================
+3. THE CONCLUSION SPLIT (Breznau's Fig. 2 applied to RAG)
+==============================================================================
+  noise SIGNIFICANTLY helps   (z > +2.58):   5/19   26.3%
+  no significant effect                  :   6/19   31.6%
+  noise SIGNIFICANTLY hurts   (z < -2.58):   8/19   42.1%
+
+  Breznau et al. 2022, 1,253 sociology models on one hypothesis, unweighted:
+      25.4% significant negative / 57.7% null / 16.9% significant positive.
+  Here:
+      26.3% significant positive / 31.6% null / 42.1% significant negative.
+
+  The RAG multiverse is far MORE polarised than the sociology one: almost
+  nothing lands in the null band, because n = 10,000 makes the null band about
+  0.030 wide and the specifications are spread over 0.857. A
+  many-analysts study in sociology produces mostly nulls; a specification curve
+  in RAG produces mostly significant results pointing both ways. Same
+  underlying situation -- the specification determines the answer -- expressed
+  as an epidemic of nulls in one field and an epidemic of confident
+  contradictions in the other. The p-value is doing nothing in either.
+
+==============================================================================
+4. DOES THE FUNCTIONAL MATTER? (six-functionals lesson, ported)
+==============================================================================
+  On 2026-08-12 I found that six defensible functionals of the CRI estimates
+  implied tau from 0.0012 to 0.0160 -- a 13x range from the choice of what to
+  summarise. Same check here, on two functionals of the same 19 runs:
+    E = acc(14) - acc(0)       median -0.01290  IQR 0.03775  sign(median) -
+    OLS slope in k, per doc    median -0.00081  IQR 0.00267  sign(median) -
+    the two functionals agree on the SIGN in 19/19 specifications
+    -- so the functional choice is a real but second-order degree of freedom
+       here, unlike in CRI. Worth recording because it is the check that would
+       have caught me if it were first-order.
+==============================================================================
+5. WHICH CHOICE CARRIES THE VARIANCE? (variance decomposition)
+==============================================================================
+  variance of E explained by MODEL   (5 levels): R^2 = 0.041
+  variance of E explained by CONFIG  (5 levels): R^2 = 0.144
+  variance of log SE explained by MODEL        : R^2 = 0.070
+  variance of log SE explained by CONFIG       : R^2 = 0.612
+
+  In CRI the two rows were R^2 = -0.005 (estimate) and 0.194 (log SE). Here they
+  are effectively swapped, and the log-SE row is an artifact: SE is a
+  deterministic function of accuracy, so 'explaining' log SE is just explaining
+  accuracy through the p(1-p) parabola. It is reported to show the channel is
+  closed, not because it is informative.
+
+==============================================================================
+6. TAIL SHAPE -- IDR/IQR, and an honest word about n = 19
+==============================================================================
+  observed IDR/IQR of E                 5.12
+  bootstrap 90% interval                [1.61, 11.59]
+  same statistic on n=19 Gaussian draws  median 1.82, 90% [1.37, 2.75]
+
+  Asymptotically IDR/IQR = 1.90 for a Gaussian at any n, but at n = 19 the
+  statistic's own sampling interval is wider than the gap between any two
+  corpora I have measured (fincap 4.07, CRI models 2.79, CRI team medians 2.08).
+  So: NOT INTERPRETABLE HERE. Recorded so that no one, including me, quotes it.
+  It is exactly the kind of number that looks like evidence and is not; the
+  bootstrap is the only reason I can say so.
+
+==============================================================================
+7. THE SINGLE MOST DAMAGING PAIR
+==============================================================================
+  llama3/Base: acc 0.1462 -> 0.6793   E = +0.5331
+  llama3/Instruct: acc 0.6753 -> 0.3515   E = -0.3238
+  |difference in E| = 0.8569  =  146 standard errors
+  same model? True
+
+  The gap is WITHIN one model. That matters: an effect that
+  reverses across model families can be reported as model dependence, which is a
+  finding. An effect that reverses within one model, holding the weights and the
+  10,000 questions fixed and changing only the chat template and the token
+  budget, is not a finding about anything except the harness.
+
+saved E_by_spec.npy for scripts 04/05

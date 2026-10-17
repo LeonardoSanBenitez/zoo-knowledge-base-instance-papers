@@ -1,0 +1,108 @@
+==============================================================================
+A. CELLS THAT MUST BE IDENTICAL BY CONSTRUCTION (same run, reprinted)
+==============================================================================
+  T4 llama2 vs T5 llama2/Base: IDENTICAL
+  T4 llama2 vs T6 llama2/Base: IDENTICAL
+  T4 llama3 vs T5 llama3/Base: IDENTICAL
+  T4 llama3 vs T6 llama3/Base: IDENTICAL
+
+  These four are the paper's internal control and they pass exactly. It means
+  the Base column is one run reprinted three times, which is what it should be,
+  and it means the tables were not independently retyped. Good.
+
+==============================================================================
+B. SAME SPECIFICATION, TWO TABLES -- Table 2 (Near/random, 4-bit HF)
+   versus Table 7 (precision ablation, 4-bit column, Near/random)
+==============================================================================
+
+--- Llama2, 4-bit ---
+    A = Table 2 (Near, Llama2). B = Table 7 (Llama2, 4bit). Both HuggingFace, 4-bit, gold Near, k random docs.
+     ndoc        A        B       B-A  |B-A|*N
+        0   0.5647   0.5647   +0.0000        0
+        4   0.5203   0.5203   +0.0000        0
+        6   0.5663   0.5663   +0.0000        0
+        8   0.5580   0.5580   +0.0000        0
+       10   0.5592   0.5592   +0.0000        0
+       12   0.5832   0.5731   -0.0101      101   <-- disagree
+       14   0.5871   0.5728   -0.0143      143   <-- disagree
+    -> 2/7 cells disagree by more than 5 questions in 10,000
+
+--- MPT, 4-bit ---
+    A = Table 2 (Near, MPT). B = Table 7 (MPT, 4bit).
+     ndoc        A        B       B-A  |B-A|*N
+        0   0.1813   0.1813   +0.0000        0
+        4   0.2643   0.2643   +0.0000        0
+        6   0.2681   0.2681   +0.0000        0
+        8   0.2608   0.2608   +0.0000        0
+    -> 0/4 cells disagree by more than 5 questions in 10,000
+
+  Rows 0, 4, 6, 8, 10 agree to the last digit for Llama2 and rows 0, 4, 6, 8 for
+  MPT -- so these ARE the same run reprinted. Rows 12 and 14 for Llama2 do not.
+  A single run cannot disagree with itself; one of the two tables carries numbers
+  from a different execution at k = 12 and k = 14, and the paper does not say
+  which or why.
+
+==============================================================================
+C. THE LARGE ONE -- Table 4 'Base' versus Table 7 'FP16'
+==============================================================================
+
+  Section 4.2: "Based on these findings, we use FP16 precision in all subsequent
+  experiments." Table 4's Base column is a subsequent experiment on the same
+  Random-Near setup with the same original prompt and 15-token cap. Read
+  literally, Table 4/Llama2/Base and Table 7/Llama2/FP16 are the same
+  specification.  They are not the same numbers.
+
+
+--- Llama2: Table 7 FP16 (A) vs Table 4 Base (B) ---
+     ndoc        A        B       B-A  |B-A|*N
+        0   0.6089   0.6091   +0.0002        2
+       10   0.4740   0.5991   +0.1251     1251   <-- disagree
+       12   0.5358   0.6106   +0.0748      748   <-- disagree
+       14   0.5358   0.6103   +0.0745      745   <-- disagree
+    -> 3/4 cells disagree by more than 5 questions in 10,000
+
+  CALIBRATION. At k = 0 the two pipelines agree to 0.0002 = 2 questions
+  in 10,000. With no random documents in the prompt the two are the same
+  system and they behave like it. That number is an EMPIRICAL floor for
+  run-to-run instability of this pipeline, measured by the authors without
+  meaning to.
+
+  At k >= 10 the same two pipelines differ by up to 0.1251 (1251 questions, at k = 10).
+  Ratio of the largest disagreement to the k=0 floor: 626x
+
+  AND THE POINT. The quantity under dispute in this whole literature is the
+  Power-of-Noise effect, acc(k=14) - acc(k=0):
+
+      from Table 4 (Base):        +0.0012
+      from Table 7 (FP16):        -0.0731
+
+  Same model, same items, same nominal specification, opposite sign. The
+  disagreement between two printings of one experiment is 62x
+  the effect itself as Table 4 measures it.
+
+==============================================================================
+D. WHAT THE CODE SAYS THE DIFFERENCE ACTUALLY IS
+==============================================================================
+
+  Checked in github.com/ina0105/The-Power-of-Noise-Reproduction @ f5a482d:
+
+    jobs/*/run_experiments*.sh   every vLLM job sets DTYPE="bfloat16"
+                                 (22 occurrences, no job sets float16)
+    src/llm.py                   the HuggingFace path loads in the dtype the
+                                 checkpoint ships and applies bitsandbytes
+                                 quantization when asked
+
+  So the paper's "FP16" (Table 7, HuggingFace) and everything downstream of
+  Section 4.2 (vLLM) are not the same numeric format. bfloat16 and float16 have
+  the same width and different splits -- 8 exponent / 7 mantissa bits versus
+  5 / 10. A paper whose thesis is that undocumented inference settings
+  manufacture the effect changes the float format between its precision
+  ablation and every table that uses the ablation's conclusion.
+
+  I cannot attribute the 12.5-point gap to dtype specifically: framework,
+  dtype, stop-token list and batching all change together between Table 7 and
+  Table 4. That is the finding. The comparison is not identified, and the
+  paper's own claim that migrating to vLLM produced "negligible differences in
+  evaluation outcomes between the two frameworks" (Sec 3.5) is contradicted by
+  its own appendix at every document count except zero.
+
