@@ -2,10 +2,18 @@
   "schema_version": "1.5",
   "id": "schlosser2019-unpleasant-meditation",
   "title": "Unpleasant meditation-related experiences in regular meditators: Prevalence, predictors, and conceptual considerations",
-  "authors": ["Marco Schlosser", "Terje Sparby", "Sebastjan Vörös", "Rebecca Jones", "Natalie L. Marchant"],
+  "authors": [
+    "Marco Schlosser",
+    "Terje Sparby",
+    "Sebastjan Vörös",
+    "Rebecca Jones",
+    "Natalie L. Marchant"
+  ],
   "year": 2019,
   "venue": "PLOS ONE 14(5):e0216643",
-  "area": ["contemplative-neuroscience"],
+  "area": [
+    "contemplative-neuroscience"
+  ],
   "identifiers": {
     "doi": "10.1371/journal.pone.0216643",
     "pmcid": "PMC6508707",
@@ -42,15 +50,61 @@
       "statement": "25.6% (95% CI 23.1-28.0) of regular meditators report having had particularly unpleasant experiences they think may have been caused by their meditation practice.",
       "scope": "Online convenience survey April-August 2017 via social media, Buddhist communities, meditation centres; English-language; practising at least weekly for >= 2 months; one yes/no item, asked LAST, after the 15-item PTQ, 26-item SCS and 19-item Mindsens.",
       "quantities": [
-        {"name": "meditation_unpleasant_experience_lifetime_prevalence", "value": 0.256, "count": 315, "denominator": 1232, "unit": "proportion", "n": 1232, "ci": "23.1-28.0% (Wald)", "ci_low": 0.231, "ci_high": 0.28, "ci_kind": "confidence", "source": "reanalysis/m1.py; paper abstract", "baseline": "current regular meditators (>= weekly, >= 2 months), analytic sample after excluding yoga-only and non-responders"},
-        {"name": "survey_starters_reaching_outcome_item", "value": 0.649, "count": 1688, "denominator": 2599, "unit": "proportion", "n": 2599, "source": "reanalysis/m3.py from the raw file", "baseline": "everyone who opened the survey; completion differs by continent (Asia 59%, Europe 72%, Australia 84%) and by religiosity (71% religious vs 59% not)"},
-        {"name": "meditation_unpleasant_experience_prevalence_first_year", "value": 0.212, "count": 40, "denominator": 189, "unit": "proportion", "n": 189, "source": "reanalysis/m3.py", "baseline": "regular practice 2 months to 1 year"},
-        {"name": "meditation_unpleasant_experience_prevalence_over_20_years", "value": 0.276, "count": 45, "denominator": 163, "unit": "proportion", "n": 163, "source": "reanalysis/m3.py", "baseline": "regular practice > 20 years; intermediate bands 0.265, 0.275, 0.246, 0.263"}
+        {
+          "name": "meditation_unpleasant_experience_lifetime_prevalence",
+          "value": 0.256,
+          "count": 315,
+          "denominator": 1232,
+          "unit": "proportion",
+          "n": 1232,
+          "ci": "23.1-28.0% (Wald)",
+          "ci_low": 0.231,
+          "ci_high": 0.28,
+          "ci_kind": "confidence",
+          "source": "reanalysis/m1.py; paper abstract",
+          "baseline": "current regular meditators (>= weekly, >= 2 months), analytic sample after excluding yoga-only and non-responders"
+        },
+        {
+          "name": "survey_starters_reaching_outcome_item",
+          "value": 0.649,
+          "count": 1688,
+          "denominator": 2599,
+          "unit": "proportion",
+          "n": 2599,
+          "source": "reanalysis/m3.py from the raw file",
+          "baseline": "everyone who opened the survey; completion differs by continent (Asia 59%, Europe 72%, Australia 84%) and by religiosity (71% religious vs 59% not)"
+        },
+        {
+          "name": "meditation_unpleasant_experience_prevalence_first_year",
+          "value": 0.212,
+          "count": 40,
+          "denominator": 189,
+          "unit": "proportion",
+          "n": 189,
+          "source": "reanalysis/m3.py",
+          "baseline": "regular practice 2 months to 1 year"
+        },
+        {
+          "name": "meditation_unpleasant_experience_prevalence_over_20_years",
+          "value": 0.276,
+          "count": 45,
+          "denominator": 163,
+          "unit": "proportion",
+          "n": 163,
+          "source": "reanalysis/m3.py",
+          "baseline": "regular practice > 20 years; intermediate bands 0.265, 0.275, 0.246, 0.263"
+        }
       ],
-      "evidence": ["a1", "a2"],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": ["post-treatment-conditioning", "population-bound-effect"],
+        "patterns": [
+          "post-treatment-conditioning",
+          "population-bound-effect"
+        ],
         "why": "Reproduces exactly. Narrower in what the number IS: a lifetime-ever item that does not behave like a lifetime cumulative risk. It is 21% already among those practising under a year and 28% after twenty years. A constant hazard predicts roughly 2% rising to 62%; adding quitting after an event (k = 0.09/yr) or recall decay (10%/yr) still predicts a rising curve from about 2-3%. Only a front-loaded, early-onset subgroup (about a quarter, experiencing it within the first months) reproduces the flat shape (reanalysis/m4.py). So the 25.6% describes who is prone, early, among people who kept practising -- it cannot be projected as 'risk accumulated over a meditative career', and it says nothing about people who stopped, whom the design excludes and the paper never mentions. Completion before the item was 65% and differed by continent and religiosity.",
         "by": "maria, 2026-10-16"
       }
@@ -60,16 +114,71 @@
       "statement": "Meditators who engaged only in deconstructive practices (e.g. vipassana/insight) had 65% higher odds of unpleasant experiences than those who engaged only in attentional and/or constructive practices (OR 1.65, 95% CI 1.12-2.42), and retreat experience was associated with higher odds (OR 1.68, 1.27-2.23).",
       "scope": "Univariable logistic regressions; the meditation-type contrast excludes the 499 (40.5%) who practise both deconstructive and non-deconstructive types.",
       "quantities": [
-        {"name": "meditation_unpleasant_experience_prevalence_deconstructive_only", "value": 0.295, "count": 52, "denominator": 176, "unit": "proportion", "n": 176, "source": "reanalysis/m2.py; paper 29.6%", "baseline": "only deconstructive types"},
-        {"name": "meditation_unpleasant_experience_prevalence_mixed_types", "value": 0.301, "count": 150, "denominator": 499, "unit": "proportion", "n": 499, "source": "reanalysis/m2.py", "baseline": "deconstructive AND attentional/constructive -- the group the paper excluded; OR 1.69 vs non-deconstructive, p = 0.0003"},
-        {"name": "meditation_unpleasant_experience_prevalence_non_deconstructive", "value": 0.203, "count": 113, "denominator": 557, "unit": "proportion", "n": 557, "source": "reanalysis/m2.py", "baseline": "only attentional and/or constructive"},
-        {"name": "deconstructive_only_odds_ratio_adjusted_for_retreat", "value": 1.41, "unit": "odds ratio", "n": 722, "ci": "0.93-2.12, p = 0.10", "ci_low": 0.93, "ci_high": 2.12, "ci_kind": "confidence", "source": "reanalysis/m2.py", "baseline": "deconstructive-only vs non-deconstructive, adjusted for retreat; + sex, religiosity, PTQ, age, years: 1.33 (0.86-2.06), p = 0.20. 80.7% of the deconstructive-only group had retreat experience vs 45.1% of the non-deconstructive group"},
-        {"name": "retreat_odds_ratio_adjusted_for_years_band", "value": 1.68, "unit": "odds ratio", "n": 1232, "ci": "1.25-2.27, p = 0.0006", "ci_low": 1.25, "ci_high": 2.27, "ci_kind": "confidence", "source": "reanalysis/m4.py", "baseline": "retreat ever vs never, adjusted for six bands of years of practice; in the full multivariable model with meditation type 1.73 (1.16-2.58)"}
+        {
+          "name": "meditation_unpleasant_experience_prevalence_deconstructive_only",
+          "value": 0.295,
+          "count": 52,
+          "denominator": 176,
+          "unit": "proportion",
+          "n": 176,
+          "source": "reanalysis/m2.py; paper 29.6%",
+          "baseline": "only deconstructive types"
+        },
+        {
+          "name": "meditation_unpleasant_experience_prevalence_mixed_types",
+          "value": 0.301,
+          "count": 150,
+          "denominator": 499,
+          "unit": "proportion",
+          "n": 499,
+          "source": "reanalysis/m2.py",
+          "baseline": "deconstructive AND attentional/constructive -- the group the paper excluded; OR 1.69 vs non-deconstructive, p = 0.0003"
+        },
+        {
+          "name": "meditation_unpleasant_experience_prevalence_non_deconstructive",
+          "value": 0.203,
+          "count": 113,
+          "denominator": 557,
+          "unit": "proportion",
+          "n": 557,
+          "source": "reanalysis/m2.py",
+          "baseline": "only attentional and/or constructive"
+        },
+        {
+          "name": "deconstructive_only_odds_ratio_adjusted_for_retreat",
+          "value": 1.41,
+          "unit": "odds ratio",
+          "n": 722,
+          "ci": "0.93-2.12, p = 0.10",
+          "ci_low": 0.93,
+          "ci_high": 2.12,
+          "ci_kind": "confidence",
+          "source": "reanalysis/m2.py",
+          "baseline": "deconstructive-only vs non-deconstructive, adjusted for retreat; + sex, religiosity, PTQ, age, years: 1.33 (0.86-2.06), p = 0.20. 80.7% of the deconstructive-only group had retreat experience vs 45.1% of the non-deconstructive group"
+        },
+        {
+          "name": "retreat_odds_ratio_adjusted_for_years_band",
+          "value": 1.68,
+          "unit": "odds ratio",
+          "n": 1232,
+          "ci": "1.25-2.27, p = 0.0006",
+          "ci_low": 1.25,
+          "ci_high": 2.27,
+          "ci_kind": "confidence",
+          "source": "reanalysis/m4.py",
+          "baseline": "retreat ever vs never, adjusted for six bands of years of practice; in the full multivariable model with meditation type 1.73 (1.16-2.58)"
+        }
       ],
-      "evidence": ["a1", "a2"],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": ["correlation-read-as-causation", "analytic-flexibility"],
+        "patterns": [
+          "correlation-read-as-causation",
+          "analytic-flexibility"
+        ],
         "why": "The retreat association is the robust one: it survives adjustment for years of practice (retreat attendance rises from 33% to 92% across year bands while the outcome does not move), for meditation type and for the demographic predictors, and it is visible even in the first year (27% with a retreat vs 18% without). The 'deconstructive' association is not separable from it: adjusted for retreat it falls to 1.41 (p = 0.10). And the exclusion the paper justifies as conceptual hides a dose-response test that fails: the excluded mixed group has the SAME prevalence as the deconstructive-only group (30.1% vs 29.5%). If deconstructive practice drove the experiences, doing only that should not look identical to doing it alongside other practices. Cross-sectional, so 'retreat' may still be a marker (seriousness, teacher contact, intention) rather than a cause, as the authors themselves note.",
         "by": "maria, 2026-10-16"
       }
@@ -79,13 +188,37 @@
       "statement": "Higher repetitive negative thinking was associated with unpleasant experiences, 'although the estimate for this association was small in magnitude' (Table 2: OR 1.02 per '1 SD', 1.00-1.03).",
       "scope": "Univariable logistic regression on the PTQ total (range 0-60, sample SD 9.49).",
       "quantities": [
-        {"name": "repetitive_negative_thinking_odds_ratio_per_sd", "value": 1.156, "unit": "odds ratio per SD of PTQ (9.49 points)", "n": 1232, "ci": "1.018-1.313", "ci_low": 1.018, "ci_high": 1.313, "ci_kind": "confidence", "source": "reanalysis/m2.py", "baseline": "same model as Table 2 rescaled; the printed 1.02 is per ONE PTQ POINT (Stata `logistic negative ptq`), mislabelled '1 SD'"},
-        {"name": "repetitive_negative_thinking_odds_ratio_per_point", "value": 1.015, "unit": "odds ratio per PTQ point", "n": 1232, "ci": "1.002-1.029, p = 0.025", "source": "reanalysis/m1.py; paper prints 1.02 (1.00-1.03)", "baseline": "as fitted by the authors' code"}
+        {
+          "name": "repetitive_negative_thinking_odds_ratio_per_sd",
+          "value": 1.156,
+          "unit": "odds ratio per SD of PTQ (9.49 points)",
+          "n": 1232,
+          "ci": "1.018-1.313",
+          "ci_low": 1.018,
+          "ci_high": 1.313,
+          "ci_kind": "confidence",
+          "source": "reanalysis/m2.py",
+          "baseline": "same model as Table 2 rescaled; the printed 1.02 is per ONE PTQ POINT (Stata `logistic negative ptq`), mislabelled '1 SD'"
+        },
+        {
+          "name": "repetitive_negative_thinking_odds_ratio_per_point",
+          "value": 1.015,
+          "unit": "odds ratio per PTQ point",
+          "n": 1232,
+          "ci": "1.002-1.029, p = 0.025",
+          "source": "reanalysis/m1.py; paper prints 1.02 (1.00-1.03)",
+          "baseline": "as fitted by the authors' code"
+        }
       ],
-      "evidence": ["a1", "a2"],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": ["text-contradicts-own-materials"],
+        "patterns": [
+          "text-contradicts-own-materials"
+        ],
         "why": "The association is real and the code is right; the table header is wrong and the prose built on it is wrong. Table 2 labels PTQ, mindfulness and self-compassion '(1 SD)' while its own footnote and the .do file use one raw unit. For PTQ that turns OR 1.16 per SD -- about the size of the sex difference read the other way (1/0.75 = 1.33) -- into a printed 1.02 that the Discussion then calls 'small in magnitude'. For mindfulness and self-compassion the mislabel runs the other way and is harmless (per SD 1.01 and 0.96, both null). A unit error that changes the paper's own verbal verdict on a predictor.",
         "by": "maria, 2026-10-16"
       }
@@ -95,34 +228,84 @@
       "statement": "No association between unpleasant experiences and lifetime meditation experience (OR 1.00 per year, p = 0.74), frequency or session length.",
       "scope": "Univariable logistic regressions, years of regular practice as a linear term.",
       "quantities": [
-        {"name": "lifetime_practice_years_odds_ratio_per_sd", "value": 1.022, "unit": "odds ratio per SD (10.9 years)", "n": 1232, "source": "reanalysis/m2.py", "baseline": "as fitted; log(years): OR 1.055 per e-fold, p = 0.29"}
+        {
+          "name": "lifetime_practice_years_odds_ratio_per_sd",
+          "value": 1.022,
+          "unit": "odds ratio per SD (10.9 years)",
+          "n": 1232,
+          "source": "reanalysis/m2.py",
+          "baseline": "as fitted; log(years): OR 1.055 per e-fold, p = 0.29"
+        }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "patterns": ["nonsignificance-read-as-absence"],
+        "patterns": [
+          "nonsignificance-read-as-absence"
+        ],
         "why": "Reported as an absence of association, discussed against two studies that found practice-amount effects. It is better read as a strong STRUCTURAL result about the outcome item. For a 'have you ever' question, exposure time should raise prevalence mechanically unless something removes or prevents later cases; that it does not is the most informative pattern in the data (see c1 and the known-answer stories in reanalysis/m4.py). The null is about what the item measures and who remains in the sample, not about whether practice amount is harmless.",
         "by": "maria, 2026-10-16"
       }
     }
   ],
   "artifacts": [
-    {"id": "a1", "role": "raw-data", "locator": "https://osf.io/d6mgj/ (child component 'Data' of osf.io/gj7z2): UnpleasantMeditation_Raw data.xlsx (2,599 starters, 79 cols) and UnpleasantMeditation_Clean data.xlsx (1,281 rows; 1,232 after the script's two drop rules)", "status": "verified-usable",
-     "checked": {"on": "2026-10-16", "by": "maria", "how": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py osf:d6mgj --out work/osf_d6mgj; sh reanalysis/run_all.sh", "result": "2/2 sha256+md5 verified. Clean file + the .do's two drop rules give N = 1,232 and 315 events exactly. The RAW file lets the dropout funnel be measured (2,599 -> 1,688 reached the outcome item), which the paper reports only as counts."},
-     "bytes": 1182668, "local_path": "artifacts/osf_d6mgj_acquisition.json", "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py osf:d6mgj --out work/osf_d6mgj",
-     "datasheet": {"composition": "One row per respondent; demographics, practice variables, item-level PTQ/SCS/Mindsens, binary outcome 'negative'. Codebook sheet in the clean file.", "collection": "Opinio online survey, April-August 2017, no payment.", "caveats": "The parent OSF node is EMPTY; the data live in child components (a reader following the DAS link sees no files). No licence declared. Years of practice is self-reported with 0.16-year resolution for the 2-month floor."}},
-    {"id": "a2", "role": "code", "locator": "https://osf.io/9zsfb/ UnpleasantMeditation_code.do (Stata 13)", "status": "verified-usable",
-     "checked": {"on": "2026-10-16", "by": "maria", "how": "read; ported line by line to reanalysis/m1.py", "result": "Every Table 2 estimate reproduces. Confirms the continuous predictors are fitted per raw unit (`logistic negative ptq`), contradicting the '(1 SD)' labels in Table 2."},
-     "bytes": 2155, "local_path": "artifacts/UnpleasantMeditation_code.do", "derived_from": ["a1"]}
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "https://osf.io/d6mgj/ (child component 'Data' of osf.io/gj7z2): UnpleasantMeditation_Raw data.xlsx (2,599 starters, 79 cols) and UnpleasantMeditation_Clean data.xlsx (1,281 rows; 1,232 after the script's two drop rules)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-16",
+        "by": "maria",
+        "how": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py osf:d6mgj --out work/osf_d6mgj; sh reanalysis/run_all.sh",
+        "result": "2/2 sha256+md5 verified. Clean file + the .do's two drop rules give N = 1,232 and 315 events exactly. The RAW file lets the dropout funnel be measured (2,599 -> 1,688 reached the outcome item), which the paper reports only as counts."
+      },
+      "bytes": 1182668,
+      "local_path": "artifacts/osf_d6mgj_acquisition.json",
+      "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py osf:d6mgj --out work/osf_d6mgj",
+      "datasheet": {
+        "composition": "One row per respondent; demographics, practice variables, item-level PTQ/SCS/Mindsens, binary outcome 'negative'. Codebook sheet in the clean file.",
+        "collection": "Opinio online survey, April-August 2017, no payment.",
+        "caveats": "The parent OSF node is EMPTY; the data live in child components (a reader following the DAS link sees no files). No licence declared. Years of practice is self-reported with 0.16-year resolution for the 2-month floor."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "code",
+      "locator": "https://osf.io/9zsfb/ UnpleasantMeditation_code.do (Stata 13)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-16",
+        "by": "maria",
+        "how": "read; ported line by line to reanalysis/m1.py",
+        "result": "Every Table 2 estimate reproduces. Confirms the continuous predictors are fitted per raw unit (`logistic negative ptq`), contradicting the '(1 SD)' labels in Table 2."
+      },
+      "bytes": 2155,
+      "local_path": "artifacts/UnpleasantMeditation_code.do",
+      "derived_from": [
+        "a1"
+      ]
+    }
   ],
   "relations": [
-    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "matko2019-meditation-classification", "why": "Both treat 'meditation type' as a category a practitioner belongs to. Here 48% of practitioners use more than one family and the 40% who mix deconstructive with other types are excluded as 'conceptually too broad' -- yet they carry exactly the deconstructive-only prevalence. A practitioner-level type variable is mostly a proxy for depth of engagement (retreats), which is what the CAT project's dimensional scoring of practices, rather than practitioners, is meant to avoid."}
+    {
+      "type": "zoo:sharesUnstatedAssumptionWith",
+      "target": "matko2019-meditation-classification",
+      "why": "Both treat 'meditation type' as a category a practitioner belongs to. Here 48% of practitioners use more than one family and the 40% who mix deconstructive with other types are excluded as 'conceptually too broad' -- yet they carry exactly the deconstructive-only prevalence. A practitioner-level type variable is mostly a proxy for depth of engagement (retreats), which is what the CAT project's dimensional scoring of practices, rather than practitioners, is meant to avoid."
+    }
   ],
   "open_questions": [
     "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1371/journal.pone.0216643 -> 0 items.",
-    "PARTLY ANSWERED 2026-10-16: Cebolla et al. 2017 (PLOS ONE, doi 10.1371/journal.pone.0183137, n = 342, PMC5584749) report 'with regard to years of practice, no significant differences were found' -- the same flat pattern, as a null, in an independent sample; no individual data shared (S1 is a docx of categories despite the DAS). Van Dam, Targett, Davies, Burger & Galante 2025 (Clin Psychol Sci, doi 10.1177/21677026241298269, n = 886 representative US meditators) find retreat participation positively associated with adverse effects -- corroborates c2, abstract-level only, data not located. ORIGINAL QUESTION: Is the flat lifetime-prevalence curve replicated in the other two surveys the paper cites (Cebolla et al. 2017, n = 342, 25.4%; Vieten et al. 2018, n = 1,120, 32%)? If their data are open, the same years-band table decides between 'early-onset susceptibility' and sampling artifacts specific to this survey.",
+    "PARTLY ANSWERED 2026-10-16: Cebolla et al. 2017 (PLOS ONE, doi 10.1371/journal.pone.0183137, n = 342, PMC5584749) report 'with regard to years of practice, no significant differences were found' -- the same flat pattern, as a null, in an independent sample; [CORRECTED 2026-10-17: individual data ARE shared, Zenodo 838669 -- see cebolla2017-unwanted-effects-meditation -- but the deposit lacks the years-of-practice variable, so the flat-years test still cannot be run on it]. Van Dam, Targett, Davies, Burger & Galante 2025 (Clin Psychol Sci, doi 10.1177/21677026241298269, n = 886 representative US meditators) find retreat participation positively associated with adverse effects -- corroborates c2, abstract-level only, data not located. ORIGINAL QUESTION: Is the flat lifetime-prevalence curve replicated in the other two surveys the paper cites (Cebolla et al. 2017, n = 342, 25.4%; Vieten et al. 2018, n = 1,120, 32%)? If their data are open, the same years-band table decides between 'early-onset susceptibility' and sampling artifacts specific to this survey.",
     "PARTLY ANSWERED 2026-10-16 (goldberg2022-meditation-adverse-effects-population#c4): in a US population sample that includes lapsed practitioners (34.8% not in past 30 days), MRAE correlate POSITIVELY with current practice (r = .12/.15) -- against selective attrition, unless recall fades after stopping. Same paper, Figure 1 recovered: prevalence steps up from 0-10 h to 11-100 h then plateaus/declines (constant hazard rejected by >200 AIC) -- the flat curve replicates in an independent sample. ORIGINAL: A survey that includes people who STOPPED meditating would measure what this design cannot: whether unpleasant experiences predict discontinuation.",
     "Outcome item asked after 60 rumination / self-compassion / mindfulness items: is there a priming effect on reporting? Testable only by a design that randomises item order."
   ],
-  "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}
+  "curation": {
+    "author": "maria",
+    "created": "2026-10-16",
+    "verified": "2026-10-16",
+    "notes_file": "NOTES.md"
+  }
 }

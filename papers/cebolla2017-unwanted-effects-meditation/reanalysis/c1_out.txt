@@ -1,0 +1,35 @@
+UE yes 87/342 = 25.439%
+value labels: {1.0: 'Diariamente', 2.0: 'Entre 3 y 4 veces por semana', 3.0: 'Una vez a la semana', 4.0: 'Entre 1 y 3 veces al mes', 5.0: '<1 vez/mes', 6.0: 'nunca'}
+
+TABLE 2 reproduction (counts per frequency code) and KW of frequency by UE
+  FA  counts {1.0: 103, 2.0: 87, 3.0: 50, 4.0: 20, 5.0: 16, 6.0: 66} | KW H = 0.369 p = 0.5435 | mean code UE 2.82 vs no-UE 2.89 | UE rate practitioners 0.250 (n=276) vs never 0.273 (n=66)
+  OM  counts {1.0: 71, 2.0: 66, 3.0: 28, 4.0: 19, 5.0: 18, 6.0: 140} | KW H = 0.061 p = 0.8045 | mean code UE 3.70 vs no-UE 3.81 | UE rate practitioners 0.257 (n=202) vs never 0.250 (n=140)
+  I   counts {1.0: 32, 2.0: 27, 3.0: 41, 4.0: 26, 5.0: 39, 6.0: 177} | KW H = 0.941 p = 0.3319 | mean code UE 4.74 vs no-UE 4.54 | UE rate practitioners 0.230 (n=165) vs never 0.277 (n=177)
+  BA  counts {1.0: 46, 2.0: 83, 3.0: 46, 4.0: 24, 5.0: 16, 6.0: 127} | KW H = 5.335 p = 0.0209 | mean code UE 3.36 vs no-UE 3.91 | UE rate practitioners 0.279 (n=215) vs never 0.213 (n=127)
+  C   counts {1.0: 41, 2.0: 32, 3.0: 30, 4.0: 28, 5.0: 15, 6.0: 196} | KW H = 1.692 p = 0.1934 | mean code UE 4.33 vs no-UE 4.63 | UE rate practitioners 0.288 (n=146) vs never 0.230 (n=196)
+  IP  counts {1.0: 160, 2.0: 38, 3.0: 18, 4.0: 9, 5.0: 4, 6.0: 113} | KW H = 0.010 p = 0.9223 | mean code UE 3.01 vs no-UE 2.99 | UE rate practitioners 0.258 (n=229) vs never 0.248 (n=113)
+  Holm over 6 KW tests: smallest p 0.0209 vs Holm threshold 0.0083
+
+TABLE 4 reproduction (codes 1..11 = scores 0..10): mean (SD), % max, % min
+  Mayor dolor emocional                                   2.3 (3.1)  max 2.5%  min 52.0%  n=279
+  Mayor autocrítica                                       2.7 (3.2)  max 2.9%  min 45.6%  n=274
+  Más miedo/ ansiedad/depresión)                          1.8 (2.9)  max 3.0%  min 59.8%  n=271
+  Pérdida de orientación respecto a lo que quiere hacer e 1.6 (2.8)  max 2.9%  min 68.1%  n=276
+  Menor motivación en la vida                             1.0 (2.4)  max 1.5%  min 76.7%  n=275
+  Sensación de que necesito algo más, de que me falta alg 2.1 (3.2)  max 3.9%  min 58.8%  n=279
+  Mayor confusión mental                                  1.1 (2.4)  max 0.8%  min 74.0%  n=242
+  Desinterés por el entorno                               1.5 (2.7)  max 1.1%  min 66.7%  n=270
+  Aburrimiento                                            1.1 (2.3)  max 1.1%  min 73.4%  n=263
+  Necesidad de estar meditando continuamente              1.7 (2.7)  max 1.5%  min 54.5%  n=275
+  Sensación de que el tiempo que no se medita es perdido  1.1 (2.1)  max 0.4%  min 67.2%  n=274
+  Inquietud/ansiedad si no se practicameditación formal   1.7 (2.5)  max 0.7%  min 56.5%  n=276
+  Mayor crítica hacia ellos                               1.5 (2.5)  max 1.5%  min 60.7%  n=275
+  Mayor conciencia de sus cualidades negativas            2.1 (2.9)  max 2.2%  min 52.3%  n=277
+  Sentimiento de ser superior/mejor que ellos             1.3 (2.3)  max 0.4%  min 62.9%  n=275
+  Sensación de aburrimiento hacia las personas            1.5 (2.6)  max 1.8%  min 61.7%  n=277
+  Sensación de desapego hacia ellos, de no importarnos lo 1.1 (2.2)  max 0.7%  min 69.0%  n=277
+  No  interesarnos la conversación de la gente            1.5 (2.7)  max 2.2%  min 66.3%  n=276
+  Sensación de que sólo las personas que meditan son vali 0.9 (1.8)  max 0.4%  min 71.6%  n=275
+  Sensación de alienamiento de la sociedad, de no pertene 1.8 (2.9)  max 4.3%  min 59.9%  n=279
+  Hipersensibilidad/rechazo al entorno urbano, necesidad  2.4 (3.0)  max 3.6%  min 44.6%  n=276
+  Dificultad para sentirse cómodo en el mundo, para disfr 1.8 (2.9)  max 4.0%  min 58.6%  n=278

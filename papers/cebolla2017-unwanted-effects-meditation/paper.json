@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.5",
+  "id": "cebolla2017-unwanted-effects-meditation",
+  "title": "Unwanted effects: Is there a negative side of meditation? A multicentre survey",
+  "authors": [
+    "Ausiàs Cebolla",
+    "Marcelo Demarzo",
+    "Patricia Martins",
+    "Joaquim Soler",
+    "Javier Garcia-Campayo"
+  ],
+  "year": 2017,
+  "venue": "PLOS ONE 12(9):e0183137",
+  "area": [
+    "contemplative-neuroscience"
+  ],
+  "identifiers": {
+    "doi": "10.1371/journal.pone.0183137",
+    "pmcid": "PMC5584749",
+    "url": "https://zenodo.org/records/838669"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "cost": {
+    "tool_calls": 10,
+    "bytes_downloaded": 110000,
+    "compute_notes": "Full text via Europe PMC JATS (PMC5584749), Methods/Results/Discussion read. Data: Zenodo 838669 'Unexpected effects database.sav' (37,452 B, md5 cf6d1f6b103e1f8aa7eda2a400c83a5f, CC BY 4.0), kept in artifacts/. 342 rows x 37 columns: demographics, anxiety/depression history, learning context, frequency of six practice types, the UE yes/no item and the 22-item 0-10 checklist. NOT in the deposit: years of practice, and the follow-up items behind Table 3 (situation, type, duration, symptoms, discontinuation). pyreadstat + scipy; seconds.",
+    "session": "2026-10-17 maria, free deep research"
+  },
+  "triggers": [
+    "prevalence of unwanted effects of meditation practitioner survey",
+    "body awareness practice and meditation adverse effects",
+    "focused attention meditation adverse effects base rate",
+    "meditation adverse effects checklist scale coding error",
+    "does more frequent meditation practice increase adverse effects",
+    "open individual data meditation unwanted effects"
+  ],
+  "methods": [
+    "manual-reanalysis-from-shared-materials",
+    "in-paper-table-transcription",
+    "holm-bonferroni-multiplicity-control",
+    "falsification-by-internal-consistency"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "25.4% of meditation practitioners (87 of 342) report unwanted effects (UEs) of meditation; most are transitory and do not lead to discontinuation or medical help.",
+      "scope": "Online convenience sample recruited through Spanish-, English- and Portuguese-language mindfulness portals, >= 2 months of practice, 68% women, 43% Spain; single yes/no item; the follow-up details (Table 3) were answered by about half of the 87.",
+      "quantities": [
+        {
+          "name": "lifetime_meditation_unwanted_effect_prevalence",
+          "value": 0.254,
+          "count": 87,
+          "denominator": 342,
+          "unit": "share of practitioners",
+          "n": 342,
+          "source": "reanalysis/c1_reproduce.py on artifacts/ue.sav (reproduces the paper)",
+          "baseline": "schlosser2019 25.6% (n = 1,232); goldberg2022 single-item MRAE 19.5-41% by practice hours"
+        },
+        {
+          "name": "discontinued_meditation_after_ue_as_printed",
+          "value": 0.011,
+          "unit": "share printed in Table 3 next to n = 11 of 87",
+          "n": 87,
+          "source": "Table 3",
+          "baseline": "11/87 = 12.6%; 1.1% would be 1/87. One of the two printed numbers is wrong; the variable is not in the deposit, so which cannot be checked"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "text-contradicts-own-materials"
+        ],
+        "why": "The headline rate reproduces exactly from the deposit (87/342). It is a third independent practitioner estimate near 25% (schlosser2019 25.6%), from a different recruitment route, which is the main reason to cite it. 'Transitory' and 'did not discontinue' rest on the ~half of the 87 who answered the follow-up, and Table 3 prints discontinuation as '11, 1.1%', which cannot both be right.",
+        "by": "maria, 2026-10-17"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Regarding frequency of practice, the only significant difference was for body awareness practice (X2 = 5.335, p < .05), with FEWER unwanted effects in the group that practised more frequently; body awareness was associated with UEs to a lesser extent.",
+      "scope": "Kruskal-Wallis of practice frequency (6 ordered categories, 1 = daily ... 6 = never) by UE yes/no, run for six practice types, no multiplicity correction.",
+      "quantities": [
+        {
+          "name": "kruskal_wallis_h_body_awareness_frequency_by_ue",
+          "value": 5.335,
+          "unit": "H (df 1)",
+          "n": 342,
+          "source": "reanalysis/c1_reproduce.py (reproduces the printed 5.335 exactly)",
+          "baseline": "p = 0.0209; Holm threshold for the smallest of 6 tests 0.0083 -> not significant after correction"
+        },
+        {
+          "name": "ue_rate_body_awareness_practitioners",
+          "value": 0.279,
+          "unit": "share reporting UEs among those practising body awareness at any frequency",
+          "n": 215,
+          "source": "reanalysis/c1_reproduce.py",
+          "baseline": "never practise body awareness: 0.213 (n = 127); daily 0.304, 3-4x/week 0.373 (c2_verify.py)"
+        },
+        {
+          "name": "spearman_frequency_code_vs_ue_body_awareness",
+          "value": -0.125,
+          "unit": "Spearman rho (code 1 = daily, so NEGATIVE = more frequent practice, MORE UEs)",
+          "n": 342,
+          "source": "reanalysis/c2_verify.py",
+          "baseline": "p = 0.0207; label check: code 1 = 'Diariamente'"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "refuted",
+        "patterns": [
+          "text-contradicts-own-materials",
+          "analytic-flexibility"
+        ],
+        "why": "The statistic reproduces to three decimals, which identifies the test exactly, and the direction is the OPPOSITE of the text: people reporting UEs practise body awareness MORE often (mean frequency code 3.36 vs 3.91; UE rate 30-37% among daily and 3-4x/week practitioners vs 21% among those who never practise). The value labels in the deposit leave no room for a reversed coding (1 = 'Diariamente', 6 = 'nunca'). The abstract's 'body awareness was associated with UEs to a lesser extent' inherits the reversal. Independently, it is one p = .021 among six untested-for-multiplicity tests and does not survive Holm (threshold .0083). Correct reading: no practice type's frequency is reliably associated with UEs in this sample; the nominal signal for body awareness points toward MORE UEs with more practice. Ironically the Discussion's 'confirmed our second hypothesis that a higher frequency of practice may generate more UEs' agrees with the data and contradicts the Results paragraph.",
+        "by": "maria, 2026-10-17"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "UEs were more frequently reported during focused attention meditation (17.2% of the 87 UEs), and focused attention was associated more with UEs.",
+      "scope": "Table 3 'type of practice' during the UE, 40 of 87 with information; no denominator of practitioners per type.",
+      "quantities": [
+        {
+          "name": "ue_rate_focused_attention_practitioners",
+          "value": 0.25,
+          "count": 69,
+          "denominator": 276,
+          "unit": "share reporting UEs among those practising focused attention",
+          "n": 276,
+          "source": "reanalysis/c1_reproduce.py",
+          "baseline": "never practise FA: 0.273 (n = 66); KW frequency x UE p = 0.54"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "refuted",
+        "patterns": [
+          "denominator-unstated-or-shifted",
+          "missing-adequate-control"
+        ],
+        "why": "Base-rate neglect. Focused attention is the most practised formal type (276 of 342 practise it at some frequency, 103 daily), so it will be named most often as the context of a UE even if it carries no extra risk. With the denominator the deposit allows, FA practitioners report UEs at 25.0% against 27.3% for non-practitioners, and frequency of FA is unrelated to UEs (p = 0.54). The claim is not supported by the data; the honest statement is 'UEs were most often reported during the most common practice'.",
+        "by": "maria, 2026-10-17"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Table 4: on the 22-item checklist (0-10), mean scores range from 1.8 to 3.7, e.g. greater self-criticism 3.7, greater emotional pain 3.3, hypersensitivity to urban life 3.3.",
+      "scope": "Checklist answered by about 276 of 342 respondents (including those without UEs).",
+      "quantities": [
+        {
+          "name": "checklist_mean_greater_self_criticism_as_printed",
+          "value": 3.7,
+          "unit": "printed mean (0-10 scale)",
+          "n": 274,
+          "source": "Table 4",
+          "baseline": "deposit, labelled 0-10 scores: 2.66; raw SPSS codes 1-11: 3.66"
+        },
+        {
+          "name": "printed_minus_raw_code_mean_max_abs",
+          "value": 0.14,
+          "unit": "max |printed mean - raw-code mean| over 22 items",
+          "n": 22,
+          "source": "reanalysis/c2_verify.py",
+          "baseline": "|printed - labelled score| is at least 0.86 (mean 0.945) for every item"
+        }
+      ],
+      "evidence": [
+        "a1"
+      ],
+      "our_assessment": {
+        "status": "refuted",
+        "patterns": [
+          "implementation-diverges-from-definition"
+        ],
+        "why": "The printed means are the means of the SPSS CODES (1-11), not of the scores they label (0-10): all 22 printed means lie within 0.14 of the raw-code means and at least 0.86 from the labelled-score means, so every checklist mean in Table 4 is inflated by one point -- 30-110% in relative terms on a scale whose medians are near zero. The '% min' column (share scoring 0) reproduces exactly from the labelled scores, so the data were read correctly for counts and wrongly for means. Residual differences (<= 0.14) suggest the analysis file differed slightly from the deposit. Corrected range: 0.9 to 2.7.",
+        "by": "maria, 2026-10-17"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "raw-data",
+      "locator": "artifacts/ue.sav (from https://zenodo.org/records/838669, 'Unexpected effects database.sav')",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-17",
+        "by": "maria",
+        "how": "curl -sL -o ue.sav 'https://zenodo.org/api/records/838669/files/Unexpected%20effects%20database.sav/content'; md5sum; python reanalysis/c1_reproduce.py artifacts/ue.sav; python reanalysis/c2_verify.py artifacts/ue.sav",
+        "result": "md5 matches; 342 x 37; reproduces n = 342, UE 87 (25.4%), Table 2 frequency counts and the KW H = 5.335 exactly. Missing for the paper's own claims: years of practice (so 'no differences by years' is untestable) and every Table 3 follow-up variable."
+      },
+      "bytes": 37452,
+      "license": "CC BY 4.0",
+      "fetch_cmd": "curl -sL -o ue.sav 'https://zenodo.org/api/records/838669/files/Unexpected%20effects%20database.sav/content'"
+    }
+  ],
+  "relations": [
+    {
+      "type": "cito:agreesWith",
+      "target": "schlosser2019-unpleasant-meditation",
+      "why": "Independent practitioner sample, same headline prevalence (25.4% vs 25.6%)."
+    },
+    {
+      "type": "cito:obtainsBackgroundFrom",
+      "target": "goldberg2022-meditation-adverse-effects-population",
+      "why": "Population-sample counterpart; here the frequency-UE association (body awareness) points the same way as Goldberg's early rise with exposure, but is nominal only."
+    }
+  ],
+  "open_questions": [
+    "Years of practice is analysed in the paper but absent from the deposit. Ask the authors? (externally visible -- not without Leonardo.)",
+    "Does any other practitioner dataset have both practice-type frequencies and an adverse-effect item, to test the body-awareness direction out of sample?"
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-10-17",
+    "verified": "2026-10-17",
+    "notes_file": "NOTES.md"
+  }
+}

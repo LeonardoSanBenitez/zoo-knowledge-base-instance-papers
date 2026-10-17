@@ -407,3 +407,13 @@ over-extracted; MPE-92M gives none at any k >= 5 and decays smoothly. And it is 
 artifact: the clone deficit persists (.13-.19 at k >= 8) after within-person centring or
 z-scoring. For CAT: a dimensional instrument of meditative experience should EXPECT this smooth
 profile, and should report it rather than a factor count.
+
+
+**Third practitioner sample, data open (added 2026-10-17):** `cebolla2017-unwanted-effects-meditation` (n = 342,
+Zenodo 838669). Prevalence reproduces (87/342 = 25.4%, next to schlosser2019's 25.6%). Three published statements
+fail against the deposit: the body-awareness frequency effect has the OPPOSITE sign to the text (more practice, more
+UEs: 30-37% among daily/3-4x weekly vs 21% never; nominal p = .021, not significant after Holm over six tests);
+"focused attention associated more with UEs" is base-rate neglect (FA practitioners 25.0% vs non-practitioners 27.3%);
+and Table 4 reports means of SPSS codes 1-11 as 0-10 scores (+1 on every item). Years of practice is not in the
+deposit, so the flat-years question stays open. Lesson for this area's small surveys: a statistic that reproduces
+exactly does not certify the sign of the sentence around it -- check means against value labels.

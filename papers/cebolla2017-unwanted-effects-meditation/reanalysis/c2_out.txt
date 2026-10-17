@@ -1,0 +1,40 @@
+(a) BODY AWARENESS: UE rate by frequency
+ q0016                           0   1  All  UE rate
+Diariamente                    32  14   46    0.304
+Entre 3 y 4 veces por semana   52  31   83    0.373
+Una vez a la semana            37   9   46    0.196
+Entre 1 y 3 veces al mes       21   3   24    0.125
+<1 vez/mes                     13   3   16    0.188
+nunca                         100  27  127    0.213
+All                           255  87  342    0.254
+Spearman(frequency code, UE) = -0.125, p = 0.0207  (negative = more frequent practice goes with MORE UE)
+    label check: does code 1 really mean daily? Diariamente
+
+(b) TABLE 4: printed mean vs labelled-score mean (code-1) vs raw-code mean
+   1 printed 3.3 | score 2.33 | raw code 3.33 | SD data 3.09 printed 3
+   2 printed 3.7 | score 2.66 | raw code 3.66 | SD data 3.22 printed 3.2
+   3 printed 2.7 | score 1.79 | raw code 2.79 | SD data 2.89 printed 2.8
+   4 printed 2.5 | score 1.56 | raw code 2.56 | SD data 2.76 printed 2.7
+   5 printed 2.0 | score 1.01 | raw code 2.01 | SD data 2.38 printed 2.3
+   6 printed 3.1 | score 2.15 | raw code 3.15 | SD data 3.21 printed 3.1
+   7 printed 2.0 | score 1.12 | raw code 2.12 | SD data 2.40 printed 2.3
+   8 printed 2.4 | score 1.49 | raw code 2.49 | SD data 2.67 printed 2.6
+   9 printed 2.0 | score 1.06 | raw code 2.06 | SD data 2.28 printed 2.2
+  10 printed 2.7 | score 1.74 | raw code 2.74 | SD data 2.67 printed 2.7
+  11 printed 2.1 | score 1.14 | raw code 2.14 | SD data 2.13 printed 2.1
+  12 printed 2.6 | score 1.66 | raw code 2.66 | SD data 2.48 printed 2.4
+  13 printed 2.4 | score 1.46 | raw code 2.46 | SD data 2.52 printed 2.4
+  14 printed 3.0 | score 2.14 | raw code 3.14 | SD data 2.95 printed 2.8
+  15 printed 2.2 | score 1.31 | raw code 2.31 | SD data 2.29 printed 2.2
+  16 printed 2.4 | score 1.50 | raw code 2.50 | SD data 2.57 printed 2.5
+  17 printed 2.1 | score 1.09 | raw code 2.09 | SD data 2.19 printed 2.2
+  18 printed 2.5 | score 1.50 | raw code 2.50 | SD data 2.66 printed 2.6
+  19 printed 1.8 | score 0.87 | raw code 1.87 | SD data 1.82 printed 1.7
+  20 printed 2.8 | score 1.84 | raw code 2.84 | SD data 2.94 printed 2.9
+  21 printed 3.3 | score 2.38 | raw code 3.38 | SD data 3.00 printed 2.9
+  22 printed 2.8 | score 1.82 | raw code 2.82 | SD data 2.90 printed 2.8
+  printed mean matches raw-code mean (to 0.05) in 10/22 items; matches labelled score in 0/22
+
+(b2) complete cases n = 205: printed mean = raw-code mean in 6/22; printed SD = data SD in 7/22
+     largest |printed - raw| (complete cases): 0.2
+(b3) available-case: |printed - raw code| max 0.14, mean 0.060; |printed - score| min 0.86, mean 0.945
