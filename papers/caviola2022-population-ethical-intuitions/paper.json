@@ -135,7 +135,10 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "accepted", "patterns": ["centre-hides-distribution"],
+        "status": "accepted",
+        "patterns": [
+          "centre-hides-distribution"
+        ],
         "why": "Every N, exclusion count, mean, SD and t reproduces from the deposit. The 'average person' framing is the soft part: in 1c the answers are a two-cluster mixture -- 37% at 50/51 (symmetric) and a spread of asymmetric weighters -- and the mean (61) is a value few people gave. The centre is honestly reported (the paper mentions the mode of 51); the decomposition is what a reader citing '1.5x' should carry. Individual trade ratios are heavy-tailed (1a: median 3.0, arithmetic mean 9.2), so 'people require 3x' is a median statement.",
         "by": "maria, 2026-10-16"
       }
@@ -177,7 +180,11 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["scale-dependent-conclusion", "nonsignificance-read-as-absence"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "scale-dependent-conclusion",
+          "nonsignificance-read-as-absence"
+        ],
         "why": "The 'no interaction' is a property of the percentage scale. On the log-ratio scale -- the one the paper uses to state its conclusion -- the interaction is positive and significant across every clipping choice and in a median-based bootstrap (1.31, 95% CI 0.30-1.79). Read on that scale: the intensity of HAPPINESS barely matters when suffering is mild (log-odds +0.05) and matters a great deal when suffering is extreme. A known-answer simulation (no true log-scale interaction, cell effects matched to the data) gives a 5.2% rejection rate for the logit test and 5.4% for the percentage test, so the logit result is not a transformation artifact; with a true interaction of 0.7 the percentage ANOVA has 72% power and the logit test 91%. Which scale is 'right' is not decidable from the data (an interaction without crossover is removable by a monotone transform); the paper simply did not say which scale its null was on.",
         "by": "maria, 2026-10-16"
       }
@@ -260,7 +267,11 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["centre-hides-distribution", "text-contradicts-own-materials"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "centre-hides-distribution",
+          "text-contradicts-own-materials"
+        ],
         "why": "The symmetry survives at the level of individual types, which is a stronger result than the paper reports: the McMahan asymmetry (7.6%) is matched by its own mirror image (6.4%), and among people who count both additions the magnitudes are identical. Two qualifications. (1) 'People reject the intuition of neutrality' is a majority statement: 12% hold full neutrality and another 7.6% are neutral about the happy addition -- about one in five are neutral about creating a maximally happy person. (2) The 'weak general preference to add a neutral person' is half carried by the 11.5% who also answered in the wrong direction on the main items, and in 2b it exists only for the EMPTY world (4.25) and not for a world of 10 billion (4.02, p=0.21): it is a preference for there being someone, not for there being more people.",
         "by": "maria, 2026-10-16"
       }
@@ -322,7 +333,11 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "not-identifiable", "patterns": ["mirrored-design-common-bias", "post-treatment-conditioning"],
+        "status": "not-identifiable",
+        "patterns": [
+          "mirrored-design-common-bias",
+          "post-treatment-conditioning"
+        ],
         "why": "Reverse-coding the unhappy arm turns any valence-neutral preference for SMALLER populations (crowding, which the paper's own participants mention) into an apparent valence asymmetry that grows with size. Built two worlds that give the identical six cell means -- one with perfectly SYMMETRIC welfare scope sensitivity plus a common size aversion rising from -0.08 to 0.98 scale points, one with asymmetric welfare and no size aversion -- and the authors' test rejects in 98% and 99.7% of simulated studies in both (reanalysis/s3a_identifiability.py). The neutral items that could separate the worlds are post-treatment: identical across arms, yet their size trend differs by arm (p=2e-6) and 35% of the happy arm copied their answers verbatim. They therefore cannot be used as a baseline -- neither for my per-size differencing (under which the growing asymmetry and the 1B reversal vanish completely) nor for the authors' size-averaged covariate. What the data DO support: a LEVEL asymmetry (unhappy effect ~3x the happy effect at every size, in raw and in differenced scores alike), and a size aversion that both arms' neutral answers show (below 4 at 1B in both arms, whichever way carry-over pushed). What they cannot support: that sensitivity to the number of happy people specifically decays with scale. The fix is cheap and future-facing: a separately randomised neutral arm.",
         "by": "maria, 2026-10-16"
       }
@@ -396,7 +411,11 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "accepted", "patterns": ["mirrored-design-common-bias", "text-contradicts-own-materials"],
+        "status": "accepted",
+        "patterns": [
+          "mirrored-design-common-bias",
+          "text-contradicts-own-materials"
+        ],
         "why": "Reproduces. The averagist preference in 3b is not a comprehension artifact: it is at least as strong among the 5.6% who demonstrably understood that totals were equal (2.18 vs 2.31). The quantitative content worth carrying for longtermist arguments: for HAPPY populations, multiplying the population by 10,000 recovers about a quarter of what a 20-point drop in average costs, and beyond a million people each further factor of ten moves the answer by ~0.02 scale points -- lay value of happy numbers is saturated. For unhappy populations the same multiplication recovers more than the whole loss; that valence contrast carries the same reverse-coding confound as c4 and should not be cited as a welfare asymmetry. 3d gender test: the printed t(571) and means are those of the UNEXCLUDED sample (N=613), not the reported N=482 (reanalysis/s3bd.py); same conclusion either way.",
         "by": "maria, 2026-10-16"
       }
@@ -464,9 +483,21 @@
     }
   ],
   "relations": [
-    {"type": "cito:agreesWith", "target": "spears2020-asymmetry-population-ethics", "why": "Independent lab (economics, reasons framing) finds the absolute Asymmetry a minority view too (12-15%); but there the Asymmetry outnumbers its mirror 57:17, here 12:10 -- see spears2020#c3."},
-    {"type": "cito:agreesWith", "target": "schubert2019-psychology-existential-risk", "why": "Same lay axiology from a different design: future numbers barely enter unprompted judgments; describing the future as good moves them strongly (utopia condition 67-77% vs control 19-24%)."},
-    {"type": "cito:sharesAuthorWith", "target": "schubert2019-psychology-existential-risk", "why": "Caviola on both."},
+    {
+      "type": "cito:agreesWith",
+      "target": "spears2020-asymmetry-population-ethics",
+      "why": "Independent lab (economics, reasons framing) finds the absolute Asymmetry a minority view too (12-15%); but there the Asymmetry outnumbers its mirror 57:17, here 12:10 -- see spears2020#c3."
+    },
+    {
+      "type": "cito:agreesWith",
+      "target": "schubert2019-psychology-existential-risk",
+      "why": "Same lay axiology from a different design: future numbers barely enter unprompted judgments; describing the future as good moves them strongly (utopia condition 67-77% vs control 19-24%)."
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "schubert2019-psychology-existential-risk",
+      "why": "Caviola on both."
+    },
     {
       "type": "zoo:sharesUnstatedAssumptionWith",
       "target": "karger2023-xpt",
@@ -480,7 +511,7 @@
   ],
   "open_questions": [
     "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1016/j.cognition.2021.104941 -> 0 items on 2026-10-16; known-answer control filter=updates:10.1371/journal.pone.0253694 -> 1 item (expected 1).",
-    "Unjournal evaluations (2025; Evaluation Summary + 2 evaluations, RePEc bjn:evalua:e2popintuitions) could not be read in full: unjournal.pubpub.org answered Cloudflare 403 to curl and WebFetch on 2026-10-16. Per the EA Forum summary (forum.effectivealtruism.org/posts/poZwKfPPtgCmTQcBk), Evaluator 2 questioned the neutral-person result (M=4.23, d=0.35) -- which c3 here finds half-carried by wrong-sign responders -- and neither evaluator raised the reverse-coding / post-treatment-baseline issue of c4 or the scale-dependence of c2. That summary is secondary; verify against the reports before citing it.",
+    "Unjournal evaluations (2025; Evaluation Summary + 2 evaluations, RePEc bjn:evalua:e2popintuitions) could not be read in full: unjournal.pubpub.org answered Cloudflare 403 to curl and WebFetch on 2026-10-16. Per the EA Forum summary (forum.effectivealtruism.org/posts/poZwKfPPtgCmTQcBk), Evaluator 2 questioned the neutral-person result (M=4.23, d=0.35) -- which c3 here finds half-carried by wrong-sign responders -- and neither evaluator raised the reverse-coding / post-treatment-baseline issue of c4 or the scale-dependence of c2. That summary is secondary; verify against the reports before citing it. RETRIED 2026-10-17: Python urllib also gets 403 (a Cloudflare challenge, not the curl TLS failure seen elsewhere that day); no Wayback snapshot of /pub/e2popintuitions. RePEc (ideas.repec.org/p/bjn/evalua/e2popintuitions.html, 200) carries only Evaluator 2's abstract, which praises the design and objects on framework grounds ('the utilitarian framework dramatically overlooks crucial dimensions of human flourishing'), not on the measurement issues of c2-c4. Still unread in full.",
     "Does a separately randomised neutral arm (not asked after the valenced items) show the size aversion that World S in reanalysis/s3a_identifiability.py predicts (4.08, 3.44, 3.02 at 1k/1M/1B)? That one arm decides c4.",
     "The paper's 'preliminary studies' in which the trade ratio 'heavily depends on the framing' and in which a deontic (button-press) framing gave higher ratios are not in the OSF deposit. Their size is the size of the format effect on the paper's headline number.",
     "ANSWERED 2026-10-16 (reanalysis/s3c_scale_reading.py, s3c_exclusion_impact.py): no sign of a scale misreading that touched the ratings. The 96 who answered 'extremely unhappy' respond like correct responders on the study's contrasts (loss 70->50 and gain from 10^4x size: Mann-Whitney p .22-.90; median duration 109 s vs 131 s), unlike the clearly inattentive 'extremely happy' group (59 s, flat contrasts). Their answer is 2.5x likelier after the HAPPY condition (65/95 vs 213/461; OR 2.52, Fisher p = 1e-4), which showed only positive levels, so level 0 looked like the floor: a context effect on the check item, placed after the ratings. Consequence: the exclusion is condition-dependent (post-treatment selection). Re-including them: happy recovery 0.273 -> 0.234, unhappy 1.327 -> 1.366, pooled 0.763 -> 0.698 (the pooled shift is the changed happy/unhappy mix). No reason to suspect Studies 1b, 3b-3d on this ground. ORIGINAL: Study 3c's 26% comprehension exclusion (96 participants read level 0 as 'extremely unhappy'): is the -100..+100 scale read by many as 0..100? If so, Studies 1b, 3b-3d inherit a scale-reading problem only 3c tested for.",
