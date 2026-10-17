@@ -1,0 +1,9 @@
+tau by functional, pooled and within SE quintiles (CRI model level)
+  POOLED                 n  1252 | DL 0.0036  PM 0.0187  REML 0.0118  IQR-robust 0.0087 | max/min   5.15
+  SE quintile 1          n   251 | DL 0.0030  PM 0.0084  REML 0.0083  IQR-robust 0.0032 | max/min   2.78
+  SE quintile 2          n   250 | DL 0.0081  PM 0.0085  REML 0.0084  IQR-robust 0.0072 | max/min   1.18
+  SE quintile 3          n   250 | DL 0.0104  PM 0.0100  REML 0.0101  IQR-robust 0.0055 | max/min   1.90
+  SE quintile 4          n   250 | DL 0.0146  PM 0.0158  REML 0.0153  IQR-robust 0.0117 | max/min   1.35
+  SE quintile 5          n   251 | DL 0.0451  PM 0.0574  REML 0.0539  IQR-robust 0.0297 | max/min   1.94
+
+pooled max/min 5.15; within-quintile max/min median 1.90, max 2.78
