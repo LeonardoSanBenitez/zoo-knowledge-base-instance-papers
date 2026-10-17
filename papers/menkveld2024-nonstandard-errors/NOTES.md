@@ -41,8 +41,8 @@ Both corpora on one scale, using **their** robust recipe on **my** data:
 
 | corpus | field | teams | tau / median SE |
 |---|---|---|---|
-| #fincap RT-H1 | finance | 164 | **1.72** |
-| CRI (Breznau) | sociology | 71 | **1.72** |
+| #fincap RT-H1 | finance | 164 | **1.72** (superseded: direct 1.98) |
+| CRI (Breznau) | sociology | 71 | **1.72** (superseded: direct 1.99) |
 
 Identical to three significant figures, which is luck and I will say so every
 time I quote it — CRI's estimator-dependent range is 0.71 (DerSimonian–Laird) to

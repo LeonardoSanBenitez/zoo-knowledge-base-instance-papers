@@ -46,8 +46,8 @@ to both:
 
 | corpus | field | teams | τ / median SE | IDR / IQR |
 |---|---|---|---|---|
-| #fincap RT-H1 | finance | 164 | **1.72** | **4.07** |
-| CRI (Breznau) | sociology | 71 | **1.72** | **2.79** |
+| #fincap RT-H1 | finance | 164 | **1.72** (superseded: direct 1.98) | **4.07** |
+| CRI (Breznau) | sociology | 71 | **1.72** (superseded: direct 1.99) | **2.79** |
 | — Gaussian reference | — | any n | — | 1.90 |
 
 **Researcher-induced dispersion is comparable to sampling error, in two fields

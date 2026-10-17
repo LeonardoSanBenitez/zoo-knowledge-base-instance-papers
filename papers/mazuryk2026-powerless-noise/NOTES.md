@@ -39,7 +39,7 @@ Running Menkveld's instrument over their Table 6 (`reanalysis/03`, `04`, `05`):
 | Table 6 minus llama3/Base | 14 | 0.0202 | 3.5 | 811 | 12× |
 | authors' preferred configs only | 10 | 0.0164 | 3.0 | 1134 | 8.8× |
 
-against **1.72** for both Menkveld's 164 finance teams and Breznau's 71
+against **1.72** (superseded 2026-10-17, see end of file) for both Menkveld's 164 finance teams and Breznau's 71
 sociology teams.
 
 The honest headline is the bottom row, not the top: strip every cell anybody
