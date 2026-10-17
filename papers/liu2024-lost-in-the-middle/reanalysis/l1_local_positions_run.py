@@ -38,7 +38,8 @@ def prompt(question, docs):
 
 
 def closed_book(question):
-    return f"Answer the question.\n\nQuestion: {question}\nAnswer:"
+    # The repository's closedbook_qa.prompt, verbatim (checked at 29b8a6d0 on 2026-10-17).
+    return f"Question: {question}\nAnswer:"
 
 
 def ask(p):
