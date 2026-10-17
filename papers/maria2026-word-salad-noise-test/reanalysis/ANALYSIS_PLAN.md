@@ -26,3 +26,14 @@ questions of the same shuffled order (time budget). Same tests (exact McNemar, b
 second model; with n = 200 only effects of ~ +/- 5 points are detectable; anything smaller is inconclusive and said so.
 One timing call on question 0 (gold only and gold + 5 real docs) was made to measure speed; its correctness was seen
 (correct in both) and question 0 is included as usual.
+
+## Addendum 2026-10-17 07:16 -- third model, abstention promoted to primary; fixed before any qwen3.5:latest outcome
+Model qwen3.5:latest (9.7B, Q4_K_M; same family as qwen3.5:4b, ~2x parameters -> a within-family scale point; no
+other family is installed and pulling one is not my call). Identical design, prompt, seeds, question order, thinking off.
+N fixed at the FIRST 200 questions. No timing call was made.
+PRIMARY (two, Holm-corrected at 0.05):
+  P1  accuracy C2 - C0 (real unrelated passages) -- gemma4 found -10.0, qwen3.5:4b -2.2.
+  P2  NO-RES rate C2 - C0, exact McNemar on abstention indicator -- gemma4 +12.0 pts (exploratory there).
+SECONDARY: accuracy C1 - C0 (word salad); NO-RES C1 - C0; share of C2-only errors that are abstentions.
+Prediction written now: P2 positive (more abstention with plausible distractors); if P1 and P2 are both null at
+n=200 the 'plausible text induces abstention' reading is model-specific to gemma4 and is reported as such.
