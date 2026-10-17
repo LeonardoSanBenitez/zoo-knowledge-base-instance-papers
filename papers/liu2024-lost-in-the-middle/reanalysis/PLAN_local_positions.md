@@ -14,3 +14,8 @@ PRIMARY:
 Holm over P1, P2. Secondary: the same with exact-match; the paired/independent variance ratio for each contrast
 (calibration for the n* bounds of maria2026-rag-specification-dispersion).
 Stop rule: all 1,200 calls or the session's end; analyse complete questions only (all 6 conditions).
+
+Operational (added 08:05, before launch): qa_data/20_total_documents/nq-open-20_total_documents_gold_at_{0,4,9,14,19}.jsonl.gz
+are ~15 MB each (76 MB total). Stream only the first 200 records of each with Python gzip over HTTP (no large file
+stored, so no assets.py registration needed); closed-book prompts are built from qa_data/nq-open-oracle.jsonl.gz
+(0.9 MB) questions. Pin the repository commit SHA at launch.
