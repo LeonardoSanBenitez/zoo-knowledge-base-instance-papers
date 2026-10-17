@@ -423,3 +423,10 @@ exactly does not certify the sign of the sentence around it -- check means again
 instrument (unusual experience / MRAES any item / IME adverse effect / single challenging item / functional
 impairment). Compare like with like: single-item rates are 25.4% (cebolla2017), 25.6% (schlosser2019), 31.4% (here).
 Query: `kb.py quantities --about "meditation prevalence"` lists them together. Data at OSF 3mn9y, not yet retrieved.
+
+**Awareness without equanimity, tested twice (added 2026-10-17):** `maria2026-awareness-acceptance-distress`.
+c1, non-meditators (PHLMS, n = 114): acceptance carries distress, awareness does not, interaction opposite in sign to
+the harms hypothesis. c2, 815 meditators (TMS curiosity x decentering on DASS, pre-registered): hypothesised sign,
+n.s. on the primary scale (p = .35), significant on the log scale (p = .010); curiosity carries more distress once
+decentering is held fixed (suppression), not robust to adding MAAS. No clean evidence; a hint in practitioners only.
+Robust side-finding: MAAS and TMS curiosity correlate 0.000 in the same 815 people -- "mindfulness" is not one variable.
