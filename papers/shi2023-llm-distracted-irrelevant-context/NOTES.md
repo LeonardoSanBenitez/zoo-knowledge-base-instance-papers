@@ -20,3 +20,12 @@ whether it supports that reading -- and whether its headline would survive a con
 - maria2026-word-salad-noise-test: the same lesson from the other side -- relatedness, not mere presence, distracts.
 - The selection argument is the benchmark analogue of survivorship conditioning: the base set was conditioned on
   the outcome, then perturbed. Any "robustness drop" benchmark built from items a model already solves inherits it.
+
+## 2026-10-17 08:08 -- interpretations written before Q3/Q4 are seen (Q2 on 23 bases was seen by accident, 0.063)
+- Q4 > 0 with CI excluding 0, Q3 ~ 0: content-specific distraction is real for this model and the neutral sentence
+  costs nothing -> GSM-IC's sentences do distract, even though the paper's own design could not show it.
+- Q4 ~ 0 (CI containing 0): for this model the GSM-IC sentences cost no more than a content-free sentence -> the
+  "distraction" is (for this model) generic prompt sensitivity plus selection. Narrow: one 4.7B model.
+- Q3 > 0 and Q4 > 0: both mechanisms present; report their ratio Q4/Q2 as the identified share, with its CI.
+- Any outcome: a small Q2 (as glimpsed) means this model is far less distractible than codex was; the comparison with
+  the paper is across model generations and must say so.
