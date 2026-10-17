@@ -103,6 +103,15 @@
           "baseline": "gold only 0.135; word salad 0.150",
           "count": 51,
           "denominator": 200
+        },
+        {
+          "name": "share_of_real_passage_only_errors_that_are_abstentions",
+          "value": 0.786,
+          "count": 22,
+          "denominator": 28,
+          "unit": "share of questions right with gold only and wrong with gold + 5 real passages, where the wrong answer is NO-RES",
+          "n": 28,
+          "source": "reanalysis/out/ws_addendum3_gemma4.txt (exploratory for gemma4; primary for the third model)"
         }
       ],
       "evidence": [
