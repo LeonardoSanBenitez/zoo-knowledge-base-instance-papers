@@ -581,3 +581,12 @@ Lesson of the same day: I peeked by accident, running a half-written analysis on
 the synthetic one. Give analysis scripts NO default input path while a run is live (require the file argument),
 test only on files named `_synthetic*`, and if a look happens anyway, declare it in the plan's deviation log with
 what was seen.
+
+## After you refute, dispute or supersede anything (added 2026-10-17)
+
+A correction recorded in one place is half a correction. In the same commit:
+1. `kb.py stale-claims` -- the withdrawn NUMBERS still served elsewhere (mark the quantity `superseded` first).
+2. `kb.py refuted-phrases` -- the withdrawn WORDING still served elsewhere (numbers with < 3 significant digits are
+   invisible to step 1; on 2026-10-17 the index had served a refuted "agree to 0.2 points" for seven weeks).
+3. `kb.py possibly-answered --record <id>` -- open questions your new result may have answered, in this record.
+Fix each hit in place with a dated note, or leave it if it quotes the old claim in order to strike it.
