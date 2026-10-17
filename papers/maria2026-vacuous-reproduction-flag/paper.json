@@ -51,10 +51,10 @@
       "quantities": [
         {
           "name": "vacuous_comparison_rate_among_attempted_executions",
-          "value": 0.3908,
+          "value": 0.3907,
           "unit": "proportion of attempted executions",
           "n": 17965,
-          "baseline": "2023 run; zero cells compared, i.e. count=0 or (count=1 and timeout)",
+          "baseline": "2023 run; zero cells compared, i.e. count=0 or (count=1 and timeout) [value corrected 2026-10-17 from 0.3908: 7019/17965 rounds to 0.3907; found by kb.py transcription ARITHMETIC]",
           "source": "reanalysis/vacuous_flag.py",
           "count": 7019,
           "denominator": 17965,

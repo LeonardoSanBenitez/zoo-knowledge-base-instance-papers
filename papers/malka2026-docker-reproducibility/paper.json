@@ -57,10 +57,10 @@
       "quantities": [
         {
           "name": "docker_image_rebuild_success_rate",
-          "value": 0.7241,
+          "value": 0.724,
           "unit": "proportion of builds",
           "n": 5298,
-          "baseline": "same Dockerfile and build parameters, rebuilt <2 years later",
+          "baseline": "same Dockerfile and build parameters, rebuilt <2 years later [value corrected 2026-10-17 from 0.7241: 3836/5298 rounds to 0.724; found by kb.py transcription ARITHMETIC]",
           "source": "Section 4.2.1, Rebuildability",
           "count": 3836,
           "denominator": 5298
@@ -76,7 +76,10 @@
           "denominator": 121
         }
       ],
-      "evidence": ["a1", "a2"],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "The numbers are internally consistent with the funnel printed in Figure 4 (1,116/1,537 = 72.6% on the downloadable subset vs 3,836/5,298 = 72.4% overall) and the replication package contains the build harness. Not independently re-run: rebuilding 5,298 images is not a thing this house is going to do."
@@ -118,7 +121,10 @@
           "denominator": 1537
         }
       ],
-      "evidence": ["a1", "a2"],
+      "evidence": [
+        "a1",
+        "a2"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "Figure 4b is a printed funnel with every stage's denominator, which is the reporting practice this house has been arguing for. No workflow in the corpus set SOURCE_DATE_EPOCH, so the bitwise result is a statement about practice, not about Docker's ceiling -- the authors say so."
@@ -140,9 +146,14 @@
           "denominator": 3620
         }
       ],
-      "evidence": ["a1"],
+      "evidence": [
+        "a1"
+      ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["population-bound-effect"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "population-bound-effect"
+        ],
         "why": "The arithmetic is the paper's own and it is the single most important number here for anyone deciding whether to ship a container as a research artifact -- 57% of pushed images were gone in under two years, an availability failure far larger than the 28% rebuild failure the paper foregrounds. BUT the population is CI-pushed images, many of which are per-commit tags that registries prune by design or that projects delete deliberately. It is NOT a persistence rate for deliberately archived research images, and must never be quoted as one. Nobody has measured that."
       }
     },
@@ -168,9 +179,14 @@
           "source": "Results.ipynb cell 60 stored output"
         }
       ],
-      "evidence": ["a2"],
+      "evidence": [
+        "a2"
+      ],
       "our_assessment": {
-        "status": "disputed", "patterns": ["standardiser-misdefines-effect-size"],
+        "status": "disputed",
+        "patterns": [
+          "standardiser-misdefines-effect-size"
+        ],
         "why": "Half right, and the half that is wrong is the half the paper's recommendation rests on. The FIT statistics are correct and do support 'poor explanatory power' -- pseudo-R^2 0.052, and on the held-out split the model recalls 5% of failures. But the EFFECT SIZES are misreported, because every regression standardises the 0/1 rule-violation dummies before fitting (`StandardScaler().fit_transform(X)` in cells 55, 60, 62, 64, 66), so the quantities reported as 'Odds Ratio' in Figure 6 are per standard deviation of the dummy, not per violation. Corrected, violating DL3008 multiplies the odds of a failed rebuild by AT LEAST 2.16, not the printed 1.47. Small explained variance and small effect are different things, and standardisation makes the difference invisible. See c5.",
         "by": "malka2026-docker-reproducibility#c5"
       }
@@ -208,7 +224,12 @@
           "source": "reanalysis/correct_figure6.py, exact from printed prevalence 0.4288"
         }
       ],
-      "evidence": ["a2", "a3", "a4", "a5"],
+      "evidence": [
+        "a2",
+        "a3",
+        "a4",
+        "a5"
+      ],
       "our_assessment": {
         "status": "accepted",
         "why": "The mechanism is proved by construction rather than argued: verify_standardisation.py fits both parameterisations on synthetic data with known coefficients and confirms beta_std = beta_raw * sd exactly, z and p bit-identical, and the standardised odds ratio always closer to 1. The distribution-free bound OR_pv >= OR_std^2 follows from sd <= 0.5 for a Bernoulli indicator and is verified against both rows where the exact value is computable (CR02 exact 2.011 >= bound 1.663; CR01 exact 0.610 <= bound 0.613). The fitter itself is validated three ways in validate_fitter.py before any of this is used."

@@ -177,12 +177,13 @@
       "quantities": [
         {
           "name": "extracted_rows_with_mean_and_sd_both_arms",
-          "value": 0.6535,
+          "value": 0.6536,
           "unit": "fraction of extracted outcome rows",
           "n": 1169,
           "count": 764,
           "denominator": 1169,
-          "source": "reanalysis/v01_extract.py rejection ledger"
+          "source": "reanalysis/v01_extract.py rejection ledger",
+          "baseline": "[value corrected 2026-10-17 from 0.6535: 764/1169 rounds to 0.6536; found by kb.py transcription ARITHMETIC]"
         },
         {
           "name": "baseline_arm_pairs_available",
