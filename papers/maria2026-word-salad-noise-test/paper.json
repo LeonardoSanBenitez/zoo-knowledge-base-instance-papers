@@ -98,7 +98,9 @@
           "unit": "share of answers 'NO-RES'",
           "n": 200,
           "source": "reanalysis/out/ws_exploratory_abstention_gemma4.txt",
-          "baseline": "gold only 0.135; word salad 0.150"
+          "baseline": "gold only 0.135; word salad 0.150",
+          "count": 51,
+          "denominator": 200
         }
       ],
       "evidence": [

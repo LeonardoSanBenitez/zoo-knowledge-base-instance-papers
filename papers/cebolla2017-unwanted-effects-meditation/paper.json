@@ -97,7 +97,9 @@
           "unit": "share reporting UEs among those practising body awareness at any frequency",
           "n": 215,
           "source": "reanalysis/c1_reproduce.py",
-          "baseline": "never practise body awareness: 0.213 (n = 127); daily 0.304, 3-4x/week 0.373 (c2_verify.py)"
+          "baseline": "never practise body awareness: 0.213 (n = 127); daily 0.304, 3-4x/week 0.373 (c2_verify.py)",
+          "count": 60,
+          "denominator": 215
         },
         {
           "name": "spearman_frequency_code_vs_ue_body_awareness",

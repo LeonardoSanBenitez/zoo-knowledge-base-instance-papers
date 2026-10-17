@@ -55,7 +55,9 @@
           "unit": "share of 100 bases with every sampled variant correct",
           "n": 100,
           "source": "Table 3",
-          "baseline": "micro 0.775"
+          "baseline": "micro 0.775",
+          "count": 18,
+          "denominator": 100
         },
         {
           "name": "gsmic_variants_per_base",
@@ -98,7 +100,9 @@
           "unit": "accuracy",
           "n": 1000,
           "source": "Table 5",
-          "baseline": "base set 0.950 (Table 2); GSM-IC-4K micro 0.724 (Table 3)"
+          "baseline": "base set 0.950 (Table 2); GSM-IC-4K micro 0.724 (Table 3)",
+          "count": 603,
+          "denominator": 1000
         },
         {
           "name": "zero_distraction_micro_under_selection_null",
