@@ -67,6 +67,11 @@ magnitude is the finding.
 > exists to make, but the specific 1.72=1.72 coincidence should not be quoted
 > as a coincidence worth noting, because one side of it was computed wrong.
 > See `menkveld2024-nonstandard-errors#nse_over_median_se_direct`.
+>
+> **Further correction 2026-10-17.** The CRI 1.72 uses the SAME subtraction (CRI teams also share one
+> dataset), so 'one side computed wrong' was too kind to the other side. Directly: RT-H1 1.98 vs CRI pooled
+> 1.99 -- equal because the transformation is monotone -- but medians across questions are 1.05 (fincap, 6
+> hypotheses) vs 1.89 (CRI, 8 DVs). Sociology's analytic dispersion is the more uniformly large of the two.
 
 **The estimate distribution is heavy-tailed in both.** IDR/IQR is 1.90 for a
 Gaussian at *any* sample size (simulated 95% bands: 1.52–2.43 at n=71,

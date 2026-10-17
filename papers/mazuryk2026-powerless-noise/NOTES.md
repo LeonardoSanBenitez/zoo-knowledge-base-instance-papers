@@ -260,3 +260,9 @@ the unpaired upper bounds used throughout — are on a Google Drive folder linke
 from the README and are not retrievable without an interactive session. That is
 the single biggest limit on this record and it is recorded as artifact `a5`,
 status `gated`.
+
+
+## 2026-10-17 corrections
+
+- The 1.72 comparator quoted above (finance and sociology) is superseded: CORRECTION 2026-10-17 (propagating menkveld2024-nonstandard-errors#nse_over_median_se_direct, which had not reached this text): both 1.72s subtract a sampling-variance term that a same-data design does not have. Direct dispersion/median-SE (NSE = IQR/1.349): fincap RT-H1 1.98, CRI pooled 1.99 (the coincidence survives, since sqrt(1+1.72^2) = 1.99 on both sides), but across questions the medians differ: fincap 1.05 over 6 hypotheses (0.63-1.98), CRI 1.89 over 8 DVs (1.33-2.38, from the 4-decimal per-DV table of breznau2022-hidden-universe/reanalysis/13_cross_corpus_menkveld.py). Do not quote 1.72 or 2.96x.
+- n* = 1,134 used the independent-arms variance on a paired contrast; it is an upper bound. Calibrated paired n* about 220-435 (`reanalysis/07_paired_bounds.py`).

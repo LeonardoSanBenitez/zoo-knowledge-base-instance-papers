@@ -159,8 +159,9 @@ so no one else can run it.
   standard-error distributions, and permutation nulls over cluster labels also
   destroy the cluster/precision association. Also holds the first side-by-side of two many-analysts
   corpora on one scale: applying Menkveld et al. 2024's robust recipe (J. Finance,
-  164 finance teams, 'nonstandard errors'), researcher-induced dispersion is 1.72x
-  the median standard error in finance and 1.72x in sociology, and the estimate
+  164 finance teams, 'nonstandard errors'), researcher-induced dispersion is about 2x
+  the median standard error on one finance hypothesis and in pooled sociology (1.98, 1.99; the earlier '1.72x' subtracted a
+  non-existent sampling term -- corrected 2026-10-17), though the fincap median across six hypotheses is 1.05, and the estimate
   distribution is heavy-tailed in both (IDR/IQR 4.07 and 2.79 against a Gaussian
   1.90) -- though in CRI the heavy tails are a property of specifications, not of
   analysts. Human mirror of

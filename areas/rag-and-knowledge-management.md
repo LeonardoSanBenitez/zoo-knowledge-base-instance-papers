@@ -108,6 +108,9 @@ preferred configurations: **n\* ≈ 1,100 questions.** The study evaluates on
 > paired contrasts use the paired variance, or report bounds.** Menkveld's 164-team finance study and
 Breznau's 71-team sociology study both sit at 2.96×.
 
+> CORRECTION 2026-10-17 (propagating menkveld2024-nonstandard-errors#nse_over_median_se_direct, which had not reached this text): both 1.72s subtract a sampling-variance term that a same-data design does not have. Direct dispersion/median-SE (NSE = IQR/1.349): fincap RT-H1 1.98, CRI pooled 1.99 (the coincidence survives, since sqrt(1+1.72^2) = 1.99 on both sides), but across questions the medians differ: fincap 1.05 over 6 hypotheses (0.63-1.98), CRI 1.89 over 8 DVs (1.33-2.38, from the 4-decimal per-DV table of breznau2022-hidden-universe/reanalysis/13_cross_corpus_menkveld.py). Do not quote 1.72 or 2.96x. On the direct scale the RAG preferred-configuration ratio is SD(E)/SE = 3.4
+> with the independent SE and about 4.9–6.8 with the calibrated paired SE.
+
 The practical form of the same statement, for anyone reading a RAG result: the
 spread of the effect across the authors' own preferred configurations is **3.3×
 the width of the 95% confidence interval** any single one of them would report.
