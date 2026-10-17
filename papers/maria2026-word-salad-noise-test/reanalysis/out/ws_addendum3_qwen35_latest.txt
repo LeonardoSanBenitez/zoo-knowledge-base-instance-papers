@@ -1,0 +1,7 @@
+acc   C2-C0: 0.725 - 0.750 = -0.025 | discordant 5/10 | exact McNemar p = 0.3018
+acc   C1-C0: 0.740 - 0.750 = -0.010 | discordant 12/14 | exact McNemar p = 0.8450
+nores C2-C0: 0.085 - 0.105 = -0.020 | discordant 2/6 | exact McNemar p = 0.2891
+nores C1-C0: 0.070 - 0.105 = -0.035 | discordant 4/11 | exact McNemar p = 0.1185
+Holm: P2=0.2891:retain; P1=0.3018:retain
+C2-only errors: 10, of which abstentions 2
+n = 200

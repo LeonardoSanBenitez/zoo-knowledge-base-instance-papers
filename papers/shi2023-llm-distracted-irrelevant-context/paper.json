@@ -164,11 +164,15 @@
     }
   ],
   "relations": [
-    {"type": "cito:agreesWith", "target": "liu2024-lost-in-the-middle", "why": "Same phenomenon from two designs: added irrelevant material lowers accuracy (here one sentence in a math problem; there 20-30 retrieved documents can score below closed-book, liu2024#c2). Neither has a content-free control of matched length."},
+    {
+      "type": "cito:agreesWith",
+      "target": "liu2024-lost-in-the-middle",
+      "why": "Same phenomenon from two designs: added irrelevant material lowers accuracy (here one sentence in a math problem; there 20-30 retrieved documents can score below closed-book, liu2024#c2). Neither has a content-free control of matched length."
+    },
     {
       "type": "cito:agreesWith",
       "target": "maria2026-word-salad-noise-test",
-      "why": "Both find that what distracts is plausible, related content: in-topic sentences hurt far more than off-topic ones here; real passages hurt and word salad does not there."
+      "why": "Both find relatedness matters: in-topic sentences hurt far more than off-topic ones here; there, word salad never helps or hurts while real passages hurt significantly in 1 of 3 local models (gemma4) -- so the size of the effect is model-specific."
     },
     {
       "type": "zoo:sharesUnstatedAssumptionWith",

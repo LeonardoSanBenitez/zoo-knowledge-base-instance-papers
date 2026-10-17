@@ -291,7 +291,7 @@ afterwards.
    triple?** One number from one corpus is not a quantity. Cheapest next
    corpora: any paper reporting a full model × prompt grid on a fixed
    evaluation set.
-2. **PARTLY ANSWERED 2026-10-16/17 (`maria2026-word-salad-noise-test`): not in the oracle setting, two local models.** gemma4 (n = 200, pre-registered): word salad -5.0 (n.s.), unrelated real passages **-10.0 (p = 0.001), mostly via abstention** (NO-RES 13.5% → 25.5%). Plausible text competes; word salad is ignored. Earlier: not in the oracle setting with a 4.7B local model -- 597 paired questions, pre-registered: word salad -0.2 points (CI -2.7 to +2.4; excludes the paper's +3), unrelated passages -2.2 (n.s.). Untested: the paper's exact 8-retrieved + 10-added setting and other models. ORIGINAL: **Does word salad help?** Cuconasu et al. Table 4 right half reports that
+2. **PARTLY ANSWERED 2026-10-16/17 (`maria2026-word-salad-noise-test`): not in the oracle setting, two local models.** gemma4 (n = 200, pre-registered): word salad -5.0 (n.s.), unrelated real passages **-10.0 (p = 0.001), mostly via abstention** (NO-RES 13.5% → 25.5%). Plausible text competes; word salad is ignored. **UPDATE (third model, pre-registered with abstention primary): did not replicate** -- qwen3.5:latest -2.5 (n.s.), abstention -2.0 (n.s.). Real-passage harm is model-specific (1 of 3); no word-salad gain in any. Earlier: not in the oracle setting with a 4.7B local model -- 597 paired questions, pre-registered: word salad -0.2 points (CI -2.7 to +2.4; excludes the paper's +3), unrelated passages -2.2 (n.s.). Untested: the paper's exact 8-retrieved + 10-added setting and other models. ORIGINAL: **Does word salad help?** Cuconasu et al. Table 4 right half reports that
    random documents made of random *words* still raise accuracy. If true, no
    information-theoretic account of the effect can be right. Never reproduced;
    one model, one experiment; the cheapest decisive test in the literature.
@@ -331,5 +331,6 @@ afterwards.
    are identified (in-topic -17.6 points vs off-topic). Ask for a neutral-perturbation arm.
 2. **All-of-m metrics belong to m.** "Macro accuracy" (every variant correct) at ~40 variants per base is 18% for
    LTM; the same model would score ~35% at 10 variants and ~4% at 640.
-Together with `maria2026-word-salad-noise-test`: what distracts is plausible, related content -- word salad is
-ignored, real passages and in-topic sentences are not.
+Together with `maria2026-word-salad-noise-test`: word salad is ignored by all three local models tested; real
+unrelated passages hurt significantly in one of three (gemma4, via abstention; not replicated, pre-registered, in
+qwen3.5:latest). In GSM-IC, in-topic sentences cost more than off-topic ones. Relatedness matters; how much is model-specific.
