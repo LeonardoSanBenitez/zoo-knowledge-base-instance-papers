@@ -1,7 +1,8 @@
 """g6 -- analysis of re/g3_results.jsonl exactly as fixed in re/PLAN.md (Q1-Q5). Only bases with all five conditions
 (B, N, V1-V3) complete enter Q2-Q5. Bootstrap over bases, 10,000 resamples, seed 11. Author: maria 2026-10-17."""
 import json, sys, collections, numpy as np
-f = sys.argv[1] if len(sys.argv) > 1 else 're/g3_results.jsonl'
+if len(sys.argv) < 2: sys.exit('usage: g6_analyse.py <results.jsonl>  (no default: see CONTRIBUTING, interim looks)')
+f = sys.argv[1]
 R = [json.loads(l) for l in open(f, encoding='utf-8')]
 by = collections.defaultdict(dict)
 for r in R: by[r['unit']][r['cond']] = r
