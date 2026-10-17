@@ -96,7 +96,10 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["missing-adequate-control"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "missing-adequate-control"
+        ],
         "why": "The risk differences are the informative numbers and they are reported. Missing: a matched two-pass control without the virtue content, which is what separates 'BODHI' from 'any chain-of-thought scaffold'."
       }
     },
@@ -152,7 +155,10 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "disputed", "patterns": ["standardiser-misdefines-effect-size"],
+        "status": "disputed",
+        "patterns": [
+          "standardiser-misdefines-effect-size"
+        ],
         "why": "All eight printed d values in Table 1 reproduce to within rounding as (difference of seed means) / (pooled SD of the five seed means), e.g. context-seeking 89.5 / sqrt((6.8^2+3.7^2)/2) = 16.35 vs 16.38 printed. So the standardiser is the seed-to-seed spread of a 200-case AVERAGE, which measures how reproducible the mean is, not how large the behavioural change is; d computed this way grows with cases per seed without the effect changing. Standardised per response, the same rates give 4.04 (context-seeking) and 0.66 (hedging, 'humility'), and 0.29 for GPT-4o-mini hedging. The Hedges' correction said to be applied is not visible either: with n = 5 per arm it would shrink 16.35 to 14.77. Separately, context-seeking is defined as 'at least one clarifying question' and the BODHI prompt instructs the model to produce '1-2 specific clarifying questions', so the curiosity metric is largely a manipulation check (did it follow the instruction), not an outcome. The +89.6 pp risk difference is real; the adjective 'very large effect on curiosity' is not supported by these numbers.",
         "by": "maria"
       }
@@ -175,7 +181,10 @@
         "a1"
       ],
       "our_assessment": {
-        "status": "not-identifiable", "patterns": ["text-contradicts-own-materials"],
+        "status": "not-identifiable",
+        "patterns": [
+          "text-contradicts-own-materials"
+        ],
         "why": "Either seeds change which cases are drawn, or per-seed n is not 200, or 'SD' is something other than between-seed SD. Each has a different consequence for the CIs. The implied per-seed n differs across rows (about 16 for one, about 80 for another), so no single reading fits. Needs the supplement S3."
       }
     }
@@ -230,7 +239,7 @@
     "Fetch the supplement: how are the five seeds defined, and what exactly is the SD in Table 1? (c3)",
     "A matched two-pass control without the virtue content would show how much of the +16.6 pp is BODHI and how much is 'think first'.",
     "Report context-seeking as a risk difference with a response-level or case-clustered interval; retire the seed-level d.",
-    "DOJO (xiang2026-dojo) cites this validation as '1,800 observations'; this paper says 2,000 (200 x 5 x 2). Which is right?"
+    "ANSWERED 2026-10-17 (Europe PMC full text, PMC13034379): 2,000 is the paper's own figure and is consistent: abstract '200 clinical vignettes ... GPT-4o-mini and GPT-4.1-mini across 5 random seeds (2000 total observations)'; Methods 'seeds (42, 43, 44, 45, 46) yielding 1000 case-level observations' per model, baseline and BODHI paired within each. 200 x 5 x 2 models = 2,000. The string '1,800' / '1800' does not occur in the paper; xiang2026-dojo's citation is wrong. ORIGINAL: DOJO (xiang2026-dojo) cites this validation as '1,800 observations'; this paper says 2,000 (200 x 5 x 2). Which is right?"
   ],
   "curation": {
     "author": "maria",
