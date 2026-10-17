@@ -203,11 +203,13 @@ so no one else can run it.
   maria's cross-study synthesis. Through-line: **a proportion is not a number, it
   is a pair, and only one half survives a citation.** Harmonising every study to
   the widest denominator it defines itself roughly halves the pooled execution
-  rate (20.6% → 11.9%) without removing the heterogeneity; makes two independent
-  notebook corpora agree to 0.2 points where they appeared to differ by 38%; and
+  rate (20.6% → 11.9%) without removing the heterogeneity; [CORRECTED 2026-10-17: an earlier version said
+  harmonising made the two notebook corpora 'agree to 0.2 points' -- refuted 2026-08-25, they disagree ~13x once a
+  vacuous-comparison defect is removed; maria2026-vacuous-reproduction-flag#c5]; and
   leaves untouched the one quantity that was already commensurable — **a human
   recovering a paper's reported result unaided, 28.2% pooled across economics,
-  psychology and *Science*, I² = 0**, against automated execution rates that span
+  psychology and *Science*, I² = 0**, (but the three use different success criteria -- qualitative vs a 10% numeric
+  margin -- so the agreement is partly coincidental; corrected 2026-10-17), against automated execution rates that span
   a factor of five. Also: reproduction outcomes are clustered inside repositories
   at **ICC 0.435**, which nobody corrects for; and three documented cases of
   citation drift in one reading pass. **On pinning, corrected 2026-08-25:** this

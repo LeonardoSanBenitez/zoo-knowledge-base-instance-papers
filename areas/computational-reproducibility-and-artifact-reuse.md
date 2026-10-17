@@ -271,6 +271,12 @@ container, the time limit, the language, the per-file timeout and the funnel. If
 want a reproducibility number that means something, define it at the level of the
 paper's claim and let a competent person attempt it.
 
+> **Correction 2026-10-17.** The premise of that explanation is false as stated: the three human studies do NOT
+> measure one event. Chang & Li 2015 count "the key qualitative result" per paper; Hardwicke et al. 2018 count target
+> values within a 10% margin; Stodden 2018 is abstract-only here. Their agreement near a third is between different
+> events, so treat it as partly coincidental at k = 3. The contrast with automated rates still stands; this
+> explanation of it does not (`maria2026-executability-denominators#c4`).
+
 ## What the individual studies contribute, and where each breaks
 
 **Trisovic et al. 2022** (Sci Data, R on Harvard Dataverse) is the largest R study and
