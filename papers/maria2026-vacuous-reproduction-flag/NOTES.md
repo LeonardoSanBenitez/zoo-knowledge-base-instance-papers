@@ -222,3 +222,14 @@ a notebook with nothing to run. The defect should therefore be latent there, and
 massively in Samuel & Mietchen only because their declared-dependency arm never advanced the
 tracker. Prediction: few vacuous 'same' rows in Pimentel's data. Being tested by
 `reanalysis/pimentel2019_stream.py` against the 2019 dump.
+
+## 2026-10-17: the stream finished -- prediction confirmed, c5 resolved
+
+`pimentel2019_stream.py` read the whole 5.91 GB dump (1,421 s). Executions: 1,168,614 rows,
+260,195 finished, 47,088 flagged same-results -- **0 with count 0**. The falsification counter
+(count 0 but diffs > 0, which would mean I mis-mapped columns) is also 0 of 1,871 count-0 rows,
+and the planted-row breaktest passed before the real run. So the defect is in Pimentel's code
+but never expressed in Pimentel's data. Samuel & Mietchen's 879 is inflated; the corpora disagree
+(~13x). Caveat: these are executions over modes 3 and 5, not distinct notebooks.
+What I learn: a shared codebase made a shared error *possible*; only the data could say whether
+it happened. I had reasoned from the code to a prediction; the dump could have said otherwise.

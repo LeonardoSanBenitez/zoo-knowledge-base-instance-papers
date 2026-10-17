@@ -188,8 +188,8 @@
     },
     {
       "id": "c5",
-      "statement": "The apparent agreement between the two largest notebook-reproducibility corpora, previously recorded here as convergence to within 0.2 percentage points with I-squared = 0, does not survive. Either Samuel & Mietchen's numerator is 13.7x too high and the two disagree by a factor of 13, or Pimentel 2019 shares the defect through the shared codebase and the agreement is between two runs of the same fault.",
-      "scope": "Refers to maria2026-executability-denominators#c3. Samuel & Mietchen state they used the reproducibility code from Pimentel et al. 2019. Pimentel's execution table was not obtained, so the disjunction cannot currently be closed.",
+      "statement": "The apparent agreement between the two largest notebook-reproducibility corpora, previously recorded here as convergence to within 0.2 percentage points with I-squared = 0, does not survive. RESOLVED 2026-10-17: Pimentel 2019's own execution table shows the vacuous-comparison defect never firing (0 of 47,088 'same' executions have count 0), so the first branch holds: Samuel & Mietchen's numerator is 13.7x too high and the two corpora genuinely disagree by a factor of about 13 (0.23% vs 3.00% at the corpus denominator).",
+      "scope": "Refers to maria2026-executability-denominators#c3. The defect is inherited at source level (Pimentel's run_notebook.py has the identical loop) but latent in Pimentel's pipeline, where last_try advances before each cell; it fires in Samuel & Mietchen because their declared-dependency arm never advanced it. Counts are EXECUTIONS (modes 3 and 5), not distinct notebooks; distinct-notebook deduplication was not done in the stream.",
       "quantities": [
         {
           "name": "artifact_reproduction_identical_output_rate",
@@ -207,19 +207,30 @@
           "value": 0.03,
           "unit": "proportion of notebooks",
           "n": 1159166,
-          "baseline": "Pimentel 2019 at the corpus denominator, UNCHECKED for this defect",
+          "baseline": "Pimentel 2019 at the corpus denominator, as published; CHECKED 2026-10-17 for the defect: no vacuous rows",
           "source": "maria2026-executability-denominators, unchanged",
           "count": 34814,
-          "denominator": 1159166,
-          "status": "disputed"
+          "denominator": 1159166
+        },
+        {
+          "name": "vacuous_same_executions_pimentel2019",
+          "value": 0,
+          "count": 0,
+          "denominator": 47088,
+          "unit": "executions flagged same-results with count 0 (comparison loop ran zero iterations)",
+          "n": 47088,
+          "source": "reanalysis/pimentel2019_stream.py -> reanalysis/pimentel2019_stream.json",
+          "baseline": "Samuel & Mietchen 2024: 815 of 879 (92.7%). Falsification counter (count 0 AND diffs > 0, which would show the counter mis-reads columns) also 0 of 1,871 count-0 rows; known-answer test reanalysis/breaktest_pimentel_stream.py PASS on planted rows. Mode 5: 43,892 same / 246,601 finished; mode 3: 3,196 / 13,594."
         }
       ],
       "evidence": [
-        "a3"
+        "a3",
+        "a6"
       ],
       "our_assessment": {
         "status": "accepted",
-        "why": "Both branches of the disjunction destroy the original claim, so the claim falls without needing to know which branch holds. The general lesson is the part worth keeping: two studies agreeing is evidence only if their measurement errors are independent, and these two share an implementation. An I-squared of 0 across two studies running the same code is what a shared defect looks like, not convergent validity. I recorded it as convergent validity."
+        "why": "Both branches of the disjunction destroyed the original claim; the 2026-10-17 stream says which one holds: genuine disagreement, not a shared fault. My prediction from the code audit (latent there, fires here) was confirmed, but note it was a prediction from reading code, then tested on data -- the data could have refuted it. THE GENERAL LESSON stands unchanged and is the durable part: two studies agreeing is evidence only if their measurement errors are independent; I-squared is about sampling error and is silent about shared implementation error. Here the code was shared and the defect was present in both, yet it only expressed itself under one pipeline -- shared code is a reason to CHECK, not proof of a shared error.",
+        "by": "maria, 2026-08-25; resolved 2026-10-17"
       }
     }
   ],
@@ -287,6 +298,20 @@
         "how": "python -c \"import zipfile; print(zipfile.ZipFile('crpmc-2023.zip').read('computational-reproducibility-pmc/computational-reproducibility-pmc/archaeology/run_notebook.py').decode())\"",
         "result": "Read in full. Lines 174 (last_try initialised to (-1,-1)), 224 (count = last_try[0]+1), 229 (loop bound = range(last_try[0]+1-timeout)), 259-264 (if not diff: set E_SAME_RESULTS). Also read execution_rules.py (mode definitions), consts.py (bit values) and analyses/analysis_helpers_executions.py (the authors' own reporting filters)."
       }
+    },
+    {
+      "id": "a6",
+      "role": "raw-data",
+      "locator": "https://zenodo.org/records/2592524 (dump.tar.bz2, PostgreSQL dump of Pimentel et al. MSR 2019; code tarball jupyter_reproducibility.tar.bz2 in the same record)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-17",
+        "by": "maria",
+        "how": "python reanalysis/pimentel2019_stream.py (streams the dump over HTTP through Python bz2/tarfile, parses only the COPY public.executions block, writes nothing large to disk); python reanalysis/breaktest_pimentel_stream.py first",
+        "result": "5.91 GB compressed read in 1,421 s; executions columns id, notebook_id, mode, reason, msg, diff, cell, count, diff_count, timeout, duration, processed, skip, repository_id; 1,168,614 execution rows, 260,195 finished, 47,088 same-results, 0 vacuous. Nothing stored; rerun regenerates."
+      },
+      "bytes": 5911871488,
+      "fetch_cmd": "python reanalysis/pimentel2019_stream.py  (DUMP_URL env overrides the source)"
     }
   ],
   "relations": [
@@ -321,7 +346,7 @@
   "curation": {
     "author": "maria",
     "created": "2026-08-25",
-    "verified": "2026-08-25",
+    "verified": "2026-10-17",
     "notes_file": "NOTES.md"
   }
 }

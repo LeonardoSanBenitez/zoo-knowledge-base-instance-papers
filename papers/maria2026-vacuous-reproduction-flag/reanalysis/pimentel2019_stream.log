@@ -1,0 +1,75 @@
+0.27 GB downloaded, 60s, state=seek, exec rows=0
+0.55 GB downloaded, 120s, state=seek, exec rows=0
+0.83 GB downloaded, 180s, state=seek, exec rows=0
+1.11 GB downloaded, 240s, state=seek, exec rows=0
+1.38 GB downloaded, 300s, state=seek, exec rows=0
+1.65 GB downloaded, 360s, state=seek, exec rows=0
+1.93 GB downloaded, 421s, state=seek, exec rows=0
+2.20 GB downloaded, 481s, state=seek, exec rows=0
+2.47 GB downloaded, 541s, state=seek, exec rows=0
+2.73 GB downloaded, 601s, state=seek, exec rows=0
+2.99 GB downloaded, 661s, state=seek, exec rows=0
+3.26 GB downloaded, 721s, state=seek, exec rows=0
+3.52 GB downloaded, 781s, state=seek, exec rows=0
+3.78 GB downloaded, 841s, state=seek, exec rows=0
+4.04 GB downloaded, 902s, state=seek, exec rows=0
+4.28 GB downloaded, 962s, state=seek, exec rows=0
+4.52 GB downloaded, 1022s, state=seek, exec rows=0
+4.71 GB downloaded, 1082s, state=seek, exec rows=0
+4.97 GB downloaded, 1142s, state=seek, exec rows=0
+5.16 GB downloaded, 1202s, state=seek, exec rows=0
+5.33 GB downloaded, 1262s, state=seek, exec rows=0
+found executions block; columns: ['id', 'notebook_id', 'mode', 'reason', 'msg', 'diff', 'cell', 'count', 'diff_count', 'timeout', 'duration', 'processed', 'skip', 'repository_id']
+5.52 GB downloaded, 1322s, state=in, exec rows=74084
+5.77 GB downloaded, 1383s, state=in, exec rows=769105
+{
+ "state": "done",
+ "compressed_bytes_read": 5911871488,
+ "seconds": 1421,
+ "all": {
+  "rows": 1168614,
+  "finished": 260195,
+  "same": 47088,
+  "same_vacuous": 0,
+  "count0": 1871,
+  "count0_and_diff_gt0": 0,
+  "same_count_ge1": 47088,
+  "skip0_same": 28667,
+  "skip0_same_vacuous": 0
+ },
+ "by_mode": {
+  "5": {
+   "rows": 989938,
+   "finished": 246601,
+   "same": 43892,
+   "same_vacuous": 0,
+   "count0": 678,
+   "count0_and_diff_gt0": 0,
+   "same_count_ge1": 43892,
+   "skip0_same": 27343,
+   "skip0_same_vacuous": 0
+  },
+  "3": {
+   "rows": 178670,
+   "finished": 13594,
+   "same": 3196,
+   "same_vacuous": 0,
+   "count0": 1193,
+   "count0_and_diff_gt0": 0,
+   "same_count_ge1": 3196,
+   "skip0_same": 1324,
+   "skip0_same_vacuous": 0
+  },
+  "4": {
+   "rows": 6,
+   "finished": 0,
+   "same": 0,
+   "same_vacuous": 0,
+   "count0": 0,
+   "count0_and_diff_gt0": 0,
+   "same_count_ge1": 0,
+   "skip0_same": 0,
+   "skip0_same_vacuous": 0
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "state": "done",
+ "compressed_bytes_read": 5911871488,
+ "seconds": 1421,
+ "all": {
+  "rows": 1168614,
+  "finished": 260195,
+  "same": 47088,
+  "same_vacuous": 0,
+  "count0": 1871,
+  "count0_and_diff_gt0": 0,
+  "same_count_ge1": 47088,
+  "skip0_same": 28667,
+  "skip0_same_vacuous": 0
+ },
+ "by_mode": {
+  "5": {
+   "rows": 989938,
+   "finished": 246601,
+   "same": 43892,
+   "same_vacuous": 0,
+   "count0": 678,
+   "count0_and_diff_gt0": 0,
+   "same_count_ge1": 43892,
+   "skip0_same": 27343,
+   "skip0_same_vacuous": 0
+  },
+  "3": {
+   "rows": 178670,
+   "finished": 13594,
+   "same": 3196,
+   "same_vacuous": 0,
+   "count0": 1193,
+   "count0_and_diff_gt0": 0,
+   "same_count_ge1": 3196,
+   "skip0_same": 1324,
+   "skip0_same_vacuous": 0
+  },
+  "4": {
+   "rows": 6,
+   "finished": 0,
+   "same": 0,
+   "same_vacuous": 0,
+   "count0": 0,
+   "count0_and_diff_gt0": 0,
+   "same_count_ge1": 0,
+   "skip0_same": 0,
+   "skip0_same_vacuous": 0
+  }
+ }
+}
