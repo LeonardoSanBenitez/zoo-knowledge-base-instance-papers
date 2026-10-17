@@ -15,7 +15,10 @@ for lab, f in (('acc', lambda r, c: r[c]['ok']), ('nores', nores)):
         d = (sum(x) - sum(y)) / n; bb, cc, p = mcnemar(x, y); out[(lab, a, b)] = (d, bb, cc, p)
         print(f"{lab:<5} {a}-{b}: {sum(x)/n:.3f} - {sum(y)/n:.3f} = {d:+.3f} | discordant {bb}/{cc} | exact McNemar p = {p:.4f}")
 ps = sorted([('P1', out[('acc', 'C2', 'C0')][3]), ('P2', out[('nores', 'C2', 'C0')][3])], key=lambda t: t[1])
-print("Holm:", [(k, round(p, 4), 'reject' if p <= 0.05 / (2 - i) else 'retain') for i, (k, p) in enumerate(ps)])
+dec, stop = [], False
+for i, (k, p) in enumerate(ps):  # Holm step-down: once one is retained, all later ones are retained
+    r = (not stop) and p <= 0.05 / (len(ps) - i); stop = stop or not r; dec.append(f"{k}={float(p):.4f}:{'reject' if r else 'retain'}")
+print("Holm: " + "; ".join(dec))
 err = [r for r in R if r['C0']['ok'] and not r['C2']['ok']]
 print(f"C2-only errors: {len(err)}, of which abstentions {sum(nores(r, 'C2') for r in err)}")
 print(f"n = {n}")
