@@ -18,3 +18,9 @@ PRE-REGISTERED QUANTITIES
   Q4 content-specific distraction: acc_N(S) - micro_V(S), paired by base (bootstrap over bases, 10,000).
   Prediction (written now): Q3 > 0 and a non-trivial share of Q2; Q4 > 0. If Q3 ~ 0, the paper's drop is all content.
   Q5 (secondary) macro at m = 3 on S vs g1's Beta-model prediction from micro_V(S) and the class-size argument.
+
+## Deviation log
+- 2026-10-17 ~07:45: ACCIDENTAL INTERIM LOOK. While testing an exploratory addition to g6_analyse.py I ran it on the
+  live results file instead of the synthetic one and saw Q2 for the first 23 complete bases (paper-style drop 0.063).
+  Nothing else was viewed. The stop rule is time-based (08:45 or all jobs) and unchanged; Q1-Q5 and their tests were
+  fixed before this and are not altered. Declared here so a reader can discount accordingly.

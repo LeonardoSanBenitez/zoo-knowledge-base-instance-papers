@@ -31,3 +31,15 @@ if S:
     for c in S:
         for v in ('V1', 'V2', 'V3'): tv[c[v].get('sentence_label')].append(c[v]['ok'])
     print("   exploratory micro_V by topic:", {k: (round(np.mean(x), 3), len(x)) for k, x in tv.items()})
+    # exploratory: bases whose GSM-IC variants also rewrite the question (g5) vs pure insertion
+    import re as _re, os as _os
+    if _os.path.exists('GSM-IC_2step.json'):
+        A = json.load(open('GSM-IC_2step.json', encoding='utf-8')) + json.load(open('GSM-IC_mstep.json', encoding='utf-8'))
+        ws = lambda s: ' '.join(s.split()); edited = set()
+        for x in A:
+            so = _re.split(r'(?<=[.!?])\s+', ws(x['original_question'])); sn = _re.split(r'(?<=[.!?])\s+', ws(x['new_question']))
+            if not (len(sn) == len(so) + 1 and any(sn[:i] + sn[i + 1:] == so for i in range(len(sn)))): edited.add(ws(x['original_question']))
+        grp = {True: [], False: []}
+        for c in S: grp[ws(c['B'].get('q', '')) in edited].append(c)
+        for k, U in grp.items():
+            if U: print(f"   exploratory, question-edited bases={k}: n {len(U)}, acc_N {accN(U):.3f}, micro_V {microV(U):.3f}, N - V {accN(U) - microV(U):+.3f}")
