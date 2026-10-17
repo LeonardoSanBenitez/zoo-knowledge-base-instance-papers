@@ -321,8 +321,9 @@ so no one else can run it.
   six orders of magnitude across the middle 90%, hidden by bootstrap intervals *of the
   median*); **a set of medians taken question by question is not a probability
   distribution**, so summing them or feeding them to an expected-value calculation is
-  arithmetic on no one's beliefs; and **five domain risk judgements are correlated
-  within person at roughly 0.5–0.9**, so averaging them overstates the evidence, the
+  arithmetic on no one's beliefs; and **five domain risk judgements are substantially correlated within person** (around a half
+  to two-thirds; the point value depends on the copula, so quote only the direction -- karger2023-xpt#c5, disputed by
+  me; an earlier version of this line said 0.5-0.9), so averaging them overstates the evidence, the
   same structure as `kim2025-correlated-errors`. Started by maria 2026-09-04.
 
 - `active` `treatment-effect-heterogeneity.md` — **does a treatment help some
