@@ -239,7 +239,10 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["instrument-relative-headline-number"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "instrument-relative-headline-number"
+        ],
         "why": "The conditional is the sharpest way to show the format effect, because unlike a bare probability it has a meaning anyone can argue with: given eight hundred million dead in five years, does it finish? Four groups say roughly one time in three to one in nine. The same people, asked in different units, say one time in ten thousand. NARROWER SCOPE and the reason matters: this is a ratio of two MEDIANS taken over different questions, so it is not any individual's conditional probability -- see c4, where exactly that non-additivity turns out to be large. It is a property of the numbers as published and as used, which is the level at which policy consumes them.",
         "by": "maria, 2026-09-04"
       }
@@ -354,7 +357,10 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "disputed", "patterns": ["instrument-relative-headline-number"],
+        "status": "disputed",
+        "patterns": [
+          "instrument-relative-headline-number"
+        ],
         "why": "DISPUTED BY ME, deliberately, and the reason is in the numbers: the Gaussian family gives 0.66-0.67 and a heavy-tailed t-copula gives 0.47, so the point estimate is partly a property of my copula rather than of their forecasters. Only the direction should be quoted -- substantial positive correlation, somewhere around a half to two-thirds -- and it is confirmed independently by the report's own key takeaway 5, that predictions about risk were highly correlated across topics. WHY IT MATTERS ANYWAY: five domain judgements correlated at 0.5+ are not five pieces of independent evidence, and averaging them as if they were overstates the information by a large factor. This is the same structure as kim2025-correlated-errors, where nominally independent models agree on the same wrong answer, and bommasani2022-homogenization. ONE FINDING I DID NOT EXPECT AND CANNOT EXPLAIN: domain experts imply a HIGHER cross-domain correlation (0.93) than superforecasters (0.67). Domain expertise should differentiate a person's judgements across domains, not homogenise them.",
         "by": "maria, 2026-09-04"
       }
@@ -397,7 +403,10 @@
         "a2"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["centre-hides-distribution"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "centre-hides-distribution"
+        ],
         "why": "The inversion is standard and the inputs are all printed in the report, but it assumes an approximately log-normal population and reads the brackets as 95% bootstrap intervals of the median, which is what the caption says they are. NARROWER SCOPE for one real reason: the implied upper end exceeds 100% for several causes, which a log-normal permits and reality does not, so the true distribution must be truncated and my sigma is an overestimate at the top. The DIRECTION is safe and is the point -- the extinction questions have spreads four times the catastrophe questions, so the disagreement the paper reports between GROUPS is small next to the disagreement WITHIN them. A reader who sees '1% [0.55, 1.23]' will imagine a group that roughly agrees. They do not.",
         "by": "maria, 2026-09-04"
       }
@@ -436,7 +445,10 @@
         "a3"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["instrument-relative-headline-number"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "instrument-relative-headline-number"
+        ],
         "why": "Classic anchoring predicts clustering on the presented values and no systematic extrapolation past the extremes. Both predictions fail here. What remains, and what I now think is the same mechanism described from the other end, is that the anchors work BY MAKING SMALL NUMBERS SAYABLE: entering the elicited extinction probability as a percentage requires seven decimal places, and nobody types that into a 0-100 box. NARROWER SCOPE because the decisive experiment does not exist: the same question in 1-in-X format under two DIFFERENT anchor ladders. Until someone runs it, the SIZE of the format effect is known and its cause is not. I record this as a partial answer to my own open question rather than deleting the question.",
         "by": "maria, 2026-09-04"
       }
@@ -486,7 +498,10 @@
         "a5"
       ],
       "our_assessment": {
-        "status": "accepted-narrower-scope", "patterns": ["nonsignificance-read-as-absence"],
+        "status": "accepted-narrower-scope",
+        "patterns": [
+          "nonsignificance-read-as-absence"
+        ],
         "why": "Both reported nulls are statements about sample size. The design can exclude a skill gap above 0.471 SD and no smaller one, and it had 19% power against the 0.18 SD it actually observed. The same design has 100% power against the 1.82 SD public-participant gap it did detect, so it separates forecasters from the public and cannot separate forecasters from each other -- and both facts sit in the same analysis. The correlation null is weaker still: 0.214 at n = 169 before attenuation, and an accuracy score built from 38 questions (many of them, by the authors' description, low-probability events that did not occur, on which everyone scores alike) caps any observable correlation well below 1. The honest statement is not 'the two groups are equally accurate' but 'no skill difference large enough for this design to see has appeared in the first 38 of 172 questions'."
       }
     },
@@ -536,7 +551,7 @@
       ],
       "our_assessment": {
         "status": "accepted-narrower-scope",
-        "why": "Accepted as reported and narrowed because it comes from the authors' summary rather than the report, so the benchmark construction cannot be checked -- and 'no-change' and 'trend extrapolation' are strong benchmarks precisely on the question types the authors say dominated the set. What the comparison cannot be accused of is a power failure: it is within-subject against a fixed alternative, which is the opposite situation from c8. Substantively it bears directly on c1: the sixfold expert-superforecaster gap that four months of argument did not close is not explained by one group being better, and on the AI questions the group with the LOWER risk estimates was also the one assigning less probability to what happened -- 9.7% against 24.6%."
+        "why": "Accepted as reported and narrowed because it comes from the authors' summary rather than the report, so the benchmark construction cannot be checked -- and 'no-change' and 'trend extrapolation' are strong benchmarks precisely on the question types the authors say dominated the set. What the comparison cannot be accused of is a power failure: it is within-subject against a fixed alternative, which is the opposite situation from c8. Substantively it bears directly on c1: the sixfold expert-superforecaster gap that four months of argument did not close is not explained by one group being better, and on the AI questions the group with the LOWER risk estimates was also the one assigning less probability to what happened -- 9.7% against 24.6%. CHECKED AGAINST THE REPORT 2026-10-17 (near-term-xpt-accuracy.pdf, 64 pp, md5 f77807f1116121777744322705e83daf, pp. 7-10): confirmed -- the 'no-change' benchmark (Accuracy Score 0.03) slightly outperformed the median XPT participant and the median superforecaster; differences n.s. Two qualifications the summary did not carry: (1) 8 of 38 subquestions were low-probability events that did not occur (bio/nuclear use, e.g. Q15-18, Q31), on which 'predict zero' is perfect by construction, and several tracked slow variables (Q33 warheads, Q38 labour force); on AI questions no-change and extrapolation score much worse (SAFE 1.89 and 1.35 vs 1.04 and 0.94 overall); (2) the AGGREGATED XPT forecast beat both benchmarks in absolute terms (0.78 on medians, 0.97 with all quantiles), weakly significant against no-change (p < .10), not against extrapolation. So: individuals do not beat naive rules on this question mix; the crowd does, modestly. The report gives no reliability for the individual accuracy score."
       }
     }
   ],
@@ -623,7 +638,11 @@
     }
   ],
   "relations": [
-    {"type": "cito:agreesWith", "target": "grace2024-thousands-ai-authors", "why": "Same object (elicited probabilities and dates of transformative or catastrophic AI), same finding by other manipulations: fixed-years vs fixed-probabilities framing (16 years on the HLMI median), HLMI vs FAOL wording (55 years model-free), and a subset event judged more probable than its superset."},
+    {
+      "type": "cito:agreesWith",
+      "target": "grace2024-thousands-ai-authors",
+      "why": "Same object (elicited probabilities and dates of transformative or catastrophic AI), same finding by other manipulations: fixed-years vs fixed-probabilities framing (16 years on the HLMI median), HLMI vs FAOL wording (55 years model-free), and a subset event judged more probable than its superset."
+    },
     {
       "type": "cito:agreesWith",
       "target": "kim2025-correlated-errors",
@@ -661,7 +680,7 @@
     }
   ],
   "open_questions": [
-    "The near-term accuracy report itself is still unread: forecastingresearch.org returns HTTP 000 from this machine and has done so on two separate dates. Everything in c8 and c9 comes from the authors' own summary. The report would supply the per-question scores, which is what a proper reliability estimate for the 38-item accuracy score needs -- and that reliability is the parameter the correlation null turns on.",
+    "PARTLY ANSWERED 2026-10-17: report READ (fetched with Python urllib -- the 'HTTP 000' was curl's Windows TLS backend failing the handshake, exit 35, not the site; see instance-general/research-data-archives/archive-api-traps.md). It reports Spearman correlations of near-term accuracy with long-term risk of -0.08 to 0.14 (forecasters with >= 10 resolved questions), notes the 38 subquestions may be too few, and gives NO reliability estimate and no per-forecaster scores (group-level tables A3.1/A3.3 only). The attenuation question therefore stays open: needs FRI's individual-level data. ORIGINAL: The near-term accuracy report itself is still unread: forecastingresearch.org returns HTTP 000 from this machine and has done so on two separate dates. Everything in c8 and c9 comes from the authors' own summary. The report would supply the per-question scores, which is what a proper reliability estimate for the 38-item accuracy score needs -- and that reliability is the parameter the correlation null turns on.",
     "The next XPT wave resolves in 2030 and includes the question on which the two groups differ most in kind rather than degree: whether Nick Bostrom affirms the existence of AGI by 2030, at 1% for superforecasters against 9% for domain experts.",
     "forecastingresearch.org did not resolve from this machine, so I could not check whether forecaster-level data exists. If it does, every derived quantity in c4, c5 and c6 becomes directly measurable rather than inverted, and c5 in particular would stop being disputed. That is the single highest-value follow-up and it is one successful HTTP request.",
     "Why do domain experts imply a HIGHER cross-domain correlation (0.93) than superforecasters (0.67)? Domain expertise should differentiate judgements across domains. I have no explanation and it may be an artifact of the smaller n and wider intervals for the expert group -- testable by simulating the inversion at n = 59 with the expert spreads and checking its bias.",
