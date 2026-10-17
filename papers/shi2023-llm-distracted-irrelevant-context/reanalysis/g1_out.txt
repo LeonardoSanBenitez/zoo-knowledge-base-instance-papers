@@ -1,0 +1,14 @@
+bases 100, variants 58052, class size min/median/max 192/640/640
+uniform 4K sample: variants per base mean 40.0, min over bases (median rep) 10, max 60
+
+method      micro macro4K   k_fit | predicted macro at m = 1, 5, 10, 44(4K median), FULL set
+COT         0.724   0.060    3.86 | 0.724  0.338  0.200  0.050  0.004
+COT+INST    0.778   0.150    2.91 | 0.778  0.456  0.323  0.136  0.027
+LTM         0.775   0.180    2.40 | 0.775  0.471  0.348  0.166  0.043
+LTM+INST    0.806   0.250    2.18 | 0.806  0.537  0.422  0.235  0.081
+PROGRAM     0.544   0.050    1.73 | 0.544  0.219  0.134  0.044  0.006
+COT+SC      0.881   0.300    3.99 | 0.881  0.644  0.514  0.281  0.087
+LTM+SC      0.934   0.450    5.55 | 0.934  0.772  0.665  0.430  0.175
+PROGRAM+SC  0.746   0.130    2.60 | 0.746  0.414  0.288  0.118  0.023
+
+reference: homogeneous p = 0.724 at m = 44 gives macro 6.7e-07 -- observed 0.06 means errors are concentrated in some bases

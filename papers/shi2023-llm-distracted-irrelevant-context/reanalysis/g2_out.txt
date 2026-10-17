@@ -1,0 +1,11 @@
+(a)/(b) known-answer: true k, d -> fitted k; predicted vs true macro (full set; m=10)
+  mu 0.72 k 3.9 d 0: k_fit 4.72 | full pred 0.003 true 0.003 | m10 pred 0.182 true 0.196
+  mu 0.78 k 2.4 d 0: k_fit 2.67 | full pred 0.042 true 0.036 | m10 pred 0.350 true 0.357
+  mu 0.93 k 5.5 d 0: k_fit 5.70 | full pred 0.162 true 0.154 | m10 pred 0.649 true 0.640
+  mu 0.72 k 3.9 d 0.15: k_fit 9.13 | full pred 0.000 true 0.000 | m10 pred 0.120 true 0.147
+  mu 0.78 k 2.4 d 0.15: k_fit 10.01 | full pred 0.000 true 0.000 | m10 pred 0.147 true 0.211
+
+(c) uncertainty from 100 bases (Binomial redraw of the printed macro), 90% intervals
+  COT     full-set macro 0.000-0.013 | m=10 macro 0.133-0.247  (printed 4K value 0.06)
+  LTM     full-set macro 0.016-0.090 | m=10 macro 0.293-0.406  (printed 4K value 0.18)
+  LTM+SC  full-set macro 0.091-0.294 | m=10 macro 0.628-0.708  (printed 4K value 0.45)
