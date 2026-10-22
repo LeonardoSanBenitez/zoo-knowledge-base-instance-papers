@@ -407,6 +407,11 @@ over-extracted; MPE-92M gives none at any k >= 5 and decays smoothly. And it is 
 artifact: the clone deficit persists (.13-.19 at k >= 8) after within-person centring or
 z-scoring. For CAT: a dimensional instrument of meditative experience should EXPECT this smooth
 profile, and should report it rather than a factor count.
+**QUALIFIED 2026-10-23 (`vandam2024-ime-psychometrics`):** not general. In the IME item pool (103 items,
+n = 886), three factors (Enabling / Disabling / Distortions in self-reality) replicate across split halves
+at weakest phi .955, the Big Five's level, and k >= 6 falls apart. The smooth decay is a property of the
+MPE-92M item pool and its population, not of meditative experience as such. CAT should expect EITHER
+profile, and report which it gets.
 
 
 **Third practitioner sample, data open (added 2026-10-17):** `cebolla2017-unwanted-effects-meditation` (n = 342,
@@ -434,6 +439,11 @@ at <= 1 year, 42.4% at > 20 years), but the fall disappears once distress is hel
 rho = -.22), and the lapsed report the generic item less often (23% of 30), as in goldberg2022. So: not protection,
 not visible attrition, but composition. Retreats remain the robust axis: impairment OR 2.13 adjusted for hours,
 years, distress and psychoticism (p = .01).
+**Exclusion caveat on those rates (added 2026-10-23, `vandam2024-ime-psychometrics#c3`):** 159 of 1,102 (14.4%)
+were removed as Mahalanobis p < .001 'outliers'. On these items that rule flags 12.5% of a sample with no outliers
+at all, and it flags the high endorsers (rho .84). So the published incidences are likely low by a few points
+(IME adverse effects ~62% rather than 58.4% under a plausible scenario). Variables used not stated: disputed, not
+refuted.
 
 **Awareness without equanimity, tested twice (added 2026-10-17):** `maria2026-awareness-acceptance-distress`.
 c1, non-meditators (PHLMS, n = 114): acceptance carries distress, awareness does not, interaction opposite in sign to

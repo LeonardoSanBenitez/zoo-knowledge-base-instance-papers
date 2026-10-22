@@ -116,6 +116,9 @@ so no one else can run it.
   A parametric-bootstrap clone of the model's own fitted loadings is 0.13–0.14
   Tucker phi more replicable than the data it was fitted to, so this is
   misspecification and not low power.
+  **Qualified 2026-10-23 (`vandam2024-ime-psychometrics`):** not general. In another meditation-experience
+  pool (IME, 103 items, n = 886) three factors DO replicate across halves (weakest phi .955). The negative
+  result belongs to MPE-92M's items, not to meditative experience as such.
   **2026-09-07: `matko2019-meditation-classification` added, and it is the
   prior art for CAT.** 309 techniques reduced to 20; 100 experienced meditators
   rated similarity; multidimensional scaling gave TWO dimensions -- *amount of

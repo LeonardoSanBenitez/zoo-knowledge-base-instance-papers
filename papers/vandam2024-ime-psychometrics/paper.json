@@ -1,0 +1,114 @@
+{
+ "schema_version": "1.6",
+ "id": "vandam2024-ime-psychometrics",
+ "title": "Development and Validation of the Inventory of Meditation Experiences (IME)",
+ "authors": ["Nicholas T. Van Dam", "Jessica Targett", "Alex Burger", "Jonathan N. Davies", "Julieta Galante"],
+ "year": 2024,
+ "venue": "authors' manuscript of 10 MAY 2024, deposited at osf.io/76ud3 (publication status not checked)",
+ "area": ["contemplative-neuroscience"],
+ "identifiers": {"url": "https://osf.io/76ud3/"},
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {"class": "chain", "evidence": "Opened 2026-10-23 from the vandam2025 deposit: same sample, item-level data already verified; the IME-30 defines vandam2025's headline. Prior held, stated now: gamma2021-mpe92m showed factor counts of meditative-experience inventories are a resolution choice with smooth split-half decay; I expect the same question to be worth asking here, without a suspicion about this paper's numbers.", "recorded": "at-selection"},
+ "cost": {
+  "tool_calls": 20,
+  "bytes_downloaded": 2300000,
+  "compute_notes": "Manuscript read in full (30 pp.). Data: the vandam2025 deposit (same 886 respondents, already verified). p04 split-half EFA: 20 splits x (k 2-8 on 103 items + k 2-6 on 30 items), factor_analyzer minres/promax, 8 min. Others seconds.",
+  "session": "2026-10-23 maria"
+ },
+ "curation": {"author": "maria", "created": "2026-10-23", "verified": "2026-10-23", "notes_file": "NOTES.md"},
+ "triggers": [
+  "inventory of meditation experiences factor structure",
+  "enabling disabling distortions meditation experiences",
+  "mahalanobis multivariate outlier exclusion skewed likert items",
+  "how many respondents does a mahalanobis p < .001 rule flag in ordinal data",
+  "excluding outliers removed the high scorers",
+  "parallel analysis says 7 factors but authors chose 3",
+  "split-half replicability of factors meditation questionnaire"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "A 30-item, 3-factor IME (Enabling experiences, Disabling experiences, Distortions in self/reality) fits the data: CFI 0.963 / TLI 0.960 / RMSEA 0.053 / SRMR 0.066 in the derivation sample and CFI 0.937 / TLI 0.932 / RMSEA 0.068 / SRMR 0.089 in the hold-out sample (WLSMV), with all loadings >= 0.55.",
+   "scope": "Items pruned from 103 by iterative EFA/CFA on the derivation sample (2/3 of 886), then confirmed on the remaining third.",
+   "quantities": [
+    {"name": "split_half_weakest_factor_phi_103_items_k3", "value": 0.955, "unit": "Tucker phi", "n": 20, "baseline": "k=2 0.986, k=4 0.819, k=5 0.856, k=6 0.372, k=7 0.518, k=8 0.276 (mean over 20 random splits; minres + promax)", "source": "reanalysis/p04_factor_stability.py"},
+    {"name": "split_half_weakest_factor_phi_30_items_k3", "value": 0.987, "unit": "Tucker phi", "n": 20, "baseline": "k=4 0.497", "source": "p04"},
+    {"name": "holdout_srmr", "value": 0.089, "unit": "SRMR", "n": 295, "baseline": "paper's Table 3; above the Hu-Bentler 0.08 the paper cites, RMSEA 0.068 above its 0.06; the paper accepts CFI >= 0.90 instead", "source": "Table 3 (transcribed)"}
+   ],
+   "evidence": ["a1", "a3"],
+   "our_assessment": {"status": "accepted", "why": "The structure is not a resolution artefact, and this is the opposite of gamma2021-mpe92m. On all 103 items, three factors replicate across random halves at the Big Five benchmark level (weakest factor phi .955). Six or more do not (.28-.52). The 30-item selection sharpens this to .987. The hold-out fit is weaker than the derivation fit and misses the conventional cut-offs the paper itself cites, which it states and relaxes in advance (CFI/TLI >= .90). The fit indices were not re-estimated (no WLSMV CFA available here); the factor stability was.", "by": "maria"}
+  },
+  {
+   "id": "c2",
+   "statement": "Parallel analysis guided the eventual determination of factors (abstract); it indicated up to 7 factors (eigenvalues 29.60, 10.71, 4.00, 2.66, 2.24, 1.80, 1.74), and a 3-factor solution was chosen as most interpretable.",
+   "scope": "Modified parallel analysis, nFactors, 5,000 random datasets, 95th percentile, full sample.",
+   "quantities": [
+    {"name": "reproduced_top7_eigenvalues", "value": "29.60, 10.71, 4.00, 2.66, 2.24, 1.81, 1.74", "unit": "eigenvalue", "n": 886, "source": "p04 (A), Pearson correlation of the 103 intensity items"}
+   ],
+   "evidence": ["a1", "a3"],
+   "our_assessment": {"status": "accepted-narrower-scope", "patterns": ["analytic-flexibility"], "why": "The eigenvalues reproduce to two decimals (1.81 vs 1.80). 'Guided' is generous. Parallel analysis said 7, and the authors chose 3 on interpretability. The choice turns out to be the defensible one by split-half replicability (c1), which the paper did not use. With skewed items, parallel analysis on Pearson correlations is known to over-extract.", "by": "maria"}
+  },
+  {
+   "id": "c3",
+   "statement": "159 of 1,102 participants who passed attention checks were identified as multivariate outliers (Mahalanobis distance equivalent to p < 0.001) and excluded.",
+   "scope": "Exclusion step; variables entering the distance not stated; code and excluded rows not deposited.",
+   "quantities": [
+    {"name": "share_flagged_in_no_outlier_copula", "value": 0.125, "unit": "proportion", "n": 1102, "baseline": "Gaussian copula with the retained data's own item marginals and correlations, 103 intensity items, chi2(103) at .999; 20 replicates, range 0.116-0.138; nominal 0.001; paper removed 0.144", "source": "reanalysis/p02_mahalanobis_known_answer.py"},
+    {"name": "share_of_retained_flagged_again", "value": 0.149, "unit": "proportion", "n": 886, "count": 132, "denominator": 886, "source": "p02 (A)"},
+    {"name": "spearman_d2_with_items_endorsed_copula", "value": 0.841, "unit": "Spearman rho", "n": 1102, "baseline": "flag rate in the top endorsement decile is 4.6x the overall rate", "source": "p02 (B)"}
+   ],
+   "evidence": ["a1", "a4"],
+   "our_assessment": {"status": "disputed", "patterns": ["circular-analysis", "null-model-misspecified"], "why": "If the distance was computed on the experience items, the rule cannot find outliers in these data. In a sample with NO outliers by construction, it flags 12.5% (nominal 0.1%), the size of the 14.4% removed. Re-applied to the 886 who survived it, it flags another 14.9%. And whom it flags is decided by the outcome: D^2 correlates .84 with the number of experiences endorsed. So the step excludes the respondents with the most unusual experiences, from a study whose companion paper estimates how common unusual experiences are (bounds in c4). 'Disputed', not 'refuted', because the variables entering the distance are not stated. A distance on other variables would not carry this argument.", "by": "maria"}
+  },
+  {
+   "id": "c4",
+   "origin": "reader",
+   "statement": "If the 159 excluded respondents resembled the high endorsers that the same rule flags among the retained, the companion paper's headline incidence would be about 62% rather than 58.4% for IME adverse effects, about 33.5% rather than 31.4% for the generic item, and about 81% rather than 78.3% for any MRAES item; worst-case bounds 49.5-64.7%, 26.6-41.8%, 66.4-81.6%.",
+   "scope": "Bounds and a plausible scenario; the excluded rows are not available.",
+   "quantities": [
+    {"name": "ime_ae_incidence_if_excluded_resembled_reflagged", "value": 0.624, "unit": "proportion", "n": 1045, "baseline": "published 0.584; 85% of the re-flagged retained have an IME adverse effect", "source": "reanalysis/p03_exclusion_bounds.py"},
+    {"name": "generic_ae_incidence_if_excluded_resembled_reflagged", "value": 0.335, "unit": "proportion", "n": 1045, "baseline": "published 0.314", "source": "p03"}
+   ],
+   "evidence": ["a4"],
+   "our_assessment": {"status": "accepted-narrower-scope", "why": "Arithmetic on stated assumptions. The direction is fixed: excluding high endorsers can only lower an incidence. The size is a scenario, not a measurement.", "by": "maria"}
+  },
+  {
+   "id": "c5",
+   "statement": "Table 4: subscale endorsement (any item >= Slight) is 93.91% (832) Enabling, 58.35% (517) Disabling, 65.69% (582) Distortions; item endorsement counts as listed.",
+   "scope": "Full sample, n = 886.",
+   "quantities": [
+    {"name": "disabling_any_item_ge_slight", "value": 0.5835, "unit": "proportion", "n": 886, "count": 517, "denominator": 886, "source": "reanalysis/p01_subscale_counts.py; reproduces"}
+   ],
+   "evidence": ["a1", "a3"],
+   "our_assessment": {"status": "accepted", "why": "All three subscale counts and the four item counts checked reproduce exactly. A coincidence worth recording so nobody 'discovers' it again. 517 is ALSO the companion paper's IME adverse-effect count (any of 30 items >= Slight and unpleasant), but the two sets are different people: 477 in both, 40 only in each.", "by": "maria"}
+  },
+  {
+   "id": "c6",
+   "statement": "As a maximum of 50 items were presented for valence, selected at random, valence data were presumed randomly missing by design, and imputed by random-forest multiple imputation.",
+   "scope": "Valence of endorsed items.",
+   "quantities": [
+    {"name": "people_missing_valence_on_endorsed_items", "value": 226, "unit": "people", "n": 886, "baseline": "178 of them endorsed > 50 of 103 items, as the design implies; 48 endorsed <= 50 and still lack a valence for some endorsed item", "source": "reanalysis/p05_valence_missingness.py"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {"status": "accepted-narrower-scope", "why": "By the paper's own description, a missing valence on an endorsed item can only occur for someone who endorsed more than 50 items. So missingness is concentrated in high endorsers, not random across people. It is missing at random GIVEN the intensities the imputation conditions on, which is the defensible claim. The consequence is small: vandam2025 c7 bounds the adverse-effect rate at 57.7-59.7% whatever the missing valences were. The 48 cases the design does not explain are unresolved.", "by": "maria"}
+  }
+ ],
+ "methods": ["split-half-tucker-congruence", "parallel-analysis-reproduction", "known-answer-structural-null", "gaussian-copula-simulation", "bounds-under-missing-data"],
+ "artifacts": [
+  {"id": "a1", "role": "raw-data", "locator": "https://osf.io/3mn9y/ CSC_UnusualExp_data_8APR24.rds", "status": "verified-usable", "sha256": "f608e932cd6ec5a4061782b43cef0c90f26ba751beb8841e5a596ffb71e92eb3", "fetch_cmd": "python -I zoo-knowledge-base/instance-papers/papers/vandam2025-meditation-adverse-effects-representative/reanalysis/fetch.py <dest_dir>", "checked": {"on": "2026-10-23", "by": "maria", "how": "see vandam2025 a1; read via reanalysis/load_rds.py (NA mask)", "result": "The same 886 respondents as vandam2025. 103 intensity items (UES_xxx), valences, and the scale scores."}},
+  {"id": "a2", "role": "code", "locator": "https://osf.io/76ud3/ IUE_EFA_CFA_DFA.R, Items.csv", "status": "present-but-insufficient", "checked": {"on": "2026-10-23", "by": "maria", "how": "read", "result": "Defines the 30 items and the subscales. It does not contain the exclusion step, and the 216 excluded rows (159 outliers among them) are not deposited, so the exclusion cannot be re-run."}},
+  {"id": "a3", "role": "code", "locator": "reanalysis/p01_subscale_counts.py, p04_factor_stability.py", "status": "verified-usable", "local_path": "reanalysis/p04_factor_stability.py", "checked": {"on": "2026-10-23", "by": "maria", "how": "python -I -W ignore reanalysis/p0N_*.py <rds> artifacts > artifacts/p0N_out.txt", "result": "Source of c1, c2, c5."}},
+  {"id": "a4", "role": "code", "locator": "reanalysis/p02_mahalanobis_known_answer.py, p03_exclusion_bounds.py, p05_valence_missingness.py", "status": "verified-usable", "local_path": "reanalysis/p02_mahalanobis_known_answer.py", "checked": {"on": "2026-10-23", "by": "maria", "how": "as a3", "result": "Known-answer simulation of the outlier rule (no outliers by construction), bounds, missingness counts. Source of c3, c4, c6."}},
+  {"id": "a5", "role": "supplement", "locator": "https://osf.io/76ud3/ IME_Psychometrics_10MAY24.pdf", "status": "verified-usable", "bytes": 2306950, "checked": {"on": "2026-10-23", "by": "maria", "how": "read in full", "result": "Primary source. Tables 3-5 transcribed where used."}}
+ ],
+ "relations": [
+  {"type": "zoo:sharesUnstatedAssumptionWith", "target": "vandam2025-meditation-adverse-effects-representative", "why": "Same sample and exclusion step; that paper's incidence rates are computed after an exclusion that removes high endorsers (c3, c4)."},
+  {"type": "cito:disagreesWith", "target": "gamma2021-mpe92m", "why": "Contrast, not conflict: here a 3-factor structure of meditation experiences replicates across split halves at phi .955. In MPE-92M no solution at k >= 5 did, and the decay was smooth. 'Meditative experience has no discrete factors' is not general. It depends on the item pool."}
+ ],
+ "open_questions": [
+  "Which variables entered the Mahalanobis distance? If they were the experience items, c3 stands as stated; the authors' code would settle it.",
+  "Does the 3-factor structure survive with the 159 excluded respondents put back? The high endorsers are exactly the ones who would load across factors.",
+  "Why do 48 people with <= 50 endorsed items lack a valence for an endorsed item?"
+ ]
+}

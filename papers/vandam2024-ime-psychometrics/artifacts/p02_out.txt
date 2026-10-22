@@ -1,0 +1,2 @@
+(A) retained n=886, 103 items: flagged again at p<.001: 132 (14.9%); Spearman(D^2, #items >= Slight) = +0.722
+(B) no-outlier copula, n=1102, 20 reps: flagged 12.5% (range 11.6-13.8%; paper removed 14.4%); Spearman(D^2, endorsement) +0.841; flag rate in top endorsement decile = 4.6x the overall rate

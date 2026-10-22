@@ -1,0 +1,15 @@
+(A) top-7 eigenvalues, Pearson R of 103 items: [29.6, 10.71, 4.0, 2.66, 2.24, 1.81, 1.74]  printed: [29.6, 10.71, 4.0, 2.66, 2.24, 1.8, 1.74]
+(B) split-half replicability, 103 items
+  103 items k=2: mean matched phi 0.988, weakest factor phi 0.986
+  103 items k=3: mean matched phi 0.970, weakest factor phi 0.955
+  103 items k=4: mean matched phi 0.915, weakest factor phi 0.819
+  103 items k=5: mean matched phi 0.923, weakest factor phi 0.856
+  103 items k=6: mean matched phi 0.818, weakest factor phi 0.372
+  103 items k=7: mean matched phi 0.809, weakest factor phi 0.518
+  103 items k=8: mean matched phi 0.752, weakest factor phi 0.276
+    30 final items
+  30 items k=2: mean matched phi 0.992, weakest factor phi 0.990
+  30 items k=3: mean matched phi 0.990, weakest factor phi 0.987
+  30 items k=4: mean matched phi 0.863, weakest factor phi 0.497
+  30 items k=5: mean matched phi 0.805, weakest factor phi 0.367
+  30 items k=6: mean matched phi 0.789, weakest factor phi 0.402

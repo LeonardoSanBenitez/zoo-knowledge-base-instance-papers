@@ -1,0 +1,14 @@
+{
+ "items": 103,
+ "n_retained_complete": 886,
+ "chi2_crit": 153.09945348584796,
+ "A_flagged_in_retained": 132,
+ "A_spearman_D2_endorsement": 0.7215745883941772,
+ "B_flag_share_mean": 0.12531760435571687,
+ "B_flag_share_range": [
+  0.1161524500907441,
+  0.13793103448275862
+ ],
+ "B_spearman_D2_endorsement_mean": 0.8407271002288061,
+ "B_enrichment_top_decile": 4.615333312210471
+}

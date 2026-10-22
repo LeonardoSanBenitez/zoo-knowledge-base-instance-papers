@@ -1,0 +1,53 @@
+{
+ "Enabling": {
+  "printed": 832,
+  "any_item_ge_slight": 832,
+  "any_item_ge_slight_and_unpleasant": 48,
+  "item_counts_ge_slight": {
+   "UES_006": 409,
+   "UES_011": 355,
+   "UES_071": 630,
+   "UES_052": 635,
+   "UES_013": 600,
+   "UES_042": 507,
+   "UES_012": 631,
+   "UES_041": 511,
+   "UES_036": 523,
+   "UES_111": 544
+  }
+ },
+ "Disabling": {
+  "printed": 517,
+  "any_item_ge_slight": 517,
+  "any_item_ge_slight_and_unpleasant": 469,
+  "item_counts_ge_slight": {
+   "UES_029": 172,
+   "UES_083": 275,
+   "UES_028": 165,
+   "UES_104": 219,
+   "UES_050": 158,
+   "UES_080": 214,
+   "UES_105": 220,
+   "UES_055": 152,
+   "UES_056": 157,
+   "UES_048": 162
+  }
+ },
+ "Distortions": {
+  "printed": 582,
+  "any_item_ge_slight": 582,
+  "any_item_ge_slight_and_unpleasant": 250,
+  "item_counts_ge_slight": {
+   "UES_044": 274,
+   "UES_075": 247,
+   "UES_078": 187,
+   "UES_063": 218,
+   "UES_072": 203,
+   "UES_065": 212,
+   "UES_067": 250,
+   "UES_043": 260,
+   "UES_062": 340,
+   "UES_095": 213
+  }
+ }
+}

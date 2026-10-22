@@ -1,0 +1,29 @@
+{
+ "ime_ae": {
+  "published": 0.5835214446952596,
+  "none_of_159": 0.49473684210526314,
+  "all_of_159": 0.6468899521531101,
+  "like_reflagged": 0.623836450630709,
+  "like_top_decile": 0.6401275917065391,
+  "rate_in_reflagged": 0.8484848484848485,
+  "rate_in_top_decile": 0.9555555555555556
+ },
+ "generic_ae": {
+  "published": 0.31376975169300225,
+  "none_of_159": 0.2660287081339713,
+  "all_of_159": 0.41818181818181815,
+  "like_reflagged": 0.3351892127011744,
+  "like_top_decile": 0.36408293460925045,
+  "rate_in_reflagged": 0.45454545454545453,
+  "rate_in_top_decile": 0.6444444444444445
+ },
+ "any_mraes": {
+  "published": 0.7832957110609481,
+  "none_of_159": 0.6641148325358852,
+  "all_of_159": 0.816267942583732,
+  "like_reflagged": 0.8128099173553719,
+  "like_top_decile": 0.816267942583732,
+  "rate_in_reflagged": 0.9772727272727273,
+  "rate_in_top_decile": 1.0
+ }
+}

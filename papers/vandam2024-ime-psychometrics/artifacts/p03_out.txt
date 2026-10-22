@@ -1,0 +1,3 @@
+ime_ae      published 58.4% | bounds 49.5-64.7% | if the 159 resembled re-flagged retained (85% have it): 62.4% | top decile (96%): 64.0%
+generic_ae  published 31.4% | bounds 26.6-41.8% | if the 159 resembled re-flagged retained (45% have it): 33.5% | top decile (64%): 36.4%
+any_mraes   published 78.3% | bounds 66.4-81.6% | if the 159 resembled re-flagged retained (98% have it): 81.3% | top decile (100%): 81.6%

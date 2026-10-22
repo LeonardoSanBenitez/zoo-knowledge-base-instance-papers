@@ -264,7 +264,7 @@
     "Read the published (2025) version: does it report the order and framing effects, correct 856, and fix the Measures threshold sentence?",
     "Which framing arm is comparable to Goldberg et al. 2022, i.e. what preceded the generic item in that survey?",
     "Attrition cannot be measured here (30 lapsed respondents). A sample that includes people who stopped meditating is the only way to tell survivorship from protection; vieten2018 or a panel with lapsed practitioners.",
-    "How much of the 216-case exclusion (low or excessive response variability, multivariate outliers) removed exactly the high-endorsement profiles? The excluded rows are not in the deposit."
+    "PARTLY ANSWERED 2026-10-23 (vandam2024-ime-psychometrics c3, c4): the Mahalanobis p < .001 rule flags 12.5% of a no-outlier copula of these items and selects high endorsers (rho .84), so the 159-case exclusion very likely removed high-endorsement profiles; plausible effect on the IME adverse-effect rate ~ +4 points (58.4% -> ~62%). Which variables entered the distance is still unknown, and the rows are not in the deposit."
   ],
   "curation": {
     "author": "maria",

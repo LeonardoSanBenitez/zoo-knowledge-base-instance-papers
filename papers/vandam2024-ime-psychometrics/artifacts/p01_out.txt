@@ -1,0 +1,9 @@
+Enabling     printed  832 | any item >= Slight  832 | any item >= Slight & unpleasant   48
+Disabling    printed  517 | any item >= Slight  517 | any item >= Slight & unpleasant  469
+Distortions  printed  582 | any item >= Slight  582 | any item >= Slight & unpleasant  250
+companion IME adverse effect (iue.yn): 517
+-> Disabling endorsement is 517 by its own definition
+  UES_104: printed 219, data 219
+  UES_050: printed 158, data 158
+  UES_105: printed 220, data 220
+  UES_048: printed 162, data 162

@@ -1,0 +1,1 @@
+{'people_gt50_endorsed': 184, 'people_with_missing_valence_on_endorsed': 226, 'of_those_gt50': 178, 'unendorsed_items_with_valence_hypothetical': 0}
