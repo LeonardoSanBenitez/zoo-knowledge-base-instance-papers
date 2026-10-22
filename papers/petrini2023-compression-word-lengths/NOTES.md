@@ -40,6 +40,12 @@ replicate in 30 of 66 files and below every replicate in 32. "Compression is act
 does not survive the comparison. "The gap is about what letters and word boundaries give you, give or
 take, in either direction" does.
 
+The stronger null keeps each language's phonotactics: character-bigram typing, fitted per language,
+which reproduces its mean token length to about 0.02 characters (`r05`). It moves the verdict further
+*against* compression. The observed gap is above every replicate in 17 of 66 files and below in 47,
+and real tau is never more negative than the null's (0 of 66). By the paper's own statistic,
+real languages are less compressed than chance typing with realistic letter sequences.
+
 **3. The gap grows with the corpus.** L is a token average and barely moves. M is a type average, and
 rare long types keep arriving. English CV: g = 0.22 at 10^3 tokens, 0.41 at 9.8 × 10^6. Random typing
 calibrated to English: 0.19 to 0.41 over 10^3 to 10^6. The same curve. Comparing PUD (about 1.5 × 10^4

@@ -1,0 +1,68 @@
+pud Arabic           T=   16608 L=4.03 (markov 4.04)  g_obs=0.272  markov g=0.317 [0.315,0.321] tau -0.131 vs -0.385  below
+pud Chinese          T=   17845 L=1.67 (markov 1.66)  g_obs=0.237  markov g=0.348 [0.345,0.352] tau -0.240 vs -0.471  below
+pud Czech            T=   15331 L=5.44 (markov 5.43)  g_obs=0.252  markov g=0.257 [0.252,0.262] tau -0.224 vs -0.335  below
+pud English          T=   18098 L=4.87 (markov 4.86)  g_obs=0.304  markov g=0.317 [0.314,0.321] tau -0.196 vs -0.372  below
+pud Finnish          T=   12701 L=7.51 (markov 7.51)  g_obs=0.193  markov g=0.210 [0.207,0.215] tau -0.234 vs -0.310  below
+pud French           T=   21079 L=4.81 (markov 4.80)  g_obs=0.356  markov g=0.337 [0.332,0.344] tau -0.160 vs -0.368  ABOVE
+pud German           T=   18423 L=5.74 (markov 5.75)  g_obs=0.329  markov g=0.284 [0.280,0.288] tau -0.229 vs -0.340  ABOVE
+pud Hindi            T=   20796 L=4.09 (markov 4.09)  g_obs=0.301  markov g=0.316 [0.313,0.321] tau -0.186 vs -0.383  below
+pud Icelandic        T=   16209 L=5.32 (markov 5.33)  g_obs=0.328  markov g=0.269 [0.262,0.274] tau -0.263 vs -0.356  ABOVE
+pud Indonesian       T=   16517 L=5.96 (markov 5.93)  g_obs=0.189  markov g=0.286 [0.283,0.294] tau -0.113 vs -0.351  below
+pud Italian          T=   21785 L=4.85 (markov 4.84)  g_obs=0.365  markov g=0.341 [0.339,0.344] tau -0.164 vs -0.379  ABOVE
+pud Japanese         T=   24737 L=1.73 (markov 1.73)  g_obs=0.362  markov g=0.465 [0.461,0.468] tau -0.212 vs -0.479  below
+pud Korean           T=   14475 L=2.75 (markov 2.76)  g_obs=0.152  markov g=0.242 [0.238,0.245] tau -0.244 vs -0.407  below
+pud Polish           T=   15256 L=6.07 (markov 6.07)  g_obs=0.241  markov g=0.246 [0.241,0.251] tau -0.186 vs -0.326  within
+pud Portuguese       T=   20407 L=4.35 (markov 4.34)  g_obs=0.418  markov g=0.375 [0.369,0.379] tau -0.201 vs -0.386  ABOVE
+pud Russian          T=   15622 L=6.04 (markov 6.06)  g_obs=0.252  markov g=0.241 [0.234,0.248] tau -0.195 vs -0.339  ABOVE
+pud Spanish          T=   21067 L=4.83 (markov 4.82)  g_obs=0.364  markov g=0.344 [0.341,0.350] tau -0.161 vs -0.369  ABOVE
+pud Swedish          T=   16378 L=5.41 (markov 5.39)  g_obs=0.323  markov g=0.287 [0.282,0.291] tau -0.232 vs -0.354  ABOVE
+pud Thai             T=   21121 L=4.33 (markov 4.33)  g_obs=0.316  markov g=0.276 [0.271,0.279] tau -0.229 vs -0.384  ABOVE
+pud Turkish          T=   13991 L=6.43 (markov 6.41)  g_obs=0.190  markov g=0.234 [0.231,0.238] tau -0.238 vs -0.328  below
+cv Abkhazian        T=     156 L=5.94 (markov 5.80)  g_obs=0.075  markov g=0.147 [0.107,0.191] tau -0.323 vs -0.373  below
+cv Arabic           T=   45825 L=4.10 (markov 4.09)  g_obs=0.190  markov g=0.348 [0.347,0.349] tau -0.137 vs -0.384  below
+cv Assamese         T=    1813 L=4.57 (markov 4.60)  g_obs=0.147  markov g=0.220 [0.208,0.227] tau -0.313 vs -0.381  below
+cv Basque           T=  458071 L=6.41 (markov 6.41)  g_obs=0.280  markov g=0.372 [0.372,0.373] tau -0.163 vs -0.344  below
+cv Breton           T=   38237 L=3.97 (markov 3.96)  g_obs=0.372  markov g=0.397 [0.395,0.400] tau -0.235 vs -0.411  below
+cv Catalan          T= 1000000 L=4.90 (markov 4.89)  g_obs=0.414  markov g=0.436 [0.435,0.436] tau -0.150 vs -0.361  below
+cv Chuvash          T=   13583 L=6.00 (markov 6.02)  g_obs=0.184  markov g=0.253 [0.245,0.256] tau -0.221 vs -0.347  below
+cv Czech            T=  147582 L=4.83 (markov 4.84)  g_obs=0.326  markov g=0.355 [0.354,0.357] tau -0.225 vs -0.370  below
+cv Dhivehi          T=    1284 L=3.32 (markov 3.30)  g_obs=0.563  markov g=0.538 [0.517,0.553] tau -0.162 vs -0.389  ABOVE
+cv Dutch            T=  316659 L=4.72 (markov 4.72)  g_obs=0.429  markov g=0.414 [0.413,0.415] tau -0.276 vs -0.369  ABOVE
+cv English          T= 1000000 L=4.61 (markov 4.61)  g_obs=0.390  markov g=0.448 [0.448,0.448] tau -0.108 vs -0.366  below
+cv Esperanto        T=  406268 L=4.83 (markov 4.82)  g_obs=0.375  markov g=0.418 [0.418,0.419] tau -0.176 vs -0.380  below
+cv Estonian         T=  121551 L=6.16 (markov 6.16)  g_obs=0.304  markov g=0.316 [0.314,0.318] tau -0.239 vs -0.345  below
+cv French           T= 1000000 L=5.04 (markov 5.04)  g_obs=0.373  markov g=0.427 [0.427,0.428] tau -0.064 vs -0.352  below
+cv Georgian         T=   12958 L=7.17 (markov 7.17)  g_obs=0.128  markov g=0.238 [0.233,0.245] tau -0.120 vs -0.306  below
+cv German           T= 1000000 L=5.73 (markov 5.73)  g_obs=0.422  markov g=0.398 [0.398,0.399] tau -0.154 vs -0.333  ABOVE
+cv Hakha Chin       T=   17776 L=3.29 (markov 3.29)  g_obs=0.378  markov g=0.426 [0.420,0.430] tau -0.287 vs -0.448  below
+cv Indonesian       T=   44211 L=5.37 (markov 5.37)  g_obs=0.258  markov g=0.354 [0.351,0.357] tau -0.202 vs -0.373  below
+cv Interlingua (Int T=   30504 L=4.43 (markov 4.42)  g_obs=0.403  markov g=0.373 [0.370,0.376] tau -0.238 vs -0.405  ABOVE
+cv Irish            T=   22593 L=4.20 (markov 4.21)  g_obs=0.361  markov g=0.373 [0.369,0.377] tau -0.215 vs -0.397  below
+cv Italian          T=  811783 L=5.29 (markov 5.29)  g_obs=0.352  markov g=0.423 [0.423,0.424] tau -0.056 vs -0.360  below
+cv Kinyarwanda      T= 1000000 L=6.13 (markov 6.13)  g_obs=0.323  markov g=0.408 [0.408,0.408] tau -0.197 vs -0.349  below
+cv Kirghiz          T=   61844 L=6.01 (markov 6.01)  g_obs=0.228  markov g=0.296 [0.294,0.298] tau -0.194 vs -0.336  below
+cv Latvian          T=   29456 L=4.79 (markov 4.80)  g_obs=0.324  markov g=0.333 [0.332,0.337] tau -0.258 vs -0.364  below
+cv Maltese          T=   44112 L=5.07 (markov 5.07)  g_obs=0.310  markov g=0.340 [0.335,0.342] tau -0.195 vs -0.357  below
+cv Modern Greek (14 T=   37880 L=4.85 (markov 4.86)  g_obs=0.365  markov g=0.318 [0.315,0.321] tau -0.244 vs -0.366  ABOVE
+cv Mongolian        T=   70217 L=5.47 (markov 5.48)  g_obs=0.252  markov g=0.315 [0.313,0.317] tau -0.226 vs -0.350  below
+cv Oriya (macrolang T=    1701 L=4.21 (markov 4.24)  g_obs=0.213  markov g=0.250 [0.236,0.263] tau -0.331 vs -0.389  below
+cv Panjabi          T=      98 L=3.68 (markov 3.57)  g_obs=0.051  markov g=0.126 [0.085,0.173] tau -0.324 vs -0.431  below
+cv Persian          T= 1000000 L=3.80 (markov 3.80)  g_obs=0.308  markov g=0.471 [0.471,0.471] tau -0.206 vs -0.384  below
+cv Polish           T=  595411 L=5.27 (markov 5.27)  g_obs=0.331  markov g=0.390 [0.390,0.390] tau -0.169 vs -0.357  below
+cv Portuguese       T=  283054 L=4.53 (markov 4.53)  g_obs=0.395  markov g=0.440 [0.439,0.440] tau -0.194 vs -0.383  below
+cv Romanian         T=   33341 L=5.03 (markov 5.04)  g_obs=0.345  markov g=0.329 [0.326,0.331] tau -0.210 vs -0.371  ABOVE
+cv Romansh          T=   43792 L=4.94 (markov 4.93)  g_obs=0.347  markov g=0.347 [0.343,0.350] tau -0.236 vs -0.374  within
+cv Russian          T=  637686 L=6.31 (markov 6.31)  g_obs=0.299  markov g=0.346 [0.346,0.347] tau -0.132 vs -0.328  below
+cv Slovenian        T=   26304 L=4.56 (markov 4.57)  g_obs=0.291  markov g=0.337 [0.333,0.340] tau -0.207 vs -0.388  below
+cv Spanish          T= 1000000 L=5.01 (markov 5.00)  g_obs=0.366  markov g=0.445 [0.445,0.446] tau -0.046 vs -0.357  below
+cv Swedish          T=   62951 L=4.04 (markov 4.04)  g_obs=0.412  markov g=0.394 [0.392,0.396] tau -0.278 vs -0.392  ABOVE
+cv Tamil            T=    6442 L=5.68 (markov 5.67)  g_obs=0.198  markov g=0.277 [0.269,0.287] tau -0.282 vs -0.369  below
+cv Tatar            T=  144356 L=5.41 (markov 5.41)  g_obs=0.275  markov g=0.332 [0.331,0.333] tau -0.240 vs -0.357  below
+cv Turkish          T=  107686 L=6.00 (markov 6.00)  g_obs=0.258  markov g=0.314 [0.311,0.315] tau -0.217 vs -0.343  below
+cv Ukrainian        T=  120760 L=5.52 (markov 5.52)  g_obs=0.281  markov g=0.329 [0.327,0.330] tau -0.161 vs -0.356  below
+cv Vietnamese       T=     938 L=3.24 (markov 3.20)  g_obs=0.068  markov g=0.253 [0.237,0.282] tau -0.192 vs -0.433  below
+cv Welsh            T=  539621 L=4.17 (markov 4.17)  g_obs=0.408  markov g=0.460 [0.460,0.461] tau -0.205 vs -0.389  below
+cv Western Frisian  T=   63073 L=4.38 (markov 4.38)  g_obs=0.452  markov g=0.382 [0.380,0.383] tau -0.287 vs -0.384  ABOVE
+cv Yakut            T=   22577 L=6.32 (markov 6.32)  g_obs=0.209  markov g=0.272 [0.268,0.274] tau -0.264 vs -0.342  below
+
+66 files: observed gap ratio above every Markov-typing replicate 17, below every one 47, within 2. Observed tau more negative than Markov mean: 0/66

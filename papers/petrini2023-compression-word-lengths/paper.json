@@ -73,12 +73,15 @@
     {"name": "max_abs_residual_of_identity_L_minus_Lr_equals_(n-1)_sp_sl_r", "value": 3.6e-15, "unit": "length units", "n": 116, "source": "r01; the identity is the paper's own Appendix A"},
     {"name": "random_typing_files_with_L_below_Lr_every_replicate", "value": 1.0, "unit": "proportion", "n": 68, "count": 68, "denominator": 68, "source": "r02"},
     {"name": "files_with_gap_ratio_above_every_random_typing_replicate", "value": 0.455, "unit": "proportion", "n": 66, "count": 30, "denominator": 66, "baseline": "gap ratio g = (L_r - L)/L_r; 66 files = 68 minus Chinese-pinyin and Japanese-romaji, whose word column is in the original script so the typing alphabet could not be calibrated", "source": "r02"},
-    {"name": "files_with_gap_ratio_below_every_random_typing_replicate", "value": 0.485, "unit": "proportion", "n": 66, "count": 32, "denominator": 66, "source": "r02"}
+    {"name": "files_with_gap_ratio_below_every_random_typing_replicate", "value": 0.485, "unit": "proportion", "n": 66, "count": 32, "denominator": 66, "source": "r02"},
+    {"name": "files_with_gap_ratio_above_every_markov_typing_replicate", "value": 0.258, "unit": "proportion", "n": 66, "count": 17, "denominator": 66, "baseline": "character-bigram typing fitted per language (START/char/END transitions, token-weighted); matches the observed mean token length to about 0.02 characters; 10 replicates per file (4 above 2e5 tokens)", "source": "reanalysis/r05_markov_typing.py"},
+    {"name": "files_with_gap_ratio_below_every_markov_typing_replicate", "value": 0.712, "unit": "proportion", "n": 66, "count": 47, "denominator": 66, "source": "r05"},
+    {"name": "files_with_observed_tau_more_negative_than_markov_typing_mean", "value": 0.0, "unit": "proportion", "n": 66, "count": 0, "denominator": 66, "source": "r05"}
    ],
-   "evidence": ["a1", "a5", "a6"],
+   "evidence": ["a1", "a5", "a6", "a9"],
    "our_assessment": {
     "status": "refuted",
-    "why": "Three problems, each enough on its own. (1) It is not separate evidence. L - L_r = (n-1) s_p s_l r exactly (the paper's Appendix A; residual 4e-15 here), so 'L < L_r' IS 'Pearson r(frequency, length) < 0'. That is the law of abbreviation (c1) measured with Pearson instead of Kendall. The 'direct' and 'indirect' evidence are one statistic. (2) The baseline does not represent absence of compression. Random typing has no compression and gives L < L_r in 100% of replicates for 68 of 68 files. Against a random-typing benchmark calibrated per language, the observed gap ratio is above every replicate in 30 of 66 files and below every replicate in 32. Read that way, real languages are as often less 'compressed' than random typing as more. (3) The gap is a function of corpus size (c4). The numbers are right and named right; the inference to compression is what fails (zoo-paper-record 1.4 section 1: claim refuted, quantities current).",
+    "why": "Three problems, each enough on its own. (1) It is not separate evidence. L - L_r = (n-1) s_p s_l r exactly (the paper's Appendix A; residual 4e-15 here), so 'L < L_r' IS 'Pearson r(frequency, length) < 0'. That is the law of abbreviation (c1) measured with Pearson instead of Kendall. The 'direct' and 'indirect' evidence are one statistic. (2) The baseline does not represent absence of compression. Random typing has no compression and gives L < L_r in 100% of replicates for 68 of 68 files. Against a random-typing benchmark calibrated per language, the observed gap ratio is above every replicate in 30 of 66 files and below every replicate in 32. Against the stronger null that keeps each language's phonotactics (character-bigram typing, r05), it is above in 17 and below in 47, and real tau is never stronger than the null's (0/66). Read that way, real languages are LESS 'compressed' than chance typing in most files. (3) The gap is a function of corpus size (c4). The numbers are right and named right; the inference to compression is what fails (zoo-paper-record 1.4 section 1: claim refuted, quantities current).",
     "by": "maria",
     "patterns": ["null-model-misspecified", "instrument-relative-headline-number", "mechanism-asserted-not-measured"]
    }
@@ -262,6 +265,19 @@
    }
   },
   {
+   "id": "a9",
+   "role": "code",
+   "locator": "reanalysis/r05_markov_typing.py",
+   "status": "verified-usable",
+   "local_path": "reanalysis/r05_markov_typing.py",
+   "checked": {
+    "on": "2026-10-23",
+    "by": "maria",
+    "how": "python -I .../r05_markov_typing.py <repo> artifacts 10 > artifacts/r05_out.txt",
+    "result": "66 files. The fitted chain reproduces each language's mean token length (e.g. Arabic 4.05 vs 4.03, English 4.88 vs 4.87). Source of the Markov quantities in c2."
+   }
+  },
+  {
    "id": "a8",
    "role": "code",
    "locator": "reanalysis/r04_descriptive_tables.py",
@@ -281,7 +297,7 @@
   {"type": "zoo:sharesUnstatedAssumptionWith", "target": "coupe2019-information-rate", "why": "An information-theoretic summary statistic whose value is fixed in part by the measurement (entropy estimator there, corpus size here) and travels as a property of the language."}
  ],
  "open_questions": [
-  "Random typing with i.i.d. characters ignores phonotactics. A character-bigram ('Markov') typing model calibrated per language is the stronger structural null: is the 30-above / 32-below split stable under it?",
+  "ANSWERED 2026-10-23 (r05): under character-bigram typing the split moves AGAINST compression, 17 above / 47 below, tau never stronger. Next: does a higher-order model (trigram) move it further, and at what order does the null start to reproduce the lexicon itself?",
   "The gap ratio needs a size-free version before languages can be compared: e.g. g at a fixed number of tokens by rarefaction (as r03 does), or a statistic over types above a frequency floor. Which languages remain above random typing at a common T?",
   "Real languages show a WEAKER Kendall tau than random typing in 65 of 66 files. Is that the lexicon pulling against pure combinatorics (e.g. frequent long function words, or many short rare words), and is it the same direction in every family?",
   "Reduction in speech (c4): the frequency effect on duration at fixed written length. How much of the duration gap does it account for once character length is held fixed?"

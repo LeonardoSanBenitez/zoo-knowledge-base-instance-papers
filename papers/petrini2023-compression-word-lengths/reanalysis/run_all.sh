@@ -7,4 +7,5 @@ python -I $P/reanalysis/fetch.py "$D"
 python -I $P/reanalysis/r01_reproduce.py "$D" $P/artifacts | tee $P/artifacts/r01_out.txt
 python -I $P/reanalysis/r02_known_answer.py "$D" $P/artifacts 20 | tee $P/artifacts/r02_out.txt
 python -I $P/reanalysis/r03_sample_size_and_duration.py "$D" $P/artifacts | tee $P/artifacts/r03_out.txt
+python -I $P/reanalysis/r05_markov_typing.py "$D" $P/artifacts 10 | tee $P/artifacts/r05_out.txt
 PYTHONIOENCODING=utf-8 python -I $P/reanalysis/r04_descriptive_tables.py "$D" | tee $P/artifacts/r04_out.txt
