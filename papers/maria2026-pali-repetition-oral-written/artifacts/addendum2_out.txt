@@ -1,0 +1,7 @@
+dhatukatha     tokens 16089 segments 1 pe/1000 6.84  R4 0.945  R8 0.888 [0.888, 0.888]  R12 0.846
+puggalapannatti tokens 14337 segments 1 pe/1000 3.56  R4 0.732  R8 0.555 [0.555, 0.555]  R12 0.453
+kathavatthu    tokens 75778 segments 3 pe/1000 54.21  R4 0.824  R8 0.597 [0.509, 0.706]  R12 0.414
+milindapanha   tokens 74078 segments 3 pe/1000 2.93  R4 0.457  R8 0.255 [0.238, 0.270]  R12 0.165
+nettippakarana tokens 28107 segments 1 pe/1000 4.52  R4 0.374  R8 0.209 [0.209, 0.209]  R12 0.133
+petakopadesa   tokens 32941 segments 1 pe/1000 1.34  R4 0.136  R8 0.031 [0.031, 0.031]  R12 0.013
+B1 (Abhidhamma books >= 0.30): True | B2 (late books composed as books < 0.10): False

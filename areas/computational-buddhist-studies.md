@@ -45,4 +45,7 @@ suttas 0.59, their commentaries 0.02, sub-commentaries 0.003; canonical Abhidham
 does not") fails on the Abhidhamma, which is not discourse and repeats most. The edition's '...pe...' elisions make
 every canonical figure a floor. One text per category for the genre control; mnemonic vs combinatorial readings of
 the Abhidhamma's repetition are not separable by counts.
+Addendum 2: three more Abhidhamma books 0.56-0.89; the late books the Burmese canon took in (Milindapanha 0.26,
+Nettippakarana 0.21, Petakopadesa 0.03) sit in between -- a gradient by mode and milieu of composition, not a
+switch by canonical status. The pre-registered 'all < 0.10' failed.
 

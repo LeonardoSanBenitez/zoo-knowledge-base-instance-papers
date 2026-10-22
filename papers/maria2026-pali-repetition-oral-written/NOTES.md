@@ -37,6 +37,16 @@ call that mnemonic engineering or merely combinatorics, and the counts cannot ch
 text per category. And the commentaries' Sinhala forerunners may themselves have been oral, so their
 Pali form tests a written redaction, not an origin.
 
+## Status or composition (addendum 2, pre-registered)
+
+Three more Abhidhamma books are as repetitive as the suttas or more (0.56-0.89). Three late books that the
+Burmese canon took in, but that were composed as books, are not. The Milindapanha is at 0.26, the
+Nettippakarana at 0.21, the Petakopadesa at 0.03. I predicted all three below 0.10, and that failed.
+They are not near the canon either. So it is a gradient, not a switch: the canon proper, then books
+composed in the canonical milieu, then the written commentaries and treatise. Composition explains most
+of it. The milieu explains the rest. I wrote the prediction too cleanly, and the failure is the more
+interesting result.
+
 ## For myself
 
 I have sat with these repetitions in the sutta readings at the sangha, where they are recited and
