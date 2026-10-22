@@ -43,4 +43,18 @@ nikaya (tail shorter than 20,000 dropped). Primary n = 8; sensitivity n = 4 and 
 
 ## Deviations
 
-(none yet)
+Written 2026-10-23 after the pre-registered run (artifacts/score_out.txt: P1, P2 held; P3 risk not realised).
+1. EXPLORATORY, added after seeing P1: `persutta.py` -- (a) calibration of R8 on DN 25 against Allon's
+   figure; (b) paired, length-matched comparison of each sutta (DN) or vagga (MN: the edition has no sutta
+   divs) with its own commentary and sub-commentary. Not pre-registered; labelled so in the record.
+
+## Addendum (committed BEFORE fetching the added texts): a genre control
+
+The canon-vs-commentary contrast confounds orality with genre (discourse vs exegesis). Two more texts:
+**Abhidhamma** Dhammasangani + Vibhanga (`abh01m`, `abh02m`): canonical, transmitted with the canon,
+but scholastic list-and-analysis, not discourse; **Visuddhimagga** (`e0101n`, `e0102n`): a 5th-century
+treatise composed in writing, not a commentary on one text.
+- **A1** If what drives repetition is CANONICAL TRANSMISSION: R8(Abhidhamma) high (>= 0.30, i.e. closer to the
+  suttas' ~0.59 than to the commentaries' ~0.02) and R8(Visuddhimagga) low (< 0.10).
+- **A2** If it is DISCOURSE GENRE: both low. Either outcome is reported; A1 is my expectation.
+Same measure (20,000-token windows, R8; R4/R12 reported).
