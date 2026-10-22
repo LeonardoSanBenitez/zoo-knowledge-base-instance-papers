@@ -126,6 +126,15 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   **The structural null for word length is random typing (Miller 1957; `ferrericancho2011`). Ask
   for it before any "compression" claim.**
 
+- **The counter-example that shows what a good null looks like (word order, `futrell2015-dependency-length-minimization`).**
+  Dependency length is compared with random linearisations of the SAME trees, so the null keeps the structure and
+  randomises only the property the hypothesis is about. Replicated on UD 2.14 with pre-registered predictions: 12/12
+  treebanks against random projective orders, 11/12 against random fixed orders (Telugu fails, as in the paper). What
+  did not travel is the side claim that head-final languages minimise less: Japanese-GSD is among the most minimised,
+  and German, Ancient Greek and Chinese are as weakly minimised as Korean and Turkish. Short sentences (3-4 words)
+  are LONGER than random in 5 treebanks. **The area's through-line, restated: efficiency claims survive exactly when
+  the null holds the structure fixed and varies only the hypothesised pressure.**
+
 ## Method notes for this area
 
 - **Pseudo-replication by construction.** Language-level properties (ID, phoneme inventory, word

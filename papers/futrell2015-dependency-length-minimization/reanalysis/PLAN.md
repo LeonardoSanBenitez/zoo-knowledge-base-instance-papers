@@ -59,4 +59,14 @@ first length significant in all languages and says the normalisation does not ch
 
 ## Deviations
 
-(none yet)
+Written 2026-10-23 after the run, before writing the record.
+1. FIXED baseline: siblings with the SAME relation type have equal weights; the plan (like the paper) did not
+   say how to order them. dlm.py breaks such ties at random. Stated, not a choice made after seeing results.
+2. P4 is scored on 11 treebanks: Telugu-MTG has no sentence of length 18-22 after punctuation removal.
+3. Nothing else. 50 linearisations per baseline, seed 20261023, all twelve treebanks as listed.
+
+## Outcome against the predictions (artifacts/analyse_out.txt)
+
+P1 12/12 held. P2 11/12 held (Telugu fails, as in the paper). P3 held (7/12 non-negative; 8 significant
+positive cells at length 3-4). P4 held exactly (sign 12/12; size > 0.05 in 4). **P5 FAILED**: Japanese-GSD
+(0.676) is below Irish (0.686). By the definition written above, the record is therefore NOT clean.

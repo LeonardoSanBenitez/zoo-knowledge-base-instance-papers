@@ -1,0 +1,12 @@
+UD_Ancient_Greek-Perseus: 27832 rows, 3 skipped
+UD_Chinese-GSD: 9992 rows, 1 skipped
+UD_English-EWT: 33070 rows, 87 skipped
+UD_Finnish-TDT: 30252 rows, 10 skipped
+UD_German-GSD: 31178 rows, 1 skipped
+UD_Indonesian-GSD: 11172 rows, 12 skipped
+UD_Irish-IDT: 9770 rows, 25 skipped
+UD_Italian-ISDT: 28308 rows, 13 skipped
+UD_Japanese-GSD: 16182 rows, 9 skipped
+UD_Korean-GSD: 12678 rows, 0 skipped
+UD_Telugu-MTG: 2656 rows, 0 skipped
+UD_Turkish-IMST: 11240 rows, 15 skipped

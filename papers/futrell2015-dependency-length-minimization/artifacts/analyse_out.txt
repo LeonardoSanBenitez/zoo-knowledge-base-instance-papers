@@ -1,0 +1,60 @@
+P1 / P2: slope of (observed - baseline) on length^2, HC3, one-sided p(slope < 0)
+  UD_Ancient_Greek-Perseus   n= 13848  FREE slope -0.0377 p=5.5e-112 | FIXED slope -0.0219 p=1.2e-49
+  UD_Chinese-GSD             n=  4996  FREE slope -0.0190 p=3.4e-66 | FIXED slope -0.0104 p=4.3e-27
+  UD_English-EWT             n= 15273  FREE slope -0.0533 p=5.7e-267 | FIXED slope -0.0375 p=1.3e-245
+  UD_Finnish-TDT             n= 14968  FREE slope -0.0459 p=1.3e-61 | FIXED slope -0.0359 p=4.6e-78
+  UD_German-GSD              n= 15565  FREE slope -0.0362 p=6.4e-234 | FIXED slope -0.0230 p=2.7e-167
+  UD_Indonesian-GSD          n=  5578  FREE slope -0.0427 p=3.6e-131 | FIXED slope -0.0331 p=6.9e-139
+  UD_Irish-IDT               n=  4863  FREE slope -0.0465 p=1.4e-74 | FIXED slope -0.0357 p=3.2e-143
+  UD_Italian-ISDT            n= 13953  FREE slope -0.0566 p=0.0e+00 | FIXED slope -0.0431 p=0.0e+00
+  UD_Japanese-GSD            n=  8084  FREE slope -0.0494 p=0.0e+00 | FIXED slope -0.0354 p=0.0e+00
+  UD_Korean-GSD              n=  6337  FREE slope -0.0243 p=3.6e-38 | FIXED slope -0.0104 p=8.3e-11
+  UD_Telugu-MTG              n=  1308  FREE slope -0.0260 p=9.6e-06 | FIXED slope +0.0001 p=5.1e-01
+  UD_Turkish-IMST            n=  5489  FREE slope -0.0289 p=1.9e-63 | FIXED slope -0.0158 p=1.1e-25
+P1 (FREE, p < .001, 12/12 predicted): 12/12
+P2 (FIXED, p < .01, >= 11/12 predicted): 11/12
+
+P3: short sentences, mean (observed - FREE) and two-sided t-test, content-head
+  UD_Ancient_Greek-Perseus   3: +0.134 (n=309, p=6.5e-08)   4: +0.316 (n=475, p=1.2e-12)   5: +0.379 (n=792, p=1.2e-10)
+  UD_Chinese-GSD             3: n<5   4: n<5   5: n<5
+  UD_English-EWT             3: +0.165 (n=830, p=7e-25)   4: +0.128 (n=688, p=0.00031)   5: -0.138 (n=727, p=0.0085)
+  UD_Finnish-TDT             3: -0.066 (n=573, p=0.0018)   4: -0.207 (n=838, p=2.4e-10)   5: -0.547 (n=944, p=8.4e-32)
+  UD_German-GSD              3: +0.023 (n=124, p=0.59)   4: -0.012 (n=208, p=0.85)   5: -0.059 (n=368, p=0.42)
+  UD_Indonesian-GSD          3: -0.114 (n=36, p=0.17)   4: -0.441 (n=71, p=5.2e-06)   5: -0.914 (n=80, p=1e-08)
+  UD_Irish-IDT               3: +0.014 (n=72, p=0.83)   4: -0.046 (n=107, p=0.61)   5: -0.270 (n=127, p=0.02)
+  UD_Italian-ISDT            3: -0.144 (n=85, p=0.011)   4: -0.463 (n=444, p=2.5e-29)   5: -0.929 (n=512, p=4.2e-61)
+  UD_Japanese-GSD            3: +0.359 (n=109, p=7.3e-26)   4: -0.008 (n=120, p=0.91)   5: -0.512 (n=177, p=2.2e-07)
+  UD_Korean-GSD              3: +0.168 (n=436, p=1.3e-15)   4: +0.076 (n=522, p=0.068)   5: -0.270 (n=524, p=5.3e-05)
+  UD_Telugu-MTG              3: +0.120 (n=453, p=1.5e-10)   4: +0.242 (n=351, p=7.8e-08)   5: -0.001 (n=167, p=0.99)
+  UD_Turkish-IMST            3: -0.068 (n=600, p=0.00085)   4: -0.160 (n=631, p=3.2e-05)   5: -0.476 (n=612, p=1.9e-15)
+P3: treebanks with mean d >= 0 at some length 3-5: 7/12 (predicted >= half); significant positive at 3 or 4: ['UD_Ancient_Greek-Perseus@3', 'UD_Ancient_Greek-Perseus@4', 'UD_English-EWT@3', 'UD_English-EWT@4', 'UD_Japanese-GSD@3', 'UD_Korean-GSD@3', 'UD_Telugu-MTG@3', 'UD_Telugu-MTG@4'] (predicted >= 1)
+
+P4: obs/FREE ratio at length 18-22, content vs function head
+  UD_Ancient_Greek-Perseus   content 0.828  function 0.823  diff -0.005
+  UD_Chinese-GSD             content 0.865  function 0.846  diff -0.019
+  UD_English-EWT             content 0.669  function 0.605  diff -0.064  <-- > 0.05
+  UD_Finnish-TDT             content 0.656  function 0.634  diff -0.022
+  UD_German-GSD              content 0.822  function 0.805  diff -0.017
+  UD_Indonesian-GSD          content 0.600  function 0.564  diff -0.036
+  UD_Irish-IDT               content 0.683  function 0.615  diff -0.068  <-- > 0.05
+  UD_Italian-ISDT            content 0.631  function 0.560  diff -0.071  <-- > 0.05
+  UD_Japanese-GSD            content 0.672  function 0.579  diff -0.092  <-- > 0.05
+  UD_Korean-GSD              content 0.864  function 0.852  diff -0.012
+  UD_Telugu-MTG              content nan  function nan  diff +nan
+  UD_Turkish-IMST            content 0.818  function 0.799  diff -0.019
+P4: same slope sign 12/12 (predicted 12/12); |ratio diff| > 0.05 in 4 (predicted >= 4)
+
+P5: obs/FREE ratio at length 15-25, content-head
+  UD_Indonesian-GSD          0.601 head-initial
+  UD_Italian-ISDT            0.631 head-initial
+  UD_Finnish-TDT             0.663 
+  UD_English-EWT             0.671 
+  UD_Japanese-GSD            0.676 head-final
+  UD_Irish-IDT               0.686 head-initial
+  UD_Telugu-MTG              0.792 head-final
+  UD_Turkish-IMST            0.816 head-final
+  UD_German-GSD              0.824 
+  UD_Ancient_Greek-Perseus   0.837 
+  UD_Chinese-GSD             0.860 
+  UD_Korean-GSD              0.872 head-final
+P5 (all head-final above all head-initial): False; head-final min 0.676, head-initial max 0.686

@@ -1,0 +1,144 @@
+{
+ "schema_version": "1.6",
+ "id": "futrell2015-dependency-length-minimization",
+ "title": "Large-scale evidence of dependency length minimization in 37 languages",
+ "authors": ["Richard Futrell", "Kyle Mahowald", "Edward Gibson"],
+ "year": 2015,
+ "venue": "Proceedings of the National Academy of Sciences 112(33):10336-10341; corrections 112(39):E5443 and 112(46):E6407",
+ "area": ["language-information-and-communication-efficiency"],
+ "identifiers": {"doi": "10.1073/pnas.1502134112", "pmid": "26240370", "pmcid": "PMC4547262"},
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {"class": "blind", "evidence": "Opened 2026-10-23 EXPECTING IT TO BE SOUND: it already compares against structural random baselines (random projective linearisations), the null my last seven area records lacked; a near-clean case is what the selection audit says this corpus is missing. Found at selection time, before reading: two published corrections (PMC4593129, PMC4655573), contents unknown.", "recorded": "at-selection"},
+ "cost": {
+  "tool_calls": 30,
+  "bytes_downloaded": 185000000,
+  "compute_notes": "Paper and both corrections read in full as PMC HTML (Europe PMC XML answered 500). Table S1 not retrievable. No authors' code or data used: an independent replication on Universal Dependencies 2.14 (12 treebanks, 184.5 MB, every file checked against its git blob SHA-1, deleted afterwards; fetch_ud.py regenerates it). dlm.py: 50 FREE + 50 FIXED linearisations per sentence per head scheme, 12 processes, about 4 min wall clock. Plan with predictions committed before the data (70018f4).",
+  "session": "2026-10-23 maria"
+ },
+ "curation": {"author": "maria", "created": "2026-10-23", "verified": "2026-10-23", "notes_file": "NOTES.md"},
+ "triggers": [
+  "is dependency length minimised across languages",
+  "random projective linearisation baseline",
+  "dependency length minimization replication universal dependencies",
+  "do head-final languages minimise dependency length less",
+  "dependency length in short sentences longer than random",
+  "does the content-head versus function-head annotation change dependency length",
+  "a paper with a good structural null",
+  "known-answer control for the reading protocol"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "In all 37 languages, total dependency length grows more slowly with sentence length than in random projective linearisations of the same trees (Free Word Order baseline), P < 0.0001 for each language.",
+   "scope": "HamleDT 2.0 / Google UDT 2.0 / UD 1.0 / Chinese Dependency Treebank, function-head normalisation, sentences < 100 words; mixed model with 100 linearisations per sentence.",
+   "quantities": [
+    {"name": "ud214_treebanks_with_free_slope_negative_p_lt_0.001", "value": 1.0, "unit": "proportion", "n": 12, "count": 12, "denominator": 12, "baseline": "UD 2.14, content-head, OLS of (observed - mean of 50 FREE linearisations) on length^2, one point per sentence, HC3; least significant Telugu-MTG p = 9.6e-06", "source": "reanalysis/analyse.py P1"}
+   ],
+   "evidence": ["a1", "a3", "a4"],
+   "our_assessment": {"status": "accepted", "why": "Independently replicated on newer annotation (UD 2.14, 12 treebanks overlapping the paper's languages), pre-registered as P1 and held 12/12. The engine was first checked on known answers: a corpus whose orders are themselves random projective linearisations gives d = +0.21 and no slope, and a minimised corpus gives a strong negative slope.", "by": "maria"}
+  },
+  {
+   "id": "c2",
+   "statement": "Against the Fixed Word Order baseline (one random order of relation types per sentence), the effect is significant at P < 0.0001 in all languages except Telugu (P = 0.15), a small corpus lacking long sentences.",
+   "scope": "As c1, weights per relation type in [-1, 1].",
+   "quantities": [
+    {"name": "ud214_treebanks_with_fixed_slope_negative_p_lt_0.01", "value": 0.917, "unit": "proportion", "n": 12, "count": 11, "denominator": 12, "baseline": "the exception is again Telugu-MTG (slope +0.0001, p = 0.51; 1,308 sentences)", "source": "reanalysis/analyse.py P2"}
+   ],
+   "evidence": ["a1", "a3", "a4"],
+   "our_assessment": {"status": "accepted", "why": "Replicates, including the exception and its stated reason. Pre-registered as P2.", "by": "maria"}
+  },
+  {
+   "id": "c3",
+   "statement": "Results with the corpora in their original content-head format show the same pattern of results and the same significance as with the paper's function-head normalisation (prepositional objects under prepositions, verbs under complementizers).",
+   "scope": "Materials and Methods, Data.",
+   "quantities": [
+    {"name": "ud214_treebanks_same_slope_sign_content_vs_function_head", "value": 1.0, "unit": "proportion", "n": 12, "count": 12, "denominator": 12, "source": "analyse.py P4"},
+    {"name": "ud214_treebanks_obs_over_free_ratio_shift_gt_0.05", "value": 0.364, "unit": "proportion", "n": 11, "count": 4, "denominator": 11, "baseline": "length 18-22; function-head lowers the ratio in 11/11, by 0.005 to 0.092 (Japanese-GSD 0.672 -> 0.579)", "source": "analyse.py P4"}
+   ],
+   "evidence": ["a3", "a4"],
+   "our_assessment": {"status": "accepted", "why": "As claimed: same sign and significance everywhere. What it does not claim, and what matters for c4: the normalisation shifts effect SIZES, always toward stronger minimisation and unevenly across languages. Any cross-language ranking of 'how minimised' therefore depends on it.", "by": "maria"}
+  },
+  {
+   "id": "c4",
+   "statement": "Head-final languages such as Japanese, Korean and Turkish show much less minimisation than more head-initial languages such as Italian, Indonesian and Irish; 'this apparent relationship between head finality and dependency length is a new and unexpected discovery'.",
+   "scope": "Discussion; read off Fig. 2.",
+   "quantities": [
+    {"name": "obs_over_free_ratio_japanese_gsd_len15_25_content", "value": 0.676, "unit": "ratio", "n": 8084, "baseline": "Irish-IDT 0.686, Italian-ISDT 0.631, Indonesian-GSD 0.601; function-head: Japanese 0.582, third most minimised of 12", "source": "analyse.py P5 and the function-head recomputation in NOTES"},
+    {"name": "obs_over_free_ratio_non_head_final_german_greek_chinese", "value": "0.824 / 0.837 / 0.860", "unit": "ratio", "n": 3, "baseline": "Turkish 0.816, Telugu 0.792, Korean 0.872 (content-head, length 15-25)", "source": "analyse.py P5"}
+   ],
+   "evidence": ["a3", "a4"],
+   "our_assessment": {"status": "disputed", "patterns": ["population-bound-effect", "small-sample-overreach"], "why": "Pre-registered as P5 (all four head-final above all three head-initial), and it FAILED. On UD 2.14, Korean, Turkish and Telugu are weakly minimised, as claimed, but Japanese-GSD is as minimised as English and Irish (0.676; 0.582 under the paper's own normalisation). And three languages that are not head-final are as weakly minimised as the head-final ones: German, Ancient Greek, Chinese (0.82-0.86). So head finality is not what separates the strongly from the weakly minimised in this sample. The likely reason for Japanese is the corpus: the paper's Japanese was spoken dialogue, UD Japanese-GSD is written Wikipedia text with its own word segmentation. The claim may hold for its corpora. It does not travel as a property of head-final languages.", "by": "maria"}
+  },
+  {
+   "id": "c5",
+   "origin": "reader",
+   "statement": "In very short sentences the effect reverses: at length 3 or 4 the observed dependency length is significantly LONGER than random projective linearisations in 8 (treebank, length) cells across 5 treebanks (Ancient Greek, English, Japanese, Korean, Telugu); 7 of 12 treebanks have a non-negative mean difference at some length 3-5.",
+   "scope": "UD 2.14 content-head, FREE baseline, one-sample t-tests per length.",
+   "quantities": [
+    {"name": "treebanks_with_nonnegative_short_sentence_difference", "value": 0.583, "unit": "proportion", "n": 12, "count": 7, "denominator": 12, "source": "analyse.py P3"},
+    {"name": "english_ewt_len3_obs_minus_free", "value": 0.165, "unit": "words", "n": 830, "baseline": "p = 7e-25", "source": "analyse.py P3"}
+  ],
+   "evidence": ["a3", "a4"],
+   "our_assessment": {"status": "accepted", "why": "Pre-registered as P3, and it held. It does not contradict the paper. The paper's test is on growth with length, and it reports length 12 as the shortest length significant in all languages. It does qualify the Significance statement's unconditional 'dependency lengths are shorter than chance'. The reversal at very short lengths is reported in the literature as anti-minimisation (Ferrer-i-Cancho & Gomez-Rodriguez 2021, cited from memory, not re-read).", "by": "maria"}
+  }
+ ],
+ "methods": [
+  "independent-replication-on-newer-data",
+  "pre-registered-predictions",
+  "random-projective-linearisation-null",
+  "known-answer-structural-null",
+  "synthetic-injected-effect-control",
+  "annotation-scheme-sensitivity"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "supplement",
+   "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4547262/ (paper), PMC4593129 and PMC4655573 (corrections)",
+   "status": "verified-usable",
+   "checked": {"on": "2026-10-23", "by": "maria", "how": "fetched as HTML, converted to text, read in full", "result": "Primary source. Europe PMC fullTextXML answered HTTP 500 for all three (non-OA); recorded in archive-api-traps. Table S1 (st01.pdf) is linked but its URL returns an HTML page."}
+  },
+  {
+   "id": "a2",
+   "role": "raw-data",
+   "locator": "HamleDT 2.0, Google UDT 2.0, UD 1.0, Chinese Dependency Treebank 1.0 (LDC2012T05) -- the paper's corpora",
+   "status": "absent",
+   "checked": {"on": "2026-10-23", "by": "maria", "how": "paper's Data section", "result": "The paper's exact data and normalisation code are not deposited with it, so it cannot be reproduced exactly. One corpus is LDC-licensed. Replaced by an independent replication on UD 2.14 (a3)."}
+  },
+  {
+   "id": "a3",
+   "role": "raw-data",
+   "locator": "https://github.com/UniversalDependencies (12 repositories at tag r2.14: English-EWT, German-GSD, Italian-ISDT, Indonesian-GSD, Irish-IDT, Finnish-TDT, Japanese-GSD, Korean-GSD, Turkish-IMST, Telugu-MTG, Ancient_Greek-Perseus, Chinese-GSD)",
+   "repo_commit": "r2.14",
+   "status": "verified-usable",
+   "bytes": 184500000,
+   "fetch_cmd": "python -I zoo-knowledge-base/instance-papers/papers/futrell2015-dependency-length-minimization/reanalysis/fetch_ud.py <dest_dir>",
+   "checked": {"on": "2026-10-23", "by": "maria", "how": "fetch_ud.py (git blob SHA-1 per file), then reanalysis/dlm.py", "result": "0 hash mismatches. 110,000+ sentences usable after punctuation removal and single-root filtering (176 skipped). Deleted after the run; per-length aggregates kept in artifacts/dl_by_length.csv (per-sentence file sha256 df9be480...44772, regenerable)."}
+  },
+  {
+   "id": "a4",
+   "role": "code",
+   "locator": "reanalysis/dlm.py, reanalysis/test_dlm.py, reanalysis/analyse.py, reanalysis/PLAN.md",
+   "status": "verified-usable",
+   "local_path": "reanalysis/dlm.py",
+   "checked": {"on": "2026-10-23", "by": "maria", "how": "python -I reanalysis/test_dlm.py; python -I reanalysis/dlm.py <ud_dir> <rows.csv> 50; python -I reanalysis/analyse.py <rows.csv> artifacts/analyse_out.json", "result": "Known-answer tests pass: all linearisations are projective permutations; a random-projective corpus gives d = +0.21 with no slope (-0.0012); a minimised corpus gives d = -33.3 with a slope of -0.051; the function-head conversion keeps a tree. Outcome per prediction in PLAN.md 'Outcome'."}
+  },
+  {
+   "id": "a5",
+   "role": "derived-data",
+   "locator": "artifacts/dl_by_length.csv",
+   "status": "verified-usable",
+   "local_path": "artifacts/dl_by_length.csv",
+   "checked": {"on": "2026-10-23", "by": "maria", "how": "aggregated from the per-sentence output of dlm.py", "result": "1,646 cells: treebank x scheme x length, with n, mean observed, mean FREE and mean FIXED dependency length."}
+  }
+ ],
+ "relations": [
+  {"type": "zoo:sharesUnstatedAssumptionWith", "target": "petrini2023-compression-word-lengths", "why": "The contrast that defines the area: both read an efficiency statistic against a random baseline, but this one keeps the structure (the same trees) and randomises only what the hypothesis is about (order). That is why its central result survives a reanalysis, and petrini's does not."}
+ ],
+ "open_questions": [
+  "Head finality vs minimisation with more treebanks per language: is the Japanese result a corpus effect (spoken vs written, segmentation) or a language effect? UD has several Japanese and Korean treebanks.",
+  "What predicts the weakly minimised group (Korean, Chinese, Ancient Greek, German, Turkish, Telugu: 0.79-0.87) if not head direction? Candidates: case morphology (the paper's suggestion), word segmentation granularity, genre (poetry in Ancient Greek).",
+  "The short-sentence reversal (c5): is it structural, e.g. the baseline for 3-word trees has little room, or a real preference?"
+ ]
+}
