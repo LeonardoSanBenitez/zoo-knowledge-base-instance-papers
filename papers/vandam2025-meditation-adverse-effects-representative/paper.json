@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "vandam2025-meditation-adverse-effects-representative",
   "title": "Incidence and Predictors of Meditation-Related Unusual Experiences and Adverse Effects in a Representative Sample of Meditators in the United States",
   "authors": [
@@ -10,7 +10,7 @@
     "Julieta Galante"
   ],
   "year": 2025,
-  "venue": "Clinical Psychological Science (published online 2025-01-06)",
+  "venue": "Clinical Psychological Science (published online 2025-01-06). Read: authors' manuscript of 14 MAY 2024 deposited at osf.io/24xe9; the published version was not reachable (subscription) and may differ.",
   "area": [
     "contemplative-neuroscience"
   ],
@@ -19,70 +19,153 @@
     "url": "https://osf.io/3mn9y/"
   },
   "record_status": "active",
-  "read_depth": "abstract-only",
+  "read_depth": "read-and-reanalysed",
+  "selection": {"class": "chain", "evidence": "Opened 2026-10-23 because my own abstract-only record vandam2025-meditation-adverse-effects-representative (2026-10-17) carries the open question 'Retrieve OSF 3mn9y; ... is the retreat effect robust to the adjustment schlosser2019 needed (years, type)?', and OSF, down then, answered today. Prior expectation, stated before reading results: schlosser2019 and goldberg2022 found an early-onset, flat-in-years prevalence; I want to know whether this sample shows it.", "recorded": "at-selection"},
   "cost": {
-    "tool_calls": 3,
-    "bytes_downloaded": 6000,
-    "compute_notes": "Abstract from the Crossref API (primary metadata). Data, materials and code reported at OSF 3mn9y, preregistration OSF r8beh -- OSF API answered 503 on 2026-10-17, not retrieved.",
-    "session": "2026-10-17 maria, free deep research"
+    "tool_calls": 45,
+    "bytes_downloaded": 5000000,
+    "compute_notes": "2026-10-17: abstract only (OSF 503). 2026-10-23: deposit fetched (10 files, ~5 MB, each against OSF's sha256), manuscript read in full (27 pp.), authors' R read, everything recomputed in Python (no R on this host): .rds read with the `rdata` package through a custom data.frame constructor. Data not committed (participant IDs); reanalysis/fetch.py regenerates it. All scripts run in seconds.",
+    "session": "2026-10-17 and 2026-10-23 maria"
   },
   "triggers": [
     "prevalence of meditation adverse effects depends on instrument",
     "representative sample of US meditators adverse effects",
     "Inventory of Meditation Experiences MRAES prevalence",
-    "meditation retreat participation predicts adverse effects"
+    "meditation retreat participation predicts adverse effects",
+    "does questionnaire order change adverse effect reporting",
+    "do experienced meditators report fewer adverse effects",
+    "survivorship in cross-sectional meditation surveys",
+    "reading R rds files in python NA values"
   ],
-  "methods": [],
+  "methods": [
+    "exact-reproduction-from-deposit",
+    "bounds-under-missing-data",
+    "randomised-factor-reanalysis",
+    "dose-gradient-by-exposure-bins",
+    "adjusted-logistic-regression",
+    "arithmetic-consistency-check"
+  ],
   "claims": [
     {
       "id": "c1",
-      "statement": "In a population-based survey of 886 US adults stratified by lifetime meditation experience, 96.6% reported an unusual experience, 58.4% an adverse effect (IME), 78.3% one or more MRAES items, 31.4% a challenging/difficult/distressing experience, and 9.1% functional impairment from adverse effects; distress, psychoticism, unusual beliefs and retreat participation predicted them.",
-      "scope": "Cross-sectional, US, approximately representative on age, gender, race/ethnicity; one sample, five instruments.",
+      "statement": "In a population-based survey of 886 US adults stratified by lifetime meditation experience, 96.6% reported an unusual experience, 58.4% an adverse effect (IME), 78.3% one or more MRAES items, 31.4% a challenging/difficult/distressing experience, and 9.1% functional impairment from adverse effects.",
+      "scope": "Cross-sectional, US, Prolific, data collected Aug-Sep 2022; 886 retained of 1,102 who passed data checks (216 removed for low or excessive response variability or multivariate outlyingness); approximately representative on age, gender, race/ethnicity, not on education (60.6% bachelor's or higher).",
       "quantities": [
-        {
-          "name": "meditation_unusual_experience_prevalence",
-          "value": 0.966,
-          "unit": "share of respondents",
-          "n": 886,
-          "source": "abstract (Crossref API, 2026-10-17)"
-        },
-        {
-          "name": "meditation_adverse_effect_prevalence_ime",
-          "value": 0.584,
-          "unit": "share of respondents",
-          "n": 886,
-          "source": "abstract (Crossref API, 2026-10-17)"
-        },
-        {
-          "name": "meditation_adverse_effect_prevalence_mraes_any_item",
-          "value": 0.783,
-          "unit": "share of respondents",
-          "n": 886,
-          "source": "abstract (Crossref API, 2026-10-17)"
-        },
-        {
-          "name": "meditation_challenging_experience_single_item_prevalence",
-          "value": 0.314,
-          "unit": "share of respondents",
-          "n": 886,
-          "source": "abstract (Crossref API, 2026-10-17)"
-        },
-        {
-          "name": "meditation_adverse_effect_functional_impairment_prevalence",
-          "value": 0.091,
-          "unit": "share of respondents",
-          "n": 886,
-          "source": "abstract (Crossref API, 2026-10-17)"
-        }
+        {"name": "meditation_unusual_experience_prevalence", "value": 0.966, "unit": "share of respondents", "n": 886, "count": 856, "denominator": 886, "source": "manuscript p.13 and the count hard-coded in Predictors_and_Incidence_8Apr2024.R line 26", "status": "disputed"},
+        {"name": "meditation_unusual_experience_prevalence_from_deposit", "value": 0.9718, "unit": "share of respondents", "n": 886, "count": 861, "denominator": 886, "source": "reanalysis/v01, v02: ue_tot > 0, rebuilt from the 30 item intensities (matches the deposited ue_tot in 886/886 rows)"},
+        {"name": "meditation_adverse_effect_prevalence_ime", "value": 0.5835, "unit": "share of respondents", "n": 886, "count": 517, "denominator": 886, "source": "v01; reproduces exactly"},
+        {"name": "meditation_adverse_effect_prevalence_mraes_any_item", "value": 0.7833, "unit": "share of respondents", "n": 886, "count": 694, "denominator": 886, "source": "v01; reproduces exactly"},
+        {"name": "meditation_challenging_experience_single_item_prevalence", "value": 0.3138, "unit": "share of respondents", "n": 886, "count": 278, "denominator": 886, "source": "v01; reproduces exactly"},
+        {"name": "meditation_adverse_effect_functional_impairment_prevalence", "value": 0.0914, "unit": "share of respondents", "n": 886, "count": 81, "denominator": 886, "source": "v01; reproduces exactly; asked only of the 278 who endorsed the generic item"},
+        {"name": "ime_ae_prevalence_fixed_item_order_arm", "value": 0.6342, "unit": "share of respondents", "n": 462, "count": 293, "denominator": 462, "source": "v04 (A): randomised ORD arm", "baseline": "RAND arm 0.528 (224/424); likelihood-ratio p = 0.0014"},
+        {"name": "generic_ae_prevalence_ue_block_first_arm", "value": 0.3742, "unit": "share of respondents", "n": 457, "count": 171, "denominator": 457, "source": "v05", "baseline": "AE block first 0.2494 (107/429); LR p = 6.1e-05"},
+        {"name": "ime_ae_prevalence_bounds_under_missing_valence", "value": "0.577 to 0.597", "unit": "share of respondents", "n": 886, "baseline": "missing (never-asked) valence counted as not unpleasant / as unpleasant; imputed: 0.5835", "source": "v02"}
       ],
-      "evidence": [],
+      "evidence": ["a1", "a3", "a4"],
       "our_assessment": {
-        "status": "unverified",
-        "patterns": [
-          "instrument-relative-headline-number"
-        ],
-        "why": "Abstract only. Worth recording now for one structural fact visible in the abstract itself: in ONE sample, 'prevalence of meditation adverse effects' runs from 9.1% to 96.6% depending on the instrument -- a tenfold range from definition alone. The single-item 'challenging/difficult/distressing' figure (31.4%) is the one comparable with the practitioner surveys' single items (schlosser2019 25.6%, cebolla2017 25.4%); the MRAES-any-item 78.3% is not. Retreat participation as a predictor agrees with schlosser2019 (OR 1.68). Data at OSF 3mn9y: retrieve when OSF is up, then read the paper and test the predictors.",
-        "by": "maria, 2026-10-17"
+        "status": "accepted-narrower-scope",
+        "patterns": ["instrument-relative-headline-number"],
+        "why": "Every adverse-effect count reproduces exactly from the deposit (517, 694, 278, 81, 34). The unusual-experience count does not. 856 is hard-coded in the authors' script, but the data give 861 (97.2%) by the stated definition, rebuilt item by item. And 856 is exactly the number of CURRENT meditators (MED.Screener = 1), a likely mix-up. More important for anyone quoting these rates: they belong to the instrument as administered. Two questionnaire features were randomised, and each moves a headline by more than 10 points. Fixed item order gives 63.4% IME adverse effects, randomised order 52.8%. Asking about unusual experiences before adverse effects gives 37.4% on the generic item, the reverse order 24.9%. The imputed valences, by contrast, barely matter: bounds 57.7-59.7%.",
+        "by": "maria, 2026-10-23"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "H1b supported: the rate of endorsing the single generic AE item (31.38%) is not significantly different from the 32.3% reported by Goldberg et al. (2022) (chi2(1) = 0.07, p = .795), with a 91.47% posterior probability of practical equivalence.",
+      "scope": "Two-sample proportion test against Goldberg's 140/434.",
+      "quantities": [
+        {"name": "generic_ae_chi2_vs_goldberg_pooled", "value": 0.07, "unit": "chi-square (1 df, Yates)", "n": 1320, "source": "v05; reproduces the published 0.07, p 0.795"},
+        {"name": "generic_ae_vs_goldberg_p_ae_block_first_arm", "value": 0.0213, "unit": "p-value", "n": 863, "baseline": "107/429 = 24.9% vs 140/434 = 32.3%, chi2 5.30", "source": "v05"},
+        {"name": "generic_ae_vs_goldberg_p_ue_block_first_arm", "value": 0.1224, "unit": "p-value", "n": 891, "baseline": "171/457 = 37.4% vs 32.3%, chi2 2.39", "source": "v05"}
+      ],
+      "evidence": ["a1", "a3"],
+      "our_assessment": {
+        "status": "not-identifiable",
+        "patterns": ["centre-hides-distribution", "instrument-relative-headline-number"],
+        "why": "The pooled test reproduces. But the pooled 31.4% is the average of two randomised arms that differ by 12.5 points on this very item: 24.9% when the AE block came first, 37.4% when the unusual-experience block came first (p = 6e-5). Against Goldberg's 32.3%, the first arm is significantly LOWER (p = .021) and the second is higher, not significantly. 'Consistent with prior work' is therefore a property of the 52/48 mix of the two arms, not of US meditators. Which arm is comparable to Goldberg depends on what preceded the item in that survey, and the manuscript does not say.",
+        "by": "maria, 2026-10-23"
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "An adverse effect per the IME is endorsement of any of the 30 IME items at slight or greater intensity and 'modestly unpleasant or greater' valence (Measures, p.10); Results report the rate at 'mildly unpleasant or worse' (p.13).",
+      "scope": "Definition of the 58.35% headline.",
+      "quantities": [
+        {"name": "ime_ae_prevalence_modestly_unpleasant_threshold", "value": 0.4221, "unit": "share of respondents", "n": 886, "count": 374, "denominator": 886, "source": "v02 (valence code <= 2)"},
+        {"name": "ime_ae_prevalence_mildly_unpleasant_threshold", "value": 0.5835, "unit": "share of respondents", "n": 886, "count": 517, "denominator": 886, "source": "v02 (valence code <= 3; reproduces the deposited iue.number in 886/886 rows)"}
+      ],
+      "evidence": ["a1", "a3"],
+      "our_assessment": {
+        "status": "refuted",
+        "patterns": ["text-contradicts-own-materials"],
+        "why": "The headline is computed at code <= 3 ('mildly unpleasant'). That is the deviation the Method section lists as (b). But the Measures paragraph still defines the outcome as 'modestly unpleasant or greater', which gives 42.2%, 16 points lower. The data dictionary calls it '>= slightly unpleasant', a label the 7-point scale does not have. A reader taking the Measures sentence at its word would misread the number.",
+        "by": "maria, 2026-10-23"
+      }
+    },
+    {
+      "id": "c4",
+      "statement": "Meditation experience was not robustly associated with adverse effects; retreat attendance was associated with the generic AE definition and with functional impairment; psychological distress was associated with all AE definitions.",
+      "scope": "Robust multiple regression (robustbase lmrob/glmrob), Table 3; zero-order associations, Table 4.",
+      "quantities": [
+        {"name": "retreat_or_impairment_adjusted", "value": 2.13, "unit": "odds ratio", "n": 278, "baseline": "adjusted for log10 hours, years, K10, psychoticism; raw OR 1.78 (p .036)", "source": "v04 (C), ordinary logistic"},
+        {"name": "retreat_or_generic_ae_adjusted", "value": 1.48, "unit": "odds ratio", "n": 886, "baseline": "raw 1.39 (p .039); adjusted p .021", "source": "v04 (C)"},
+        {"name": "ime_ae_logit_slope_per_log10_hour", "value": -0.287, "unit": "log-odds per log10 hour", "n": 886, "baseline": "p = .0046; 69.0% at 0-10 h (n = 29) to 51.7% at > 1000 h (n = 176)", "source": "v04 (B)"}
+      ],
+      "evidence": ["a1", "a5"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Reproduced in substance with ordinary (not robust) models: the retreat association survives adjustment for dose and distress, generic AE OR 1.48 and impairment OR 2.13 (p = .01). This answers the 2026-10-17 open question: robust to the adjustment schlosser2019 needed. The 'experience' finding needs a sharper wording. The zero-order association of the IME rate with hours is NEGATIVE (p = .005), and the rate falls from 68.5% (<= 1 year) to 42.4% (> 20 years). It disappears once distress is held fixed (c6). Table 3 contains one impossible entry (c5).",
+        "by": "maria, 2026-10-23"
+      }
+    },
+    {
+      "id": "c5",
+      "statement": "Table 3: lifetime experience (hours) predicts the number of unusual experiences, beta = 0.171** (SE 0.171).",
+      "scope": "Robust multiple regression, # UEs column.",
+      "quantities": [
+        {"name": "implied_z_table3_experience_ue", "value": 1.0, "unit": "z", "n": 886, "baseline": "beta/SE = 0.171/0.171; two-sided p = 0.32, printed ** (p < .01)", "source": "v05"}
+      ],
+      "evidence": ["a6"],
+      "our_assessment": {
+        "status": "refuted",
+        "patterns": ["text-contradicts-own-materials"],
+        "why": "Arithmetic on the printed numbers. A beta equal to its own SE cannot be significant at .01. One of the two numbers is a transcription error. The logistic columns of the same table are consistent once SEs are read as delta-method SEs of the odds ratio, which suggests the typo is in this cell alone. Not re-estimated: robustbase's MM-estimator is not available here, and statsmodels' RLM is a different estimator.",
+        "by": "maria, 2026-10-23"
+      }
+    },
+    {
+      "id": "c6",
+      "origin": "reader",
+      "statement": "Lifetime adverse-effect incidence falls with practice in this sample (IME: 68.5% at <= 1 year to 42.4% at > 20 years), and the fall is carried by distress: less-experienced meditators are more distressed (Spearman K10 vs log hours -0.215), and with K10 and psychoticism held fixed the hours and years gradients vanish among current meditators (IME hours +0.09, p .55; years -0.018, p .13); for the generic item the adjusted hours gradient turns positive (+0.55 per log10 hour, p .0008).",
+      "scope": "856 current meditators (meditated in the past 12 months); only 30 lapsed respondents, 1 of whom stopped because of a bad experience, so attrition cannot be measured inside this sample.",
+      "quantities": [
+        {"name": "ime_ae_rate_over_20_years_practice", "value": 0.424, "unit": "share", "n": 92, "source": "v04 (B)"},
+        {"name": "ime_ae_rate_up_to_1_year_practice", "value": 0.685, "unit": "share", "n": 89, "source": "v04 (B)"},
+        {"name": "spearman_k10_log_hours", "value": -0.215, "unit": "Spearman rho", "n": 886, "source": "v06"},
+        {"name": "generic_ae_adjusted_slope_per_log10_hour_current", "value": 0.55, "unit": "log-odds per log10 hour", "n": 856, "baseline": "adjusted for years, K10, psychoticism; p = 0.00083", "source": "v06"}
+      ],
+      "evidence": ["a1", "a7"],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "patterns": ["post-treatment-conditioning"],
+        "why": "A LIFETIME incidence cannot fall with exposure within one population. Across people, it falls if the harmed practise less afterwards, if old events are forgotten, or if who starts meditating has changed. The data cannot tell these apart. The sample recruited people with meditation experience and holds only 30 lapsed respondents. Adjusting for distress removes the gradient. But K10 covers the past 30 days, and it may itself be a consequence of adverse effects, so the adjustment is conditioning on a possible mediator. Attrition of the harmed is argued AGAINST by the lapsed respondents who exist. Here they report the generic item less often (23% of 30, vs 32% of current meditators). In goldberg2022 lapsed practitioners also report fewer adverse effects. What remains is composition: the less experienced are more distressed. That holds whether distressed people start meditating more recently, accumulate fewer hours, or stop. The safe reading: in cross-sectional practitioner surveys, 'experienced meditators report fewer adverse effects' is not evidence that practice protects, and once distress is held fixed it is not even an association. Consistent with schlosser2019's flat lifetime prevalence across years.",
+        "by": "maria, 2026-10-23"
+      }
+    },
+    {
+      "id": "c7",
+      "origin": "reader",
+      "statement": "Valence was asked for at most 50 randomly chosen items per person, and missing valences were filled by random-forest multiple imputation. The imputation changed no observed value, and the IME adverse-effect rate is bounded between 57.7% and 59.7% whatever the missing valences were; 6 of the 517 cases rest only on imputed values.",
+      "scope": "All 103 valence items; 27,548 observed and 63,710 never-asked cells.",
+      "quantities": [
+        {"name": "observed_valence_cells_changed_by_imputation", "value": 0, "unit": "cells", "n": 27548, "source": "v03"},
+        {"name": "ime_ae_cases_resting_only_on_imputed_valence", "value": 0.0116, "unit": "proportion", "n": 517, "count": 6, "denominator": 517, "source": "v02"}
+      ],
+      "evidence": ["a1", "a3"],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "A check that came back clean, recorded because it is evidence. On the first run it looked like a defect, with the imputation apparently overwriting 69% of observed values. The cause was my reader: the Python `rdata` package returns R's NA_integer_ as -2147483648, so every missing cell compared as 'unpleasant'. Fixed in reanalysis/load_rds.py, and the trap is recorded there.",
+        "by": "maria, 2026-10-23"
       }
     }
   ],
@@ -90,36 +173,103 @@
     {
       "id": "a1",
       "role": "raw-data",
-      "locator": "https://osf.io/3mn9y/ (preregistration https://osf.io/r8beh)",
-      "status": "not-checked",
+      "locator": "https://osf.io/3mn9y/ CSC_UnusualExp_data_8APR24.rds (886 x 1480)",
+      "status": "verified-usable",
+      "bytes": 640174,
+      "sha256": "f608e932cd6ec5a4061782b43cef0c90f26ba751beb8841e5a596ffb71e92eb3",
+      "fetch_cmd": "python -I zoo-knowledge-base/instance-papers/papers/vandam2025-meditation-adverse-effects-representative/reanalysis/fetch.py <dest_dir>",
+      "license": "not stated on the OSF node",
       "checked": {
-        "on": "2026-10-17",
+        "on": "2026-10-23",
         "by": "maria",
-        "how": "curl https://api.osf.io/v2/nodes/3mn9y/",
-        "result": "503 (OSF outage continuing from 2026-10-16); retry later"
+        "how": "fetch.py (sha256 vs OSF), then reanalysis/v01..v06 through load_rds.py",
+        "result": "Item-level intensities and valences (raw, _MI, _MI_Final), derived outcomes, predictors, and the randomised order/framing factors. Enough to redo every incidence figure. An earlier CSC_UnusualExp_data.rds (2023-11-20, 1482 columns) gives the same counts. Contains PROLIFIC_PID; not copied into the KB."
+      },
+      "datasheet": {
+        "composition": "886 participants; IME/UE items: intensity 1 No, 2 So slight cannot decide, 3 Slight, 4 Moderate, 5 Strong, 6 Extreme; valence 1 Extremely, 2 Modestly, 3 Mildly unpleasant, 4 Neutral, 5-7 pleasant. Factors `order` (ORD/RAND item order) and `framing` (UEAE/AEUE block order), 2x2 between subjects.",
+        "caveats": "In Python via `rdata`, R integer NA arrives as -2147483648 and must be masked. Some columns are (n, 1) matrices (scale())."
       }
+    },
+    {
+      "id": "a2",
+      "role": "supplement",
+      "locator": "https://osf.io/3mn9y/ UE_dataDictionary_final.xlsx",
+      "status": "verified-usable",
+      "checked": {"on": "2026-10-23", "by": "maria", "how": "read with pandas.read_excel", "result": "Item labels, wording, response codes, and per-arm presentation order. Defines iue.number as '>= slightly unpleasant'."}
+    },
+    {
+      "id": "a3",
+      "role": "code",
+      "locator": "https://osf.io/24xe9/ Predictors_and_Incidence_8Apr2024.R",
+      "status": "present-but-insufficient",
+      "sha256": "222430737c95a1ee423a70b4535e49d0627670ef6c1b7946c797ed0c65ba8e45",
+      "checked": {"on": "2026-10-23", "by": "maria", "how": "read; counts in its prop.test calls compared with v01", "result": "The incidence tests use counts typed in by hand (x = c(856, 986), c(517, 217), ...), not computed from the data. 5 of 6 match the data; 856 does not. The derivation of ue_tot / iue.number is not in this script: it comes from the psychometrics component (a8) and was rebuilt here. The script fits order x framing models (lines 611-631) that the manuscript does not report."}
+    },
+    {
+      "id": "a4",
+      "role": "code",
+      "locator": "reanalysis/v01_headline_rates.py, v02_reconstruct_ime.py, v03_imputation_overwrites.py",
+      "status": "verified-usable",
+      "local_path": "reanalysis/v02_reconstruct_ime.py",
+      "checked": {"on": "2026-10-23", "by": "maria", "how": "python -I -W ignore reanalysis/v0N_*.py <rds> artifacts (outputs artifacts/v0N_out.txt)", "result": "v02 rebuilds ue_tot (886/886 rows) and iue.number (886/886) from items; source of c1, c3, c7."}
+    },
+    {
+      "id": "a5",
+      "role": "code",
+      "locator": "reanalysis/v04_framing_and_dose.py",
+      "status": "verified-usable",
+      "local_path": "reanalysis/v04_framing_and_dose.py",
+      "checked": {"on": "2026-10-23", "by": "maria", "how": "python -I -W ignore reanalysis/v04_framing_and_dose.py <rds> artifacts", "result": "Source of the order/framing, dose-bin and retreat figures."}
+    },
+    {
+      "id": "a6",
+      "role": "code",
+      "locator": "reanalysis/v05_h1b_by_arm.py",
+      "status": "verified-usable",
+      "local_path": "reanalysis/v05_h1b_by_arm.py",
+      "checked": {"on": "2026-10-23", "by": "maria", "how": "python -I -W ignore reanalysis/v05_h1b_by_arm.py <rds> artifacts", "result": "Reproduces the published pooled chi2 = 0.07, p = .795, then splits by arm. Source of c2 and c5."}
+    },
+    {
+      "id": "a7",
+      "role": "code",
+      "locator": "reanalysis/v06_survivorship.py",
+      "status": "verified-usable",
+      "local_path": "reanalysis/v06_survivorship.py",
+      "checked": {"on": "2026-10-23", "by": "maria", "how": "python -I -W ignore reanalysis/v06_survivorship.py <rds> artifacts", "result": "Source of c6."}
+    },
+    {
+      "id": "a8",
+      "role": "code",
+      "locator": "https://osf.io/76ud3/ IUE_EFA_CFA_DFA.R and Items.csv",
+      "status": "verified-usable",
+      "checked": {"on": "2026-10-23", "by": "maria", "how": "read lines 343-345 (trans30, psy30, self30)", "result": "Defines the 30 IME items used for ue_tot and iue.number."}
+    },
+    {
+      "id": "a9",
+      "role": "supplement",
+      "locator": "https://osf.io/24xe9/ IME_Incidence_Predictors_14MAY2024.pdf (authors' manuscript)",
+      "status": "verified-usable",
+      "sha256": "b99546b4030c2ff621f3e36cc07403caac706c6bf04bfa6088b017b33f9d14b1",
+      "bytes": 688626,
+      "checked": {"on": "2026-10-23", "by": "maria", "how": "read in full (27 pp.)", "result": "Primary source for this record. The published 2025 version was not read and may differ, e.g. it may report the order/framing models."}
     }
   ],
   "relations": [
-    {
-      "type": "cito:agreesWith",
-      "target": "schlosser2019-unpleasant-meditation",
-      "why": "Retreat participation positively associated with adverse effects in both."
-    },
-    {
-      "type": "cito:obtainsBackgroundFrom",
-      "target": "cebolla2017-unwanted-effects-meditation",
-      "why": "Single-item practitioner prevalence (25.4%) sits next to this sample's single-item 31.4%, not its instrument-based 58-97%."
-    }
+    {"type": "cito:agreesWith", "target": "schlosser2019-unpleasant-meditation", "why": "Retreat participation positively associated with adverse effects in both; here it survives adjustment for hours, years and distress (impairment OR 2.13)."},
+    {"type": "cito:obtainsBackgroundFrom", "target": "cebolla2017-unwanted-effects-meditation", "why": "Single-item practitioner prevalence (25.4%) sits next to this sample's single-item 24.9-37.4% (by framing arm), not its instrument-based 58-97%."},
+    {"type": "cito:usesDataFrom", "target": "goldberg2022-meditation-adverse-effects-population", "why": "H1b-d compare against Goldberg's 140/434 and 217/434, using an adapted 14-item MRAES with a different response format."},
+    {"type": "zoo:sharesUnstatedAssumptionWith", "target": "karger2023-xpt", "why": "A headline rate that belongs to how the question was put: elicitation format there, item order and block order here, each worth more than 10 points."}
   ],
   "open_questions": [
-    "Retrieve OSF 3mn9y; read the full paper; is the retreat effect robust to the same adjustment schlosser2019 needed (years, type)?",
-    "Does any of the five instruments show the flat-in-years curve of schlosser2019 / the early rise of goldberg2022?"
+    "Read the published (2025) version: does it report the order and framing effects, correct 856, and fix the Measures threshold sentence?",
+    "Which framing arm is comparable to Goldberg et al. 2022, i.e. what preceded the generic item in that survey?",
+    "Attrition cannot be measured here (30 lapsed respondents). A sample that includes people who stopped meditating is the only way to tell survivorship from protection; vieten2018 or a panel with lapsed practitioners.",
+    "How much of the 216-case exclusion (low or excessive response variability, multivariate outliers) removed exactly the high-endorsement profiles? The excluded rows are not in the deposit."
   ],
   "curation": {
     "author": "maria",
     "created": "2026-10-17",
-    "verified": "2026-10-17",
+    "verified": "2026-10-23",
     "notes_file": "NOTES.md"
   }
 }

@@ -1,0 +1,39 @@
+(A) order x framing (randomised between participants)
+               any_ime  any_mraes  generic    ue_n   ae_n    n
+order framing                                                 
+ORD   AEUE       0.617      0.743    0.275  10.640  2.883  222
+      UEAE       0.650      0.796    0.375  11.450  3.283  240
+RAND  AEUE       0.512      0.812    0.222   9.908  1.614  207
+      UEAE       0.544      0.783    0.373  11.438  1.802  217
+  any_ime    framing {'AEUE': 0.566, 'UEAE': 0.6} p=0.327 | order {'ORD': 0.634, 'RAND': 0.528} p=0.00142 | interaction p=0.958
+  any_mraes  framing {'AEUE': 0.776, 'UEAE': 0.79} p=0.615 | order {'ORD': 0.771, 'RAND': 0.797} p=0.335 | interaction p=0.15
+  generic    framing {'AEUE': 0.249, 'UEAE': 0.374} p=6.09e-05 | order {'ORD': 0.327, 'RAND': 0.3} p=0.394 | interaction p=0.354
+  ue_n       OLS: C(order)[T.RAND] -0.73 (p 0.244), C(framing)[T.UEAE] +0.81 (p 0.18), C(order)[T.RAND]:C(framing)[T.UEAE] +0.72 (p 0.41)
+  ae_n       OLS: C(order)[T.RAND] -1.27 (p 8.94e-05), C(framing)[T.UEAE] +0.40 (p 0.198), C(order)[T.RAND]:C(framing)[T.UEAE] -0.21 (p 0.637)
+
+(B) incidence by lifetime hours (bins of goldberg2022 + the paper's)
+          any_ime  any_mraes  generic  retreat    n
+hbin                                               
+0-10        0.690      0.862    0.172    0.103   29
+11-100      0.615      0.786    0.275    0.264  182
+101-250     0.660      0.789    0.387    0.232  194
+251-500     0.537      0.762    0.311    0.329  164
+501-1000    0.553      0.823    0.262    0.291  141
+>1000       0.517      0.750    0.341    0.330  176
+       any_ime  any_mraes  generic    n
+ybin                                   
+<=1      0.685      0.831    0.258   89
+1-2      0.676      0.811    0.342  111
+2-5      0.634      0.803    0.359  295
+5-10     0.512      0.773    0.291  172
+10-20    0.528      0.764    0.291  127
+>20      0.424      0.685    0.261   92
+  any_ime    logit on log10(hours): slope -0.287 (p 0.00459); quadratic term -0.008 (p 0.933)
+  any_mraes  logit on log10(hours): slope -0.120 (p 0.318); quadratic term +0.061 (p 0.613)
+  generic    logit on log10(hours): slope +0.133 (p 0.21); quadratic term -0.076 (p 0.476)
+
+(C) retreat association
+  any_ime    n=886  OR raw 1.02 (p 0.915)   adjusted for log hours, years, K10, psychoticism 1.17 (p 0.363)
+  any_mraes  n=886  OR raw 1.31 (p 0.15)   adjusted for log hours, years, K10, psychoticism 1.50 (p 0.044)
+  generic    n=886  OR raw 1.39 (p 0.0385)   adjusted for log hours, years, K10, psychoticism 1.48 (p 0.0207)
+  impair     n=278  OR raw 1.78 (p 0.0363)   adjusted for log hours, years, K10, psychoticism 2.13 (p 0.0107)

@@ -1,0 +1,12 @@
+current (meditated in past 12 months): 856; lapsed: 30
+  reason for stopping (1 = bad experience, 2 = no time/space/energy, 3 = not helping, 4 = other, 5 = could not practise properly): {1.0: 1, 2.0: 10, 3.0: 2, 4.0: 11, 5.0: 6}
+  any_ime    lapsed 0.6  current 0.583
+  generic    lapsed 0.233  current 0.317
+  any_mraes  lapsed 0.667  current 0.787
+
+Among current meditators only:
+  any_ime    log10 hours -0.247 (p 0.0169); years -0.0359 (p 7.13e-06); with K10 + psychoticism: hours +0.093 (p 0.545), years -0.0175 (p 0.134)
+  generic    log10 hours +0.174 (p 0.112); years -0.0134 (p 0.12); with K10 + psychoticism: hours +0.550 (p 0.000833), years -0.0232 (p 0.0743)
+  any_mraes  log10 hours -0.087 (p 0.48); years -0.0217 (p 0.0107); with K10 + psychoticism: hours +0.202 (p 0.239), years -0.0094 (p 0.433)
+  Spearman(k10, log hours) = -0.215
+  Spearman(psy, log hours) = -0.112

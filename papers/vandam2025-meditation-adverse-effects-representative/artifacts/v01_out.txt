@@ -1,0 +1,16 @@
+n = 886
+  >=1 unusual experience (ue_tot > 0)             861/886 =  97.18%   script x = 856   manuscript 96.61%
+  >=1 unusual experience (UE_TOTAL > 0)           886/886 = 100.00%   script x = 856   manuscript 96.61%
+  IME adverse effect (iue.yn)                     517/886 =  58.35%   script x = 517   manuscript 58.35% (mild)
+  IME adverse effect (AE_Def1_YN)                 526/886 =  59.37%   script x = 517   manuscript 58.35%
+  any MRAES item (mraes.number > 0)               694/886 =  78.33%   script x = 694   manuscript 78.33%
+  any MRAES item (AE_Def2_YN)                     694/886 =  78.33%   script x = 694   manuscript 78.33%
+  generic AE item (AE_Def3_YN)                    278/886 =  31.38%   script x = 278   manuscript 31.38%
+  functional impairment (Impairment == 1)          81/886 =   9.14%   script x = 81   manuscript 9.14%
+  impairment > 1 day                               34/886 =   3.84%   script x = 34   manuscript 3.84%
+  Impairment asked of 278 participants (missing 608 )
+  Group {'ORD-UEAE': 240, 'ORD-AEUE': 222, 'RAND-UEAE': 217, 'RAND-AEUE': 207}
+  order {'ORD': 462, 'RAND': 424}
+  framing {'UEAE': 457, 'AEUE': 429}
+  Val_Instr {'1': 886}
+  ValUnselected {'51': 873, '52': 13}

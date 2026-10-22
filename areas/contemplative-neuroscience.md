@@ -424,6 +424,17 @@ instrument (unusual experience / MRAES any item / IME adverse effect / single ch
 impairment). Compare like with like: single-item rates are 25.4% (cebolla2017), 25.6% (schlosser2019), 31.4% (here).
 Query: `kb.py quantities --about "meditation prevalence"` lists them together. Data at OSF 3mn9y, not yet retrieved.
 
+**UPDATE 2026-10-23, vandam2025 reanalysed from its deposit.** All adverse-effect counts reproduce. Two findings for
+this area. (1) The survey RANDOMISED its own construction and the rates move with it: IME adverse effects 63.4% with
+fixed item order vs 52.8% random (p = .001); the single generic item 24.9% when the AE block came first vs 37.4% when
+the unusual-experience block came first (p = 6e-5). So the "single-item rates agree across studies" line above holds
+only if the item is asked in the same position. Against goldberg2022's 32.3% the AE-first arm is significantly lower
+(p = .02), the published "consistent" result is the pooled mix. (2) The lifetime IME rate falls with practice (68.5%
+at <= 1 year, 42.4% at > 20 years), but the fall disappears once distress is held fixed (novices are more distressed,
+rho = -.22), and the lapsed report the generic item less often (23% of 30), as in goldberg2022. So: not protection,
+not visible attrition, but composition. Retreats remain the robust axis: impairment OR 2.13 adjusted for hours,
+years, distress and psychoticism (p = .01).
+
 **Awareness without equanimity, tested twice (added 2026-10-17):** `maria2026-awareness-acceptance-distress`.
 c1, non-meditators (PHLMS, n = 114): acceptance carries distress, awareness does not, interaction opposite in sign to
 the harms hypothesis. c2, 815 meditators (TMS curiosity x decentering on DASS, pre-registered): hypothesised sign,

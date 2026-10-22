@@ -1,0 +1,19 @@
+ue_tot rebuilt (intensity >= Slight over 30 items): equals deposit in 886/886; >=1 endorsed: 861 (manuscript 856, deposit ue_tot>0 861)
+   variant: intensity >= 3: any = 861
+   variant: intensity >= 4: any = 781
+valence asked (non-missing) for endorsed IME items: 8751 of 9643 endorsed item-responses
+  iue.number from raw      valence <= 2: matches deposit in 489/886; any = 364
+  iue.number from raw      valence <= 3: matches deposit in 834/886; any = 511
+  iue.number from MI       valence <= 2: matches deposit in 492/886; any = 374
+  iue.number from MI       valence <= 3: matches deposit in 886/886; any = 517
+  iue.number from MI_Final valence <= 2: matches deposit in 492/886; any = 374
+  iue.number from MI_Final valence <= 3: matches deposit in 886/886; any = 517
+
+IME adverse effect (>= Slight and valence <= 3):
+  observed valence only (missing = not unpleasant): 511/886 = 57.7%
+  with the imputed valence used in the paper:       517/886 = 58.4%
+  missing valence counted as unpleasant:            529/886 = 59.7%
+  endorsed items with no valence asked, per person: mean 1.01, people with >= 1 such item 162
+  AE cases that rest ONLY on imputed valences: 6 of 517 (1.2%)
+  imputed valence, threshold code <= 2 (modestly unpleasant or worse): 374/886 = 42.2%
+  imputed valence, threshold code <= 3 (mildly unpleasant or worse): 517/886 = 58.4%

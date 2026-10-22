@@ -1,0 +1,15 @@
+{
+ "ue_tot_match": 886,
+ "ue_any": 861,
+ "iue_definition": {
+  "valence_source": "MI",
+  "valence_max_code": 3,
+  "rows_matching": 886
+ },
+ "ae_lower": 511,
+ "ae_imputed": 517,
+ "ae_upper": 529,
+ "ae_cases_resting_only_on_imputation": 6,
+ "ae_imputed_valence_le_2": 374,
+ "ae_imputed_valence_le_3": 517
+}

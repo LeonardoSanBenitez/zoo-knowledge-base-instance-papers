@@ -1,0 +1,5 @@
+103 items. Observed valence cells: 27548. Changed by _MI: 0 (0.00%); by _MI_Final: 0 (0.00%).
+Observed cells whose unpleasant/not-unpleasant status (code <= 3) the _MI column flips: 0
+Missing (not asked) valence cells in total: 63710
+items with most observed cells changed (item, observed, changed, missing): [('001', 394, 0, 492), ('002', 396, 0, 490), ('004', 366, 0, 520), ('005', 616, 0, 270), ('006', 376, 0, 510), ('007', 302, 0, 584), ('009', 487, 0, 399), ('010', 623, 0, 263)]
+most frequent (observed -> MI) changes: []

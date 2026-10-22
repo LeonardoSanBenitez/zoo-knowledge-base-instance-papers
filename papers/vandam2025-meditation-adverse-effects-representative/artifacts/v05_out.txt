@@ -1,0 +1,4 @@
+pooled (as published): 278/886 = 31.38% vs 32.26%: chi2 0.07, p 0.795  (paper: 0.07, 0.795)
+framing AEUE (AE block first): 107/429 = 24.94% vs 32.26%: chi2 5.30, p 0.0213
+framing UEAE (UE block first): 171/457 = 37.42% vs 32.26%: chi2 2.39, p 0.1224
+Table 3 experience (hrs) on #UEs: beta 0.171 SE 0.171 -> z 1.00, two-sided p 0.32; printed "**" (p < .01)
