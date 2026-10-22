@@ -116,6 +116,16 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   conclusion. Both were found only by re-deriving a single number from raw inputs. **Do that
   first, before any reanalysis.**
 
+- **Seventh instance, and the oldest null in the field (word lengths, `petrini2023-compression-word-lengths`).**
+  The law of abbreviation (Kendall tau < 0) and "L below the random baseline M" hold in all 66+46 files
+  and reproduce exactly. But the two are one statistic (L - M = (n-1) s_p s_l r, the paper's own
+  Appendix A). And random typing, which optimises nothing, passes both in 68/68 calibrated files with a
+  STRONGER tau than real languages (65/66). Against it, real languages' gap ratio is above in 30/66
+  files and below in 32/66. The gap also grows with corpus size along the same curve as random typing
+  (English 0.22 -> 0.41, 1e3 -> 1e7 tokens), so cross-corpus comparisons of it are size comparisons.
+  **The structural null for word length is random typing (Miller 1957; `ferrericancho2011`). Ask
+  for it before any "compression" claim.**
+
 ## Method notes for this area
 
 - **Pseudo-replication by construction.** Language-level properties (ID, phoneme inventory, word
@@ -142,3 +152,4 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
 1. Longer-context or LM-surprisal ID on the same texts: does the cross-language CV shrink or grow?
 2. Spontaneous vs read speech.
 3. A second, independent group's data before calling anything here a universal.
+4. Markov (character-bigram) typing as the stronger null for word length, and a size-free gap (rarefied to a common T) before comparing languages (`petrini2023` open questions).

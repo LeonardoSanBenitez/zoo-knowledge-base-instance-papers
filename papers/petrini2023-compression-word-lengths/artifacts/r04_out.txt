@@ -1,0 +1,21 @@
+  pud Arabic             printed n=   6596 T=   18201   file n=   5596 T=   16608   dn=-1000 dT=-1593
+  pud German             printed n=   6116 T=   18331   file n=   6194 T=   18423   dn=+78 dT=+92
+  pud English            printed n=   5001 T=   18028   file n=   5048 T=   18098   dn=+47 dT=+70
+  pud French             printed n=   5214 T=   20407   file n=   5588 T=   21079   dn=+374 dT=+672
+  pud Indonesian         printed n=   4501 T=   16702   file n=   4374 T=   16517   dn=-127 dT=-185
+  pud Italian            printed n=   5606 T=   21266   file n=   5917 T=   21785   dn=+311 dT=+519
+  pud Japanese-romaji    printed n=   4849 T=   24734   file n=   4852 T=   24737   dn=+3 dT=+3
+  pud Polish             printed n=   7188 T=   15191   file n=   7221 T=   15256   dn=+33 dT=+65
+  pud Portuguese         printed n=   5661 T=   21855   file n=   4869 T=   20407   dn=-792 dT=-1448
+  pud Russian            printed n=   7113 T=   15588   file n=   7143 T=   15622   dn=+30 dT=+34
+  pud Turkish            printed n=   6587 T=   13799   file n=   6708 T=   13991   dn=+121 dT=+192
+pud: 11 of 24 descriptive rows do not describe the analysed file
+  cv German             printed n= 148436 T= 4230565   file n= 148466 T= 4230664   dn=+30 dT=+99
+  cv Esperanto          printed n=  27759 T=  406261   file n=  27766 T=  406268   dn=+7 dT=+7
+  cv Estonian           printed n=  28691 T=  121549   file n=  28693 T=  121551   dn=+2 dT=+2
+  cv Indonesian         printed n=   3768 T=   44210   file n=   3769 T=   44211   dn=+1 dT=+1
+  cv Dutch              printed n=  10225 T=  316498   file n=  10226 T=  316659   dn=+1 dT=+161
+  cv Oriya (macrolangua printed n=    764 T=    1700   file n=    765 T=    1701   dn=+1 dT=+1
+  cv Portuguese         printed n=  11509 T=  283048   file n=  11511 T=  283054   dn=+2 dT=+6
+  cv Tamil              printed n=   1210 T=    6439   file n=   1211 T=    6442   dn=+1 dT=+3
+cv: 8 of 46 descriptive rows do not describe the analysed file

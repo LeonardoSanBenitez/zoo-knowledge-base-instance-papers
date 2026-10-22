@@ -1,0 +1,72 @@
+pud Arabic           T=   16608 A=  31  g_obs=0.272  random typing g=0.316 [0.312,0.321] tau=-0.370 p<.01 1.00 | no-link g=+0.005 tau=+0.002 p<.01 0.00
+pud Chinese          T=   17845 A=2038  g_obs=0.237  random typing g=0.304 [0.300,0.309] tau=-0.508 p<.01 1.00 | no-link g=-0.017 tau=+0.006 p<.01 0.00
+pud Chinese-pinyin   T=   17845 A=2038  g_obs=0.251  random typing g=0.125 [0.121,0.129] tau=-0.280 p<.01 1.00 | no-link g=+0.001 tau=+0.000 p<.01 0.00
+pud Czech            T=   15331 A=  33  g_obs=0.252  random typing g=0.236 [0.232,0.242] tau=-0.328 p<.01 1.00 | no-link g=+0.005 tau=-0.007 p<.01 0.00
+pud English          T=   18098 A=  26  g_obs=0.304  random typing g=0.290 [0.286,0.297] tau=-0.349 p<.01 1.00 | no-link g=+0.013 tau=-0.001 p<.01 0.00
+pud Finnish          T=   12701 A=  24  g_obs=0.193  random typing g=0.202 [0.198,0.205] tau=-0.293 p<.01 1.00 | no-link g=-0.005 tau=+0.002 p<.01 0.00
+pud French           T=   21079 A=  44  g_obs=0.356  random typing g=0.298 [0.293,0.303] tau=-0.347 p<.01 1.00 | no-link g=+0.007 tau=+0.001 p<.01 0.00
+pud German           T=   18423 A=  30  g_obs=0.329  random typing g=0.256 [0.250,0.261] tau=-0.322 p<.01 1.00 | no-link g=-0.005 tau=+0.002 p<.01 0.00
+pud Hindi            T=   20796 A=  50  g_obs=0.301  random typing g=0.291 [0.285,0.296] tau=-0.355 p<.01 1.00 | no-link g=-0.006 tau=+0.007 p<.01 0.00
+pud Icelandic        T=   16209 A=  32  g_obs=0.328  random typing g=0.251 [0.248,0.256] tau=-0.329 p<.01 1.00 | no-link g=-0.008 tau=-0.000 p<.01 0.00
+pud Indonesian       T=   16517 A=  22  g_obs=0.189  random typing g=0.255 [0.250,0.259] tau=-0.325 p<.01 1.00 | no-link g=+0.002 tau=+0.002 p<.01 0.10
+pud Italian          T=   21785 A=  32  g_obs=0.365  random typing g=0.305 [0.301,0.310] tau=-0.353 p<.01 1.00 | no-link g=-0.003 tau=-0.002 p<.01 0.00
+pud Japanese         T=   24737 A=1549  g_obs=0.362  random typing g=0.340 [0.336,0.344] tau=-0.427 p<.01 1.00 | no-link g=-0.002 tau=-0.001 p<.01 0.05
+pud Japanese-romaji  T=   24734 A=1546  g_obs=0.368  random typing g=0.195 [0.192,0.198] tau=-0.296 p<.01 1.00 | no-link g=-0.005 tau=-0.003 p<.01 0.10
+pud Korean           T=   14475 A=1002  g_obs=0.152  random typing g=0.243 [0.238,0.248] tau=-0.337 p<.01 1.00 | no-link g=-0.001 tau=-0.001 p<.01 0.00
+pud Polish           T=   15256 A=  32  g_obs=0.241  random typing g=0.220 [0.211,0.224] tau=-0.311 p<.01 1.00 | no-link g=+0.002 tau=+0.001 p<.01 0.00
+pud Portuguese       T=   20407 A=  27  g_obs=0.418  random typing g=0.325 [0.320,0.333] tau=-0.366 p<.01 1.00 | no-link g=+0.001 tau=+0.001 p<.01 0.00
+pud Russian          T=   15622 A=  32  g_obs=0.252  random typing g=0.227 [0.220,0.234] tau=-0.310 p<.01 1.00 | no-link g=-0.006 tau=+0.003 p<.01 0.00
+pud Spanish          T=   21067 A=  32  g_obs=0.364  random typing g=0.299 [0.295,0.303] tau=-0.348 p<.01 1.00 | no-link g=-0.003 tau=-0.004 p<.01 0.00
+pud Swedish          T=   16378 A=  25  g_obs=0.323  random typing g=0.260 [0.254,0.266] tau=-0.334 p<.01 1.00 | no-link g=+0.002 tau=+0.000 p<.01 0.00
+pud Thai             T=   21121 A=  52  g_obs=0.316  random typing g=0.269 [0.265,0.273] tau=-0.355 p<.01 1.00 | no-link g=-0.005 tau=-0.003 p<.01 0.00
+pud Turkish          T=   13991 A=  30  g_obs=0.190  random typing g=0.217 [0.211,0.222] tau=-0.304 p<.01 1.00 | no-link g=-0.002 tau=+0.001 p<.01 0.00
+cv Abkhazian        T=     156 A=  28  g_obs=0.075  random typing g=0.078 [0.041,0.113] tau=-0.300 p<.01 1.00 | no-link g=+0.005 tau=-0.019 p<.01 0.05
+cv Arabic           T=   45825 A=  31  g_obs=0.190  random typing g=0.342 [0.338,0.347] tau=-0.365 p<.01 1.00 | no-link g=+0.002 tau=+0.001 p<.01 0.00
+cv Assamese         T=    1813 A=  43  g_obs=0.147  random typing g=0.184 [0.168,0.195] tau=-0.332 p<.01 1.00 | no-link g=-0.001 tau=-0.003 p<.01 0.00
+cv Basque           T=  458071 A=  21  g_obs=0.280  random typing g=0.336 [0.335,0.336] tau=-0.317 p<.01 1.00 | no-link g=-0.005 tau=+0.000 p<.01 0.00
+cv Breton           T=   38237 A=  28  g_obs=0.372  random typing g=0.355 [0.350,0.358] tau=-0.374 p<.01 1.00 | no-link g=-0.002 tau=+0.004 p<.01 0.00
+cv Catalan          T= 1000000 A=  39  g_obs=0.416  random typing g=0.397 [0.397,0.397] tau=-0.340 p<.01 1.00 | no-link g=+0.011 tau=-0.002 p<.01 0.00
+cv Chuvash          T=   13583 A=  22  g_obs=0.184  random typing g=0.236 [0.228,0.243] tau=-0.324 p<.01 1.00 | no-link g=-0.002 tau=-0.001 p<.01 0.00
+cv Czech            T=  147582 A=  33  g_obs=0.326  random typing g=0.325 [0.324,0.327] tau=-0.340 p<.01 1.00 | no-link g=+0.005 tau=-0.000 p<.01 0.00
+cv Dhivehi          T=    1284 A=  27  g_obs=0.563  random typing g=0.270 [0.255,0.287] tau=-0.409 p<.01 1.00 | no-link g=-0.015 tau=+0.002 p<.01 0.00
+cv Dutch            T=  316659 A=  23  g_obs=0.429  random typing g=0.385 [0.384,0.386] tau=-0.353 p<.01 1.00 | no-link g=+0.009 tau=+0.001 p<.01 0.00
+cv English          T= 1000000 A=  28  g_obs=0.390  random typing g=0.412 [0.412,0.413] tau=-0.355 p<.01 1.00 | no-link g=-0.007 tau=+0.001 p<.01 0.00
+cv Esperanto        T=  406268 A=  27  g_obs=0.375  random typing g=0.382 [0.382,0.382] tau=-0.348 p<.01 1.00 | no-link g=+0.007 tau=-0.003 p<.01 0.00
+cv Estonian         T=  121551 A=  23  g_obs=0.304  random typing g=0.299 [0.296,0.302] tau=-0.319 p<.01 1.00 | no-link g=-0.006 tau=-0.000 p<.01 0.00
+cv French           T= 1000000 A=  49  g_obs=0.373  random typing g=0.388 [0.387,0.388] tau=-0.335 p<.01 1.00 | no-link g=-0.006 tau=+0.002 p<.01 0.00
+cv Georgian         T=   12958 A=  25  g_obs=0.128  random typing g=0.204 [0.196,0.211] tau=-0.295 p<.01 1.00 | no-link g=+0.000 tau=-0.001 p<.01 0.00
+cv German           T= 1000000 A=  30  g_obs=0.422  random typing g=0.362 [0.361,0.362] tau=-0.320 p<.01 1.00 | no-link g=-0.006 tau=+0.002 p<.01 0.00
+cv Hakha Chin       T=   17776 A=  23  g_obs=0.378  random typing g=0.396 [0.391,0.400] tau=-0.412 p<.01 1.00 | no-link g=-0.001 tau=-0.000 p<.01 0.00
+cv Indonesian       T=   44211 A=  22  g_obs=0.258  random typing g=0.311 [0.307,0.312] tau=-0.338 p<.01 1.00 | no-link g=+0.000 tau=-0.000 p<.01 0.00
+cv Interlingua (Int T=   30504 A=  20  g_obs=0.403  random typing g=0.342 [0.338,0.345] tau=-0.376 p<.01 1.00 | no-link g=+0.006 tau=-0.001 p<.01 0.00
+cv Irish            T=   22593 A=  23  g_obs=0.361  random typing g=0.330 [0.326,0.335] tau=-0.371 p<.01 1.00 | no-link g=-0.011 tau=+0.010 p<.01 0.00
+cv Italian          T=  811783 A=  34  g_obs=0.352  random typing g=0.381 [0.381,0.382] tau=-0.335 p<.01 1.00 | no-link g=-0.006 tau=-0.002 p<.01 0.00
+cv Kinyarwanda      T= 1000000 A=  26  g_obs=0.322  random typing g=0.350 [0.350,0.351] tau=-0.314 p<.01 1.00 | no-link g=-0.009 tau=+0.001 p<.01 0.00
+cv Kirghiz          T=   61844 A=  30  g_obs=0.228  random typing g=0.267 [0.264,0.271] tau=-0.307 p<.01 1.00 | no-link g=-0.000 tau=+0.001 p<.01 0.00
+cv Latvian          T=   29456 A=  27  g_obs=0.324  random typing g=0.299 [0.296,0.303] tau=-0.344 p<.01 1.00 | no-link g=-0.002 tau=+0.001 p<.01 0.00
+cv Maltese          T=   44112 A=  31  g_obs=0.310  random typing g=0.296 [0.293,0.301] tau=-0.334 p<.01 1.00 | no-link g=+0.006 tau=-0.000 p<.01 0.00
+cv Modern Greek (14 T=   37880 A=  33  g_obs=0.365  random typing g=0.293 [0.289,0.297] tau=-0.338 p<.01 1.00 | no-link g=-0.003 tau=-0.002 p<.01 0.00
+cv Mongolian        T=   70217 A=  31  g_obs=0.252  random typing g=0.291 [0.290,0.294] tau=-0.325 p<.01 1.00 | no-link g=-0.004 tau=+0.002 p<.01 0.00
+cv Oriya (macrolang T=    1701 A=  41  g_obs=0.213  random typing g=0.197 [0.183,0.215] tau=-0.343 p<.01 1.00 | no-link g=+0.008 tau=-0.012 p<.01 0.05
+cv Panjabi          T=      98 A=  37  g_obs=0.051  random typing g=0.075 [0.045,0.100] tau=-0.345 p<.01 1.00 | no-link g=-0.001 tau=+0.033 p<.01 0.00
+cv Persian          T= 1000000 A=  38  g_obs=0.308  random typing g=0.454 [0.453,0.454] tau=-0.373 p<.01 1.00 | no-link g=-0.027 tau=+0.002 p<.01 0.00
+cv Polish           T=  595411 A=  32  g_obs=0.331  random typing g=0.348 [0.348,0.349] tau=-0.328 p<.01 1.00 | no-link g=-0.008 tau=+0.003 p<.01 0.00
+cv Portuguese       T=  283054 A=  27  g_obs=0.395  random typing g=0.389 [0.388,0.389] tau=-0.356 p<.01 1.00 | no-link g=+0.004 tau=+0.000 p<.01 0.00
+cv Romanian         T=   33341 A=  29  g_obs=0.345  random typing g=0.302 [0.298,0.305] tau=-0.344 p<.01 1.00 | no-link g=+0.004 tau=-0.001 p<.01 0.00
+cv Romansh          T=   43792 A=  26  g_obs=0.347  random typing g=0.319 [0.317,0.322] tau=-0.350 p<.01 1.00 | no-link g=+0.003 tau=-0.001 p<.01 0.00
+cv Russian          T=  637686 A=  32  g_obs=0.299  random typing g=0.314 [0.314,0.314] tau=-0.302 p<.01 1.00 | no-link g=+0.002 tau=+0.001 p<.01 0.00
+cv Slovenian        T=   26304 A=  24  g_obs=0.291  random typing g=0.313 [0.310,0.318] tau=-0.358 p<.01 1.00 | no-link g=-0.005 tau=-0.003 p<.01 0.10
+cv Spanish          T= 1000000 A=  33  g_obs=0.366  random typing g=0.396 [0.396,0.396] tau=-0.341 p<.01 1.00 | no-link g=+0.016 tau=+0.001 p<.01 0.00
+cv Swedish          T=   62951 A=  25  g_obs=0.412  random typing g=0.362 [0.359,0.364] tau=-0.377 p<.01 1.00 | no-link g=-0.006 tau=+0.001 p<.01 0.00
+cv Tamil            T=    6442 A=  29  g_obs=0.198  random typing g=0.211 [0.205,0.219] tau=-0.320 p<.01 1.00 | no-link g=-0.000 tau=+0.003 p<.01 0.00
+cv Tatar            T=  144356 A=  34  g_obs=0.275  random typing g=0.309 [0.308,0.311] tau=-0.325 p<.01 1.00 | no-link g=-0.002 tau=-0.000 p<.01 0.00
+cv Turkish          T=  107686 A=  31  g_obs=0.258  random typing g=0.284 [0.282,0.286] tau=-0.313 p<.01 1.00 | no-link g=+0.006 tau=-0.000 p<.01 0.00
+cv Ukrainian        T=  120760 A=  34  g_obs=0.281  random typing g=0.294 [0.292,0.297] tau=-0.320 p<.01 1.00 | no-link g=-0.001 tau=-0.000 p<.01 0.00
+cv Vietnamese       T=     938 A=  41  g_obs=0.068  random typing g=0.225 [0.197,0.241] tau=-0.400 p<.01 1.00 | no-link g=-0.005 tau=+0.013 p<.01 0.00
+cv Welsh            T=  539621 A=  22  g_obs=0.408  random typing g=0.424 [0.423,0.424] tau=-0.375 p<.01 1.00 | no-link g=+0.021 tau=-0.001 p<.01 0.00
+cv Western Frisian  T=   63073 A=  30  g_obs=0.452  random typing g=0.349 [0.347,0.352] tau=-0.361 p<.01 1.00 | no-link g=-0.013 tau=-0.002 p<.01 0.00
+cv Yakut            T=   22577 A=  28  g_obs=0.209  random typing g=0.237 [0.232,0.243] tau=-0.308 p<.01 1.00 | no-link g=+0.001 tau=-0.003 p<.01 0.00
+
+random typing: both tests fire in every replicate for 68/68 files
+observed gap ratio above EVERY random-typing replicate: 32/68; below every one: 32/68
+no-link null: mean share of replicates with tau p < .01 = 0.007 (nominal 0.01)

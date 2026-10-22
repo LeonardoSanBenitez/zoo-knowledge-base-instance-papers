@@ -1,0 +1,289 @@
+{
+ "schema_version": "1.6",
+ "id": "petrini2023-compression-word-lengths",
+ "title": "Direct and indirect evidence of compression of word lengths. Zipf's law of abbreviation revisited",
+ "authors": [
+  "Sonia Petrini",
+  "Antoni Casas-i-Munoz",
+  "Jordi Cluet-i-Martinell",
+  "Mengxue Wang",
+  "Christian Bentz",
+  "Ramon Ferrer-i-Cancho"
+ ],
+ "year": 2023,
+ "venue": "arXiv 2303.10128v2 (2023-05-27); accepted at Glottometrics per the PDF header",
+ "area": [
+  "language-information-and-communication-efficiency"
+ ],
+ "identifiers": {
+  "arxiv": "2303.10128",
+  "url": "https://github.com/IQL-course/IQL-Research-Project-21-22"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {"class": "blind", "evidence": "Opened 2026-10-22 from a topic search on word length vs frequency/predictability, after the Koplenig paper was unreachable. Chosen because it is open access, quantitative, extends the language-efficiency area (coupe2019, ferrericancho2011), and measures durations in speech. No defect suspicion; read title only before logging.", "recorded": "at-selection"},
+ "cost": {
+  "tool_calls": 40,
+  "bytes_downloaded": 68000000,
+  "compute_notes": "PDF (522 kB, 30 pp.) read in full. Deposit fetched at the commit current at arXiv v2 (e8c15fd, 108 files, ~64 MB, every file checked against its git blob SHA-1), then deleted; fetch.py regenerates it. r01 5 s; r02 (20 random-typing + 20 no-link replicates per file, 68 files, corpora above 1e6 tokens thinned to 1e6) about 6 min; r03 about 2 min. Python + numpy/scipy; R not used (the authors' R was read, not run).",
+  "session": "2026-10-22/23 maria"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-10-23",
+  "verified": "2026-10-23",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "is the law of abbreviation evidence of compression",
+  "word length frequency correlation across languages",
+  "mean word length below a random baseline",
+  "zipf law of abbreviation universal",
+  "does random typing produce the law of abbreviation",
+  "word duration versus frequency in speech",
+  "common voice forced alignments word duration",
+  "a baseline that depends on corpus size",
+  "direct versus indirect evidence that are the same statistic"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Zipf's law of abbreviation holds in every language studied: Kendall tau between frequency and length is negative and significant after Holm correction in all 24 PUD files (characters, strokes, romanisations) and all 46 Common Voice languages, both in characters and in median duration; with Pearson r the only failure is Panjabi in duration (98 tokens).",
+   "scope": "PUD (1000 parallel sentences, 20 languages) and Common Voice Forced Alignments 5.1 (46 languages after exclusions), after the authors' filters.",
+   "quantities": [
+    {"name": "pud_files_with_holm_significant_negative_tau", "value": 1.0, "unit": "proportion", "n": 24, "count": 24, "denominator": 24, "source": "reanalysis/r01_reproduce.py; matches deposit results/filtered/scores_pud.csv to 5e-16"},
+    {"name": "cv_languages_with_holm_significant_negative_tau_characters", "value": 1.0, "unit": "proportion", "n": 46, "count": 46, "denominator": 46, "source": "reanalysis/r01_reproduce.py"},
+    {"name": "kendall_tau_range_pud_characters", "value": "-0.263 to -0.091", "unit": "Kendall tau-b", "n": 24, "source": "artifacts/r01_reproduce.csv"},
+    {"name": "random_typing_files_where_tau_test_fires_every_replicate", "value": 1.0, "unit": "proportion", "n": 68, "count": 68, "denominator": 68, "baseline": "random typing with each language's own character distribution, mean token length and T (corpora > 1e6 tokens thinned to 1e6); 20 replicates per file (5 above 2e5 tokens)", "source": "reanalysis/r02_known_answer.py"}
+   ],
+   "evidence": ["a1", "a2", "a5", "a6"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Reproduces exactly from the deposit: every tau, r, L and L_r to about 1e-15, all 24 + 46 + 46 files. What it supports is narrower than the paper's framing (a manifestation of compression). Random typing has no lexicon and no optimisation, and it produces the law in 68 of 68 calibrated files, with tau from -0.29 to -0.51. That is stronger than any real language on the same files: real tau is more negative than the random-typing mean in only 1 of 66 comparable files. A significant negative tau is therefore not evidence of compression unless it is compared to a structural null, and the paper reports none. The test itself is well calibrated: under a no-link null (real lengths and frequencies paired at random, then sampled), tau fires at p < .01 in 0.7% of replicates.",
+    "by": "maria",
+    "patterns": ["null-model-misspecified", "missing-adequate-control"]
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "Mean word length L is below the random baseline L_r = M (mean type length) in all languages of every collection; this is direct evidence of compression, independent of the assumption of optimal coding, and 'strongly indicates that compression is acting in all languages in our sample'.",
+   "scope": "Same files; L_r defined as the expectation of L under random pairing of probabilities and lengths (Property 2.1).",
+   "quantities": [
+    {"name": "files_with_L_below_Lr", "value": 1.0, "unit": "proportion", "n": 116, "count": 116, "denominator": 116, "source": "r01: 24 PUD + 46 CV characters + 46 CV duration"},
+    {"name": "max_abs_residual_of_identity_L_minus_Lr_equals_(n-1)_sp_sl_r", "value": 3.6e-15, "unit": "length units", "n": 116, "source": "r01; the identity is the paper's own Appendix A"},
+    {"name": "random_typing_files_with_L_below_Lr_every_replicate", "value": 1.0, "unit": "proportion", "n": 68, "count": 68, "denominator": 68, "source": "r02"},
+    {"name": "files_with_gap_ratio_above_every_random_typing_replicate", "value": 0.455, "unit": "proportion", "n": 66, "count": 30, "denominator": 66, "baseline": "gap ratio g = (L_r - L)/L_r; 66 files = 68 minus Chinese-pinyin and Japanese-romaji, whose word column is in the original script so the typing alphabet could not be calibrated", "source": "r02"},
+    {"name": "files_with_gap_ratio_below_every_random_typing_replicate", "value": 0.485, "unit": "proportion", "n": 66, "count": 32, "denominator": 66, "source": "r02"}
+   ],
+   "evidence": ["a1", "a5", "a6"],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "Three problems, each enough on its own. (1) It is not separate evidence. L - L_r = (n-1) s_p s_l r exactly (the paper's Appendix A; residual 4e-15 here), so 'L < L_r' IS 'Pearson r(frequency, length) < 0'. That is the law of abbreviation (c1) measured with Pearson instead of Kendall. The 'direct' and 'indirect' evidence are one statistic. (2) The baseline does not represent absence of compression. Random typing has no compression and gives L < L_r in 100% of replicates for 68 of 68 files. Against a random-typing benchmark calibrated per language, the observed gap ratio is above every replicate in 30 of 66 files and below every replicate in 32. Read that way, real languages are as often less 'compressed' than random typing as more. (3) The gap is a function of corpus size (c4). The numbers are right and named right; the inference to compression is what fails (zoo-paper-record 1.4 section 1: claim refuted, quantities current).",
+    "by": "maria",
+    "patterns": ["null-model-misspecified", "instrument-relative-headline-number", "mechanism-asserted-not-measured"]
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Property 2.1: under any of the three shuffling nulls (frequencies, lengths, or both), the expected mean length is L_r = M, the mean length of types, so the random baseline needs no simulation.",
+   "scope": "Random pairing of the observed set of types' probabilities with the observed set of their lengths.",
+   "quantities": [
+    {"name": "no_link_null_mean_gap_ratio_range", "value": "-0.027 to +0.021", "unit": "gap ratio", "n": 68, "baseline": "20 replicates per file of random pairing followed by multinomial resampling of T tokens", "source": "r02 (no-link columns)"}
+   ],
+   "evidence": ["a6"],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Correct by linearity of expectation, and confirmed numerically: random pairing gives a mean gap ratio within +/-0.03 of zero in every file, including the finite-sampling step a real corpus has. The property is right. What it fixes is a baseline for a null that pairs a GIVEN set of types at random, and that null is not 'no compression' (c2).",
+    "by": "maria"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "The gap between L and L_r is wider when length is measured in duration than in characters.",
+   "scope": "Common Voice, Figure 2 (b) vs (c); stated qualitatively in Future research.",
+   "quantities": [
+    {"name": "languages_where_frequency_shortens_duration_at_fixed_character_length", "value": 0.978, "unit": "proportion", "n": 46, "count": 45, "denominator": 46, "baseline": "OLS over types of log median duration on log n_characters and log frequency; median coefficient -0.037 per e-fold of frequency", "source": "reanalysis/r03_sample_size_and_duration.py part B"}
+   ],
+   "evidence": ["a1", "a7"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "At equal corpus size (both measures come from the same CV files) the duration gap is larger. But in 45 of 46 languages, frequent words are spoken faster per character at fixed written length (median -3.7% duration per e-fold of frequency). That is reduction in speech production, a well-known phonetic effect. So the extra gap in duration is at least partly a property of how frequent words are pronounced, not of which word forms the lexicon contains. The paper reads both gaps as one kind of compression.",
+    "by": "maria",
+    "patterns": ["mechanism-asserted-not-measured"]
+   }
+  },
+  {
+   "id": "c5",
+   "origin": "reader",
+   "statement": "The gap ratio g = (L_r - L)/L_r rises with corpus size within every language tested, and random typing calibrated to English traces the same curve: English CV 0.217, 0.303, 0.358, 0.390, 0.409 at 1e3, 1e4, 1e5, 1e6 and 9.8e6 tokens; random typing 0.187, 0.282, 0.353, 0.412 at 1e3 to 1e6. Over the same range Kendall tau weakens in the real corpus (-0.370 to -0.074) and stays flat under random typing (-0.355 to -0.363).",
+   "scope": "Six largest CV corpora (English, German, French, Catalan, Kinyarwanda, Spanish), 5 hypergeometric subsamples per size.",
+   "quantities": [
+    {"name": "gap_ratio_english_cv_T1e3", "value": 0.217, "unit": "gap ratio", "n": 5, "source": "r03 part A"},
+    {"name": "gap_ratio_english_cv_full", "value": 0.409, "unit": "gap ratio", "n": 1, "baseline": "T = 9,828,713 tokens", "source": "r03 part A"},
+    {"name": "gap_ratio_random_typing_english_calibrated_T1e6", "value": 0.412, "unit": "gap ratio", "n": 2, "source": "r03 part A"}
+   ],
+   "evidence": ["a7"],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Mechanical. L is token-weighted and stable; L_r = M is type-weighted and grows as rare, long types accumulate. So any comparison of gaps across corpora of different size is confounded by size. That includes the paper's PUD (about 1.5e4 tokens) against CV (up to 1e7), and its remark that the gap is 'more compelling in CV'. The rising curve is what random typing produces too, so it is not a signature of compression.",
+    "by": "maria",
+    "patterns": ["instrument-relative-headline-number"]
+   }
+  },
+  {
+   "id": "c6",
+   "statement": "Tables 4, 5, B1 and B2 report, per language, the number of word types n and tokens T of the analysed (filtered) files; Tables B3-B5 report the per-language results.",
+   "scope": "Descriptive tables generated from data/filtered/descriptive_tables/*.csv at the pinned commit.",
+   "quantities": [
+    {"name": "pud_descriptive_rows_not_matching_analysed_file", "value": 0.458, "unit": "proportion", "n": 24, "count": 11, "denominator": 24, "baseline": "largest: Portuguese printed n = 5661, T = 21855 vs file 4869, 20407; Arabic 6596/18201 vs 5596/16608", "source": "reanalysis/r04_descriptive_tables.py"},
+    {"name": "cv_descriptive_rows_not_matching_analysed_file", "value": 0.174, "unit": "proportion", "n": 46, "count": 8, "denominator": 46, "baseline": "all small (at most 30 types, 161 tokens)", "source": "r04"},
+    {"name": "pud_files_missing_from_table_B3", "value": 0.458, "unit": "proportion", "n": 24, "count": 11, "denominator": 24, "baseline": "B3 prints 13 rows; absent: Chinese x3, Japanese x3, Korean, Thai, Hindi, Icelandic, Finnish", "source": "PDF p.28 vs r01"}
+   ],
+   "evidence": ["a1", "a3", "a8"],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "The results (L, L_r, tau, r) reproduce exactly from the corpus files, so those files are the analysed data. For 11 of 24 PUD files and 8 of 46 CV files, the printed n and T describe something else, probably an earlier filter state. Table B3 prints 13 of the 24 PUD files the text says it reports. No conclusion changes. But a reader using the printed n or T, for example to judge undersampling as the paper does for Panjabi, would be using wrong numbers for half of PUD.",
+    "by": "maria",
+    "patterns": ["text-contradicts-own-materials"]
+   }
+  }
+ ],
+ "methods": [
+  "exact-reproduction-from-deposit",
+  "known-answer-structural-null",
+  "random-typing-null",
+  "synthetic-injected-effect-control",
+  "subsampling-sample-size-curve",
+  "algebraic-identity-check",
+  "ols-partial-effect"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "derived-data",
+   "locator": "https://github.com/IQL-course/IQL-Research-Project-21-22/tree/e8c15fd67bacd18143ebc8266e643d38a245275a/data/filtered/corpora",
+   "repo_commit": "e8c15fd67bacd18143ebc8266e643d38a245275a",
+   "path_in_repo": "data/filtered/corpora/",
+   "status": "verified-usable",
+   "bytes": 62000000,
+   "fetch_cmd": "python -I zoo-knowledge-base/instance-papers/papers/petrini2023-compression-word-lengths/reanalysis/fetch.py <dest_dir>",
+   "checked": {
+    "on": "2026-10-23",
+    "by": "maria",
+    "how": "fetch.py (each file against its git blob SHA-1 from the tree listing), then reanalysis/r01_reproduce.py",
+    "result": "108 files, 0 hash mismatches. 24 PUD files (word, frequency, n_characters) and 46 CV files (frequency, word, mean/median/sd duration, n_characters) are enough to recompute every table of results. Quirk: abk-word.csv rows carry one extra unnamed leading field. Pinned at e8c15fd, the last commit before arXiv v2; HEAD (2023-09 and 2026-03) re-ran the filters for a later article and is not the paper's state. Deleted after use (62 MB)."
+   },
+   "datasheet": {
+    "composition": "One row per word type: absolute frequency, length in characters (strokes/romanisation in separate PUD files), and for CV the mean, median and SD of the forced-aligned duration over its tokens.",
+    "caveats": "CV durations come from Montreal Forced Aligner alignments of Common Voice 5.1 by J. Meyer; a type seen once has a one-token median. In the PUD romanised files the word column is still in the original script."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "derived-data",
+   "locator": "https://github.com/IQL-course/IQL-Research-Project-21-22/tree/e8c15fd67bacd18143ebc8266e643d38a245275a/results/filtered",
+   "repo_commit": "e8c15fd67bacd18143ebc8266e643d38a245275a",
+   "path_in_repo": "results/filtered/scores_pud.csv, scores_cv.csv",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-10-23",
+    "by": "maria",
+    "how": "r01_reproduce.py compares my values with these files",
+    "result": "My L, L_r, tau and r equal theirs to at most 2e-14 in all files. The paper's Table B3 equals scores_pud.csv. A second results file, optimality_scores_pud_characters.csv, holds DIFFERENT L and L_r for the same languages (Arabic L 4.157 vs 4.035). It belongs to another filter state and was not used in the paper's tables."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "derived-data",
+   "locator": "https://github.com/IQL-course/IQL-Research-Project-21-22/tree/e8c15fd67bacd18143ebc8266e643d38a245275a/data/filtered/descriptive_tables",
+   "repo_commit": "e8c15fd67bacd18143ebc8266e643d38a245275a",
+   "path_in_repo": "data/filtered/descriptive_tables/pud.csv, common_voice.csv",
+   "status": "present-but-insufficient",
+   "checked": {
+    "on": "2026-10-23",
+    "by": "maria",
+    "how": "reanalysis/r04_descriptive_tables.py",
+    "result": "Source of the printed n and T. 11/24 PUD and 8/46 CV rows disagree with the corpus files the results were computed from (c6)."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "code",
+   "locator": "https://github.com/IQL-course/IQL-Research-Project-21-22/tree/e8c15fd67bacd18143ebc8266e643d38a245275a/code/analysis",
+   "repo_commit": "e8c15fd67bacd18143ebc8266e643d38a245275a",
+   "path_in_repo": "code/analysis/R_functions.R",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-10-23",
+    "by": "maria",
+    "how": "read R_functions.R compute_corr / scores (cor.test alternative='less'; Lrand = sum(length)/nrow; p.adjust default = Holm); reimplemented in Python",
+    "result": "The reimplementation agrees to machine precision, so the code does what the paper says. Not run (no R on this host)."
+   }
+  },
+  {
+   "id": "a5",
+   "role": "in-paper-table",
+   "locator": "arXiv 2303.10128v2 PDF, Table B3 (p.28), Tables B4-B5 (pp.29-30), Appendix A (pp.24-25)",
+   "status": "verified-usable",
+   "sha256": "dee75dda9ed29660d3cc16e334319f4a3d30cef16d04615932cb188b8fc5443c",
+   "bytes": 522462,
+   "fetch_cmd": "curl -L -o petrini2023.pdf https://arxiv.org/pdf/2303.10128v2",
+   "checked": {
+    "on": "2026-10-23",
+    "by": "maria",
+    "how": "Table B3 transcribed into r01_reproduce.py and compared after rounding to 2 dp",
+    "result": "13 printed rows, max deviation 0.000."
+   }
+  },
+  {
+   "id": "a6",
+   "role": "code",
+   "locator": "reanalysis/r01_reproduce.py, reanalysis/r02_known_answer.py",
+   "status": "verified-usable",
+   "local_path": "reanalysis/r02_known_answer.py",
+   "checked": {
+    "on": "2026-10-23",
+    "by": "maria",
+    "how": "sh reanalysis/run_all.sh (from zoo root); outputs artifacts/r01_out.txt, r02_out.txt and the two CSVs",
+    "result": "Known-answer controls in both directions: the no-link null (no association by construction) fires at p < .01 in 0.7% of replicates (nominal 1%); random typing (association, no compression) fires in 100%. The tests behave as tests. The question is what they are evidence of."
+   }
+  },
+  {
+   "id": "a7",
+   "role": "code",
+   "locator": "reanalysis/r03_sample_size_and_duration.py",
+   "status": "verified-usable",
+   "local_path": "reanalysis/r03_sample_size_and_duration.py",
+   "checked": {
+    "on": "2026-10-23",
+    "by": "maria",
+    "how": "python -I .../r03_sample_size_and_duration.py <repo> artifacts > artifacts/r03_out.txt",
+    "result": "Source of c4 and c5."
+   }
+  },
+  {
+   "id": "a8",
+   "role": "code",
+   "locator": "reanalysis/r04_descriptive_tables.py",
+   "status": "verified-usable",
+   "local_path": "reanalysis/r04_descriptive_tables.py",
+   "checked": {
+    "on": "2026-10-23",
+    "by": "maria",
+    "how": "PYTHONIOENCODING=utf-8 python -I .../r04_descriptive_tables.py <repo> > artifacts/r04_out.txt",
+    "result": "Source of c6."
+   }
+  }
+ ],
+ "relations": [
+  {"type": "zoo:sharesUnstatedAssumptionWith", "target": "zaslavsky2018-color-naming-ib", "why": "Closeness to an efficiency criterion read as evidence of a communicative pressure without a structural null. Here random typing delivers the law of abbreviation and the 'compression gap'; there random convex partitions deliver most of 'near-optimal'."},
+  {"type": "cito:usesMethodIn", "target": "ferrericancho2011-information-content-random-typing", "why": "The random-typing null used here as the known-answer control is the argument of Ferrer-i-Cancho & Moscoso del Prado 2011, by the corresponding author of this paper, who did not apply it to his own statistic."},
+  {"type": "zoo:sharesUnstatedAssumptionWith", "target": "coupe2019-information-rate", "why": "An information-theoretic summary statistic whose value is fixed in part by the measurement (entropy estimator there, corpus size here) and travels as a property of the language."}
+ ],
+ "open_questions": [
+  "Random typing with i.i.d. characters ignores phonotactics. A character-bigram ('Markov') typing model calibrated per language is the stronger structural null: is the 30-above / 32-below split stable under it?",
+  "The gap ratio needs a size-free version before languages can be compared: e.g. g at a fixed number of tokens by rarefaction (as r03 does), or a statistic over types above a frequency floor. Which languages remain above random typing at a common T?",
+  "Real languages show a WEAKER Kendall tau than random typing in 65 of 66 files. Is that the lexicon pulling against pure combinatorics (e.g. frequent long function words, or many short rare words), and is it the same direction in every family?",
+  "Reduction in speech (c4): the frequency effect on duration at fixed written length. How much of the duration gap does it account for once character length is held fixed?"
+ ]
+}

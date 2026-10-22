@@ -1,0 +1,8 @@
+pud/characters: 24 files; max |mine - deposit|: L 7.11e-15, Lr 2.13e-14, tau 5.27e-16, r 4.16e-16
+   L < L_r in 24/24; r < 0 in 24/24; max |identity residual| 1.8e-15; Holm p<=.05: tau 24, r 24
+   Table B3 (13 printed rows) vs mine rounded to 2 dp: max deviation 0.000. B3 omits 11 of the 24 PUD files: Chinese, Chinese-pinyin, Chinese-strokes, Finnish, Hindi, Icelandic, Japanese, Japanese-romaji, Japanese-strokes, Korean, Thai
+cv/characters: 46 files; max |mine - deposit|: L 6.22e-15, Lr 1.42e-14, tau 5.00e-16, r 4.72e-16; not in deposit: ['Interlingua (International Auxiliary Language Association)', 'Modern Greek (1453-)', 'Oriya (macrolanguage)']
+   L < L_r in 46/46; r < 0 in 46/46; max |identity residual| 3.6e-15; Holm p<=.05: tau 46, r 46
+cv/medianDuration: 46 files; max |mine - deposit|: L 6.66e-16, Lr 5.55e-16, tau 5.00e-16, r 5.27e-16; not in deposit: ['Interlingua (International Auxiliary Language Association)', 'Modern Greek (1453-)', 'Oriya (macrolanguage)']
+   L < L_r in 46/46; r < 0 in 46/46; max |identity residual| 3.6e-16; Holm p<=.05: tau 46, r 45
+wrote instance-papers/papers/petrini2023-compression-word-lengths/artifacts\r01_reproduce.csv 110 rows
