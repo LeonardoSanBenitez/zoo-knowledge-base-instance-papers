@@ -76,12 +76,14 @@
     {"name": "files_with_gap_ratio_below_every_random_typing_replicate", "value": 0.485, "unit": "proportion", "n": 66, "count": 32, "denominator": 66, "source": "r02"},
     {"name": "files_with_gap_ratio_above_every_markov_typing_replicate", "value": 0.258, "unit": "proportion", "n": 66, "count": 17, "denominator": 66, "baseline": "character-bigram typing fitted per language (START/char/END transitions, token-weighted); matches the observed mean token length to about 0.02 characters; 10 replicates per file (4 above 2e5 tokens)", "source": "reanalysis/r05_markov_typing.py"},
     {"name": "files_with_gap_ratio_below_every_markov_typing_replicate", "value": 0.712, "unit": "proportion", "n": 66, "count": 47, "denominator": 66, "source": "r05"},
-    {"name": "files_with_observed_tau_more_negative_than_markov_typing_mean", "value": 0.0, "unit": "proportion", "n": 66, "count": 0, "denominator": 66, "source": "r05"}
+    {"name": "files_with_observed_tau_more_negative_than_markov_typing_mean", "value": 0.0, "unit": "proportion", "n": 66, "count": 0, "denominator": 66, "source": "r05"},
+    {"name": "pud_files_gap_below_every_order3_typing_replicate", "value": 0.7, "unit": "proportion", "n": 20, "count": 14, "denominator": 20, "baseline": "order-3 character typing (context = previous 3 characters), 5 replicates; above 6, within 0. Order 1: 9 above / 11 below; order 2: 6 / 11 / 3 within", "source": "reanalysis/r06_markov_order_k.py"},
+    {"name": "median_share_of_order3_typed_tokens_that_are_real_words", "value": 0.55, "unit": "proportion of tokens", "n": 20, "source": "r06"}
    ],
-   "evidence": ["a1", "a5", "a6", "a9"],
+   "evidence": ["a1", "a5", "a6", "a9", "a10"],
    "our_assessment": {
     "status": "refuted",
-    "why": "Three problems, each enough on its own. (1) It is not separate evidence. L - L_r = (n-1) s_p s_l r exactly (the paper's Appendix A; residual 4e-15 here), so 'L < L_r' IS 'Pearson r(frequency, length) < 0'. That is the law of abbreviation (c1) measured with Pearson instead of Kendall. The 'direct' and 'indirect' evidence are one statistic. (2) The baseline does not represent absence of compression. Random typing has no compression and gives L < L_r in 100% of replicates for 68 of 68 files. Against a random-typing benchmark calibrated per language, the observed gap ratio is above every replicate in 30 of 66 files and below every replicate in 32. Against the stronger null that keeps each language's phonotactics (character-bigram typing, r05), it is above in 17 and below in 47, and real tau is never stronger than the null's (0/66). Read that way, real languages are LESS 'compressed' than chance typing in most files. (3) The gap is a function of corpus size (c4). The numbers are right and named right; the inference to compression is what fails (zoo-paper-record 1.4 section 1: claim refuted, quantities current).",
+    "why": "Three problems, each enough on its own. (1) It is not separate evidence. L - L_r = (n-1) s_p s_l r exactly (the paper's Appendix A; residual 4e-15 here), so 'L < L_r' IS 'Pearson r(frequency, length) < 0'. That is the law of abbreviation (c1) measured with Pearson instead of Kendall. The 'direct' and 'indirect' evidence are one statistic. (2) The baseline does not represent absence of compression. Random typing has no compression and gives L < L_r in 100% of replicates for 68 of 68 files. Against a random-typing benchmark calibrated per language, the observed gap ratio is above every replicate in 30 of 66 files and below every replicate in 32. Against the stronger null that keeps each language's phonotactics (character-bigram typing, r05), it is above in 17 and below in 47, and real tau is never stronger than the null's (0/66). Read that way, real languages are LESS 'compressed' than chance typing in most files. That stays true up to order-3 typing (r06: 6 above / 14 below of 20 PUD files), where the null already produces real words 55% of the time. (3) The gap is a function of corpus size (c4). The numbers are right and named right; the inference to compression is what fails (zoo-paper-record 1.4 section 1: claim refuted, quantities current).",
     "by": "maria",
     "patterns": ["null-model-misspecified", "instrument-relative-headline-number", "mechanism-asserted-not-measured"]
    }
@@ -278,6 +280,14 @@
    }
   },
   {
+   "id": "a10",
+   "role": "code",
+   "locator": "reanalysis/r06_markov_order_k.py",
+   "status": "verified-usable",
+   "local_path": "reanalysis/r06_markov_order_k.py",
+   "checked": {"on": "2026-10-23", "by": "maria", "how": "committed with its written prediction (1a32e66), then python -I .../r06_markov_order_k.py <repo> artifacts 5 > artifacts/r06_out.txt", "result": "20 PUD files x orders 1-3 x 5 replicates. The prediction in its docstring failed (see c2)."}
+  },
+  {
    "id": "a8",
    "role": "code",
    "locator": "reanalysis/r04_descriptive_tables.py",
@@ -297,7 +307,7 @@
   {"type": "zoo:sharesUnstatedAssumptionWith", "target": "coupe2019-information-rate", "why": "An information-theoretic summary statistic whose value is fixed in part by the measurement (entropy estimator there, corpus size here) and travels as a property of the language."}
  ],
  "open_questions": [
-  "ANSWERED 2026-10-23 (r05): under character-bigram typing the split moves AGAINST compression, 17 above / 47 below, tau never stronger. Next: does a higher-order model (trigram) move it further, and at what order does the null start to reproduce the lexicon itself?",
+  "ANSWERED 2026-10-23 (r05, r06): under character-bigram typing the split moves AGAINST compression (17 above / 47 below), and up the ladder to order-3 typing (PUD, 20 files) it stays against: 6 above / 14 below, although 55% of typed tokens are by then real words. My prediction, written into r06 before running, was the opposite (the verdict would flip toward 'compressed' as the null copies the lexicon). It failed. Open: at what order, if any, does it flip, and is that order the same across languages?",
   "The gap ratio needs a size-free version before languages can be compared: e.g. g at a fixed number of tokens by rarefaction (as r03 does), or a statistic over types above a frequency floor. Which languages remain above random typing at a common T?",
   "Real languages show a WEAKER Kendall tau than random typing in 65 of 66 files. Is that the lexicon pulling against pure combinatorics (e.g. frequent long function words, or many short rare words), and is it the same direction in every family?",
   "Reduction in speech (c4): the frequency effect on duration at fixed written length. How much of the duration gap does it account for once character length is held fixed?"

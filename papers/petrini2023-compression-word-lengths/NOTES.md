@@ -46,6 +46,12 @@ which reproduces its mean token length to about 0.02 characters (`r05`). It move
 and real tau is never more negative than the null's (0 of 66). By the paper's own statistic,
 real languages are less compressed than chance typing with realistic letter sequences.
 
+Up the ladder (`r06`, PUD, orders 1-3), it stays that way: 9/11, then 6/11 (3 within), then 6/14
+above/below. At order 3, more than half of all typed tokens are real words of the language. I
+predicted the opposite in writing before running r06: that the verdict would flip toward
+"compressed" as the null starts to copy the lexicon. It did not. Whatever the lexicon does to length
+and frequency, order-3 letter statistics already do as much, or more.
+
 **3. The gap grows with the corpus.** L is a token average and barely moves. M is a type average, and
 rare long types keep arriving. English CV: g = 0.22 at 10^3 tokens, 0.41 at 9.8 × 10^6. Random typing
 calibrated to English: 0.19 to 0.41 over 10^3 to 10^6. The same curve. Comparing PUD (about 1.5 × 10^4

@@ -1,0 +1,23 @@
+Arabic       g_obs 0.272 | k=1: g 0.317 below  real 0.21 | k=2: g 0.306 below  real 0.41 | k=3: g 0.311 below  real 0.70
+Chinese      g_obs 0.237 | k=1: g 0.349 below  real 0.77 | k=2: g 0.232 ABOVE  real 0.99 | k=3: g 0.225 ABOVE  real 1.00
+Czech        g_obs 0.252 | k=1: g 0.256 below  real 0.18 | k=2: g 0.259 below  real 0.26 | k=3: g 0.260 below  real 0.46
+English      g_obs 0.304 | k=1: g 0.316 below  real 0.15 | k=2: g 0.293 ABOVE  real 0.30 | k=3: g 0.325 below  real 0.55
+Finnish      g_obs 0.193 | k=1: g 0.210 below  real 0.07 | k=2: g 0.201 below  real 0.11 | k=3: g 0.178 ABOVE  real 0.25
+French       g_obs 0.356 | k=1: g 0.336 ABOVE  real 0.22 | k=2: g 0.347 ABOVE  real 0.38 | k=3: g 0.380 below  real 0.58
+German       g_obs 0.329 | k=1: g 0.283 ABOVE  real 0.13 | k=2: g 0.259 ABOVE  real 0.25 | k=3: g 0.317 ABOVE  real 0.50
+Hindi        g_obs 0.301 | k=1: g 0.315 below  real 0.22 | k=2: g 0.329 below  real 0.49 | k=3: g 0.350 below  real 0.73
+Icelandic    g_obs 0.328 | k=1: g 0.271 ABOVE  real 0.12 | k=2: g 0.272 ABOVE  real 0.29 | k=3: g 0.323 ABOVE  real 0.53
+Indonesian   g_obs 0.189 | k=1: g 0.282 below  real 0.12 | k=2: g 0.229 below  real 0.13 | k=3: g 0.216 below  real 0.33
+Italian      g_obs 0.365 | k=1: g 0.340 ABOVE  real 0.25 | k=2: g 0.373 below  real 0.41 | k=3: g 0.388 below  real 0.56
+Japanese     g_obs 0.362 | k=1: g 0.462 below  real 0.78 | k=2: g 0.424 below  real 0.94 | k=3: g 0.367 below  real 0.99
+Korean       g_obs 0.152 | k=1: g 0.243 below  real 0.41 | k=2: g 0.169 below  real 0.89 | k=3: g 0.143 ABOVE  real 0.99
+Polish       g_obs 0.241 | k=1: g 0.248 below  real 0.15 | k=2: g 0.251 below  real 0.23 | k=3: g 0.257 below  real 0.38
+Portuguese   g_obs 0.418 | k=1: g 0.373 ABOVE  real 0.26 | k=2: g 0.425 below  real 0.48 | k=3: g 0.433 below  real 0.62
+Russian      g_obs 0.252 | k=1: g 0.241 ABOVE  real 0.14 | k=2: g 0.249 within real 0.22 | k=3: g 0.256 below  real 0.39
+Spanish      g_obs 0.364 | k=1: g 0.346 ABOVE  real 0.22 | k=2: g 0.367 within real 0.40 | k=3: g 0.383 below  real 0.56
+Swedish      g_obs 0.323 | k=1: g 0.288 ABOVE  real 0.17 | k=2: g 0.286 ABOVE  real 0.32 | k=3: g 0.318 ABOVE  real 0.50
+Thai         g_obs 0.316 | k=1: g 0.274 ABOVE  real 0.11 | k=2: g 0.316 within real 0.49 | k=3: g 0.374 below  real 0.81
+Turkish      g_obs 0.190 | k=1: g 0.234 below  real 0.12 | k=2: g 0.220 below  real 0.20 | k=3: g 0.205 below  real 0.35
+k=1: above 9, below 11, within 0 of 20; median real-token share 0.17
+k=2: above 6, below 11, within 3 of 20; median real-token share 0.35
+k=3: above 6, below 14, within 0 of 20; median real-token share 0.55
