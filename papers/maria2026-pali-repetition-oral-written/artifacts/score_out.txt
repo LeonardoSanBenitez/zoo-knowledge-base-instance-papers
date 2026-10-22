@@ -1,0 +1,11 @@
+DN
+  R4           mula 0.726 (sd 0.059)  atthakatha 0.076  tika 0.030   mula>att p=8.7e-05   full order m>a>t: True
+  R8           mula 0.592 (sd 0.069)  atthakatha 0.021  tika 0.003   mula>att p=8.7e-05   full order m>a>t: True
+  R12          mula 0.485 (sd 0.069)  atthakatha 0.010  tika 0.001   mula>att p=8.7e-05   full order m>a>t: True
+  R8_shuffled  mula 0.000 (sd 0.000)  atthakatha 0.000  tika 0.000   mula>att p=1   full order m>a>t: False
+MN
+  R4           mula 0.745 (sd 0.025)  atthakatha 0.084  tika 0.027   mula>att p=1.8e-05   full order m>a>t: True
+  R8           mula 0.593 (sd 0.040)  atthakatha 0.022  tika 0.003   mula>att p=1.8e-05   full order m>a>t: True
+  R12          mula 0.482 (sd 0.047)  atthakatha 0.010  tika 0.001   mula>att p=1.8e-05   full order m>a>t: True
+  R8_shuffled  mula 0.000 (sd 0.000)  atthakatha 0.000  tika 0.000   mula>att p=1   full order m>a>t: False
+P1 True   P2 True   P3 risk realised (att >= mula somewhere): False

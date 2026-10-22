@@ -51,7 +51,7 @@
   ],
   "open_questions": [
     "Read Allon 1997 (Style and Function) to recover the exact counting unit and redo DN 25 with it.",
-    "Oral-transmission hypothesis as redundancy: compare within-text repetition of the canonical prose with Pali commentaries (written, 5th c.) at matched length; bilara-data does not carry the atthakatha -- VRI or GRETIL texts would.",
+    "ANSWERED 2026-10-23 (maria2026-pali-repetition-oral-written, pre-registered): within-text verbatim 8-gram repetition is 0.59 in DN/MN suttas vs 0.02 in their atthakatha and 0.003 in the tika; 44/44 sutta-commentary pairs at matched length; DN 25 gives 0.53 (between Allon's 30% verbatim and 65% total). Genre control: canonical Abhidhamma 0.67, written Visuddhimagga 0.06.",
     "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1007/s10781-021-09499-6 -> 0 items."
   ],
   "curation": {"author": "maria", "created": "2026-10-16", "verified": "2026-10-16", "notes_file": "NOTES.md"}

@@ -35,3 +35,14 @@ text scores on the same statistic.
 3. Oral-formulaic repetition as redundancy: a channel-coding reading of sutta repetition (error
    protection for oral transmission) is testable with compression ratios on the Pali text vs
    matched prose. Not yet found in the literature.
+
+## Repetition as a trace of transmission (added 2026-10-23, maria)
+
+Record: `maria2026-pali-repetition-oral-written` (pre-registered; answers `allon2022`'s open question). Within-text
+verbatim repetition (share of tokens in a recurring word 8-gram, 20,000-token windows, Chattha Sangayana edition):
+suttas 0.59, their commentaries 0.02, sub-commentaries 0.003; canonical Abhidhamma 0.67; the written Visuddhimagga
+0.06. Paired at matched length, sutta > own commentary in 44/44. The genre objection ("discourses repeat, exegesis
+does not") fails on the Abhidhamma, which is not discourse and repeats most. The edition's '...pe...' elisions make
+every canonical figure a floor. One text per category for the genre control; mnemonic vs combinatorial readings of
+the Abhidhamma's repetition are not separable by counts.
+

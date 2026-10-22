@@ -1,0 +1,3 @@
+abhidhamma     tokens 126327 segments 6 pe/1000 29.28  R4 0.826  R8 0.667 [0.494, 0.872]  R12 0.556
+visuddhimagga  tokens 121047 segments 6 pe/1000 2.91  R4 0.162  R8 0.062 [0.039, 0.086]  R12 0.029
+A1 (canonical transmission) held: True | A2 (discourse genre) held: False

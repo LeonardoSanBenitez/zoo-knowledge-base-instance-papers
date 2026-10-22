@@ -1,0 +1,4 @@
+DN 25 (dn3_2) full text: 3475 tokens, R8 = 0.530 (Allon: ~30% verbatim, ~35% more with variation)
+DN: 30 suttas, median matched length 2465; median R8 mula 0.534 att 0.005 tika 0.000; mula > att in 100% (p 9e-10); att > tika in 50% (p 0.005)
+MN: 14 suttas, median matched length 9989; median R8 mula 0.566 att 0.017 tika 0.001; mula > att in 100% (p 6e-05); att > tika in 93% (p 0.00074)
+all: 44 suttas, median matched length 3618; median R8 mula 0.552 att 0.007 tika 0.000; mula > att in 100% (p 6e-14); att > tika in 64% (p 3.1e-05)

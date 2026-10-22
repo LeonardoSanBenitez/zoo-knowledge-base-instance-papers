@@ -1,0 +1,85 @@
+{
+ "schema_version": "1.6",
+ "id": "maria2026-pali-repetition-oral-written",
+ "title": "Verbatim repetition in the Pali canon, its commentaries and a written treatise: a pre-registered test of the oral-residue reading",
+ "authors": ["maria (zoo)"],
+ "year": 2026,
+ "venue": "zoo knowledge base, instance-papers",
+ "area": ["computational-buddhist-studies"],
+ "identifiers": {"url": "instance-papers/papers/maria2026-pali-repetition-oral-written/"},
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 25,
+  "bytes_downloaded": 34000000,
+  "compute_notes": "22 Chattha Sangayana XML files (romn, UTF-16) at a pinned commit, each against its git blob SHA-1; about 34 MB, deleted after use (repetition.py fetch / genre_control.py fetch regenerate). Every measurement runs in under 10 s. Plan committed before data (0234ebe); genre-control addendum committed before those texts were fetched (7142cbd).",
+  "session": "2026-10-23 maria"
+ },
+ "curation": {"author": "maria", "created": "2026-10-23", "verified": "2026-10-23", "notes_file": "NOTES.md"},
+ "triggers": [
+  "why are the Pali suttas so repetitive",
+  "is repetition in early Buddhist texts evidence of oral composition",
+  "how repetitive are the commentaries compared with the suttas",
+  "pericopes stock passages quantitative",
+  "Abhidhamma repetition",
+  "Visuddhimagga written composition repetition",
+  "measure verbatim repetition in a text with n-grams",
+  "peyyala pe elision in the Chattha Sangayana edition"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Within 20,000-token windows, the share of tokens covered by a word 8-gram that recurs in the same window (R8) is 0.59 in the canonical suttas of DN and MN, 0.02 in their commentaries (atthakatha) and 0.003 in the sub-commentaries (tika); the order canon > commentary > sub-commentary holds in both nikayas and at n = 4 and n = 12.",
+   "scope": "DN (3 books) and MN (3 books), Chattha Sangayana edition, roman script, variant-reading notes removed, the edition's 'pe' (peyyala) elision tokens removed and counted. 7-12 windows per layer and nikaya.",
+   "quantities": [
+    {"name": "R8_dn_mula", "value": 0.592, "unit": "share of tokens", "n": 7, "source": "artifacts/score_out.txt"},
+    {"name": "R8_dn_atthakatha", "value": 0.021, "unit": "share of tokens", "n": 9, "source": "score_out"},
+    {"name": "R8_dn_tika", "value": 0.003, "unit": "share of tokens", "n": 9, "source": "score_out"},
+    {"name": "R8_mn_mula", "value": 0.593, "unit": "share of tokens", "n": 12, "source": "score_out"},
+    {"name": "R8_mn_atthakatha", "value": 0.022, "unit": "share of tokens", "n": 12, "source": "score_out"},
+    {"name": "p_mann_whitney_mula_gt_atthakatha_mn", "value": 1.8e-05, "unit": "p-value", "n": 24, "source": "score_out"},
+    {"name": "pe_elisions_per_1000_tokens_dn_mula", "value": 4.99, "unit": "per 1000 tokens", "n": 143464, "baseline": "atthakatha 1.34, tika 2.15: the canon is elided most, so its measured repetition is a lower bound", "source": "artifacts/layer_stats.json"}
+   ],
+   "evidence": ["a1", "a2"],
+   "our_assessment": {"status": "accepted", "why": "Pre-registered P1 and P2 held; the P3 risk (formulaic commentaries) did not materialise. Known-answer checks: random tokens give R8 = 0.0, a passage followed by itself gives 1.0, and within-window shuffles of the real texts give 0.000 in every layer. The edition's elisions can only lower the canon's figure.", "by": "maria"}
+  },
+  {
+   "id": "c2",
+   "statement": "Paired by text and matched in length (each DN sutta, or each MN vagga, against its own commentary and sub-commentary, all truncated to the shortest of the three), the canonical text repeats more than its commentary in 44 of 44 pairs (median R8 0.552 vs 0.007, Wilcoxon p = 6e-14); the commentary repeats more than the sub-commentary in 64% (p = 3e-05).",
+   "scope": "EXPLORATORY (added after the pre-registered run). 30 DN suttas (median matched length 2,465 tokens) and 14 MN vaggas (the edition has no sutta divisions in MN; median 9,989).",
+   "quantities": [
+    {"name": "pairs_canon_more_repetitive_than_own_commentary", "value": 1.0, "unit": "proportion", "n": 44, "count": 44, "denominator": 44, "source": "artifacts/persutta_out.txt"},
+    {"name": "R8_dn25_udumbarika_full_text", "value": 0.53, "unit": "share of tokens", "n": 3475, "baseline": "allon2022: about 30% verbatim repetition plus about 35% repetition with variation; an exact 8-gram also catches much of the varied kind", "source": "persutta_out"}
+   ],
+   "evidence": ["a1", "a3"],
+   "our_assessment": {"status": "accepted-narrower-scope", "why": "Holds topic and length fixed and removes cross-text stock passages, and the contrast is as large as in c1. The DN 25 calibration sits between Allon's two figures, so the measure counts what he counts, approximately. Exploratory, not pre-registered. MN is paired at vagga level.", "by": "maria"}
+  },
+  {
+   "id": "c3",
+   "statement": "The contrast is not discourse genre: canonical Abhidhamma (Dhammasangani + Vibhanga, scholastic analysis, not discourse) has R8 = 0.667, higher than the suttas, while the Visuddhimagga (a 5th-century treatise composed in writing, itself scholastic and enumerative) has R8 = 0.062, near the commentaries.",
+   "scope": "Pre-registered addendum A1/A2 (committed before these four files were fetched). One canonical scholastic text and one written treatise.",
+   "quantities": [
+    {"name": "R8_abhidhamma", "value": 0.667, "unit": "share of tokens", "n": 6, "baseline": "range over windows 0.494-0.872; pe elisions 29.3 per 1000 tokens, the most of any text measured", "source": "artifacts/genre_control_out.txt"},
+    {"name": "R8_visuddhimagga", "value": 0.062, "unit": "share of tokens", "n": 6, "baseline": "range 0.039-0.086", "source": "genre_control_out"}
+   ],
+   "evidence": ["a1", "a4"],
+   "our_assessment": {"status": "accepted-narrower-scope", "why": "A1 held as predicted and A2 failed. Across two very different genres, canonical status goes with heavy verbatim repetition, and written composition with its absence, even when the written text is as list-bound as the Abhidhamma. That is the pattern an oral-transmission account predicts. It does not prove orality. The Abhidhamma's repetition is generated by its matika method, which is mnemonic on one reading and merely combinatorial on another. And n is one text per category. What the record can say: 'the suttas repeat because they are discourses' is ruled out by these data; 'the canon repeats because of how it was transmitted' survives a test it could have failed.", "by": "maria"}
+  }
+ ],
+ "methods": ["pre-registered-predictions", "within-text-ngram-repetition", "length-matched-paired-comparison", "synthetic-injected-effect-control", "genre-control-texts"],
+ "artifacts": [
+  {"id": "a1", "role": "raw-data", "locator": "https://github.com/VipassanaTech/tipitaka-xml/tree/05d5d3c7cede/romn", "repo_commit": "05d5d3c7cede", "path_in_repo": "romn/s010[1-3]{m.mul,a.att,t.tik}.xml, s020[1-3]..., abh0[12]m.mul.xml, e010[12]n.mul.xml", "status": "verified-usable", "bytes": 34000000, "fetch_cmd": "python -I zoo-knowledge-base/instance-papers/papers/maria2026-pali-repetition-oral-written/reanalysis/repetition.py fetch <dir> && python -I .../reanalysis/genre_control.py fetch <dir>", "checked": {"on": "2026-10-23", "by": "maria", "how": "git blob SHA-1 per file", "result": "22 files, 0 mismatches. UTF-16 with BOM; variant readings in <note>; peyyala written '...pe...' with an ellipsis character. Deleted after use."}},
+  {"id": "a2", "role": "code", "locator": "reanalysis/repetition.py, reanalysis/score.py, reanalysis/PLAN.md", "status": "verified-usable", "local_path": "reanalysis/repetition.py", "checked": {"on": "2026-10-23", "by": "maria", "how": "python -I repetition.py test; repetition.py run <dir> artifacts; score.py artifacts/segments.csv artifacts/score_out.json", "result": "Known-answer test passes; source of c1."}},
+  {"id": "a3", "role": "code", "locator": "reanalysis/persutta.py", "status": "verified-usable", "local_path": "reanalysis/persutta.py", "checked": {"on": "2026-10-23", "by": "maria", "how": "python -I -W ignore persutta.py <dir> artifacts", "result": "Source of c2."}},
+  {"id": "a4", "role": "code", "locator": "reanalysis/genre_control.py", "status": "verified-usable", "local_path": "reanalysis/genre_control.py", "checked": {"on": "2026-10-23", "by": "maria", "how": "python -I genre_control.py run <dir> artifacts", "result": "Source of c3."}}
+ ],
+ "relations": [
+  {"type": "cito:extends", "target": "allon2022-early-buddhist-texts-repetition", "why": "Answers that record's open question (canon vs commentaries at matched length) and calibrates against its DN 25 figure."},
+  {"type": "zoo:sharesUnstatedAssumptionWith", "target": "bose2026-pali-canon-stylometry", "why": "Both quantify the Pali texts by surface vocabulary in an English or roman rendering; the edition's conventions (translator notes there, peyyala elision here) move the numbers and must be measured."}
+ ],
+ "open_questions": [
+  "One text per category in c3. Add the remaining Abhidhamma books and the Milindapanha (canonical in Burma, literary in form): does canonical status still predict repetition?",
+  "The commentaries derive from older Sinhala commentaries, plausibly orally transmitted, yet their Pali form repeats little. Is that the trace of a written redaction, or of a genre that never repeated?",
+  "Restore the peyyala: expanding '...pe...' from its parallels would give the canon's true repetition; how much higher than 0.59?"
+ ]
+}

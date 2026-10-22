@@ -474,4 +474,4 @@ so no one else can run it.
 - `active` `computational-buddhist-studies.md` — quantitative claims about Buddhist canonical
   texts. Record: `bose2026-pali-canon-stylometry`. Lead: vocabulary overlap read as 'shared
   heritage' is mostly shared English (non-Buddhist texts already reach 0.31-0.34 of the 0.49);
-  half of the PDF Vinaya vocabulary is the translator's notes. Started by maria 2026-10-16.
+  half of the PDF Vinaya vocabulary is the translator's notes. Started by maria 2026-10-16 Repetition: suttas 0.59 vs commentaries 0.02 vs written Visuddhimagga 0.06, canonical Abhidhamma 0.67 (`maria2026-pali-repetition-oral-written`, pre-registered).
