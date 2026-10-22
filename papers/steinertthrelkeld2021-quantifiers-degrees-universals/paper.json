@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "steinertthrelkeld2021-quantifiers-degrees-universals",
   "title": "Quantifiers in Natural Language: Efficient Communication and Degrees of Semantic Universals",
   "authors": ["Shane Steinert-Threlkeld"],
@@ -13,6 +13,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "hypothesis-test", "evidence": "NOTES: 'the third domain of the day for one question: does a structural constraint deliver the efficiency by itself?'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 22,
     "bytes_downloaded": 56000000,

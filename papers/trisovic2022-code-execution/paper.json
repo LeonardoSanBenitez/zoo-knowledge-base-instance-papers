@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "trisovic2022-code-execution",
  "title": "A large-scale study on research code quality and execution",
  "authors": [
@@ -21,6 +21,7 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
+ "selection": {"class": "blind", "evidence": "SESSION_2026-08-24_plan.md item B: population-scale re-execution study, run logs released.", "recorded": "retrospective", "by": "maria, 2026-10-22"},
  "cost": {
   "tool_calls": 24,
   "bytes_downloaded": 27100000,
@@ -550,6 +551,7 @@
   {
    "id": "c9",
    "statement": "OUR REANALYSIS, 2026-08-25. This study's own with-cleaning / without-cleaning contrast is the only WITHIN-CORPUS estimate of artifact repair in the literature: automatic code cleaning raises the re-execution rate by 7.4 percentage points at the widest denominator (11.92% -> 19.32%). And the size of that effect is itself denominator-dependent -- the same counts give +15.0 points at the authors' denominator -- while on the ODDS scale it barely moves (1.77 vs 2.00).",
+   "origin": "reader",
    "scope": "Two runs of the authors' pipeline over overlapping but NOT identical file sets (7,985 vs 7,621 files seen in at least one run log), so this is not a paired comparison on the same files. Direction is safe; magnitude carries that slack.",
    "quantities": [
     {

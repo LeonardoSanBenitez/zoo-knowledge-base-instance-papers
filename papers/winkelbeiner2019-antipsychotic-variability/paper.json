@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "winkelbeiner2019-antipsychotic-variability",
  "title": "Evaluation of Differences in Individual Treatment Response in Schizophrenia Spectrum Disorders: A Meta-analysis",
  "authors": [
@@ -21,6 +21,7 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
+ "selection": {"class": "blind", "evidence": "NOTES: 'the origin of the psychiatric variability-ratio literature ... the only one of the three whose authors deposited data, code and the manuscript source.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
  "cost": {
   "tool_calls": 14,
   "bytes_downloaded": 70000,
@@ -172,6 +173,7 @@
   {
    "id": "c2",
    "statement": "MARIA 2026, NEW: on the antipsychotic corpus the SD-mean power lambda is -0.023 [-0.147, 0.078], so additive homogeneity is the right null and lnVR is the right statistic; lnCVR's assumption of lambda = 1 is far outside the interval.",
+   "origin": "reader",
    "scope": "75 comparisons. Regression of lnVR on ln(m_drug/m_placebo), rescaled against simulated worlds with lambda 0 and 1 by construction; 4000 trial-level bootstrap resamples.",
    "quantities": [
     {
@@ -205,6 +207,7 @@
   {
    "id": "c3",
    "statement": "MARIA 2026, NEW: D = sigma_AT^2 - sigma_PL^2 = -27.5 [-45.1, -10.0] PANSS points^2 on this corpus. The interval excludes zero from below, which is impossible under the decomposition the whole literature uses if rho = 0 and sigma_TE >= 0.",
+   "origin": "reader",
    "scope": "75 comparisons, pooled-variance weight, Paule-Mandel. Robust to the weight (naive -28.2), to clustering (bootstrap CI [-43.3, -10.9]) and to any single study (max leave-one-out +5.0, 28% of the CI half-width).",
    "quantities": [
     {
@@ -255,6 +258,7 @@
   {
    "id": "c4",
    "statement": "MARIA 2026, NEW: the boundedness of the outcome scale is a fifth axis of non-identification. PANSS cannot fall below 30, the treated arm improves more and therefore meets that bound more often, and truncation removes variance from the treated arm specifically. A simulated world with sigma_TE = 0 EXACTLY reproduces between 23% and 112% of the observed negative D, depending on the baseline mean -- which the deposit does not record.",
+   "origin": "reader",
    "scope": "Simulation using each trial's own baseline SD from the deposit and the same change SD in both arms. Baseline mean swept from 75 to 100 because it is absent from the data.",
    "quantities": [
     {
@@ -330,6 +334,7 @@
   {
    "id": "c5",
    "statement": "MARIA 2026: the within-corpus test that would settle whether the floor mechanism is real has NO RESOLVING POWER on the available data, and the correction in c4 therefore remains model-based.",
+   "origin": "reader",
    "scope": "68 HAMD17 trials with a reported baseline mean (the antipsychotic deposit cannot support the test at all). Regression of lnVR on the predicted per-trial floor bias, with both anchors simulated.",
    "quantities": [
     {

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "schubert2019-psychology-existential-risk",
   "title": "The Psychology of Existential Risk: Moral Judgments about Human Extinction",
   "authors": ["Stefan Schubert", "Lucius Caviola", "Nadira S. Faber"],
@@ -13,6 +13,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "Second paper in population-ethics area (SESSION_2026-10-16). NOTES says 'I expected the binary forced choice ... to be doing work' -- a suspicion, timing (before or during the read) not recorded. Classified B; flagged as the most likely misclassification. [Evidence written after the finding.]", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 16,
     "bytes_downloaded": 1550000,

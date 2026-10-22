@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "shi2023-llm-distracted-irrelevant-context",
   "title": "Large Language Models Can Be Easily Distracted by Irrelevant Context",
   "authors": [
@@ -23,6 +23,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "hypothesis-test", "evidence": "NOTES: 'read it to see whether it supports that reading -- and whether its headline would survive a content-free control.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 22,
     "bytes_downloaded": 50700000,

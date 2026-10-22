@@ -525,6 +525,38 @@ the rest were ambiguous and left alone on purpose).
 new claims get tagged at the same rate and `query --pattern` is used in `kblog`, it stays.
 If tagging stops at the backfill, it was decoration.
 
+## 9c. Say why you opened it, and whose claim it is: `selection`, `origin` (added 2026-10-22, schema 1.6)
+
+**First thing, when you create the record's folder, before you read a result:**
+
+```json
+"selection": {"class": "blind", "evidence": "<the line that says why, quoted>", "recorded": "at-selection"}
+```
+
+Classes: `blind`, `census`, `chain`, `known-dispute`, `hypothesis-test`, `finding-first`,
+`unknown` (definitions in the schema and in zoo-paper-record 1.6 §2). Be honest about
+`hypothesis-test`: if you picked the paper because you expected it to show a defect you have seen
+elsewhere, that is the class, even if you have no suspicion about this paper in particular. It was
+the largest suspected class in the first audit.
+
+**When a claim in the record is yours, not the paper's,** say so with a field, not a prefix:
+`"origin": "reader"`. Before 1.6, 30 such claims were marked seven different ways ("MARIA 2026,
+NEW", "OUR REANALYSIS", "(Ours, ...)") and were counted as the paper's by every tool. `validate`
+now refuses a 1.6 statement that opens with one of those prefixes without the field.
+
+Why it matters, measured (`maria2026-selection-and-reader-bias`): 8 of 46 reanalysed records were
+suspected picks, and the test comparing their defect rate to the rest has 31% power at a
+difference of +0.31, so selection effects are **unmeasurable** at today's n, not absent. And only
+3 of 46 records are clean, so a defect label in this corpus says little about whether a paper is
+sound. Before quoting any rate across records, run:
+
+```
+python tools/kb.py selection -v
+```
+
+It stratifies by class, excludes reader claims, and prints the clean count. A rate quoted without
+those three is a rate about this reader, not about the literature.
+
 ## 10. Prior art this is built on
 
 Read these before proposing a change to the schema. We are not the first people to

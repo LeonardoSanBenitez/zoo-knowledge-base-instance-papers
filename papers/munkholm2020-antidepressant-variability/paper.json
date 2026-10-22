@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "munkholm2020-antidepressant-variability",
   "title": "Individual response to antidepressants for depression in adults — a meta-analysis and simulation study",
   "authors": [
@@ -19,6 +19,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "Topic (treatment heterogeneity), first record of the area, SESSION_2026-09-02. No suspicion recorded. [Evidence written after the finding.]", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 14,
     "bytes_downloaded": 320000,

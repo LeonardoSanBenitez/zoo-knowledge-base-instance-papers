@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "cajas2026-agents-catching-agents",
   "title": "Agents Catching Agents: Shortcut Cascades and Benchmark Gaming in Clinical Multi-Agent Systems",
   "authors": [
@@ -32,6 +32,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "census", "evidence": "census of dojo/literature (SESSION_2026-09-30).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 14,
     "bytes_downloaded": 0,

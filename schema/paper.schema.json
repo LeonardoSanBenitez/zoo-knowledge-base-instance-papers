@@ -25,7 +25,8 @@
     "1.2",
     "1.3",
     "1.4",
-    "1.5"
+    "1.5",
+    "1.6"
    ],
    "description": "Revision of zoo-paper-record this record was written against. 1.1 adds OPTIONAL fields only, so every 1.0 record is also a conforming 1.1 record and there is no migration. See VERSIONING.md: no bulk migration, ever."
   },
@@ -103,6 +104,46 @@
    ],
    "description": "Honesty field. 'read-and-reanalysed' means we produced a number the authors did not. Anything below 'read-full-text' should not carry claims[] with assessments."
   },
+  "selection": {
+   "type": "object",
+   "required": [
+    "class",
+    "evidence",
+    "recorded"
+   ],
+   "additionalProperties": false,
+   "description": "Added 1.6 (2026-10-22). WHY this paper was opened, in the words written closest to that moment. Exists because a corpus-level defect rate is uninterpretable without it: a paper opened because the reader already suspected a defect is not a sample of the literature. Measured on this corpus 2026-10-22 (maria2026-selection-and-reader-bias): 8 of 46 reanalysed records were picked finding-first or to test a defect hypothesis already held. Consumers computing any rate across records MUST stratify by class or exclude finding-first and hypothesis-test.",
+   "properties": {
+    "class": {
+     "enum": [
+      "blind",
+      "census",
+      "chain",
+      "known-dispute",
+      "hypothesis-test",
+      "finding-first",
+      "unknown"
+     ],
+     "description": "blind = chosen for topic, for shipping data/code, or as a canonical example, with no defect suspicion; census = every item of a set fixed in advance (a folder, a list, a random sample) was read; chain = another record pointed here (a citation, a comparator, a quotation to check, prior art) with no defect suspicion; known-dispute = the literature already contests the result (published comment, adversarial collaboration, correction notice); hypothesis-test = chosen to test a general defect hypothesis the reader already held (e.g. 'near-optimality claims are delivered by a structural constraint'); finding-first = the reader, or whoever pointed the paper out, suspected a specific defect in THIS paper before opening it; unknown = no written evidence. Never impute."
+    },
+    "evidence": {
+     "type": "string",
+     "minLength": 1,
+     "description": "The quoted line, or a pointer (file and section) to where the reason was written. A paraphrase is not evidence."
+    },
+    "recorded": {
+     "enum": [
+      "at-selection",
+      "retrospective"
+     ],
+     "description": "at-selection = written before the paper's results were read; retrospective = reconstructed later, e.g. by a backfill. Retrospective classes are weaker, because a reason written after a finding tends to describe the finding."
+    },
+    "by": {
+     "type": "string",
+     "description": "Who classified it, if not the record's curation.author."
+    }
+   }
+  },
   "cost": {
    "type": "object",
    "description": "What this record actually cost to produce, in units that mean something to the agent that spent them. Written so future planning is budgeting rather than vibes. NEVER express effort in human time units.",
@@ -141,7 +182,14 @@
      },
      "statement": {
       "type": "string",
-      "description": "What the PAPER asserts. Neutral voice."
+      "description": "What the PAPER asserts, in neutral voice -- unless origin is 'reader' (1.6), in which case what the record's author asserts."
+     },
+     "origin": {
+      "enum": [
+       "paper",
+       "reader"
+      ],
+      "description": "Added 1.6 (2026-10-22). Who makes this claim. paper = the work the record describes (the default when absent; for a zoo study record, the study itself); reader = the person who wrote the record, adding a finding of their own inside the paper's record. Before 1.6 this was marked in the statement's opening words in at least seven different ways ('MARIA 2026, NEW', 'OUR REANALYSIS', '(Ours', 'RECORDED AS', ...), 30 claims in all, invisible to every tool. A consumer computing how often the corpus's PAPERS were found wrong MUST exclude origin = reader: a reader's own claim, assessed by the same reader, is not evidence about the literature."
      },
      "scope": {
       "type": "string",

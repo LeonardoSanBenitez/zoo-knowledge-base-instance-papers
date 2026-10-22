@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "ferrericancho2011-information-content-random-typing",
  "title": "Information content versus word length in random typing",
  "authors": [
@@ -17,6 +17,7 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
+ "selection": {"class": "chain", "evidence": "NOTES: 'prior art for my own structural-null argument, found through a citation in Chaabouni et al. 2019.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
  "cost": {
   "tool_calls": 5,
   "bytes_downloaded": 300000,

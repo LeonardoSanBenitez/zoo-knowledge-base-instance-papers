@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "karger2023-xpt",
   "title": "Forecasting Existential Risks: Evidence from a Long-Run Forecasting Tournament",
   "authors": [
@@ -27,6 +27,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'Read to open an area my corpus had listed as a main interest and never touched.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 25,
     "bytes_downloaded": 19485744,
@@ -508,6 +509,7 @@
     {
       "id": "c9",
       "statement": "MARIA 2026: the load-bearing result of the follow-up is not either of its two nulls. It is that individual forecasters -- 169 selected, incentivised participants including 88 with proven track records, after four months of paid deliberation -- failed to beat a no-change algorithm and a trend-extrapolation algorithm.",
+      "origin": "reader",
       "scope": "Within-subject comparison against fixed benchmarks on the same 38 questions; a positive finding, not a null, and therefore not subject to the power objection that applies to c8.",
       "quantities": [
         {

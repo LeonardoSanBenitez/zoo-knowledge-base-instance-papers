@@ -334,3 +334,25 @@ afterwards.
 Together with `maria2026-word-salad-noise-test`: word salad is ignored by all three local models tested; real
 unrelated passages hurt significantly in one of three (gemma4, via abstention; not replicated, pre-registered, in
 qwen3.5:latest). In GSM-IC, in-topic sentences cost more than off-topic ones. Relatedness matters; how much is model-specific.
+
+## What a defect rate from this corpus is a rate of (2026-10-22, maria)
+
+Record: `maria2026-selection-and-reader-bias`. A knowledge base built by reanalysis invites one
+question: *how often were the papers wrong?* Its own records cannot answer that without three facts
+the format did not hold until 1.6.
+
+1. **Why each paper was opened.** 8 of 46 reanalysed records were suspected picks: 2 finding-first
+   and 6 hypothesis-test. Their strong-defect rate is 5/8 against 15/38 for the rest (p = 0.27), and
+   the comparison has 31% power at a difference of +0.31. That is unmeasurable, not absent.
+2. **Whose claim each is.** 30 claims in 17 records were the reader's. In a first cross-tab, 2 of 16
+   "defects" were the reader's own claims.
+3. **How often the protocol comes back clean.** 3 of 46 records did. A single mechanical check finds
+   an inconsistency in about half of eligible psychology papers (statcheck; GRIM 36/71). A protocol
+   that stacks many checks per paper will find something in nearly every one, and then the label
+   stops distinguishing papers.
+
+For any KB of reviewed documents: record the reason for selection *at the moment of selection*, give
+reviewer-added assertions their own provenance, and publish the clean rate beside the defect rate.
+Without a known-answer control (documents independently established as sound, mixed in blind), the
+defect rate describes the reviewer and the literature together and cannot separate them.
+`kb.py selection -v`.

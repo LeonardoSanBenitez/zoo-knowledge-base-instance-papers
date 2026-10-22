@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "goldberg2022-meditation-adverse-effects-population",
   "title": "Prevalence of meditation-related adverse effects in a population-based sample in the United States",
   "authors": ["Simon B. Goldberg", "Sin U Lam", "Willoughby B. Britton", "Richard J. Davidson"],
@@ -12,6 +12,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'schlosser2019 gave a flat lifetime prevalence ... This is a population sample' (testing my finding's generality).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 14,
     "bytes_downloaded": 1500000,

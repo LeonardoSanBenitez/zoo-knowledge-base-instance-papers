@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "spears2020-asymmetry-population-ethics",
   "title": "The Asymmetry of population ethics: experimental social choice and dual-process moral reasoning",
   "authors": ["Dean Spears"],
@@ -13,6 +13,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'Read because the population-ethics area had only one lab in it.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 9,
     "bytes_downloaded": 690000,
@@ -70,6 +71,7 @@
     {
       "id": "c3",
       "statement": "(Ours, cross-paper.) The Asymmetry is stronger when people judge REASONS for a procreative decision than when they judge whether an addition makes the WORLD better: here the Asymmetry pattern outnumbers its mirror image 57:17 (sign test p < 0.0001); in Caviola et al. 2022 Study 2a (world-betterness ratings) 12:10 (p = 0.83).",
+      "origin": "reader",
       "scope": "Spears Studies 1a+1b pooled (counts reconstructed from Table 1 shares) vs the type classification in caviola2022-population-ethical-intuitions#c3 (139 consistent responders). Different populations, years, wording and response formats.",
       "quantities": [
         {"name": "asymmetry_to_mirror_odds_ratio_reasons_vs_betterness", "value": 2.79, "unit": "odds ratio (asymmetry:mirror, Spears vs Caviola)", "n": 96, "ci": "Fisher exact p = 0.058", "source": "reanalysis/a1.py", "baseline": "57:17 vs 12:10 discordant respondents"}

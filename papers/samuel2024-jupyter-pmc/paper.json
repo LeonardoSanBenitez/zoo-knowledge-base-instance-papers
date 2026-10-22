@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "samuel2024-jupyter-pmc",
   "title": "Computational reproducibility of Jupyter notebooks from biomedical publications",
   "authors": [
@@ -18,6 +18,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "SESSION_2026-08-24_plan.md: 'deep-read Samuel & Mietchen 2024 whose 371 MB SQLite ships in a Zenodo zip' (chosen for the deposit).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 22,
     "bytes_downloaded": 148000000,
@@ -480,6 +481,7 @@
     {
       "id": "c6",
       "statement": "OUR REANALYSIS, 2026-08-25. What predicts environment-install failure in this corpus is HOW MANY dependencies a repository declares, not whether it pinned their versions. A pinned dependency and an unpinned one carry statistically indistinguishable install risk.",
+      "origin": "reader",
       "scope": "2023 corpus. 639 repositories that have a requirements.txt AND at least one mode-3 execution (dependencies declared and installed). Unit = repository. Outcome = every mode-3 execution in the repository hit `<Install Dependency Error>` (processed == 0), an outcome recorded BEFORE any notebook cell runs and therefore untouched by the vacuous-comparison defect in maria2026-vacuous-reproduction-flag. Model: logit(fail) ~ log1p(n_pinned) + log1p(n_unpinned).",
       "quantities": [
         {
@@ -541,6 +543,7 @@
     {
       "id": "c7",
       "statement": "OUR REANALYSIS, 2026-08-25. In this corpus 13.7% of repositories ship a Dockerfile, against 0.44% in the Dataverse corpus on which the field concluded containerisation could not be assessed. Shipping one has no reliable association with whether the declared environment installs; two markers with no causal path to installing anything -- a Makefile and a CITATION.cff -- do, and survive multiplicity correction.",
+      "origin": "reader",
       "scope": "2023 corpus. Prevalence over all 5,240 repositories, from 4,807,244 file paths. Association on the 639 repositories with a requirements.txt and at least one mode-3 execution; outcome = at least one execution got past `<Install Dependency Error>` (base rate 34.3%, 219 events). Logit adjusted for log1p(declared dependencies) and log1p(files in repository). Permutation p over 5,000 shuffles of the marker with covariates held; Holm-Bonferroni over 5 markers. NOT a treatment effect: the pipeline never uses any of these files.",
       "quantities": [
         {

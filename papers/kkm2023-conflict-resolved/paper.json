@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "kkm2023-conflict-resolved",
   "title": "Income and emotional well-being: A conflict resolved",
   "authors": [
@@ -20,6 +20,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "known-dispute", "evidence": "NOTES: 'Two published papers said opposite things ... adversarial collaboration.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 34,
     "bytes_downloaded": 882709,

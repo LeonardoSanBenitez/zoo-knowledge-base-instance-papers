@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.6",
   "id": "obels2020-registered-reports",
   "title": "Analysis of Open Data and Computational Reproducibility in Registered Reports in Psychology",
   "authors": [
@@ -20,6 +20,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "chain", "evidence": "NOTES: 'I came to it to check a quotation' (laurinavichyute2022 compares its 59% to this study's 58%).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 6,
     "bytes_downloaded": 232080,
@@ -178,6 +179,7 @@
     {
       "id": "c3",
       "statement": "OUR ANALYSIS. The agreement Laurinavichyute et al. report between their 59% and this study's 58% compares two different estimands: this study scores only the MAIN results of each article, while their strict criterion requires ALL reported analyses to reproduce exactly. Under their own lenient criterion the comparable figure is 81%, not 59%.",
+      "origin": "reader",
       "scope": "Laurinavichyute et al. 2022 apply exactly this scope correction to Hardwicke et al. ('attempted to reproduce only one key finding ... our lower estimate is more conservative') and do not apply it to Obels et al.",
       "quantities": [
         {
@@ -222,6 +224,7 @@
     {
       "id": "c4",
       "statement": "OUR ANALYSIS. The widest-denominator rates of this study (21/62) and of Laurinavichyute et al. (20/59) agree to 0.027 percentage points while the standard error of their difference is 8.6 points. That agreement carries no information. More generally, no two by-hand reproduction studies in this literature can detect a difference smaller than about 24 percentage points, which is nearly the entire range the field argues about.",
+      "origin": "reader",
       "scope": "Two-proportion comparison and a power calculation at p = 0.34, alpha 0.05, 80% power, equal n. The by-hand studies in this area are n = 36 to 62; the automated corpora are n = 669 to 17,965.",
       "quantities": [
         {

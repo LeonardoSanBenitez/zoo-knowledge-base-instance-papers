@@ -1,0 +1,299 @@
+{
+ "schema_version": "1.6",
+ "id": "maria2026-selection-and-reader-bias",
+ "title": "Why were these papers opened? Selection and reader effects on the defect rate of this corpus",
+ "authors": [
+  "maria (zoo)"
+ ],
+ "year": 2026,
+ "venue": "zoo knowledge base, instance-papers",
+ "area": [
+  "rag-and-knowledge-management",
+  "computational-reproducibility-and-artifact-reuse"
+ ],
+ "identifiers": {
+  "url": "instance-papers/papers/maria2026-selection-and-reader-bias/"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "cost": {
+  "tool_calls": 45,
+  "bytes_downloaded": 0,
+  "compute_notes": "No new data from outside: the population is the corpus's own 46 reanalysed non-zoo records. Classification is by hand from each record's NOTES opening and the session file of its creation date, one quotation per record. sensitivity.py is stdlib only, runs in about 20 s (2000 Fisher simulations per power point). Two web searches for the external anchors in c3.",
+  "session": "2026-10-22 maria"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-10-22",
+  "verified": "2026-10-22",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "how often are the papers in the knowledge base wrong",
+  "can I quote a defect rate from this corpus",
+  "were these papers chosen because someone already suspected them",
+  "finding-first selection bias",
+  "does the reanalysis protocol find something in every paper",
+  "a reader who tries to break every result",
+  "is the claim the paper's or the reader's",
+  "selection field in a paper record",
+  "base rate of errors in published papers found by reanalysis",
+  "known-answer control for a reviewer"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Of the 46 records in this corpus read and reanalysed (zoo studies excluded), 8 were opened because the reader already suspected a defect: 2 with a suspicion about that specific paper (finding-first) and 6 chosen to test a general defect hypothesis the reader already held (hypothesis-test). The rest: 25 blind, 4 census, 6 chain, 3 known-dispute.",
+   "scope": "Records created 2026-08-07 to 2026-10-17, all by one reader (maria). Classified retrospectively on 2026-10-22 against a rubric written before any NOTES file was opened (reanalysis/RUBRIC.md); 5 of the 46 rest on evidence written after the finding.",
+   "quantities": [
+    {
+     "name": "suspected_share_of_reanalysed_records",
+     "value": 0.174,
+     "unit": "proportion",
+     "n": 46,
+     "count": 8,
+     "denominator": 46,
+     "source": "artifacts/classification.json; kb.py selection"
+    },
+    {
+     "name": "finding_first_share_of_reanalysed_records",
+     "value": 0.043,
+     "unit": "proportion",
+     "n": 46,
+     "count": 2,
+     "denominator": 46,
+     "source": "artifacts/classification.json"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The counts follow mechanically from the classification. The classification is one reader judging her own motives, retrospectively, with no blinding. Every row carries its quotation so another agent can re-classify; nobody has. schubert2019 is the most likely misclassification (a suspicion is stated in its NOTES, at an unrecorded time).",
+    "by": "maria"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "The strong-defect rate of suspected picks (5/8) and of the rest (15/38) does not differ detectably (Fisher exact p = 0.27). The comparison has almost no power: a true difference of +0.31 would be detected 31% of the time, and +0.51 only 76% of the time. Re-classifying the 5 records whose evidence was written after the finding in the direction most favourable to a selection effect gives 7/10 against 13/36 (p = 0.077).",
+   "scope": "Strong defect = a paper-origin claim refuted, disputed or not-identifiable, or a paper-origin quantity measures-something-else or disputed (mapping frozen before the cross-tab, RUBRIC.md addendum).",
+   "quantities": [
+    {
+     "name": "strong_defect_rate_suspected",
+     "value": 0.625,
+     "unit": "proportion",
+     "n": 8,
+     "count": 5,
+     "denominator": 8,
+     "source": "reanalysis/sensitivity.py section 1"
+    },
+    {
+     "name": "strong_defect_rate_not_suspected",
+     "value": 0.395,
+     "unit": "proportion",
+     "n": 38,
+     "count": 15,
+     "denominator": 38,
+     "source": "reanalysis/sensitivity.py section 1"
+    },
+    {
+     "name": "fisher_p_suspected_vs_not",
+     "value": 0.267,
+     "unit": "p-value",
+     "n": 46,
+     "source": "reanalysis/sensitivity.py section 1 (stdlib Fisher, checked against scipy to 4 decimals)"
+    },
+    {
+     "name": "power_at_difference_0.31",
+     "value": 0.31,
+     "unit": "probability",
+     "n": 2000,
+     "baseline": "true suspected rate 0.7 against 0.39, n = 8 vs 38, alpha 0.05",
+     "source": "reanalysis/sensitivity.py section 4"
+    },
+    {
+     "name": "fisher_p_adversarial_reclassification",
+     "value": 0.077,
+     "unit": "p-value",
+     "n": 46,
+     "source": "reanalysis/sensitivity.py section 3"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "The point estimate favours a selection effect (0.62 vs 0.39) and the test cannot see it. The honest sentence is 'not measurable at this n', NOT 'selection explains little', which is what I first wrote to mark on 2026-10-22 before running the power simulation. Corrected to him the same session.",
+    "by": "maria"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Only 3 of 46 reanalysed records are clean: 43 carry either a strong defect (20) or a narrowed scope (23). At claim level, of 193 paper-origin claims in these records, 76 (39%) were accepted without narrowing. A protocol that finds something in 93% of papers cannot distinguish papers by finding something.",
+   "scope": "Same 46 records. 'Narrowed' is accepted-narrower-scope on any paper claim with no strong defect.",
+   "quantities": [
+    {
+     "name": "clean_record_share",
+     "value": 0.065,
+     "unit": "proportion",
+     "n": 46,
+     "count": 3,
+     "denominator": 46,
+     "source": "kb.py selection; reanalysis/sensitivity.py section 1"
+    },
+    {
+     "name": "paper_claims_accepted_outright_share",
+     "value": 0.394,
+     "unit": "proportion",
+     "n": 193,
+     "count": 76,
+     "denominator": 193,
+     "source": "status tally over paper-origin claims of the 46 records, NOTES.md section 3"
+    },
+    {
+     "name": "external_anchor_statcheck_papers_with_any_inconsistency",
+     "value": "about one half",
+     "unit": "proportion of NHST psychology papers",
+     "n": "papers in 8 journals, 1985-2013, >250,000 p-values",
+     "baseline": "Nuijten et al. 2016, Behav Res Methods 48:1205, doi:10.3758/s13428-015-0664-2; one in eight had a gross inconsistency. Read from the abstract via search, not the full text.",
+     "source": "external, abstract-level"
+    },
+    {
+     "name": "external_anchor_grim_articles_with_inconsistent_mean",
+     "value": 0.507,
+     "unit": "proportion",
+     "n": 71,
+     "count": 36,
+     "denominator": 71,
+     "baseline": "Brown & Heathers 2017, SPPS 8:363; 71 GRIM-testable of 260 articles. From the PeerJ preprint abstract via search.",
+     "source": "external, abstract-level"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The number is solid; its meaning is not settled. One mechanical check (statcheck, GRIM) finds an inconsistency in about half of eligible papers, so a protocol applying many checks per paper finding something in most of them is what an ordinary literature would also produce. 3/46 does NOT show the reader invents defects. It shows the corpus's defect labels carry little information about which papers are sound. The missing test is a known-answer control: papers independently established as sound, read under the same protocol. Not available with one reader who would know which they are.",
+    "by": "maria"
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "30 claims in 17 records were the reader's own findings filed among the paper's claims, marked in prose in at least seven ways and invisible to every tool. In the first cross-tab, 2 of the 16 strong 'defects' among blind picks (gamma2021-mpe92m c6, winkelbeiner2019 c4) were such claims.",
+   "scope": "Non-zoo records at any depth, detected by the marker regex now in kb.py (_READER_MARKERS); all 30 hits read by hand and all confirmed reader claims.",
+   "quantities": [
+    {
+     "name": "reader_claims_filed_as_paper_claims",
+     "value": 30,
+     "unit": "claims",
+     "n": 17,
+     "source": "reanalysis/backfill_16.py output (origin: reader inserted on 30 claims in 17 records)"
+    },
+    {
+     "name": "first_crosstab_defects_that_were_reader_claims",
+     "value": 0.125,
+     "unit": "proportion",
+     "n": 16,
+     "count": 2,
+     "denominator": 16,
+     "source": "reanalysis/crosstab.py (as first run, before origin existed) vs kb.py selection"
+    }
+   ],
+   "evidence": [
+    "a4"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Mechanical. Led to zoo-paper-record 1.6 claim-level `origin`, and to a validator rule that rejects a 1.6 statement that opens with a reader marker without declaring origin: reader.",
+    "by": "maria"
+   }
+  }
+ ],
+ "methods": [
+  "pre-registered-rubric",
+  "retrospective-classification-with-quoted-evidence",
+  "fisher-exact-test",
+  "power-simulation",
+  "adversarial-reclassification",
+  "synthetic-injected-effect-control"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "human-labels",
+   "locator": "artifacts/classification.json",
+   "status": "verified-usable",
+   "local_path": "artifacts/classification.json",
+   "checked": {
+    "on": "2026-10-22",
+    "by": "maria",
+    "how": "python -I reanalysis/crosstab.py (asserts the classified set equals the population of reanalysed non-zoo records)",
+    "result": "46 rows, one per record, each [id, class, evidence quote, hindsight flag]. Coverage assertion passes. Classes in rubric codes (B/F1/F2/K/C); census was split from B when written into the records' selection fields."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "preregistration",
+   "locator": "reanalysis/RUBRIC.md",
+   "status": "present-but-insufficient",
+   "local_path": "reanalysis/RUBRIC.md",
+   "checked": {
+    "on": "2026-10-22",
+    "by": "maria",
+    "how": "read; file timestamps (stat) of RUBRIC.md, classification.json, crosstab.py",
+    "result": "Written before any NOTES file was opened, with an addendum fixing the outcome mapping after reading the status vocabulary and before the cross-tab. INSUFFICIENT as proof: it was not committed before use, and its mtime records only the last append (21:33Z), not first creation. The order is the author's statement."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "code",
+   "locator": "reanalysis/sensitivity.py",
+   "status": "verified-usable",
+   "local_path": "reanalysis/sensitivity.py",
+   "checked": {
+    "on": "2026-10-22",
+    "by": "maria",
+    "how": "python -I zoo-knowledge-base/instance-papers/papers/maria2026-selection-and-reader-bias/reanalysis/sensitivity.py > artifacts/sensitivity_out.txt",
+    "result": "Known-answer control (section 5): effect forced in (0.9 vs 0.3, n 40/200) -> p = 1.6e-14; absent (0.5 vs 0.5) -> p = 0.056, one draw. Every synthetic record carries a refuted reader claim; with origin honoured, the rates track the forced ones. Stdlib Fisher matches scipy on two tables (0.2674, 0.6928)."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "code",
+   "locator": "reanalysis/backfill_16.py",
+   "status": "verified-usable",
+   "local_path": "reanalysis/backfill_16.py",
+   "checked": {
+    "on": "2026-10-22",
+    "by": "maria",
+    "how": "python -I .../reanalysis/backfill_16.py (dry run), then --write; then kb.py validate",
+    "result": "47 records edited by text insertion; per record, parse(new) == parse(old) + the intended fields is asserted. validate: 78 records, 0 failing."
+   }
+  },
+  {
+   "id": "a5",
+   "role": "derived-data",
+   "locator": "artifacts/sensitivity_out.txt",
+   "status": "verified-usable",
+   "local_path": "artifacts/sensitivity_out.txt",
+   "checked": {
+    "on": "2026-10-22",
+    "by": "maria",
+    "how": "output of a3",
+    "result": "Source of every number in c2 and c3 except the external anchors."
+   }
+  }
+ ],
+ "relations": [],
+ "open_questions": [
+  "Re-classification by a second agent from the quotations alone, blind to outcomes: per-row agreement with mine, and whether the suspected/not-suspected rates move. The cheapest available check on c1.",
+  "A known-answer control for the reading protocol: papers independently established as sound (e.g. a clean result of a large replication project, or a paper whose deposit a third party has already fully reproduced), mixed blind among ordinary picks and read under the same protocol by a reader who does not know which. Requires a second reader to do the mixing.",
+  "Prospective selection from now on: records created after 2026-10-22 should carry selection.recorded = at-selection. In ~40 new records, compare at-selection and retrospective class distributions; if hypothesis-test is rarer at selection, the retrospective classes were rationalised."
+ ]
+}

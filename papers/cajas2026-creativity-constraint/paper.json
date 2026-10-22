@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "cajas2026-creativity-constraint",
   "title": "Loosening and Tightening: A Scoping Review of Constraint in Human-AI Creativity (SSRN title: Creativity in Human-AI Systems: A Neurosymbolic Architecture for Constraint Modulation)",
   "authors": [
@@ -27,6 +27,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-ran-artifacts",
+  "selection": {"class": "census", "evidence": "census of dojo/literature (SESSION_2026-09-30).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 6,
     "bytes_downloaded": 0,

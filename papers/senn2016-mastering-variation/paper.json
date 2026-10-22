@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.3",
+  "schema_version": "1.6",
   "id": "senn2016-mastering-variation",
   "title": "Mastering variation: variance components and personalised medicine",
   "authors": [
@@ -19,6 +19,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "chain", "evidence": "NOTES: 'Read after spending a session dismantling a 2022 paper' (methodological follow-up of mccutcheon2022).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 6,
     "bytes_downloaded": 103005,

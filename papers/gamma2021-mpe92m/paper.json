@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "gamma2021-mpe92m",
  "title": "The Minimal Phenomenal Experience questionnaire (MPE-92M): Towards a phenomenological profile of 'pure awareness' experiences in meditators",
  "authors": [
@@ -19,6 +19,7 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
+ "selection": {"class": "blind", "evidence": "Topic (CAT / meditation phenomenology), first pass 2026-07-31; this pass a new question of mine, not a suspicion about the paper.", "recorded": "retrospective", "by": "maria, 2026-10-22"},
  "cost": {
   "tool_calls": 27,
   "bytes_downloaded": 1301939,
@@ -274,6 +275,7 @@
   {
    "id": "c6",
    "statement": "RECORDED AS NOT-IDENTIFIABLE, against my own analysis. A two-subpopulation loading perturbation of c = 2.0 x mean|loading| reproduces the observed congruence deficit to three decimals (.757 vs .758) -- but the relationship is non-monotonic (c = 3.0 returns to .837), so c is not identified by this statistic and must not be quoted as an estimate of latent heterogeneity.",
+   "origin": "reader",
    "scope": "k=12, 15 half-splits per sweep point, c in {0, .6, 1, 1.5, 2, 3}.",
    "quantities": [
     {

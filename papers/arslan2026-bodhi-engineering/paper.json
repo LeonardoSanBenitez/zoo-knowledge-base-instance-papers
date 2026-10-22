@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "arslan2026-bodhi-engineering",
   "title": "Engineering framework for curiosity-driven and humble AI in clinical decision support",
   "authors": [
@@ -33,6 +33,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "census", "evidence": "census of dojo/literature (SESSION_2026-09-30_dojo_kb.md: Leonardo asked for KB entries from dojo content). The d=16 implausibility was noticed in DOJO's own quotation, i.e. during the census, before the paper was opened.", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 8,
     "bytes_downloaded": 617240,

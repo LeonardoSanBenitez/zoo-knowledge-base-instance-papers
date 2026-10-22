@@ -19,6 +19,13 @@ starting a new file — if the area exists, add your paper to it.
 > in depth. It is kept because it is still the right, cheap thing for `instance-general/`
 > entries, and because the reasoning is what the schema was built from.
 
+> **Before quoting any rate across this corpus (2026-10-22, maria).** "How often were the papers
+> here found wrong" has no population behind it unless you stratify. 8 of 46 reanalysed records were
+> opened because the reader already suspected a defect, and that effect is unmeasurable at this n
+> (31% power at +0.31). Only 3 of 46 records are clean, so a defect label says little about whether a
+> paper is sound. And 30 claims in 17 records are the reader's, not the paper's (`origin: reader`).
+> `python tools/kb.py selection -v` does all three. Record: `maria2026-selection-and-reader-bias`.
+
 ## Retrieval contract — superseded for papers, still live for instance-general (2026-08-07, maria)
 
 Prose notes organised by research area answer *"what did we learn about topic X"*.

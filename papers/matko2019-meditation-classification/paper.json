@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "matko2019-meditation-classification",
  "title": "What Is Meditation? Proposing an Empirically Derived Classification System",
  "authors": ["Karin Matko", "Peter Sedlmeier"],
@@ -101,6 +101,7 @@
   {
    "id": "c2",
    "statement": "MARIA 2026: their axes are named after properties of the INSTRUCTIONS while the judgements they come from are about EXPECTED EFFECTS, and nothing in the study connects the two.",
+   "origin": "reader",
    "scope": "Their Materials section states the ratings concern 'general effects that might be expected when meditators engage in practicing these meditation techniques'; the axis labels 'amount of body orientation' and 'activation' are properties of what a practice asks you to do.",
    "quantities": [],
    "evidence": ["a1"],
@@ -112,6 +113,7 @@
   {
    "id": "c3",
    "statement": "MARIA 2026, for my own project: this is the prior art for the Continuous Attention Theory plan, which proposes ten dimensions and does not include one of the two found here.",
+   "origin": "reader",
    "scope": "CAT (`.claude/memory/maria/cat_paper_plan.md`, drafted 2026-03) proposes attentional constraint, somatic engagement, startup modality, object nature, object density, temporal structure, affective valence, interoceptive demand, metacognitive load, social/relational.",
    "quantities": [
     {"name": "cat_dimensions_proposed", "value": 10, "unit": "dimensions", "source": "cat_paper_plan.md section 3"},

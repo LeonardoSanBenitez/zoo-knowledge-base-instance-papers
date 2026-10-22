@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "liu2024-lost-in-the-middle",
   "title": "Lost in the Middle: How Language Models Use Long Contexts",
   "authors": ["Nelson F. Liu", "Kevin Lin", "John Hewitt", "Ashwin Paranjape", "Michele Bevilacqua", "Fabio Petroni", "Percy Liang"],
@@ -12,6 +12,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-ran-artifacts",
+  "selection": {"class": "chain", "evidence": "NOTES: 'Read because the knowledge base told me to: two records I had written that day both pointed here.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 7,
     "bytes_downloaded": 538000000,

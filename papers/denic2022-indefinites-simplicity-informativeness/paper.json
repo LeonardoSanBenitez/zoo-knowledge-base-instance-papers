@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "denic2022-indefinites-simplicity-informativeness",
   "title": "Indefinite pronouns optimize the simplicity/informativeness trade-off",
   "authors": ["Milica Denic", "Shane Steinert-Threlkeld", "Jakub Szymanik"],
@@ -12,6 +12,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "hypothesis-test", "evidence": "NOTES: 'Chosen to test, in a second domain, the rule this area adopted the same morning from colour naming.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 30,
     "bytes_downloaded": 40000000,

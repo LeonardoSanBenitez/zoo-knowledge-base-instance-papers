@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "imel2026-modal-typology-efficiency",
   "title": "An Efficient Communication Analysis of Modal Typology",
   "authors": ["Nathaniel Imel", "Qingxia Guo", "Shane Steinert-Threlkeld"],
@@ -13,6 +13,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "hypothesis-test", "evidence": "NOTES: 'I chose it to BREAK the pattern from colour, indefinites and quantifiers' -- chosen as the hardest case for my defect hypothesis.", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 40,
     "bytes_downloaded": 960000000,

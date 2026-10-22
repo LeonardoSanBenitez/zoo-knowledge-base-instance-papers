@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.6",
   "id": "galante2021-mbp-nonclinical",
   "title": "Mindfulness-based programmes for mental health promotion in adults in nonclinical settings: A systematic review and meta-analysis of randomised controlled trials",
   "authors": [
@@ -28,6 +28,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'Why it earned a deep read: the deposit' (arm-level extraction table).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 21,
     "bytes_downloaded": 681371,

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "zaslavsky2018-color-naming-ib",
   "title": "Efficient compression in color naming and its evolution",
   "authors": ["Noga Zaslavsky", "Charles Kemp", "Terry Regier", "Naftali Tishby"],
@@ -13,6 +13,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "SESSION_2026-10-16: paper 7 of a free session, after spears2020; the structural-null thread STARTS here. No prior suspicion recorded; NOTES opening is post-finding. [Evidence written after the finding.]", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 28,
     "bytes_downloaded": 85000000,

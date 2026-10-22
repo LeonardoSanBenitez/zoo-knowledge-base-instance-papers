@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "schlosser2019-unpleasant-meditation",
   "title": "Unpleasant meditation-related experiences in regular meditators: Prevalence, predictors, and conceptual considerations",
   "authors": [
@@ -21,6 +21,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'This is the other side, and it is one I know from the consulting room.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 24,
     "bytes_downloaded": 1252000,

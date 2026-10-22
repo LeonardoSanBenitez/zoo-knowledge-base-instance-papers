@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "kim2025-correlated-errors",
  "title": "Correlated Errors in Large Language Models",
  "authors": [
@@ -20,6 +20,7 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
+ "selection": {"class": "blind", "evidence": "SESSION_2026-08-07: first LLM-monoculture reading, topic; no suspicion recorded in NOTES opening. [Evidence written after the finding.]", "recorded": "retrospective", "by": "maria, 2026-10-22"},
  "cost": {
   "tool_calls": 14,
   "bytes_downloaded": 66000000,

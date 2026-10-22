@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "ploderl2019-personalised-antidepressants",
  "title": "What are the chances for personalised treatment with antidepressants? Detection of patient-by-treatment interaction with a variance ratio meta-analysis",
  "authors": [
@@ -19,6 +19,7 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
+ "selection": {"class": "blind", "evidence": "NOTES: 'TODO T3 ... recompute D ... This is the open-access one with the largest antidepressant corpus.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
  "cost": {
   "tool_calls": 38,
   "bytes_downloaded": 705000,
@@ -314,6 +315,7 @@
   {
    "id": "c4",
    "statement": "MARIA 2026, NEW: the additive-versus-multiplicative choice is a continuous parameter lambda (SD proportional to mean^lambda), it is estimable from aggregate data, and on this corpus lambda = 0.098 [-0.024, 0.241] -- so lnVR's assumption of 0 is inside the interval, lnCVR's assumption of 1 is far outside, and the published CVR applies 10.2 times the correction the data support.",
+   "origin": "reader",
    "scope": "169 trials. lambda estimated by regressing lnVR on ln(m_AD/m_PL) and rescaling the slope against the same regression run on simulated worlds with lambda = 0 and lambda = 1 by construction. Interval from 4000 trial-level bootstrap resamples.",
    "quantities": [
     {
@@ -381,6 +383,7 @@
   {
    "id": "c5",
    "statement": "MARIA 2026, NEW: pooling a difference of two sample variances by inverse-variance weighting is biased, because the weight is a function of the same random quantities as the numerator, and the bias does not vanish -- it takes the sign of the arm-size asymmetry. On this corpus the naive estimator returns +0.514 points^2 from a world with D = 0 by construction, with 90.2% coverage of a nominal 95% interval.",
+   "origin": "reader",
    "scope": "General to any meta-analysis of a difference of variances; measured here on the 169-trial antidepressant corpus with its real arm sizes and SDs, 500 simulated corpora per cell.",
    "quantities": [
     {
@@ -443,6 +446,7 @@
   {
    "id": "c6",
    "statement": "MARIA 2026, NEW: the identified quantity D = sigma_AT^2 - sigma_PL^2 on the HAMD17 subset is +0.444 [-1.748, +2.637] HAMD points^2 (k = 71, I2 = 0%), which at rho = 0 bounds sigma_TE at 1.62 points -- 0.86 times the 1.88-point mean drug-placebo effect -- and at rho = -0.32 permits 5.45 points.",
+   "origin": "reader",
    "scope": "HAMD17 trials only (the largest single-scale subset, 13,132 drug and 8,147 placebo patients), corrected pooled-variance weight, Paule-Mandel. D carries units and must not be pooled across measurement scales.",
    "quantities": [
     {
@@ -636,6 +640,7 @@
   {
    "id": "c10",
    "statement": "MARIA 2026, NEW: the sign of the CVR result is set by the reporting convention, not by the data. In the same paper, on the same drugs, CVR is 0.82 on the 169 trials that reported a pre-post CHANGE and 1.15 on the 84 that reported an ENDPOINT score -- it crosses 1 -- while VR is stable at 1.01 and 0.98. For tricyclics the two values are 0.65 and 1.37, a factor of 2.1.",
+   "origin": "reader",
    "scope": "Their Table 1 (change scores) against their online supplementary table 1 (endpoint scores). Both subsets rebuilt from upstream and reproduced exactly: 84 trials, 10,879 drug and 7,346 placebo patients, VR 0.9803 against their 0.98 and CVR 1.1494 against their 1.15.",
    "quantities": [
     {

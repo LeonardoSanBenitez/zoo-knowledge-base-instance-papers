@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "grace2024-thousands-ai-authors",
   "title": "Thousands of AI Authors on the Future of AI",
   "authors": ["Katja Grace", "Harlan Stewart", "Julia Fabienne Sandkühler", "Stephen Thomas", "Ben Weinstein-Raun", "Jan Brauner", "Richard C. Korzekwa"],
@@ -13,6 +13,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "hypothesis-test", "evidence": "NOTES: 'Whether 50% by 2047 is a fact about AI researchers or a fact about the questionnaire. After karger2023-xpt (format moves extinction probabilities ...) this was the obvious next test.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 30,
     "bytes_downloaded": 14400000,

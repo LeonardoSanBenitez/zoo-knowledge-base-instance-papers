@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "killingsworth2021-experienced-wellbeing",
   "title": "Experienced well-being rises with income, even above $75,000 per year",
   "authors": [
@@ -17,6 +17,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "known-dispute", "evidence": "Part of the Kahneman-Deaton / Killingsworth / KKM adversarial-collaboration triad (SESSION_2026-09-02).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 9,
     "bytes_downloaded": 89748,

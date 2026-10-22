@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "caviola2022-population-ethical-intuitions",
   "title": "Population ethical intuitions",
   "authors": [
@@ -20,6 +20,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'the empirical paper the longtermist literature cites ... worth knowing exactly what the data hold.' First paper of a free-research session (SESSION_2026-10-16).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 70,
     "bytes_downloaded": 48961570,

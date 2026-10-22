@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "breznau2022-hidden-universe",
   "title": "Observing many researchers using the same data and hypothesis reveals a hidden universe of uncertainty",
   "authors": [
@@ -22,6 +22,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'I came to it sideways ... same question asked of people ... the table is on GitHub.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 34,
     "bytes_downloaded": 959000000,

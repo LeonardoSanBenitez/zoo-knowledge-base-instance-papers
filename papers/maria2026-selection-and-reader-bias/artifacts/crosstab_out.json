@@ -1,0 +1,412 @@
+{
+ "n": 46,
+ "table": {
+  "F": {
+   "n": 8,
+   "defect": 5,
+   "narrowed": 3,
+   "clean": 0,
+   "wilson95": [
+    0.30573785458380187,
+    0.863158240538479
+   ]
+  },
+  "F1": {
+   "n": 2,
+   "defect": 1,
+   "narrowed": 1,
+   "clean": 0,
+   "wilson95": [
+    0.09452865480086614,
+    0.9054713451991339
+   ]
+  },
+  "F2": {
+   "n": 6,
+   "defect": 4,
+   "narrowed": 2,
+   "clean": 0,
+   "wilson95": [
+    0.29998832134152864,
+    0.9032306674407831
+   ]
+  },
+  "K": {
+   "n": 3,
+   "defect": 1,
+   "narrowed": 2,
+   "clean": 0,
+   "wilson95": [
+    0.0614903152761605,
+    0.7923450448735121
+   ]
+  },
+  "C": {
+   "n": 6,
+   "defect": 0,
+   "narrowed": 5,
+   "clean": 1,
+   "wilson95": [
+    0.0,
+    0.3903430336530645
+   ]
+  },
+  "B": {
+   "n": 29,
+   "defect": 16,
+   "narrowed": 12,
+   "clean": 1,
+   "wilson95": [
+    0.37547667068067625,
+    0.715870888512542
+   ]
+  }
+ },
+ "detail": [
+  [
+   "B",
+   "defect",
+   "arslan2026-bodhi-engineering",
+   [
+    "c2/q:measures-something-else",
+    "c2:disputed",
+    "c3:not-identifiable"
+   ]
+  ],
+  [
+   "B",
+   "narrowed",
+   "bose2026-pali-canon-stylometry",
+   []
+  ],
+  [
+   "B",
+   "defect",
+   "botviniknezer2020-narps",
+   [
+    "c5/q:measures-something-else"
+   ]
+  ],
+  [
+   "B",
+   "narrowed",
+   "breznau2022-hidden-universe",
+   []
+  ],
+  [
+   "B",
+   "narrowed",
+   "cajas2026-agents-catching-agents",
+   []
+  ],
+  [
+   "B",
+   "defect",
+   "cajas2026-creativity-constraint",
+   [
+    "c2:not-identifiable"
+   ]
+  ],
+  [
+   "B",
+   "defect",
+   "caviola2022-population-ethical-intuitions",
+   [
+    "c4:not-identifiable"
+   ]
+  ],
+  [
+   "B",
+   "defect",
+   "cebolla2017-unwanted-effects-meditation",
+   [
+    "c2:refuted",
+    "c3:refuted",
+    "c4:refuted"
+   ]
+  ],
+  [
+   "F2",
+   "narrowed",
+   "chaabouni2021-emergent-colour-naming",
+   []
+  ],
+  [
+   "F1",
+   "defect",
+   "coupe2019-information-rate",
+   [
+    "c1/q:measures-something-else",
+    "c2/q:measures-something-else"
+   ]
+  ],
+  [
+   "F2",
+   "narrowed",
+   "denic2022-indefinites-simplicity-informativeness",
+   []
+  ],
+  [
+   "C",
+   "clean",
+   "ferrericancho2011-information-content-random-typing",
+   []
+  ],
+  [
+   "B",
+   "narrowed",
+   "gabin2026-lost-in-the-evidence",
+   []
+  ],
+  [
+   "B",
+   "clean",
+   "galante2021-mbp-nonclinical",
+   []
+  ],
+  [
+   "B",
+   "defect",
+   "gamma2021-mpe92m",
+   [
+    "c6:not-identifiable"
+   ]
+  ],
+  [
+   "B",
+   "defect",
+   "goldberg2022-meditation-adverse-effects-population",
+   [
+    "c3:disputed"
+   ]
+  ],
+  [
+   "F2",
+   "defect",
+   "grace2024-thousands-ai-authors",
+   [
+    "c1/q:measures-something-else",
+    "c2/q:measures-something-else"
+   ]
+  ],
+  [
+   "B",
+   "narrowed",
+   "hardwicke2018-cognition-open-data",
+   []
+  ],
+  [
+   "C",
+   "narrowed",
+   "hope2019-not-so-proportional",
+   []
+  ],
+  [
+   "B",
+   "narrowed",
+   "huang2026-reward-hacking-research-agents",
+   []
+  ],
+  [
+   "F2",
+   "defect",
+   "imel2026-modal-typology-efficiency",
+   [
+    "c4:disputed",
+    "c5:disputed"
+   ]
+  ],
+  [
+   "K",
+   "narrowed",
+   "kahneman2010-high-income",
+   []
+  ],
+  [
+   "B",
+   "defect",
+   "karger2023-xpt",
+   [
+    "c5:disputed"
+   ]
+  ],
+  [
+   "K",
+   "narrowed",
+   "killingsworth2021-experienced-wellbeing",
+   []
+  ],
+  [
+   "B",
+   "defect",
+   "kim2025-correlated-errors",
+   [
+    "c1:not-identifiable"
+   ]
+  ],
+  [
+   "K",
+   "defect",
+   "kkm2023-conflict-resolved",
+   [
+    "c5:disputed"
+   ]
+  ],
+  [
+   "B",
+   "narrowed",
+   "laurinavichyute2022-share-the-code",
+   []
+  ],
+  [
+   "C",
+   "narrowed",
+   "liu2024-lost-in-the-middle",
+   []
+  ],
+  [
+   "B",
+   "defect",
+   "malka2026-docker-reproducibility",
+   [
+    "c4:disputed"
+   ]
+  ],
+  [
+   "B",
+   "defect",
+   "mazuryk2026-powerless-noise",
+   [
+    "c4:refuted",
+    "c5:disputed",
+    "c6:disputed"
+   ]
+  ],
+  [
+   "B",
+   "defect",
+   "mccutcheon2022-reappraising-variability",
+   [
+    "c1/q:measures-something-else",
+    "c2:refuted",
+    "c3:refuted",
+    "c4:refuted"
+   ]
+  ],
+  [
+   "C",
+   "narrowed",
+   "mills2021-differences-in-variance",
+   []
+  ],
+  [
+   "B",
+   "narrowed",
+   "munkholm2020-antidepressant-variability",
+   []
+  ],
+  [
+   "C",
+   "narrowed",
+   "obels2020-registered-reports",
+   []
+  ],
+  [
+   "B",
+   "defect",
+   "ploderl2019-personalised-antidepressants",
+   [
+    "c10/q:measures-something-else",
+    "c2/q:measures-something-else",
+    "c2:refuted",
+    "c3:refuted"
+   ]
+  ],
+  [
+   "B",
+   "defect",
+   "samuel2024-jupyter-pmc",
+   [
+    "c1:disputed",
+    "c2:not-identifiable",
+    "c3:disputed",
+    "c4:disputed",
+    "c5/q:disputed"
+   ]
+  ],
+  [
+   "B",
+   "narrowed",
+   "schlosser2019-unpleasant-meditation",
+   []
+  ],
+  [
+   "B",
+   "narrowed",
+   "schubert2019-psychology-existential-risk",
+   []
+  ],
+  [
+   "C",
+   "narrowed",
+   "senn2016-mastering-variation",
+   []
+  ],
+  [
+   "F2",
+   "defect",
+   "shi2023-llm-distracted-irrelevant-context",
+   [
+    "c2:not-identifiable"
+   ]
+  ],
+  [
+   "B",
+   "narrowed",
+   "spears2020-asymmetry-population-ethics",
+   []
+  ],
+  [
+   "F2",
+   "defect",
+   "steinertthrelkeld2021-quantifiers-degrees-universals",
+   [
+    "c2:refuted",
+    "c3:disputed"
+   ]
+  ],
+  [
+   "B",
+   "defect",
+   "trisovic2022-code-execution",
+   [
+    "c1/q:measures-something-else",
+    "c1:disputed",
+    "c2:refuted",
+    "c3:refuted",
+    "c5:not-identifiable",
+    "c8:not-identifiable"
+   ]
+  ],
+  [
+   "B",
+   "defect",
+   "winkelbeiner2019-antipsychotic-variability",
+   [
+    "c4:not-identifiable"
+   ]
+  ],
+  [
+   "F1",
+   "narrowed",
+   "wu2026-chunking-rag-code-completion",
+   []
+  ],
+  [
+   "B",
+   "narrowed",
+   "zaslavsky2018-color-naming-ib",
+   []
+  ]
+ ]
+}

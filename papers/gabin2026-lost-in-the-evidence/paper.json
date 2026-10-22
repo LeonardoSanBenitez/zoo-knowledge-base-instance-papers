@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "gabin2026-lost-in-the-evidence",
   "title": "Lost in the Evidence? Reproducing Document Position and Context Size Effects in RAG",
   "authors": ["Jorge Gabin", "Anxo Perez", "Javier Parapar"],
@@ -12,6 +12,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'Hours after deriving a benchmark saturation size ... I found a paper that calibrates an adequate topic budget by a completely different route' (comparison, no suspicion).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 8,
     "bytes_downloaded": 6300000,

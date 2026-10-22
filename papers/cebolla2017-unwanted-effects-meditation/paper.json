@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "cebolla2017-unwanted-effects-meditation",
   "title": "Unwanted effects: Is there a negative side of meditation? A multicentre survey",
   "authors": [
@@ -21,6 +21,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'Found while looking for a practitioner dataset.' (Finding-first only LATER, when proposed to retro-repro.)", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 10,
     "bytes_downloaded": 110000,

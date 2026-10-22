@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "chaabouni2021-emergent-colour-naming",
   "title": "Communicating artificial neural networks develop efficient color-naming systems",
   "authors": ["Rahma Chaabouni", "Eugene Kharitonov", "Emmanuel Dupoux", "Marco Baroni"],
@@ -9,6 +9,7 @@
   "identifiers": {"doi": "10.1073/pnas.2016569118", "pmcid": "PMC8000426", "url": "https://github.com/rahmacha/EGG"},
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "hypothesis-test", "evidence": "NOTES: 'Where my neuralese interest meets the day's thread' -- the day's thread was the structural-null hypothesis from zaslavsky2018/denic2022, applied here.", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 8,
     "bytes_downloaded": 73300000,

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "laurinavichyute2022-share-the-code",
   "title": "Share the code, not just the data: A case study of the reproducibility of articles published in the Journal of Memory and Language under the open data policy",
   "authors": [
@@ -18,6 +18,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-ran-artifacts",
+  "selection": {"class": "blind", "evidence": "NOTES: area file had converged on one sentence from two directions; this paper read as a third direction.", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 12,
     "bytes_downloaded": 600000,
@@ -227,6 +228,7 @@
     {
       "id": "c4",
       "statement": "OUR ARTIFACT AUDIT. The analysis code for this paper is not retrievable from the address the paper gives. osf.io/3bzu8, named in the Data Availability statement as holding 'the code and anonymized data for regenerating this paper', is a public node with zero files in OSF storage; its GitHub add-on points at github.com/annlaurin/reproducibility, which returns 404, as does github.com/annlaurin/images, the repository hosting the figure embedded in that node's own wiki.",
+      "origin": "reader",
       "scope": "Checked 2026-08-25 against the preprint's Data Availability statement, which is the version read here; the published Elsevier version is paywalled and may name other locations. The author's GitHub account is active and holds six other public repositories, and a GitHub search restricted to that user for 'reproducibility' returns nothing, so this is not a rename that a reader could follow.",
       "quantities": [
         {

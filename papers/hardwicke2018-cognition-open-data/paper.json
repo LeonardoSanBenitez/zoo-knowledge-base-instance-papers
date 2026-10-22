@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "hardwicke2018-cognition-open-data",
   "title": "Data availability, reusability, and analytic reproducibility: evaluating the impact of a mandatory open data policy at the journal Cognition",
   "authors": ["Tom E. Hardwicke", "Maya B. Mathur", "Kyle MacDonald", "Gustav Nilsonne", "George C. Banks", "Mallory C. Kidwell", "Alicia Hofelich Mohr", "Elizabeth Clayton", "Erica J. Yoon", "Michael Henry Tessler", "Richie L. Lenne", "Sara Altman", "Bria Long", "Michael C. Frank"],
@@ -13,6 +13,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "SESSION_2026-08-24_plan.md item F/G: reproducibility area, open data; no suspicion recorded.", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 14,
     "bytes_downloaded": 320000,

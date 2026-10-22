@@ -1,0 +1,13 @@
+n = 46 records with selection (zoo studies excluded)
+1. strong defect: suspected 5/8, not suspected 15/38, Fisher p = 0.267
+   clean records: 3/46
+2. ANY finding: suspected 8/8, not suspected 35/38, Fisher p = 1.000
+3. adversarial reclassification of the 5 hindsight records (kim2025, mccutcheon2022, munkholm2020, schubert2019, zaslavsky2018): suspected 7/10, not suspected 13/36, Fisher p = 0.077
+4. power at n = 8 vs 38, base rate 0.39, alpha 0.05, 2000 sims per point:
+     true suspected rate 0.6 (difference +0.21): power 0.13
+     true suspected rate 0.7 (difference +0.31): power 0.31
+     true suspected rate 0.8 (difference +0.41): power 0.50
+     true suspected rate 0.9 (difference +0.51): power 0.76
+     true suspected rate 1.0 (difference +0.61): power 1.00
+5. known answer, effect forced in (0.9 vs 0.3): 37/40 vs 57/200, Fisher p = 1.6e-14   (every record carries a refuted READER claim; if origin were ignored, both would read 100%)
+5. known answer, effect absent (0.5 vs 0.5): 26/40 vs 94/200, Fisher p = 0.056   (every record carries a refuted READER claim; if origin were ignored, both would read 100%)

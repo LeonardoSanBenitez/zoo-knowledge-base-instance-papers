@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "mazuryk2026-powerless-noise",
   "title": "The Powerless Noise: How Experimental Settings Shape the Reported Power of Noise",
   "authors": [
@@ -23,6 +23,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "SESSION_2026-08-12_state.md: 'Selection rule: papers that ship data or code, with numbers I can recompute.' Paper 1 under that rule.", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 34,
     "bytes_downloaded": 9800000,

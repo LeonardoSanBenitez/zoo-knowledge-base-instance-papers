@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "huang2026-reward-hacking-research-agents",
   "title": "Reward Hacking Challenges Oversight of Autonomous Research Agents",
   "authors": [
@@ -30,6 +30,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "census", "evidence": "census of dojo literature (cidral relayed arXiv link, SESSION_2026-09-30).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 7,
     "bytes_downloaded": 11495738,

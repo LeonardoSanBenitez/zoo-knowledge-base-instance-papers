@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "coupe2019-information-rate",
   "title": "Different languages, similar encoding efficiency: Comparable information rates across the human communicative niche",
   "authors": ["Christophe Coupé", "Yoon Mi Oh", "Dan Dediu", "François Pellegrino"],
@@ -14,6 +14,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "finding-first", "evidence": "NOTES: 'I opened this expecting the famous result to rest on pseudo-replication.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 26,
     "bytes_downloaded": 57800000,
@@ -77,6 +78,7 @@
     {
       "id": "c3",
       "statement": "(Ours, from the deposit.) The trade-off can be stated without any entropy estimate: across languages, for the same text, duration grows with the number of syllables much less than proportionally -- languages that need more syllables say them faster -- and the compensation is partial, about two thirds.",
+      "origin": "reader",
       "scope": "Language x text cell means (255), text fixed effects; language-level regression on 17 means; known-answer simulation with the data's own noise levels.",
       "quantities": [
         {"name": "duration_elasticity_wrt_syllable_count_across_languages", "value": 0.35, "unit": "d log(duration) / d log(syllables), same content", "n": 17, "ci": "95% CI [0.103, 0.597] (OLS on language means)", "ci_low": 0.103, "ci_high": 0.597, "ci_kind": "confidence", "source": "reanalysis/r3.py", "baseline": "1 = no compensation (every language at the same syllable rate); 0 = full compensation (equal time for equal content)"},

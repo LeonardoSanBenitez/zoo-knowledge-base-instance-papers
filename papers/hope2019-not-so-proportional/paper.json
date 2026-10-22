@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "hope2019-not-so-proportional",
  "title": "Recovery after stroke: not so proportional after all?",
  "authors": [
@@ -23,6 +23,7 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
+ "selection": {"class": "chain", "evidence": "NOTES: 'winkelbeiner2019 closed with an open question I set myself: is there a bounded-outcome literature outside psychiatry where this bias has been named?' (prior-art search).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
  "cost": {
   "tool_calls": 17,
   "bytes_downloaded": 181715,
@@ -166,6 +167,7 @@
   {
    "id": "c2",
    "statement": "MARIA 2026, NEW: Hope et al.'s Equation 1 and the psychiatric treatment-variability identity are the same function. rho, the correlation between a patient's individual treatment effect and their placebo-arm outcome, IS r(X,D); and VR, the ratio of treated to control arm SDs, IS sigma_Y/sigma_X.",
+   "origin": "reader",
    "scope": "Verified as functions on a 40x40 grid over r(X,Y) in [-0.9, 0.99] and ratio in [0.2, 3.0].",
    "quantities": [
     {
@@ -236,6 +238,7 @@
   {
    "id": "c4",
    "statement": "MARIA 2026, NEW: the compression of sigma_Y/sigma_X in this literature is dominated by the removal of 'non-fitters', not by the ceiling. A mixture of a genuine non-fitter subpopulation with proportional recovery and a ceiling reproduces the fitters-only statistics; the ceiling alone cannot come near them.",
+   "origin": "reader",
    "scope": "Grid search over 27 settings (non-fitter fraction, recovered proportion, noise SD), 4000 replicates of n = 30, against the six statistics Hope et al. quote from Zarahn et al. (2011).",
    "quantities": [
     {
@@ -342,6 +345,7 @@
   {
    "id": "c7",
    "statement": "MARIA 2026, NEW: the dispute is a disagreement about the null hypothesis and neither side says so. Hope et al. simulate X independent of Y; Bonkhoff et al. simulate X independent of Z = Y - X. Both simulations are correct about their own setup and the setups are different.",
+   "origin": "reader",
    "scope": "Hope et al. Figure 3A against Bonkhoff et al. Figure 4 (left).",
    "quantities": [
     {
@@ -370,6 +374,7 @@
   {
    "id": "c8",
    "statement": "MARIA 2026, NEW: the test that settles the dispute -- draw recovery INDEPENDENTLY of baseline, clip it to the headroom the scale imposes, apply the field's own fitter rule, and see what the statistic returns -- was run by neither side. It favours the rule for fitters and undermines the whole-sample claim.",
+   "origin": "reader",
    "scope": "n = 30 as in Zarahn, 4000 replicates per world, five parameter settings, against the six statistics Hope et al. quote from Zarahn et al. (2011).",
    "quantities": [
     {

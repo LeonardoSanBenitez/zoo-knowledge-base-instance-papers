@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "mccutcheon2022-reappraising-variability",
   "title": "Reappraising the variability of effects of antipsychotic medication in schizophrenia: a meta-analysis",
   "authors": [
@@ -25,6 +25,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "SESSION_2026-09-04: deep read following munkholm2020 in the same topic; NOTES: 'why it deserved a serious reading'. No suspicion recorded before. [Evidence written after the finding.]", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 27,
     "bytes_downloaded": 6480000,
@@ -580,6 +581,7 @@
     {
       "id": "c10",
       "statement": "MARIA 2026, NEW: the readback r = 1 - 2 rho^2 holds only at VR = 1. The general form is r = (1 + rho u)/VR with u = -rho + sqrt(rho^2 + VR^2 - 1), and at the VRs actually measured on three corpora it changes both the implied heterogeneity and which rho values are admissible at all.",
+      "origin": "reader",
       "scope": "Every rho this literature has put in print, evaluated at each corpus's measured VR: antipsychotics 0.968 (Winkelbeiner, 75 comparisons), antidepressants HAMD17 1.0041 (Ploderl, 71 trials), antidepressants endpoint 0.98 (Munkholm), and the VR = 1 that McCutcheon's own working assumes.",
       "quantities": [
         {

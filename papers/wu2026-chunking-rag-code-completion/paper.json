@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "wu2026-chunking-rag-code-completion",
   "title": "How Does Chunking Affect Retrieval-Augmented Code Completion? A Controlled Empirical Study",
   "authors": [
@@ -19,6 +19,7 @@
   },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "finding-first", "evidence": "NOTES: 'Chosen because the RAG area file flagged its Cliff's delta of exactly -1.0 as complete separation, worth chasing.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 16,
     "bytes_downloaded": 2700000,
@@ -93,6 +94,7 @@
     {
       "id": "c2",
       "statement": "(zoo reanalysis, not the authors' claim) The saturation size n* cannot be computed from Wu et al.'s tables with the independent-arms formula: across the 144-192 generator x retriever configurations the effects of chunking strategy and context length vary LESS than the independent-arms standard error of one configuration (observed SD 0.76-1.52 pp vs 1.75 pp), so tau^2 <= 0 and n* = infinity. Because the arms are paired (same 1,600 tasks), the true SE is smaller and only lower bounds follow: n* >= 2,143-8,606 tasks, all above the N = 1,600 evaluated.",
+      "origin": "reader",
       "scope": "RepoEval API and line splits, Exact Match; N = 1,600 tasks per split recovered from printed EM decimals (88% exactly k/1600 rounded half-up, the rest +0.0001). Lower bound uses observed SD as an upper bound on tau.",
       "quantities": [
         {

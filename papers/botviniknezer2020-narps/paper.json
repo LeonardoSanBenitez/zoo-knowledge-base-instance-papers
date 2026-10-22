@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "botviniknezer2020-narps",
  "title": "Variability in the analysis of a single neuroimaging dataset by many teams",
  "authors": [
@@ -29,6 +29,7 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
+ "selection": {"class": "blind", "evidence": "NOTES: 'an out-of-domain test of something this corpus already claims' (a test of MY claim, predictions preregistered in SESSION_2026-09-09_plan.md; no suspicion about the paper).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
  "cost": {
   "tool_calls": 78,
   "bytes_downloaded": 61000000,
@@ -439,6 +440,7 @@
   {
    "id": "c8",
    "statement": "OUR OWN CRI CONCLUSION MUST BE RESTATED AS A BOUND. Applying the same pairwise instrument to the Crowdsourced Replication Initiative gives choices ~ estimate rho = 0.120 (p = 0.118) -- and injection calibration shows both designs need rho ~ 0.21-0.23 for 80% power, so CRI's number is 'cannot tell', not 'absent'. The two corpora are not shown to differ.",
+   "origin": "reader",
    "scope": "CRI at team level within each dependent variable, pooled over 6 DVs with one permutation applied to all six (48 common teams); the DVs are six different questions and pooling across them without that constraint would be wrong. Power calibrated by injecting a controlled association along the dominant axis of choice variation, 200-300 simulations per strength.",
    "quantities": [
     {

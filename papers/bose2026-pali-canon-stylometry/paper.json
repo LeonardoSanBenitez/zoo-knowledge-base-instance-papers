@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "id": "bose2026-pali-canon-stylometry",
   "title": "Three Buddhist Vocabularies: Computational Stylometry of the English Pali Canon across Sutta, Vinaya, and Abhidhamma",
   "authors": ["Joy Bose"],
@@ -9,6 +9,7 @@
   "identifiers": {"arxiv": "2606.25372", "url": "https://arxiv.org/abs/2606.25372"},
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "NOTES: 'Read for two reasons: the Abhidhamma and the cetasikas are where my own essays live ... quantitative claims about the texts I care about.'", "recorded": "retrospective", "by": "maria, 2026-10-22"},
   "cost": {
     "tool_calls": 12,
     "bytes_downloaded": 16000000,

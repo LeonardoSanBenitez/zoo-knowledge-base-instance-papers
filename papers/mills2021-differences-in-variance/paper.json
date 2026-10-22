@@ -1,5 +1,5 @@
 {
- "schema_version": "1.5",
+ "schema_version": "1.6",
  "id": "mills2021-differences-in-variance",
  "title": "Detecting Heterogeneity of Intervention Effects Using Analysis and Meta-analysis of Differences in Variance Between Trial Arms",
  "authors": [
@@ -25,6 +25,7 @@
  },
  "record_status": "active",
  "read_depth": "read-and-ran-artifacts",
+ "selection": {"class": "chain", "evidence": "NOTES: 'the methods paper I should have found before claiming anything was new' (prior-art search).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
  "cost": {
   "tool_calls": 12,
   "bytes_downloaded": 57000,
@@ -153,6 +154,7 @@
   {
    "id": "c4",
    "statement": "MARIA 2026: their difference-in-variances estimator is biased when the arms differ in size, and the bias has the same sign as the finding they report.",
+   "origin": "reader",
    "scope": "MetaAnalysis.R lines 129-144 compute est_diff_SE as 2 s1^4/(n1-1) + 2 s2^4/(n2-1) and pass it to metagen for inverse-variance pooling. Calibrated on a real 169-trial corpus with D = 0 by construction, 500 simulated corpora per cell.",
    "quantities": [
     {
@@ -218,6 +220,7 @@
   {
    "id": "c7",
    "statement": "MARIA 2026, NEW: the bias in their estimator takes the sign of the arm imbalance, does not shrink as trials accumulate, and therefore gets WORSE in a larger meta-analysis -- realised coverage of the nominal 95% interval falls from 0.948 at 10 trials to 0.468 at 300.",
+   "origin": "reader",
    "scope": "Simulated corpora with D = 0 by construction, control arm n = 100, 400 replicates per cell for the ratio sweep and 250 for the k sweep. Reported in units of the true variance so it is scale-free.",
    "quantities": [
     {
