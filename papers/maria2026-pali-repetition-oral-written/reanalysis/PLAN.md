@@ -58,3 +58,16 @@ treatise composed in writing, not a commentary on one text.
   suttas' ~0.59 than to the commentaries' ~0.02) and R8(Visuddhimagga) low (< 0.10).
 - **A2** If it is DISCOURSE GENRE: both low. Either outcome is reported; A1 is my expectation.
 Same measure (20,000-token windows, R8; R4/R12 reported).
+
+## Addendum 2 (committed BEFORE fetching these texts): status or composition?
+
+c3 left one text per category. The open question is whether repetition tracks CANONICAL STATUS (whatever the
+reciters' tradition took in) or MODE OF COMPOSITION (oral-formulaic vs written). The Burmese Khuddaka
+includes three late books composed as books: the Milindapanha (a literary dialogue), the Nettippakarana and
+the Petakopadesa (treatises on exegetical method). Files `s0518m.nrf`, `s0519m.mul`, `s0520m.nrf`.
+- **B1** Three more Abhidhamma books -- Dhatukatha `abh03m1`, Puggalapannatti `abh03m2`, Kathavatthu `abh03m3`
+  -- each R8 >= 0.30.
+- **B2** Milindapanha, Nettippakarana, Petakopadesa: each R8 < 0.10 (composition drives repetition). If instead
+  they are >= 0.30, canonical STATUS (or the reciters' editing) drives it, and the oral-composition reading of
+  c1-c3 weakens to "oral transmission and its editorial conventions".
+Same measure.
