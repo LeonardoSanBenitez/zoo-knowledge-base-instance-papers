@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.6",
+  "id": "desteno2014-gratitude-economic-impatience",
+  "title": "Gratitude: A Tool for Reducing Economic Impatience",
+  "authors": ["David DeSteno", "Ye Li", "Leah Dickens", "Jennifer S. Lerner"],
+  "year": 2014,
+  "venue": "Psychological Science 25(6):1262-1267",
+  "area": ["experimental-social-and-cognitive-psychology"],
+  "identifiers": {"doi": "10.1177/0956797614529979", "pmid": "24760144"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "Assigned by mark as item 2 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none.", "recorded": "at-selection"},
+  "cost": {"tool_calls": 22, "bytes_downloaded": 1050000, "compute_notes": "In-press manuscript (HKS copy, 19 pp.) read in full; published PDF behind SAGE Cloudflare. Dataverse doi:10.7910/DVN/24885 v1.0 found by searching the Dataverse API for the authors (not visible from the manuscript); acquired with md5 verification. Python reproduction of every statistic, a port of the MATLAB MLE refitted to 75 participants (5 starts each), 100k-permutation tests, 20k-simulation null calibration.", "session": "2026-10-25 maria"},
+  "curation": {"author": "maria", "created": "2026-10-25", "verified": "2026-10-25", "notes_file": "NOTES.md"},
+  "triggers": ["does gratitude reduce temporal discounting", "emotion and intertemporal choice gratitude happiness", "known-answer control psychological science 2014 open data", "difference in significance gratitude happiness predictors"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Recalling a gratitude event increases patience in incentivised intertemporal choice relative to happiness and neutral recall: planned contrast (2,-1,-1) on the fitted annual exponential discount factor, t(72) = 2.18, p = .03, d = 0.62.",
+      "scope": "N = 75 undergraduates (25 per condition), 27 Kirby items, one choice paid per session.",
+      "quantities": [
+        {"name": "planned_contrast_t72", "value": 2.18, "unit": "t", "n": 75, "baseline": "p = 0.0328; permutation p (100k) = 0.0315", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "mean_annual_discount_factor_gratitude", "value": 0.296, "unit": "discount factor", "n": 25, "baseline": "neutral 0.166, happiness 0.177", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "cohens_d_gratitude_vs_others_pooled_sd", "value": 0.54, "unit": "d", "n": 75, "baseline": "paper prints d = 0.62; no standard standardiser reproduces it (2t/sqrt(df) = 0.51; vs neutral 0.52; Glass-type 0.65-0.67)", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "model_free_prop_later_larger_contrast_t72", "value": 2.60, "unit": "t", "n": 75, "baseline": "p = 0.0114; permutation p = 0.0109", "source": "reanalysis/out/r01_out.txt"}
+      ],
+      "evidence": ["a2", "a3"],
+      "our_assessment": {"status": "accepted", "why": "Every reported statistic reproduces from the deposit except d. The discount factors re-derive from raw choices (r = .986). The effect is stronger on a model-free outcome (p = .011), the permutation p matches the parametric p, and the parametric contrast is calibrated on this skewed bounded outcome (4.9% under a resampled null). Single study, n = 25 per cell.", "by": "maria", "patterns": ["text-contradicts-own-materials"]}
+    },
+    {
+      "id": "c2",
+      "statement": "The effects of gratitude are differentiable from those of the more general positive state of happiness (abstract); supported by 'only gratitude emerged as a reliable predictor' when discount factors are regressed on both emotion intensities (beta = .32, t = 2.29; happiness t < 1.13).",
+      "scope": "Same sample.",
+      "quantities": [
+        {"name": "gratitude_vs_happiness_lsd_p", "value": 0.0767, "unit": "p-value", "n": 50, "baseline": "Student t-test p = 0.10; model-free (proportion later-larger) p = 0.048", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "test_beta_grat_equals_beta_hap_p", "value": 0.075, "unit": "p-value", "n": 75, "baseline": "t = 1.81", "source": "reanalysis/out/r02_out.txt"},
+        {"name": "gratitude_coefficient_p_with_condition_dummies", "value": 0.265, "unit": "p-value", "n": 75, "baseline": "t = 1.12; within the gratitude cell r(gratitude, delta) = .06", "source": "reanalysis/out/r02_out.txt"}
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {"status": "disputed", "why": "The direct test of gratitude vs happiness is p = .077-.10 on the paper's outcome (.048 model-free). The regression argument contrasts a significant with a non-significant coefficient; their difference is p = .075. The association with gratitude intensity vanishes within conditions (t = 1.12 with condition dummies), so the regression restates the between-cell contrast rather than adding a dose-response finding.", "by": "maria", "patterns": ["difference-in-significance-not-tested"]}
+    }
+  ],
+  "methods": ["exact-reproduction-from-deposit", "exact-permutation-test", "simulation-null-with-fixed-nuisance-structure", "published-table-vs-deposit-crosscheck"],
+  "artifacts": [
+    {"id": "a1", "role": "supplement", "locator": "https://appext.hks.harvard.edu/publications/getFile.aspx?Id=1053 (in-press manuscript, 2014-03-05)", "status": "verified-usable", "bytes": 524466,
+     "fetch_cmd": "curl -sL -A 'Mozilla/5.0' -o manuscript_hks.pdf 'https://appext.hks.harvard.edu/publications/getFile.aspx?Id=1053'",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "Read tool on the PDF, pages 2-19", "result": "Accepted manuscript, not the typeset article. The DASH copy (dash.harvard.edu/bitstream/handle/1/12185844/...) returned 0 bytes: DASH has migrated its URL scheme. The published Open Practices statement was therefore not seen."}},
+    {"id": "a2", "role": "raw-data", "locator": "doi:10.7910/DVN/24885 v1.0 -- Gratitude_Discounting_PsycSci.xlsx and .tab (the .tab is an SPSS 22 .sav file)", "status": "verified-usable", "bytes": 37232,
+     "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py doi:10.7910/DVN/24885 --version 1.0 --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/desteno2014-gratitude-economic-impatience)/dataverse_24885\"",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "python zoo-knowledge-base/instance-papers/papers/desteno2014-gratitude-economic-impatience/reanalysis/r01_reproduce.py <files dir>", "result": "75 rows x 54 columns, xlsx and SPSS agree on all 54 columns. Item-level emotion ratings, the 27 choices (coded 1/2), demographics, indices and fitted discount factors."},
+     "datasheet": {"composition": "one row per participant: condition (1 neutral, 2 gratitude, 3 happiness), 18 emotion ratings, 27 choice columns named n<SS>or<LL>in<days>, gender, age, race, GratIndex, HapIndex, ExpDiscountRate (annual delta), HyperDiscountRate", "caveats": "13 of 75 discount factors are < .01 (median .12): the outcome is bounded and skewed; the rank and model-free analyses agree with the parametric one."}},
+    {"id": "a3", "role": "code", "locator": "doi:10.7910/DVN/24885 v1.0 -- fitIT_Gratitude.m, expdiscountMLE.m, hypdiscountMLE.m", "status": "verified-usable", "derived_from": ["a2"],
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "ported expdiscountMLE.m to Python (L-BFGS-B, bounds delta in [0,1], precision in [0,10000], 5 starts) in r01_reproduce.py; MATLAB not available here", "result": "Refit vs deposited delta r = 0.986; 3/75 differ by > .05. fitIT_Gratitude.m embeds the 2,025 choices as a literal vector (75 x 27). The SPSS analyses (contrasts, ANCOVAs) are not deposited as syntax."}}
+  ],
+  "relations": [
+    {"type": "zoo:reanalysedBy", "target": "maria2026-selection-and-reader-bias", "why": "Item 2 of mark's blinded known-answer control of the reading protocol."}
+  ],
+  "open_questions": [
+    "Unblinding (mark, known_answer_control): sound or not by the third party's standard? My call before unblinding: fully reproducible except a d that no standard formula gives (0.62 vs ~0.53); main effect robust; secondary 'differentiable from happiness' claim not established by a direct test.",
+    "Why is the model-free effect (p = .011) stronger than the model-based one (p = .033)? Probably the 13 near-zero deltas compress the bottom of the scale; a hyperbolic k on log scale would test this (HyperDiscountRate is in the deposit, unanalysed here)."
+  ]
+}

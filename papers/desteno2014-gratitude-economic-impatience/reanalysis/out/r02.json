@@ -1,0 +1,55 @@
+{
+ "d_candidates": {
+  "grat_vs_neutral_pooled": 0.518500929578612,
+  "grat_vs_happy_pooled": 0.4722822525160259,
+  "grat_vs_others_pooled": 0.5365559369787463,
+  "grat_vs_others_sd_of_others": 0.6503455738018206,
+  "grat_vs_neutral_sd_of_neutral(Glass)": 0.6737442836945304,
+  "grat_vs_others_over_sqrtMSE": 0.5329834156376615,
+  "contrast_L_over_sqrtMSE (L=2g-n-h)": 1.065966831275323,
+  "2t/sqrt(df)": 0.5139723490184619,
+  "t*sqrt(1/25+1/50)": 0.5341357333112998,
+  "t*sqrt(6/25)/ ... (contrast d with sum|w|/2 standardizer)": 0.5329834156376615
+ },
+ "manip_mean_of_both_indices_by_cond": {
+  "Neutral": [
+   3.167,
+   0.843
+  ],
+  "Gratitude": [
+   4.467,
+   0.376
+  ],
+  "Happiness": [
+   4.107,
+   0.715
+  ]
+ },
+ "grat_vs_happy_delta_t_test_p": 0.10147472475925383,
+ "grat_vs_happy_propLL_t_test_p": 0.04800745886022513,
+ "grat_vs_neutral_propLL_t_test_p": 0.024277224733200698,
+ "regression_coef_difference_t_p": [
+  1.807480517155261,
+  0.07486450642227617
+ ],
+ "within_Neutral_r_grat_delta": [
+  -0.032051279229728266,
+  0.8791155330653928
+ ],
+ "within_Gratitude_r_grat_delta": [
+  0.06129905438743419,
+  0.7709920095298173
+ ],
+ "within_Happiness_r_grat_delta": [
+  0.3185150328419678,
+  0.1207160087817397
+ ],
+ "regression_with_condition_dummies_t_grat_p": [
+  1.1244046983429976,
+  0.2646823839113852
+ ],
+ "perm_p_two_sided_delta": 0.03148,
+ "perm_p_two_sided_propLL": 0.01088,
+ "perm_p_two_sided_delta_rank": 0.05569,
+ "null_typeI_parametric_contrast_on_empirical_delta": 0.04885
+}

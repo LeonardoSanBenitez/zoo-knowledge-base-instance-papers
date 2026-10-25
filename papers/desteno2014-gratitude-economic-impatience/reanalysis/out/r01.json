@@ -1,0 +1,122 @@
+{
+ "xlsx_vs_sav_cells_differing": {},
+ "n_by_condition": {
+  "Neutral": 25,
+  "Gratitude": 25,
+  "Happiness": 25
+ },
+ "gender_counts(1=men,2=women)": {
+  "2": 43,
+  "1": 32
+ },
+ "age": {
+  "mean": 19.213333333333335,
+  "min": 18.0,
+  "max": 23.0
+ },
+ "GratIndex_matches_deposit_max_abs_diff": 0.0,
+ "HapIndex_matches_deposit_max_abs_diff": 0.0,
+ "alpha_gratitude": 0.9221412675669909,
+ "alpha_happiness": 0.7384702265169103,
+ "r_grat_hap": 0.565004648912051,
+ "manip_Gratitude_GratIndex_mean_sd": [
+  4.8,
+  0.3849001794597505
+ ],
+ "manip_Happiness_HapIndex_mean_sd": [
+  4.426666666666667,
+  0.6347936380926978
+ ],
+ "manip_neutral_mean_of_both_indices_mean_sd": [
+  3.166666666666667,
+  0.8429994947496398
+ ],
+ "manip_neutral_GratIndex_mean_sd": [
+  2.9066666666666663,
+  1.0386957633921923
+ ],
+ "manip_neutral_HapIndex_mean_sd": [
+  3.4266666666666667,
+  0.8137703743822468
+ ],
+ "manip_interaction_F(2,72)": [
+  22.47574468085106,
+  2.604729474624872e-08
+ ],
+ "ancova_grat_F(1,df)": [
+  34.08078820337719,
+  47
+ ],
+ "ancova_hap_F(1,df)": [
+  10.807763163925689,
+  47
+ ],
+ "delta_mean_by_cond": {
+  "Neutral": 0.16561776228920003,
+  "Gratitude": 0.29602868476,
+  "Happiness": 0.17728264420399997
+ },
+ "delta_se_by_cond": {
+  "Neutral": 0.038712290590632185,
+  "Gratitude": 0.059683789121916984,
+  "Happiness": 0.03866805660998026
+ },
+ "planned_contrast_t_df_p": [
+  2.1758956827966585,
+  72,
+  0.032845787606788274
+ ],
+ "d_grat_vs_others_pooled": 0.5365559369787463,
+ "d_from_t_2t_over_sqrt_df": 0.5128635308200168,
+ "pairwise": {
+  "grat_vs_Neutral_welch_p": 0.07401587436794782,
+  "grat_vs_Neutral_student_p": 0.07298161309483503,
+  "grat_vs_Neutral_pooledMSE_p": 0.052381369597343574,
+  "grat_vs_Happiness_welch_p": 0.10255971465130254,
+  "grat_vs_Happiness_student_p": 0.10147472475925383,
+  "grat_vs_Happiness_pooledMSE_p": 0.0766642551282639,
+  "neutral_vs_happiness_student_p": 0.8320825192759197
+ },
+ "rank_contrast_t_df_p": [
+  1.929424844013703,
+  72,
+  0.057619109730800776
+ ],
+ "regression": {
+  "beta_grat_std": 0.3158598744621162,
+  "t_grat": 2.2911642963975245,
+  "p_grat": 0.024882684317949277,
+  "t_hap": -1.1283392694713548,
+  "R2": 0.0684435121807776
+ },
+ "money_equiv_85_in_3mo_Neutral": 54.22451220123898,
+ "money_equiv_85_in_3mo_Gratitude": 62.69781046057918,
+ "money_equiv_85_in_3mo_Happiness": 55.15507517841328,
+ "choice_coding_values": [
+  1,
+  2
+ ],
+ "refit_corr_with_deposit": 0.9858312357357351,
+ "refit_abs_diff_gt_0.05": 3,
+ "participants_all_SS_or_all_LL": 0,
+ "delta_deposit_lt_0.01": 13,
+ "delta_deposit_quantiles": [
+  0.0,
+  0.002,
+  0.0127,
+  0.1219,
+  0.351,
+  0.5963,
+  1.0
+ ],
+ "model_free_propLL_contrast_t_df_p": [
+  2.595385649936523,
+  72,
+  0.011443766213334813
+ ],
+ "propLL_mean_by_cond": {
+  "Gratitude": 0.5303703703703704,
+  "Happiness": 0.45629629629629626,
+  "Neutral": 0.4459259259259259
+ }
+}

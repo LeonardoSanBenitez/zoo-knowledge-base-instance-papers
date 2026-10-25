@@ -1,0 +1,12 @@
+C:\Users\Leonardo\AppData\Local\Programs\Python\Python310\lib\site-packages\openpyxl\worksheet\_reader.py:329: UserWarning: Unknown extension is not supported and will be removed
+  warn(msg)
+d candidates (paper 0.62): {'grat_vs_neutral_pooled': 0.519, 'grat_vs_happy_pooled': 0.472, 'grat_vs_others_pooled': 0.537, 'grat_vs_others_sd_of_others': 0.65, 'grat_vs_neutral_sd_of_neutral(Glass)': 0.674, 'grat_vs_others_over_sqrtMSE': 0.533, 'contrast_L_over_sqrtMSE (L=2g-n-h)': 1.066, '2t/sqrt(df)': np.float64(0.514), 't*sqrt(1/25+1/50)': np.float64(0.534), 't*sqrt(6/25)/ ... (contrast d with sum|w|/2 standardizer)': 0.533}
+mean of both positive indices by condition [M, SD]: {'Neutral': [3.167, 0.843], 'Gratitude': [4.467, 0.376], 'Happiness': [4.107, 0.715]} (paper grat 4.47/.38, happy 4.11/.72, neutral 3.17/.84)
+grat vs happy (delta) p=0.101; (propLL) p=0.048; grat vs neutral (propLL) p=0.024
+regression: test beta_grat = beta_hap: t=1.81 p=0.075
+within-condition r(GratIndex, delta): {'within_Neutral_r_grat_delta': [-0.032, 0.879], 'within_Gratitude_r_grat_delta': [0.061, 0.771], 'within_Happiness_r_grat_delta': [0.319, 0.121]}
+regression adding condition dummies: GratIndex t=1.12 p=0.265 (if the association is only the between-condition contrast, it should vanish)
+permutation p (two-sided, 100k) contrast on delta: 0.0315
+permutation p (two-sided, 100k) contrast on propLL: 0.0109
+permutation p (two-sided, 100k) contrast on delta_rank: 0.0557
+known-answer null (pooled empirical delta, random labels): parametric contrast rejects 0.049 at alpha .05
