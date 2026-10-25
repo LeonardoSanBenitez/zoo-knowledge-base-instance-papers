@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.6",
+  "id": "joel2014-overestimate-rejecting-partners",
+  "title": "People Overestimate Their Willingness to Reject Potential Romantic Partners by Overlooking Their Concern for Other People",
+  "authors": ["Samantha Joel", "Rimma Teper", "Geoff MacDonald"],
+  "year": 2014,
+  "venue": "Psychological Science 25(12):2233-2240",
+  "area": ["experimental-social-and-cognitive-psychology"],
+  "identifiers": {"doi": "10.1177/0956797614552828", "pmid": "25344347"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "Assigned by mark as item 3 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none.", "recorded": "at-selection"},
+  "cost": {"tool_calls": 21, "bytes_downloaded": 1400000, "compute_notes": "Published PDF from the first author's lab site (socialmeasureslab.com, hashed file names; located by parsing the publications page) read in full. OSF 873fp acquired with checksums (2 .sav + materials). No code deposited: all analyses rebuilt in Python (OLS, logistic, Wilks MANOVA, PROCESS-style bootstrap with BCa, 5,000 reps). Reverse-causation simulation: 300 studies x 500 bootstrap reps, ~150k logistic fits -- the slow step.", "session": "2026-10-25 maria"},
+  "curation": {"author": "maria", "created": "2026-10-25", "verified": "2026-10-25", "notes_file": "NOTES.md"},
+  "triggers": ["do people overestimate willingness to reject unsuitable romantic partners", "hypothetical vs real dating decision empathy gap", "mediator measured after the outcome reverse causation known answer", "known-answer control psychological science 2014 open data"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Participants are less willing to reject an unsuitable potential date when they believe the situation is real rather than hypothetical: Study 1 (unattractive date) 26/71 vs 10/61 accept, chi2(1) = 6.77, p = .009; Study 2 (deal-breaker traits) 35/47 vs 24/52, chi2(1) = 8.22, p = .004.",
+      "scope": "Undergraduate heterosexual singles, between-subjects real vs hypothetical; N = 132 and 99 after exclusions (15 and 16 for suspicion).",
+      "quantities": [
+        {"name": "study1_accept_real", "value": 0.366, "unit": "proportion", "n": 71, "count": 26, "denominator": 71, "baseline": "hypothetical 10/61 = 0.164; chi2 = 6.767, p = 0.0093", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "study2_accept_real", "value": 0.745, "unit": "proportion", "n": 47, "count": 35, "denominator": 47, "baseline": "hypothetical 24/52 = 0.462; chi2 = 8.219, p = 0.0041", "source": "reanalysis/out/r01_out.txt"}
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {"status": "accepted", "why": "Recounted exactly in both studies, with two different kinds of unsuitability. Between-subjects: 'overestimate' is inferred from a hypothetical group vs a real group, not from individuals' predictions vs their own behaviour.", "by": "maria"}
+    },
+    {
+      "id": "c2",
+      "statement": "The effect is partially explained by other-focused motives (not wanting to hurt the date): indirect effect -0.2928, BCa 95% CI [-0.7994, -0.0111] in Study 1; in Study 2 -0.20 (SE .15), BCa [-0.57, 0.04], described as marginal in Results and as replicating Study 1 in the Discussion ('As in Study 1, we found that other-focused motives explained why ...').",
+      "scope": "Motives rated after the decision ('how TRUE' and 'how much did this MOTIVATE you to agree to meet'), 1-5 in Study 1, 1-7 in Study 2 (the latter unreported).",
+      "quantities": [
+        {"name": "study1_indirect_other_focused", "value": -0.2928, "unit": "logit x scale point", "n": 132, "baseline": "my BCa [-0.832, -0.011] (5,000 reps)", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "study2_indirect_other_focused", "value": -0.1968, "unit": "logit x scale point", "n": 99, "baseline": "my BCa [-0.583, 0.037]: includes 0", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "study1_condition_on_other_motives_controlling_decision", "value": 0.369, "unit": "scale points", "n": 132, "baseline": "p = 0.040 (without decision: 0.502, p = 0.006)", "source": "reanalysis/out/r02_out.txt"},
+        {"name": "study1_condition_on_self_motives_controlling_decision", "value": 0.130, "unit": "scale points", "n": 132, "baseline": "p = 0.286 (without decision: 0.288, p = 0.031)", "source": "reanalysis/out/r02_out.txt"}
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {"status": "disputed", "why": "Mediator measured after the outcome. The self-focused path is fully accounted for by the decision itself. The other-focused path survives controlling for the decision in both studies (p = .04, .03), so it is not pure rationalisation. But Study 2's indirect CI includes 0 and the Discussion and abstract present it as replicated. The mechanism in the title ('by overlooking their concern') is asserted more strongly than a post-outcome, between-subjects mediator can show.", "by": "maria", "patterns": ["post-treatment-conditioning", "mechanism-asserted-not-measured", "text-contradicts-own-materials"]}
+    },
+    {
+      "id": "c3",
+      "origin": "reader",
+      "statement": "Known answer: in a simulated world with NO mediation -- condition changes only the decision (16% vs 37% accept, Study 1 rates) and motives are then reported as a function of the decision alone (observed acceptor/rejecter means and SDs) -- the paper's PROCESS-style procedure finds a significant indirect effect in 14% of 300 simulated studies (nominal 5%); the median simulated indirect effect is -0.10 against -0.29 observed.",
+      "scope": "Study 1 sample sizes and rates; percentile bootstrap, 500 reps per simulated study.",
+      "quantities": [{"name": "false_mediation_rate_under_rationalisation_only", "value": 0.14, "unit": "proportion", "n": 300, "count": 41, "denominator": 300, "source": "reanalysis/out/r02_out.txt"}],
+      "evidence": ["a2"],
+      "our_assessment": {"status": "accepted", "why": "Synthetic data with the mechanism forced absent. Shows the procedure is inflated for a post-outcome mediator, and that rationalisation alone produces about a third of the observed indirect effect.", "by": "maria"}
+    }
+  ],
+  "methods": ["exact-reproduction-from-deposit", "manual-reanalysis-from-shared-materials", "synthetic-injected-effect-control", "post-treatment-baseline-check", "published-table-vs-deposit-crosscheck"],
+  "artifacts": [
+    {"id": "a1", "role": "supplement", "locator": "https://socialmeasureslab.com/pdf/e3c0e5_ba9d1ebccc4a4e5e9eb492fe3ce6a158.pdf (published version, author-hosted)", "status": "verified-usable", "sha256": "68e9877c1087bada3defe8256ba1b664f4439e142cb1f99d85e3f3e7bb4d3f77",
+     "fetch_cmd": "curl -sL -A 'Mozilla/5.0' -o paper.pdf https://socialmeasureslab.com/pdf/e3c0e5_ba9d1ebccc4a4e5e9eb492fe3ce6a158.pdf",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "Read tool on the PDF, pages 2-9", "result": "Primary source. The file name is a hash; the link was identified by its position next to the citation on https://www.samanthajoel.com/publications (redirects to socialmeasureslab.com)."}},
+    {"id": "a2", "role": "raw-data", "locator": "https://osf.io/873fp/ -- 'Empathy Gap Study 1 data.sav' (132 x 125), 'Empathy_Gap_Study_2_data.sav' (102 x 131)", "status": "verified-usable",
+     "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/873fp/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/joel2014-overestimate-rejecting-partners)/osf_873fp\" --max-bytes 50000000",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "python zoo-knowledge-base/instance-papers/papers/joel2014-overestimate-rejecting-partners/reanalysis/r01_reproduce.py <osfstorage dir>", "result": "7 files, checksums match. Variables needed for the paper are flagged after a REQUIRED_VARIABLES_START_BELOW marker -- a good practice. Every reported statistic reproduces. Slips: reasontrue1 = 7.5 on a 1-5 item (Study 1); Study 2 condition value labels {1: H, 2: R} on data coded 0/1; Study 2 motives on 1-7 (unreported in the paper)."},
+     "datasheet": {"composition": "one row per analysed participant (Study 2: 102 rows incl. 3 without the DV); motive items reasontrue1-8 and motives1-8, composites, condition, exchange decision, individual-difference scales", "caveats": "Excluded participants (suspicion etc.) are not in the files, so differential exclusion by condition cannot be checked. Study 2 condition labels are stale."}},
+    {"id": "a3", "role": "code", "locator": "none deposited", "status": "absent",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "OSF 873fp file listing (acquire.py)", "result": "Materials and data only; analyses were run in SPSS/PROCESS and no syntax is shared. Rebuilt in Python."}}
+  ],
+  "relations": [
+    {"type": "zoo:reanalysedBy", "target": "maria2026-selection-and-reader-bias", "why": "Item 3 of mark's blinded known-answer control of the reading protocol."}
+  ],
+  "open_questions": [
+    "Unblinding (mark, known_answer_control): sound or not by the third party's standard? My call before unblinding: fully reproducible (no reported number fails); main effect solid; mechanism over-claimed (post-outcome mediator, Study 2 non-significant but reported as replicating).",
+    "Were suspicion exclusions (15 in Study 1, 16 in Study 2) balanced across conditions? Belief that the date is real is the manipulation itself, so suspicion is plausibly more frequent in the real condition; the deposit holds only retained participants."
+  ]
+}

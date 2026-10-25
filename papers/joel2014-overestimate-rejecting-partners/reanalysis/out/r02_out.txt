@@ -1,0 +1,18 @@
+
+== study1
+  otherfocused_motives_by_decision_x_condition {'accept=0,cond=0.0': [2.424, 0.876, 51.0], 'accept=0,cond=1.0': [2.983, 0.967, 45.0], 'accept=1,cond=0.0': [3.625, 1.059, 10.0], 'accept=1,cond=1.0': [3.364, 1.155, 26.0]}
+  otherfocused_motives_condition_coef_without_vs_with_decision {'without': [0.5018347791668041, 0.005965271376371951], 'with_decision': [0.36899251055692694, 0.039775035925341116], 'decision_coef': [0.6567806682070487, 0.0012396605166875442]}
+  otherfocused_motives_accept_minus_reject_d 0.7475459583632872
+  selffocused_motives_by_decision_x_condition {'accept=0,cond=0.0': [2.114, 0.714, 51.0], 'accept=0,cond=1.0': [2.185, 0.665, 45.0], 'accept=1,cond=0.0': [2.725, 0.407, 10.0], 'accept=1,cond=1.0': [3.051, 0.696, 26.0]}
+  selffocused_motives_condition_coef_without_vs_with_decision {'without': [0.2876904871854076, 0.03082044078669407], 'with_decision': [0.1298326826547679, 0.2858771889511282], 'decision_coef': [0.7804590769659793, 5.998619364762528e-08]}
+  selffocused_motives_accept_minus_reject_d 1.2026247921977233
+
+== study2
+  otherfocused_motives_by_decision_x_condition {'accept=0,cond=0.0': [3.638, 1.365, 28.0], 'accept=0,cond=1.0': [3.719, 1.736, 12.0], 'accept=1,cond=0.0': [3.781, 1.517, 24.0], 'accept=1,cond=1.0': [4.754, 1.256, 35.0]}
+  otherfocused_motives_condition_coef_without_vs_with_decision {'without': [0.7850347790507369, 0.007786966492428083], 'with_decision': [0.6413409703504058, 0.034432202763209754], 'decision_coef': [0.5074966307277623, 0.09850560256982688]}
+  otherfocused_motives_accept_minus_reject_d 0.48022411118919334
+  selffocused_motives_by_decision_x_condition {'accept=0,cond=0.0': [3.143, 1.126, 28.0], 'accept=0,cond=1.0': [3.167, 1.252, 12.0], 'accept=1,cond=0.0': [4.599, 1.32, 24.0], 'accept=1,cond=1.0': [4.329, 0.949, 35.0]}
+  selffocused_motives_condition_coef_without_vs_with_decision {'without': [0.2170110474631753, 0.4055501483188505], 'with_decision': [-0.16121967654986336, 0.4988938281701778], 'decision_coef': [1.3358322102425872, 2.794162554687811e-07]}
+  selffocused_motives_accept_minus_reject_d 1.1434850548738031
+
+KNOWN ANSWER (no mediation; motives caused by the decision only): indirect CI excludes 0 in 41/300 = 0.14; median simulated indirect -0.102 vs observed -0.293
