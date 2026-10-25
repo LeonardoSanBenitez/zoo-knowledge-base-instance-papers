@@ -1,0 +1,11 @@
+residuals, model pop_raw: max |diff| vs deposit = 0.000005, r = 1.000000, R2 = 0.342
+residuals, model pop_log: max |diff| vs deposit = 0.013116, r = 0.929013, R2 = 0.477
+raters per term: [60] | terms: {'pos': 40, 'neg': 40}
+share of terms with p(yes) > threshold: {'0.500': {'neg': 0.0, 'pos': 0.725}, '0.600': {'neg': 0.0, 'pos': 0.675}, '0.667': {'neg': 0.0, 'pos': 0.6}, '0.700': {'neg': 0.0, 'pos': 0.55}, '0.750': {'neg': 0.0, 'pos': 0.5}, '0.800': {'neg': 0.0, 'pos': 0.45}}
+abstract: >70% of 40 positive terms status goods, 0% of 40 negative
+negative-list terms with the highest p(yes): [['crystal disk', 0.4], ['radeon 7950', 0.325], ['action camera', 0.2857142857142857], ['mekenna ', 0.24], ['viking sewing machine', 0.20833333333333334]]
+positive-list terms with p(yes) <= .5: [['ralph', 0.42592592592592593], ['paula zahn', 0.43243243243243246], ['vineyardvines.com', 0.4878048780487805], ['fig trees for sale', 0.10714285714285714], ['dix bay', 0.23333333333333334], ['little dix bay', 0.15625], ['maxima spoiler', 0.34615384615384615], ['woman attacked', 0.017241379310344827], ['fibroadenoma', 0.04878048780487805], ['little dix', 0.13157894736842105], ['fatal attraction', 0.01694915254237288]]
+status-classified positive terms: 29 | in near-duplicate families: {'ralph lauren': 6, 'yurman': 8, 'loafer': 3} | outside: 12
+
+residual inequality explained by 4 Census regions: R2 = 0.403, p = 0.0000; means {'Midwest': -0.0057, 'Northeast': 0.0106, 'South': 0.0085, 'West': -0.0125}
+top-8 residual-inequality states: [['Connecticut', 0.04252], ['Louisiana', 0.02771], ['New York', 0.02584], ['Massachusetts', 0.02431], ['Mississippi', 0.02257], ['Alabama', 0.01693], ['Tennessee', 0.01539], ['Rhode Island', 0.01408]]

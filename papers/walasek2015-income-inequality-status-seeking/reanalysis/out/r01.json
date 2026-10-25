@@ -1,0 +1,189 @@
+{
+ "n_states_controls": 50,
+ "n_states_residuals": 50,
+ "log_mean_inc_is_ln_of_mean_income_max_abs_diff": 0.0,
+ "state_merge": {
+  "both": 50,
+  "left_only": 0,
+  "right_only": 0
+ },
+ "residuals_pop_raw": {
+  "max_abs_diff": 4.934855340422463e-06,
+  "corr": 0.9999999826127294,
+  "R2": 0.34203339786014575
+ },
+ "residuals_pop_log": {
+  "max_abs_diff": 0.013116287267997066,
+  "corr": 0.9290128227077195,
+  "R2": 0.47708816056973624
+ },
+ "control_model_coefs": {
+  "Intercept": [
+   0.8897847181111704,
+   0.0005068249108851816
+  ],
+  "log_mean_inc": [
+   -0.040453387467698027,
+   0.06953949701071313
+  ],
+  "Population": [
+   1.1349845472745403e-09,
+   0.016143306754495188
+  ],
+  "percurban": [
+   -1.0216190706641409e-05,
+   0.9704576475179434
+  ],
+  "PercentForeignBorn": [
+   0.0010117906943213524,
+   0.2330906070966442
+  ]
+ },
+ "r_unparseable": 0,
+ "n_terms": {
+  "pos": 40,
+  "neg": 40
+ },
+ "raters_per_term": [
+  60
+ ],
+ "r_range_by_direction": {
+  "neg": [
+   -0.72,
+   -0.68
+  ],
+  "pos": [
+   0.73,
+   0.78
+  ]
+ },
+ "share_classified_status_by_threshold": {
+  "0.500": {
+   "neg": 0.0,
+   "pos": 0.725
+  },
+  "0.600": {
+   "neg": 0.0,
+   "pos": 0.675
+  },
+  "0.667": {
+   "neg": 0.0,
+   "pos": 0.6
+  },
+  "0.700": {
+   "neg": 0.0,
+   "pos": 0.55
+  },
+  "0.750": {
+   "neg": 0.0,
+   "pos": 0.5
+  },
+  "0.800": {
+   "neg": 0.0,
+   "pos": 0.45
+  }
+ },
+ "mean_p_yes_by_direction": {
+  "neg": 0.08444992073697882,
+  "pos": 0.6583546260802772
+ },
+ "mannwhitney_p_yes_pos_vs_neg": 7.229828573652796e-11,
+ "positive_terms_p_yes_le_half": [
+  [
+   "ralph",
+   0.42592592592592593
+  ],
+  [
+   "paula zahn",
+   0.43243243243243246
+  ],
+  [
+   "vineyardvines.com",
+   0.4878048780487805
+  ],
+  [
+   "fig trees for sale",
+   0.10714285714285714
+  ],
+  [
+   "dix bay",
+   0.23333333333333334
+  ],
+  [
+   "little dix bay",
+   0.15625
+  ],
+  [
+   "maxima spoiler",
+   0.34615384615384615
+  ],
+  [
+   "woman attacked",
+   0.017241379310344827
+  ],
+  [
+   "fibroadenoma",
+   0.04878048780487805
+  ],
+  [
+   "little dix",
+   0.13157894736842105
+  ],
+  [
+   "fatal attraction",
+   0.01694915254237288
+  ]
+ ],
+ "status_terms_majority_rule": 29,
+ "status_terms_in_families": {
+  "ralph lauren": 6,
+  "yurman": 8,
+  "loafer": 3
+ },
+ "status_terms_outside_families": 12,
+ "states_without_region": [],
+ "residual_on_region_R2_p": [
+  0.40272957930185327,
+  2.556213118097257e-05
+ ],
+ "residual_mean_by_region": {
+  "Midwest": -0.0057,
+  "Northeast": 0.0106,
+  "South": 0.0085,
+  "West": -0.0125
+ },
+ "top8_residual_states": [
+  [
+   "Connecticut",
+   0.04252
+  ],
+  [
+   "Louisiana",
+   0.02771
+  ],
+  [
+   "New York",
+   0.02584
+  ],
+  [
+   "Massachusetts",
+   0.02431
+  ],
+  [
+   "Mississippi",
+   0.02257
+  ],
+  [
+   "Alabama",
+   0.01693
+  ],
+  [
+   "Tennessee",
+   0.01539
+  ],
+  [
+   "Rhode Island",
+   0.01408
+  ]
+ ]
+}
