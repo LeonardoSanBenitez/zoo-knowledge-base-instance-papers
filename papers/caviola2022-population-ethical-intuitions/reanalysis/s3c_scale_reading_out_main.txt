@@ -1,0 +1,17 @@
+                           loss  gain  sd_items    n  straightline
+attn_check        valence                                         
+correct           happy    0.86  0.23      1.10  213          0.18
+                  unhappy  0.64  0.85      1.11  248          0.16
+extremely happy   happy    0.19  0.00      0.84   27          0.07
+                  unhappy  0.00  0.37      0.76   19          0.11
+extremely unhappy happy    1.00  0.12      1.26   65          0.15
+                  unhappy  0.43  0.80      1.34   30          0.13
+mildly happy      happy    0.71 -0.71      1.06    7          0.14
+                  unhappy -0.10  0.20      1.19   10          0.00
+
+happy   loss: correct +0.86 vs misread +1.00 (MW p 0.217) vs 'extremely happy' +0.19 (n 27)
+happy   gain: correct +0.23 vs misread +0.12 (MW p 0.884) vs 'extremely happy' +0.00 (n 27)
+unhappy loss: correct +0.64 vs misread +0.43 (MW p 0.237) vs 'extremely happy' +0.00 (n 19)
+unhappy gain: correct +0.85 vs misread +0.80 (MW p 0.902) vs 'extremely happy' +0.37 (n 19)
+duration median (s) by group: {'correct': 131.0, 'extremely happy': 59.5, 'extremely unhappy': 109.0, 'mildly happy': 112.0}
+valence split of the 96: {'happy': 65, 'unhappy': 30} | of correct: {'unhappy': 248, 'happy': 213}

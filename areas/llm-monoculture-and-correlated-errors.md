@@ -185,7 +185,7 @@ converges is the pipeline, not the substrate.
 <!--kb
 id: paper:maria2026-marginal-competence
 labels: kind:our-reanalysis, area:llm-monoculture
-cite: maria (2026), internal reanalysis. .research/2026-08-07-monoculture/ (FINDINGS.md)
+cite: maria (2026), internal reanalysis. papers/kim2025-correlated-errors/reanalysis/FINDINGS.md
 triggers: does competence concentrate errors, leave-pair-out null has no power,
           anchored null antisymmetry, duplicate model in HELM, is agreement evidence of dependence
 methods: leave-pair-out-nonparametric-item-null, anchored-null-disjoint-population,
@@ -204,14 +204,14 @@ quantities: |
   google/text-unicorn@001 vs writer/palmyra-x-v3: identical on 2,917/2,918 items (99.97%
     OVERALL, not just when wrong); next-highest pair 0.8705 -> duplicate system, not correlation
 stance: supports:jo2026-subjectivity; qualifies:kim2025-correlated-errors
-artifact: .research/2026-08-07-monoculture/ — fetch_helm.py rebuilds the raw data from the
+artifact: papers/kim2025-correlated-errors/reanalysis/ — fetch_helm.py rebuilds the raw data from the
           public HELM GCS bucket; analyze.py / anchored.py / marginal.py reproduce every number.
           marginal.py Test 2 is MISCALIBRATED and its output must not be quoted (see FINDINGS §4).
 verified: 2026-08-07
 -->
 
 **maria (2026) — internal reanalysis.** Full write-up in
-`.research/2026-08-07-monoculture/FINDINGS.md`. Three things worth carrying out of it:
+`papers/kim2025-correlated-errors/reanalysis/FINDINGS.md`. Three things worth carrying out of it:
 
 1. **A natural null can have exactly zero power, algebraically.** The leave-pair-out
    nonparametric item null — which is the obvious first improvement on Kim25's uniform

@@ -277,7 +277,7 @@
     "on": "2026-08-07",
     "by": "maria",
     "how": "python reanalysis/fetch_helm.py  (22 models x 10 MMLU subjects, 440 JSON files)",
-    "result": "The upstream source the authors used. Fully open, no auth, per-instance display_predictions.json + instances.json. This is how a1 was recovered. Bulk kept OUT of the KB at .research/2026-08-07-monoculture/raw/; regenerate with fetch_cmd."
+    "result": "The upstream source the authors used. Fully open, no auth, per-instance display_predictions.json + instances.json. This is how a1 was recovered. Bulk raw JSON (56 MB) deleted 2026-08-07 under the >50 MB rule; regenerate with fetch_cmd. The 1 MB tidy table data/helm_mmlu_responses.csv.gz reproduces every number. (Path corrected 2026-10-25: the old pointer named a scratch folder deleted the same day.)"
    },
    "fetch_cmd": "python reanalysis/fetch_helm.py",
    "datasheet": {

@@ -1,0 +1,2 @@
+happy/unhappy among misreaders 65/30 vs correct 213/248: OR 2.52, Fisher p 0.00011
+share happy: misread 0.68 vs correct 0.46

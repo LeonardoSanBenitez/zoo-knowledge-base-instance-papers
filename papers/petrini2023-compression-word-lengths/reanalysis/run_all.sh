@@ -2,7 +2,8 @@
 # From the zoo root. Regenerates every number in paper.json. ~64 MB download; r02 is the slow step.
 set -e
 P=zoo-knowledge-base/instance-papers/papers/petrini2023-compression-word-lengths
-D=${1:-zoo-knowledge-base/.research/petrini2023-repo}
+# Default clone location is the registered asset, never an invented path (2026-10-25).
+D=${1:-$(python zoo-knowledge-base/tools/assets.py path paper-downloads/petrini2023-compression-word-lengths/repo --mkdir)}
 python -I $P/reanalysis/fetch.py "$D"
 python -I $P/reanalysis/r01_reproduce.py "$D" $P/artifacts | tee $P/artifacts/r01_out.txt
 python -I $P/reanalysis/r02_known_answer.py "$D" $P/artifacts 20 | tee $P/artifacts/r02_out.txt

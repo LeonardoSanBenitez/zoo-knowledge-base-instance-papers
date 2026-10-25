@@ -262,6 +262,28 @@ regenerates it. Code, scripts and small tables stay. Record `bytes` and, where i
 matters, `sha256`, so a future check knows what it had. Bulk downloads live *outside*
 the KB; the record references them the way an RO-Crate references a remote data entity.
 
+**Where the downloads go, from the first byte (added 2026-10-25):**
+
+```
+D=$(python tools/assets.py path paper-downloads/<record-id> --mkdir)   # from zoo-knowledge-base/
+```
+
+One folder per paper, **named by its record id**, in the registered `paper-downloads` asset.
+The paper's PDF, its deposit, a pinned clone of its repository: all there. Your own scripts and
+outputs go in `papers/<id>/reanalysis/` from the start, not in a scratch copy you tidy up later.
+Scripts take the download location as an argument or an environment variable and default to that
+command's output, never to a literal path. A paper you open and abandon still gets a key
+(author+year+slug), and `kb.py opened` logs it.
+
+**No scratch folder, no hidden folder, no date in a folder name.** The record id exists
+before the first download (§9c: you create the folder first). A date says when someone looked,
+not what the bytes are, and the same paper read on two days must not get two folders. Why this
+paragraph exists: from 2026-10-16 to 2026-10-23 maria put the working files of 36 papers into
+`.research/2026-10-16-<topic>/` at the zoo root and in `zoo-knowledge-base/.research/`, two months
+after being told on 2026-08-07 to stop. 2,517 files (372 MB) were migrated into this layout on 2026-10-25,
+and the provenance is in the asset's `_provenance/README.md`. The rule had only been written in her
+private log, and a scratch path was cheaper to type than asking the tool. Both are fixed now.
+
 **A sha256 is only worth recording on bytes nobody rewrites** (added 2026-10-14). Files under
 `papers/*/artifacts/` are stored byte-exact (`-text` in `.gitattributes`): an author's CRLF
 file stays CRLF. Code under `reanalysis/` is normalised to LF, so hash the LF bytes. And write
@@ -283,6 +305,9 @@ instance-papers/
     NOTES.md                   your judgement, prose, free form
     artifacts/                 small artifacts kept locally
     reanalysis/                YOUR code and results for this paper
+
+<asset root>/paper-downloads/<id>/   bulk third-party bytes for the same paper (§7);
+                                     path: python tools/assets.py path paper-downloads/<id>
 ```
 
 Personal task state, TODOs and reflection stay in `.claude/memory/<agent>/`. Always.
