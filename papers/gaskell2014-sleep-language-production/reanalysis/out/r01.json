@@ -1,0 +1,289 @@
+{
+ "n_subjects_by_group": {
+  "sleep": 19,
+  "wake": 19
+ },
+ "subjects_with_fewer_than_3_blocks": {},
+ "table1_recount": {
+  "sleep|test1|res": {
+   "same_pct_mean": 96.8,
+   "same_pct_sd": 7.7,
+   "n_err_mean": 4.9,
+   "n_err_sd": 4.7,
+   "n_subj": 19
+  },
+  "sleep|test1|unres": {
+   "same_pct_mean": 83.0,
+   "same_pct_sd": 11.1,
+   "n_err_mean": 32.3,
+   "n_err_sd": 14.1,
+   "n_subj": 19
+  },
+  "sleep|test2|res": {
+   "same_pct_mean": 94.7,
+   "same_pct_sd": 9.2,
+   "n_err_mean": 6.0,
+   "n_err_sd": 3.8,
+   "n_subj": 19
+  },
+  "sleep|test2|unres": {
+   "same_pct_mean": 82.3,
+   "same_pct_sd": 11.2,
+   "n_err_mean": 28.3,
+   "n_err_sd": 15.4,
+   "n_subj": 19
+  },
+  "sleep|train|res": {
+   "same_pct_mean": 81.4,
+   "same_pct_sd": 17.5,
+   "n_err_mean": 9.5,
+   "n_err_sd": 5.4,
+   "n_subj": 19
+  },
+  "sleep|train|unres": {
+   "same_pct_mean": 83.4,
+   "same_pct_sd": 9.2,
+   "n_err_mean": 45.3,
+   "n_err_sd": 25.4,
+   "n_subj": 19
+  },
+  "wake|test1|res": {
+   "same_pct_mean": 89.4,
+   "same_pct_sd": 14.4,
+   "n_err_mean": 7.7,
+   "n_err_sd": 4.9,
+   "n_subj": 15
+  },
+  "wake|test1|unres": {
+   "same_pct_mean": 86.1,
+   "same_pct_sd": 10.0,
+   "n_err_mean": 39.8,
+   "n_err_sd": 28.5,
+   "n_subj": 19
+  },
+  "wake|test2|res": {
+   "same_pct_mean": 87.5,
+   "same_pct_sd": 14.6,
+   "n_err_mean": 6.8,
+   "n_err_sd": 4.7,
+   "n_subj": 19
+  },
+  "wake|test2|unres": {
+   "same_pct_mean": 83.7,
+   "same_pct_sd": 11.1,
+   "n_err_mean": 29.5,
+   "n_err_sd": 17.3,
+   "n_subj": 19
+  },
+  "wake|train|res": {
+   "same_pct_mean": 88.9,
+   "same_pct_sd": 16.1,
+   "n_err_mean": 8.8,
+   "n_err_sd": 4.9,
+   "n_subj": 19
+  },
+  "wake|train|unres": {
+   "same_pct_mean": 80.1,
+   "same_pct_sd": 8.4,
+   "n_err_mean": 50.2,
+   "n_err_sd": 25.6,
+   "n_subj": 19
+  }
+ },
+ "table1_pooled_same_pct": {
+  "sleep|test1|res": 92.5,
+  "sleep|test1|unres": 84.0,
+  "sleep|test2|res": 93.9,
+  "sleep|test2|unres": 84.4,
+  "sleep|train|res": 80.1,
+  "sleep|train|unres": 84.6,
+  "wake|test1|res": 86.2,
+  "wake|test1|unres": 85.3,
+  "wake|test2|res": 84.5,
+  "wake|test2|unres": 84.3,
+  "wake|train|res": 89.9,
+  "wake|train|unres": 79.4
+ },
+ "table1_error_counts_incl_zeros": {
+  "sleep|test1|res|mean": 4.9,
+  "sleep|test1|res|std": 4.7,
+  "sleep|test1|unres|mean": 32.3,
+  "sleep|test1|unres|std": 14.1,
+  "sleep|test2|res|mean": 6.0,
+  "sleep|test2|res|std": 3.8,
+  "sleep|test2|unres|mean": 28.3,
+  "sleep|test2|unres|std": 15.4,
+  "sleep|train|res|mean": 9.5,
+  "sleep|train|res|std": 5.4,
+  "sleep|train|unres|mean": 45.3,
+  "sleep|train|unres|std": 25.4,
+  "wake|test1|res|mean": 6.1,
+  "wake|test1|res|std": 5.4,
+  "wake|test1|unres|mean": 39.8,
+  "wake|test1|unres|std": 28.5,
+  "wake|test2|res|mean": 6.8,
+  "wake|test2|res|std": 4.7,
+  "wake|test2|unres|mean": 29.5,
+  "wake|test2|unres|std": 17.3,
+  "wake|train|res|mean": 8.8,
+  "wake|train|res|std": 4.9,
+  "wake|train|unres|mean": 50.2,
+  "wake|train|unres|std": 25.6
+ },
+ "score_mean_by_group": {
+  "sleep": {
+   "train": -2.03,
+   "test": 11.97,
+   "change": 14.0
+  },
+  "wake": {
+   "train": 8.79,
+   "test": 3.26,
+   "change": -5.53
+  }
+ },
+ "change_sleep_vs_wake_t_p": [
+  2.7640305935864555,
+  0.008942524375887823
+ ],
+ "perm_p_change_diff": 0.00801,
+ "ancova_test_on_group_plus_train": {
+  "group_coef_sleep_minus_wake": 9.222598446679712,
+  "p": 0.03889503064441463,
+  "train_slope": 0.04711215218838861
+ },
+ "train_score_group_diff_t_p": [
+  -1.7829178628573692,
+  0.08303408056316547
+ ],
+ "score_reliability": {
+  "train": {
+   "split_half_r": 0.5967884990051667,
+   "spearman_brown": 0.7474859687140516,
+   "n": 37
+  },
+  "test": {
+   "split_half_r": 0.5683243376328379,
+   "spearman_brown": 0.7247535780649078,
+   "n": 37
+  }
+ },
+ "sws_glm_as_published": {
+  "beta": 0.059062384701579596,
+  "se": 0.019076739688056628,
+  "z": 3.0960418639332157,
+  "p": 0.00196122669815233,
+  "n_errors": 2401
+ },
+ "sws_glm_published_formula_cluster_robust": {
+  "beta": 0.059062384701579596,
+  "se": 0.021344974721503547,
+  "z": 2.7670393369957207,
+  "p": 0.005656792899939261
+ },
+ "sws_glm_with_lower_order_terms": {
+  "beta": 0.07195241287590758,
+  "se": 0.03130080337742842,
+  "z": 2.298740131628499,
+  "p": 0.02151970021620768
+ },
+ "sws_glm_with_lower_order_terms_cluster_robust": {
+  "beta": 0.07195241287590758,
+  "se": 0.03785645624443779,
+  "z": 1.9006642463127927,
+  "p": 0.05734600449653721
+ },
+ "participant_level_correlations_with_change": {
+  "N1Mins": {
+   "r": -0.21267693219792713,
+   "p_param": 0.38202858511640275,
+   "p_perm": 0.38505,
+   "n": 19
+  },
+  "N2Mins": {
+   "r": -0.061810547737291284,
+   "p_param": 0.8015244089337278,
+   "p_perm": 0.7986,
+   "n": 19
+  },
+  "N3Mins": {
+   "r": 0.4658742454471784,
+   "p_param": 0.04439625768027932,
+   "p_perm": 0.0457,
+   "n": 19
+  },
+  "RMins": {
+   "r": -0.49396281747919857,
+   "p_param": 0.0315896790374688,
+   "p_perm": 0.02895,
+   "n": 19
+  },
+  "SleepPeriod": {
+   "r": -0.2207414208187942,
+   "p_param": 0.36380325725942264,
+   "p_perm": 0.3686,
+   "n": 19
+  },
+  "Delta": {
+   "r": 0.39679067179708655,
+   "p_param": 0.09256490584283239,
+   "p_perm": 0.09165,
+   "n": 19
+  }
+ },
+ "sws_r_leave_one_out_min_max": [
+  0.3703036363925185,
+  0.63651628786514
+ ],
+ "sws_minutes_zero_in_sleep_group": 3,
+ "table2_recount": {
+  "sleep|OK": {
+   "mean": 60.0,
+   "sd": 17.6,
+   "se": 4.0,
+   "n": 19
+  },
+  "sleep|bad-m": {
+   "mean": 98.7,
+   "sd": 5.7,
+   "se": 1.3,
+   "n": 19
+  },
+  "sleep|bad-x": {
+   "mean": 47.4,
+   "sd": 30.9,
+   "se": 7.1,
+   "n": 19
+  },
+  "wake|OK": {
+   "mean": 52.2,
+   "sd": 15.9,
+   "se": 3.7,
+   "n": 18
+  },
+  "wake|bad-m": {
+   "mean": 92.1,
+   "sd": 15.8,
+   "se": 3.7,
+   "n": 18
+  },
+  "wake|bad-x": {
+   "mean": 24.1,
+   "sd": 26.3,
+   "se": 6.2,
+   "n": 18
+  }
+ },
+ "gen_overall_pct": {
+  "sleep": 64.8,
+  "wake": 54.3
+ },
+ "gen_unweighted_mean_of_type_means_pct": {
+  "sleep": 68.7,
+  "wake": 56.1
+ },
+ "recognition_pct": {
+  "-0.5": 86.7,
+  "0.5": 87.6
+ }
+}

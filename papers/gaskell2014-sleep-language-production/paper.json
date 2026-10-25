@@ -1,0 +1,308 @@
+{
+  "schema_version": "1.6",
+  "id": "gaskell2014-sleep-language-production",
+  "title": "Sleep Underpins the Plasticity of Language Production",
+  "authors": [
+    "M. Gareth Gaskell",
+    "Jill Warker",
+    "Shane Lindsay",
+    "Rebecca Frost",
+    "James Guest",
+    "Reza Snowdon",
+    "Abigail Stackhouse"
+  ],
+  "year": 2014,
+  "venue": "Psychological Science 25(7):1457-1465",
+  "area": [
+    "experimental-social-and-cognitive-psychology",
+    "contemplative-neuroscience"
+  ],
+  "identifiers": {
+    "doi": "10.1177/0956797614535937"
+  },
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "selection": {
+    "class": "blind",
+    "evidence": "Assigned by mark as item 4 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none.",
+    "recorded": "at-selection"
+  },
+  "cost": {
+    "tool_calls": 24,
+    "bytes_downloaded": 1300000,
+    "compute_notes": "Accepted manuscript + supplement (White Rose eprint 79436) read in full; the Hull 'Supplemental_information.pdf' link returned an HTML page. OSF zqg9y holds no files itself; 5 components acquired with checksums. Authors' two lme4 scripts run in Docker zoo-r-psych:4.4.1 (lme4 1.1-35.5) with a stringsAsFactors shim; maximal glmer models are slow and several fail to converge. Python: Table 1-3 recounts, cluster-robust and full-term GLMs, participant-level ANCOVA, 100k-permutation test, split-half reliability.",
+    "session": "2026-10-25 maria"
+  },
+  "curation": {
+    "author": "maria",
+    "created": "2026-10-25",
+    "verified": "2026-10-25",
+    "notes_file": "NOTES.md"
+  },
+  "triggers": [
+    "does sleep consolidate new phonotactic constraints in speech production",
+    "nap slow-wave sleep correlation speech errors",
+    "regression to the mean baseline imbalance change score crossover",
+    "trial-level glm without participant random effects pseudoreplication",
+    "known-answer control psychological science 2014 open data"
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Speech errors after a 90-min nap, but not after equivalent wake, come to respect newly experienced second-order phonotactic constraints: Group x Session x Restriction beta = 1.97, SE = .50, z = 3.31, p < .001.",
+      "scope": "N = 38 (19 nap, 19 wake), 5,084 coded speech errors; mixed logistic regression with maximal random slopes.",
+      "quantities": [
+        {
+          "name": "three_way_interaction_beta_current_lme4",
+          "value": 1.96031,
+          "unit": "logit",
+          "n": 38,
+          "baseline": "SE 0.59965, z 3.269, p 0.00108 (published SE .50, z 3.31); model fails to converge in 10,000 evaluations",
+          "source": "reanalysis/out/authors_R_run.txt"
+        },
+        {
+          "name": "phonotactic_score_change_sleep_pts",
+          "value": 14.0,
+          "unit": "percentage points",
+          "n": 38,
+          "baseline": "wake -5.53; sleep vs wake change t = 2.76, p = 0.0089; permutation p = 0.008",
+          "source": "reanalysis/out/r01_out.txt"
+        },
+        {
+          "name": "ancova_sleep_minus_wake_at_test_adjusting_training",
+          "value": 9.223,
+          "unit": "percentage points",
+          "n": 38,
+          "baseline": "p = 0.039; training-score slope 0.047; baseline imbalance wake +8.79 vs sleep -2.03 (t = -1.78, p = 0.083)",
+          "source": "reanalysis/out/r01_out.txt"
+        }
+      ],
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Point estimate reproduces exactly. But the groups differed at baseline by chance in opposite directions and the training score does not predict the test score (slope .05), so the change-score interaction is inflated by regression to the mean. ANCOVA keeps a sleep advantage of 9.2 points at p = .039, not p < .001. The post-hoc 'matched subset' (28 of 38 chosen by excluding on the baseline score) is the unprincipled version of the same correction; its follow-up tests become non-significant in current lme4 (p .021 -> .085, .017 -> .105).",
+        "by": "maria",
+        "patterns": [
+          "analytic-flexibility",
+          "small-sample-overreach"
+        ]
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Only the nap group generalised the constraints to new syllables: sleep 69% vs wake 56% correct, Group beta = 1.11, SE = .53, z = 2.08, p = .038; both-unfamiliar items above chance for sleep (z = 2.59, p = .0096) but not wake (p = .54).",
+      "scope": "2AFC generalisation, 37 participants (one wake participant's test data lost), 19-20 trials each.",
+      "quantities": [
+        {
+          "name": "gen_raw_accuracy_sleep_pct",
+          "value": 64.8,
+          "unit": "percent",
+          "n": 19,
+          "baseline": "wake 54.3; the published 69/56 is the unweighted mean of three item-type means (68.7/56.1)",
+          "source": "reanalysis/out/r01_out.txt"
+        },
+        {
+          "name": "gen_group_beta_current_lme4",
+          "value": 1.10724,
+          "unit": "logit",
+          "n": 37,
+          "baseline": "SE 0.47596, z 2.326, p 0.020 (published SE .53, z 2.08, p .038); model fails to converge",
+          "source": "reanalysis/out/authors_R_run.txt"
+        }
+      ],
+      "evidence": [
+        "a4",
+        "a5"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The group effect is tested and reproduces (p = .020 to .038 depending on lme4 version). 'Only the sleep group generalised' rests on a significant vs non-significant comparison with chance; the group x type interactions are null. Table 2's '(SD)' are standard errors (recomputed SEs match the print; true SDs 16-31%).",
+        "by": "maria",
+        "patterns": [
+          "difference-in-significance-not-tested",
+          "text-contradicts-own-materials"
+        ]
+      }
+    },
+    {
+      "id": "c3",
+      "statement": "The speech-error shift in the nap group is associated with slow-wave sleep: Session x Restriction x SWS duration beta = 0.06, SE = .02, z = 3.10, p = .002 (r = .47), corroborated by delta power (beta = 0.006, z = 2.64, p = .008).",
+      "scope": "Sleep group only, n = 19 participants, 2,401 speech errors.",
+      "quantities": [
+        {
+          "name": "sws_glm_published_formula_z",
+          "value": 3.096,
+          "unit": "z",
+          "n": 2401,
+          "baseline": "glm with no participant term and no lower-order terms -- the authors' own formula, reproduced exactly",
+          "source": "reanalysis/out/r01_out.txt"
+        },
+        {
+          "name": "sws_glm_full_terms_cluster_robust_z",
+          "value": 1.9007,
+          "unit": "z",
+          "n": 2401,
+          "baseline": "p = 0.0573 (19 participant clusters)",
+          "source": "reanalysis/out/r01_out.txt"
+        },
+        {
+          "name": "sws_participant_level_r",
+          "value": 0.466,
+          "unit": "r",
+          "n": 19,
+          "baseline": "p = 0.044 (permutation 0.046); REM r = -0.494; delta power r = 0.397, p = 0.093; 6 sleep measures, no correction",
+          "source": "reanalysis/out/r01_out.txt"
+        }
+      ],
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "The published z = 3.10 comes from a logistic regression over speech errors as if they were independent participants, without lower-order terms. With participants as clusters and a proper model it is p = .057; at the participant level r = .47, p = .044, one of six uncorrected sleep measures, matched by an opposite REM correlation. Delta power, offered as converging evidence, is p = .09 at the participant level.",
+        "by": "maria",
+        "patterns": [
+          "units-of-analysis-inflated"
+        ]
+      }
+    },
+    {
+      "id": "c4",
+      "origin": "reader",
+      "statement": "Table 1's standard deviations are rotated by one block in every column: the SD printed for training belongs to test block 1, the one printed for test 1 belongs to test 2, and the one printed for test 2 belongs to training (e.g. sleep/restricted error counts printed 9.5 (4.7), 4.9 (3.8), 6.0 (5.4); true 9.5 (5.4), 4.9 (4.7), 6.0 (3.8)). Means are correct and are pooled over errors, while the SDs are across participants.",
+      "scope": "Table 1, all 8 columns (group x restriction, percentage and count rows).",
+      "quantities": [
+        {
+          "name": "sleep_restricted_train_error_count_sd_true",
+          "value": 5.4,
+          "unit": "errors",
+          "n": 19,
+          "baseline": "printed 4.7 (= true test-1 SD)",
+          "source": "reanalysis/out/r01_out.txt"
+        }
+      ],
+      "evidence": [
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Recomputed from the deposited error-level data; the rotation is consistent across all 24 printed SDs.",
+        "by": "maria",
+        "patterns": [
+          "text-contradicts-own-materials"
+        ]
+      }
+    }
+  ],
+  "methods": [
+    "exact-reproduction-from-deposit",
+    "containerised-batch-re-execution",
+    "unit-of-analysis-pseudoreplication-check",
+    "exact-permutation-test",
+    "published-table-vs-deposit-crosscheck",
+    "post-treatment-baseline-check"
+  ],
+  "artifacts": [
+    {
+      "id": "a1",
+      "role": "supplement",
+      "locator": "https://eprints.whiterose.ac.uk/id/eprint/79436/1/Nap_study_SOMR_accepted.pdf (accepted manuscript incl. supplement)",
+      "status": "verified-usable",
+      "fetch_cmd": "curl -sL -A 'Mozilla/5.0' -o accepted_whiterose.pdf https://eprints.whiterose.ac.uk/id/eprint/79436/1/Nap_study_SOMR_accepted.pdf",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "Read tool on the PDF, pages 1-20",
+        "result": "Accepted version, not typeset. Unpaywall's second location (hull-repository.worktribe.com/file/373758/1/Supplemental_information.pdf) returns an HTML page -- a stale OA deep link."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "raw-data",
+      "locator": "https://osf.io/fcgd6/ osfstorage/keyvarscentred.csv (speech errors, one row per error, 5,084 x 27, incl. Matched flag, sleep-stage minutes, delta, sleepiness)",
+      "status": "verified-usable",
+      "bytes": 581912,
+      "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/fcgd6/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/gaskell2014-sleep-language-production)/osf_fcgd6\"",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "python zoo-knowledge-base/instance-papers/papers/gaskell2014-sleep-language-production/reanalysis/r01_reanalysis.py <downloads dir>",
+        "result": "38 participants (19/19), all with all 3 blocks (the paper says one participant's speech errors were excluded; the file has 38). Covariates are centred; participant-level variables repeated on each error row."
+      },
+      "datasheet": {
+        "composition": "one row per coded speech error: SyllPos (1 same position), SubID, Group (+-.5), Block, Session, Restriction, LIST, Matched, TOWRE, sleepiness, test scores, sleep-stage minutes and delta (centred)",
+        "caveats": "Participant-level variables repeated on every error row -- an invitation to the trial-level glm the authors ran."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "code",
+      "locator": "https://osf.io/c28d9/ osfstorage/analysis-speecherrors.R",
+      "status": "present-but-insufficient",
+      "derived_from": [
+        "a2"
+      ],
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "docker run zoo-r-psych:4.4.1 Rscript -e 'read.csv <- function(...) utils::read.csv(..., stringsAsFactors=TRUE); source(\"analysis-gen.R\", echo=TRUE); source(\"analysis-speecherrors.R\", echo=TRUE)'",
+        "result": "Runs with a one-line stringsAsFactors shim (R >= 4.0). All fixed effects reproduce; SEs differ (lme4 1.1-35.5, several non-converged fits): Session p .03 -> .08; matched sleep Session x Restriction p .021 -> .085; matched sleep test p .017 -> .105. Output: reanalysis/out/authors_R_run.txt. Status present-but-insufficient because the version that produced the published SEs is not recorded."
+      }
+    },
+    {
+      "id": "a4",
+      "role": "raw-data",
+      "locator": "https://osf.io/7qn52/ osfstorage/recgendata.csv (recognition + generalisation trials, 1,461 rows)",
+      "status": "verified-usable",
+      "bytes": 111357,
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "r01_reanalysis.py",
+        "result": "37 participants (18 wake). One sleep participant's LIST is coded 'saf-fis' (lower case) instead of 'Saf-fis' -- harmless here."
+      }
+    },
+    {
+      "id": "a5",
+      "role": "code",
+      "locator": "https://osf.io/b7arh/ osfstorage/analysis-gen.R",
+      "status": "verified-usable",
+      "derived_from": [
+        "a4"
+      ],
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "same docker command as a3",
+        "result": "Fails as deposited in R >= 4.0 (contr.sum on NULL levels); runs with the shim. Group beta 1.107 (SE .476, p .020) vs published 1.11 (.53, .038); OK-item intercepts reproduce (sleep z 2.56, wake 0.61)."
+      }
+    },
+    {
+      "id": "a6",
+      "role": "protocol",
+      "locator": "https://osf.io/4gq6x/ osfstorage/online_materials.zip",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "acquire.py (checksum match)",
+        "result": "Not unpacked."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-selection-and-reader-bias",
+      "why": "Item 4 of mark's blinded known-answer control of the reading protocol."
+    }
+  ],
+  "open_questions": [
+    "Unblinding (mark, known_answer_control): sound or not by the third party's standard? My call before unblinding: point estimates reproduce, but two tables carry clear errors (Table 1 SDs rotated, Table 2 SEs as SDs), several p-values do not reproduce in current lme4, the SWS p-value is pseudoreplicated, and the headline effect shrinks from p < .001 to p = .039 under ANCOVA. Checked-type defects: moderate.",
+    "Which lme4 version produced the published SEs? Rerunning the deposit under lme4 ~1.1-6 (2014) would separate 'version-dependent' from 'never reproducible'."
+  ]
+}
