@@ -1,0 +1,244 @@
+{
+ "exp1": {
+  "n_participants": 17,
+  "trials_per_participant": [
+   192
+  ],
+  "rel_label_equals_target_identity": 1.0,
+  "prime_acc_unconscious": {
+   "mean": 53.0704589528119,
+   "t": 1.8366276897592808,
+   "df": 16,
+   "p": 0.08491414311219718,
+   "paper": [
+    53.3,
+    "t(16)=2.06 p=.06"
+   ]
+  },
+  "prime_acc_participants_above_65": 0,
+  "target_acc_unconscious": 92.43697478991596,
+  "prime_answer_equals_target_answer_pct": 58.371040723981906,
+  "prime_acc_by_congruency": {
+   "0": 45.67822262263499,
+   "1": 60.671869195516074
+  },
+  "unconscious_rt": {
+   "sem_rel": {
+    "mean": 88.80476703316371,
+    "t": 4.264181765895061,
+    "p": 0.0005933661698209912
+   },
+   "prim_ident": {
+    "mean": 48.135795435568916,
+    "t": 2.0982286695412524,
+    "p": 0.0521165607137574
+   },
+   "prim_diff": {
+    "mean": -6.890400353140448,
+    "t": -0.2903390260603811,
+    "p": 0.7752862132798906
+   },
+   "inter_log": {
+    "mean": 0.06993928797590154,
+    "t": 2.4033707654832503,
+    "p": 0.028725899105773098
+   },
+   "main_log": {
+    "mean": 0.018565461737446533,
+    "t": 0.9342606096143531,
+    "p": 0.3640559882670378
+   }
+  },
+  "paper_table4_sem_identPriming_diffPriming": [
+   89,
+   47,
+   -17
+  ],
+  "multiverse_n": 48,
+  "multiverse_share_p_lt_05_for_reported_cell": 0.20833333333333334,
+  "multiverse_share_inter_p_lt_05": 0.6875,
+  "perm_null_rate_interaction_p05": 0.043333333333333335,
+  "perm_null_rate_interaction_or_any_cell_p05": 0.10333333333333333
+ },
+ "exp2": {
+  "n_participants": 22,
+  "trials_per_participant": [
+   192
+  ],
+  "rel_label_equals_target_identity": 1.0,
+  "prime_acc_unconscious": {
+   "mean": 51.89810189810189,
+   "t": 1.9149910475767045,
+   "df": 21,
+   "p": 0.06921388175354327,
+   "paper": [
+    51.6,
+    "t(21)=1.47 p=.16"
+   ]
+  },
+  "prime_acc_participants_above_65": 0,
+  "target_acc_unconscious": 95.60439560439559,
+  "prime_answer_equals_target_answer_pct": 49.95004995004995,
+  "prime_acc_by_congruency": {
+   "0": 52.13827588366063,
+   "1": 51.61361476842813
+  },
+  "unconscious_rt": {
+   "sem_rel": {
+    "mean": 49.81930121224935,
+    "t": 1.9877026678416492,
+    "p": 0.060039992352625145
+   },
+   "prim_ident": {
+    "mean": -5.843995690055661,
+    "t": -0.473007818546879,
+    "p": 0.6410870665300004
+   },
+   "prim_diff": {
+    "mean": 23.48084624822241,
+    "t": 1.3380487074146943,
+    "p": 0.19519024552035327
+   },
+   "inter_log": {
+    "mean": -0.03488051950241196,
+    "t": -1.4062482740086812,
+    "p": 0.17427584108789057
+   },
+   "main_log": {
+    "mean": 0.0064908855508217286,
+    "t": 0.5942075285986034,
+    "p": 0.5587210733073467
+   }
+  },
+  "paper_table4_sem_identPriming_diffPriming": [
+   61,
+   -11,
+   37
+  ],
+  "multiverse_n": 48,
+  "multiverse_share_p_lt_05_for_reported_cell": 0.0,
+  "multiverse_share_inter_p_lt_05": 0.0,
+  "perm_null_rate_interaction_p05": 0.06,
+  "perm_null_rate_interaction_or_any_cell_p05": 0.14333333333333334
+ },
+ "exp3": {
+  "n_participants": 21,
+  "trials_per_participant": [
+   192
+  ],
+  "rel_label_equals_target_identity": 1.0,
+  "prime_acc_unconscious": {
+   "mean": 47.09576138147567,
+   "t": -2.5128819402742444,
+   "df": 20,
+   "p": 0.020656958756985117,
+   "paper": [
+    47.2,
+    "t(20)=-2.27 p=.035"
+   ]
+  },
+  "prime_acc_participants_above_65": 0,
+  "target_acc_unconscious": 94.40083725798011,
+  "prime_answer_equals_target_answer_pct": 60.282574568288844,
+  "prime_acc_by_congruency": {
+   "0": 37.633187484788266,
+   "1": 56.73301499564477
+  },
+  "unconscious_rt": {
+   "sem_rel": {
+    "mean": 91.66717500775734,
+    "t": 3.3398466037246894,
+    "p": 0.0032635280760870645
+   },
+   "prim_ident": {
+    "mean": 40.13321594386181,
+    "t": 1.6932943366439284,
+    "p": 0.10591871140399962
+   },
+   "prim_diff": {
+    "mean": -36.86020843098235,
+    "t": -1.7615413461013278,
+    "p": 0.09342758373093127
+   },
+   "inter_log": {
+    "mean": 0.08421009767398446,
+    "t": 2.1908738423329823,
+    "p": 0.0404736864517742
+   },
+   "main_log": {
+    "mean": 0.0026200448234881095,
+    "t": 0.14479844739988684,
+    "p": 0.8863192621641025
+   }
+  },
+  "paper_table4_sem_identPriming_diffPriming": [
+   95,
+   59,
+   -32
+  ],
+  "multiverse_n": 48,
+  "multiverse_share_p_lt_05_for_reported_cell": 0.375,
+  "multiverse_share_inter_p_lt_05": 1.0,
+  "perm_null_rate_interaction_p05": 0.056666666666666664,
+  "perm_null_rate_interaction_or_any_cell_p05": 0.10666666666666667
+ },
+ "exp4": {
+  "n_participants": 22,
+  "trials_per_participant": [
+   192
+  ],
+  "rel_label_equals_target_identity": 1.0,
+  "prime_acc_unconscious": {
+   "mean": 50.38891589693728,
+   "t": 0.7453482901144223,
+   "df": 21,
+   "p": 0.4643224886474051,
+   "paper": [
+    50.0,
+    "t(21)=0.04 p=.97"
+   ]
+  },
+  "prime_acc_participants_above_65": 0,
+  "target_acc_unconscious": 93.33981526494895,
+  "prime_answer_equals_target_answer_pct": 50.58337384540593,
+  "prime_acc_by_congruency": {
+   "0": 49.5199274469946,
+   "1": 51.27260338758056
+  },
+  "unconscious_rt": {
+   "sem_rel": {
+    "mean": 78.5536218731724,
+    "t": 4.2794488443358505,
+    "p": 0.00033306636374275805
+   },
+   "prim_ident": {
+    "mean": -26.7671009693482,
+    "t": -1.2249092943878157,
+    "p": 0.2341720637472139
+   },
+   "prim_diff": {
+    "mean": -4.910595767576464,
+    "t": -0.35118477201501846,
+    "p": 0.7289485743676736
+   },
+   "inter_log": {
+    "mean": -0.019703447494392942,
+    "t": -0.673034769430467,
+    "p": 0.5082647129491329
+   },
+   "main_log": {
+    "mean": -0.012029232763103082,
+    "t": -0.7329514607039873,
+    "p": 0.4716910793674556
+   }
+  },
+  "paper_table4_sem_identPriming_diffPriming": [
+   79,
+   25,
+   4
+  ],
+  "multiverse_n": 48,
+  "perm_null_rate_interaction_p05": 0.03,
+  "perm_null_rate_interaction_or_any_cell_p05": 0.09666666666666666
+ }
+}

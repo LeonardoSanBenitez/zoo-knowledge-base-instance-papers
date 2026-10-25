@@ -1,0 +1,27 @@
+
+=== Exp 1: n=17 trials/participant=[192] rel==targets-identical share=1.0
+  prime accuracy (unconscious): 53.1% t(16)=1.84 p=0.085  | paper (53.3, 't(16)=2.06 p=.06') | participants >65%: 0
+  target accuracy 92.4%; prime answer == target answer 58.4%; prime accuracy by congruency {0: 45.67822262263499, 1: 60.671869195516074}
+  RT (exp of log means, ms): {'sem_rel': (88.8, 4.26, 0.001), 'prim_ident': (48.1, 2.1, 0.052), 'prim_diff': (-6.9, -0.29, 0.775), 'inter_log': (0.0699, 2.4, 0.029), 'main_log': (0.0186, 0.93, 0.364)} | paper sem/ident/diff: (89, 47, -17)
+  multiverse (48 specs): reported cell p<.05 in 0.21; interaction p<.05 in 0.69
+  permutation null (P=300): interaction p<.05 0.043; interaction-or-any-cell 0.103
+
+=== Exp 2: n=22 trials/participant=[192] rel==targets-identical share=1.0
+  prime accuracy (unconscious): 51.9% t(21)=1.91 p=0.069  | paper (51.6, 't(21)=1.47 p=.16') | participants >65%: 0
+  target accuracy 95.6%; prime answer == target answer 50.0%; prime accuracy by congruency {0: 52.13827588366063, 1: 51.61361476842813}
+  RT (exp of log means, ms): {'sem_rel': (49.8, 1.99, 0.06), 'prim_ident': (-5.8, -0.47, 0.641), 'prim_diff': (23.5, 1.34, 0.195), 'inter_log': (-0.0349, -1.41, 0.174), 'main_log': (0.0065, 0.59, 0.559)} | paper sem/ident/diff: (61, -11, 37)
+  multiverse (48 specs): reported cell p<.05 in 0.00; interaction p<.05 in 0.00
+  permutation null (P=300): interaction p<.05 0.060; interaction-or-any-cell 0.143
+
+=== Exp 3: n=21 trials/participant=[192] rel==targets-identical share=1.0
+  prime accuracy (unconscious): 47.1% t(20)=-2.51 p=0.021  | paper (47.2, 't(20)=-2.27 p=.035') | participants >65%: 0
+  target accuracy 94.4%; prime answer == target answer 60.3%; prime accuracy by congruency {0: 37.633187484788266, 1: 56.73301499564477}
+  RT (exp of log means, ms): {'sem_rel': (91.7, 3.34, 0.003), 'prim_ident': (40.1, 1.69, 0.106), 'prim_diff': (-36.9, -1.76, 0.093), 'inter_log': (0.0842, 2.19, 0.04), 'main_log': (0.0026, 0.14, 0.886)} | paper sem/ident/diff: (95, 59, -32)
+  multiverse (48 specs): reported cell p<.05 in 0.38; interaction p<.05 in 1.00
+  permutation null (P=300): interaction p<.05 0.057; interaction-or-any-cell 0.107
+
+=== Exp 4: n=22 trials/participant=[192] rel==targets-identical share=1.0
+  prime accuracy (unconscious): 50.4% t(21)=0.75 p=0.464  | paper (50.0, 't(21)=0.04 p=.97') | participants >65%: 0
+  target accuracy 93.3%; prime answer == target answer 50.6%; prime accuracy by congruency {0: 49.5199274469946, 1: 51.27260338758056}
+  RT (exp of log means, ms): {'sem_rel': (78.6, 4.28, 0.0), 'prim_ident': (-26.8, -1.22, 0.234), 'prim_diff': (-4.9, -0.35, 0.729), 'inter_log': (-0.0197, -0.67, 0.508), 'main_log': (-0.012, -0.73, 0.472)} | paper sem/ident/diff: (79, 25, 4)
+  permutation null (P=300): interaction p<.05 0.030; interaction-or-any-cell 0.097

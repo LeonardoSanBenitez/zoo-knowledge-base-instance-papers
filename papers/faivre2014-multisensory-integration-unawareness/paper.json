@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.6",
+  "id": "faivre2014-multisensory-integration-unawareness",
+  "title": "Multisensory Integration in Complete Unawareness: Evidence From Audiovisual Congruency Priming",
+  "authors": ["Nathan Faivre", "Liad Mudrik", "Naama Schwartz", "Christof Koch"],
+  "year": 2014,
+  "venue": "Psychological Science 25(11):2006-2016",
+  "area": ["experimental-social-and-cognitive-psychology", "contemplative-neuroscience"],
+  "identifiers": {"doi": "10.1177/0956797614547916"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "Assigned by mark as item 7 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none.", "recorded": "at-selection"},
+  "cost": {"tool_calls": 18, "bytes_downloaded": 3000000, "compute_notes": "Published PDF via EPFL Infoscience DSpace API (bundle ORIGINAL). OSF usfa5 (files.zip: 191 files, 8 experiments x per-participant .dat, stimuli wav) acquired with checksums. No code deposited; rebuilt in Python: Table 2 and 4, 48-spec multiverse per experiment, 300-permutation within-participant null per experiment, 12-variant aggregation search, stratified prime sensitivity.", "session": "2026-10-25 maria"},
+  "curation": {"author": "maria", "created": "2026-10-25", "verified": "2026-10-25", "notes_file": "NOTES.md"},
+  "triggers": ["unconscious multisensory integration masked audiovisual priming", "below-chance awareness test read as unawareness", "response carryover contaminates objective awareness measure", "post hoc exclusion of aware participants regression to the mean", "known-answer control psychological science 2014 open data"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Audiovisual congruency priming occurs when the visual prime (Exp 1), the auditory prime (Exp 2) or both primes (Exp 3) are masked: priming for identical targets 47 ms (p = .04, Exp 1) and 59 ms (p = .04, Exp 3), for different targets 37 ms (p = .035, Exp 2); target x congruency interactions p = .02, .02, .03.",
+      "scope": "Unconscious blocks (96 trials) after a conscious training block; n = 17, 22, 21 after exclusions.",
+      "quantities": [
+        {"name": "exp1_identical_priming_ms_reproduced", "value": 48.1, "unit": "ms", "n": 17, "baseline": "p = 0.052 (published 47, p = .04)", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "exp3_identical_priming_ms_reproduced", "value": 40.1, "unit": "ms", "n": 21, "baseline": "p = 0.106 (published 59, p = .04); interaction p = 0.04 reproduces", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "exp2_different_priming_ms_reproduced", "value": 23.5, "unit": "ms", "n": 22, "baseline": "p = 0.195 (published 37, p = .035); interaction p = 0.174 (published .02); reported cell p < .05 in 0.00 of 48 specifications", "source": "reanalysis/out/r01_out.txt"}
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {"status": "disputed", "why": "Exp 1 and Exp 3 interactions reproduce and are robust across specifications (69% and 100% of 48 at p < .05). The cell effects reproduce weaker (p .05-.11). Exp 2 does not reproduce under any of 48 specifications. No main effect of congruency anywhere; the carrying cell flips direction between experiments.", "by": "maria", "patterns": ["analytic-flexibility", "text-contradicts-own-materials", "small-sample-overreach"]}
+    },
+    {
+      "id": "c2",
+      "statement": "Participants were unaware of the masked primes: prime-relation discrimination at chance in Exps 1, 2, 4 (53.3%, 51.6%, 50.0%) and significantly below chance in Exp 3 (47.2%, t(20) = -2.27, p = .035), 'taken as evidence for an absence of awareness' -- hence 'multisensory integration in complete unawareness'.",
+      "scope": "Objective awareness test on the prime pair after each trial; participants with > 65% excluded (9 in Exp 1, 6 in Exp 2).",
+      "quantities": [
+        {"name": "exp1_prime_sensitivity_within_target_response", "value": 0.075, "unit": "hit minus false-alarm rate", "n": 17, "baseline": "t(16) = 2.50, p = 0.024 (raw accuracy 53.3%, p = .057 reproduces the paper)", "source": "reanalysis/out/r02_out.txt"},
+        {"name": "exp3_prime_sensitivity_within_target_response", "value": -0.041, "unit": "hit minus false-alarm rate", "n": 21, "baseline": "t(20) = -2.30, p = 0.032: systematic reversed sensitivity", "source": "reanalysis/out/r02_out.txt"}
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {"status": "refuted", "why": "Prime answers copy target answers on 58-60% of trials (Exps 1, 3), so raw accuracy mixes sensitivity with carryover. Stratified by the target response, Exp 1 shows above-chance sensitivity (p = .024) after the most aware participants were already excluded, and Exp 3 shows significant reversed sensitivity (p = .032). Below-chance performance is information, not its absence. The excluded participants are not in the deposit.", "by": "maria", "patterns": ["nonsignificance-read-as-absence", "post-treatment-conditioning", "missing-adequate-control"]}
+    },
+    {
+      "id": "c3",
+      "origin": "reader",
+      "statement": "Table 4's unconscious priming values cannot be reproduced from the deposit: across 12 aggregation variants the best attempt for Exp 3 identical targets is 51 ms (published 59) and Exp 4 identical-target priming is negative in every variant (-9 to -27 ms) against +25 published.",
+      "scope": "Variants: participant vs group level exp of mean log RT; drop first 5 trials of experiment / of block / none; RT window 300-4000 ms vs no upper bound.",
+      "quantities": [{"name": "exp4_identical_priming_ms_paper_pipeline", "value": -26.8, "unit": "ms", "n": 22, "baseline": "published +25 [-17, 67]", "source": "reanalysis/out/r01_out.txt"}],
+      "evidence": ["a2"],
+      "our_assessment": {"status": "accepted", "why": "Same data, documented pipeline, multiple variants; the semantic-relation effects from the same cells do reproduce, which rules out a gross loading error on my side.", "by": "maria", "patterns": ["text-contradicts-own-materials"]}
+    }
+  ],
+  "methods": ["exact-reproduction-from-deposit", "manual-reanalysis-from-shared-materials", "multiverse-analysis", "exact-permutation-test", "published-table-vs-deposit-crosscheck"],
+  "artifacts": [
+    {"id": "a1", "role": "supplement", "locator": "https://infoscience.epfl.ch/server/api/core/bitstreams/abd17f1b-cff8-4977-b862-d635010f864a/content (published OnlineFirst PDF; identical copy on OSF usfa5)", "status": "verified-usable", "sha256": "cfabf948e8f1ebe5fca112064819d0ad2b711049d1408d7d2d2beaf93557ae45",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "Read tool, pages 1-12; EPFL record 201939 resolved via the DSpace 7 REST API (/server/api/core/items/<uuid>/bundles)", "result": "Primary source. Supplement (PsychScience2014_SI.pdf on OSF) downloaded, not read in full."}},
+    {"id": "a2", "role": "raw-data", "locator": "https://osf.io/usfa5/ osfstorage/files.zip -> data/Exp1..Exp8/*.dat (one per participant, 192 trials), readme, stimuli", "status": "present-but-insufficient", "bytes": 1221353,
+     "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/usfa5/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/faivre2014-multisensory-integration-unawareness)/osf_usfa5\" && unzip files.zip",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "python zoo-knowledge-base/instance-papers/papers/faivre2014-multisensory-integration-unawareness/reanalysis/r01_reproduce.py <unz/data> ; r02_variants_and_sensitivity.py <unz/data>", "result": "Exp1 17, Exp2 22, Exp3 21, Exp4 22 files: only retained participants (the 15 excluded for awareness are absent, so the exclusion cannot be audited). The readme describes column 5 as prime-target congruency; in the data 'rel' marks identical targets on 100% of rows. Table 4 priming not reproducible (see c3)."},
+     "datasheet": {"composition": "per trial: initials, id, trial, prime identity (cong/incong), target identity (rel/unrel -- mislabelled in readme), masking flags, stimuli, target response and RT, prime response and RT", "caveats": "Excluded participants absent; readme column 5 mislabelled; no analysis code."}},
+    {"id": "a3", "role": "code", "locator": "none deposited", "status": "absent",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "listing of files.zip", "result": "Analyses run in R per the paper; no script shared."}}
+  ],
+  "relations": [
+    {"type": "zoo:reanalysedBy", "target": "maria2026-selection-and-reader-bias", "why": "Item 7 of mark's blinded known-answer control of the reading protocol."}
+  ],
+  "open_questions": [
+    "Unblinding (mark, known_answer_control): my call before unblinding -- not reproducible as reported (Table 4; Exp 2), central unawareness claim contradicted by the authors' own trial data. Checked-type defects: strong.",
+    "Do the excluded participants (9 + 6) exist in an undeposited file? With them, an unbiased estimate of prime sensitivity and of the priming-awareness relation (Greenwald regression) would be possible."
+  ]
+}

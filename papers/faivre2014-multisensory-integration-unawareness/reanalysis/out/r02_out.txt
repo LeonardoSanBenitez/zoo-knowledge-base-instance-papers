@@ -1,0 +1,8 @@
+Exp 1: closest Table-4 variants (abs err, spec, [sem, ident, diff]) vs paper (89, 47, -17): [(12.132116711424018, 'blk5|300|4000|participant', [88.1, 48.1, -6.9]), (12.530401152806576, 'blk5|300|4000|group', [93.9, 42.0, -14.4])]
+   prime sensitivity within target-response strata: H-FA = 0.075, t(16) = 2.50, p = 0.024; raw prime accuracy, all unconscious trials: 53.3% (t = 2.05, p = 0.057)
+Exp 2: closest Table-4 variants (abs err, spec, [sem, ident, diff]) vs paper (61, -11, 37): [(11.99592866055491, 'exp5|300|1000000000|group', [61.1, -5.0, 31.1]), (15.301483484990513, 'exp5|300|4000|group', [62.2, -2.8, 31.1])]
+   prime sensitivity within target-response strata: H-FA = 0.022, t(21) = 1.15, p = 0.262; raw prime accuracy, all unconscious trials: 51.7% (t = 1.73, p = 0.099)
+Exp 3: closest Table-4 variants (abs err, spec, [sem, ident, diff]) vs paper (95, 59, -32): [(23.489141408023407, 'exp5|300|4000|participant', [82.7, 50.8, -35.0]), (23.489141408023407, 'none|300|4000|participant', [82.7, 50.8, -35.0])]
+   prime sensitivity within target-response strata: H-FA = -0.041, t(20) = -2.30, p = 0.032; raw prime accuracy, all unconscious trials: 47.4% (t = -2.37, p = 0.028)
+Exp 4: closest Table-4 variants (abs err, spec, [sem, ident, diff]) vs paper (79, 25, 4): [(38.401595134501235, 'blk5|300|1000000000|group', [80.9, -9.4, 6.1]), (38.401595134501235, 'exp5|300|1000000000|group', [80.9, -9.4, 6.1])]
+   prime sensitivity within target-response strata: H-FA = 0.003, t(21) = 0.31, p = 0.759; raw prime accuracy, all unconscious trials: 50.3% (t = 0.47, p = 0.646)
