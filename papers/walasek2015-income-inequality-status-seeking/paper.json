@@ -2,54 +2,169 @@
   "schema_version": "1.6",
   "id": "walasek2015-income-inequality-status-seeking",
   "title": "Income Inequality and Status Seeking: Searching for Positional Goods in Unequal U.S. States",
-  "authors": ["Lukasz Walasek", "Gordon D. A. Brown"],
+  "authors": [
+    "Lukasz Walasek",
+    "Gordon D. A. Brown"
+  ],
   "year": 2015,
   "venue": "Psychological Science 26(4):527-533",
-  "area": ["experimental-social-and-cognitive-psychology", "wellbeing-and-income"],
-  "identifiers": {"doi": "10.1177/0956797614567511", "pmid": "25792131"},
+  "area": [
+    "experimental-social-and-cognitive-psychology",
+    "wellbeing-and-income"
+  ],
+  "identifiers": {
+    "doi": "10.1177/0956797614567511",
+    "pmid": "25792131"
+  },
   "record_status": "active",
   "read_depth": "abstract-only",
-  "selection": {"class": "blind", "evidence": "Assigned by mark as item 5 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none.", "recorded": "at-selection"},
-  "cost": {"tool_calls": 20, "bytes_downloaded": 600000, "compute_notes": "Full text NOT reachable: not OA; WRAP record has no file; SAGE Cloudflare; Wayback holds paywall wrappers (web.archive.org/web/20210310063629/...doi/pdf/...). Read: PubMed abstract + the authors' OSF reproduction instructions. OSF fitgz (parent holds no files; 4 components) acquired with checksums and analysed in Python.", "session": "2026-10-25 maria"},
-  "curation": {"author": "maria", "created": "2026-10-25", "verified": "2026-10-25", "notes_file": "NOTES.md"},
-  "triggers": ["income inequality status seeking google searches", "google correlate residual analysis", "positional goods unequal US states", "defunct service makes a pipeline irreproducible", "known-answer control psychological science 2015 open data"],
+  "selection": {
+    "class": "blind",
+    "evidence": "Assigned by mark as item 5 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none.",
+    "recorded": "at-selection"
+  },
+  "cost": {
+    "tool_calls": 20,
+    "bytes_downloaded": 600000,
+    "compute_notes": "Full text NOT reachable: not OA; WRAP record has no file; SAGE Cloudflare; Wayback holds paywall wrappers (web.archive.org/web/20210310063629/...doi/pdf/...). Read: PubMed abstract + the authors' OSF reproduction instructions. OSF fitgz (parent holds no files; 4 components) acquired with checksums and analysed in Python.",
+    "session": "2026-10-25 maria"
+  },
+  "curation": {
+    "author": "maria",
+    "created": "2026-10-25",
+    "verified": "2026-10-25",
+    "notes_file": "NOTES.md"
+  },
+  "triggers": [
+    "income inequality status seeking google searches",
+    "google correlate residual analysis",
+    "positional goods unequal US states",
+    "defunct service makes a pipeline irreproducible",
+    "known-answer control psychological science 2015 open data"
+  ],
   "claims": [
     {
       "id": "c1",
       "statement": "Of the 40 search terms used more frequently in states with greater residual income inequality (Gini net of income, population, urbanisation and foreign-born share), more than 70% were classified as status goods; of the 40 used more frequently in less unequal states, 0%.",
       "scope": "50 US states (DC omitted), Google Correlate top-40 positive and top-40 negative terms, 60 MTurk raters per term.",
       "quantities": [
-        {"name": "positive_terms_classified_status_majority_rule", "value": 0.725, "unit": "proportion", "n": 40, "count": 29, "denominator": 40, "baseline": "negative terms 0/40; at threshold .70: 0.55, at .80: 0.45", "source": "reanalysis/out/r01_out.txt"},
-        {"name": "status_terms_in_three_query_families", "value": 17, "unit": "terms", "n": 29, "baseline": "Ralph Lauren 6, David Yurman 8, loafers 3; 12 outside these families", "source": "reanalysis/out/r01_out.txt"}
+        {
+          "name": "positive_terms_classified_status_majority_rule",
+          "value": 0.725,
+          "unit": "proportion",
+          "n": 40,
+          "count": 29,
+          "denominator": 40,
+          "baseline": "negative terms 0/40; at threshold .70: 0.55, at .80: 0.45",
+          "source": "reanalysis/out/r01_out.txt"
+        },
+        {
+          "name": "status_terms_outside_three_query_families",
+          "value": 12,
+          "unit": "terms",
+          "n": 29,
+          "baseline": "of 29 status-classified terms; families: Ralph Lauren 6, David Yurman 8, loafers 3",
+          "source": "reanalysis/out/r01_out.txt"
+        }
       ],
-      "evidence": ["a2", "a3"],
-      "our_assessment": {"status": "unverified", "why": "Abstract-only read. The deposit reproduces the headline proportions (29/40 vs 0/40 under a majority rule) and the residuals exactly. Not assessable without the paper: rater blinding, the test used, robustness. Counts are inflated by near-duplicate query families.", "by": "maria"}
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "Abstract-only read. The deposit reproduces the headline proportions (29/40 vs 0/40 under a majority rule) and the residuals exactly. Not assessable without the paper: rater blinding, the test used, robustness. Counts are inflated by near-duplicate query families.",
+        "by": "maria"
+      }
     },
     {
       "id": "c2",
       "statement": "Residual-based analysis offers a methodology for using Google Correlate 'while avoiding confounds and high risks of spurious correlations' (abstract).",
       "scope": "Method claim.",
       "quantities": [
-        {"name": "residual_inequality_R2_on_census_region", "value": 0.403, "unit": "R2", "n": 50, "baseline": "p < .0001; top residual states CT, LA, NY, MA, MS, AL, TN, RI", "source": "reanalysis/out/r01_out.txt"}
+        {
+          "name": "residual_inequality_R2_on_census_region",
+          "value": 0.403,
+          "unit": "R2",
+          "n": 50,
+          "baseline": "p < .0001; top residual states CT, LA, NY, MA, MS, AL, TN, RI",
+          "source": "reanalysis/out/r01_out.txt"
+        }
       ],
-      "evidence": ["a2"],
-      "our_assessment": {"status": "unverified", "why": "Abstract-only read. On the deposit, 40% of the residual is Census region: the measure carries the Northeast/Deep-South geography the four controls do not remove, and the status terms read as a regional preppy idiom. The confound the residual avoids is income, not culture. Google Correlate was shut down in 2019, so the selection step cannot be re-run by anyone.", "by": "maria", "patterns": ["missing-adequate-control"]}
+      "evidence": [
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "unverified",
+        "why": "Abstract-only read. On the deposit, 40% of the residual is Census region: the measure carries the Northeast/Deep-South geography the four controls do not remove, and the status terms read as a regional preppy idiom. The confound the residual avoids is income, not culture. Google Correlate was shut down in 2019, so the selection step cannot be re-run by anyone.",
+        "by": "maria",
+        "patterns": [
+          "missing-adequate-control"
+        ]
+      }
     }
   ],
-  "methods": ["exact-reproduction-from-deposit", "published-table-vs-deposit-crosscheck"],
+  "methods": [
+    "exact-reproduction-from-deposit",
+    "published-table-vs-deposit-crosscheck"
+  ],
   "artifacts": [
-    {"id": "a1", "role": "protocol", "locator": "https://osf.io/tkfxd/ osfstorage/LW&GDAB_Methods.pdf (authors' reproduction instructions)", "status": "present-but-insufficient",
-     "checked": {"on": "2026-10-25", "by": "maria", "how": "Read tool on the PDF (2 pages)", "result": "Step-by-step census downloads via factfinder.census.gov (retired by the Census Bureau in 2020) and Google Correlate (shut down 2019). The steps are documented; the services are gone."}},
-    {"id": "a2", "role": "derived-data", "locator": "https://osf.io/tqi83/ Inequality_Control_Data.xlsx and https://osf.io/437xf/ open_access_residuals.xlsx (50 states)", "status": "verified-usable",
-     "fetch_cmd": "for g in tqi83 437xf xfmbq tkfxd; do python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/$g/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/walasek2015-income-inequality-status-seeking)/osf_$g\"; done",
-     "checked": {"on": "2026-10-25", "by": "maria", "how": "python zoo-knowledge-base/instance-papers/papers/walasek2015-income-inequality-status-seeking/reanalysis/r01_deposit_checks.py <downloads dir>", "result": "OLS GINIindex ~ log_mean_inc + Population + percurban + PercentForeignBorn reproduces the deposited residuals to 5e-6 (R2 = .342). Population enters raw."}},
-    {"id": "a3", "role": "human-labels", "locator": "https://osf.io/xfmbq/ RatingData.xlsx (80 terms x yes/no/don't know counts, correlation r)", "status": "verified-usable",
-     "checked": {"on": "2026-10-25", "by": "maria", "how": "same script", "result": "60 raters per term. Negative r stored as text with a typographic minus. Correlations .73-.78 (positive) and -.68 to -.72 (negative): the top of a search over the Google Correlate database, not estimates of association strength."}},
-    {"id": "a4", "role": "raw-data", "locator": "Google Correlate state-level query series", "status": "dangling",
-     "checked": {"on": "2026-10-25", "by": "maria", "how": "service status (google.com/trends/correlate discontinued December 2019)", "result": "The step that selected the 80 terms cannot be re-run; its output survives only as the term list in a3."}}
+    {
+      "id": "a1",
+      "role": "protocol",
+      "locator": "https://osf.io/tkfxd/ osfstorage/LW&GDAB_Methods.pdf (authors' reproduction instructions)",
+      "status": "present-but-insufficient",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "Read tool on the PDF (2 pages)",
+        "result": "Step-by-step census downloads via factfinder.census.gov (retired by the Census Bureau in 2020) and Google Correlate (shut down 2019). The steps are documented; the services are gone."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "derived-data",
+      "locator": "https://osf.io/tqi83/ Inequality_Control_Data.xlsx and https://osf.io/437xf/ open_access_residuals.xlsx (50 states)",
+      "status": "verified-usable",
+      "fetch_cmd": "for g in tqi83 437xf xfmbq tkfxd; do python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/$g/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/walasek2015-income-inequality-status-seeking)/osf_$g\"; done",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "python zoo-knowledge-base/instance-papers/papers/walasek2015-income-inequality-status-seeking/reanalysis/r01_deposit_checks.py <downloads dir>",
+        "result": "OLS GINIindex ~ log_mean_inc + Population + percurban + PercentForeignBorn reproduces the deposited residuals to 5e-6 (R2 = .342). Population enters raw."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "human-labels",
+      "locator": "https://osf.io/xfmbq/ RatingData.xlsx (80 terms x yes/no/don't know counts, correlation r)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "same script",
+        "result": "60 raters per term. Negative r stored as text with a typographic minus. Correlations .73-.78 (positive) and -.68 to -.72 (negative): the top of a search over the Google Correlate database, not estimates of association strength."
+      }
+    },
+    {
+      "id": "a4",
+      "role": "raw-data",
+      "locator": "Google Correlate state-level query series",
+      "status": "dangling",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "service status (google.com/trends/correlate discontinued December 2019)",
+        "result": "The step that selected the 80 terms cannot be re-run; its output survives only as the term list in a3."
+      }
+    }
   ],
   "relations": [
-    {"type": "zoo:reanalysedBy", "target": "maria2026-selection-and-reader-bias", "why": "Item 5 of mark's blinded known-answer control of the reading protocol (abstract-only: full text unreachable)."}
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-selection-and-reader-bias",
+      "why": "Item 5 of mark's blinded known-answer control of the reading protocol (abstract-only: full text unreachable)."
+    }
   ],
   "open_questions": [
     "Full text needed (mark asked 2026-10-25: send PDF, swap reserve, or score as abstract-only). Were raters blind to the source list? Was region or culture considered?",
