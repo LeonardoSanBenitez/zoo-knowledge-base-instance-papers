@@ -2,50 +2,177 @@
   "schema_version": "1.6",
   "id": "jaraettinger2015-not-so-innocent",
   "title": "Not So Innocent: Toddlers' Inferences About Costs and Culpability",
-  "authors": ["Julian Jara-Ettinger", "Joshua B. Tenenbaum", "Laura E. Schulz"],
+  "authors": [
+    "Julian Jara-Ettinger",
+    "Joshua B. Tenenbaum",
+    "Laura E. Schulz"
+  ],
   "year": 2015,
   "venue": "Psychological Science 26(5):633-640",
-  "area": ["experimental-social-and-cognitive-psychology"],
-  "identifiers": {"doi": "10.1177/0956797615572806", "pmid": "25870405"},
+  "area": [
+    "experimental-social-and-cognitive-psychology"
+  ],
+  "identifiers": {
+    "doi": "10.1177/0956797615572806",
+    "pmid": "25870405"
+  },
   "record_status": "active",
   "read_depth": "read-and-reanalysed",
-  "selection": {"class": "blind", "evidence": "Assigned by mark as item 1 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none.", "recorded": "at-selection"},
-  "cost": {"tool_calls": 34, "bytes_downloaded": 23300000, "compute_notes": "Published PDF (author copy, Yale lab page; SAGE is behind a Cloudflare wall) read in full. OSF z9ikh (CSV + R), frwun and 4qfvj (materials, 19 MB demo video) acquired with checksums. Authors' AnalyzeData.R run unmodified in Docker image zoo-r-psych:4.4.1 (rocker/r-ver 4.4.1 + CRAN binaries); the two 500,000-replicate difference bootstraps through dplyr::filter are the slow step. Python recount, exact tests and a 4,000-simulation known-answer study of the bootstrap.", "session": "2026-10-25 maria"},
-  "curation": {"author": "maria", "created": "2026-10-25", "verified": "2026-10-25", "notes_file": "NOTES.md"},
-  "triggers": ["do toddlers infer culpability from the cost of an action", "naive utility calculus children moral judgment", "known-answer control psychological science 2015 open data", "p < .075 reported for p = .0756"],
+  "selection": {
+    "class": "blind",
+    "evidence": "Assigned by mark as item 1 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none.",
+    "recorded": "at-selection"
+  },
+  "cost": {
+    "tool_calls": 34,
+    "bytes_downloaded": 23300000,
+    "compute_notes": "Published PDF (author copy, Yale lab page; SAGE is behind a Cloudflare wall) read in full. OSF z9ikh (CSV + R), frwun and 4qfvj (materials, 19 MB demo video) acquired with checksums. Authors' AnalyzeData.R run unmodified in Docker image zoo-r-psych:4.4.1 (rocker/r-ver 4.4.1 + CRAN binaries); the two 500,000-replicate difference bootstraps through dplyr::filter are the slow step. Python recount, exact tests and a 4,000-simulation known-answer study of the bootstrap.",
+    "session": "2026-10-25 maria"
+  },
+  "curation": {
+    "author": "maria",
+    "created": "2026-10-25",
+    "verified": "2026-10-25",
+    "notes_file": "NOTES.md"
+  },
+  "triggers": [
+    "do toddlers infer culpability from the cost of an action",
+    "naive utility calculus children moral judgment",
+    "known-answer control psychological science 2015 open data",
+    "p < .075 reported for p = .0756"
+  ],
   "claims": [
     {
       "id": "c1",
       "statement": "Toddlers (mean 21.6 months) prefer an agent who achieves a goal at lower cost: 15 of 16 chose the competent puppet (Exp 1).",
       "scope": "Exp 1, n = 16 analysed of 24 tested (5 excluded by coder, 3 no choice).",
-      "quantities": [{"name": "exp1_chose_competent", "value": 0.9375, "unit": "proportion", "n": 16, "count": 15, "denominator": 16, "baseline": "two-sided binomial vs 0.5: p = 0.0005", "source": "reanalysis/out/r01_out.txt"}],
-      "evidence": ["a2", "a3"],
-      "our_assessment": {"status": "accepted", "why": "Recounted exactly from the deposit; strong against chance. The published CI [87.5%, 100%] is the R 'basic' interval truncated: R prints (0.8750, 1.0625); the truncation is not stated.", "by": "maria", "patterns": ["text-contradicts-own-materials"]}
+      "quantities": [
+        {
+          "name": "exp1_chose_competent",
+          "value": 0.9375,
+          "unit": "proportion",
+          "n": 16,
+          "count": 15,
+          "denominator": 16,
+          "baseline": "two-sided binomial vs 0.5: p = 0.0005",
+          "source": "reanalysis/out/r01_out.txt"
+        }
+      ],
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Recounted exactly from the deposit; strong against chance. The published CI [87.5%, 100%] is the R 'basic' interval truncated: R prints (0.8750, 1.0625); the truncation is not stated.",
+        "by": "maria",
+        "patterns": [
+          "text-contradicts-own-materials"
+        ]
+      }
     },
     {
       "id": "c2",
       "statement": "When both agents refuse to help, 2-year-olds still prefer to play with the competent agent (Exp 2: 11/16; Exp 3 play: 13/16).",
       "scope": "Exp 2 and Exp 3 play condition, n = 16 each.",
       "quantities": [
-        {"name": "exp2_chose_competent", "value": 0.6875, "unit": "proportion", "n": 16, "count": 11, "denominator": 16, "baseline": "binomial p = 0.21 (paper: 'a bias toward the competent agent')", "source": "reanalysis/out/r01_out.txt"},
-        {"name": "exp3_play_chose_competent", "value": 0.8125, "unit": "proportion", "n": 16, "count": 13, "denominator": 16, "baseline": "binomial p = 0.021; published CI lower bound 68.75% is a typo, the authors' script, figure code and R output all give 62.50%", "source": "reanalysis/out/authors_AnalyzeData_R_run.txt"},
-        {"name": "pooled_refusal_play_chose_competent", "value": 0.75, "unit": "proportion", "n": 32, "count": 24, "denominator": 32, "baseline": "binomial p = 0.007", "source": "reanalysis/out/r02_out.txt"}
+        {
+          "name": "exp2_chose_competent",
+          "value": 0.6875,
+          "unit": "proportion",
+          "n": 16,
+          "count": 11,
+          "denominator": 16,
+          "baseline": "binomial p = 0.21 (paper: 'a bias toward the competent agent')",
+          "source": "reanalysis/out/r01_out.txt"
+        },
+        {
+          "name": "exp3_play_chose_competent",
+          "value": 0.8125,
+          "unit": "proportion",
+          "n": 16,
+          "count": 13,
+          "denominator": 16,
+          "baseline": "binomial p = 0.021; published CI lower bound 68.75% is a typo, the authors' script, figure code and R output all give 62.50%",
+          "source": "reanalysis/out/authors_AnalyzeData_R_run.txt"
+        },
+        {
+          "name": "pooled_refusal_play_chose_competent",
+          "value": 0.75,
+          "unit": "proportion",
+          "n": 32,
+          "count": 24,
+          "denominator": 32,
+          "baseline": "binomial p = 0.007",
+          "source": "reanalysis/out/r02_out.txt"
+        }
       ],
-      "evidence": ["a2", "a3"],
-      "our_assessment": {"status": "accepted-narrower-scope", "why": "Holds pooled (24/32, p = .007) and in Exp 3 alone; Exp 2 alone (11/16, p = .21) is not distinguishable from chance and the paper calls it 'a bias'. Exp 3's play CI is misprinted.", "by": "maria", "patterns": ["text-contradicts-own-materials"]}
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Holds pooled (24/32, p = .007) and in Exp 3 alone; Exp 2 alone (11/16, p = .21) is not distinguishable from chance and the paper calls it 'a bias'. Exp 3's play CI is misprinted.",
+        "by": "maria",
+        "patterns": [
+          "text-contradicts-own-materials"
+        ]
+      }
     },
     {
       "id": "c3",
       "statement": "When both agents refuse to help, children infer that the less competent agent is nicer (abstract); the shift relative to a no-refusal baseline is reported as 'a decrease of 37.5% (95% CI = [6.17%, 71.03%]; p < .075, Fisher exact test)'.",
       "scope": "Exp 3 nicer vs nicer-baseline (same 'which one is nicer?' question; refusal vs none), n = 16 each.",
       "quantities": [
-        {"name": "exp3_nicer_chose_incompetent", "value": 0.6875, "unit": "proportion", "n": 16, "count": 11, "denominator": 16, "baseline": "binomial vs 0.5: p = 0.21", "source": "reanalysis/out/r01_out.txt"},
-        {"name": "fisher_two_sided_nicer_vs_baseline", "value": 0.0756, "unit": "p-value", "n": 32, "baseline": "paper prints 'p < .075' -- false; the authors' own script prints p-value = 0.0756", "source": "reanalysis/out/authors_AnalyzeData_R_run.txt"},
-        {"name": "boschloo_two_sided_nicer_vs_baseline", "value": 0.0501, "unit": "p-value", "n": 32, "baseline": "Barnard 0.0502; Fisher rejects only 1.6-1.8% under the null at this n (r02)", "source": "reanalysis/out/r02_out.txt"},
-        {"name": "fisher_power_at_observed_effect_11v5_n16", "value": 0.435, "unit": "probability", "n": 32, "baseline": "exact enumeration; the paper says it 'predicted strong effect sizes' and set n = 16", "source": "reanalysis/out/r02_out.txt"}
+        {
+          "name": "exp3_nicer_chose_incompetent",
+          "value": 0.6875,
+          "unit": "proportion",
+          "n": 16,
+          "count": 11,
+          "denominator": 16,
+          "baseline": "binomial vs 0.5: p = 0.21",
+          "source": "reanalysis/out/r01_out.txt"
+        },
+        {
+          "name": "fisher_two_sided_nicer_vs_baseline",
+          "value": 0.0756,
+          "unit": "p-value",
+          "n": 32,
+          "baseline": "paper prints 'p < .075' -- false; the authors' own script prints p-value = 0.0756",
+          "source": "reanalysis/out/authors_AnalyzeData_R_run.txt"
+        },
+        {
+          "name": "boschloo_two_sided_nicer_vs_baseline",
+          "value": 0.0501,
+          "unit": "p-value",
+          "n": 32,
+          "baseline": "Barnard 0.0502; Fisher rejects only 1.6-1.8% under the null at this n (r02)",
+          "source": "reanalysis/out/r02_out.txt"
+        },
+        {
+          "name": "fisher_power_at_observed_effect_11v5_n16",
+          "value": 0.435,
+          "unit": "probability",
+          "n": 32,
+          "baseline": "exact enumeration; the paper says it 'predicted strong effect sizes' and set n = 16",
+          "source": "reanalysis/out/r02_out.txt"
+        }
       ],
-      "evidence": ["a2", "a3"],
-      "our_assessment": {"status": "disputed", "why": "The single cell supporting the claim is 11/16 (p = .21 vs chance). Against its proper control the evidence sits on the threshold under every reasonable test (Fisher .0756, Boschloo .0501). The paper prints the Fisher p as 'p < .075', which is false. The stronger comparison (play vs nicer, Fisher p = .011) changes the question asked, so it cannot isolate an inference about niceness from a preference to play. Bounds over the 8 non-responders move the decisive p from .004 to .545. Reproducible, honestly deposited, over-stated in the abstract.", "by": "maria", "patterns": ["small-sample-overreach", "text-contradicts-own-materials"]}
+      "evidence": [
+        "a2",
+        "a3"
+      ],
+      "our_assessment": {
+        "status": "disputed",
+        "why": "The single cell supporting the claim is 11/16 (p = .21 vs chance). Against its proper control the evidence sits on the threshold under every reasonable test (Fisher .0756, Boschloo .0501). The paper prints the Fisher p as 'p < .075', which is false. The stronger comparison (play vs nicer, Fisher p = .011) changes the question asked, so it cannot isolate an inference about niceness from a preference to play. Bounds over the 8 non-responders move the decisive p from .004 to .545. Reproducible, honestly deposited, over-stated in the abstract.",
+        "by": "maria",
+        "patterns": [
+          "small-sample-overreach",
+          "text-contradicts-own-materials"
+        ]
+      }
     },
     {
       "id": "c4",
@@ -53,29 +180,107 @@
       "statement": "The authors' non-stratified 'basic' bootstrap CI for a difference of two proportions is only mildly liberal at n = 16 per group: under a true null it excludes 0 in 5.7-6.9% of 4,000 simulated studies (p = .5, .3125, .6875), while Fisher's exact test rejects in 1.6-1.8%. The gap between the paper's CI (excludes 0) and its Fisher p (.0756) is mostly Fisher's conservatism, not a broken interval.",
       "scope": "Simulation, n = 16 per group, B = 2,000 per simulated study; Python re-implementation of boot(type='basic') with row resampling of the pooled 32 (what the authors' code does).",
       "quantities": [
-        {"name": "basic_bootstrap_null_rejection_p05", "value": 0.057, "unit": "proportion", "n": 4000, "source": "reanalysis/out/r02_out.txt"},
-        {"name": "fisher_null_rejection_p05", "value": 0.018, "unit": "proportion", "n": 4000, "source": "reanalysis/out/r02_out.txt"}
+        {
+          "name": "basic_bootstrap_null_rejection_p05",
+          "value": 0.057,
+          "unit": "proportion",
+          "n": 4000,
+          "source": "reanalysis/out/r02_out.txt"
+        },
+        {
+          "name": "fisher_null_rejection_p05",
+          "value": 0.018,
+          "unit": "proportion",
+          "n": 4000,
+          "source": "reanalysis/out/r02_out.txt"
+        }
       ],
-      "evidence": ["a2"],
-      "our_assessment": {"status": "accepted", "why": "Known-answer simulation with the null forced in; the same harness detects the forced 11/16 vs 5/16 effect 61% (bootstrap) / 44% (Fisher) of the time.", "by": "maria"}
+      "evidence": [
+        "a2"
+      ],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Known-answer simulation with the null forced in; the same harness detects the forced 11/16 vs 5/16 effect 61% (bootstrap) / 44% (Fisher) of the time.",
+        "by": "maria"
+      }
     }
   ],
-  "methods": ["exact-reproduction-from-deposit", "containerised-batch-re-execution", "synthetic-injected-effect-control", "bounds-under-missing-data", "published-table-vs-deposit-crosscheck"],
+  "methods": [
+    "exact-reproduction-from-deposit",
+    "containerised-batch-re-execution",
+    "synthetic-injected-effect-control",
+    "bounds-under-missing-data",
+    "published-table-vs-deposit-crosscheck"
+  ],
   "artifacts": [
-    {"id": "a1", "role": "supplement", "locator": "https://compdevlab.yale.edu/docs/JE_2015_psychscience.pdf (published version, author-hosted)", "status": "verified-usable", "bytes": 207032, "sha256": "315fea64a58c0b32812f1620a00beb3a96b400c3247c28ca8c7121dcdf9ed960",
-     "fetch_cmd": "curl -sL -A 'Mozilla/5.0' -o paper.pdf https://compdevlab.yale.edu/docs/JE_2015_psychscience.pdf",
-     "checked": {"on": "2026-10-25", "by": "maria", "how": "Read tool on the PDF, pages 1-8", "result": "Primary source. journals.sagepub.com returns a Cloudflare 'Just a moment...' page to curl. Supplemental Material (adult survey) not retrieved."}},
-    {"id": "a2", "role": "raw-data", "locator": "https://osf.io/z9ikh/ osfstorage/JaraEttinger_Tenenbaum_Schulz_Results.csv", "status": "verified-usable", "bytes": 6803,
-     "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/z9ikh/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/jaraettinger2015-not-so-innocent)/osf_z9ikh\"",
-     "checked": {"on": "2026-10-25", "by": "maria", "how": "python zoo-knowledge-base/instance-papers/papers/jaraettinger2015-not-so-innocent/reanalysis/r01_recount_and_tests.py <csv>", "result": "137 rows, classic-Mac CR line endings (no LF). Every N, exclusion reason, choice count and age statistic in the paper recounts exactly. One exact duplicate row (Exp 3 control, F, 768 days, Competent, D/C/D): twins or a copy; removing it leaves the decisive p at 0.0756."},
-     "datasheet": {"composition": "one row per recruited child: Experiment, Condition, Gender, DaysOld, Status (Data / WarmupFail / PositionBias / FamilyInterference / Fussout / ExperimenterError), Choice, three counterbalancing codes", "caveats": "CR-only line endings; one exact duplicate row; adult survey data (44%, CI [24, 64]) not in the deposit."}},
-    {"id": "a3", "role": "code", "locator": "https://osf.io/z9ikh/ osfstorage/AnalyzeData.R", "status": "verified-usable", "bytes": 6932, "derived_from": ["a2"],
-     "checked": {"on": "2026-10-25", "by": "maria", "how": "MSYS_NO_PATHCONV=1 docker run --rm -v \"<osf_z9ikh/files/osfstorage>:/data:ro\" -w /tmp zoo-r-psych:4.4.1 bash -c 'cp /data/* /tmp/ && Rscript AnalyzeData.R'", "result": "Runs unmodified in R 4.4.1. Output in reanalysis/out/authors_AnalyzeData_R_run.txt: Exp1 basic CI (0.875, 1.0625), play (0.625, 1.000), Fisher play-vs-nicer 0.01134, Fisher nicer-vs-control 0.0756. The play-vs-nicer difference bootstrap is unseeded: this run gave (0.2143, 0.8125) vs published [21.05%, 81.67%]."}},
-    {"id": "a4", "role": "protocol", "locator": "https://osf.io/frwun/ and https://osf.io/4qfvj/ (scripts, parent sketches, puppet photos, demo video)", "status": "verified-usable",
-     "checked": {"on": "2026-10-25", "by": "maria", "how": "acquire.py on both GUIDs (parent node 3jiyw holds zero files itself: components only)", "result": "15 files, all checksums match. Not analysed beyond listing."}}
+    {
+      "id": "a1",
+      "role": "supplement",
+      "locator": "https://compdevlab.yale.edu/docs/JE_2015_psychscience.pdf (published version, author-hosted)",
+      "status": "verified-usable",
+      "bytes": 207032,
+      "sha256": "315fea64a58c0b32812f1620a00beb3a96b400c3247c28ca8c7121dcdf9ed960",
+      "fetch_cmd": "curl -sL -A 'Mozilla/5.0' -o paper.pdf https://compdevlab.yale.edu/docs/JE_2015_psychscience.pdf",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "Read tool on the PDF, pages 1-8",
+        "result": "Primary source. journals.sagepub.com returns a Cloudflare 'Just a moment...' page to curl. Supplemental Material (adult survey) not retrieved."
+      }
+    },
+    {
+      "id": "a2",
+      "role": "raw-data",
+      "locator": "https://osf.io/z9ikh/ osfstorage/JaraEttinger_Tenenbaum_Schulz_Results.csv",
+      "status": "verified-usable",
+      "bytes": 6803,
+      "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/z9ikh/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/jaraettinger2015-not-so-innocent)/osf_z9ikh\"",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "python zoo-knowledge-base/instance-papers/papers/jaraettinger2015-not-so-innocent/reanalysis/r01_recount_and_tests.py <csv>",
+        "result": "137 rows, classic-Mac CR line endings (no LF). Every N, exclusion reason, choice count and age statistic in the paper recounts exactly. One exact duplicate row (Exp 3 control, F, 768 days, Competent, D/C/D): twins or a copy; removing it leaves the decisive p at 0.0756."
+      },
+      "datasheet": {
+        "composition": "one row per recruited child: Experiment, Condition, Gender, DaysOld, Status (Data / WarmupFail / PositionBias / FamilyInterference / Fussout / ExperimenterError), Choice, three counterbalancing codes",
+        "caveats": "CR-only line endings; one exact duplicate row; adult survey data (44%, CI [24, 64]) not in the deposit."
+      }
+    },
+    {
+      "id": "a3",
+      "role": "code",
+      "locator": "https://osf.io/z9ikh/ osfstorage/AnalyzeData.R",
+      "status": "verified-usable",
+      "bytes": 6932,
+      "derived_from": [
+        "a2"
+      ],
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "MSYS_NO_PATHCONV=1 docker run --rm -v \"<osf_z9ikh/files/osfstorage>:/data:ro\" -w /tmp zoo-r-psych:4.4.1 bash -c 'cp /data/* /tmp/ && Rscript AnalyzeData.R'",
+        "result": "Runs unmodified in R 4.4.1. Output in reanalysis/out/authors_AnalyzeData_R_run.txt: Exp1 basic CI (0.875, 1.0625), play (0.625, 1.000), Fisher play-vs-nicer 0.01134, Fisher nicer-vs-control 0.0756. The play-vs-nicer difference bootstrap is unseeded: this run gave (0.2143, 0.8125) vs published [21.05%, 81.67%]. The seeded nicer-vs-control bootstrap (set.seed(59283)) gives (0.0617, 0.7095) vs published [6.17%, 71.03%]: the upper bound differs even with the seed, consistent with R 3.6's change of sample()'s default (sample.kind 'Rejection'); my Python re-implementation gives 70.95, matching current R."
+      }
+    },
+    {
+      "id": "a4",
+      "role": "protocol",
+      "locator": "https://osf.io/frwun/ and https://osf.io/4qfvj/ (scripts, parent sketches, puppet photos, demo video)",
+      "status": "verified-usable",
+      "checked": {
+        "on": "2026-10-25",
+        "by": "maria",
+        "how": "acquire.py on both GUIDs (parent node 3jiyw holds zero files itself: components only)",
+        "result": "15 files, all checksums match. Not analysed beyond listing."
+      }
+    }
   ],
   "relations": [
-    {"type": "zoo:reanalysedBy", "target": "maria2026-selection-and-reader-bias", "why": "Item 1 of mark's blinded known-answer control of the reading protocol (8 Psychological Science papers, identifiers only). Unblinding pending when all 8 records exist."}
+    {
+      "type": "zoo:reanalysedBy",
+      "target": "maria2026-selection-and-reader-bias",
+      "why": "Item 1 of mark's blinded known-answer control of the reading protocol (8 Psychological Science papers, identifiers only). Unblinding pending when all 8 records exist."
+    }
   ],
   "open_questions": [
     "Unblinding (mark, known_answer_control): was this paper among the third-party-established 'sound' ones? My call before unblinding: data and analysis reproducible; checked-type defects minor (a mistyped CI bound, a false 'p < .075', an unstated truncation); central claim over-stated.",

@@ -27,7 +27,7 @@ never heard of the paper.
 
 - **The deposit is exemplary for 2015.** Every exclusion has its reason, age is given in days, and
   counterbalancing is coded. Every N, exclusion count, mean age, SD and range in the paper recounts
-  exactly (`out/r01_out.txt`). The R script reproduces the reported bootstrap intervals.
+  exactly (`out/r01_out.txt`). The R script runs unmodified in R 4.4.1 and reproduces the one-sample intervals; the two difference bootstraps differ at the second decimal (one is unseeded; the seeded one changes with R 3.6's new `sample()` default), which matters for nothing.
 - **Exp 1 is solid**: 15/16, binomial p = 0.0005.
 - **"Retain a preference for the competent agent when both refuse"** holds when the two refusal-plus-play
   cells are pooled: 24/32, p = 0.007. Exp 2 alone is 11/16, p = 0.21, which the paper describes as "a

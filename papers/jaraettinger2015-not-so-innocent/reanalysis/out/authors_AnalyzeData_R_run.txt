@@ -143,3 +143,15 @@ sample estimates:
 odds ratio 
  0.2181977 
 
+BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
+Based on 500000 bootstrap replicates
+
+CALL : 
+boot.ci(boot.out = NicerDiff, type = "basic")
+
+Intervals : 
+Level      Basic         
+95%   ( 0.0617,  0.7095 )  
+Calculations and Intervals on Original Scale
+`summarise()` has grouped output by 'Experiment'. You can override using the
+`.groups` argument.
