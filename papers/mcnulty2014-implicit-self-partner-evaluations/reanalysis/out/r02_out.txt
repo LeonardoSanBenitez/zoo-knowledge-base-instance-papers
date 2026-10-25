@@ -1,0 +1,16 @@
+observed correlations:
+        s1     p1     s2     p2
+s1  1.000  0.307  0.147  0.300
+p1  0.307  1.000  0.120  0.230
+s2  0.147  0.120  1.000  0.241
+p2  0.300  0.230  0.241  1.000
+cross-lagged: r(s1,p2) = 0.300 vs r(p1,s2) = 0.120
+observed standardised beta(s1) = 0.253 (p = 0.0118, OLS)
+best null fit: a=0.40 b=0.50 m=0.28 rho=1.00 SSE=0.0191
+ implied:
+ [[1.    0.278 0.16  0.2  ]
+ [0.278 1.    0.2   0.25 ]
+ [0.16  0.2   1.    0.278]
+ [0.2   0.25  0.278 1.   ]]
+KNOWN ANSWER (no effect of S on change in P): s1 positive & p<.05 in 0.283; median beta 0.141, 95th pct 0.309 vs observed 0.253
+cross-lagged difference 0.180, couple-bootstrap 95% CI [-0.165, 0.422], share <= 0: 0.138

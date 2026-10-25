@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.6",
+  "id": "mcnulty2014-implicit-self-partner-evaluations",
+  "title": "Implicit Self-Evaluations Predict Changes in Implicit Partner Evaluations",
+  "authors": ["James K. McNulty", "Levi R. Baker", "Michael A. Olson"],
+  "year": 2014,
+  "venue": "Psychological Science 25(8):1649-1657",
+  "area": ["experimental-social-and-cognitive-psychology"],
+  "identifiers": {"doi": "10.1177/0956797614537833", "pmid": "24958686", "pmcid": "PMC4275414"},
+  "record_status": "active",
+  "read_depth": "read-and-reanalysed",
+  "selection": {"class": "blind", "evidence": "Assigned by mark as item 8 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none.", "recorded": "at-selection"},
+  "cost": {"tool_calls": 16, "bytes_downloaded": 210000, "compute_notes": "NIH author manuscript as JATS from NCBI efetch (Europe PMC fullTextXML HTTP 500). OSF hdi8p .sav + qfgn6 measures acquired with checksums. Python: statsmodels MixedLM random intercept by couple for Tables 2-3, robustness (winsorised, rank, Cook's, leave-one-couple-out), 24-predictor covariate model, null-model fit to the 4x4 correlation matrix + 4,000 simulations, couple-cluster bootstrap of the cross-lagged difference.", "session": "2026-10-25 maria"},
+  "curation": {"author": "maria", "created": "2026-10-25", "verified": "2026-10-25", "notes_file": "NOTES.md"},
+  "triggers": ["implicit self-esteem predicts change in implicit partner evaluation newlyweds", "residualised change unreliable baseline artefact", "cross-lagged panel correlation symmetry test", "affective priming test-retest reliability three years", "known-answer control psychological science 2014 open data"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Newlyweds' baseline implicit self-evaluations positively predict change in their implicit partner evaluations over three years (B = .26, SE = .10, r = .35), controlling baseline implicit partner evaluation; robust to ~20 covariates (B = .30, t(24) = 3.00, p = .006). Explicit self-esteem predicts no change in any interpersonal evaluation.",
+      "scope": "104 spouses (56 couples minus exclusions), random intercept by couple, standardised coefficients.",
+      "quantities": [
+        {"name": "implicit_self_to_partner_change_raw_B", "value": 0.2, "unit": "ms per ms", "n": 104, "baseline": "SE 0.075, p = 0.0072; standardised ~.26", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "holm_adjusted_p_key_test_of_six", "value": 0.0432, "unit": "p-value", "n": 104, "source": "reanalysis/out/r01_out.txt"},
+        {"name": "leave_one_couple_out_max_p", "value": 0.1877, "unit": "p-value", "n": 104, "baseline": "rank-based p = 0.169; winsorised 5/95 p = 0.0431", "source": "reanalysis/out/r01_out.txt"},
+        {"name": "null_model_false_positive_rate", "value": 0.283, "unit": "proportion", "n": 4000, "baseline": "stable latent S and P, no effect of S on change, shared session method; median std beta 0.141, 95th pct 0.309 vs observed 0.253", "source": "reanalysis/out/r02_out.txt"},
+        {"name": "cross_lagged_difference_r_s1p2_minus_r_p1s2", "value": 0.18, "unit": "r difference", "n": 104, "baseline": "couple-bootstrap 95% CI [-0.165, 0.422]", "source": "reanalysis/out/r02_out.txt"}
+      ],
+      "evidence": ["a2"],
+      "our_assessment": {"status": "disputed", "why": "Reproduces (B .26 standardised; covariate model p = .003; survives Holm over 6 tests at .043). But it is fragile (rank p = .17; one couple's removal can give p = .19), and residualised change with a baseline retest of ~.2 and a same-session predictor produces this result 28% of the time in a fitted null world with no effect; the cross-lagged asymmetry that would favour direction is not distinguishable from zero. 'Long-awaited evidence' over-states it.", "by": "maria", "patterns": ["estimator-biased-or-insensitive", "small-sample-overreach", "correlation-read-as-causation"]}
+    },
+    {
+      "id": "c2",
+      "origin": "reader",
+      "statement": "Table 2 prints the implicit-partner three-year mean as 35.67 (62.83), which is the implicit-self value; the deposit gives 32.50 (61.08). The printed change (-16.74) is correct, which exposes the pasted cell. The d column does not follow from the table's own t-values for within-person change (self-esteem d = 1.67 for a 0.09-point change), and several Table 3 CIs are asymmetric or truncated.",
+      "scope": "Tables 2-3 of the author manuscript.",
+      "quantities": [{"name": "implicit_partner_T2_mean_true", "value": 32.5, "unit": "ms", "n": 104, "baseline": "printed 35.67 (= implicit self T2)", "source": "reanalysis/out/r01_out.txt"}],
+      "evidence": ["a2"],
+      "our_assessment": {"status": "accepted", "why": "Recomputed from the deposit; the change column cross-checks it.", "by": "maria", "patterns": ["text-contradicts-own-materials"]}
+    }
+  ],
+  "methods": ["exact-reproduction-from-deposit", "manual-reanalysis-from-shared-materials", "synthetic-injected-effect-control", "leave-one-out-influence", "holm-bonferroni-multiplicity-control", "published-table-vs-deposit-crosscheck"],
+  "artifacts": [
+    {"id": "a1", "role": "supplement", "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4275414/ (NIH author manuscript)", "status": "verified-usable",
+     "fetch_cmd": "curl -s 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=4275414&rettype=xml' -o PMC4275414.xml",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "efetch XML -> body text (abstract + body) read in full; tables via tools/jats2txt.py --tables", "result": "Author manuscript, not the typeset article; the Open Practices statement is not in it. Europe PMC fullTextXML -> HTTP 500 (known trap)."}},
+    {"id": "a2", "role": "raw-data", "locator": "https://osf.io/hdi8p/ osfstorage/McNultyBakerOlson2014.sav (104 x 28)", "status": "verified-usable", "bytes": 24779,
+     "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/hdi8p/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/mcnulty2014-implicit-self-partner-evaluations)/osf_hdi8p\"",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "python zoo-knowledge-base/instance-papers/papers/mcnulty2014-implicit-self-partner-evaluations/reanalysis/r01_reproduce.py <sav> ; r02_known_answer.py <sav>", "result": "Analysed sample only (104 of 112; the explicit-only baseline n is not deposited, which may explain the satisfaction baseline mismatch 42.47 vs 42.18). One covariate outlier: T1 implicit evaluation of strangers 2715.9."},
+     "datasheet": {"composition": "one row per spouse: couple and person IDs, sex, implicit self/partner/stranger indices and orientation RTs at T1/T2, explicit self-esteem, satisfaction, partner evaluation at T1/T2, Big Five, attachment, depression", "caveats": "Item-level and trial-level priming data not deposited, so per-session reliability of the implicit indices cannot be estimated."}},
+    {"id": "a3", "role": "protocol", "locator": "https://osf.io/qfgn6/ McNultyBakerOlson2014_measures.doc", "status": "verified-usable",
+     "checked": {"on": "2026-10-25", "by": "maria", "how": "acquire.py checksum match", "result": "Not analysed."}}
+  ],
+  "relations": [
+    {"type": "zoo:reanalysedBy", "target": "maria2026-selection-and-reader-bias", "why": "Item 8 of mark's blinded known-answer control of the reading protocol."}
+  ],
+  "open_questions": [
+    "Unblinding (mark, known_answer_control): my call before unblinding -- key analysis reproduces; Tables 2-3 carry reporting errors (pasted cell, d column, CIs); the claim is not distinguishable from a residualised-change artefact. Checked-type defects: moderate.",
+    "With trial-level priming data, per-session split-half reliability of the self and partner indices would pin down the null model's parameters instead of fitting them to four correlations."
+  ]
+}

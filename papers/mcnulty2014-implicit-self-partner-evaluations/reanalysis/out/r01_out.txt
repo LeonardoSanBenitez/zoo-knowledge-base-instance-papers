@@ -1,0 +1,20 @@
+Table 2 recount (T1 M,SD | T2 M,SD | raw change | MLM change intercept, t | test-retest beta, p):
+  marital_satisfaction   {'T1': [np.float64(42.47), np.float64(3.24)], 'T2': [np.float64(39.01), np.float64(6.26)], 'raw_change': np.float64(-3.46), 'mlm_intercept': [-3.5, -5.59], 'test_retest_beta_p': [0.441, 0.0]}
+  explicit_partner       {'T1': [np.float64(6.11), np.float64(0.58)], 'T2': [np.float64(5.9), np.float64(0.8)], 'raw_change': np.float64(-0.21), 'mlm_intercept': [-0.21, -3.18], 'test_retest_beta_p': [0.559, 0.0]}
+  implicit_partner       {'T1': [np.float64(49.24), np.float64(74.74)], 'T2': [np.float64(32.5), np.float64(61.08)], 'raw_change': np.float64(-16.74), 'mlm_intercept': [55.88, 0.89], 'mlm_intercept_rt_centred': [-16.75, -1.99], 'test_retest_beta_p': [0.19, 0.058]}
+  explicit_self          {'T1': [np.float64(3.35), np.float64(0.45)], 'T2': [np.float64(3.44), np.float64(0.49)], 'raw_change': np.float64(0.09), 'mlm_intercept': [0.09, 1.85], 'test_retest_beta_p': [0.554, 0.0]}
+  implicit_self          {'T1': [np.float64(61.99), np.float64(80.01)], 'T2': [np.float64(35.67), np.float64(62.83)], 'raw_change': np.float64(-26.32), 'mlm_intercept': [30.87, 0.43], 'mlm_intercept_rt_centred': [-26.32, -2.81], 'test_retest_beta_p': [0.062, 0.535]}
+paper T2 row values: implicit partner 49.24 (74.74) -> 35.67 (62.83), change -16.74; implicit self 61.99 (80.01) -> 35.67 (62.83) [same cell as partner], change -26.32; test-retest .20*, .06
+
+Table 3 recount:
+  ms2~ms1+es1            {'B_self': 0.166, 'SE': 1.239, 'p': 0.8935, 'B_base': 0.847}
+  ep2~ep1+es1            {'B_self': 0.059, 'SE': 0.145, 'p': 0.685, 'B_base': 0.761}
+  p2~p1+es1              {'B_self': 10.836, 'SE': 12.933, 'p': 0.4021, 'B_base': 0.164}
+  ms2~ms1+s1             {'B_self': 0.001, 'SE': 0.007, 'p': 0.8999, 'B_base': 0.854}
+  ep2~ep1+s1             {'B_self': -0.0, 'SE': 0.001, 'p': 0.8292, 'B_base': 0.774}
+  p2~p1+s1               {'B_self': 0.2, 'SE': 0.075, 'p': 0.0072, 'B_base': 0.093}
+paper: implicit self -> implicit partner B .26 SE .10 (r .35); all other self coefficients n.s.
+Holm-adjusted p over the 6 self->relationship tests: [1.0, 1.0, 1.0, 1.0, 1.0, 0.0432]
+
+key coefficient robustness (p-values): {'winsorised_5_95': 0.0431, 'rank_based': 0.169, 'ols_cluster_p': 0.0416, 'drop_top5_cooks_p': 0.0099, 'leave_one_couple_out_p_max': 0.1877, 's1_p1_baseline_r': 0.3069, 'p1_p2_r': 0.2304, 's1_s2_r': 0.1472, 'o1_max': 2715.8929, 'o1_n_abs_gt_500': 1}
+full-covariate model (paper B .30 SE .10 t(24)=3.00): {'B_s1': 0.227, 'SE': 0.076, 'p': 0.003, 'n_predictors': 24}
