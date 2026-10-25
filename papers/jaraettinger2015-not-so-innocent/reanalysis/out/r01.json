@@ -1,0 +1,149 @@
+{
+ "rows": 137,
+ "exact_duplicate_rows": [
+  [
+   "Experiment 3",
+   "Control",
+   "F",
+   "768",
+   "Data",
+   "Competent",
+   "D",
+   "C",
+   "D",
+   "NA",
+   2
+  ]
+ ],
+ "Experiment 1": {
+  "status": {
+   "Data": 19,
+   "WarmupFail": 12,
+   "PositionBias": 3,
+   "FamilyInterference": 2
+  },
+  "tested": 24,
+  "age_tested": {
+   "n_with_age": 24,
+   "mean": 21.582974119048867,
+   "sd_days": 96.63329009002636,
+   "min": 17.117436787047257,
+   "max": 28.518109656731323
+  },
+  "choices_by_condition": {
+   "NA": {
+    "Competent": 15,
+    "None": 3,
+    "Incompetent": 1
+   }
+  },
+  "excluded_with_choice": {
+   "PositionBias|NA|Competent": 2,
+   "FamilyInterference|NA|Competent": 1,
+   "PositionBias|NA|Incompetent": 1,
+   "FamilyInterference|NA|Incompetent": 1
+  }
+ },
+ "Experiment 2": {
+  "status": {
+   "Data": 17,
+   "WarmupFail": 5
+  },
+  "tested": 17,
+  "age_tested": {
+   "n_with_age": 17,
+   "mean": 2.643636510045497,
+   "sd_days": 83.74743191848438,
+   "min": 2.2587268993839835,
+   "max": 2.9623545516769334
+  },
+  "choices_by_condition": {
+   "NA": {
+    "Incompetent": 5,
+    "Competent": 11,
+    "None": 1
+   }
+  },
+  "excluded_with_choice": {}
+ },
+ "Experiment 3": {
+  "status": {
+   "Data": 58,
+   "WarmupFail": 13,
+   "FamilyInterference": 5,
+   "Fussout": 2,
+   "ExperimenterError": 1
+  },
+  "tested": 66,
+  "age_tested": {
+   "n_with_age": 66,
+   "mean": 2.4814883952460955,
+   "sd_days": 114.29942275426434,
+   "min": 1.998631074606434,
+   "max": 2.9787816563997263
+  },
+  "choices_by_condition": {
+   "Nicer": {
+    "Incompetent": 11,
+    "Competent": 5,
+    "None": 5
+   },
+   "Play": {
+    "Competent": 13,
+    "Incompetent": 3,
+    "None": 2
+   },
+   "Control": {
+    "Competent": 11,
+    "Incompetent": 5,
+    "None": 3
+   }
+  },
+  "excluded_with_choice": {
+   "FamilyInterference|Nicer|NA": 2,
+   "FamilyInterference|Play|NA": 2,
+   "Fussout|Control|NA": 2,
+   "FamilyInterference|Control|NA": 1,
+   "ExperimenterError|Control|NA": 1
+  }
+ },
+ "binomial_vs_half_two_sided": {
+  "Exp1": 0.000518798828125,
+  "Exp2": 0.210113525390625,
+  "Exp3_play": 0.021270751953125,
+  "Exp3_nicer": 0.210113525390625,
+  "Exp3_control": 0.210113525390625
+ },
+ "fisher_play_vs_nicer": 0.01134220665558562,
+ "fisher_nicer_vs_control": 0.0755974787332523,
+ "basic_bootstrap_ci_pct": {
+  "Exp1": [
+   87.5,
+   106.25
+  ],
+  "Exp2": [
+   50.0,
+   93.75
+  ],
+  "Exp3_play": [
+   62.5,
+   100.0
+  ],
+  "Exp3_nicer": [
+   6.25,
+   50.0
+  ],
+  "Exp3_control": [
+   50.0,
+   93.75
+  ],
+  "diff_play_minus_nicer_nonstratified": [
+   21.67,
+   81.25
+  ],
+  "diff_control_minus_nicer_nonstratified": [
+   6.17,
+   70.95
+  ]
+ }
+}

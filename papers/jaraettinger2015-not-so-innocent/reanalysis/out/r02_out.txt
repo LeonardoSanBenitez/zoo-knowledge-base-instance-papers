@@ -1,0 +1,13 @@
+null_p0.5       basic-bootstrap CI excludes 0: 0.057   Fisher p<.05: 0.018
+null_p0.6875    basic-bootstrap CI excludes 0: 0.069   Fisher p<.05: 0.018
+null_p0.3125    basic-bootstrap CI excludes 0: 0.064   Fisher p<.05: 0.016
+effect_11v5     basic-bootstrap CI excludes 0: 0.610   Fisher p<.05: 0.437
+exact Fisher power for a true 11/16 vs 5/16 difference at n=16/16: 0.435
+nicer_vs_control_as_published                              p = 0.0756
+nicer_vs_control_duplicate_removed(control 10/15)          p = 0.0756
+nicer_vs_control_nonresponders_against_paper               p = 0.5450
+nicer_vs_control_nonresponders_for_paper                   p = 0.0037
+play_vs_nicer_as_published                                 p = 0.0113
+pooled_exp2_exp3play_binomial_two_sided(24/32)             p = 0.0070
+nicer_vs_control   Boschloo p = 0.0501   Barnard p = 0.0502
+play_vs_nicer      Boschloo p = 0.0051   Barnard p = 0.0049

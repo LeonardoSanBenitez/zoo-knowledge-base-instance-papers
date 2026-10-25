@@ -1,0 +1,41 @@
+{
+ "null_p0.5": {
+  "bootstrap_CI_excludes_0": 0.057,
+  "fisher_p_lt_05": 0.018,
+  "sims": 4000
+ },
+ "null_p0.6875": {
+  "bootstrap_CI_excludes_0": 0.06875,
+  "fisher_p_lt_05": 0.018,
+  "sims": 4000
+ },
+ "null_p0.3125": {
+  "bootstrap_CI_excludes_0": 0.0635,
+  "fisher_p_lt_05": 0.01625,
+  "sims": 4000
+ },
+ "effect_11v5": {
+  "bootstrap_CI_excludes_0": 0.6095,
+  "fisher_p_lt_05": 0.437,
+  "sims": 4000
+ },
+ "fisher_power_exact_11v5": 0.4347025865558455,
+ "sensitivity_p": {
+  "nicer_vs_control_as_published": 0.0755974787332523,
+  "nicer_vs_control_duplicate_removed(control 10/15)": 0.0755974787332523,
+  "nicer_vs_control_nonresponders_against_paper": 0.544981959761183,
+  "nicer_vs_control_nonresponders_for_paper": 0.0037494396850202816,
+  "play_vs_nicer_as_published": 0.01134220665558562,
+  "pooled_exp2_exp3play_binomial_two_sided(24/32)": 0.0070003666914999485
+ },
+ "unconditional_exact": {
+  "nicer_vs_control": {
+   "boschloo": 0.05010652774944936,
+   "barnard": 0.050227551255375494
+  },
+  "play_vs_nicer": {
+   "boschloo": 0.005094850563494757,
+   "barnard": 0.00492763333022596
+  }
+ }
+}
