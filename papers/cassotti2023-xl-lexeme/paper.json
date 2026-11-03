@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.6",
+  "id": "cassotti2023-xl-lexeme",
+  "title": "XL-LEXEME: WiC Pretrained Model for Cross-Lingual LEXical sEMantic changE",
+  "authors": ["Pierluigi Cassotti", "Lucia Siciliani", "Marco de Gemmis", "Giovanni Semeraro", "Pierpaolo Basile"],
+  "year": 2023,
+  "venue": "ACL 2023 (Volume 2: Short Papers), pp. 1577-1585",
+  "area": ["lexical-semantic-change"],
+  "identifiers": {"url": "https://aclanthology.org/2023.acl-short.135/", "doi": "10.18653/v1/2023.acl-short.135"},
+  "record_status": "active",
+  "read_depth": "read-and-ran-artifacts",
+  "selection": {"class": "census", "evidence": "The model every LSC paper read today uses as the standard (periti2024 NAACL, saponara2026, cassotti2025); arena-lsc's first system is built on it.", "recorded": "at-selection"},
+  "cost": {"tool_calls": 6, "bytes_downloaded": 2400000000, "compute_notes": "PDF (9 pp) read in full. Model weights (HF pierluigic/xl-lexeme, 2.2 GB) and library (github pierluigic/xl-lexeme @0f6748d) run on an RX 6700 XT under ROCm: fp16 vs fp32, model-card known answer, ~135k usages embedded for arena-lsc.", "session": "2026-11-03 maria, arena-lsc"},
+  "triggers": [
+    "XL-LEXEME how does it work",
+    "bi-encoder word in context target word markers",
+    "best model for lexical semantic change SemEval-2020 Task 1",
+    "XL-LEXEME pooling sum or mean",
+    "does XL-LEXEME work in fp16"
+  ],
+  "methods": ["output-diff-reproduction-check"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "XL-LEXEME (XLM-R large Siamese bi-encoder, target marked with <t> </t>, contrastive loss margin 0.5 on cosine distance; trained on MCL-WiC, AM2iCo, XL-WiC train + 75% of their dev) ranks graded change (APD over usage pairs, 200 sampled sentences per period, 10 samples) at Spearman EN .757, DE .877, SV .754, LA -.056 on SemEval-2020 Task 1, and .809 avg on RuShiftEval (.825 fine-tuned on RuSemShift).",
+      "scope": "Two-period graded change; significance by Fisher z against each competitor; Latin fails (not in the WiC data).",
+      "quantities": [
+        {"name": "semeval2020_spearman_EN", "value": 0.757, "unit": "rho", "n": 37, "source": "Table 1"},
+        {"name": "semeval2020_spearman_DE", "value": 0.877, "unit": "rho", "n": 48, "source": "Table 1"},
+        {"name": "semeval2020_spearman_SV", "value": 0.754, "unit": "rho", "n": 31, "source": "Table 1"}
+      ],
+      "evidence": [],
+      "our_assessment": {"status": "accepted-narrower-scope", "why": "Strong and replicated by others (periti2024 NAACL .751 weighted average with APD). Two caveats: with 31-48 target words the Fisher-z tests separate XL-LEXEME from most leaderboard systems but not from the cross-encoder or TempoBERT-class systems; and the paper says the sentence vector is the SUM of subword vectors while the released model's pooling config is MEAN - identical under cosine, so harmless, but a reader computing norms or dot products would see different numbers.", "by": "maria, 2026-11-03"}
+    },
+    {
+      "id": "c2",
+      "origin": "reader",
+      "statement": "The released model runs in fp16 on a consumer AMD GPU (ROCm preview, Windows) with per-usage cosine to fp32 >= 0.99982 (1,983 Swedish usages), 163 usages/s, 1.17 GB peak; the model card's 'plane' example separates aircraft (cos .934) from geometric (.948) senses with cross-sense cos .07-.19. Raw (unnormalised) vectors have nearly constant norm (30.6 +- 0.29 on 86k English sentences).",
+      "scope": "arena-lsc Environment ticket and saponara2026 reanalysis r03.",
+      "quantities": [
+        {"name": "fp16_vs_fp32_min_cosine", "value": 0.999824, "unit": "cosine", "n": 1983, "source": ".claude/memory/maria/arena-lsc/tickets/2026-10-31-Environment/s4_checks.out.txt"},
+        {"name": "raw_vector_norm_mean", "value": 30.587, "unit": "L2 norm", "n": 86106, "source": "instance-papers/papers/saponara2026-synthetic-multi-period-lsc/reanalysis/r03_prt_raw_vs_normalised.out.txt"}
+      ],
+      "evidence": ["a1", "a2"],
+      "our_assessment": {"status": "accepted", "why": "Reader's own measurement; commands in the arena ticket outcome.", "by": "maria, 2026-11-03"}
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "model-weights", "locator": "https://huggingface.co/pierluigic/xl-lexeme", "status": "verified-usable",
+     "checked": {"on": "2026-11-03", "by": "maria", "how": ".venv-gpu/Scripts/python.exe tooling/embed.py data/dev/gold/SV/usages.jsonl runs/emb/dev_sv_fp16 (and --fp32); tickets/2026-10-31-Environment/s4_checks.py (arena-lsc)", "result": "loads with the vendored WordTransformer; fp16 safe; known answer passes"}},
+    {"id": "a2", "role": "code", "locator": "https://github.com/pierluigic/xl-lexeme (commit 0f6748df5c3c444dde8e98313b15775b1b22c50c)", "status": "verified-usable",
+     "checked": {"on": "2026-11-03", "by": "maria", "how": "vendored unmodified (sha256 in arena-lsc tooling/vendor/xl_lexeme/PROVENANCE.md) and imported", "result": "works with sentence-transformers 3.1.0 / transformers 4.44 / torch 2.9.1+rocm"}}
+  ],
+  "relations": [
+    {"type": "cito:sharesAuthorWith", "target": "saponara2026-synthetic-multi-period-lsc", "why": "Cassotti."},
+    {"type": "cito:sharesAuthorWith", "target": "cassotti2025-hypothesis-driven-lsc", "why": "Cassotti."}
+  ],
+  "open_questions": [
+    "How much of XL-LEXEME's SV performance survives on OCR-noisy 1880s Swedish (SemEval-2027 Task 3 SV older periods)? Per-period error analysis on SV dev is possible."
+  ],
+  "curation": {"author": "maria", "created": "2026-11-03", "verified": "2026-11-03", "notes_file": "NOTES.md"}
+}
