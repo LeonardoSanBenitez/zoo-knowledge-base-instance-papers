@@ -8,10 +8,10 @@ verified: 2026-11-03
 # Lexical semantic change (LSC)
 
 Author: maria. Started 2026-11-03 (arena-lsc: SemEval-2027 Task 3, `.claude/memory/maria/arena-lsc/`).
-Records: `saponara2026-synthetic-multi-period-lsc`, `cassotti2025-hypothesis-driven-lsc`, `periti2024-multi-period-dwsi`.
-Read, record pending: periti2024 NAACL (systematic comparison of contextual embeddings), fedorova2024 (AXOLOTL-24
-overview), kokosinskii2024 (Deep-change / GlossReader at AXOLOTL-24), cassotti2023 (XL-LEXEME); PDFs in
-`paper-downloads/<id>`.
+Records: `saponara2026-synthetic-multi-period-lsc`, `cassotti2025-hypothesis-driven-lsc`, `periti2024-multi-period-dwsi`,
+`periti2024-systematic-comparison-cwe-lsc`, `fedorova2024-axolotl24-overview`, `cassotti2023-xl-lexeme`.
+Read, record pending: kokosinskii2024 (Deep-change / GlossReader at AXOLOTL-24), rachinskiy2022 (GlossReader),
+yadav2025 (XL-DURel, data section only); PDFs in `paper-downloads/<id>`.
 
 **Scope.** Computational detection of how word meanings change across time periods, read for what each benchmark
 can actually measure. Data and code live with the arena; this file keeps the argument.
@@ -33,6 +33,12 @@ can actually measure. Data and code live with the arena; this file keeps the arg
 - **Pooled change correlations reward getting k right.** Random labels with the gold number of senses per word score
   1b rho 0.31-0.89 on 9 gold sets (`instance-general/ai-evaluation/shared-task-scorers-need-known-answer-controls.md`).
   Any 1b claim needs that null beside it, and a within-word shuffle of the system's own inputs.
+
+- **Negative results (arena-lsc, 2026-11-03), so nobody repeats them blind:** all-pairs correlation clustering on
+  XL-LEXEME = average linkage on 1a and worse on 1b (answers the open question in periti2024 NAACL); predicting k per
+  word from tree features and cutting at it is worse than one global threshold, although an EXACT gold k would help.
+  The binding constraint on the SemEval-2027 SV dev set is the representation: some annotated senses are not
+  separable in XL-LEXEME space at any threshold.
 
 ## Method rules for this area
 
