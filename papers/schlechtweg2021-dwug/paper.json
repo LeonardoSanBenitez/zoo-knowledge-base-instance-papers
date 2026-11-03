@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.6",
+  "id": "schlechtweg2021-dwug",
+  "title": "DWUG: A large Resource of Diachronic Word Usage Graphs in Four Languages",
+  "authors": ["Dominik Schlechtweg", "Nina Tahmasebi", "Simon Hengchen", "Haim Dubossarsky", "Barbara McGillivray"],
+  "year": 2021,
+  "venue": "EMNLP 2021; arXiv:2104.08540 (v3, 2024-07-08)",
+  "area": ["lexical-semantic-change"],
+  "identifiers": {"arxiv": "2104.08540", "url": "https://www.ims.uni-stuttgart.de/data/wugs"},
+  "record_status": "active",
+  "read_depth": "read-and-ran-artifacts",
+  "selection": {"class": "census", "evidence": "Source of 5 of the 8 public gold sets in arena-lsc's dev pool (DWUG EN/DE/SV, and the same pipeline for ES/IT); read to know how that gold was made before scoring systems against it.", "recorded": "at-selection"},
+  "cost": {"tool_calls": 4, "bytes_downloaded": 54300000, "compute_notes": "arXiv v3 PDF pp. 1-9 read (procedure, clustering, resource, disagreement analysis); appendices skimmed. Zenodo DWUG EN/DE/SV v3.0.0 (+ES 4.0.2, IT) downloaded, converted to SemEval-2027 Task 3 format and scored with that task's official scorer.", "session": "2026-11-03 maria, arena-lsc"},
+  "triggers": [
+    "how were DWUG clusters made",
+    "word usage graph correlation clustering 2.5 shift",
+    "DURel relatedness scale 1-4",
+    "inter-annotator agreement semantic proximity judgments",
+    "DWUG Swedish Kubhist OCR errors"
+  ],
+  "methods": ["exact-reproduction-from-deposit"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Senses are not annotated directly: annotators judge usage pairs on the DURel 1-4 relatedness scale over several adaptive sampling rounds (~50% of pairs double-annotated); edge weights are shifted by -2.5 and the graph is clustered by correlation clustering (minimise positive weight across + |negative weight| within clusters) approximated by simulated annealing; clusters are read as senses.",
+      "scope": "EN/DE/SV usage-usage graphs, 100 usages per period per word (fewer if rare); LA uses usage-sense graphs.",
+      "quantities": [
+        {"name": "krippendorff_alpha_round1_EN", "value": 0.61, "unit": "alpha", "source": "Table 3"},
+        {"name": "krippendorff_alpha_round1_DE", "value": 0.53, "unit": "alpha", "source": "Table 3"},
+        {"name": "krippendorff_alpha_round1_SV", "value": 0.56, "unit": "alpha", "source": "Table 3"},
+        {"name": "judgments_total_EN", "value": 29000, "unit": "judgments", "source": "Table 3 (29k)"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {"status": "accepted-narrower-scope", "why": "Well documented and the data match the description (cluster -1 marks usages left out: 272 EN, 251 DE, 905 SV of the v3.0.0 usages). For anyone using DWUG as SENSE gold: the senses are clusters of a sparse, noisy proximity graph (alpha .53-.61), not dictionary senses, so a model that reproduces the WUG pipeline on its own similarities gets a structural advantage (cf. periti2024 NAACL c3), and DWUG k is not comparable to dictionary sense counts.", "by": "maria, 2026-11-03"}
+    },
+    {
+      "id": "c2",
+      "statement": "Swedish data (Kubhist newspapers, 1790-1830 vs 1895-1903) contains frequent OCR errors and has a markedly higher share of 'cannot decide' (0) judgments than EN/DE.",
+      "scope": "Section 3 and Figure 5.",
+      "quantities": [],
+      "evidence": ["a1"],
+      "our_assessment": {"status": "accepted", "why": "Consistent with the converted SV set: 905 of 8,750 usages carry cluster -1 (10.3%, vs 3% EN). Relevant beyond DWUG: SemEval-2027 Task 3 SV dev usages from 1880-1915 show the same OCR noise.", "by": "maria, 2026-11-03"}
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "human-labels", "locator": "https://zenodo.org/records/14028531 (EN), 14028509 (DE), 14028906 (SV) - v3.0.0, CC BY-ND 4.0", "status": "verified-usable",
+     "checked": {"on": "2026-11-03", "by": "maria", "how": "sh .claude/memory/maria/arena-lsc/tooling/fetch_public.sh; python .../tooling/convert_public.py dwug <x/dwug_xx> <gold/dwug_xx> --code XX; python .../tooling/harness.py controls --gold <gold/dwug_xx>", "result": "gold-as-prediction scores 1.0 under the SemEval-2027 Task 3 scorer; EN 46 words / 8,835 usages, DE 50 / 8,874, SV 44 / 7,845 after dropping cluster -1"}}
+  ],
+  "relations": [
+    {"type": "cito:sharesAuthorWith", "target": "saponara2026-synthetic-multi-period-lsc", "why": "Tahmasebi."},
+    {"type": "cito:sharesAuthorWith", "target": "periti2024-systematic-comparison-cwe-lsc", "why": "Tahmasebi."}
+  ],
+  "open_questions": [],
+  "curation": {"author": "maria", "created": "2026-11-03", "verified": "2026-11-03", "notes_file": "NOTES.md"}
+}
