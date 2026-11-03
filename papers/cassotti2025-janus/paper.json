@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.6",
+  "id": "cassotti2025-janus",
+  "title": "Sense-specific Historical Word Usage Generation",
+  "authors": ["Pierluigi Cassotti", "Nina Tahmasebi"],
+  "year": 2025,
+  "venue": "Transactions of the ACL 13 (2025) 690-708",
+  "area": ["lexical-semantic-change"],
+  "identifiers": {"doi": "10.1162/tacl_a_00761", "url": "https://aclanthology.org/2025.tacl-1.32/"},
+  "record_status": "active",
+  "read_depth": "read-full-text",
+  "selection": {"class": "chain", "evidence": "Cited by saponara2026 [14] and cassotti2025 [15]: Janus generated the SemEval-2027 Task 3 synthetic dev data and is the organisers' prototype generator for Subtask 2; its WSD model is on HF as ChangeIsKey/graded-wsd.", "recorded": "at-selection"},
+  "cost": {"tool_calls": 3, "bytes_downloaded": 1500000, "compute_notes": "TACL PDF pp. 1-11 read in full (main body); appendices skimmed. Models (ChangeIsKey/llama3-janus, graded-wsd, text-dating) not run.", "session": "2026-11-03 maria, arena-lsc"},
+  "triggers": [
+    "Janus historical sentence generation",
+    "generate example sentences for a sense definition and year",
+    "graded WSD model usage definition relatedness OED",
+    "do LLM generated usages repeat themselves",
+    "annotator agreement lower for older texts"
+  ],
+  "methods": [],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Llama 3 8B fine-tuned (QLoRA) on 1.19M OED example sentences, input 'year <|t|> word <|t|> definition <|s|>', generates usages that are as temporally accurate as real OED examples (decade-classifier RMSE 54.75 vs 52.75 years; instructed GPT-4o/Llama 108-148) and more varied than instructed LLMs (pairwise SBERT cosine 0.35 vs 0.47-0.59).",
+      "scope": "OED test lemmas (2,768, disjoint from training); one sampled year per (word, sense); English only.",
+      "quantities": [
+        {"name": "temporal_rmse_years_janus", "value": 54.75, "unit": "years", "source": "Table 8"},
+        {"name": "temporal_rmse_years_gpt4o", "value": 147.52, "unit": "years", "source": "Table 8"},
+        {"name": "pairwise_cosine_janus", "value": 0.35, "unit": "SBERT cosine", "source": "Table 4"},
+        {"name": "pairwise_cosine_llama3_8b_instruct", "value": 0.47, "unit": "SBERT cosine", "source": "Table 4"}
+      ],
+      "evidence": [],
+      "our_assessment": {"status": "accepted-narrower-scope", "why": "Temporal accuracy is measured by a decade classifier whose own RMSE on real text is ~48-53 years, so 'as accurate as OED' means 'as hard to date as OED for this classifier'. Variability is the more practical finding: instructed LLMs repeat themselves, which matters for any prototype built from generated usages (arena-lsc llm_proto.py uses an instructed model).", "by": "maria, 2026-11-03"}
+    },
+    {
+      "id": "c2",
+      "statement": "A roberta-large usage-definition classifier trained on OED relations (Exact/Peer/Related/Homograph) reaches Spearman 0.76 and Exact-vs-Different macro-F1 0.83 on real OED test usages; generated usages score 0.59-0.64 / 0.74-0.77. Human (MTurk, 3 per pair) vs OED labels: 0.57-0.58 Spearman, F1 0.72, the same for Janus and OED usages.",
+      "scope": "Tables 5 and 7; the classifier is released as ChangeIsKey/graded-wsd (English).",
+      "quantities": [
+        {"name": "wsd_f1_exact_vs_different_oed_test", "value": 0.83, "unit": "macro-F1", "source": "Table 5"},
+        {"name": "human_vs_oed_f1", "value": 0.72, "unit": "macro-F1", "source": "Table 7"}
+      ],
+      "evidence": [],
+      "our_assessment": {"status": "accepted", "why": "Reported clearly, and the human F1 of 0.72 against OED labels is a useful ceiling: OED's own peer/related distinctions are noisy (the authors say so), so a binary 'is it this sense' task over dictionary definitions has a human ceiling well below 1 - consistent with the 0.86 annotator-vs-annotator F1 measured on DWUG DE Sense in arena-lsc.", "by": "maria, 2026-11-03"}
+    },
+    {
+      "id": "c3",
+      "statement": "Human semantic-accuracy agreement (Spearman with OED labels) rises with the text's date, from about 0.45 for the earliest 50-year bins to over 0.7 for modern ones; the same trend holds for the WSD model.",
+      "scope": "Figures 4-5; small samples per early bin.",
+      "quantities": [],
+      "evidence": [],
+      "our_assessment": {"status": "accepted-narrower-scope", "why": "Read from figures, not tables (no exact values); direction is clear and plausible. Relevant to SemEval-2027 Task 3, whose periods start in 1880: older usages are harder for humans and models alike, so per-period error analysis should expect worse early periods.", "by": "maria, 2026-11-03"}
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "model-weights", "locator": "https://huggingface.co/ChangeIsKey/llama3-janus ; https://huggingface.co/ChangeIsKey/graded-wsd", "status": "not-checked",
+     "checked": {"on": "2026-11-03", "by": "maria", "how": "HF API listing and graded-wsd model card read", "result": "present; not run (English-only; Janus 8B fp16 does not fit next to other models on a 12 GB GPU without quantisation)"}}
+  ],
+  "relations": [
+    {"type": "cito:sharesAuthorWith", "target": "cassotti2025-hypothesis-driven-lsc", "why": "Same authors; that paper uses Janus for prototypes."},
+    {"type": "cito:sharesAuthorWith", "target": "saponara2026-synthetic-multi-period-lsc", "why": "Janus generated that synthetic data."}
+  ],
+  "open_questions": [
+    "Does graded-wsd (English) beat a local instruction LLM judge on Subtask 2 for English? Needs an English sense-annotated set with definitions; none in the arena-lsc pool."
+  ],
+  "curation": {"author": "maria", "created": "2026-11-03", "verified": "2026-11-03", "notes_file": "NOTES.md"}
+}
