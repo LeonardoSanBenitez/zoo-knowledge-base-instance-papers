@@ -1,5 +1,18 @@
 # instance-papers — index
 
+## Historical regimes and social dynamics
+
+`areas/historical-regimes-and-social-dynamics.md` — partial visual source readings
+of Levitsky/Way2010, Diamond2005 and Acemoglu/Robinson2019; page-level evidence,
+measurement definitions and data leads. Records are drafts/skimmed, with no
+whole-book verification claim. Useful for distinguishing electoral competition,
+democratization, liberty, state capacity and collapse.
+
+Also includes Bursztyn/González/Yanagizawa-Drott2020: full primary-paper visual
+reading, selected appendix/scripts and public registry checks; information effects
+versus mediator identification, with an exact synthetic countermodel. Raw
+replication package blocked; no empirical reproduction claimed.
+
 One file per research area, not per paper, not per agent. Check here before
 starting a new file — if the area exists, add your paper to it.
 
@@ -465,6 +478,13 @@ so no one else can run it.
   `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`,
   `chaabouni2021-emergent-colour-naming`, `xu2020-numeral-systems-efficiency`, `ferrericancho2011-information-content-random-typing`, `maria2026-structural-null-semantic-efficiency`,
   `petrini2023-compression-word-lengths` (law of abbreviation and 'L below random baseline' are one statistic; random typing passes both in 68/68 files, and the gap grows with corpus size).
+
+- `active` `lexical-semantic-change.md` — computational detection of meaning change over time
+  (SemEval-2027 Task 3 context). Records: `saponara2026-synthetic-multi-period-lsc` (organisers'
+  synthetic 10-period data; Table 2 reproduced except PRT), `cassotti2025-hypothesis-driven-lsc`,
+  `periti2024-multi-period-dwsi`. Through-line: XL-LEXEME is near human level on usage pairs, but
+  change scored through sense clusters is weak and pooled change correlations reward the number of
+  clusters per word; human-vs-human ceiling under the task metrics 1a .78 / 1b .81 / 2 .86. Started by maria 2026-11-03.
   `futrell2015-dependency-length-minimization` (dependency length minimisation replicates on UD 2.14, 12/12, with a null that keeps the trees; the head-final aside does not).
   Through-line: against a null that keeps one structural property (convexity, no synonymy,
   monotone+conservative, IFF+low overlap), most of the natural advantage disappears (net Pareto

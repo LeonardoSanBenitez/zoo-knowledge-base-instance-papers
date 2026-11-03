@@ -1,0 +1,4 @@
+raw embedding norms: mean 30.587 sd 0.286 min 26.745 max 31.230 (n=86106)
+PRT      0.367 95%[0.267,0.447]  paper PRT 0.473 -> OUTSIDE
+PRT_raw  0.366 95%[0.269,0.460]  paper PRT 0.473 -> OUTSIDE
+per-row PRT(normalised) - PRT(raw): mean -0.00000, max |d| 0.00181, rank corr 0.99997

@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.6",
+  "id": "cassotti2025-hypothesis-driven-lsc",
+  "title": "A Hypothesis-Driven Framework for Detecting Lexical Semantic Change",
+  "authors": ["Pierluigi Cassotti", "Nina Tahmasebi"],
+  "year": 2025,
+  "venue": "CLiC-it 2025 (Eleventh Italian Conference on Computational Linguistics), CEUR Workshop Proceedings, pp. 177-185",
+  "area": ["lexical-semantic-change"],
+  "identifiers": {"url": "https://aclanthology.org/2025.clicit-1.19/"},
+  "record_status": "active",
+  "read_depth": "read-full-text",
+  "selection": {"class": "chain", "evidence": "Cited as [20] by the SemEval-2027 Task 3 organisers' synthetic-data paper (saponara2026) for the 0.5 clustering threshold; its title matches Subtask 2's name 'Hypothesis-Driven Change Detection'. Opened to learn the organisers' own method for Subtask 2 before building one (arena-lsc ticket 2026-10-31-Baseline).", "recorded": "at-selection"},
+  "cost": {"tool_calls": 2, "bytes_downloaded": 1000000, "compute_notes": "ACL Anthology PDF, 9 pp, read in full via PyMuPDF. No code or data released with the paper (none referenced). Nothing run.", "session": "2026-11-03 maria, arena-lsc"},
+  "triggers": [
+    "how do the SemEval-2027 Task 3 organisers detect usages of one given sense",
+    "prototype from generated usages XL-LEXEME sense retrieval",
+    "Janus historical usage generation sense definition",
+    "hypothesis-driven lexical semantic change subtask 2 method",
+    "agglomerative clustering threshold 0.5 XL-LEXEME"
+  ],
+  "methods": [],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Given expert sense definitions, generate synthetic usages per sense with Janus (Llama-3-8B fine-tuned on 1,191,851 OED example sentences), average their XL-LEXEME embeddings into one prototype per sense, and rank corpus usages by cosine to the prototype; the top-ranked usages per period are read by experts to date a sense's emergence.",
+      "scope": "Three English words (theory, gene, force) in CCOHA; qualitative use case only. No gold labels, no precision/recall, no comparison system with numbers.",
+      "quantities": [],
+      "evidence": [],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "This is a method description with a demonstration, not an evaluation: Table 2 shows only the single most similar sentence per (sense, year) with cosine 0.88-0.98. Nothing measures how many usages above any threshold actually carry the sense, so it says nothing yet about the F1 such a ranker would get on a binary usage-vs-definition task (which is exactly SemEval-2027 Task 3 Subtask 2). Notably the reported similarities are compressed in 0.88-0.98 even for OCR noise ('genie rose' 0.88 for the metaphorical gene sense), so a fixed cosine threshold would need calibration per word.",
+        "by": "maria, 2026-11-03"
+      }
+    },
+    {
+      "id": "c2",
+      "statement": "Sense clusters for the exploratory part are induced with agglomerative clustering on XL-LEXEME embeddings at a distance threshold of 0.5; JSD over cluster distributions, PRT and APD are computed against the first period.",
+      "scope": "Settings stated in Section 4 and 4.1; linkage and distance metric not stated.",
+      "quantities": [{"name": "agglomerative_distance_threshold", "value": 0.5, "unit": "cosine distance (assumed)", "source": "Section 4, Section 4.1 JSD paragraph"}],
+      "evidence": [],
+      "our_assessment": {
+        "status": "accepted",
+        "why": "A setting, reported as used. The linkage is unstated, which matters: the same threshold gives very different cluster counts under average vs complete linkage. saponara2026 later reports 0.32 as better for change detection on synthetic data.",
+        "by": "maria, 2026-11-03"
+      }
+    }
+  ],
+  "artifacts": [],
+  "relations": [
+    {"type": "cito:sharesAuthorWith", "target": "saponara2026-synthetic-multi-period-lsc", "why": "Cassotti and Tahmasebi on both; saponara2026 cites this paper for the 0.5 threshold."}
+  ],
+  "open_questions": [
+    "Is Janus public (weights), and does an equivalent exist for SV/IT/ES/NL/RU? Without it the prototype step needs another generator or real dictionary examples.",
+    "What F1 does prototype-cosine ranking reach on a sense-annotated set with a fixed threshold vs a per-word threshold? Testable on dwug_de_sense / AXOLOTL in task format (arena-lsc)."
+  ],
+  "curation": {"author": "maria", "created": "2026-11-03", "verified": "2026-11-03", "notes_file": "NOTES.md"}
+}

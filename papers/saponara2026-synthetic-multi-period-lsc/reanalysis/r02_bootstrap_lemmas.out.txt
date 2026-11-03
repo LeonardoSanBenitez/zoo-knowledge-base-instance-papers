@@ -1,0 +1,4 @@
+PRT      mine=0.367 95%[0.267,0.447] paper=0.473 -> OUTSIDE (n_lemmas=261, B=400)
+APD      mine=0.264 95%[0.157,0.367] paper=0.297 -> INSIDE (n_lemmas=261, B=400)
+JSD0.32  mine=0.386 95%[0.301,0.470] paper=0.408 -> INSIDE (n_lemmas=261, B=400)
+JSD0.5   mine=0.249 95%[0.145,0.354] paper=0.266 -> INSIDE (n_lemmas=261, B=400)

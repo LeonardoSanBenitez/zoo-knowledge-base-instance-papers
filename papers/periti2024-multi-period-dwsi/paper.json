@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.6",
+  "id": "periti2024-multi-period-dwsi",
+  "title": "Towards more complete solutions for Lexical Semantic Change: an extension to multiple time periods and diachronic word sense induction",
+  "authors": [
+    "Francesco Periti",
+    "Nina Tahmasebi"
+  ],
+  "year": 2024,
+  "venue": "Proceedings of the 5th Workshop on Computational Approaches to Historical Language Change (LChange'24), ACL, pp. 108-119",
+  "area": [
+    "lexical-semantic-change"
+  ],
+  "identifiers": {
+    "url": "https://aclanthology.org/2024.lchange-1.10/",
+    "doi": "10.18653/v1/2024.lchange-1.10"
+  },
+  "record_status": "active",
+  "read_depth": "read-full-text",
+  "selection": {
+    "class": "chain",
+    "evidence": "Cited as [13] in cassotti2025 for the standard LSC pipeline; its title names the exact setting of SemEval-2027 Task 3 (multiple periods + diachronic WSI) and a task organiser (Tahmasebi) is co-author.",
+    "recorded": "at-selection"
+  },
+  "cost": {
+    "tool_calls": 2,
+    "bytes_downloaded": 900000,
+    "compute_notes": "ACL Anthology PDF, 12 pp, read in full. Position paper: no experiments, no artifacts.",
+    "session": "2026-11-03 maria, arena-lsc"
+  },
+  "triggers": [
+    "how to cluster word usages across many time periods",
+    "one-time clustering vs incremental clustering diachronic word sense induction",
+    "consecutive vs cumulative vs pairwise semantic change assessment",
+    "cluster alignment across time periods semantic change"
+  ],
+  "methods": [],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Two-period LSC methods do not extend trivially to many periods: re-clustering consecutive intervals breaks 'faithfulness' (usages of t_i are clustered differently with t_{i-1} than with t_{i+1}); one-time clustering over all periods is order-insensitive and lets later periods reshape earlier senses; the authors advocate incremental clustering.",
+      "scope": "Argument only; five approaches (consecutive intervals, consecutive periods + alignment, one-time over all periods, incremental, form-based scaling) and three assessment settings (consecutive, pairwise, cumulative).",
+      "quantities": [],
+      "evidence": [],
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "The taxonomy is useful and the faithfulness point is right. The preference for incremental clustering is argued, not measured: no experiment compares the five approaches on any gold data. For a benchmark that scores ONE clustering across all periods (SemEval-2027 Task 3 1a, then JSD between consecutive periods for 1b), one-time clustering is the only one of the five that yields a single consistent label space without an alignment step, so 'order-insensitive' is a property the metric does not penalise.",
+        "by": "maria, 2026-11-03"
+      }
+    }
+  ],
+  "artifacts": [],
+  "relations": [
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "saponara2026-synthetic-multi-period-lsc",
+      "why": "Tahmasebi on both; saponara2026 is the first multi-period gold the position paper says is missing."
+    }
+  ],
+  "open_questions": [
+    "Does incremental clustering beat one-time clustering on a multi-period sense-annotated gold (synthetic EN zenodo 21703081, or the SemEval-2027 Task 3 test after release)? Measurable now on the synthetic set."
+  ],
+  "curation": {
+    "author": "maria",
+    "created": "2026-11-03",
+    "verified": "2026-11-03",
+    "notes_file": "NOTES.md"
+  }
+}
