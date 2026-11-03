@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.6",
+  "id": "yadav2025-xl-durel",
+  "title": "XL-DURel: Finetuning Sentence Transformers for Ordinal Word-in-Context Classification",
+  "authors": ["Sachin Yadav", "Dominik Schlechtweg"],
+  "year": 2025,
+  "venue": "Findings of IJCNLP-AACL 2025; arXiv:2507.14578",
+  "area": ["lexical-semantic-change"],
+  "identifiers": {"arxiv": "2507.14578", "url": "https://aclanthology.org/2025.findings-ijcnlp.19/"},
+  "record_status": "active",
+  "read_depth": "read-and-ran-artifacts",
+  "selection": {"class": "hypothesis-test", "evidence": "Found by searching HF for usage-similarity models newer than XL-LEXEME after three arena-lsc tickets pointed at the representation as the bottleneck; opened expecting a graded-WiC model might separate senses better.", "recorded": "at-selection"},
+  "cost": {"tool_calls": 10, "bytes_downloaded": 2240000000, "compute_notes": "PDF sections 1-6 + appendix B read (data, losses, thresholds, results); author list from the arXiv/HF pages as printed. Model (HF sachinn1/xl-durel) run on ~100k usages (RX 6700 XT, fp16) in arena-lsc ticket 2026-11-03-XLDURel; reference marking code (PyPI xl-durel-utils 1.0.4) read, not executed.", "session": "2026-11-03 maria, arena-lsc"},
+  "triggers": [
+    "XL-DURel vs XL-LEXEME",
+    "ordinal word in context model",
+    "AnglE loss word in context",
+    "CoMeDi shared task model",
+    "graded usage similarity encoder multilingual"
+  ],
+  "methods": ["exact-reproduction-from-deposit"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Fine-tuning XLM-R large with AnglE loss on CoMeDi ordinal WiC data (71k usage pairs from DWUG-family datasets in ZH EN DE NO RU ES SV, 70/20/10 split by target word) plus XL-LEXEME's binary WiC data gives ordinal Krippendorff alpha .67 on CoMeDi test vs .58 for XL-LEXEME and .66 for the CoMeDi winner DeepMistake.",
+      "scope": "Threshold-binned cosines (thresholds tuned per language on dev); one training run per model (re-runs varied by +-.01-.03).",
+      "quantities": [
+        {"name": "comedi_test_ordinal_alpha_xldurel", "value": 0.67, "unit": "Krippendorff alpha", "source": "Section 6 / Figure 2"},
+        {"name": "comedi_test_ordinal_alpha_xllexeme", "value": 0.58, "unit": "Krippendorff alpha", "source": "Section 6 / Figure 2"}
+      ],
+      "evidence": [],
+      "our_assessment": {"status": "accepted-narrower-scope", "why": "Numbers as printed (one run per model; the authors report +-.01-.03 re-run variation, so .67 vs .66 is a tie). The gain over XL-LEXEME is large on in-distribution ordinal WiC. CONTAMINATION for downstream LSC evaluation: its training pairs come from DWUG EN/DE/SV, DWUG ES, RuShiftEval, NorDiaChange, ChiWUG, so any evaluation on those datasets' words (and DWUG DE Sense, which reuses DWUG DE usages) is not clean.", "by": "maria, 2026-11-03"}
+    },
+    {
+      "id": "c2",
+      "origin": "reader",
+      "statement": "As the encoder for SemEval-2027 Task 3 Subtask 1 (average-linkage clustering, threshold chosen on contamination-free public sets), XL-DURel beats XL-LEXEME on 1a by a small margin on held-out synthetic data (+0.012, 95% CI [+0.004, +0.021], 300 words) and on clean real sets (Italian +0.046, Russian +0.025, Finnish 0.000), does not improve 1b (synthetic -0.009, n.s.), and is slightly below on the task's 10-word Swedish dev set (-0.013, CI [-0.030, +0.000]).",
+      "scope": "arena-lsc ticket 2026-11-03-XLDURel; official Task 3 scorer; thresholds XL-DURel 0.54, XL-LEXEME 0.40.",
+      "quantities": [
+        {"name": "task3_synth300_1a_fcubed_xldurel", "value": 0.6550, "unit": "BCubed F", "n": 300, "source": ".claude/memory/maria/arena-lsc/tickets/2026-11-03-XLDURel/OUTCOME.md"},
+        {"name": "task3_svdev_1a_fcubed_xldurel", "value": 0.8033, "unit": "BCubed F", "n": 10, "source": ".claude/memory/maria/arena-lsc/tickets/2026-11-03-XLDURel/OUTCOME.md"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {"status": "accepted", "why": "Reader's own pre-registered comparison; the graded-WiC gain transfers to sense clustering only weakly.", "by": "maria, 2026-11-03"}
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "model-weights", "locator": "https://huggingface.co/sachinn1/xl-durel (MIT)", "status": "verified-usable",
+     "checked": {"on": "2026-11-03", "by": "maria", "how": ".venv-gpu/Scripts/python.exe tooling/embed.py <usages.jsonl> <out> --model sachinn1/xl-durel (arena-lsc; WordTransformer marking, mean pooling as its 1_Pooling config)", "result": "usable; on an exFAT cache two config files must be fetched manually (HF symlink failure)"}}
+  ],
+  "relations": [
+    {"type": "cito:extends", "target": "cassotti2023-xl-lexeme", "why": "Same architecture and marking scheme, further trained on ordinal judgments."},
+    {"type": "cito:usesDataFrom", "target": "schlechtweg2021-dwug", "why": "CoMeDi training pairs are drawn from DWUG-family annotations."}
+  ],
+  "open_questions": [
+    "Does averaging XL-DURel and XL-LEXEME cosines beat either alone on Task 3 1a?"
+  ],
+  "curation": {"author": "maria", "created": "2026-11-03", "verified": "2026-11-03", "notes_file": "NOTES.md"}
+}
