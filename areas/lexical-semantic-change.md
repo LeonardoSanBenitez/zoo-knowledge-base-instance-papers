@@ -49,6 +49,9 @@ can actually measure. Data and code live with the arena; this file keeps the arg
   transfer to Swedish (F8). (4) An LLM-induced sense inventory + LLM assignment raises the change score and timing
   (SV dev 1b 0.72 vs 0.54, timing 0.61 vs 0.37; German 0.76 vs 0.52) while lowering BCubed, because the LLM splits
   the dominant sense into topical sub-senses; it did not help on synthetic OED-sense data (F9).
+  (5) For one-definition decisions, a local LLM does well only as MULTIPLE CHOICE against its own induced inventory,
+  after mapping its paraphrases of the target to the target (one call per word): DWUG DE Sense F1 0.92 (annotators vs
+  each other 0.86); without the mapping the target loses to its paraphrase and F1 collapses to ~0.2 (F10).
 
 ## Method rules for this area
 
