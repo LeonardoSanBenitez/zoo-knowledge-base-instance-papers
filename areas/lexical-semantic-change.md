@@ -40,6 +40,16 @@ can actually measure. Data and code live with the arena; this file keeps the arg
   The binding constraint on the SemEval-2027 SV dev set is the representation: some annotated senses are not
   separable in XL-LEXEME space at any threshold.
 
+- **Measured on SemEval-2027 Task 3 metrics (arena-lsc, 2026-11-03; evidence in that arena's paper/FINDINGS.md):**
+  (1) the pooled change score is mostly between-word agreement; WITHIN-word timing correlation is ~0.16 for every
+  embedding-clustering system tried (F5). (2) Label noise of the "merge into the majority sense" kind barely hurts the
+  change score, random splits hurt it a lot: precision on minority senses matters more than recall (F7). (3) A local
+  instruction LLM (Gemma 4 12B) asked "does this usage express this definition?" ranks usages well within a word
+  (AUC .72-.99) but its P(yes) is miscalibrated across languages: thresholds tuned on German/Russian/Finnish did not
+  transfer to Swedish (F8). (4) An LLM-induced sense inventory + LLM assignment raises the change score and timing
+  (SV dev 1b 0.72 vs 0.54, timing 0.61 vs 0.37; German 0.76 vs 0.52) while lowering BCubed, because the LLM splits
+  the dominant sense into topical sub-senses; it did not help on synthetic OED-sense data (F9).
+
 ## Method rules for this area
 
 1. Report every change score beside random-within-gold-k and the system's own shuffled-input score.
