@@ -2,15 +2,32 @@
   "schema_version": "1.6",
   "id": "kokosinskii2024-deep-change-axolotl",
   "title": "Deep-change at AXOLOTL-24: Orchestrating WSD and WSI Models for Semantic Change Modeling",
-  "authors": ["Denis Kokosinskii", "Mikhail Kuklin", "Nikolay Arefyev"],
+  "authors": [
+    "Denis Kokosinskii",
+    "Mikhail Kuklin",
+    "Nikolay Arefyev"
+  ],
   "year": 2024,
   "venue": "LChange'24 (ACL 2024 workshop); arXiv:2408.05184",
-  "area": ["lexical-semantic-change"],
-  "identifiers": {"arxiv": "2408.05184"},
+  "area": [
+    "lexical-semantic-change"
+  ],
+  "identifiers": {
+    "arxiv": "2408.05184"
+  },
   "record_status": "active",
   "read_depth": "read-full-text",
-  "selection": {"class": "chain", "evidence": "Winner of AXOLOTL-24 Subtask 1 per fedorova2024; its GlossReader usage-gloss model is the obvious candidate for SemEval-2027 Task 3 Subtask 2 (one gloss, binary). Opened to learn the architecture before loading the released checkpoints.", "recorded": "at-selection"},
-  "cost": {"tool_calls": 3, "bytes_downloaded": 600000, "compute_notes": "arXiv PDF pp. 1-9 read (methods, data statistics, metrics, Table 3 results, NSD analysis); appendix skimmed. Checkpoints (Zenodo 13256679 etc.) not yet run.", "session": "2026-11-03 maria, arena-lsc"},
+  "selection": {
+    "class": "chain",
+    "evidence": "Winner of AXOLOTL-24 Subtask 1 per fedorova2024; its GlossReader usage-gloss model is the obvious candidate for SemEval-2027 Task 3 Subtask 2 (one gloss, binary). Opened to learn the architecture before loading the released checkpoints.",
+    "recorded": "at-selection"
+  },
+  "cost": {
+    "tool_calls": 3,
+    "bytes_downloaded": 600000,
+    "compute_notes": "arXiv PDF pp. 1-9 read (methods, data statistics, metrics, Table 3 results, NSD analysis); appendix skimmed. Checkpoints (Zenodo 13256679 etc.) not yet run.",
+    "session": "2026-11-03 maria, arena-lsc"
+  },
   "triggers": [
     "GlossReader architecture context encoder gloss encoder",
     "novel sense detection as outlier detection logistic regression",
@@ -25,12 +42,31 @@
       "statement": "GlossReader (BEM-style bi-encoder: XLM-R large context encoder, mean of the target's last-layer subword outputs; XLM-R large gloss encoder, <s> output; dot product, softmax over the word's glosses; trained on SemCor) fine-tuned on AXOLOTL FI+RU train + SemCor (GR FiEnRu) reaches test F1 0.756 FI, 0.750 RU, 0.745 DE (surprise language, DWUG DE Sense) and ARI 0.649/0.048/0.521; the SemCor-only GR gets F1 0.690/0.721/0.694.",
       "scope": "AXOLOTL-24 Subtask 1 test sets; F1 is computed only on new usages of OLD senses, which favours pure WSD.",
       "quantities": [
-        {"name": "test_F1_GR_FiEnRu_DE", "value": 0.745, "unit": "macro-F1", "source": "Table 3"},
-        {"name": "test_F1_GR_SemCor_DE", "value": 0.694, "unit": "macro-F1", "source": "Table 3"},
-        {"name": "test_ARI_agglomerative_WSI_FI", "value": 0.209, "unit": "ARI", "source": "Table 3"}
+        {
+          "name": "test_F1_GR_FiEnRu_DE",
+          "value": 0.745,
+          "unit": "macro-F1",
+          "source": "Table 3"
+        },
+        {
+          "name": "test_F1_GR_SemCor_DE",
+          "value": 0.694,
+          "unit": "macro-F1",
+          "source": "Table 3"
+        },
+        {
+          "name": "test_ARI_agglomerative_WSI_FI",
+          "value": 0.209,
+          "unit": "ARI",
+          "source": "Table 3"
+        }
       ],
       "evidence": [],
-      "our_assessment": {"status": "accepted-narrower-scope", "why": "Numbers as printed; the authors themselves explain why F1 favours WSD (one novel-sense mistake on a 1-sense word more than halves that word's F1). The German result matters most for SemEval-2027 Task 3: DE is a language GR FiEnRu never saw labels for, and gloss selection still reaches F1 .745 - evidence that gloss matching transfers across languages through XLM-R.", "by": "maria, 2026-11-03"}
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Numbers as printed; the authors themselves explain why F1 favours WSD (one novel-sense mistake on a 1-sense word more than halves that word's F1). The German result matters most for SemEval-2027 Task 3: DE is a language GR FiEnRu never saw labels for, and gloss selection still reaches F1 .745 - evidence that gloss matching transfers across languages through XLM-R.",
+        "by": "maria, 2026-11-03"
+      }
     },
     {
       "id": "c2",
@@ -38,18 +74,41 @@
       "scope": "Table 3.",
       "quantities": [],
       "evidence": [],
-      "our_assessment": {"status": "accepted", "why": "Consistent with the data statistics they report (Figure 3): when old and new senses overlap, an inventory beats induction. SemEval-2027 Task 3 Subtask 1 gives no inventory, so this advantage is not available there except through external dictionaries.", "by": "maria, 2026-11-03"}
+      "our_assessment": {
+        "status": "accepted",
+        "why": "Consistent with the data statistics they report (Figure 3): when old and new senses overlap, an inventory beats induction. SemEval-2027 Task 3 Subtask 1 gives no inventory, so this advantage is not available there except through external dictionaries.",
+        "by": "maria, 2026-11-03"
+      }
     }
   ],
   "artifacts": [
-    {"id": "a1", "role": "model-weights", "locator": "https://zenodo.org/records/13256679 (GR_FiEnRu.tar.gz, 3.59 GB, CC BY 4.0); 10841407 (GR large 2021, best_model.ckpt 4.48 GB)", "status": "not-checked",
-     "checked": {"on": "2026-11-03", "by": "maria", "how": "Zenodo search API listing; download queued in arena-lsc (tooling/fetch_glossreader.sh)", "result": "not yet run; no public loading code found (myrachins repos ship precomputed vectors only)"}}
+    {
+      "id": "a1",
+      "role": "model-weights",
+      "locator": "https://zenodo.org/records/13256679 (GR_FiEnRu.tar.gz, 3.59 GB, CC BY 4.0); 10841407 (GR large 2021, best_model.ckpt 4.48 GB)",
+      "status": "present-but-insufficient",
+      "checked": {
+        "on": "2026-11-03",
+        "by": "maria",
+        "how": "GR_FiEnRu/model.safetensors (783 tensors: context_encoder.*, gloss_encoder.*, ood_prob) loaded into two XLMRobertaModel by .claude/memory/maria/arena-lsc/tooling/glossreader.py (no public loading code); glossreader.py check; arena-lsc ticket 2026-11-03-GlossReader",
+        "result": "weights load and pass a 4-usage English known-answer check; but for a ONE-gloss binary decision (SemEval-2027 Task 3 Subtask 2) the scores are not usable without competitor glosses: every pool-selected rule equals all-positive; context vectors share a large common component (dot ~800, margins ~10)"
+      }
+    }
   ],
   "relations": [
-    {"type": "cito:usesDataFrom", "target": "fedorova2024-axolotl24-overview", "why": "Participant system of that shared task."}
+    {
+      "type": "cito:usesDataFrom",
+      "target": "fedorova2024-axolotl24-overview",
+      "why": "Participant system of that shared task."
+    }
   ],
   "open_questions": [
-    "Does GR FiEnRu's gloss score, thresholded, solve SemEval-2027 Task 3 Subtask 2 (binary, one definition) better than an LLM judge? To test in arena-lsc."
+    "PARTLY ANSWERED 2026-11-03 (arena-lsc GlossReader ticket): thresholded GR FiEnRu scores, used as a one-gloss binary decision, do not beat all-positive on dwug_de_sense / AXOLOTL FI / RU; GR needs competing glosses (argmax) as in its training. Untested: competitors from an LLM-induced inventory."
   ],
-  "curation": {"author": "maria", "created": "2026-11-03", "verified": "2026-11-03", "notes_file": "NOTES.md"}
+  "curation": {
+    "author": "maria",
+    "created": "2026-11-03",
+    "verified": "2026-11-03",
+    "notes_file": "NOTES.md"
+  }
 }
