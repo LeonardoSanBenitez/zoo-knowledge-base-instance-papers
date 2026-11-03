@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.6",
+  "id": "fedorova2024-axolotl24-overview",
+  "title": "AXOLOTL'24 Shared Task on Multilingual Explainable Semantic Change Modeling",
+  "authors": ["Mariia Fedorova", "Timothee Mickus", "Niko Partanen", "Janine Siewert", "Elena Spaziani", "Andrey Kutuzov"],
+  "year": 2024,
+  "venue": "LChange'24 workshop (ACL 2024); arXiv:2407.04079",
+  "area": ["lexical-semantic-change"],
+  "identifiers": {"arxiv": "2407.04079", "url": "https://github.com/ltgoslo/axolotl24_shared_task"},
+  "record_status": "active",
+  "read_depth": "read-and-ran-artifacts",
+  "selection": {"class": "census", "evidence": "The most recent sense-level LSC shared task before SemEval-2027 Task 3 (whose organisers include Fedorova); its data are the only public sense+gloss annotated diachronic sets in Russian, a Task 3 language. Opened to build arena-lsc's public dev pool.", "recorded": "at-selection"},
+  "cost": {"tool_calls": 8, "bytes_downloaded": 653074, "compute_notes": "arXiv PDF main body pp. 1-8 read (data, organisation, results, discussion); appendices skimmed. Repository cloned (6ccddbb) and dev+test-gold of FI and RU converted to the SemEval-2027 Task 3 format and scored with that task's official scorer (controls) and with arena-lsc systems.", "session": "2026-11-03 maria, arena-lsc"},
+  "triggers": [
+    "AXOLOTL-24 results which system won",
+    "novel sense detection shared task Finnish Russian German",
+    "sense annotated diachronic Russian data with glosses",
+    "WSD vs WSI trade-off ARI vs F1 semantic change",
+    "GlossReader Deep-change AXOLOTL"
+  ],
+  "methods": ["leaderboard-secondary-analysis"],
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Six teams; Subtask 1 (assign new-period usages to old glosses or novel senses) ranked separately by ARI and by macro-F1 on old senses. Deep-change (GlossReader WSD) best on average: ARI 41.3, F1 75.0 (Fi-Ru-De); it predicted no novel senses at all. Best Russian ARI was 13.2 (WooperNLP); the organisers' baseline (LEALLA + affinity propagation + 0.3 cosine threshold) had ARI 4.1, F1 20.7.",
+      "scope": "Two periods; Russian old usages come from Dal's dictionary and new ones from Wiktionary-based CoDWoE, mapped by hand; novel-sense share 14% FI, 21% DE, 57% RU.",
+      "quantities": [
+        {"name": "deepchange_ARI_x100_avg", "value": 41.3, "unit": "ARI x 100", "source": "Table 3"},
+        {"name": "deepchange_F1_x100_avg", "value": 75.0, "unit": "F1 x 100", "source": "Table 4"},
+        {"name": "best_ARI_x100_RU", "value": 13.2, "unit": "ARI x 100", "source": "Table 3 (WooperNLP)"}
+      ],
+      "evidence": ["a1"],
+      "our_assessment": {"status": "accepted-narrower-scope", "why": "The organisers themselves note the metric pathology: a pure WSD system that never detects a novel sense wins F1 and average ARI, because FI and DE have few novel senses. So the leaderboard rewards WSD with glosses, not change detection. Russian is effectively a different task (57% novel senses, two dictionaries spliced), where every system is near ARI 0.", "by": "maria, 2026-11-03"}
+    },
+    {
+      "id": "c2",
+      "statement": "Finnish target positions were verified manually for all dev and test sentences; Russian usages have no target offsets.",
+      "scope": "Data section 3.1-3.2.",
+      "quantities": [],
+      "evidence": ["a1"],
+      "our_assessment": {"status": "accepted", "why": "Confirmed on the files: converting dev+test-gold, FI needed 29 offset recoveries of 9,247 usages; RU needed 3,716 (every usage) by a stem-prefix locator and 185 could not be located. Anyone reusing RU must locate targets themselves (Deep-change used pymorphy2 word forms plus manual fixes).", "by": "maria, 2026-11-03"}
+    }
+  ],
+  "artifacts": [
+    {"id": "a1", "role": "benchmark", "locator": "https://github.com/ltgoslo/axolotl24_shared_task (commit 6ccddbb6e536993ccb60cadbdb37fc95b68cbd9a)", "status": "verified-usable",
+     "checked": {"on": "2026-11-03", "by": "maria", "how": "git clone --depth 1; python .claude/memory/maria/arena-lsc/tooling/convert_public.py axolotl <data/russian|data/finnish> <gold> --min-per-period 3|10; harness.py controls", "result": "FI: 133 words with >= 10 usages per period, 9,207 usages; RU: 40 words with >= 3 per period, 606 usages (no word has 10 old usages, so no SemEval-2027-style 1b on RU)"}}
+  ],
+  "relations": [],
+  "open_questions": [
+    "Does a GlossReader-style gloss-matching model transfer to SemEval-2027 Task 3 Subtask 2 (one definition, binary decision) in the six Task 3 languages?"
+  ],
+  "curation": {"author": "maria", "created": "2026-11-03", "verified": "2026-11-03", "notes_file": "NOTES.md"}
+}

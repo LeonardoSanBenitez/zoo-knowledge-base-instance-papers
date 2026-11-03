@@ -2,15 +2,32 @@
   "schema_version": "1.6",
   "id": "periti2024-systematic-comparison-cwe-lsc",
   "title": "A Systematic Comparison of Contextualized Word Embeddings for Lexical Semantic Change",
-  "authors": ["Francesco Periti", "Nina Tahmasebi"],
+  "authors": [
+    "Francesco Periti",
+    "Nina Tahmasebi"
+  ],
   "year": 2024,
   "venue": "NAACL 2024 (Long Papers), pp. 4262-4282",
-  "area": ["lexical-semantic-change"],
-  "identifiers": {"url": "https://aclanthology.org/2024.naacl-long.240/", "doi": "10.18653/v1/2024.naacl-long.240"},
+  "area": [
+    "lexical-semantic-change"
+  ],
+  "identifiers": {
+    "url": "https://aclanthology.org/2024.naacl-long.240/",
+    "doi": "10.18653/v1/2024.naacl-long.240"
+  },
   "record_status": "active",
   "read_depth": "read-full-text",
-  "selection": {"class": "chain", "evidence": "Cited by saponara2026 ([17]) as the source for XL-LEXEME being the state of the art for LSCD; read to know what numbers an XL-LEXEME pipeline reaches on the DWUG-family benchmarks that arena-lsc uses as its public dev pool.", "recorded": "at-selection"},
-  "cost": {"tool_calls": 5, "bytes_downloaded": 1632720, "compute_notes": "Main body pp. 1-9 read in full (PyMuPDF text; tables parsed from text, column order checked against headers); appendices (pp. 10-21: per-layer results, benchmark statistics) skimmed for table captions only. No artifact run here; code at github.com/FrancescoPeriti/CSSDetection not cloned.", "session": "2026-11-03 maria, arena-lsc"},
+  "selection": {
+    "class": "chain",
+    "evidence": "Cited by saponara2026 ([17]) as the source for XL-LEXEME being the state of the art for LSCD; read to know what numbers an XL-LEXEME pipeline reaches on the DWUG-family benchmarks that arena-lsc uses as its public dev pool.",
+    "recorded": "at-selection"
+  },
+  "cost": {
+    "tool_calls": 5,
+    "bytes_downloaded": 1632720,
+    "compute_notes": "Main body pp. 1-9 read in full (PyMuPDF text; tables parsed from text, column order checked against headers); appendices (pp. 10-21: per-layer results, benchmark statistics) skimmed for table captions only. No artifact run here; code at github.com/FrancescoPeriti/CSSDetection not cloned.",
+    "session": "2026-11-03 maria, arena-lsc"
+  },
   "triggers": [
     "which contextual embedding model is best for semantic change detection",
     "APD vs PRT vs cluster JSD graded change detection",
@@ -18,51 +35,125 @@
     "does clustering help semantic change detection",
     "WSI evaluation on DWUG with ARI and purity"
   ],
-  "methods": ["leaderboard-secondary-analysis"],
+  "methods": [
+    "leaderboard-secondary-analysis"
+  ],
   "claims": [
     {
       "id": "c1",
       "statement": "Under equal settings on 8 LSC benchmarks (EN LA DE SV ES RU NO ZH), XL-LEXEME is the best embedding for graded change detection with every approach; APD > PRT > WiDiD > AP+JSD. Weighted-average Spearman with XL-LEXEME: APD .751, PRT .693, WiDiD .422, AP+JSD .223.",
       "scope": "Embeddings of the annotated usages only (not full corpora), last layer, no fine-tuning beyond XL-LEXEME's own; AP = affinity propagation; weighted by number of targets.",
       "quantities": [
-        {"name": "gcd_spearman_xllexeme_apd_weighted_avg", "value": 0.751, "unit": "rho", "source": "Table 1, Avg_w"},
-        {"name": "gcd_spearman_xllexeme_prt_weighted_avg", "value": 0.693, "unit": "rho", "source": "Table 1, Avg_w"},
-        {"name": "gcd_spearman_xllexeme_apjsd_weighted_avg", "value": 0.223, "unit": "rho", "source": "Table 1, Avg_w"}
+        {
+          "name": "gcd_spearman_xllexeme_apd_weighted_avg",
+          "value": 0.751,
+          "unit": "rho",
+          "source": "Table 1, Avg_w"
+        },
+        {
+          "name": "gcd_spearman_xllexeme_prt_weighted_avg",
+          "value": 0.693,
+          "unit": "rho",
+          "source": "Table 1, Avg_w"
+        },
+        {
+          "name": "gcd_spearman_xllexeme_apjsd_weighted_avg",
+          "value": 0.223,
+          "unit": "rho",
+          "source": "Table 1, Avg_w"
+        }
       ],
       "evidence": [],
-      "our_assessment": {"status": "accepted-narrower-scope", "why": "Numbers are read from Table 1 as printed (not recomputed). The form-vs-sense gap is large and consistent across benchmarks, but 'sense-based' here means AP/APP clustering; the paper itself shows (Section 5.4) that clustering with the benchmark's own correlation-clustering pipeline on XL-LEXEME similarities gives GCD .754 - so the weakness is AP, not 'clusters' as such. For SemEval-2027 Task 3, whose 1b is computed only from a clustering, that distinction is the whole game.", "by": "maria, 2026-11-03"}
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Numbers are read from Table 1 as printed (not recomputed). The form-vs-sense gap is large and consistent across benchmarks, but 'sense-based' here means AP/APP clustering; the paper itself shows (Section 5.4) that clustering with the benchmark's own correlation-clustering pipeline on XL-LEXEME similarities gives GCD .754 - so the weakness is AP, not 'clusters' as such. For SemEval-2027 Task 3, whose 1b is computed only from a clustering, that distinction is the whole game.",
+        "by": "maria, 2026-11-03"
+      }
     },
     {
       "id": "c2",
       "statement": "As computational annotators of usage pairs (cosine as a proximity judgment), XL-LEXEME correlates with human judgments at about human-human agreement (EN Spearman .626 vs Krippendorff alpha .633; GPT-4 .606); pre-trained BERT/mBERT/XLM-R are far lower (avg .358/.301/.272).",
       "scope": "Only pairs that humans judged; WiC graded framework; GPT-4 on EN only.",
       "quantities": [
-        {"name": "wic_spearman_xllexeme_EN", "value": 0.626, "unit": "rho", "source": "Table 2 / Section 5.4"},
-        {"name": "wic_spearman_gpt4_EN", "value": 0.606, "unit": "rho", "source": "Section 5.4"},
-        {"name": "human_krippendorff_alpha_EN", "value": 0.633, "unit": "alpha", "source": "Section 5.4"}
+        {
+          "name": "wic_spearman_xllexeme_EN",
+          "value": 0.626,
+          "unit": "rho",
+          "source": "Table 2 / Section 5.4"
+        },
+        {
+          "name": "wic_spearman_gpt4_EN",
+          "value": 0.606,
+          "unit": "rho",
+          "source": "Section 5.4"
+        },
+        {
+          "name": "human_krippendorff_alpha_EN",
+          "value": 0.633,
+          "unit": "alpha",
+          "source": "Section 5.4"
+        }
       ],
       "evidence": [],
-      "our_assessment": {"status": "accepted-narrower-scope", "why": "Spearman with mean judgments vs Krippendorff's alpha among annotators are different statistics, so 'close to human level' is an analogy, not a comparison on one scale. Still the practical point holds: on pairs, XL-LEXEME is as good as the best LLM tested, at a fraction of the cost.", "by": "maria, 2026-11-03"}
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Spearman with mean judgments vs Krippendorff's alpha among annotators are different statistics, so 'close to human level' is an analogy, not a comparison on one scale. Still the practical point holds: on pairs, XL-LEXEME is as good as the best LLM tested, at a fraction of the cost.",
+        "by": "maria, 2026-11-03"
+      }
     },
     {
       "id": "c3",
       "statement": "WSI by correlation clustering of the XL-LEXEME-annotated usage graph reaches ARI about .27-.45 and purity .77-.84 against the human DWUG clusters; GCD from those clusters averages .754.",
       "scope": "Same clustering algorithm as used to build the gold, applied to the model's similarities on judged pairs only.",
-      "quantities": [{"name": "gcd_spearman_xllexeme_wug_pipeline_avg", "value": 0.754, "unit": "rho", "source": "Section 5.4 (iii)"}],
+      "quantities": [
+        {
+          "name": "gcd_spearman_xllexeme_wug_pipeline_avg",
+          "value": 0.754,
+          "unit": "rho",
+          "source": "Section 5.4 (iii)"
+        }
+      ],
       "evidence": [],
-      "our_assessment": {"status": "accepted-narrower-scope", "why": "Partly circular by design (same clustering as the gold, and only the gold's sampled edges), which the authors acknowledge. It bounds what a 'model replaces the annotators' pipeline gets on DWUG; it does not say what a full all-pairs clustering gets.", "by": "maria, 2026-11-03"}
+      "our_assessment": {
+        "status": "accepted-narrower-scope",
+        "why": "Partly circular by design (same clustering as the gold, and only the gold's sampled edges), which the authors acknowledge. It bounds what a 'model replaces the annotators' pipeline gets on DWUG; it does not say what a full all-pairs clustering gets.",
+        "by": "maria, 2026-11-03"
+      }
     }
   ],
   "artifacts": [
-    {"id": "a1", "role": "code", "locator": "https://github.com/FrancescoPeriti/CSSDetection", "status": "not-checked",
-     "checked": {"on": "2026-11-03", "by": "maria", "how": "link read in the PDF footnote; not cloned", "result": "not checked"}}
+    {
+      "id": "a1",
+      "role": "code",
+      "locator": "https://github.com/FrancescoPeriti/CSSDetection",
+      "status": "not-checked",
+      "checked": {
+        "on": "2026-11-03",
+        "by": "maria",
+        "how": "link read in the PDF footnote; not cloned",
+        "result": "not checked"
+      }
+    }
   ],
   "relations": [
-    {"type": "cito:sharesAuthorWith", "target": "periti2024-multi-period-dwsi", "why": "Same authors, same year; the position paper argues for the sense-based modelling this paper finds weak."},
-    {"type": "cito:sharesAuthorWith", "target": "saponara2026-synthetic-multi-period-lsc", "why": "Tahmasebi."}
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "periti2024-multi-period-dwsi",
+      "why": "Same authors, same year; the position paper argues for the sense-based modelling this paper finds weak."
+    },
+    {
+      "type": "cito:sharesAuthorWith",
+      "target": "saponara2026-synthetic-multi-period-lsc",
+      "why": "Tahmasebi."
+    }
   ],
   "open_questions": [
-    "How does all-pairs correlation clustering (the WUG algorithm) on XL-LEXEME similarities compare with average-linkage agglomerative clustering for SemEval-2027 Task 3 1a/1b? Testable on the arena-lsc public pool."
+    "ANSWERED 2026-11-03 (arena-lsc ticket 2026-11-03-CorrClust): all-pairs correlation clustering (signed weights cos - tau, local search) on XL-LEXEME embeddings does NOT beat average-linkage agglomerative clustering on SemEval-2027 Task 3 metrics: pool of 8 public sets 1a 0.762 vs 0.762, held-out synthetic 10-period 1b 0.320 vs 0.367 (paired CI excludes 0, worse), SV dev 1a 0.793 vs 0.816. The paper's .754 vs .223 contrast is against affinity propagation on judged edges, not against average linkage."
   ],
-  "curation": {"author": "maria", "created": "2026-11-03", "verified": "2026-11-03", "notes_file": "NOTES.md"}
+  "curation": {
+    "author": "maria",
+    "created": "2026-11-03",
+    "verified": "2026-11-03",
+    "notes_file": "NOTES.md"
+  }
 }
