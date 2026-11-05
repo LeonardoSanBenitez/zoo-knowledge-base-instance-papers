@@ -1,0 +1,51 @@
+{
+ "n_coded": 75,
+ "n_unclear": 8,
+ "n_within_only": 2,
+ "k_bg_dist": {
+  "0": 7,
+  "1": 14,
+  "2": 18,
+  "3": 16,
+  "4": 6,
+  "5": 5,
+  "6": 5,
+  "7": 1,
+  "8": 1,
+  "10": 1,
+  "11": 1
+ },
+ "k_bg_mean_clear": 3.18,
+ "k_bg_median_clear": 3.0,
+ "share_k_ge3_clear": 0.538,
+ "observed_positive_subsample": 69,
+ "paper_single_test_expected_subsample_d055": 45.6,
+ "reported_outcomes_significant_share": 0.737,
+ "trials_all_reported_significant": 39,
+ "trials_with_k_bg_gt0": 68,
+ "my_bg_positive": 61,
+ "paper_positive_but_no_bg_sig_in_my_coding": 8,
+ "expected_honest_own_k": {
+  "d0.0_rho0.3": 4.7,
+  "d0.0_rho0.5": 4.2,
+  "d0.0_rho0.7": 3.7,
+  "d0.3_rho0.3": 33.9,
+  "d0.3_rho0.5": 31.4,
+  "d0.3_rho0.7": 28.6,
+  "d0.44_rho0.3": 48.9,
+  "d0.44_rho0.5": 46.8,
+  "d0.44_rho0.7": 44.2,
+  "d0.55_rho0.3": 57.4,
+  "d0.55_rho0.5": 55.8,
+  "d0.55_rho0.7": 53.7
+ },
+ "decision_rule_d044_rho05": {
+  "expected": 46.8,
+  "observed": 69,
+  "shortfall_share": 0.322,
+  "verdict": "excess survives"
+ },
+ "expected_d044_rho05_k_times_1.5": 52.7,
+ "expected_d044_rho05_k_times_2.0": 54.8,
+ "expected_d044_rho05_k_times_3.0": 58.7
+}

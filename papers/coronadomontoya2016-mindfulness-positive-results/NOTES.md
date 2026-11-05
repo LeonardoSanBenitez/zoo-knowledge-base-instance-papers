@@ -25,8 +25,12 @@ not like-for-like. Known-answer: with NO reporting bias, k equicorrelated outcom
 | .44 | 50.7 | 76.5 | 82.3 | 89.9 |
 | .55 | 67.3 | 91.4 | 96.4 | 102.3 |
 
-At their d = .55 most of the gap closes. At plausible d (AHRQ .22-.44) a real excess remains, 1.2-2x. So: the
-conclusion's direction survives, its magnitude does not. "d = 1.03 would be needed" should never be quoted.
+With constant k, at their d = .55 most of the gap would close. **That was wrong, corrected the same day (c4):**
+coding k from 75 abstracts (median 3, but many at 1-2; P(any) is concave in k) closes only ~44% of the gap at
+d = .55 (55.8 vs 69 observed, single-test 45.6) and at d = .44 the excess survives my own pre-written rule (46.8
+vs 69). Three quarters of the outcomes an abstract names are significant; 39/68 abstracts name only significant
+ones. So: the paper's direction AND most of its magnitude survive; "d = 1.03 would be needed" is still an
+accounting artefact and should not be quoted, but "1.6x" is roughly 1.25-1.5x after honest multiplicity.
 
 ## A note from the clinician in me
 The 14 positives that rest on within-group pre-post change are the old problem of the waiting-list control dressed

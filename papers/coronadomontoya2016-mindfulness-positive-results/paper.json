@@ -27,9 +27,9 @@
   "recorded": "at-selection"
  },
  "cost": {
-  "tool_calls": 9,
+  "tool_calls": 21,
   "bytes_downloaded": 620000,
-  "compute_notes": "PLoS PDF (18 pp, read 1-14) + 7 supplements (docx/doc); S3 Appendix table parsed from document.xml (124 trials: n per arm, power, positivity). Python: Table 1 and d = 1.03 reproduced; equicorrelated-outcome Monte Carlo over k in {1,2,3,4,6}, rho in {.3,.5,.7}, d in {0,.2,.3,.44,.55}, 4,000 reps per trial per cell.",
+  "compute_notes": "PLoS PDF (18 pp, read 1-14) + 7 supplements (docx/doc); S3 Appendix table parsed from document.xml (124 trials: n per arm, power, positivity). Python: Table 1 and d = 1.03 reproduced; equicorrelated-outcome Monte Carlo over k in {1,2,3,4,6}, rho in {.3,.5,.7}, d in {0,.2,.3,.44,.55}, 4,000 reps per trial per cell. c02: PubMed E-utilities search per trial (124 queries; 75 unique matches). c03: 75 abstracts read and coded by hand against PLAN_c03_code_k.md (committed c33365b before reading).",
   "session": "2026-11-05 maria"
  },
  "curation": {
@@ -85,7 +85,7 @@
    ],
    "our_assessment": {
     "status": "accepted-narrower-scope",
-    "why": "Every number reproduces. But the numerator and the denominator use different definitions of 'positive': the observed count is 'at least one of several outcomes significant (14 of 108 by a within-group test)', the expected count is single-test between-groups power. With k equicorrelated outcomes and NO reporting bias, the expected count at d = .55 is 91.4 (k = 3, rho = .5), 96.4 (k = 4), 102.3 (k = 6) -- most of the 1.6x is the comparison, not the literature. The paper notes it could not identify a primary outcome; it does not carry that into the expected count.",
+    "why": "Every number reproduces. But the numerator and the denominator use different definitions of 'positive': the observed count is 'at least one of several outcomes significant (14 of 108 by a within-group test)', the expected count is single-test between-groups power. With k equicorrelated outcomes and NO reporting bias, the expected count at d = .55 rises to 91.4 (k = 3 for every trial, rho = .5). CORRECTED 2026-11-05 the same day, after coding k from 75 abstracts (c4): with each trial's own k (median 3, many trials at 1-2) honest multiplicity closes about 44% of the gap at d = .55, not 'most' -- a constant k overstates P(any) because it is concave in k. Do not quote the constant-k sweep as the correction. The paper notes it could not identify a primary outcome; it does not carry that into the expected count.",
     "by": "maria",
     "patterns": [
      "mixing-incommensurable-units",
@@ -121,7 +121,7 @@
    ],
    "our_assessment": {
     "status": "accepted-narrower-scope",
-    "why": "The direction of the paper's conclusion stands at any d <= .44 and k <= 6; its magnitude (1.6x, 'd = 1.03 needed') is a property of single-test accounting and should not be quoted as the size of the reporting bias. The honest excess is ~1.2-2x and depends on two numbers nobody measured (k and the true d).",
+    "why": "The direction of the paper's conclusion stands at any d <= .44 and k <= 6; its magnitude (1.6x, 'd = 1.03 needed') is a property of single-test accounting and should not be quoted as the size of the reporting bias. The honest excess is ~1.2-2x and depends on two numbers nobody measured (k and the true d). SUPERSEDED as an estimate by c4 (coded k): the sweep's constant-k cells overstate the correction; c4 is the number to use.",
     "by": "maria",
     "patterns": [
      "null-model-misspecified"
@@ -153,6 +153,49 @@
     "by": "maria",
     "patterns": [
      "small-sample-overreach"
+    ]
+   }
+  },
+  {
+   "id": "c4",
+   "origin": "reader",
+   "statement": "Coding k (mental-health outcomes with a between-groups result in the abstract) for the 75 trials matched in PubMed (pre-registered plan, one coder): median 3, mean 3.18; 73.7% of reported outcomes are significant and 39 of 68 trials report ALL their abstract outcomes as significant. In this subsample 69 are positive; single-test expectation at d = .55 is 45.6; honest multiplicity with each trial's own k gives 55.8 at d = .55 and 46.8 at d = .44 (rho .5). By the rule written before coding, the excess survives at d = .44 (shortfall 32% of observed); tripling every k still leaves 58.7 vs 69.",
+   "scope": "75 of 124 trials (PubMed first-author/year/journal match; dissertations and non-indexed journals excluded); abstract k is a LOWER bound on outcomes tested; 8 coded unclear (k set to 1).",
+   "quantities": [
+    {
+     "name": "mbt_abstract_k_median",
+     "value": 3.0,
+     "unit": "outcomes per abstract",
+     "n": 61,
+     "baseline": "mean 3.18; distribution 1:14, 2:18, 3:16, 4:6, 5:5, 6:5, >6:4 (clear, k > 0)",
+     "source": "reanalysis/out/c03.json"
+    },
+    {
+     "name": "mbt_expected_positive_own_k_d044_rho05",
+     "value": 46.8,
+     "unit": "trials",
+     "n": 75,
+     "baseline": "observed 69; d = .55: 55.8; single-test d = .55: 45.6",
+     "source": "reanalysis/out/c03.json"
+    },
+    {
+     "name": "mbt_reported_outcomes_significant_share",
+     "value": 0.737,
+     "unit": "share of abstract outcomes",
+     "n": 75,
+     "baseline": "39 of 68 trials report only significant outcomes in the abstract",
+     "source": "reanalysis/out/c03.json"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "This turns the sweep into an estimate and it lands on the paper's side: multiplicity explains part of the excess (about 10 of 23 extra positives at d = .55), not most of it. The remaining excess is consistent with selective reporting in the abstract itself (three quarters of the outcomes an abstract names are significant), which the paper's own definition of 'positive' already rewards. One coder, convenience subsample: a second coder on a 20-trial overlap would settle the coding.",
+    "by": "maria",
+    "patterns": [
+     "null-model-misspecified"
     ]
    }
   }
@@ -210,7 +253,7 @@
   }
  ],
  "open_questions": [
-  "Code k (mental-health outcomes per abstract) for the 124 trials from their abstracts -- the one number that would turn c2's sweep into an estimate.",
+  "A second coder for k on a 20-trial overlap (inter-rater agreement), and the 17 ambiguous/no-journal-match trials resolved by title.",
   "Re-run with the 14 within-group-only positives identified (they are named in the paper's data only implicitly)."
  ],
  "instrument_checks": [
@@ -233,6 +276,16 @@
    "n_sims": 4000,
    "verdict": "informative",
    "source": "reanalysis/out/c01.json"
+  },
+  {
+   "instrument": "expected-positive-trials-from-single-test-power (excess significance count)",
+   "world": "NO reporting bias; each trial's own coded abstract k; d = .55; rho .5",
+   "design": "75 PubMed-matched MBT trials at their published n",
+   "statistic": "expected positive trials (single-test expectation 45.6; observed 69)",
+   "value": 55.8,
+   "n_sims": 20000,
+   "verdict": "miscalibrated",
+   "source": "reanalysis/out/c03.json"
   }
  ]
 }
