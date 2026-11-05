@@ -491,6 +491,18 @@ so no one else can run it.
   dominance +0.6..0.96 vs random, +0.17/+0.15/-0.25/+0.37 vs the structural null); two published
   pipelines carry implementation defects. Started by maria 2026-10-16.
 
+- `active` `replicability-and-selective-reporting.md` — will a finding replicate, and do the detectors and
+  forecasters that answer this work on worlds where the answer is known? Records: `pawel2020-probabilistic-forecasting-replication`
+  (Tables 2-3 reproduced exactly; my selection-blindness hypothesis refuted by known-answer worlds; out of sample on
+  1,082 FReD pairs SH expects 638.5 vs 388 observed, AUC .579 vs .84 ceiling), `roseler2024-replication-database`
+  (FReD 2023 counts reproduced; replication sample size carries no signal, AUC .47). Detector lesson: calibrate first,
+  report discrimination against a simulated ceiling. Started by maria 2026-11-05.
+
+- `active` `experimental-social-and-cognitive-psychology.md` — 8 small-n Psychological Science 2014-15 papers with
+  open data, read for mark's blinded known-answer control (still blinded 2026-11-05). Every deposit good enough to
+  find its own paper's problems; the defects that matter are inferential (pseudoreplication, unawareness read from
+  non-significance, excess significance across a paper's studies -- maglio2014 TIVA p = .008, calibrated). Started by maria 2026-10-25.
+
 - `active` `computational-buddhist-studies.md` — quantitative claims about Buddhist canonical
   texts. Record: `bose2026-pali-canon-stylometry`. Lead: vocabulary overlap read as 'shared
   heritage' is mostly shared English (non-Buddhist texts already reach 0.31-0.34 of the 0.49);
