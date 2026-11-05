@@ -1,0 +1,216 @@
+{
+ "schema_version": "1.6",
+ "id": "coronadomontoya2016-mindfulness-positive-results",
+ "title": "Reporting of Positive Results in Randomized Controlled Trials of Mindfulness-Based Mental Health Interventions",
+ "authors": [
+  "Stephanie Coronado-Montoya",
+  "Alexander W. Levis",
+  "Linda Kwakkenbos",
+  "Russell J. Steele",
+  "Erick H. Turner",
+  "Brett D. Thombs"
+ ],
+ "year": 2016,
+ "venue": "PLoS ONE 11(4):e0153220",
+ "area": [
+  "replicability-and-selective-reporting",
+  "contemplative-neuroscience"
+ ],
+ "identifiers": {
+  "doi": "10.1371/journal.pone.0153220"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "hypothesis-test",
+  "evidence": "Chosen 2026-11-05 as the clinical/meditation face of excess significance (same session as maglio2014 TIVA and pawel2020). Prior belief: the excess is real; prior suspicion of the paper's method: its expected-positives count rests on one assumed effect size (d = .55), which I want to vary.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 9,
+  "bytes_downloaded": 620000,
+  "compute_notes": "PLoS PDF (18 pp, read 1-14) + 7 supplements (docx/doc); S3 Appendix table parsed from document.xml (124 trials: n per arm, power, positivity). Python: Table 1 and d = 1.03 reproduced; equicorrelated-outcome Monte Carlo over k in {1,2,3,4,6}, rho in {.3,.5,.7}, d in {0,.2,.3,.44,.55}, 4,000 reps per trial per cell.",
+  "session": "2026-11-05 maria"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-05",
+  "verified": "2026-11-05",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "too many positive mindfulness trials",
+  "MBSR MBCT trials publication bias reporting bias",
+  "expected number of significant trials given power",
+  "excess significance test with multiple outcomes per trial",
+  "at least one significant outcome counts as positive",
+  "meditation intervention evidence quality",
+  "registered trials unpublished after 30 months"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "108 of 124 mindfulness-based therapy RCTs (87%) report at least one positive mental-health outcome in the abstract, 1.6 times the 65.7 expected if every trial had d = 0.55 power; the observed count would require d = 1.03. The excess is concentrated in low-power trials (power < .25: 10 observed vs 2.8 expected; >= .75: 26 vs 26.1).",
+   "scope": "RCTs vs inactive controls, searched July 2013; 'positive' = >= 1 significant between-groups outcome in the abstract, or within-group if none (Kyzas method); power from the per-arm n in S3 Appendix.",
+   "quantities": [
+    {
+     "name": "mbt_expected_positive_trials_d055",
+     "value": 65.7,
+     "unit": "trials",
+     "n": 124,
+     "baseline": "observed 108; reproduced exactly (max |power diff| vs S3 0.0005)",
+     "source": "reanalysis/out/c01_out.txt"
+    },
+    {
+     "name": "mbt_d_needed_for_observed_positives",
+     "value": 1.029,
+     "unit": "Cohen d",
+     "n": 124,
+     "baseline": "paper 1.03; 0.807 if only the 94 between-groups positives are counted",
+     "source": "reanalysis/out/c01_out.txt"
+    },
+    {
+     "name": "mbt_positive_share",
+     "value": 0.871,
+     "unit": "share of trials",
+     "n": 124,
+     "count": 108,
+     "denominator": 124,
+     "baseline": "conclusions: 109 positive, 11 mixed, 4 negative",
+     "source": "reanalysis/out/c01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Every number reproduces. But the numerator and the denominator use different definitions of 'positive': the observed count is 'at least one of several outcomes significant (14 of 108 by a within-group test)', the expected count is single-test between-groups power. With k equicorrelated outcomes and NO reporting bias, the expected count at d = .55 is 91.4 (k = 3, rho = .5), 96.4 (k = 4), 102.3 (k = 6) -- most of the 1.6x is the comparison, not the literature. The paper notes it could not identify a primary outcome; it does not carry that into the expected count.",
+    "by": "maria",
+    "patterns": [
+     "mixing-incommensurable-units",
+     "null-model-misspecified"
+    ]
+   }
+  },
+  {
+   "id": "c2",
+   "origin": "reader",
+   "statement": "Excess positives survive the multiplicity correction at plausible effect sizes: at d = .44 (top of the AHRQ meditation range .22-.44 the paper cites) honest multiplicity gives 76.5-89.9 expected (k = 3-6, rho = .5) vs 108 observed (ratio 1.20-1.41); at d = .30 it gives 51.5-66.6 (ratio 1.6-2.1). Counting only the 94 between-groups positives against 110 trials, d = .44 and k = 4 give about 73 expected (ratio ~1.29).",
+   "scope": "k (mental-health outcomes per abstract) is not in the appendices; swept 1-6. Equicorrelated z-approximation; no heterogeneity. The 110-trial figure scales the 124-trial expectation by 110/124 because the 14 within-group-only trials are not identified.",
+   "quantities": [
+    {
+     "name": "mbt_expected_positive_honest_k4_rho05_d044",
+     "value": 82.3,
+     "unit": "trials",
+     "n": 124,
+     "baseline": "observed 108; k3 76.5, k6 89.9",
+     "source": "reanalysis/out/c01_out.txt"
+    },
+    {
+     "name": "mbt_expected_positive_honest_k4_rho05_d030",
+     "value": 57.8,
+     "unit": "trials",
+     "n": 124,
+     "baseline": "observed 108; null d = 0 with k = 4: 9.6",
+     "source": "reanalysis/out/c01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The direction of the paper's conclusion stands at any d <= .44 and k <= 6; its magnitude (1.6x, 'd = 1.03 needed') is a property of single-test accounting and should not be quoted as the size of the reporting bias. The honest excess is ~1.2-2x and depends on two numbers nobody measured (k and the true d).",
+    "by": "maria",
+    "patterns": [
+     "null-model-misspecified"
+    ]
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Of 21 MBT trial registrations completed by 2010, 13 (62%) were unpublished 30 months after completion; none adequately specified a single primary outcome (2/21 adequate if metric not required); 0 of 36 systematic reviews concluded that reporting biases inflated effects.",
+   "scope": "Registries searched for trials completed by 31 Dec 2010; reviews published 2011-2013.",
+   "quantities": [
+    {
+     "name": "mbt_registered_unpublished_30mo",
+     "value": 0.619,
+     "unit": "share",
+     "n": 21,
+     "count": 13,
+     "denominator": 21,
+     "baseline": "NIH-funded trials (Ross et al.): 54% unpublished at 30 months -- the paper itself calls MBT 'slightly lower' publication",
+     "source": "paper p 10, 12"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Transcribed, not recomputed (S4 not parsed). 8/21 published vs the NIH 46% is well within binomial noise (n = 21); the registry evidence speaks to poor outcome pre-specification more than to differential non-publication.",
+    "by": "maria",
+    "patterns": [
+     "small-sample-overreach"
+    ]
+   }
+  }
+ ],
+ "methods": [
+  "exact-reproduction-from-deposit",
+  "power-simulation",
+  "synthetic-injected-effect-control",
+  "equicorrelated-multiple-outcome-simulation",
+  "published-table-vs-deposit-crosscheck"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "supplement",
+   "locator": "(the paper) https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0153220",
+   "status": "verified-usable",
+   "fetch_cmd": "curl -sL \"https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0153220&type=printable\" -o \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/coronadomontoya2016-mindfulness-positive-results)/paper.pdf\"",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "Read tool pp 1-14",
+    "result": "Tables 1-2 and text numbers transcribed."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "in-paper-table",
+   "locator": "S3 Appendix (journal.pone.0153220.s003, docx): 124 trials x [positivity by abstract, caveat, within-group, conclusion, n intervention/control, power at d = .55, registration]",
+   "status": "verified-usable",
+   "bytes": 45006,
+   "fetch_cmd": "curl -sL \"https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0153220.s003\" -o \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/coronadomontoya2016-mindfulness-positive-results)/s003.bin\"",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "python zoo-knowledge-base/instance-papers/papers/coronadomontoya2016-mindfulness-positive-results/reanalysis/c01_reproduce_and_multiplicity.py \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/coronadomontoya2016-mindfulness-positive-results)/s003.bin\"",
+    "result": "124 rows parsed; recomputed power matches the column to 0.0005; Table 1 bins and totals reproduce exactly."
+   },
+   "datasheet": {
+    "composition": "one row per RCT; no effect sizes, no number of outcomes per abstract.",
+    "caveats": "The number of mental-health outcomes per abstract (k) -- the quantity that decides the expected count under the paper's positivity rule -- is not recorded anywhere in the supplements."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:usesMethodIn",
+   "target": "maglio2014-spatial-orientation-psychological-distance",
+   "why": "Same excess-significance logic (observed vs power-expected significant results); there per paper, here per literature."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "pawel2020-probabilistic-forecasting-replication",
+   "why": "Both compare an observed count with a model-expected count; in both the expected count's definition carries assumptions (single test here, forecast family there) that move the gap more than the literature does."
+  }
+ ],
+ "open_questions": [
+  "Code k (mental-health outcomes per abstract) for the 124 trials from their abstracts -- the one number that would turn c2's sweep into an estimate.",
+  "Re-run with the 14 within-group-only positives identified (they are named in the paper's data only implicitly)."
+ ]
+}
