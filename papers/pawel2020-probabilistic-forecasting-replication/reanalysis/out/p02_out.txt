@@ -1,0 +1,25 @@
+A_half_null_half_r.3_selected
+    N {'observed_per_73': 50.6, 'expected_per_73': 58.1, 'mean_BS': 0.1732, 'mean_spiegelhalter_z': 2.38, 'share_|z|>1.96': 0.63}
+    SH {'observed_per_73': 50.6, 'expected_per_73': 49.9, 'mean_BS': 0.1665, 'mean_spiegelhalter_z': -0.01, 'share_|z|>1.96': 0.03}
+    SA0 {'observed_per_73': 50.6, 'expected_per_73': 51.4, 'mean_BS': 0.1466, 'mean_spiegelhalter_z': 0.39, 'share_|z|>1.96': 0.06}
+    SA08 {'observed_per_73': 50.6, 'expected_per_73': 48.9, 'mean_BS': 0.1475, 'mean_spiegelhalter_z': -0.91, 'share_|z|>1.96': 0.1}
+B_all_true_r.3_selected
+    N {'observed_per_73': 54.6, 'expected_per_73': 58.7, 'mean_BS': 0.1461, 'mean_spiegelhalter_z': 1.36, 'share_|z|>1.96': 0.29}
+    SH {'observed_per_73': 54.6, 'expected_per_73': 50.8, 'mean_BS': 0.154, 'mean_spiegelhalter_z': -0.39, 'share_|z|>1.96': 0.06}
+    SA0 {'observed_per_73': 54.6, 'expected_per_73': 53.6, 'mean_BS': 0.1276, 'mean_spiegelhalter_z': 0.06, 'share_|z|>1.96': 0.08}
+    SA08 {'observed_per_73': 54.6, 'expected_per_73': 50.7, 'mean_BS': 0.1305, 'mean_spiegelhalter_z': -1.28, 'share_|z|>1.96': 0.19}
+C_half_null_selected_tau.08
+    N {'observed_per_73': 45.7, 'expected_per_73': 57.8, 'mean_BS': 0.2166, 'mean_spiegelhalter_z': 4.53, 'share_|z|>1.96': 0.99}
+    SH {'observed_per_73': 45.7, 'expected_per_73': 49.5, 'mean_BS': 0.1916, 'mean_spiegelhalter_z': 1.37, 'share_|z|>1.96': 0.26}
+    SA0 {'observed_per_73': 45.7, 'expected_per_73': 48.8, 'mean_BS': 0.184, 'mean_spiegelhalter_z': 1.86, 'share_|z|>1.96': 0.48}
+    SA08 {'observed_per_73': 45.7, 'expected_per_73': 47.0, 'mean_BS': 0.1781, 'mean_spiegelhalter_z': 0.36, 'share_|z|>1.96': 0.08}
+D_no_selection_r~N(.2,.15)
+    N {'observed_per_73': 29.8, 'expected_per_73': 35.4, 'mean_BS': 0.177, 'mean_spiegelhalter_z': 0.65, 'share_|z|>1.96': 0.13}
+    SH {'observed_per_73': 29.8, 'expected_per_73': 23.5, 'mean_BS': 0.1857, 'mean_spiegelhalter_z': 2.94, 'share_|z|>1.96': 0.74}
+    SA0 {'observed_per_73': 29.8, 'expected_per_73': 33.6, 'mean_BS': 0.1729, 'mean_spiegelhalter_z': 0.08, 'share_|z|>1.96': 0.07}
+    SA08 {'observed_per_73': 29.8, 'expected_per_73': 33.2, 'mean_BS': 0.1727, 'mean_spiegelhalter_z': -0.88, 'share_|z|>1.96': 0.15}
+E_80pct_null_selected
+    N {'observed_per_73': 41.4, 'expected_per_73': 55.9, 'mean_BS': 0.2245, 'mean_spiegelhalter_z': 4.22, 'share_|z|>1.96': 0.95}
+    SH {'observed_per_73': 41.4, 'expected_per_73': 46.9, 'mean_BS': 0.1857, 'mean_spiegelhalter_z': 0.51, 'share_|z|>1.96': 0.06}
+    SA0 {'observed_per_73': 41.4, 'expected_per_73': 43.9, 'mean_BS': 0.171, 'mean_spiegelhalter_z': 0.55, 'share_|z|>1.96': 0.14}
+    SA08 {'observed_per_73': 41.4, 'expected_per_73': 42.7, 'mean_BS': 0.1681, 'mean_spiegelhalter_z': -0.64, 'share_|z|>1.96': 0.07}

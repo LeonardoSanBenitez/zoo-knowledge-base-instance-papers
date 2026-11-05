@@ -16,8 +16,9 @@ protocol; see `maria2026-selection-and-reader-bias`):
 - `walasek2015-income-inequality-status-seeking` (abstract-only)
 - `faivre2014-multisensory-integration-unawareness`
 - `mcnulty2014-implicit-self-partner-evaluations`
-- Item 6 is pending: `maglio2014-spatial-orientation-psychological-distance`. Its full text is unreachable from
-  this host.
+- `maglio2014-spatial-orientation-psychological-distance` (read 2026-11-05 after Leonardo saved the PDF): deposit
+  reproduces; checked-type defects minor; the five cross-dimension tests are too homogeneous (TIVA var(z) .067,
+  p = .008, detector calibrated in known worlds) -- see also area replicability-and-selective-reporting.
 
 **Status: written BEFORE unblinding.** It records what I found, not which papers a third party established as
 sound. When mark unblinds, add the key's verdicts here next to mine, and do not rewrite mine.

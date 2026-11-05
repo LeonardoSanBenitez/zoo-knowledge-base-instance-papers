@@ -1,0 +1,366 @@
+{
+ "schema_version": "1.6",
+ "id": "pawel2020-probabilistic-forecasting-replication",
+ "title": "Probabilistic forecasting of replication studies",
+ "authors": [
+  "Samuel Pawel",
+  "Leonhard Held"
+ ],
+ "year": 2020,
+ "venue": "PLoS ONE 15(4):e0231416",
+ "area": [
+  "replicability-and-selective-reporting"
+ ],
+ "identifiers": {
+  "doi": "10.1371/journal.pone.0231416"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "hypothesis-test",
+  "evidence": "Chosen 2026-11-05 to test a hypothesis of mine: per-study shrinkage forecasts are miscalibrated because they ignore selection on significance. Ships data + code (R package ReplicationSuccess). Prior suspicion of the paper: none.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 30,
+  "bytes_downloaded": 3900000,
+  "compute_notes": "PLoS PDF (23 pp, read pp 1-20). ReplicationSuccess 1.3.3 from CRAN: RProjects.rda (143 pairs), SSRP.rda, protzko2020.rda read with pyreadr. Python re-implementation of eqs 2-6 (p01); known-answer worlds 5 x 100 projects (p02, 75 s); selection-aware NPMLE forecaster (selection_forecast.py) on the 4 projects (p03); 7 data-generating worlds incl. p-hacking (p04, 125 s). Out-of-sample on FReD in the roseler2024 record (f01-f04).",
+  "session": "2026-11-05 maria"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-05",
+  "verified": "2026-11-05",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "forecast replication outcome from original study p-value and sample size",
+  "replication probability shrinkage heterogeneity tau",
+  "is a replication forecast calibrated Brier Spiegelhalter",
+  "prediction market vs statistical forecast replication",
+  "do larger replications succeed more often",
+  "selection on significance shrinkage empirical Bayes original effect inflated",
+  "replication project RPP EERP SSRP experimental philosophy data"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Forecasts that take the original estimate at face value (N: flat prior, tau = 0) overestimate the number of significant replications in all four projects: expected 15.0 / 27.8 / 55.4 / 19.9 vs observed 11 / 23 / 24 / 13 (economics n = 18, philosophy 31, psychology 73, social sciences 21).",
+   "scope": "One-to-one replication projects on the Fisher-z scale, sigma = 1/sqrt(n-3); 'significant' = two-sided p < .05 in the original direction.",
+   "quantities": [
+    {
+     "name": "naive_expected_significant_psychology",
+     "value": 55.4,
+     "unit": "replications",
+     "n": 73,
+     "baseline": "observed 24; reproduced exactly (p01)",
+     "source": "reanalysis/out/p01_out.txt"
+    },
+    {
+     "name": "naive_brier_psychology",
+     "value": 0.394,
+     "unit": "Brier score",
+     "n": 73,
+     "baseline": "reproduced 0.394; econ .271, phil .193, soc .346 all reproduce",
+     "source": "reanalysis/out/p01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Re-implemented from the equations in Python; every expected count, Brier score, coverage and Spiegelhalter z in Tables 2-3 and Fig 7 reproduces to the printed digit for all four methods (after fixing an ordering bug of my own in the S method).",
+    "by": "maria"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "Evidence-based shrinkage plus heterogeneity (SH, tau = 0.08) performs best of the four statistical methods everywhere and is calibrated in economics (12.4 expected vs 11) and philosophy (24.1 vs 23), but not in psychology (45.9 vs 24, Spiegelhalter z 5.2) or social sciences (17.6 vs 13, z 3.4). 'Good predictive performance in two of the four data sets.'",
+   "scope": "tau fixed a priori at 0.08 (Cohen-classification argument, 34th percentile of 497 Psych Bull meta-analyses).",
+   "quantities": [
+    {
+     "name": "SH_expected_significant_psychology",
+     "value": 45.9,
+     "unit": "replications",
+     "n": 73,
+     "baseline": "observed 24; reproduced",
+     "source": "reanalysis/out/p01_out.txt"
+    },
+    {
+     "name": "SH_normalised_brier_philosophy",
+     "value": 0.229,
+     "unit": "BS_norm",
+     "n": 31,
+     "baseline": "best value in the paper; reproduced",
+     "source": "reanalysis/out/p01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Reproduces exactly. The 'two of four' that are well calibrated are the two smallest projects (n = 18, 31), where Spiegelhalter's test has the least power; the larger out-of-sample test (FReD, 1,082 pairs, c7) does not show calibration for any method.",
+    "by": "maria",
+    "patterns": [
+     "small-sample-overreach"
+    ]
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Prediction markets beat every statistical forecast in the social sciences project (Brier .114 vs SH .272, perfect separation) and match the shrinkage methods in economics (.243).",
+   "scope": "Two projects with markets, n = 18 and 21.",
+   "quantities": [
+    {
+     "name": "prediction_market_brier_social_sciences",
+     "value": 0.114,
+     "unit": "Brier score",
+     "n": 21,
+     "baseline": "SH .272; reproduced from pm_belief",
+     "source": "reanalysis/out/p01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Reproduces. Markets see things the statistical model cannot (plausibility, prior failures, the effect's reputation); the FReD result (c7) -- original |t| carries little and replication n none of the signal -- is the same fact from the other side.",
+    "by": "maria"
+   }
+  },
+  {
+   "id": "c4",
+   "origin": "reader",
+   "statement": "HYPOTHESIS (mine, before running): SH is miscalibrated in psychology because per-study shrinkage cannot see selection on significance. REFUTED by known-answer worlds at RPP's own (n_o, n_r): with honest selection on |t_o| > 1.96 and no heterogeneity, SH is roughly calibrated (half-null world: expected 49.9 vs observed 50.6; 80%-null world: 46.9 vs 41.4), so selection alone cannot open RPP's gap of 45.9 vs 24.",
+   "scope": "5 worlds x 100 simulated projects of 73 pairs; true effects normal around r = .3 or zero; one-sided selection on two-sided significance.",
+   "quantities": [
+    {
+     "name": "SH_expected_minus_observed_half_null_selected_world",
+     "value": -0.7,
+     "unit": "replications per 73",
+     "n": 100,
+     "baseline": "expected 49.9, observed 50.6; naive N expects 58.1",
+     "source": "reanalysis/out/p02.json"
+    },
+    {
+     "name": "SH_expected_minus_observed_80pct_null_selected_world",
+     "value": 5.5,
+     "unit": "replications per 73",
+     "n": 100,
+     "baseline": "expected 46.9, observed 41.4 (RPP real gap: 21.9)",
+     "source": "reanalysis/out/p02.json"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "My hypothesis, tested on worlds where the answer is known, and it failed: SH's evidence-based shrinkage absorbs most of what selection does at these sample sizes. Kept here so the idea is not re-proposed.",
+    "by": "maria",
+    "patterns": [
+     "null-model-misspecified"
+    ]
+   }
+  },
+  {
+   "id": "c5",
+   "origin": "reader",
+   "statement": "A selection-aware forecaster (NPMLE of the true-effect distribution across a project's originals, likelihood truncated at |t| > 1.96) lowers the overprediction in psychology (SH 45.9 -> 40.1 at tau .08, 39.0 at tau .15) and economics (10.0-10.4 vs 11 observed), but loses discrimination (psychology AUC .70 -> .61; philosophy Brier .148 -> .233, AUC .80 -> .54) and is worse than SH out-of-sample on FReD (AUC .557 vs .579). Not an improvement.",
+   "scope": "Per-project NPMLE on 16-65 significant originals, grid of 221 Fisher-z values; FReD fit on 878 significant originals.",
+   "quantities": [
+    {
+     "name": "SA08_expected_significant_psychology",
+     "value": 40.1,
+     "unit": "replications",
+     "n": 73,
+     "baseline": "SH 45.9, observed 24",
+     "source": "reanalysis/out/p03.json"
+    },
+    {
+     "name": "SA08_AUC_psychology",
+     "value": 0.609,
+     "unit": "AUC",
+     "n": 73,
+     "baseline": "SH .700",
+     "source": "reanalysis/out/p03.json"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "Recorded as a failed method. A spiky NPMLE on a few dozen originals turns every forecast into a function of n_r alone; the per-study rule keeps the ordering information that the pooled prior throws away. In p02's selected worlds the same forecaster had the lowest Brier score -- it fails on real data, not on its own assumptions.",
+    "by": "maria",
+    "patterns": [
+     "estimator-biased-or-insensitive"
+    ]
+   }
+  },
+  {
+   "id": "c6",
+   "origin": "reader",
+   "statement": "Which worlds DO reproduce RPP's pattern? p-hacking (first significant of 5 correlated analyses) with 80% null originals: observed 26.8 vs SH 42.1; all-true small effects (r ~ .1): 25.1 vs 37.9. But both bunch 54-56% of |t_o| in (1.96, 2.5), and RPP's originals bunch 34%. A replication-side attenuation world (true replication effect = half the original's) gives 31.0 vs 50.9 with 23% bunching. RPP's gap is better matched by attenuation at replication than by a p-hacking signature in the originals.",
+   "scope": "7 worlds x 100 projects at RPP's design; bunching = share of originals with 1.96 < |t_o| < 2.5. Coarse discrimination between mechanisms, not an estimate of their shares.",
+   "quantities": [
+    {
+     "name": "rpp_original_bunching_share_1.96_2.5",
+     "value": 0.342,
+     "unit": "share of originals",
+     "n": 73,
+     "count": 25,
+     "denominator": 73,
+     "baseline": "honest half-null world .278; p-hacked 80%-null world .555; attenuation world .233",
+     "source": "reanalysis/out/p04.json"
+    },
+    {
+     "name": "attenuation_world_observed_vs_SH",
+     "value": 31.0,
+     "unit": "replications per 73",
+     "n": 100,
+     "baseline": "SH expected 50.9",
+     "source": "reanalysis/out/p04.json"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "A simulation discrimination between a handful of mechanisms. It says the information about RPP's failures is not visible in the originals' z-distribution, which agrees with the FReD finding that original |t| carries little signal (roseler2024 c3). It cannot separate 'true decline' from 'replications differ from originals' (heterogeneity of method).",
+    "by": "maria",
+    "patterns": [
+     "target-not-identified-by-design"
+    ]
+   }
+  },
+  {
+   "id": "c7",
+   "origin": "reader",
+   "statement": "Out of sample on FReD (1,082 original-replication pairs, 475 originals, blinded copy): SH expects 638.5 significant replications, 388 observed (36%); best variant (SH, tau = .2) 504.9. Discrimination: AUC .579 against a ceiling of .839 [.819, .858] if SH were the data-generating process. The model's backbone -- larger replications succeed more -- fails: log(n_r/n_o) has AUC .472 alone and logit coefficient -0.05 (SE .075), where SH implies AUC .66 [.64, .69].",
+   "scope": "Outcome = replication p <= .05 and not coded 'failed'; c approximated from n (exact for correlations only); originals' |t| from exact p (747) or a parsed 1-df statistic (335). Robust in every subset tried (exact-p only, parsed only, first replication per original, 1/k weights, no mega-replications, significant originals only).",
+   "quantities": [
+    {
+     "name": "fred_SH_expected_significant",
+     "value": 638.5,
+     "unit": "replications",
+     "n": 1082,
+     "baseline": "observed 388; cluster-bootstrap obs-exp per pair [-0.286, -0.172]",
+     "source": "../roseler2024-replication-database/reanalysis/out/f01.json"
+    },
+    {
+     "name": "fred_SH_AUC_real_vs_ceiling",
+     "value": 0.579,
+     "unit": "AUC",
+     "n": 1082,
+     "baseline": "ceiling if SH true 0.839 (500 sims)",
+     "source": "../roseler2024-replication-database/reanalysis/out/f02.json"
+    },
+    {
+     "name": "fred_logit_coef_log_nr_over_no",
+     "value": -0.054,
+     "unit": "log-odds per log ratio",
+     "n": 1082,
+     "baseline": "SE 0.075 (clustered by original), p = .47; log|t_o| coef 0.747 (SE .203)",
+     "source": "../roseler2024-replication-database/reanalysis/out/f03.json"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The paper's conclusion that SH predicts well in two of four projects does not generalise to the largest open set of replications. The deficit is not mainly calibration-in-the-large (tau can fix the count) but discrimination: the two inputs the model uses carry little (|t_o|) or no (n_r) information. A two-class reading (a share of nulls) fitted by ML degenerates (tau -> infinity, pi = .30), i.e. the model family itself is wrong for these data.",
+    "by": "maria",
+    "patterns": [
+     "null-model-misspecified"
+    ]
+   }
+  }
+ ],
+ "methods": [
+  "exact-reproduction-from-deposit",
+  "proper-scoring-rule-evaluation",
+  "calibration-in-the-large-spiegelhalter",
+  "synthetic-injected-effect-control",
+  "truncated-npmle-selection-model",
+  "forecast-ceiling-by-simulation",
+  "cluster-bootstrap-by-original",
+  "out-of-sample-validation-on-independent-corpus"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "supplement",
+   "locator": "(the paper) https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0231416",
+   "status": "verified-usable",
+   "bytes": 2786064,
+   "fetch_cmd": "curl -sL \"https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0231416&type=printable\" -o \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/pawel2020-probabilistic-forecasting-replication)/paper.pdf\"",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "Read tool, pp 1-20 (21-23 references)",
+    "result": "Tables 1-3 transcribed into p01 for comparison."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "raw-data",
+   "locator": "CRAN ReplicationSuccess 1.3.3, data/RProjects.rda (143 x 15: study, project, ro, rr, fiso, fisr, se_fiso, se_fisr, po, pr, po1, pr1, pm_belief, nr, no); also SSRP.rda, protzko2020.rda",
+   "status": "verified-usable",
+   "bytes": 1100000,
+   "fetch_cmd": "curl -sL https://cran.r-project.org/src/contrib/ReplicationSuccess_1.3.3.tar.gz -o \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/pawel2020-probabilistic-forecasting-replication)/RS.tar.gz\" && tar xzf RS.tar.gz -C pkg",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "python zoo-knowledge-base/instance-papers/papers/pawel2020-probabilistic-forecasting-replication/reanalysis/p01_reproduce.py \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/pawel2020-probabilistic-forecasting-replication)/pkg/ReplicationSuccess/data/RProjects.rda\"",
+    "result": "Tables 2-3 and Fig 7 coverages reproduce exactly for N, S, H, SH and PM."
+   },
+   "datasheet": {
+    "composition": "one row per original-replication pair; effects on correlation and Fisher-z scale with SEs from n; p-values two- and one-sided; prediction-market belief where it exists (EE, SS).",
+    "caveats": "Psychology = RPP meta-analytic subset (73 of 100). The package's protzko2020 data is from Protzko et al., whose Nature Human Behaviour paper (2023) was retracted in 2024 -- do not use it as evidence of high replicability."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "code",
+   "locator": "ReplicationSuccess R/powerSignificance.R (designPrior = 'EB' is the SH model)",
+   "status": "verified-usable",
+   "fetch_cmd": "same tarball as a2",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "read; formula compared line by line with my selection_forecast.p_sig_pawel",
+    "result": "Identical: s = max(1 - (1+h)/zo^2, 0), mu = s zo sqrt(c), sigma^2 = s c (1+h) + 1 + h c."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:usesDataFrom",
+   "target": "roseler2024-replication-database",
+   "why": "Out-of-sample test of this paper's forecasts (c7) uses FReD."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "maglio2014-spatial-orientation-psychological-distance",
+   "why": "Same session: a detector is calibrated in known-answer worlds before it is applied."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "kim2025-correlated-errors",
+   "why": "Both read a gap between observed and model-expected agreement as evidence about the world, when the gap is first a statement about the null/forecast model's family."
+  }
+ ],
+ "open_questions": [
+  "FReD has closeness_* codings (instructions, measures, stimuli, participants...) -- do they carry the signal that |t_o| and n_r do not? That is the direct test of the heterogeneity explanation (c6). Not yet run.",
+  "Reproduce Roeseler (2023) 'Predicting replication rates with z-curve' (osf.io/ewb2t) on the same blinded FReD copy: is z-curve's ERR calibrated where SH is not?",
+  "After mark unblinds: remove the f00 blinding filter and check that no conclusion changes."
+ ]
+}

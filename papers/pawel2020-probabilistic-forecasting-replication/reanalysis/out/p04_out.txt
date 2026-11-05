@@ -1,0 +1,8 @@
+RPP_real {'observed': 24, 'exp_N': 55.4, 'exp_SH': 45.9, 'exp_SA08': 40.1, 'share_|t_o|_in_1.96-2.5': 0.342, 'share_|t_o|>1.96': 0.89}
+Q0_honest_half_null {'observed_per_73': 50.5, 'exp_N': 57.9, 'exp_SH': 49.7, 'exp_SA08': 48.4, 'BS_N': 0.1711, 'BS_SH': 0.1645, 'BS_SA08': 0.1479, 'share_|t_o|_in_1.96-2.5': 0.278}
+Q1_phack_K5_half_null {'observed_per_73': 41.3, 'exp_N': 55.0, 'exp_SH': 45.8, 'exp_SA08': 39.6, 'BS_N': 0.2268, 'BS_SH': 0.1936, 'BS_SA08': 0.177, 'share_|t_o|_in_1.96-2.5': 0.427}
+Q1b_phack_K5_80pct_null {'observed_per_73': 26.8, 'exp_N': 52.3, 'exp_SH': 42.1, 'exp_SA08': 30.8, 'BS_N': 0.3085, 'BS_SH': 0.221, 'BS_SA08': 0.1748, 'share_|t_o|_in_1.96-2.5': 0.555}
+Q2_small_r.1_all_true {'observed_per_73': 25.1, 'exp_N': 50.5, 'exp_SH': 37.9, 'exp_SA08': 27.4, 'BS_N': 0.3267, 'BS_SH': 0.2551, 'BS_SA08': 0.1756, 'share_|t_o|_in_1.96-2.5': 0.541}
+Q3_decline_atten.5_r.3 {'observed_per_73': 31.0, 'exp_N': 58.8, 'exp_SH': 50.9, 'exp_SA08': 50.4, 'BS_N': 0.3572, 'BS_SH': 0.2882, 'BS_SA08': 0.2666, 'share_|t_o|_in_1.96-2.5': 0.233}
+Q4_60null_phackK5_40_r.25 {'observed_per_73': 32.9, 'exp_N': 52.8, 'exp_SH': 42.7, 'exp_SA08': 33.3, 'BS_N': 0.277, 'BS_SH': 0.2182, 'BS_SA08': 0.1851, 'share_|t_o|_in_1.96-2.5': 0.512}
+Q5_tau.15_honest_r.2 {'observed_per_73': 35.1, 'exp_N': 57.1, 'exp_SH': 48.3, 'exp_SA08': 45.8, 'BS_N': 0.3256, 'BS_SH': 0.2814, 'BS_SA08': 0.2447, 'share_|t_o|_in_1.96-2.5': 0.298}

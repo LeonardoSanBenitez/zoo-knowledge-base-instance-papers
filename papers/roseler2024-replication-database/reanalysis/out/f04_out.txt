@@ -1,0 +1,47 @@
+{
+ "pi_hat_null_share": 0.298,
+ "tau_hat": 27927314316508.562,
+ "nll_mixture": 706.12,
+ "tau_only_tau_hat": 0.605,
+ "nll_tau_only": 718.27,
+ "scores_mixture_in_sample": {
+  "n": 1082,
+  "observed": 388,
+  "expected": 388.0,
+  "BS": 0.23,
+  "BSnorm": -0.0,
+  "spiegelhalter_z": 0.0,
+  "AUC": 0.495,
+  "log_score": 0.6526
+ },
+ "scores_tau_only_in_sample": {
+  "n": 1082,
+  "observed": 388,
+  "expected": 445.7,
+  "BS": 0.2344,
+  "BSnorm": -0.019,
+  "spiegelhalter_z": 0.12,
+  "AUC": 0.536,
+  "log_score": 0.6638
+ },
+ "pi_hat_cluster_boot_95ci": [
+  0.18,
+  0.394
+ ],
+ "AUC_logc_alone_if_SH_tau.08_true": [
+  0.637,
+  0.664,
+  0.689
+ ],
+ "AUC_logc_alone_if_tau_only_fitted": [
+  0.513,
+  0.547,
+  0.581
+ ],
+ "AUC_logc_alone_if_null_mixture_fitted": [
+  0.465,
+  0.499,
+  0.536
+ ],
+ "AUC_logc_alone_real": 0.472
+}

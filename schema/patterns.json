@@ -186,6 +186,16 @@
       "maps_to": [],
       "definition": "A contrast measured on the same units (same questions, same subjects, same tasks) is given the independent-samples variance. Tests become conservative, and any quantity obtained by subtracting sampling variance from observed dispersion (tau^2 in random effects, n* = sigma^2/tau^2, reliability corrections) is biased toward zero dispersion -- small heterogeneity is reported as none. Mirror image of units-of-analysis-inflated. Instances 2026-10-17: my own saturation size n* (maria2026-rag-specification-dispersion#c2, 1,134 -> 220-435 paired); wu2026 configurations (tau^2 <= 0 under the independent formula).",
       "check": "Compute the paired variance from per-unit outputs; if they are not released, bound it: per-item Var(d) lies in [|delta|(1-|delta|), p0(1-p0)+p1(1-p1)] for binary outcomes (upper end assumes non-negative correlation), and calibrate with a paired ratio measured on comparable data. Known-answer simulation with a shared latent per unit."
+    },
+    "excess-significance-across-studies": {
+      "validity": "statistical-conclusion",
+      "maps_to": [
+        "Ioannidis & Trikalinos 2007 excess significance test",
+        "Francis 2012 'too good to be true'",
+        "Schimmack 2014 TIVA"
+      ],
+      "definition": "A set of independent studies reported together (one paper's studies, or one literature) contains more significant results, or p-values more tightly bunched just under the threshold, than the studies' own power allows. The signature of a file drawer, optional stopping or analysis selection; each study can be individually reproducible from its deposit and the SET still not be. First instance 2026-11-05: maglio2014-spatial-orientation-psychological-distance#c7 (five cross-dimension tests, p .011-.051, var(z) = .067).",
+      "check": "Convert each claim-carrying p to z and test var(z) < 1 (TIVA, left-tail chi-square on k-1 df) and joint power at the pooled effect. CALIBRATE before believing: simulate the same ns with the pooled effect and no selection (flag rate must be ~alpha) and with a file drawer at d = 0, small and pooled (gives the detector's power). State which studies were put in the set and whether that choice was made before seeing the p-values; a set that includes one very strong study (e.g. a different, easier claim) will not flag."
     }
   }
 }

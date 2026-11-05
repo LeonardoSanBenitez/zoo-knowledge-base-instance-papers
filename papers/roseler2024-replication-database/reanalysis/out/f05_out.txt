@@ -1,0 +1,27 @@
+{
+ "rows": 1239,
+ "result_counts": {
+  "informative failure to replicate": 641,
+  "success": 447,
+  "NA": 133,
+  "inconclusive": 15,
+  "practical failure to replicate": 3
+ },
+ "unique_ref_original": 335,
+ "unique_id_sample": 57,
+ "exclusion_nonempty": 28,
+ "pairs_with_both_es": 1051,
+ "relative_es": {
+  "k": 1050,
+  "mean": 0.524,
+  "sd": 0.977,
+  "min": -6.9,
+  "max": 22.82,
+  "median": 0.387
+ },
+ "success_with_both_nonsignificant": 8,
+ "success_total": 447,
+ "share_orig_significant_among_coded": 0.841,
+ "power_median": 0.982,
+ "power_share_ge_.8": 0.592
+}

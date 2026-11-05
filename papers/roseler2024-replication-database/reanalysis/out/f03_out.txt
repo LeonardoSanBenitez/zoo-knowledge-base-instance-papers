@@ -1,0 +1,74 @@
+{
+ "AUC_to_abs_alone": 0.625,
+ "success_by_quintile_to_abs": [
+  0.266,
+  0.269,
+  0.321,
+  0.432,
+  0.507
+ ],
+ "AUC_log_c_alone": 0.472,
+ "success_by_quintile_log_c": [
+  0.425,
+  0.371,
+  0.319,
+  0.329,
+  0.346
+ ],
+ "AUC_log_nr_alone": 0.494,
+ "success_by_quintile_log_nr": [
+  0.405,
+  0.322,
+  0.339,
+  0.368,
+  0.359
+ ],
+ "AUC_log_no_alone": 0.514,
+ "success_by_quintile_log_no": [
+  0.388,
+  0.282,
+  0.408,
+  0.296,
+  0.416
+ ],
+ "logit_log_to_log_c": {
+  "const": [
+   -1.241,
+   0.239,
+   0.0
+  ],
+  "log_to": [
+   0.747,
+   0.203,
+   0.0002
+  ],
+  "log_c": [
+   -0.054,
+   0.075,
+   0.4741
+  ]
+ },
+ "logit_log_to_log_no_log_nr": {
+  "const": [
+   -1.557,
+   0.463,
+   0.0008
+  ],
+  "log_to": [
+   0.725,
+   0.205,
+   0.0004
+  ],
+  "log_no": [
+   0.111,
+   0.094,
+   0.2396
+  ],
+  "log_nr": [
+   -0.04,
+   0.078,
+   0.6107
+  ]
+ },
+ "model_says": "both log_to and log_c coefficients positive and large (P(success) -> 1 as c grows for any t_o > 1.96)"
+}

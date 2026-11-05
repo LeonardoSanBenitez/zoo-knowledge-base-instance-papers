@@ -1,0 +1,220 @@
+{
+ "schema_version": "1.6",
+ "id": "roseler2024-replication-database",
+ "title": "The Replication Database: Documenting the Replicability of Psychological Science",
+ "authors": [
+  "Lukas Roeseler",
+  "Leonard Kaiser",
+  "Christopher Doetsch",
+  "Noah Klett",
+  "Christian Seida",
+  "Astrid Schuetz",
+  "Balazs Aczel",
+  "et al. (~100 authors)"
+ ],
+ "year": 2024,
+ "venue": "Journal of Open Psychology Data 12:8, pp 1-23",
+ "area": [
+  "replicability-and-selective-reporting"
+ ],
+ "identifiers": {
+  "doi": "10.5334/jopd.101"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "chain",
+  "evidence": "Reached from the Pawel-Held read as an out-of-sample test bed (2,164 pairs). Blinded copy: mark's 8 papers dropped before viewing.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 22,
+  "bytes_downloaded": 10000000,
+  "compute_notes": "Data paper PDF from JOPD (23 pp; read pp 1-16, rest references/affiliations). Two data versions: frozen 2023-10-16 (osf qtkzy, CSV served under .xlsx name, 1,239 rows) and GitHub forrtproject/fred-data output/FReD.xlsx (commit 6743efb, 2026-02-01, 2,164 rows). Blinding filter f00; counts f05; forecasts f01-f04 (each < 2 min).",
+  "session": "2026-11-05 maria"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-05",
+  "verified": "2026-11-05",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "database of replication attempts psychology original replication pairs",
+  "FReD FORRT replication database",
+  "what share of psychology replications succeed",
+  "replication effect size relative to original median",
+  "does replication sample size predict success",
+  "test replication forecasts or bias corrections on real data"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "The 16 Oct 2023 snapshot holds 1,239 original-replication entries (336 independent originals, 468 independent replication findings); outcomes: 641 informative failure, 447 success, 133 not available, 15 inconclusive, 3 practical failure. Replication effects are smaller than originals: relative effect size (k = 1,050) M = 0.52, SD = 0.98, Md = 0.387.",
+   "scope": "Liberal inclusion (any study naming the original it replicates); entries from Many Labs are per lab (ML1 352, ML3 145 of 1,239); effect sizes converted to r where possible.",
+   "quantities": [
+    {
+     "name": "fred2023_success_share",
+     "value": 0.361,
+     "unit": "share of entries",
+     "n": 1239,
+     "count": 447,
+     "denominator": 1239,
+     "baseline": "failure 641, NA 133, inconclusive 15, practical failure 3 -- all reproduce exactly",
+     "source": "reanalysis/out/f05_out.txt"
+    },
+    {
+     "name": "fred2023_relative_replication_es_median",
+     "value": 0.387,
+     "unit": "r_rep / r_orig",
+     "n": 1050,
+     "baseline": "M .524, SD .977, min -6.9, max 22.82 reproduce exactly",
+     "source": "reanalysis/out/f05_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Every printed count reproduces from the frozen file except two bookkeeping numbers: unique ref_original 335 (printed 336 originals; may be a formatting duplicate) and rows lacking ES 188 (printed 201 not in quantitative analyses). Entries are not independent: 72.8% of usable pairs in the 2026 snapshot come from originals with more than one replication row (max 35), so per-entry rates over-weight Many Labs effects.",
+    "by": "maria",
+    "patterns": [
+     "units-of-analysis-inflated"
+    ]
+   }
+  },
+  {
+   "id": "c2",
+   "origin": "reader",
+   "statement": "The database's 'power' column (replication power computed at the ORIGINAL effect size) has median 0.982 and is >= .8 for 59% of entries, while the success rate is 447/1,239. Read as a planning quantity it is almost uninformative about outcomes: the original effect it assumes is, by the database's own median, 2.6 times the replication effect.",
+   "scope": "Frozen 2023 version; power as computed by the database.",
+   "quantities": [
+    {
+     "name": "fred2023_power_column_median",
+     "value": 0.982,
+     "unit": "power at original effect",
+     "n": 1239,
+     "baseline": "share >= .8: 0.592",
+     "source": "reanalysis/out/f05_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Direct computation from the file. The paper describes the variable correctly; the point is about what a reader should not do with it.",
+    "by": "maria",
+    "patterns": [
+     "instrument-relative-headline-number"
+    ]
+   }
+  },
+  {
+   "id": "c3",
+   "origin": "reader",
+   "statement": "In the 2026 snapshot (2,157 rows after blinding, 1,082 usable pairs), the original's evidence predicts replication only weakly -- success rises from 26.6% to 50.7% across quintiles of |t_o|, AUC .625 -- and the replication's sample size (absolute or relative to the original) not at all: AUC .472, logit coefficient -0.054 (SE .075), while the standard replication-probability model implies a clear positive gradient (AUC .66).",
+   "scope": "Outcome = replication p <= .05 and not coded 'failed'; |t_o| from exact p or parsed 1-df statistic; cluster SEs by original.",
+   "quantities": [
+    {
+     "name": "fred_auc_orig_abs_t_alone",
+     "value": 0.625,
+     "unit": "AUC",
+     "n": 1082,
+     "baseline": "success by quintile .266 .269 .321 .432 .507",
+     "source": "reanalysis/out/f03.json"
+    },
+    {
+     "name": "fred_auc_log_nr_over_no_alone",
+     "value": 0.472,
+     "unit": "AUC",
+     "n": 1082,
+     "baseline": "under SH-true simulation .664 [.637, .689]",
+     "source": "reanalysis/out/f04.json"
+    }
+   ],
+   "evidence": [
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Robust across the subsets in f02. The outcome coding is mine and not the database's (the database's 'success' also counts both-non-significant pairs); with the database's own verdict as outcome the forecast AUC drops below .5 (.476), which needs explaining before anyone uses that verdict as ground truth for a detector.",
+    "by": "maria",
+    "patterns": [
+     "centre-hides-distribution"
+    ]
+   }
+  }
+ ],
+ "methods": [
+  "exact-reproduction-from-deposit",
+  "blinded-subset-filter",
+  "out-of-sample-validation-on-independent-corpus",
+  "cluster-bootstrap-by-original",
+  "forecast-ceiling-by-simulation"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "supplement",
+   "locator": "(the paper) https://openpsychologydata.metajnl.com/articles/10.5334/jopd.101 -> files/692e9213be318.pdf",
+   "status": "verified-usable",
+   "fetch_cmd": "curl -sL -A Mozilla/5.0 https://openpsychologydata.metajnl.com/articles/101/files/692e9213be318.pdf -o \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/roseler2024-replication-database)/692e9213be318.pdf\"",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "Read tool pp 1-16",
+    "result": "Typeset article. jyx.jyu.fi bitstream returned 0 bytes; the JOPD galley URL returns HTML; the /files/<hash>.pdf links work with a browser UA."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "raw-data",
+   "locator": "https://osf.io/qtkzy/ (frozen 2023-10-16 version analysed in the paper; CSV despite FReD.xlsx naming)",
+   "status": "verified-usable",
+   "bytes": 1080042,
+   "fetch_cmd": "curl -sL https://osf.io/download/qtkzy/ -o \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/roseler2024-replication-database)/FReD_2023-10-16_qtkzy.csv\"  # sha256 7e040555f6629909bbc694b56a75dba64e5d4f329970980f0ecfef7a412480fa",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "python zoo-knowledge-base/instance-papers/papers/roseler2024-replication-database/reanalysis/f05_reproduce_paper_counts.py \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/roseler2024-replication-database)/FReD_2023-10-16_qtkzy.csv\"",
+    "result": "1,239 rows; outcome counts and relative-ES summary reproduce exactly."
+   },
+   "datasheet": {
+    "composition": "one row per original-replication effect pair; 70 columns incl. es_original/es_replication (r), n, refs, result, closeness_* codings, significant_*, power.",
+    "caveats": "Served as text/csv under an .xlsx name: pandas.read_excel fails. Rows are not independent (Many Labs per-lab rows)."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "raw-data",
+   "locator": "https://github.com/forrtproject/fred-data output/FReD.xlsx (commit 6743efb, 2026-02-01; 2,164 rows x 56 cols, renamed columns: doi_o, n_o, pval_value_o, reported_success ...)",
+   "status": "verified-usable",
+   "bytes": 1083820,
+   "fetch_cmd": "curl -sL https://raw.githubusercontent.com/forrtproject/fred-data/main/output/FReD.xlsx -o \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/roseler2024-replication-database)/FReD.xlsx\"  # sha256 59545e3fc0c2979d97507097526319ec8c275aae3ac40c0d1a6d327492079e6b",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "python .../reanalysis/f00_blind_filter.py FReD.xlsx FReD_blinded.csv; then f01-f04 on the blinded copy",
+    "result": "2,157 rows after the over-inclusive blinding filter; 1,082 usable for forecasting (exact or parsed original p, both n, usable replication p)."
+   },
+   "datasheet": {
+    "composition": "live database export; effect sizes as reported (es_value_o mixes numbers and test-statistic strings).",
+    "caveats": "Living resource: the 2026 export is not the 2023 analysed version; cite the commit. es_value_o is often a string like 'F(1, 188) = ...'."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "zoo:reanalysedBy",
+   "target": "pawel2020-probabilistic-forecasting-replication",
+   "why": "FReD used as the out-of-sample test bed for the Pawel-Held forecasts (that record's c7)."
+  }
+ ],
+ "open_questions": [
+  "Do the closeness_* variables (coded for a subset) predict success where |t_o| and n_r do not?",
+  "Why is the replication-probability forecast anti-correlated (AUC .476) with the database's own 'successful' verdict? Candidate: verdict criteria differ by source (Many Labs vs individual submissions).",
+  "Blinding: f00 drops rows for mark's 8 papers; remove after unblinding and rerun f01-f04."
+ ]
+}

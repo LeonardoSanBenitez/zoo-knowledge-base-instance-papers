@@ -1,0 +1,702 @@
+{
+ "s1_n": {
+  "total": 202,
+  "by_dir": {
+   "EAST": 101,
+   "WEST": 101
+  },
+  "cells": {
+   "B-Y|EAST": 23,
+   "B-Y|WEST": 26,
+   "SHER|EAST": 26,
+   "SHER|WEST": 25,
+   "SPAD|EAST": 26,
+   "SPAD|WEST": 25,
+   "STG|EAST": 26,
+   "STG|WEST": 25
+  }
+ },
+ "s1_simple": {
+  "B-Y": {
+   "means": {
+    "mean": {
+     "EAST": 1.609,
+     "WEST": 2.192
+    },
+    "count": {
+     "EAST": 23,
+     "WEST": 26
+    },
+    "std": {
+     "EAST": 0.722,
+     "WEST": 1.234
+    }
+   },
+   "sep_F": 3.945,
+   "sep_p": 0.0528,
+   "sep_eta": 0.077,
+   "pooled_F": 3.874,
+   "pooled_p": 0.0505,
+   "pooled_eta": 0.02
+  },
+  "SHER": {
+   "means": {
+    "mean": {
+     "EAST": 2.769,
+     "WEST": 4.0
+    },
+    "count": {
+     "EAST": 26,
+     "WEST": 25
+    },
+    "std": {
+     "EAST": 1.142,
+     "WEST": 1.118
+    }
+   },
+   "sep_F": 15.108,
+   "sep_p": 0.0003,
+   "sep_eta": 0.236,
+   "pooled_F": 17.994,
+   "pooled_p": 0.0,
+   "pooled_eta": 0.085
+  },
+  "SPAD": {
+   "means": {
+    "mean": {
+     "EAST": 3.654,
+     "WEST": 2.64
+    },
+    "count": {
+     "EAST": 26,
+     "WEST": 25
+    },
+    "std": {
+     "EAST": 1.093,
+     "WEST": 0.995
+    }
+   },
+   "sep_F": 11.966,
+   "sep_p": 0.0011,
+   "sep_eta": 0.196,
+   "pooled_F": 12.21,
+   "pooled_p": 0.0006,
+   "pooled_eta": 0.059
+  },
+  "STG": {
+   "means": {
+    "mean": {
+     "EAST": 2.769,
+     "WEST": 1.64
+    },
+    "count": {
+     "EAST": 26,
+     "WEST": 25
+    },
+    "std": {
+     "EAST": 1.032,
+     "WEST": 0.81
+    }
+   },
+   "sep_F": 18.793,
+   "sep_p": 0.0001,
+   "sep_eta": 0.277,
+   "pooled_F": 15.147,
+   "pooled_p": 0.0001,
+   "pooled_eta": 0.072
+  }
+ },
+ "s1_toward_model": {
+  "Intercept": [
+   3.805,
+   0.0
+  ],
+  "C(side)[T.WEST]": [
+   0.036,
+   0.80656
+  ],
+  "toward": [
+   -1.117,
+   0.0
+  ],
+  "near": [
+   -1.342,
+   0.0
+  ],
+  "toward:near": [
+   0.26,
+   0.37622
+  ]
+ },
+ "s1_toward_means": {
+  "0|0": 3.824,
+  "0|1": 2.706,
+  "1|0": 2.481,
+  "1|1": 1.625
+ },
+ "s1_toward_MW": 2.0432186772956024e-07,
+ "s2": {
+  "cells": {
+   "east|east": 20,
+   "east|west": 20,
+   "west|east": 20,
+   "west|west": 20
+  },
+  "anova": {
+   "sum_sq": {
+    "Intercept": 1209.0125,
+    "C(dir, Sum)": 5.5125,
+    "C(face, Sum)": 0.6125,
+    "C(dir, Sum):C(face, Sum)": 0.3125,
+    "Residual": 87.55
+   },
+   "df": {
+    "Intercept": 1.0,
+    "C(dir, Sum)": 1.0,
+    "C(face, Sum)": 1.0,
+    "C(dir, Sum):C(face, Sum)": 1.0,
+    "Residual": 76.0
+   },
+   "F": {
+    "Intercept": 1049.514,
+    "C(dir, Sum)": 4.7853,
+    "C(face, Sum)": 0.5317,
+    "C(dir, Sum):C(face, Sum)": 0.2713,
+    "Residual": NaN
+   },
+   "PR(>F)": {
+    "Intercept": 0.0,
+    "C(dir, Sum)": 0.0318,
+    "C(face, Sum)": 0.4681,
+    "C(dir, Sum):C(face, Sum)": 0.604,
+    "Residual": NaN
+   }
+  },
+  "means": {
+   "mean": {
+    "east": 3.625,
+    "west": 4.15
+   },
+   "std": {
+    "east": 1.005,
+    "west": 1.122
+   },
+   "count": {
+    "east": 40,
+    "west": 40
+   }
+  },
+  "MW_p": 0.04296214273291329,
+  "t_welch_p": 0.03047222283068551
+ },
+ "s3a": {
+  "means": {
+   "mean": {
+    "away": 14.833,
+    "toward": 7.673
+   },
+   "std": {
+    "away": 17.188,
+    "toward": 9.966
+   },
+   "count": {
+    "away": 48,
+    "toward": 52
+   }
+  },
+  "F": 6.617837432096494,
+  "p": 0.011596399904352605,
+  "MW_p": 0.007453627395337533,
+  "log1p_F_p": [
+   7.398950040954437,
+   0.007721865703077707
+  ],
+  "max_by": {
+   "away": 60.0,
+   "toward": 60.0
+  },
+  "skew_by": {
+   "away": 1.8366035569228272,
+   "toward": 3.3078443588939517
+  }
+ },
+ "s3b": {
+  "cells": {
+   "away|Jervis": 22,
+   "away|Thurlow": 20,
+   "toward|Jervis": 22,
+   "toward|Thurlow": 22
+  },
+  "anova": {
+   "sum_sq": {
+    "Intercept": 34333.659,
+    "C(dir, Sum)": 2725.251,
+    "C(tgt, Sum)": 702.9184,
+    "C(dir, Sum):C(tgt, Sum)": 169.9162,
+    "Residual": 32577.9818
+   },
+   "df": {
+    "Intercept": 1.0,
+    "C(dir, Sum)": 1.0,
+    "C(tgt, Sum)": 1.0,
+    "C(dir, Sum):C(tgt, Sum)": 1.0,
+    "Residual": 82.0
+   },
+   "F": {
+    "Intercept": 86.4191,
+    "C(dir, Sum)": 6.8596,
+    "C(tgt, Sum)": 1.7693,
+    "C(dir, Sum):C(tgt, Sum)": 0.4277,
+    "Residual": NaN
+   },
+   "PR(>F)": {
+    "Intercept": 0.0,
+    "C(dir, Sum)": 0.0105,
+    "C(tgt, Sum)": 0.1872,
+    "C(dir, Sum):C(tgt, Sum)": 0.515,
+    "Residual": NaN
+   }
+  },
+  "means": {
+   "mean": {
+    "away": 25.429,
+    "toward": 14.364
+   },
+   "std": {
+    "away": 25.783,
+    "toward": 11.989
+   },
+   "count": {
+    "away": 42,
+    "toward": 44
+   }
+  },
+  "MW_p": 0.1133979443444444,
+  "log1p_anova_p_dir": 0.029662852905873168,
+  "cell_means": {
+   "away|Jervis": 21.36,
+   "away|Thurlow": 29.9,
+   "toward|Jervis": 12.91,
+   "toward|Thurlow": 15.82
+  },
+  "max_by": {
+   "away": 120.0,
+   "toward": 60.0
+  }
+ },
+ "s4": {
+  "means": {
+   "mean": {
+    "northbound": 2.8,
+    "southbound": 4.0
+   },
+   "std": {
+    "northbound": 1.708,
+    "southbound": 1.732
+   },
+   "count": {
+    "northbound": 25,
+    "southbound": 25
+   }
+  },
+  "F": 6.084507042253521,
+  "p": 0.017258654427730075,
+  "r_fam": [
+   -0.3428184112368877,
+   0.01480412682828745
+  ],
+  "fam_by_cond_p": 0.8156410325081513,
+  "ancova_p": 0.00895742663299069,
+  "MW_p": 0.016199831046171943,
+  "value_counts": {
+   "southbound": {
+    "1.0": 3,
+    "2.0": 2,
+    "3.0": 3,
+    "4.0": 8,
+    "5.0": 4,
+    "6.0": 3,
+    "7.0": 2
+   },
+   "northbound": {
+    "1.0": 7,
+    "2.0": 6,
+    "3.0": 4,
+    "4.0": 4,
+    "5.0": 2,
+    "6.0": 1,
+    "7.0": 1
+   }
+  }
+ },
+ "s5": {
+  "means": {
+   "mean": {
+    "arriving": 1.609,
+    "departing": 2.409
+   },
+   "std": {
+    "arriving": 1.033,
+    "departing": 1.593
+   },
+   "count": {
+    "arriving": 23,
+    "departing": 22
+   }
+  },
+  "F": 4.033428549370803,
+  "p": 0.050914496634840045,
+  "MW_p": 0.06798941378146205,
+  "welch_p": 0.054303346163130845,
+  "value_counts": {
+   "departing": {
+    "1.0": 10,
+    "2.0": 3,
+    "3.0": 3,
+    "4.0": 2,
+    "5.0": 4
+   },
+   "arriving": {
+    "1.0": 16,
+    "2.0": 2,
+    "3.0": 3,
+    "4.0": 2
+   }
+  }
+ },
+ "table": [
+  [
+   "S1",
+   "F station (3,194)",
+   24.1,
+   24.1
+  ],
+  [
+   "S1",
+   "F interaction (3,194)",
+   16.28,
+   16.28
+  ],
+  [
+   "S1",
+   "F orientation (<1)",
+   "<1",
+   0.32
+  ],
+  [
+   "S1",
+   "df_resid",
+   194,
+   194
+  ],
+  [
+   "S1",
+   "eta_p2 station",
+   0.27,
+   0.272
+  ],
+  [
+   "S1",
+   "eta_p2 interaction",
+   0.2,
+   0.201
+  ],
+  [
+   "S1",
+   "simple STG p (sep / pooled)",
+   0.001,
+   "0.0001 / 0.0001"
+  ],
+  [
+   "S1",
+   "simple STG eta (sep / pooled)",
+   0.28,
+   "0.277 / 0.072"
+  ],
+  [
+   "S1",
+   "simple SPAD p (sep / pooled)",
+   0.001,
+   "0.0011 / 0.0006"
+  ],
+  [
+   "S1",
+   "simple SPAD eta (sep / pooled)",
+   0.2,
+   "0.196 / 0.059"
+  ],
+  [
+   "S1",
+   "simple B-Y p (sep / pooled)",
+   0.053,
+   "0.0528 / 0.0505"
+  ],
+  [
+   "S1",
+   "simple B-Y eta (sep / pooled)",
+   0.08,
+   "0.077 / 0.02"
+  ],
+  [
+   "S1",
+   "simple SHER p (sep / pooled)",
+   0.001,
+   "0.0003 / 0.0"
+  ],
+  [
+   "S1",
+   "simple SHER eta (sep / pooled)",
+   0.24,
+   "0.236 / 0.085"
+  ],
+  [
+   "S2",
+   "F orientation (1,76)",
+   4.79,
+   4.79
+  ],
+  [
+   "S2",
+   "p",
+   0.032,
+   0.0318
+  ],
+  [
+   "S2",
+   "M east (toward)",
+   3.63,
+   3.62
+  ],
+  [
+   "S2",
+   "SD east",
+   1.0,
+   1.0
+  ],
+  [
+   "S2",
+   "M west (away)",
+   4.15,
+   4.15
+  ],
+  [
+   "S2",
+   "SD west",
+   1.12,
+   1.12
+  ],
+  [
+   "S2",
+   "F face, F int (<1)",
+   "<1,<1",
+   "0.53,0.27"
+  ],
+  [
+   "S3a",
+   "n toward/away",
+   "52/48",
+   "52/48"
+  ],
+  [
+   "S3a",
+   "M toward",
+   7.65,
+   7.67
+  ],
+  [
+   "S3a",
+   "SD toward",
+   9.98,
+   9.97
+  ],
+  [
+   "S3a",
+   "M away",
+   14.83,
+   14.83
+  ],
+  [
+   "S3a",
+   "SD away",
+   17.19,
+   17.19
+  ],
+  [
+   "S3a",
+   "F(1,98)",
+   6.65,
+   6.62
+  ],
+  [
+   "S3a",
+   "p",
+   0.011,
+   0.0116
+  ],
+  [
+   "S3b",
+   "n Jervis/Thurlow",
+   "44/42",
+   "44/42"
+  ],
+  [
+   "S3b",
+   "F orientation (1,82)",
+   6.86,
+   6.86
+  ],
+  [
+   "S3b",
+   "p",
+   0.011,
+   0.0105
+  ],
+  [
+   "S3b",
+   "M toward",
+   14.36,
+   14.36
+  ],
+  [
+   "S3b",
+   "SD toward",
+   11.99,
+   11.99
+  ],
+  [
+   "S3b",
+   "M away",
+   25.43,
+   25.43
+  ],
+  [
+   "S3b",
+   "SD away",
+   25.78,
+   25.78
+  ],
+  [
+   "S3b",
+   "interaction p (>.18)",
+   ">.18",
+   0.515
+  ],
+  [
+   "S3b",
+   "F target (<1)",
+   "<1",
+   1.77
+  ],
+  [
+   "S4",
+   "M toward",
+   4.0,
+   4.0
+  ],
+  [
+   "S4",
+   "SD toward",
+   1.73,
+   1.73
+  ],
+  [
+   "S4",
+   "M away",
+   2.8,
+   2.8
+  ],
+  [
+   "S4",
+   "SD away",
+   1.71,
+   1.71
+  ],
+  [
+   "S4",
+   "F(1,48)",
+   6.09,
+   6.08
+  ],
+  [
+   "S4",
+   "p",
+   0.017,
+   0.0173
+  ],
+  [
+   "S4",
+   "r familiarity",
+   -0.343,
+   -0.343
+  ],
+  [
+   "S4",
+   "p r",
+   0.02,
+   0.0148
+  ],
+  [
+   "S4",
+   "ANCOVA p",
+   0.009,
+   0.009
+  ],
+  [
+   "S4",
+   "fam x cond p (>.80)",
+   ">.80",
+   0.816
+  ],
+  [
+   "S5",
+   "n dep/arr",
+   "22/23",
+   "22/23"
+  ],
+  [
+   "S5",
+   "M toward (departing)",
+   2.41,
+   2.41
+  ],
+  [
+   "S5",
+   "SD toward",
+   1.59,
+   1.59
+  ],
+  [
+   "S5",
+   "M away (arriving)",
+   1.61,
+   1.61
+  ],
+  [
+   "S5",
+   "SD away",
+   1.03,
+   1.03
+  ],
+  [
+   "S5",
+   "F(1,43)",
+   4.03,
+   4.03
+  ],
+  [
+   "S5",
+   "p",
+   0.051,
+   0.0509
+  ]
+ ],
+ "s3b_target_F_by_type": {
+  "1": 1.728,
+  "2": 1.728,
+  "3": 1.769
+ },
+ "s3b_target_oneway": [
+  1.4782048172100288,
+  0.2274614347122492
+ ]
+}

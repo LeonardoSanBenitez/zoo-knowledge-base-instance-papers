@@ -1,0 +1,347 @@
+{
+ "schema_version": "1.6",
+ "id": "maglio2014-spatial-orientation-psychological-distance",
+ "title": "Spatial Orientation Shrinks and Expands Psychological Distance",
+ "authors": [
+  "Sam J. Maglio",
+  "Evan Polman"
+ ],
+ "year": 2014,
+ "venue": "Psychological Science 25(7):1345-1352",
+ "area": [
+  "experimental-social-and-cognitive-psychology"
+ ],
+ "identifiers": {
+  "doi": "10.1177/0956797614530571"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "blind",
+  "evidence": "Assigned by mark as item 6 of 8 in a blinded known-answer control of my reading protocol (identifiers only, 2026-10-23T16:11). No prior knowledge of the paper; prior suspicion: none. Blocked 2026-10-25 (publisher host dead, archive.org bot-blocked); PDF saved by Leonardo from a browser the same day; read 2026-11-05.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 14,
+  "bytes_downloaded": 620000,
+  "compute_notes": "PDF (Wayback copy of the Rotman faculty file, saved by Leonardo). OSF 6m2it six xlsx (one per study) acquired with checksums 2026-10-25; 2asq6 materials (.doc questionnaires) present, not opened. Python: every F/M/SD/p recomputed (r01), Mann-Whitney / log1p / Welch robustness, toward-vs-away recoding of Study 1; TIVA + joint power with 5 known-answer worlds, 4,000 reps each + 20,000 MC under the no-selection world (r02, 19 min wall-clock).",
+  "session": "2026-11-05 maria"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-05",
+  "verified": "2026-11-05",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "spatial orientation toward away psychological distance construal level",
+  "subway platform field experiment subjective distance",
+  "excess significance within one multi-study paper",
+  "test of insufficient variance TIVA calibrated by simulation",
+  "known-answer control psychological science 2014 open data",
+  "p-values bunched between .01 and .05 across studies"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Study 1 (n = 202, Bay St. subway): orientation x station interaction F(3,194) = 16.28, eta_p^2 = .20; station main effect F = 24.10; no orientation main effect (F < 1). Stations in the direction of travel feel closer (simple effects p < .001, .001, .053, < .001).",
+   "scope": "Toronto subway riders, 1-7 rating, one item, between-subjects, ~25 per cell.",
+   "quantities": [
+    {
+     "name": "s1_interaction_F_reproduced",
+     "value": 16.28,
+     "unit": "F(3,194)",
+     "n": 202,
+     "baseline": "published 16.28; station F 24.10 = 24.10; orientation F 0.32 (<1)",
+     "source": "reanalysis/out/r01_out.txt"
+    },
+    {
+     "name": "s1_toward_minus_away_rating",
+     "value": -1.117,
+     "unit": "points on 1-7",
+     "n": 202,
+     "baseline": "OLS with station side and near/far; p < 1e-7; Mann-Whitney toward vs away p = 2.0e-7",
+     "source": "reanalysis/out/r01.json"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "why": "Every number reproduces from the deposit to the printed digit. The simple-effect eta_p^2 values are from separate per-station one-way ANOVAs (not the pooled error term) -- reproducible, but the paper does not say so. Recoded as the theoretically relevant contrast (toward vs away), the effect is 1.1 scale points and survives a rank test at p = 2e-7. This is the strong study of the paper.",
+    "by": "maria"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "Study 2 (n = 80, Christie station): direction of travel, not direction faced, drives subjective distance to the U of T campus: orientation F(1,76) = 4.79, p = .032, eta_p^2 = .06 (M 3.63 vs 4.15); facing and interaction Fs < 1.",
+   "scope": "20 per cell, one item, one target location.",
+   "quantities": [
+    {
+     "name": "s2_orientation_F_reproduced",
+     "value": 4.79,
+     "unit": "F(1,76)",
+     "n": 80,
+     "baseline": "published 4.79, p .0318; Mann-Whitney p = .043; Welch p = .030; M east 3.625 printed 3.63",
+     "source": "reanalysis/out/r01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Reproduces exactly and survives a rank test, but it is one target at n = 80 with p = .03: weak evidence by itself, and its job (ruling out facing direction) rests on two null Fs at 20 per cell.",
+    "by": "maria",
+    "patterns": [
+     "nonsignificance-read-as-absence",
+     "small-sample-overreach"
+    ]
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Study 3a (n = 100, one intersection): a sale was judged to have happened more recently at the drugstore participants walked toward (M = 7.65 min, SD 9.98) than at the one behind them (14.83, 17.19), F(1,98) = 6.65, p = .011.",
+   "scope": "All participants faced east; condition = which store was named, so orientation is confounded with store identity (the authors say so).",
+   "quantities": [
+    {
+     "name": "s3a_F_recomputed",
+     "value": 6.62,
+     "unit": "F(1,98)",
+     "n": 100,
+     "baseline": "published 6.65; M toward 7.67 vs printed 7.65 (a one-minute difference in one of 52 values); log1p p = .0077; Mann-Whitney p = .0075",
+     "source": "reanalysis/out/r01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Reproduces to within one data unit and is robust to the heavy right skew (rank and log tests p < .01). The design cannot separate orientation from store; Study 3b was built to fix that.",
+    "by": "maria",
+    "patterns": [
+     "missing-adequate-control"
+    ]
+   }
+  },
+  {
+   "id": "c4",
+   "statement": "Study 3b (n = 86, Vancouver): crossing orientation with target store, a wrong drink order was judged more recent at the store walked toward (14.36 vs 25.43 min), F(1,82) = 6.86, p = .011; no effect of target (F < 1), no interaction (p > .18).",
+   "scope": "2 x 2 between-subjects, 20-22 per cell; minutes estimate, heavy right tail (max 120).",
+   "quantities": [
+    {
+     "name": "s3b_orientation_F_reproduced",
+     "value": 6.86,
+     "unit": "F(1,82)",
+     "n": 86,
+     "baseline": "published 6.86; all four M/SD reproduce",
+     "source": "reanalysis/out/r01_out.txt"
+    },
+    {
+     "name": "s3b_orientation_mannwhitney_p",
+     "value": 0.113,
+     "unit": "p",
+     "n": 86,
+     "baseline": "log1p ANOVA p = .030; parametric p = .0105",
+     "source": "reanalysis/out/r01_out.txt"
+    },
+    {
+     "name": "s3b_target_F_recomputed",
+     "value": 1.73,
+     "unit": "F(1,82)",
+     "n": 86,
+     "baseline": "printed 'F < 1'; 1.73 (SS type I/II), 1.77 (type III), one-way 1.48",
+     "source": "reanalysis/out/r01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "disputed",
+    "why": "The headline F reproduces exactly, but it is carried by the tail: the away condition holds the 120-minute answer and a rank test gives p = .11. 'F < 1' for target is false under every sum-of-squares type (1.48-1.77) -- small in consequence (p ~ .19) but a reported number that is not what the data give.",
+    "by": "maria",
+    "patterns": [
+     "estimator-biased-or-insensitive",
+     "text-contradicts-own-materials"
+    ]
+   }
+  },
+  {
+   "id": "c5",
+   "statement": "Study 4 (n = 50, Bloor-Yonge): riders heading toward the lottery-draw location judged a jackpot win more likely (M 4.00 vs 2.80), F(1,48) = 6.09, p = .017; familiarity r = -.343, p = .02; ANCOVA p = .009.",
+   "scope": "25 per cell; one 1-7 item.",
+   "quantities": [
+    {
+     "name": "s4_F_reproduced",
+     "value": 6.08,
+     "unit": "F(1,48)",
+     "n": 50,
+     "baseline": "published 6.09; familiarity r p = .0148 printed '.02'; ANCOVA p .0090 = .009; Mann-Whitney p = .016",
+     "source": "reanalysis/out/r01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Reproduces and survives a rank test. The p for r is .0148 and is printed as .02 (rounding error, harmless in direction). Single item, n = 50.",
+    "by": "maria",
+    "patterns": [
+     "small-sample-overreach"
+    ]
+   }
+  },
+  {
+   "id": "c6",
+   "statement": "Study 5 (n = 45, mall): a traveller described as departing for (toward) rather than arriving from Chicago felt more similar (M 2.41 vs 1.61), F(1,43) = 4.03, p = .051; presented as 'a similar pattern of results'.",
+   "scope": "22/23 per cell; 26 of 45 answers are 1 on a 1-7 scale.",
+   "quantities": [
+    {
+     "name": "s5_F_reproduced",
+     "value": 4.03,
+     "unit": "F(1,43)",
+     "n": 45,
+     "baseline": "published 4.03, p .0509; Mann-Whitney p = .068; Welch p = .054; 16/23 'arriving' answers at the floor (1)",
+     "source": "reanalysis/out/r01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "not-identifiable",
+    "why": "p = .051 at n = 45 on a floor-bound item is counted by the General Discussion as support for the fourth dimension. The data neither establish nor exclude the effect; the abstract reports it as a finding.",
+    "by": "maria",
+    "patterns": [
+     "ceiling-or-floor-artifact",
+     "small-sample-overreach"
+    ]
+   }
+  },
+  {
+   "id": "c7",
+   "origin": "reader",
+   "statement": "Taken as a set, the five cross-dimension tests (Studies 2, 3a, 3b, 4, 5; p = .032, .012, .011, .017, .051) are more homogeneous than independent studies allow: var(z) = 0.067 (expected >= 1), TIVA p = .008; Monte Carlo under the pooled effect with no selection p = .0064; joint power at the pooled d = 0.56 is 0.086; probability that all five land in (.01, .06) under that world .00095.",
+   "scope": "Set chosen by me after reading the paper as the tests that carry the cross-dimension claim (Study 1 excluded: different, spatial claim, and much stronger). Including Study 1 gives var(z) = 1.44, no flag.",
+   "quantities": [
+    {
+     "name": "tiva_var_z_five_cross_dimension_tests",
+     "value": 0.067,
+     "unit": "variance of probit z",
+     "n": 5,
+     "baseline": "expected >= 1; left-tail chi2(4) p = 0.0082; MC p (no-selection world, 20,000 reps) = 0.0064",
+     "source": "reanalysis/out/r02.json"
+    },
+    {
+     "name": "joint_power_at_pooled_effect",
+     "value": 0.086,
+     "unit": "probability",
+     "n": 5,
+     "baseline": "pooled d = 0.557 (fixed, from the five ps); at alpha .06: 0.109; at half the pooled d: 0.0007",
+     "source": "reanalysis/out/r02.json"
+    },
+    {
+     "name": "tiva_flag_rate_no_selection_world",
+     "value": 0.043,
+     "unit": "proportion of 4,000 simulated sets",
+     "n": 4000,
+     "count": 171,
+     "denominator": 4000,
+     "baseline": "calibration: nominal .05",
+     "source": "reanalysis/out/r02.json"
+    },
+    {
+     "name": "tiva_flag_rate_null_file_drawer_world",
+     "value": 0.783,
+     "unit": "proportion of 4,000 simulated sets",
+     "n": 4000,
+     "count": 3130,
+     "denominator": 4000,
+     "baseline": "d = 0.2: .627; d = pooled .56: .202; d = 0.8: .067",
+     "source": "reanalysis/out/r02.json"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The detector was calibrated before use: it flags 4.3% of honest sets at these ns and 78% of null file-drawer sets. The observed variance (0.067) is below the MEDIAN variance of the null-with-file-drawer world (0.084). This is evidence that the five reported tests are a selected subset of what was run (unreported studies, optional stopping -- 'collected data until that number was achieved' is a minimum, not a stopping rule -- or analysis choice). It is not evidence about which. The set was chosen post hoc; with Study 1 in, nothing flags.",
+    "by": "maria",
+    "patterns": [
+     "excess-significance-across-studies",
+     "analytic-flexibility"
+    ]
+   }
+  }
+ ],
+ "methods": [
+  "exact-reproduction-from-deposit",
+  "published-table-vs-deposit-crosscheck",
+  "test-of-insufficient-variance",
+  "joint-power-excess-significance",
+  "synthetic-injected-effect-control",
+  "power-simulation"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "supplement",
+   "locator": "(the paper itself) Psychological Science 25(7):1345 (Rotman faculty PDF via Wayback, saved by Leonardo 2026-10-25)",
+   "status": "verified-usable",
+   "fetch_cmd": "browser download of http://web.archive.org/web/20240619161113/http://www-2.rotman.utoronto.ca/facbios/file/maglio_2014_spatial_orientation.pdf into $(python zoo-knowledge-base/tools/assets.py path paper-downloads/maglio2014-spatial-orientation-psychological-distance)/ (archive.org blocks this machine's curl as bot traffic)",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "Read tool on the PDF, all 9 pages",
+    "result": "Typeset version of record incl. Open Practices statement (osf.io/7rajd/)."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "raw-data",
+   "locator": "https://osf.io/6m2it/ osfstorage S1_Subway.xlsx .. S5_LA_Chicago.xlsx (one per study, 202/80/100/86/50/45 rows)",
+   "status": "verified-usable",
+   "bytes": 120000,
+   "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/6m2it/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/maglio2014-spatial-orientation-psychological-distance)/osf_6m2it\"",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "python zoo-knowledge-base/instance-papers/papers/maglio2014-spatial-orientation-psychological-distance/reanalysis/r01_reproduce.py \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/maglio2014-spatial-orientation-psychological-distance)/osf_6m2it/files/osfstorage\"",
+    "result": "All Ns, cells, Ms, SDs and test statistics reproduce (printed digit or within one data unit in 3a). Two printed values not what the data give: S3b target 'F < 1' (1.73-1.77); S4 p for r .0148 printed .02. Only analysed rows deposited; no record of exclusions or of studies not reported."
+   },
+   "datasheet": {
+    "composition": "one row per participant: condition column(s) + one rating (1-7) or minutes estimate; S4 adds familiarity. No ids, no timestamps, no demographics.",
+    "collection": "Field intercepts at Toronto/Vancouver sites by research assistants; stopping rule stated as a per-cell minimum.",
+    "caveats": "No timestamps -> optional stopping cannot be audited; materials component 2asq6 holds the questionnaires (.doc)."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "protocol",
+   "locator": "https://osf.io/2asq6/ (S1-S5 questionnaires .doc/.docx)",
+   "status": "not-checked",
+   "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/2asq6/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/maglio2014-spatial-orientation-psychological-distance)/osf_2asq6\""
+  }
+ ],
+ "relations": [
+  {
+   "type": "zoo:reanalysedBy",
+   "target": "maria2026-selection-and-reader-bias",
+   "why": "Item 6 of mark's blinded known-answer control of the reading protocol."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "pawel2020-probabilistic-forecasting-replication",
+   "why": "Same session: known-answer worlds for a detector before applying it (TIVA here, replication forecasts there)."
+  }
+ ],
+ "open_questions": [
+  "Unblinding (mark, known_answer_control): my call before unblinding -- all deposits reproduce; checked-type defects MINOR (S3b 'F < 1' false, S4 p rounding, S3b rank-fragile); unchecked-type: STRONG excess significance across the five cross-dimension tests (TIVA p = .008, calibrated).",
+  "The questionnaires in 2asq6 may show items or conditions not reported (a second DV would be the cheapest explanation of the TIVA flag). Not opened."
+ ]
+}

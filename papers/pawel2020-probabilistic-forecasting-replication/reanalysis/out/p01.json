@@ -1,0 +1,188 @@
+{
+ "Experimental Economics": {
+  "N": {
+   "observed": 11,
+   "expected": 15.0,
+   "BS": 0.271,
+   "BSnorm": -0.139,
+   "coverage": 0.833,
+   "spiegelhalter_z": 2.49,
+   "PIT_mean": 0.276,
+   "PIT_share_below_.1": 0.333,
+   "chi2_1df_p": 0.0105
+  },
+  "S": {
+   "observed": 11,
+   "expected": 13.6,
+   "BS": 0.226,
+   "BSnorm": 0.048,
+   "coverage": 0.833,
+   "spiegelhalter_z": 1.15,
+   "PIT_mean": 0.343,
+   "PIT_share_below_.1": 0.333,
+   "chi2_1df_p": 0.1483
+  },
+  "H": {
+   "observed": 11,
+   "expected": 14.3,
+   "BS": 0.262,
+   "BSnorm": -0.104,
+   "coverage": 0.944,
+   "spiegelhalter_z": 2.03,
+   "PIT_mean": 0.29,
+   "PIT_share_below_.1": 0.278,
+   "chi2_1df_p": 0.0524
+  },
+  "SH": {
+   "observed": 11,
+   "expected": 12.4,
+   "BS": 0.227,
+   "BSnorm": 0.046,
+   "coverage": 0.889,
+   "spiegelhalter_z": 0.79,
+   "PIT_mean": 0.378,
+   "PIT_share_below_.1": 0.222,
+   "chi2_1df_p": 0.4708
+  },
+  "PM_BS": 0.243
+ },
+ "Experimental Philosophy": {
+  "N": {
+   "observed": 23,
+   "expected": 27.8,
+   "BS": 0.193,
+   "BSnorm": -0.007,
+   "coverage": 0.839,
+   "spiegelhalter_z": 3.31,
+   "PIT_mean": 0.402,
+   "PIT_share_below_.1": 0.226,
+   "chi2_1df_p": 0.0024
+  },
+  "S": {
+   "observed": 23,
+   "expected": 26.2,
+   "BS": 0.173,
+   "BSnorm": 0.097,
+   "coverage": 0.839,
+   "spiegelhalter_z": 2.07,
+   "PIT_mean": 0.461,
+   "PIT_share_below_.1": 0.194,
+   "chi2_1df_p": 0.077
+  },
+  "H": {
+   "observed": 23,
+   "expected": 26.5,
+   "BS": 0.17,
+   "BSnorm": 0.11,
+   "coverage": 0.935,
+   "spiegelhalter_z": 1.6,
+   "PIT_mean": 0.425,
+   "PIT_share_below_.1": 0.097,
+   "chi2_1df_p": 0.0616
+  },
+  "SH": {
+   "observed": 23,
+   "expected": 24.1,
+   "BS": 0.148,
+   "BSnorm": 0.229,
+   "coverage": 0.903,
+   "spiegelhalter_z": 0.21,
+   "PIT_mean": 0.511,
+   "PIT_share_below_.1": 0.097,
+   "chi2_1df_p": 0.6091
+  }
+ },
+ "Psychology": {
+  "N": {
+   "observed": 24,
+   "expected": 55.4,
+   "BS": 0.394,
+   "BSnorm": -0.784,
+   "coverage": 0.699,
+   "spiegelhalter_z": 10.0,
+   "PIT_mean": 0.214,
+   "PIT_share_below_.1": 0.521,
+   "chi2_1df_p": 0.0
+  },
+  "S": {
+   "observed": 24,
+   "expected": 49.2,
+   "BS": 0.335,
+   "BSnorm": -0.518,
+   "coverage": 0.753,
+   "spiegelhalter_z": 7.81,
+   "PIT_mean": 0.266,
+   "PIT_share_below_.1": 0.425,
+   "chi2_1df_p": 0.0
+  },
+  "H": {
+   "observed": 24,
+   "expected": 53.5,
+   "BS": 0.363,
+   "BSnorm": -0.644,
+   "coverage": 0.808,
+   "spiegelhalter_z": 8.5,
+   "PIT_mean": 0.231,
+   "PIT_share_below_.1": 0.411,
+   "chi2_1df_p": 0.0
+  },
+  "SH": {
+   "observed": 24,
+   "expected": 45.9,
+   "BS": 0.289,
+   "BSnorm": -0.308,
+   "coverage": 0.877,
+   "spiegelhalter_z": 5.17,
+   "PIT_mean": 0.301,
+   "PIT_share_below_.1": 0.301,
+   "chi2_1df_p": 0.0
+  }
+ },
+ "Social Sciences": {
+  "N": {
+   "observed": 13,
+   "expected": 19.9,
+   "BS": 0.346,
+   "BSnorm": -0.468,
+   "coverage": 0.667,
+   "spiegelhalter_z": 7.2,
+   "PIT_mean": 0.154,
+   "PIT_share_below_.1": 0.571,
+   "chi2_1df_p": 0.0
+  },
+  "S": {
+   "observed": 13,
+   "expected": 19.2,
+   "BS": 0.324,
+   "BSnorm": -0.374,
+   "coverage": 0.762,
+   "spiegelhalter_z": 5.46,
+   "PIT_mean": 0.198,
+   "PIT_share_below_.1": 0.429,
+   "chi2_1df_p": 0.0
+  },
+  "H": {
+   "observed": 13,
+   "expected": 18.9,
+   "BS": 0.31,
+   "BSnorm": -0.316,
+   "coverage": 0.905,
+   "spiegelhalter_z": 4.89,
+   "PIT_mean": 0.188,
+   "PIT_share_below_.1": 0.381,
+   "chi2_1df_p": 0.0
+  },
+  "SH": {
+   "observed": 13,
+   "expected": 17.6,
+   "BS": 0.272,
+   "BSnorm": -0.155,
+   "coverage": 0.952,
+   "spiegelhalter_z": 3.42,
+   "PIT_mean": 0.256,
+   "PIT_share_below_.1": 0.333,
+   "chi2_1df_p": 0.0041
+  },
+  "PM_BS": 0.114
+ }
+}

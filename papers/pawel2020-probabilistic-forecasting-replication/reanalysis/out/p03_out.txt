@@ -1,0 +1,24 @@
+Experimental Economics {'n_pairs': 18, 'n_orig_significant': 16, 'g_mass_|theta|<.05': 0.0, 'g_median_theta_r': 0.291, 'g_mean_theta_r': 0.325, 'mean_posterior_theta_over_estimate': 0.64, 'SH_mean_shrinkage_s': 0.782}
+    N {'n': 18, 'observed': 11, 'expected': 15.0, 'BS': 0.2707, 'BSnorm': -0.139, 'spiegelhalter_z': 2.49, 'AUC': 0.727, 'log_score': 0.7691}
+    SH {'n': 18, 'observed': 11, 'expected': 12.4, 'BS': 0.2268, 'BSnorm': 0.046, 'spiegelhalter_z': 0.79, 'AUC': 0.649, 'log_score': 0.6551}
+    SA0 {'n': 18, 'observed': 11, 'expected': 10.4, 'BS': 0.2, 'BSnorm': 0.158, 'spiegelhalter_z': 0.12, 'AUC': 0.714, 'log_score': 0.5639}
+    SA08 {'n': 18, 'observed': 11, 'expected': 10.0, 'BS': 0.2064, 'BSnorm': 0.131, 'spiegelhalter_z': -0.17, 'AUC': 0.714, 'log_score': 0.5872}
+    SA15 {'n': 18, 'observed': 11, 'expected': 9.7, 'BS': 0.2095, 'BSnorm': 0.118, 'spiegelhalter_z': -0.46, 'AUC': 0.701, 'log_score': 0.5994}
+Experimental Philosophy {'n_pairs': 31, 'n_orig_significant': 30, 'g_mass_|theta|<.05': 0.0, 'g_median_theta_r': 0.345, 'g_mean_theta_r': 0.333, 'mean_posterior_theta_over_estimate': 0.882, 'SH_mean_shrinkage_s': 0.814}
+    N {'n': 31, 'observed': 23, 'expected': 27.8, 'BS': 0.1927, 'BSnorm': -0.007, 'spiegelhalter_z': 3.31, 'AUC': 0.75, 'log_score': 0.5767}
+    SH {'n': 31, 'observed': 23, 'expected': 24.1, 'BS': 0.1475, 'BSnorm': 0.229, 'spiegelhalter_z': 0.21, 'AUC': 0.804, 'log_score': 0.4332}
+    SA0 {'n': 31, 'observed': 23, 'expected': 27.8, 'BS': 0.2747, 'BSnorm': -0.435, 'spiegelhalter_z': 6.86, 'AUC': 0.451, 'log_score': 1.0502}
+    SA08 {'n': 31, 'observed': 23, 'expected': 25.6, 'BS': 0.2326, 'BSnorm': -0.215, 'spiegelhalter_z': 2.86, 'AUC': 0.538, 'log_score': 0.6684}
+    SA15 {'n': 31, 'observed': 23, 'expected': 23.0, 'BS': 0.2071, 'BSnorm': -0.082, 'spiegelhalter_z': 0.91, 'AUC': 0.625, 'log_score': 0.5925}
+Psychology {'n_pairs': 73, 'n_orig_significant': 65, 'g_mass_|theta|<.05': 0.0, 'g_median_theta_r': 0.217, 'g_mean_theta_r': 0.315, 'mean_posterior_theta_over_estimate': 0.698, 'SH_mean_shrinkage_s': 0.775}
+    N {'n': 73, 'observed': 24, 'expected': 55.4, 'BS': 0.3936, 'BSnorm': -0.784, 'spiegelhalter_z': 10.0, 'AUC': 0.689, 'log_score': 1.233}
+    SH {'n': 73, 'observed': 24, 'expected': 45.9, 'BS': 0.2887, 'BSnorm': -0.308, 'spiegelhalter_z': 5.17, 'AUC': 0.7, 'log_score': 0.8473}
+    SA0 {'n': 73, 'observed': 24, 'expected': 42.1, 'BS': 0.3181, 'BSnorm': -0.442, 'spiegelhalter_z': 7.12, 'AUC': 0.583, 'log_score': 1.218}
+    SA08 {'n': 73, 'observed': 24, 'expected': 40.1, 'BS': 0.2785, 'BSnorm': -0.262, 'spiegelhalter_z': 4.21, 'AUC': 0.609, 'log_score': 0.8317}
+    SA15 {'n': 73, 'observed': 24, 'expected': 39.0, 'BS': 0.258, 'BSnorm': -0.169, 'spiegelhalter_z': 2.65, 'AUC': 0.624, 'log_score': 0.7285}
+Social Sciences {'n_pairs': 21, 'n_orig_significant': 21, 'g_mass_|theta|<.05': 0.0, 'g_median_theta_r': 0.139, 'g_mean_theta_r': 0.389, 'mean_posterior_theta_over_estimate': 0.649, 'SH_mean_shrinkage_s': 0.814}
+    N {'n': 21, 'observed': 13, 'expected': 19.9, 'BS': 0.3462, 'BSnorm': -0.468, 'spiegelhalter_z': 7.2, 'AUC': 0.51, 'log_score': 1.3493}
+    SH {'n': 21, 'observed': 13, 'expected': 17.6, 'BS': 0.2725, 'BSnorm': -0.155, 'spiegelhalter_z': 3.42, 'AUC': 0.625, 'log_score': 0.9102}
+    SA0 {'n': 21, 'observed': 13, 'expected': 16.8, 'BS': 0.3641, 'BSnorm': -0.544, 'spiegelhalter_z': 6.69, 'AUC': 0.385, 'log_score': 1.5976}
+    SA08 {'n': 21, 'observed': 13, 'expected': 15.2, 'BS': 0.2722, 'BSnorm': -0.154, 'spiegelhalter_z': 3.25, 'AUC': 0.5, 'log_score': 0.7985}
+    SA15 {'n': 21, 'observed': 13, 'expected': 14.5, 'BS': 0.241, 'BSnorm': -0.022, 'spiegelhalter_z': 1.99, 'AUC': 0.529, 'log_score': 0.7133}

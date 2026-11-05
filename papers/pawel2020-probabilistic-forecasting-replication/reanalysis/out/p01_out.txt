@@ -1,0 +1,19 @@
+project                  m    obs   exp pub/re     BS pub/re   cov pub/re  spz
+Experimental Economics   N     11  15.0/ 15.0 0.271/0.271 0.83/0.83  2.49
+Experimental Economics   S     11  13.6/ 13.6 0.226/0.226 0.83/0.83  1.15
+Experimental Economics   H     11  14.3/ 14.3 0.262/0.262 0.94/0.94  2.03
+Experimental Economics   SH    11  12.4/ 12.4 0.227/0.227 0.89/0.89  0.79
+Experimental Philosophy  N     23  27.8/ 27.8 0.193/0.193 0.84/0.84  3.31
+Experimental Philosophy  S     23  26.2/ 26.2 0.173/0.173 0.84/0.84  2.07
+Experimental Philosophy  H     23  26.5/ 26.5 0.170/0.170 0.94/0.94  1.6
+Experimental Philosophy  SH    23  24.1/ 24.1 0.148/0.148 0.90/0.90  0.21
+Psychology               N     24  55.4/ 55.4 0.394/0.394 0.70/0.70  10.0
+Psychology               S     24  49.2/ 49.2 0.335/0.335 0.75/0.75  7.81
+Psychology               H     24  53.5/ 53.5 0.363/0.363 0.81/0.81  8.5
+Psychology               SH    24  45.9/ 45.9 0.289/0.289 0.88/0.88  5.17
+Social Sciences          N     13  19.9/ 19.9 0.346/0.346 0.67/0.67  7.2
+Social Sciences          S     13  19.2/ 19.2 0.324/0.324 0.76/0.76  5.46
+Social Sciences          H     13  18.9/ 18.9 0.310/0.310 0.90/0.91  4.89
+Social Sciences          SH    13  17.6/ 17.6 0.272/0.272 0.95/0.95  3.42
+Experimental Economics PM Brier 0.243 (paper .243 / .114)
+Social Sciences PM Brier 0.114 (paper .243 / .114)
