@@ -1,5 +1,5 @@
 {
- "schema_version": "1.6",
+ "schema_version": "1.7",
  "id": "roseler2024-replication-database",
  "title": "The Replication Database: Documenting the Replicability of Psychological Science",
  "authors": [
@@ -216,5 +216,35 @@
   "Do the closeness_* variables (coded for a subset) predict success where |t_o| and n_r do not?",
   "Why is the replication-probability forecast anti-correlated (AUC .476) with the database's own 'successful' verdict? Candidate: verdict criteria differ by source (Many Labs vs individual submissions).",
   "Blinding: f00 drops rows for mark's 8 papers; remove after unblinding and rerun f01-f04."
+ ],
+ "instrument_checks": [
+  {
+   "instrument": "Pawel-Held SH replication forecast (tau .08)",
+   "world": "outcomes drawn from the SH model itself (Bernoulli(p_SH)) on FReD's real inputs",
+   "design": "1,082 FReD pairs",
+   "statistic": "AUC ceiling if the model were true",
+   "value": 0.839,
+   "interval": [
+    0.819,
+    0.858
+   ],
+   "n_sims": 500,
+   "verdict": "informative",
+   "source": "reanalysis/out/f02.json"
+  },
+  {
+   "instrument": "log(n_r / n_o) as a predictor of replication success",
+   "world": "outcomes drawn from the SH model on FReD's inputs",
+   "design": "1,082 FReD pairs",
+   "statistic": "AUC of log c alone (real: .472)",
+   "value": 0.664,
+   "interval": [
+    0.637,
+    0.689
+   ],
+   "n_sims": 500,
+   "verdict": "informative",
+   "source": "reanalysis/out/f04.json"
+  }
  ]
 }

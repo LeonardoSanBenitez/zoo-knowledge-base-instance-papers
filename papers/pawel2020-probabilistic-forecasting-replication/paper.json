@@ -1,5 +1,5 @@
 {
- "schema_version": "1.6",
+ "schema_version": "1.7",
  "id": "pawel2020-probabilistic-forecasting-replication",
  "title": "Probabilistic forecasting of replication studies",
  "authors": [
@@ -362,5 +362,66 @@
   "FReD has closeness_* codings (instructions, measures, stimuli, participants...) -- do they carry the signal that |t_o| and n_r do not? That is the direct test of the heterogeneity explanation (c6). Not yet run.",
   "Reproduce Roeseler (2023) 'Predicting replication rates with z-curve' (osf.io/ewb2t) on the same blinded FReD copy: is z-curve's ERR calibrated where SH is not?",
   "After mark unblinds: remove the f00 blinding filter and check that no conclusion changes."
+ ],
+ "instrument_checks": [
+  {
+   "instrument": "Pawel-Held SH replication forecast (tau .08)",
+   "world": "half null / half r = .3, honest selection on |t_o| > 1.96, no heterogeneity",
+   "design": "73 pairs per project at RPP's (n_o, n_r), 100 projects",
+   "statistic": "expected minus observed significant replications per 73",
+   "value": -0.7,
+   "n_sims": 100,
+   "verdict": "calibrated",
+   "source": "reanalysis/out/p02.json"
+  },
+  {
+   "instrument": "Pawel-Held SH replication forecast (tau .08)",
+   "world": "80% null / 20% r = .3, honest selection",
+   "design": "73 pairs at RPP's design, 100 projects",
+   "statistic": "expected minus observed per 73",
+   "value": 5.5,
+   "n_sims": 100,
+   "verdict": "miscalibrated",
+   "source": "reanalysis/out/p02.json"
+  },
+  {
+   "instrument": "Pawel-Held SH replication forecast (tau .08)",
+   "world": "no selection, r ~ N(.2, .15)",
+   "design": "73 pairs at RPP's design, 100 projects",
+   "statistic": "expected minus observed per 73",
+   "value": -6.3,
+   "n_sims": 100,
+   "verdict": "miscalibrated",
+   "source": "reanalysis/out/p02.json"
+  },
+  {
+   "instrument": "Pawel-Held N (naive) replication forecast",
+   "world": "half null / half r = .3, honest selection",
+   "design": "73 pairs at RPP's design, 100 projects",
+   "statistic": "expected minus observed per 73",
+   "value": 7.5,
+   "n_sims": 100,
+   "verdict": "miscalibrated",
+   "source": "reanalysis/out/p02.json"
+  },
+  {
+   "instrument": "truncated-npmle-selection-model (SA forecast, tau .08)",
+   "world": "half null / half r = .3, honest selection",
+   "design": "73 pairs at RPP's design, 100 projects",
+   "statistic": "mean Brier score (SH: .1665)",
+   "value": 0.1475,
+   "n_sims": 100,
+   "verdict": "informative",
+   "source": "reanalysis/out/p02.json"
+  },
+  {
+   "instrument": "truncated-npmle-selection-model (SA forecast, tau .08)",
+   "world": "real RPP pairs (not a known world): out-of-sample behaviour",
+   "design": "73 RPP pairs",
+   "statistic": "AUC (SH: .700)",
+   "value": 0.609,
+   "verdict": "uninformative",
+   "source": "reanalysis/out/p03.json"
+  }
  ]
 }

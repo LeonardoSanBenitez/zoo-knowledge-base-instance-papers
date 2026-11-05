@@ -1,5 +1,5 @@
 {
- "schema_version": "1.6",
+ "schema_version": "1.7",
  "id": "coronadomontoya2016-mindfulness-positive-results",
  "title": "Reporting of Positive Results in Randomized Controlled Trials of Mindfulness-Based Mental Health Interventions",
  "authors": [
@@ -212,5 +212,27 @@
  "open_questions": [
   "Code k (mental-health outcomes per abstract) for the 124 trials from their abstracts -- the one number that would turn c2's sweep into an estimate.",
   "Re-run with the 14 within-group-only positives identified (they are named in the paper's data only implicitly)."
+ ],
+ "instrument_checks": [
+  {
+   "instrument": "expected-positive-trials-from-single-test-power (excess significance count)",
+   "world": "NO reporting bias; d = .55; k = 4 equicorrelated outcomes (rho .5); positive = any of k significant",
+   "design": "124 MBT trials at their published per-arm n",
+   "statistic": "expected positive trials (paper's single-test expectation: 65.7)",
+   "value": 96.4,
+   "n_sims": 4000,
+   "verdict": "artifact",
+   "source": "reanalysis/out/c01.json"
+  },
+  {
+   "instrument": "expected-positive-trials-from-single-test-power (excess significance count)",
+   "world": "NO reporting bias; d = 0; k = 4 (rho .5)",
+   "design": "124 MBT trials at their published n",
+   "statistic": "expected positive trials",
+   "value": 9.6,
+   "n_sims": 4000,
+   "verdict": "informative",
+   "source": "reanalysis/out/c01.json"
+  }
  ]
 }

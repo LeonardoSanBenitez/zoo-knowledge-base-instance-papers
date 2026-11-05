@@ -26,7 +26,8 @@
     "1.3",
     "1.4",
     "1.5",
-    "1.6"
+    "1.6",
+    "1.7"
    ],
    "description": "Revision of zoo-paper-record this record was written against. 1.1 adds OPTIONAL fields only, so every 1.0 record is also a conforming 1.1 record and there is no migration. See VERSIONING.md: no bulk migration, ever."
   },
@@ -575,6 +576,71 @@
     "type": "string"
    },
    "description": "Phrases a future agent would actually type when it needs this, in its own words, months later, not knowing this paper exists. Write questions, not keywords."
+  },
+  "instrument_checks": {
+   "type": "array",
+   "description": "Added 1.7 (2026-11-05). Operating characteristics of a detector, estimator, forecaster or test, MEASURED in a world where the answer is known (simulated, permuted, or a deliberately constructed input), before or while it is applied in this record. One entry per (instrument, world, statistic). Exists because these controls are the most reusable part of a reanalysis -- the next reader choosing a detector wants its measured behaviour at a given design -- and before 1.7 they lived in quantity names such as 'tiva_flag_rate_null_file_drawer_world', which no query can ask about. `kb.py instruments` lists them across the corpus.",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "instrument",
+     "world",
+     "statistic",
+     "value",
+     "source"
+    ],
+    "properties": {
+     "instrument": {
+      "type": "string",
+      "description": "What was checked: a method slug from `methods` (the vocabulary), or a named procedure ('Pawel-Held SH forecast')."
+     },
+     "world": {
+      "type": "string",
+      "description": "The known truth fed to it, in one line: 'null effect + file drawer (publish if p < .06)', 'z permuted across rows', 'outcomes drawn from the model itself'."
+     },
+     "design": {
+      "type": "string",
+      "description": "The sample design the check was run at (k studies, ns, sample size per draw). Operating characteristics do not transfer across designs."
+     },
+     "statistic": {
+      "type": "string",
+      "description": "What was measured: 'flag rate at p < .05', 'r(estimate, truth) across draws', 'AUC', 'expected minus observed'."
+     },
+     "value": {
+      "type": "number"
+     },
+     "interval": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Optional [low, high] (simulation quantiles or CI)."
+     },
+     "n_sims": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "verdict": {
+      "enum": [
+       "calibrated",
+       "miscalibrated",
+       "powered",
+       "underpowered",
+       "artifact",
+       "informative",
+       "uninformative"
+      ],
+      "description": "What the check says about the instrument in this world. 'artifact' = the instrument returns signal where the world has none."
+     },
+     "source": {
+      "type": "string",
+      "description": "File inside the record folder holding the number."
+     }
+    }
+   }
   }
  },
  "$comment": "zoo-paper-record/1.2"

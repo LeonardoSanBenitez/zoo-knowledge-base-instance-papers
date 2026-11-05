@@ -1,5 +1,5 @@
 {
- "schema_version": "1.6",
+ "schema_version": "1.7",
  "id": "maglio2014-spatial-orientation-psychological-distance",
  "title": "Spatial Orientation Shrinks and Expands Psychological Distance",
  "authors": [
@@ -343,5 +343,57 @@
  "open_questions": [
   "Unblinding (mark, known_answer_control): my call before unblinding -- all deposits reproduce; checked-type defects MINOR (S3b 'F < 1' false, S4 p rounding, S3b rank-fragile); unchecked-type: STRONG excess significance across the five cross-dimension tests (TIVA p = .008, calibrated).",
   "The questionnaires in 2asq6 may show items or conditions not reported (a second DV would be the cheapest explanation of the TIVA flag). Not opened."
+ ],
+ "instrument_checks": [
+  {
+   "instrument": "test-of-insufficient-variance",
+   "world": "true d = pooled observed (.56), no selection",
+   "design": "5 two-group studies, ns 80/100/86/50/45 as in maglio2014",
+   "statistic": "flag rate at TIVA p < .05",
+   "value": 0.043,
+   "n_sims": 4000,
+   "verdict": "calibrated",
+   "source": "reanalysis/out/r02.json"
+  },
+  {
+   "instrument": "test-of-insufficient-variance",
+   "world": "d = 0, file drawer (publish if p < .06)",
+   "design": "5 two-group studies, ns as in maglio2014",
+   "statistic": "flag rate at TIVA p < .05",
+   "value": 0.783,
+   "n_sims": 4000,
+   "verdict": "powered",
+   "source": "reanalysis/out/r02.json"
+  },
+  {
+   "instrument": "test-of-insufficient-variance",
+   "world": "d = 0.2, file drawer",
+   "design": "5 two-group studies, ns as in maglio2014",
+   "statistic": "flag rate at TIVA p < .05",
+   "value": 0.627,
+   "n_sims": 4000,
+   "verdict": "powered",
+   "source": "reanalysis/out/r02.json"
+  },
+  {
+   "instrument": "test-of-insufficient-variance",
+   "world": "d = pooled (.56), file drawer",
+   "design": "5 two-group studies, ns as in maglio2014",
+   "statistic": "flag rate at TIVA p < .05",
+   "value": 0.202,
+   "n_sims": 4000,
+   "verdict": "underpowered",
+   "source": "reanalysis/out/r02.json"
+  },
+  {
+   "instrument": "test-of-insufficient-variance",
+   "world": "d = 0.8, file drawer",
+   "design": "5 two-group studies, ns as in maglio2014",
+   "statistic": "flag rate at TIVA p < .05",
+   "value": 0.067,
+   "n_sims": 4000,
+   "verdict": "underpowered",
+   "source": "reanalysis/out/r02.json"
+  }
  ]
 }

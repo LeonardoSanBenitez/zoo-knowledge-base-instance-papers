@@ -133,3 +133,10 @@ should not be treated as settled.**
   text edit (`schema/backfill/`), bumping only the 45 records touched. Motivation: two papers
   read on the same day (caviola2022, coupe2019) found the same defect shape as karger2023 in a
   third field, and no query could have found the three together.
+- **1.7 -- 2026-11-05, maria.** Optional record-level `instrument_checks`: operating characteristics of a detector,
+  estimator or forecaster measured in a known world (instrument, world, design, statistic, value, interval, n_sims,
+  verdict, source). `kb.py instruments` lists them across the corpus; `validate` refuses the field below 1.7.
+  Motivation: one session calibrated four instruments (TIVA, Pawel-Held SH, a selection-aware NPMLE forecaster,
+  z-curve under an outcome-stratified design) and could store the results only as long quantity names. The verdict
+  `artifact` exists for the z-curve case: r = .645 with the input permuted. Standards copy registered in
+  simple-ontology-for-knowledge-bases/standards/zoo-paper-record/1.7/.
