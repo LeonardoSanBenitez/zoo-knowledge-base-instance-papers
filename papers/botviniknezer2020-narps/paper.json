@@ -1,5 +1,5 @@
 {
- "schema_version": "1.6",
+ "schema_version": "1.7",
  "id": "botviniknezer2020-narps",
  "title": "Variability in the analysis of a single neuroimaging dataset by many teams",
  "authors": [
@@ -29,7 +29,12 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
- "selection": {"class": "blind", "evidence": "NOTES: 'an out-of-domain test of something this corpus already claims' (a test of MY claim, predictions preregistered in SESSION_2026-09-09_plan.md; no suspicion about the paper).", "recorded": "retrospective", "by": "maria, 2026-10-22"},
+ "selection": {
+  "class": "blind",
+  "evidence": "NOTES: 'an out-of-domain test of something this corpus already claims' (a test of MY claim, predictions preregistered in SESSION_2026-09-09_plan.md; no suspicion about the paper).",
+  "recorded": "retrospective",
+  "by": "maria, 2026-10-22"
+ },
  "cost": {
   "tool_calls": 78,
   "bytes_downloaded": 61000000,
@@ -274,7 +279,10 @@
     "a9"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope", "patterns": ["nonsignificance-read-as-absence"],
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "nonsignificance-read-as-absence"
+    ],
     "why": "The scalar out-of-fold result reproduces the CRI shape in a third field. But c6 shows the same choices DO carry information about the map when tested pairwise, so 'not at all' here means 'not recoverable by a linear model of the level at n = 70', not 'no association'.",
     "by": "maria 2026-09-09"
    }
@@ -662,7 +670,10 @@
     "a9"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope", "patterns": ["small-sample-overreach"],
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "small-sample-overreach"
+    ],
     "why": "The decomposition is arithmetic and solid. The claim that the markets are 'worse than a constant' is a statement about MAE at n = 9 and the Wilcoxon does not reach significance; it is reported as a baseline comparison, not as a test. An alternative reading cannot be excluded at n = 9: traders may have been pricing whether the effect is real rather than what fraction of pipelines would say so (prices correlate +0.78 with the fraction and +0.66, p = 0.054, with the study's own meta-analytic verdict).",
     "by": "maria 2026-09-09"
    }
@@ -936,5 +947,46 @@
   "reporting standards do not predict the conclusion",
   "unpaywall says open access but the link is a login wall",
   "published table columns swapped relative to the deposited data"
+ ],
+ "instrument_checks": [
+  {
+   "instrument": "partial-mantel-test",
+   "world": "zero injected signal",
+   "design": "NARPS 64 teams, 300 sims (a11)",
+   "statistic": "false-positive rate at nominal .05",
+   "value": 0.07,
+   "n_sims": 300,
+   "verdict": "calibrated",
+   "source": "reanalysis/a11_mantel_power.py"
+  },
+  {
+   "instrument": "partial-mantel-test",
+   "world": "one-dimensional injected signal",
+   "design": "NARPS 64 teams",
+   "statistic": "Mantel rho at 80% power",
+   "value": 0.228,
+   "n_sims": 300,
+   "verdict": "powered",
+   "source": "reanalysis/a11_mantel_power.py"
+  },
+  {
+   "instrument": "partial-mantel-test",
+   "world": "diffuse multi-directional injected signal at a strength where the 1-D version has 99% power",
+   "design": "NARPS 64 teams",
+   "statistic": "rho returned (power 14%)",
+   "value": 0.038,
+   "n_sims": 300,
+   "verdict": "underpowered",
+   "source": "reanalysis/a11_mantel_power.py"
+  },
+  {
+   "instrument": "many-analysts agreement headline (NARPS statistic)",
+   "world": "every hypothesis column permuted independently (no shared structure)",
+   "design": "70 teams (a1b)",
+   "statistic": "headline statistic returned",
+   "value": 0.2,
+   "verdict": "artifact",
+   "source": "reanalysis/a1b_icc_and_dissent.py"
+  }
  ]
 }
