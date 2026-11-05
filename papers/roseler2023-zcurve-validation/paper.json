@@ -1,0 +1,260 @@
+{
+ "schema_version": "1.7",
+ "id": "roseler2023-zcurve-validation",
+ "title": "Predicting Replication Rates with Z-Curve: A Brief Exploratory Validation Study Using the Replication Database",
+ "authors": [
+  "Lukas Roeseler"
+ ],
+ "year": 2023,
+ "venue": "Preprint (PsyArXiv/OSF, submitted to Meta-Psychology), version 2023-10-24",
+ "area": [
+  "replicability-and-selective-reporting"
+ ],
+ "identifiers": {
+  "doi": "10.31222/osf.io/ewb2t"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "chain",
+  "evidence": "Reached 2026-11-05 from the FReD data paper (it lists this preprint as one of two existing uses of the database). Ships code + data (osf k4d6w). Prior suspicion stated before running: the stratified-on-outcome sampling design forces variance in the replication rate, so a high r may be manufactured by the design. (The opened-log line was written after K1/K2 had run; the suspicion itself was written in-session before z01 was launched.)",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 16,
+  "bytes_downloaded": 9300000,
+  "compute_notes": "Preprint PDF (16 pp, all read). OSF k4d6w: R script, red data CSV (1,072 usable rows), results CSVs, figures -- 13 files, checksums verified. Docker image zoo-r-zcurve:4.4.1 (zoo-r-psych:4.4.1 + CRAN zcurve, openxlsx). z01: reproduction + K1-K4, 1,000 samples each (~45 min wall-clock); z02: fixed-n and multilevel controls, 600 samples each; z03: permutation null of r.",
+  "session": "2026-11-05 maria"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-05",
+  "verified": "2026-11-05",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "does z-curve predict replication rates",
+  "validating a replicability estimator with a replication database",
+  "expected replication rate ERR vs actual replication rate",
+  "stratified sampling on the outcome inflates correlation",
+  "estimator correlates with truth across constructed samples",
+  "z-curve 2.0 validation"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Across 10,000 samples drawn from FReD with target replication rates uniform on (0,1), z-curve's ERR correlates with the actual replication rate r = .945 (abstract: .933) and EDR r = .881; ERR is compressed toward the mean (SD .13 vs .25) and a linear recalibration RR = 1.850 ERR - .573 (R2 .893) predicts RR within about +-16%.",
+   "scope": "1,072 entries from the 2023-10-02 FReD version; each sample = 30%·P of successes + 30%·(1-P) of failures; z = |r| / sqrt((1-r^2)/(n-2)); RR = mean of significant_replication.",
+   "quantities": [
+    {
+     "name": "zcurve_err_rr_correlation_stratified_design",
+     "value": 0.942,
+     "unit": "Pearson r",
+     "n": 1000,
+     "baseline": "paper .945 (10,000 samples); slope 1.79 (1.85), intercept -.547 (-.573), M RR .431, M ERR .546",
+     "source": "reanalysis/out/z01_out.txt"
+    },
+    {
+     "name": "zcurve_sample_size_per_draw_median",
+     "value": 150,
+     "unit": "rows",
+     "n": 1000,
+     "baseline": "paper text says 'samples from 322 studies'; the code's sampler gives 127-195",
+     "source": "reanalysis/out/z01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a2",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "refuted",
+    "why": "Reproduces, and does not mean what it is taken to mean. With the originals' z PERMUTED across rows (no z-outcome link at all) the same design returns r = .645; with z-curve replaced by the share of z > 2.8 it returns .945, identical to z-curve; at fixed n a single random permutation already gives r = -.30. Samples are mixtures of two fixed pools in proportion P, so any statistic whose pool means differ tracks P with little noise. The r is a property of the design, not evidence of the estimator's validity.",
+    "by": "maria",
+    "patterns": [
+     "validation-sample-constructed-from-the-outcome",
+     "circular-analysis",
+     "null-model-misspecified"
+    ]
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "z-curve is 'a valid and economic method to compare replicability estimates for large sets of studies'; a linear transformation of ERR 'could lead to a precise and valid estimator of replication rate'.",
+   "scope": "Conclusion section; the author notes the analysis is exploratory and the linear model was not tested on new data.",
+   "quantities": [
+    {
+     "name": "zcurve_err_minus_rr_natural_subsamples",
+     "value": 0.127,
+     "unit": "ERR - RR",
+     "n": 1000,
+     "baseline": "natural random 30% subsamples: M ERR .520 vs M RR .393; r(ERR, RR) .369 with SD RR only .025",
+     "source": "reanalysis/out/z01_out.txt"
+    },
+    {
+     "name": "zcurve_mean_abs_err_minus_rr_across_source_projects",
+     "value": 0.271,
+     "unit": "abs(ERR - RR)",
+     "n": 6,
+     "baseline": "CORE .66/.76, ML1 .59/.50, ML3 .08/.44, OSC 2015 .33/.64, RRR1 .24/.57, individual submissions .14/.57 (RR/ERR); Pearson .579, Spearman .600, mean signed ERR - RR +.242 (z02 K4)",
+     "source": "reanalysis/out/z02_out.txt"
+    },
+    {
+     "name": "zcurve_err_rr_r_one_row_per_original_fixed_n60",
+     "value": 0.684,
+     "unit": "Pearson r",
+     "n": 600,
+     "baseline": "paper design with one random row per original (multilevel structure removed), fixed n = 60",
+     "source": "reanalysis/out/z02_out.txt"
+    }
+   ],
+   "evidence": [
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "not-identifiable",
+    "why": "The test that would support comparing literatures is ERR vs RR across REAL literatures. Across the six source projects in the same deposit ERR ranks them roughly (Spearman .60, Pearson .58, n = 6) but misses by .27 on average (signed +.24) and overestimates five of six. The recalibration slope is fitted to an artificial two-pool mixture; its value is set by the pools, so it has no reason to transfer.",
+    "by": "maria",
+    "patterns": [
+     "population-bound-effect",
+     "small-sample-overreach"
+    ]
+   }
+  },
+  {
+   "id": "c3",
+   "origin": "reader",
+   "statement": "At the row level, the originals' z in this deposit does discriminate replicated from failed findings: AUC .737 for significant_replication (.720 for the success code), higher than the .625 found in the 2026 FReD export with z computed from reported p (roseler2024 #c3); part of the gap is that z = r/se here grows with n.",
+   "scope": "1,004 rows with computable z; not clustered by original.",
+   "quantities": [
+    {
+     "name": "zcurve_deposit_row_auc_z_for_significant_replication",
+     "value": 0.737,
+     "unit": "AUC",
+     "n": 1004,
+     "baseline": "success code: .720",
+     "source": "reanalysis/out/z01_out.txt"
+    }
+   ],
+   "evidence": [
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Computed directly. This is the honest content of the paper's result: a row-level association, which the design converts into r near 1.",
+    "by": "maria"
+   }
+  }
+ ],
+ "methods": [
+  "exact-reproduction-from-deposit",
+  "permutation-null",
+  "synthetic-injected-effect-control",
+  "trivial-statistic-benchmark",
+  "natural-subsample-validation"
+ ],
+ "instrument_checks": [
+  {
+   "instrument": "z-curve ERR validated by outcome-stratified sampling (r with realised RR)",
+   "world": "originals' z permuted across rows (no information about outcomes)",
+   "design": "paper's sampler (30%·P successes + 30%·(1-P) failures), 1,000 samples",
+   "statistic": "r(ERR, RR)",
+   "value": 0.645,
+   "n_sims": 1000,
+   "verdict": "artifact",
+   "source": "reanalysis/out/z01_out.txt"
+  },
+  {
+   "instrument": "z-curve ERR validated by outcome-stratified sampling (r with realised RR)",
+   "world": "z-curve replaced by a trivial statistic: share of z > 2.8",
+   "design": "paper's sampler, 1,000 samples",
+   "statistic": "r(statistic, RR)",
+   "value": 0.945,
+   "n_sims": 1000,
+   "verdict": "artifact",
+   "source": "reanalysis/out/z01_out.txt"
+  },
+  {
+   "instrument": "z-curve ERR validated by outcome-stratified sampling (r with realised RR)",
+   "world": "z permuted once, sample size fixed at 150",
+   "design": "fixed-n variant of the paper's sampler, 600 samples",
+   "statistic": "r(ERR, RR)",
+   "value": -0.296,
+   "n_sims": 600,
+   "verdict": "artifact",
+   "source": "reanalysis/out/z02_out.txt"
+  },
+  {
+   "instrument": "z-curve ERR",
+   "world": "natural random 30% subsamples of the same deposit (no stratification)",
+   "design": "1,000 samples, median 301 rows",
+   "statistic": "mean ERR - RR",
+   "value": 0.127,
+   "n_sims": 1000,
+   "verdict": "miscalibrated",
+   "source": "reanalysis/out/z01_out.txt"
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "supplement",
+   "locator": "(the preprint) https://osf.io/download/4h8vy/ 231024_zcurve_red_mp.pdf",
+   "status": "verified-usable",
+   "bytes": 399976,
+   "fetch_cmd": "curl -sL https://osf.io/download/4h8vy/ -o \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/roseler2023-zcurve-validation)/231024_zcurve_red_mp.pdf\"",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "Read tool, 16 pp",
+    "result": "Text and Table 1 transcribed into c1."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "https://osf.io/k4d6w/ Code and Data/zcurve_validity_parallel_systematic.R",
+   "status": "verified-usable",
+   "fetch_cmd": "python dev-science-ops/paper-retrospective-reproducibility/tools/acquire.py https://osf.io/k4d6w/ --out \"$(python zoo-knowledge-base/tools/assets.py path paper-downloads/roseler2023-zcurve-validation)/osf_k4d6w\"",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "read in full; sampler and z formula re-implemented verbatim in z01_reproduce_and_controls.R",
+    "result": "Downloads the data from osf bvezm at run time; the deposit also carries the written CSV, used here offline."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "raw-data",
+   "locator": "https://osf.io/k4d6w/ Code and Data/zcurve_validation_red_data.csv (FReD 2023-10-02 version)",
+   "status": "verified-usable",
+   "bytes": 1056633,
+   "fetch_cmd": "same as a2",
+   "checked": {
+    "on": "2026-11-05",
+    "by": "maria",
+    "how": "D=$(python zoo-knowledge-base/tools/assets.py path paper-downloads/roseler2023-zcurve-validation); docker run --rm -v \"$D/osf_k4d6w/files/osfstorage/Code and Data\":/data:ro -v \"$PWD/zoo-knowledge-base/instance-papers/papers/roseler2023-zcurve-validation/reanalysis\":/work zoo-r-zcurve:4.4.1 Rscript /work/z01_reproduce_and_controls.R /data/zcurve_validation_red_data.csv /work/out",
+    "result": "1,072 rows after the outcome filter, 1,004 with z; r .942 reproduces the paper's .945."
+   },
+   "datasheet": {
+    "composition": "FReD export: one row per original-replication effect pair (70 columns).",
+    "caveats": "Per-lab Many Labs rows; the analysis ignores the multilevel structure (the author says so). Blinding: aggregates only were printed (mark's control)."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:usesDataFrom",
+   "target": "roseler2024-replication-database",
+   "why": "Same database, 2023-10-02 version."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "pawel2020-probabilistic-forecasting-replication",
+   "why": "Both validate a replication predictor; on the same database the row-level discrimination is modest (AUC .58-.74) whatever the aggregate correlation says."
+  }
+ ],
+ "open_questions": [
+  "z03 permutation null of r under the paper's design (running at write time)."
+ ]
+}

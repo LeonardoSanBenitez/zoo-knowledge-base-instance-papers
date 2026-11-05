@@ -196,6 +196,15 @@
       ],
       "definition": "A set of independent studies reported together (one paper's studies, or one literature) contains more significant results, or p-values more tightly bunched just under the threshold, than the studies' own power allows. The signature of a file drawer, optional stopping or analysis selection; each study can be individually reproducible from its deposit and the SET still not be. First instance 2026-11-05: maglio2014-spatial-orientation-psychological-distance#c7 (five cross-dimension tests, p .011-.051, var(z) = .067).",
       "check": "Convert each claim-carrying p to z and test var(z) < 1 (TIVA, left-tail chi-square on k-1 df) and joint power at the pooled effect. CALIBRATE before believing: simulate the same ns with the pooled effect and no selection (flag rate must be ~alpha) and with a file drawer at d = 0, small and pooled (gives the detector's power). State which studies were put in the set and whether that choice was made before seeing the p-values; a set that includes one very strong study (e.g. a different, easier claim) will not flag."
+    },
+    "validation-sample-constructed-from-the-outcome": {
+      "validity": "construct",
+      "maps_to": [
+        "ecological correlation / aggregation amplification (Robinson 1950)",
+        "case-control sampling read as a prospective design"
+      ],
+      "definition": "A predictor is 'validated' on samples that were assembled by choosing their outcome rate first (mixing two fixed pools, e.g. successful and failed replications, in a chosen proportion). Any statistic whose mean differs between the pools then tracks the constructed rate almost perfectly, so the across-sample correlation approaches 1 for weak, trivial or even randomly assigned predictors; it measures whether the pools differ, amplified, not whether the predictor is calibrated on real populations. First instance 2026-11-05: roseler2023-zcurve-validation#c1 (r = .945; permuted input .645; trivial statistic .945).",
+      "check": "Run the same design with the predictor's input permuted across rows (many permutations: one permutation already gives |r| ~ .3) and with a trivial statistic in place of the predictor. Then validate where outcome rates vary naturally (natural subsamples, real literatures/groups) and report calibration error there, not r."
     }
   }
 }

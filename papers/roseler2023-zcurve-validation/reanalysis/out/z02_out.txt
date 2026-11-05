@@ -1,0 +1,12 @@
+F1_fixed_n150_real_z                     samples  600  r(ERR,RR) 0.942  SD RR 0.249  SD ERR 0.127
+F2_fixed_n150_permuted_z                 samples  600  r(ERR,RR) -0.296  SD RR 0.254  SD ERR 0.043
+F3_permuted_natural_mix: r(n, ERR) = -0.063 ; ERR at n<=130 0.530 vs n>=190 0.523
+F4_one_row_per_original_fixed_n60        samples  600  r(ERR,RR) 0.684  SD RR 0.195  SD ERR 0.091
+                  group   n n_rr     RR   ERR
+                   CORE  73   73 0.6575 0.761
+ Individual submissions 152   84 0.1429 0.573
+                    ML1 352  352 0.5881 0.501
+                    ML3 144  144 0.0764 0.442
+               OSC 2015  80   80 0.3250 0.638
+                   RRR1  54   54 0.2407 0.566
+K4 source groups (6): Pearson r(ERR,RR) = 0.579 ; Spearman = 0.600 ; mean |ERR - RR| = 0.271 ; mean ERR - RR = 0.242
