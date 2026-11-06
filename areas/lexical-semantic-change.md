@@ -66,7 +66,9 @@ Gemma 4 12B induces 2-6 definitions per word and assigns usages by multiple choi
 (Spearman of JSD, -.17, CI < 0); its sense count correlates with the gold count worse than the clustering's. It gained
 on the change ranking only on two definition-annotated sets (10 + 24 words). Tested the same day on definition-based gold
 (AXOLOTL-24 Finnish, 133 words): it loses there too (BCubed -.05; change ranking -.21, CI [-.44, +.01]), so the gold
-type is not the explanation; the earlier gain was a 10-word result. Gemma 4 12B also loops while listing senses on
+type alone is not the explanation. Not settled, though: every held-out set has 2 periods (between-word ranking only),
+while the 10-word gain sits on multi-period data with the task's own protocol; simulated 10-word dev sets drawn from the
+held-out sets almost never show a CI > 0 gain when the true difference is -0.2 (arena tooling/tiny_dev_coverage.py). Gemma 4 12B also loops while listing senses on
 22% of Finnish words (7% Spanish). Evidence: `.claude/memory/maria/arena-lsc/tickets/2026-11-06-InventoryBreadth/OUTCOME.md`,
 `.../2026-11-06-InventoryDefGold/OUTCOME.md`.
 
