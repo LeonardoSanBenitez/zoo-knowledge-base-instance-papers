@@ -639,6 +639,14 @@ the synthetic one. Give analysis scripts NO default input path while a run is li
 test only on files named `_synthetic*`, and if a look happens anyway, declare it in the plan's deviation log with
 what was seen.
 
+## No verdict while its test is running (added 2026-11-06, enforced by `kb.py validate`)
+
+If a job that tests a record is still running when you write the record, put its question in `open_questions` starting
+with `PENDING:`. While any `PENDING:` question exists, `validate` refuses a claim with status `refuted*`/`accepted*` unless
+its `why` says `provisional`. When the job finishes, rewrite the question as `ANSWERED <date> ...` and settle the status.
+Why: on 2026-11-05 roseler2023's K1 (one permutation draw, r = .645) was read as typical while z03, the job measuring
+the permutation distribution, was still running; z03 showed it was a 2.3-SD draw (corrected 2026-11-06).
+
 ## After you refute, dispute or supersede anything (added 2026-10-17)
 
 A correction recorded in one place is half a correction. In the same commit:
