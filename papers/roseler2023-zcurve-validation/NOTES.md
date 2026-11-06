@@ -19,7 +19,7 @@ other, i.e. 127-195 rows (median 150), not 322.
 | control | r(ERR, RR) | reads as |
 |---|---|---|
 | A paper design, real z | .942 | -- |
-| K1 same design, z permuted (no z-outcome link) | **.645** | the design gives r without information |
+| K1 same design, z permuted ONCE (no z-outcome link) | **.645** | one draw: see z03 (corrected 2026-11-06) |
 | K2 same design, trivial statistic share(z > 2.8) instead of z-curve | **.945** | r is not specific to z-curve |
 | K3 natural random 30% subsamples | .369 (SD RR .025) | real-world variation is tiny; ERR overestimates RR by .13 |
 | F1 fixed n = 150, real z | .942 | fixing n changes nothing for the real r |
@@ -30,6 +30,13 @@ other, i.e. 127-195 rows (median 150), not 322.
 
 K1 (.645) and F2 (-.296) are single draws from the permutation null of this design: one random split of the z values
 between the two pools already differs enough to be amplified into |r| of .3-.6 (z03 measures the spread).
+
+**z03 (2026-11-06), the measured spread.** 30 permutations x 120 samples at n = 150: r(ERR, RR) mean -.002, SD .283,
+range -.573..+.524, |r| > .5 in 10%; share(z > 2.8) mean .034, SD .273. Real data: .943 / .944, above every permuted
+draw. **Correction to my 11-05 reading:** K1 (.645) was a 2.3-SD draw, not what the design typically gives with no
+information. What stands: the design makes |r| of .3-.5 common from nothing (an iid null at 120 samples would have
+SD ~.09); a trivial statistic matches z-curve exactly; and the real r measures row-level discrimination (pools differ on
+z), not literature-level calibration (K3, K4).
 
 The mechanism: samples are mixtures of two FIXED pools (successful and failed replications) in proportion P. Any
 statistic f whose mean differs between the pools tracks P linearly, and with 150 rows per sample its noise is small,

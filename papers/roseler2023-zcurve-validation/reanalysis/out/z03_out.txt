@@ -1,0 +1,4 @@
+real data: r(ERR,RR) = 0.943 ; r(share z>2.8, RR) = 0.944
+permutation null over 30 permutations (each r over 120 samples):
+  z-curve ERR: mean -0.002, sd 0.283, min -0.573, max 0.524, share |r| > .5: 0.10
+  share z>2.8: mean 0.034, sd 0.273, min -0.395, max 0.582, share |r| > .5: 0.03

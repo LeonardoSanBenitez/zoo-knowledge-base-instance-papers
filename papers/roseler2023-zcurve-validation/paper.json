@@ -69,7 +69,7 @@
    ],
    "our_assessment": {
     "status": "refuted",
-    "why": "Reproduces, and does not mean what it is taken to mean. With the originals' z PERMUTED across rows (no z-outcome link at all) the same design returns r = .645; with z-curve replaced by the share of z > 2.8 it returns .945, identical to z-curve; at fixed n a single random permutation already gives r = -.30. Samples are mixtures of two fixed pools in proportion P, so any statistic whose pool means differ tracks P with little noise. The r is a property of the design, not evidence of the estimator's validity.",
+    "why": "Reproduces, and does not mean what it is taken to mean. With the originals' z PERMUTED across rows (no z-outcome link at all) the design's r has mean 0 but SD .28 over 30 permutations (z03; |r| > .5 in 10%; single draws gave .645 and -.30), so a large r from this design is not rare even without information; the real .943 nonetheless exceeds all 30 permuted draws (max .524), so it does reflect that the success and failure pools differ on z (row AUC .737). With z-curve replaced by the share of z > 2.8 the design returns .944-.945, identical to z-curve. Samples are mixtures of two fixed pools in proportion P, so any statistic whose pool means differ tracks P with little noise. The r is a property of the design, not evidence of the estimator's validity. Corrected 2026-11-06 after z03: the first version of this assessment (2026-11-05) read the single permuted draw .645 as 'the design gives r without information'.",
     "by": "maria",
     "patterns": [
      "validation-sample-constructed-from-the-outcome",
@@ -156,7 +156,7 @@
  "instrument_checks": [
   {
    "instrument": "z-curve ERR validated by outcome-stratified sampling (r with realised RR)",
-   "world": "originals' z permuted across rows (no information about outcomes)",
+   "world": "originals' z permuted across rows (no information about outcomes) -- ONE permutation; z03 shows it is a 2.3-SD draw from a null with mean 0, SD .28",
    "design": "paper's sampler (30%·P successes + 30%·(1-P) failures), 1,000 samples",
    "statistic": "r(ERR, RR)",
    "value": 0.645,
@@ -193,6 +193,26 @@
    "n_sims": 1000,
    "verdict": "miscalibrated",
    "source": "reanalysis/out/z01_out.txt"
+  },
+  {
+   "instrument": "z-curve ERR validated by outcome-stratified sampling (r with realised RR)",
+   "world": "originals' z permuted across rows, 30 independent permutations",
+   "design": "paper's sampler at fixed n = 150, 120 samples per permutation (z03)",
+   "statistic": "share of permutations with |r(ERR, RR)| > .5 (mean r -.002, SD .283, range -.573..+.524)",
+   "value": 0.1,
+   "n_sims": 30,
+   "verdict": "artifact",
+   "source": "reanalysis/out/z03_out.txt"
+  },
+  {
+   "instrument": "z-curve ERR validated by outcome-stratified sampling (r with realised RR)",
+   "world": "real data vs the 30-permutation null above",
+   "design": "same as z03",
+   "statistic": "real r (.943) minus the largest permuted r (.524)",
+   "value": 0.419,
+   "n_sims": 30,
+   "verdict": "informative",
+   "source": "reanalysis/out/z03_out.txt"
   }
  ],
  "artifacts": [
@@ -255,6 +275,6 @@
   }
  ],
  "open_questions": [
-  "z03 permutation null of r under the paper's design (running at write time)."
+  "ANSWERED 2026-11-06 (z03, 30 permutations x 120 samples): r(ERR, RR) under permuted z has mean -.002, SD .283, |r| > .5 in 10%; share(z > 2.8) mean .034, SD .273. Real r .943 / .944 exceed every permuted draw."
  ]
 }
