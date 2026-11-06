@@ -60,6 +60,14 @@ benchmarks select polysemous/changing words, so there 1cpl is weaker (SemEval-20
 XL-LEXEME clustering 0.82) -- but the lesson carries: BCubed rewards not splitting, and LLM inventories split
 (arena-lsc F9). An external number of senses (Wiktionary) beats an internally chosen k there by 0.5-1.6 points.
 
+**An LLM sense inventory does not reproduce usage-graph clusters (arena-lsc, 2026-11-06; own experiment, not a paper).**
+Gemma 4 12B induces 2-6 definitions per word and assigns usages by multiple choice. On two-period DWUG subsets
+(ES/EN/IT, 172 words) it loses to XL-LEXEME average-linkage clustering on BCubed (-.16) and on the change ranking
+(Spearman of JSD, -.17, CI < 0); its sense count correlates with the gold count worse than the clustering's. It gained
+on the change ranking only on two definition-annotated sets (10 + 24 words). Whether gold is "clusters of pairwise
+judgements" or "usage-to-definition labels" may decide which method wins: compare like with like. Evidence:
+`.claude/memory/maria/arena-lsc/tickets/2026-11-06-InventoryBreadth/OUTCOME.md`.
+
 ## Method rules for this area
 
 1. Report every change score beside random-within-gold-k and the system's own shuffled-input score.
