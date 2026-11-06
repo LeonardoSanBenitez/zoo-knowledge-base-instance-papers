@@ -1,0 +1,88 @@
+"""One-off: writes paper.json and NOTES.md for this record (maria, 2026-11-06). Kept so the record's text has a source."""
+import json
+from pathlib import Path
+
+P = Path(__file__).resolve().parents[1]
+fetch_pdf = ('curl -sL https://arxiv.org/pdf/2603.11686v1 -o "$(python zoo-knowledge-base/tools/assets.py path '
+             'paper-downloads/mosolova2026-wsi-llm-era --mkdir)/2603.11686v1.pdf"')
+fetch_repo = ('git clone --depth 1 https://github.com/anya-bel/fullcorpus_wsi "$(python zoo-knowledge-base/tools/assets.py '
+              'path paper-downloads/mosolova2026-wsi-llm-era)/fullcorpus_wsi"  # commit 1f3d239')
+d = {
+    "schema_version": "1.7", "id": "mosolova2026-wsi-llm-era",
+    "title": "In the LLM era, Word Sense Induction remains unsolved",
+    "authors": ["Anna Mosolova", "Marie Candito", "Carlos Ramisch"], "year": 2026,
+    "venue": "arXiv:2603.11686v1 (12 Mar 2026)",
+    "area": ["lexical-semantic-change"], "identifiers": {"arxiv": "2603.11686"},
+    "record_status": "active", "read_depth": "read-and-ran-artifacts",
+    "selection": {"class": "chain", "evidence": "Web search 2026-11-06 for LLM sense induction while pre-registering arena-lsc ticket 2026-11-06-InventoryBreadth (an LLM-induced inventory for SemEval-2027 Task 3). The only 2026 paper found that evaluates direct LLM WSI.", "recorded": "at-selection"},
+    "cost": {"tool_calls": 10, "bytes_downloaded": 118000000, "compute_notes": "PDF pp. 1-9 read in full (sec. 1-8, Tables 1-6); appendices not read. Repo cloned (112 MB, mostly augmentation csvs). r01 runs in ~20 s CPU.", "session": "2026-11-06 maria, arena-lsc 12h"},
+    "curation": {"author": "maria", "created": "2026-11-06", "verified": "2026-11-06", "notes_file": "NOTES.md"},
+    "triggers": ["one cluster per lemma baseline unbeaten", "word sense induction natural polysemy distribution",
+                 "direct LLM prompting for WSI fails", "number of clusters from a lexicon (Wiktionary) beats silhouette",
+                 "data augmentation with unlabeled corpus examples for WSI", "weighted F-B3 vs unweighted"],
+    "claims": [
+        {"id": "c1",
+         "statement": "On SemCor-WSI (SemCor lemmas sampled to keep the corpus polysemy and frequency distribution; dev 15,308 instances / 1,271 lemmas), no unsupervised system beats one-cluster-per-lemma (1cpl) on instance-weighted F-B3: 1cpl 73.6 dev (verb 65.7, adj 80.0, noun 75.2), 74.4 test; PolyLM-large 73.0 dev / 72.7 test; best embedding clustering 71.1-71.8 dev.",
+         "scope": "English, SemCor 3.0 brown1+brown2, WordNet senses, first sense kept for multi-sense instances. Weighted F-B3 (by instances).",
+         "quantities": [
+             {"name": "F_B3_1cpl_dev_all", "value": 73.6, "unit": "weighted F-B3 x100", "source": "Table 3"},
+             {"name": "F_B3_1cpl_test_all", "value": 74.4, "unit": "weighted F-B3 x100", "source": "Table 6"},
+             {"name": "F_B3_1cpex_dev_all", "value": 24.1, "unit": "weighted F-B3 x100", "source": "Table 3"},
+             {"name": "F_B3_PolyLM_large_dev", "value": 73.0, "unit": "weighted F-B3 x100", "source": "Table 2"},
+             {"name": "F_B3_1cpl_dev_polysemous_only", "value": 63.4, "unit": "weighted F-B3 x100", "source": "reanalysis/out/r01_out.txt (ours, not in paper)"}],
+         "evidence": ["a2", "a3"],
+         "our_assessment": {"status": "accepted-narrower-scope",
+                            "why": "1cpl rows reproduce from the released csvs (dev all/verb/adj/noun 73.6/65.7/80.0/75.2 exactly; test 74.5 vs printed 74.4); 1cpex is 0.2-0.5 below print (unexplained, small). The headline is arithmetic of the sample, made explicit by r01: 28.1% of dev instances (54.8% of lemmas) belong to monosemous lemmas, where 1cpl is perfect; on polysemous lemmas alone 1cpl scores 63.4 (test 65.2). So 'nothing beats 1cpl' means 'nothing beats 63.4 on polysemous lemmas without splitting monosemous ones'. It does not transfer to target-word benchmarks chosen for polysemy or change (SemEval-2027 Task 3 SV dev: 1cpl 1a 0.756 vs XL-LEXEME clustering 0.82).",
+                            "by": "maria, 2026-11-06"}},
+        {"id": "c2",
+         "statement": "Direct LLM prompting (all instances of a lemma in one prompt, the LLM returns clusters) is far below clustering: SemCor-WSI F-B3 Llama 3.1 8B 59.7, Llama 3.3 70B 4-bit 64.2, GPT-4o 66.9 vs 1cpl 73.6; Llama loses the task beyond ~300 examples. Their Future Work (i) proposes 'ask for a list of senses, then assign instances to them'.",
+         "scope": "Table 2; one prompt per lemma, five runs.",
+         "quantities": [{"name": "F_B3_GPT4o_semcorwsi", "value": 66.9, "unit": "weighted F-B3 x100", "source": "Table 2"},
+                        {"name": "F_B3_Llama33_70B_semcorwsi", "value": 64.2, "unit": "weighted F-B3 x100", "source": "Table 2"}],
+         "evidence": [],
+         "our_assessment": {"status": "accepted",
+                            "why": "As printed (not rerun: needs an API or a 70B model). The induce-then-assign design they leave as future work is what arena-lsc runs (Gemma 4 12B, tooling/llm_inventory.py): on SemEval-2027 Task 3 SV dev it also LOSES on BCubed (0.653 vs 0.823) while gaining on 1b (F9 in arena-lsc paper/FINDINGS.md). Consistent with c2: LLM inventories split too finely for BCubed.",
+                            "by": "maria, 2026-11-06"}},
+        {"id": "c3",
+         "statement": "Using the number of Wiktionary senses as k is systematically better than silhouette-chosen k (e.g. BERT-l-Wikt + 100 WikiBooks examples: 75.7 vs 74.5), and adding ~100-150 unlabeled corpus examples per lemma before clustering helps more than LLM-generated (45k+) or Wiktionary examples. Best test system (Wiktionary used three ways) 76.0 vs 1cpl 74.4.",
+         "scope": "Tables 4-6; dev numbers except Table 6; no significance tests for these.",
+         "quantities": [{"name": "F_B3_best_wikt_test", "value": 76.0, "unit": "weighted F-B3 x100", "source": "Table 6"}],
+         "evidence": [],
+         "our_assessment": {"status": "accepted-narrower-scope",
+                            "why": "Differences of 0.5-1.6 points on one dataset without significance tests; the direction (external k beats internal k; more unlabeled context helps) is what matters for arena-lsc: it motivates testing an LLM-supplied k on the XL-LEXEME tree (InventoryBreadth H3b) and augmenting each target's usages with unlabeled ones.",
+                            "by": "maria, 2026-11-06"}}],
+    "methods": [],
+    "artifacts": [
+        {"id": "a1", "role": "supplement", "locator": "https://arxiv.org/pdf/2603.11686v1", "status": "verified-usable", "bytes": 926183,
+         "fetch_cmd": fetch_pdf, "checked": {"on": "2026-11-06", "by": "maria", "how": "PyMuPDF text, pp. 1-9 read", "result": "sections 1-8 and Tables 1-6 read"}},
+        {"id": "a2", "role": "benchmark", "locator": "https://github.com/anya-bel/fullcorpus_wsi (datasets/semcorwsi_*_{dev,test}.csv)",
+         "status": "verified-usable", "fetch_cmd": fetch_repo,
+         "checked": {"on": "2026-11-06", "by": "maria", "how": "python reanalysis/r01_trivial_baselines.py",
+                     "result": "1cpl rows of Tables 3 and 6 reproduce (73.6/65.7/80.0/75.2 dev; 74.5 test vs 74.4); 1cpex 0.2-0.5 below print"}},
+        {"id": "a3", "role": "code", "locator": "reanalysis/r01_trivial_baselines.py (output reanalysis/out/r01_out.txt)",
+         "status": "verified-usable",
+         "checked": {"on": "2026-11-06", "by": "maria", "how": "python reanalysis/r01_trivial_baselines.py",
+                     "result": "1cpl / 1cpex per POS and split; decomposition: mono share 28.1% of dev instances, 1cpl on polysemous lemmas 63.4 dev / 65.2 test"}}],
+    "relations": [{"type": "cito:qualifies", "target": "periti2024-multi-period-dwsi",
+                   "why": "Both evaluate WSI with BCubed-family metrics; this one shows the trivial baseline's strength depends on the share of monosemous lemmas."}],
+    "open_questions": ["Why is 1cpex 0.2-0.5 below the printed values (multiword lemmas? lexsn vs wnsn as gold key?)",
+                       "Does an LLM-supplied k (number of induced senses) do for embedding clustering what Wiktionary's k does here? Tested in arena-lsc ticket 2026-11-06-InventoryBreadth H3."],
+}
+json.dump(d, open(P / "paper.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+(P / "NOTES.md").write_text("""# mosolova2026-wsi-llm-era -- notes (maria, 2026-11-06)
+
+Read for arena-lsc (SemEval-2027 Task 3), while pre-registering InventoryBreadth.
+
+**What reproduces.** The 1cpl rows from the released csvs, to the printed decimal (r01). 1cpex is a few tenths low.
+
+**What the headline means.** "Nothing beats one cluster per lemma" is arithmetic of the sample: 28% of dev instances
+belong to monosemous lemmas (1cpl perfect there), and on polysemous lemmas 1cpl is 63.4. A WSI system is therefore
+judged mostly on whether it refrains from splitting -- the same thing BCubed rewards in SemEval-2027 Task 3 1a, where
+arena finding F7 says "1b forgives merging, not splitting" and precision on minority senses beats recall.
+
+**Relevance to the arena.** (1) Their future-work idea (induce a sense list, then assign) is our llm_inventory.py;
+their direct-clustering LLM result (GPT-4o 66.9 < 1cpl) and our induce-assign result (1a falls by .17 on SV dev) agree:
+LLM inventories over-split for BCubed. (2) External k beats internal k -> H3 of InventoryBreadth. (3) Unlabeled
+augmentation (+100-150 corpus usages per lemma) is a cheap untested lever for the arena.
+""", encoding="utf-8")
+print("ok")

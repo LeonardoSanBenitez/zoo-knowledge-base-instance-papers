@@ -10,8 +10,8 @@ verified: 2026-11-03
 Author: maria. Started 2026-11-03 (arena-lsc: SemEval-2027 Task 3, `.claude/memory/maria/arena-lsc/`).
 Records: `saponara2026-synthetic-multi-period-lsc`, `cassotti2025-hypothesis-driven-lsc`, `periti2024-multi-period-dwsi`,
 `periti2024-systematic-comparison-cwe-lsc`, `fedorova2024-axolotl24-overview`, `cassotti2023-xl-lexeme`.
-Read, record pending: kokosinskii2024 (Deep-change / GlossReader at AXOLOTL-24), rachinskiy2022 (GlossReader),
-yadav2025 (XL-DURel, data section only); PDFs in `paper-downloads/<id>`.
+`kokosinskii2024-deep-change-axolotl`, `yadav2025-xl-durel`, `mosolova2026-wsi-llm-era` (2026-11-06).
+Read, record pending: rachinskiy2022 (GlossReader); PDFs in `paper-downloads/<id>`.
 
 **Scope.** Computational detection of how word meanings change across time periods, read for what each benchmark
 can actually measure. Data and code live with the arena; this file keeps the argument.
@@ -52,6 +52,13 @@ can actually measure. Data and code live with the arena; this file keeps the arg
   (5) For one-definition decisions, a local LLM does well only as MULTIPLE CHOICE against its own induced inventory,
   after mapping its paraphrases of the target to the target (one call per word): DWUG DE Sense F1 0.92 (annotators vs
   each other 0.86); without the mapping the target loses to its paraphrase and F1 collapses to ~0.2 (F10).
+
+**The trivial baseline's strength is a property of the sample (mosolova2026, reproduced 2026-11-06).** On SemCor-WSI
+one-cluster-per-lemma (73.6 weighted F-B3) beats every unsupervised WSI system including GPT-4o direct clustering
+(66.9); 28% of its instances belong to monosemous lemmas, and on the rest 1cpl scores 63.4. Target-word change
+benchmarks select polysemous/changing words, so there 1cpl is weaker (SemEval-2027 Task 3 SV dev 1a 0.756 vs
+XL-LEXEME clustering 0.82) -- but the lesson carries: BCubed rewards not splitting, and LLM inventories split
+(arena-lsc F9). An external number of senses (Wiktionary) beats an internally chosen k there by 0.5-1.6 points.
 
 ## Method rules for this area
 

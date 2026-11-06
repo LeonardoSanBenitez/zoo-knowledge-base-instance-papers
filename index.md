@@ -477,19 +477,21 @@ so no one else can run it.
   `denic2022-indefinites-simplicity-informativeness`,
   `steinertthrelkeld2021-quantifiers-degrees-universals`, `imel2026-modal-typology-efficiency`,
   `chaabouni2021-emergent-colour-naming`, `xu2020-numeral-systems-efficiency`, `ferrericancho2011-information-content-random-typing`, `maria2026-structural-null-semantic-efficiency`,
-  `petrini2023-compression-word-lengths` (law of abbreviation and 'L below random baseline' are one statistic; random typing passes both in 68/68 files, and the gap grows with corpus size).
-
-- `active` `lexical-semantic-change.md` — computational detection of meaning change over time
-  (SemEval-2027 Task 3 context). Records: `saponara2026-synthetic-multi-period-lsc` (organisers'
-  synthetic 10-period data; Table 2 reproduced except PRT), `cassotti2025-hypothesis-driven-lsc`,
-  `periti2024-multi-period-dwsi`. Through-line: XL-LEXEME is near human level on usage pairs, but
-  change scored through sense clusters is weak and pooled change correlations reward the number of
-  clusters per word; human-vs-human ceiling under the task metrics 1a .78 / 1b .81 / 2 .86. Started by maria 2026-11-03.
+  `petrini2023-compression-word-lengths` (law of abbreviation and 'L below random baseline' are one statistic; random typing passes both in 68/68 files, and the gap grows with corpus size),
   `futrell2015-dependency-length-minimization` (dependency length minimisation replicates on UD 2.14, 12/12, with a null that keeps the trees; the head-final aside does not).
   Through-line: against a null that keeps one structural property (convexity, no synonymy,
   monotone+conservative, IFF+low overlap), most of the natural advantage disappears (net Pareto
   dominance +0.6..0.96 vs random, +0.17/+0.15/-0.25/+0.37 vs the structural null); two published
   pipelines carry implementation defects. Started by maria 2026-10-16.
+
+- `active` `lexical-semantic-change.md` — computational detection of meaning change over time
+  (SemEval-2027 Task 3 context). Records: `saponara2026-synthetic-multi-period-lsc` (organisers'
+  synthetic 10-period data; Table 2 reproduced except PRT), `cassotti2025-hypothesis-driven-lsc`,
+  `periti2024-multi-period-dwsi`, `periti2024-systematic-comparison-cwe-lsc`, `fedorova2024-axolotl24-overview`,
+  `cassotti2023-xl-lexeme`, `kokosinskii2024-deep-change-axolotl`, `yadav2025-xl-durel`, `mosolova2026-wsi-llm-era`
+  (one-cluster-per-lemma unbeaten on natural polysemy: reproduced; it is 28% monosemous instances, 63.4 on the rest). Through-line: XL-LEXEME is near human level on usage pairs, but
+  change scored through sense clusters is weak and pooled change correlations reward the number of
+  clusters per word; human-vs-human ceiling under the task metrics 1a .78 / 1b .81 / 2 .86. Started by maria 2026-11-03.
 
 - `active` `replicability-and-selective-reporting.md` — will a finding replicate, and do the detectors and
   forecasters that answer this work on worlds where the answer is known? Records: `pawel2020-probabilistic-forecasting-replication`

@@ -1,0 +1,13 @@
+file                    n_inst n_lemma mono_lemma% mono_inst%  1cpl wF / F(wP,wR) / unweighted   1cpex wF
+verb_dev                 5005    359      37.3      14.0   65.7 / 69.8 / 77.7    25.0
+adj_dev                  4909    433      61.0      39.8   80.0 / 83.4 / 88.1    22.3
+noun_dev                 5394    479      62.2      30.4   75.2 / 79.4 / 88.1    23.9
+dataset_all_dev         15308   1271      54.8      28.1   73.6 / 77.8 / 85.2    23.8
+verb_test                4979    367      39.0      14.0   61.6 / 65.8 / 79.0    25.5
+adj_test                 4772    427      59.3      34.3   86.1 / 88.3 / 88.4    22.6
+noun_test                5694    493      62.1      31.8   76.2 / 80.0 / 88.3    22.9
+dataset_all_test        15445   1287      54.5      26.9   74.5 / 78.6 / 85.7    23.7
+
+split  F(1cpl) on polysemous lemmas only (instance-weighted); mono share
+dev    63.4   28.1%
+test   65.2   26.9%
