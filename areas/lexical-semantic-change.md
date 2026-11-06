@@ -64,9 +64,11 @@ XL-LEXEME clustering 0.82) -- but the lesson carries: BCubed rewards not splitti
 Gemma 4 12B induces 2-6 definitions per word and assigns usages by multiple choice. On two-period DWUG subsets
 (ES/EN/IT, 172 words) it loses to XL-LEXEME average-linkage clustering on BCubed (-.16) and on the change ranking
 (Spearman of JSD, -.17, CI < 0); its sense count correlates with the gold count worse than the clustering's. It gained
-on the change ranking only on two definition-annotated sets (10 + 24 words). Whether gold is "clusters of pairwise
-judgements" or "usage-to-definition labels" may decide which method wins: compare like with like. Evidence:
-`.claude/memory/maria/arena-lsc/tickets/2026-11-06-InventoryBreadth/OUTCOME.md`.
+on the change ranking only on two definition-annotated sets (10 + 24 words). Tested the same day on definition-based gold
+(AXOLOTL-24 Finnish, 133 words): it loses there too (BCubed -.05; change ranking -.21, CI [-.44, +.01]), so the gold
+type is not the explanation; the earlier gain was a 10-word result. Gemma 4 12B also loops while listing senses on
+22% of Finnish words (7% Spanish). Evidence: `.claude/memory/maria/arena-lsc/tickets/2026-11-06-InventoryBreadth/OUTCOME.md`,
+`.../2026-11-06-InventoryDefGold/OUTCOME.md`.
 
 ## Method rules for this area
 
