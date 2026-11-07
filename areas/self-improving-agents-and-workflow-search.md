@@ -44,6 +44,8 @@ A fourth, specific to harness search: **the optimiser is told what to find.** RH
 | `lee2026-rhi` | read-and-reanalysed | Prompt-level multi-agent harness, revised from pairwise self-comparison; Claude agents beat their own higher-effort settings on 30 LLM-written tasks | The sonnet trend survives execution noise (p about 0.001-0.004). For opus-4.8, about half of the gain is the *unoptimised* starting harness. The in-loop judge is never named. The optimiser prompt orders the "contracts and hops" result. |
 | `wang2026-rethinking-harness-evolution` | read-and-reanalysed | AI2/UW, independent: at matched budget on Terminal-Bench 2.1, harness evolution loses to parallel sampling and sequential refinement, and gains nothing on 34 held-out tasks; it wins in long-horizon games with verifiable feedback | Its own tables carry a free replicate: the same procedure run twice moves 0 / 0.6 / 2.5 pp. 'Overfitting' has no in-sample pass@1 gain to lose (-0.8 / +2.1). The held-out test detects +5 pp per model with probability 0.75-0.95, depending on task determinism. |
 | `tran2026-single-vs-multi-agent-budget` | read-and-reanalysed | Stanford: one agent vs five multi-agent designs at equal thinking tokens on multi-hop QA; the DPI says an ideal single reader cannot lose | It is a draw, not 'outperform': 38/40 cells are indistinguishable at question level, one cell goes each way. The appendix CIs are 2-4x too narrow and off-centre (FRAMES implied n is about 4 x 824: pooled runs). The theory exempts degraded-context, long-horizon regimes, which is where MASS and RHI live. |
+| `zhao2025-sirius` | read-and-reanalysed | NeurIPS 2025: keep each multi-agent trajectory that reached the gold answer, fine-tune each role's model on it; the ancestor of MASS's outer loop, but WITH a verifier and per-role models | All 30 % decode to counts. Over the untrained multi-agent prompt, SFT adds 12-14/500 on PubMedQA, and 1-7 questions on the 107/65-question sets. The second iteration adds 1-4/500. Per-role models beat one shared model (19/500), which is in tension with MASS's shared weights. |
+| `huang2024-cannot-self-correct` | read-and-reanalysed | ICLR 2024: without gold labels, asking a model to review its own answer never helps; debate loses to majority vote at equal responses | Exact McNemar on Fig 1 transitions: a significant drop in 4/8 cells (weak or suggestible models). For GPT-4-Turbo and others the change is about zero: strong models leave their answers alone. 'Harms all' over-reads four nulls. |
 
 ## What a reader of this literature should carry
 
@@ -70,8 +72,7 @@ Generic lessons from this area that apply outside it are in
 
 ## Reading queue (citation chain, not yet read)
 
-SiriuS (Zhao et al., NeurIPS 2025/26: SFT on selected multi-agent traces, the closest prior art); Huang et al. 2024
-"LLMs cannot self-correct reasoning yet" (MASS's premise); TTHE 2607.08124; SIA 2605.27276; HASE 2607.03935;
+TTHE 2607.08124; SIA 2605.27276; HASE 2607.03935;
 HELIX 2608.13951; Squeeze Evolve 2604.07725; Park et al. 2609.21032 (test-time communication); Multi-Agent Evolve
 2510.23595; Wang et al. 2026 (harness evolution vs test-time-scaling baselines at equal budget: cited by RHI as a
 negative result -- READ, see records); ADAS, AFlow, GPTSwarm; Self-Rewarding LMs; STaR; ReST-EM.

@@ -1,0 +1,120 @@
+{
+ "decode_failures": [],
+ "margins": {
+  "gpt-3.5/phys": {
+   "n": 107,
+   "SiriuS_correct": 36,
+   "best_baseline": "TextGrad",
+   "baseline_correct": 35,
+   "margin_questions": 1,
+   "vs_STaR_questions": 4,
+   "wilson_SiriuS": [
+    0.254,
+    0.43
+   ],
+   "wilson_best_baseline": [
+    0.246,
+    0.421
+   ]
+  },
+  "gpt-3.5/chem": {
+   "n": 65,
+   "SiriuS_correct": 37,
+   "best_baseline": "COMM",
+   "baseline_correct": 33,
+   "margin_questions": 4,
+   "vs_STaR_questions": 6,
+   "wilson_SiriuS": [
+    0.448,
+    0.682
+   ],
+   "wilson_best_baseline": [
+    0.389,
+    0.625
+   ]
+  },
+  "gpt-3.5/pubmed": {
+   "n": 500,
+   "SiriuS_correct": 371,
+   "best_baseline": "COMM",
+   "baseline_correct": 359,
+   "margin_questions": 12,
+   "vs_STaR_questions": 52,
+   "wilson_SiriuS": [
+    0.702,
+    0.778
+   ],
+   "wilson_best_baseline": [
+    0.677,
+    0.756
+   ]
+  },
+  "gpt-4o-mini/phys": {
+   "n": 107,
+   "SiriuS_correct": 50,
+   "best_baseline": "TextGrad",
+   "baseline_correct": 46,
+   "margin_questions": 4,
+   "vs_STaR_questions": 5,
+   "wilson_SiriuS": [
+    0.376,
+    0.561
+   ],
+   "wilson_best_baseline": [
+    0.34,
+    0.525
+   ]
+  },
+  "gpt-4o-mini/chem": {
+   "n": 65,
+   "SiriuS_correct": 39,
+   "best_baseline": "COMM",
+   "baseline_correct": 32,
+   "margin_questions": 7,
+   "vs_STaR_questions": 8,
+   "wilson_SiriuS": [
+    0.479,
+    0.71
+   ],
+   "wilson_best_baseline": [
+    0.375,
+    0.611
+   ]
+  },
+  "gpt-4o-mini/pubmed": {
+   "n": 500,
+   "SiriuS_correct": 367,
+   "best_baseline": "COMM",
+   "baseline_correct": 353,
+   "margin_questions": 14,
+   "vs_STaR_questions": 21,
+   "wilson_SiriuS": [
+    0.694,
+    0.771
+   ],
+   "wilson_best_baseline": [
+    0.665,
+    0.744
+   ]
+  }
+ },
+ "ablations_pubmed_counts": {
+  "gpt-3.5": {
+   "SiriuS": 371,
+   "SiriuS+Base": 360,
+   "Base+SiriuS": 366,
+   "FT one base LLM": 352,
+   "w/o Aug": 367,
+   "Additional FT itr": 375
+  },
+  "gpt-4o-mini": {
+   "SiriuS": 367,
+   "SiriuS+Base": 364,
+   "Base+SiriuS": 358,
+   "FT one base LLM": 360,
+   "w/o Aug": 361,
+   "Additional FT itr": 368
+  }
+ },
+ "reading": "Margins over the best baseline: physics 1-4 questions of 107, chemistry 4-7 of 65, PubMedQA 12-14 of 500; single runs at temperature 0, no CIs in the paper. The second RSI iteration ('Additional FT itr') adds 4 and 1 questions of 500."
+}

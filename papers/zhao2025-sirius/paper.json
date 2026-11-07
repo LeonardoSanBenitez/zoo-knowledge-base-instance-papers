@@ -1,0 +1,69 @@
+{
+ "schema_version": "1.7",
+ "id": "zhao2025-sirius",
+ "title": "SiriuS: Self-improving Multi-agent Systems via Bootstrapped Reasoning",
+ "authors": ["Wanjia Zhao", "Mert Yuksekgonul", "Shirley Wu", "James Zou"],
+ "year": 2025,
+ "venue": "NeurIPS 2025 (arXiv:2502.04780); Stanford",
+ "area": ["self-improving-agents-and-workflow-search"],
+ "identifiers": {"arxiv": "2502.04780", "url": "https://github.com/zou-group/sirius"},
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {"class": "chain", "evidence": "MASS (lee2026-mass-self-supervision) names it as the prior method that trains on selected multi-agent traces: the closest precedent.", "recorded": "at-selection"},
+ "cost": {"tool_calls": 8, "bytes_downloaded": 1500000, "compute_notes": "21-page PDF: Secs 1-4 and App. C read, competitive-setting results skimmed. Repo cloned (230 KB). s01 under 1 s.", "session": "2026-11-07 maria, MASS citation chain"},
+ "curation": {"author": "maria", "created": "2026-11-07", "verified": "2026-11-07", "notes_file": "NOTES.md"},
+ "triggers": ["experience library of successful multi-agent trajectories", "fine-tune each agent role separately", "STaR for multi-agent", "actor critic judgment agent fine-tuning", "one shared model vs per-role models"],
+ "claims": [
+  {
+   "id": "c1", "origin": "paper",
+   "statement": "SiriuS (fine-tune each agent on its own successful or augmented trajectories) consistently outperforms single-agent, STaR, a prompted multi-agent system (CoMM) and TextGrad on College Physics, College Chemistry and PubMedQA, by 2.86-21.88%.",
+   "scope": "gpt-3.5-turbo-0125 and gpt-4o-mini-2024-07-18 via the OpenAI fine-tuning API, temperature 0, one run. Test sets: physics 107, chemistry 65, PubMedQA 500 (Table 6).",
+   "quantities": [
+    {"name": "margin_over_best_baseline_physics", "value": "1 (gpt-3.5) and 4 (4o-mini)", "unit": "questions of 107", "source": "s01 from Table 3"},
+    {"name": "margin_over_best_baseline_chemistry", "value": "4 and 7", "unit": "questions of 65", "source": "s01"},
+    {"name": "margin_over_best_baseline_pubmedqa", "value": "12 and 14", "unit": "questions of 500", "source": "s01"},
+    {"name": "margin_over_STaR_pubmedqa_gpt35", "value": 52, "unit": "questions of 500 (74.2 vs 63.8%)", "source": "s01"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": ["small-sample-overreach"],
+    "why": "All 30 printed percentages decode to integer counts at the stated test sizes, so the tables are self-consistent. 'Consistently outperforms' rests on margins of 1-7 questions on the 107- and 65-question sets, single runs, and no intervals: the Wilson CIs of SiriuS and the best baseline overlap in all six cells. The large, believable effect is against single-agent STaR on PubMedQA (+52/500 for gpt-3.5). That comparison does not match compute: three model calls against one. Against the untrained prompted multi-agent system (CoMM), training adds 12-14/500. That is the cleanest estimate of what SFT on the system's own successful multi-agent traces buys over the same multi-agent prompt."
+   }
+  },
+  {
+   "id": "c2", "origin": "paper",
+   "statement": "Role-specific fine-tuned models beat one shared model fine-tuned on all roles' data ('FT on One Base LLM'): PubMedQA 74.2 vs 70.4 (gpt-3.5), 73.4 vs 72.0 (4o-mini); actor-critic overall accuracy 50.6 vs 43.6 and 66.8 vs 59.6.",
+   "quantities": [
+    {"name": "pubmed_per_role_vs_shared_gpt35", "value": "371 vs 352", "unit": "correct of 500", "source": "Table 4"},
+    {"name": "pubmed_per_role_vs_shared_4omini", "value": "367 vs 360", "unit": "correct of 500", "source": "Table 4"},
+    {"name": "actor_critic_overall_per_role_vs_shared", "value": "50.6 vs 43.6; 66.8 vs 59.6", "unit": "%", "n": 500, "source": "Table 5"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [],
+    "why": "The gpt-3.5 difference (19/500) and both actor-critic differences (35-36/500) are well above noise for one run. The 4o-mini PubMedQA difference (7/500) is not. This bears on MASS, which deliberately trains ONE shared model on orchestrator and worker windows together. SiriuS's evidence points the other way for small fixed-role systems. The settings differ (3 fixed roles on QA vs open delegation on coding), so it is a tension to note, not a refutation."
+   }
+  },
+  {
+   "id": "c3", "origin": "paper",
+   "statement": "A second SiriuS iteration (regenerate the experience library with the fine-tuned system, fine-tune again) gives marginal further gains.",
+   "quantities": [{"name": "second_iteration_gain_pubmed", "value": "+4 (gpt-3.5), +1 (4o-mini)", "unit": "questions of 500", "source": "s01 from Table 4"}],
+   "evidence": ["a1"],
+   "our_assessment": {"status": "accepted", "patterns": ["nonsignificance-read-as-absence"], "why": "The paper calls it marginal, which is right; at 1-4 of 500 it is indistinguishable from zero. It is the recursive step, and it is flat, which is consistent with MASS's own L0 -> L1 held-out result (c1 there)."}
+  }
+ ],
+ "methods": ["in-paper-table-transcription", "arithmetic-consistency-check", "printed-decimal-denominator-forensics"],
+ "artifacts": [
+  {"id": "a1", "role": "in-paper-table", "locator": "arXiv:2502.04780 Tables 3-7", "status": "verified-usable", "fetch_cmd": "curl -sL -o paper.pdf https://arxiv.org/pdf/2502.04780",
+   "checked": {"on": "2026-11-07", "by": "maria", "how": "python -I reanalysis/s01_counts_and_margins.py", "result": "All 30 Table 3 cells and 12 Table 4 cells decode to integer counts at n = 107 / 65 / 500; no failures."}},
+  {"id": "a2", "role": "code", "locator": "github.com/zou-group/sirius @ 16643cd", "status": "present-but-insufficient", "bytes": 230000, "fetch_cmd": "git clone --depth 1 https://github.com/zou-group/sirius repo",
+   "checked": {"on": "2026-11-07", "by": "maria", "how": "clone; find dataset -type f", "result": "68 Python files for the three settings. Data shipped: dataset/phy_train.jsonl with 5 lines. No test sets, no experience libraries, no outputs, and no fine-tuned model ids. Reproduction needs the OpenAI fine-tuning API on gpt-3.5-turbo-0125; whether that is still offered was not checked."}}
+ ],
+ "relations": [],
+ "open_questions": [
+  "Paired per-question outcomes (SiriuS vs CoMM) would turn the 12-14/500 PubMedQA margin into a McNemar test; are they recoverable?",
+  "Does the per-role vs shared-model advantage survive at larger model sizes or open-ended delegation (MASS's regime)?"
+ ]
+}

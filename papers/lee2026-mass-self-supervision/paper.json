@@ -664,6 +664,11 @@
    "type": "zoo:sharesUnstatedAssumptionWith",
    "target": "cajas2026-agents-catching-agents",
    "why": "Both treat agreement among LLM judges as evidence of quality; in MASS the six 'judgments' are reads of one output by two models, and unanimity is common under noise (c3)."
+  },
+  {
+   "type": "cito:obtainsBackgroundFrom",
+   "target": "zhao2025-sirius",
+   "why": "Related work: 'SiriuS trains on selected multi-agent traces'. SiriuS selects with a verifier and trains per-role models; MASS selects with a self-judge and trains one shared model."
   }
  ],
  "open_questions": [

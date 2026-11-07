@@ -1,0 +1,161 @@
+{
+ "schema_version": "1.7",
+ "id": "huang2024-cannot-self-correct",
+ "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+ "authors": [
+  "Jie Huang",
+  "Xinyun Chen",
+  "Swaroop Mishra",
+  "Huaixiu Steven Zheng",
+  "Adams Wei Yu",
+  "Xinying Song",
+  "Denny Zhou"
+ ],
+ "year": 2024,
+ "venue": "ICLR 2024 (arXiv:2310.01798); Google DeepMind and UIUC",
+ "area": [
+  "self-improving-agents-and-workflow-search"
+ ],
+ "identifiers": {
+  "arxiv": "2310.01798"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "chain",
+  "evidence": "MASS opens on it: 'self-feedback can reinforce rather than correct errors (Huang et al., 2024)'. Read to check how strong that premise is.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 4,
+  "bytes_downloaded": 700000,
+  "compute_notes": "17-page PDF, Secs 1-5 and Tables 1-8 read. h01 under 1 s. No code needed: Figure 1 carries the paired transitions.",
+  "session": "2026-11-07 maria, MASS citation chain"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-07",
+  "verified": "2026-11-07",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "intrinsic self-correction hurts",
+  "oracle labels in self-correction evaluation",
+  "multi-agent debate vs self-consistency equal responses",
+  "LLM judging its own answer",
+  "correct to incorrect flips"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "origin": "paper",
+   "statement": "Without oracle labels (intrinsic self-correction), accuracy drops for all models on all benchmarks after self-correction; prior gains came from using the gold label to decide when to stop.",
+   "scope": "GSM8K, CommonSenseQA, HotpotQA; GPT-3.5 (full sets), GPT-4, GPT-4-Turbo, Llama-2-70b-chat (200 sampled questions); two rounds; three feedback prompts for GPT-4-Turbo and Llama-2.",
+   "quantities": [
+    {
+     "name": "cells_with_significant_drop_mcnemar",
+     "value": 4,
+     "denominator": 8,
+     "unit": "model x task cells, exact McNemar p < 0.05 on Fig 1 transitions",
+     "source": "h01 (ours)"
+    },
+    {
+     "name": "gpt35_csqa_I_to_C_vs_C_to_I",
+     "value": "71 vs 486",
+     "unit": "questions of 1221",
+     "source": "h01 from Fig 1"
+    },
+    {
+     "name": "gpt4turbo_gsm8k_I_to_C_vs_C_to_I",
+     "value": "2 vs 5",
+     "unit": "questions of 200 (p = 0.45)",
+     "source": "h01"
+    },
+    {
+     "name": "gpt35_gsm8k_I_to_C_vs_C_to_I",
+     "value": "100 vs 116",
+     "unit": "questions of 1319 (p = 0.31)",
+     "source": "h01"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "nonsignificance-read-as-absence"
+    ],
+    "why": "Transitions reproduce every table delta exactly (8/8). The sign holds everywhere, so self-correction never helps here. But the drop is large and significant only where the model is weak or the task is suggestible: Llama-2 on both tasks, GPT-3.5 on CommonSenseQA, GPT-4 on GSM8K. For GPT-4-Turbo on both tasks, GPT-4 on CommonSenseQA and GPT-3.5 on GSM8K, the change is indistinguishable from zero (p 0.31-0.83). The defensible claim is: 'intrinsic self-correction does not improve, and degrades models that lack confidence'. 'Drops for all' over-reads four null cells. For MASS this cuts both ways: a strong self-judge may simply be inert rather than harmful."
+   }
+  },
+  {
+   "id": "c2",
+   "origin": "paper",
+   "statement": "Multi-agent debate does not beat self-consistency at an equal number of responses: on full GSM8K (gpt-3.5-turbo-0301), debate with 9 responses 83.0% vs majority vote over 9 samples 88.2%; debate's gain is 'consistency', not 'correction'.",
+   "quantities": [
+    {
+     "name": "debate9_minus_sc9",
+     "value": -5.2,
+     "unit": "pp, n = 1319",
+     "source": "Table 7; z = -3.81 unpaired (h01)"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "patterns": [],
+    "why": "Large and well-powered on the full test set. It is the earliest instance in this area of the equal-compute baseline argument (later wang2026, tran2026)."
+   }
+  },
+  {
+   "id": "c3",
+   "origin": "paper",
+   "statement": "Self-Refine's constrained-generation gain disappears when the initial prompt contains the requirements that the feedback prompt adds: standard prompting with a better prompt gets 81.8 vs 75.1 after self-correction.",
+   "quantities": [
+    {
+     "name": "commongen_hard_standard_ours_vs_selfcorrect",
+     "value": "81.8 vs 75.1",
+     "unit": "%",
+     "source": "Table 8"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "patterns": [
+     "missing-adequate-control"
+    ],
+    "why": "The pattern is that the 'improvement' was an instruction-placement confound in the baseline. It is the same shape as RHI's optimiser prompt that predetermines 'contracts and hops'."
+   }
+  }
+ ],
+ "methods": [
+  "in-paper-table-transcription",
+  "arithmetic-consistency-check",
+  "exact-permutation-test"
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "in-paper-table",
+   "locator": "arXiv:2310.01798 Tables 2-8 and Figure 1 (answer-transition shares)",
+   "status": "verified-usable",
+   "fetch_cmd": "curl -sL -o paper.pdf https://arxiv.org/pdf/2310.01798",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "python -I reanalysis/h01_mcnemar_from_transitions.py",
+    "result": "All 8 transition sets sum to 100 and reproduce the Standard -> round-2 deltas of Tables 3-4."
+   }
+  }
+ ],
+ "relations": [],
+ "open_questions": [
+  "Does the null effect for strong models hold at larger n? 200 questions only exclude drops above about 4 pp."
+ ]
+}

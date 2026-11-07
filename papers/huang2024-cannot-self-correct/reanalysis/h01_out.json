@@ -1,0 +1,86 @@
+{
+ "GPT-3.5/GSM8K": {
+  "n": 1319,
+  "I->C": 100,
+  "C->I": 116,
+  "net_pp_from_fig": -1.2,
+  "net_pp_from_tables": -1.2,
+  "consistent": true,
+  "shares_sum": 100.0,
+  "mcnemar_exact_p": 0.3074
+ },
+ "GPT-3.5/CommonSenseQA": {
+  "n": 1221,
+  "I->C": 71,
+  "C->I": 486,
+  "net_pp_from_fig": -34.0,
+  "net_pp_from_tables": -34.0,
+  "consistent": true,
+  "shares_sum": 100.0,
+  "mcnemar_exact_p": 0.0
+ },
+ "GPT-4/GSM8K": {
+  "n": 200,
+  "I->C": 3,
+  "C->I": 16,
+  "net_pp_from_fig": -6.5,
+  "net_pp_from_tables": -6.5,
+  "consistent": true,
+  "shares_sum": 100.0,
+  "mcnemar_exact_p": 0.0044
+ },
+ "GPT-4/CommonSenseQA": {
+  "n": 200,
+  "I->C": 6,
+  "C->I": 10,
+  "net_pp_from_fig": -2.0,
+  "net_pp_from_tables": -2.0,
+  "consistent": true,
+  "shares_sum": 100.0,
+  "mcnemar_exact_p": 0.4545
+ },
+ "GPT-4-Turbo/GSM8K": {
+  "n": 200,
+  "I->C": 2,
+  "C->I": 5,
+  "net_pp_from_fig": -1.5,
+  "net_pp_from_tables": -1.5,
+  "consistent": true,
+  "shares_sum": 100.0,
+  "mcnemar_exact_p": 0.4531
+ },
+ "GPT-4-Turbo/CommonSenseQA": {
+  "n": 200,
+  "I->C": 10,
+  "C->I": 12,
+  "net_pp_from_fig": -1.0,
+  "net_pp_from_tables": -1.0,
+  "consistent": true,
+  "shares_sum": 100.0,
+  "mcnemar_exact_p": 0.8318
+ },
+ "Llama-2-70b/GSM8K": {
+  "n": 200,
+  "I->C": 11,
+  "C->I": 62,
+  "net_pp_from_fig": -25.5,
+  "net_pp_from_tables": -25.5,
+  "consistent": true,
+  "shares_sum": 100.0,
+  "mcnemar_exact_p": 0.0
+ },
+ "Llama-2-70b/CommonSenseQA": {
+  "n": 200,
+  "I->C": 16,
+  "C->I": 71,
+  "net_pp_from_fig": -27.5,
+  "net_pp_from_tables": -27.5,
+  "consistent": true,
+  "shares_sum": 100.0,
+  "mcnemar_exact_p": 0.0
+ },
+ "debate9_vs_selfconsistency9": {
+  "diff_pp": -5.2,
+  "z_unpaired": -3.81
+ }
+}
