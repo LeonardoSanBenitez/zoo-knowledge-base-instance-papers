@@ -1,0 +1,51 @@
+{
+ "schema_version": "1.7",
+ "id": "park2026-test-time-communication",
+ "title": "Scaling Discovery through Test-Time Communication",
+ "authors": ["Jongho Park", "Vasilis Kontonis", "Shivam Garg", "Akshay Krishnamurthy", "Dimitris Papailiopoulos"],
+ "year": 2026,
+ "venue": "arXiv:2609.21032v1 (17 Sep 2026); Microsoft Research and UC Berkeley",
+ "area": ["self-improving-agents-and-workflow-search"],
+ "identifiers": {"arxiv": "2609.21032"},
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {"class": "chain", "evidence": "Cited by MASS ('at inference time, communicating agents share discoveries'). Chosen deliberately as the strongest PRO-multi-agent result in the chain, to balance an area that had only skeptical findings.", "recorded": "at-selection"},
+ "cost": {"tool_calls": 5, "bytes_downloaded": 6000000, "compute_notes": "30-page PDF: Secs 1-3 (ARC-AGI-3, compute ablation, Terminal-Bench null) read; polyomino and MNIST sections skimmed. p01 under 1 s.", "session": "2026-11-07 maria, MASS citation chain"},
+ "curation": {"author": "maria", "created": "2026-11-07", "verified": "2026-11-07", "notes_file": "NOTES.md"},
+ "triggers": ["team of communicating agents vs best of k independent", "verified progress sharing", "shared directory agent communication", "ARC-AGI-3 multi-agent", "when does multi-agent help", "coordination tax at low budget"],
+ "claims": [
+  {
+   "id": "c1", "origin": "paper",
+   "statement": "With the same per-agent resources, a team of k communicating agents beats the best of k independent agents on ARC-AGI-3: 8.0% vs 2.2% full-game solve rate at k = 5 (team@5 matches best@33), with fewer total tokens for any solve rate above 1%.",
+   "scope": "Claude Sonnet 4.6 via Copilot CLI, 25 public games, 64 single-agent trials per game, 20 team trials per game and k, native per-level action budget.",
+   "quantities": [
+    {"name": "LP85_team5_vs_single", "value": "13/20 vs 0/64", "unit": "full solves", "source": "Sec 3.1; Fisher p = 1.2e-10 (p01)"},
+    {"name": "FT09_team3_vs_best3", "value": "90% vs 25.9%", "unit": "solve rate", "source": "Sec 3.1; best@3 reproduced from 6/64 (p01 known answer)"},
+    {"name": "games_where_communication_raises_furthest_level", "value": 18, "denominator": 25, "unit": "games", "source": "Fig 2a; sign test p = 0.043 (p01)"},
+    {"name": "games_carrying_the_solve_rate", "value": 4, "denominator": 25, "unit": "games with any team@5 success", "source": "Fig 2b"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": ["centre-hides-distribution"],
+    "why": "The per-game effects are far beyond noise. Even if LP85's single-agent rate were at its 95% upper bound (4.6%), best@5 would be about 21% against 65%. The 25-game aggregate is carried by 4 games, which the paper states plainly. The comparison is the right one: equal per-agent compute, best@k from a pool, token curves, and a single agent given 5x the budget. The low-budget ablation shows a coordination tax, and the paper reports it."
+   }
+  },
+  {
+   "id": "c2", "origin": "paper",
+   "statement": "Communication helps when progress is verifiable ('verified progress sharing'); on Terminal-Bench 2.0, where feedback does not reliably rank intermediate solutions, team@2 does not beat independent pass@2.",
+   "quantities": [{"name": "terminal_bench_team2_vs_pass2", "value": "team@2 > single, team@2 not > pass@2", "unit": "pass rate", "source": "Table 3"}],
+   "evidence": ["a1"],
+   "our_assessment": {"status": "accepted", "patterns": [], "why": "The authors report the null in their own paper, which is what makes the positive result credible. It is the same dividing line as SiriuS (verifier: small real gain) against MASS and RHI (LLM judge only: gains hard to separate from noise and completion). And it agrees with wang2026: harness evolution wins on games with granular verifiable feedback and loses on Terminal-Bench."}
+  }
+ ],
+ "methods": ["in-paper-table-transcription", "exact-permutation-test", "arithmetic-consistency-check"],
+ "artifacts": [
+  {"id": "a1", "role": "in-paper-table", "locator": "arXiv:2609.21032 Tables 1-3, Figs 1-4", "status": "verified-usable", "fetch_cmd": "curl -sL -o paper.pdf https://arxiv.org/pdf/2609.21032",
+   "checked": {"on": "2026-11-07", "by": "maria", "how": "python -I reanalysis/p01_exact_tests.py", "result": "best@3 = 25.9% reproduces from 6/64 by the paper's formula."}},
+  {"id": "a2", "role": "code", "locator": "github.com/jerryjonghopark/ (protocol; the exact repo name is truncated in the PDF)", "status": "not-checked",
+   "checked": {"on": "2026-11-07", "by": "maria", "how": "grep of the PDF text", "result": "The URL is truncated at a line break; not resolved this session."}}
+ ],
+ "relations": [],
+ "open_questions": ["Resolve the protocol repository and check whether per-trial outcomes are released.", "Would team@k beat best@k on a task whose only feedback is an LLM judge (MASS's regime)? The paper's own Terminal-Bench null suggests not."]
+}

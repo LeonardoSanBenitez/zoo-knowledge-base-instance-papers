@@ -1,0 +1,11 @@
+{
+ "FT09_best3_from_6_of_64": 25.9,
+ "LP85_best5_from_0_of_64": 0.0,
+ "LP85_team5_vs_single_fisher_p": 1.238720978303465e-10,
+ "LP85_team5_vs_best5_binom_p": 7.751999949612003e-113,
+ "FT09_team3_vs_best3_binom_p": 3.0593182868950905e-09,
+ "furthest_level_sign_test_18_of_25_p_two_sided": 0.0433,
+ "note": "The per-game effects on LP85 and FT09 are far beyond noise. The 25-game aggregate (8.0% vs 2.2%) is carried by 4 games, as the paper says. Furthest-level improvement on 18/25 games: sign test p = 0.043. best@k treats the 64-trial pool as the population, so its own sampling error (6/64) is ignored; at s = 0 the true single-agent rate could be up to about 4.6% (95% upper bound), and best@5 would then be about 21%, still far below 65%.",
+ "LP85_single_rate_upper95": 0.0457,
+ "LP85_best5_at_upper95": 0.209
+}

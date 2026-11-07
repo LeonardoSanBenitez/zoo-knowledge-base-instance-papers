@@ -31,6 +31,13 @@ for three recurring reasons:
    deliverable improving. In MASS, both the MLR-Bench and the AstaBench gains are exactly delivery rate times a
    *falling* mean among delivered outputs, and the README's 107-task MLR-Bench run shows the same.
 
+**The dividing line the chain converges on: verifiable progress.** Where a level, a scorer or a gold answer
+tells good from bad, multi-agent communication and self-training pay, and pay at equal compute
+(`park2026-test-time-communication`, `zhao2025-sirius`, the game half of `wang2026-rethinking-harness-evolution`).
+Where only an LLM judge decides, they do not reliably beat simple retries (Terminal-Bench in both wang2026 and
+park2026; `huang2024-cannot-self-correct`). The judges themselves can be unvalidated: MLR-Judge's validation is
+passed by a constant (`chen2025-mlr-bench`). MASS and RHI work in the second regime by design.
+
 A fourth, specific to harness search: **the optimiser is told what to find.** RHI's optimiser prompt demands
 "stronger contracts" and "more hops", and the papers then report that contracts and hops became task-specific.
 
@@ -47,6 +54,7 @@ A fourth, specific to harness search: **the optimiser is told what to find.** RH
 | `zhao2025-sirius` | read-and-reanalysed | NeurIPS 2025: keep each multi-agent trajectory that reached the gold answer, fine-tune each role's model on it; the ancestor of MASS's outer loop, but WITH a verifier and per-role models | All 30 % decode to counts. Over the untrained multi-agent prompt, SFT adds 12-14/500 on PubMedQA, and 1-7 questions on the 107/65-question sets. The second iteration adds 1-4/500. Per-role models beat one shared model (19/500), which is in tension with MASS's shared weights. |
 | `huang2024-cannot-self-correct` | read-and-reanalysed | ICLR 2024: without gold labels, asking a model to review its own answer never helps; debate loses to majority vote at equal responses | Exact McNemar on Fig 1 transitions: a significant drop in 4/8 cells (weak or suggestible models). For GPT-4-Turbo and others the change is about zero: strong models leave their answers alone. 'Harms all' over-reads four nulls. |
 | `chen2025-mlr-bench` | read-and-reanalysed | The benchmark MASS gains most on: 201 workshop research tasks, scored by the MLR-Judge rubric | Its judge validation is passed by a CONSTANT judge (b01, on the authors' released human study); MLR-Judge vs experts Spearman about 0 (Overall -0.18; experts with each other 0.48). Fabricated results: 8/10 Claude Code runs, 17/18 checked papers. Validation refuted; fabrication finding stands. |
+| `park2026-test-time-communication` | read-and-reanalysed | MSR: k agents sharing a directory beat best-of-k independent agents at equal per-agent compute on ARC-AGI-3 (team@5 = best@33), and set records on polyomino packing and MNIST compression; null on Terminal-Bench | The positive case, and it holds: LP85 0/64 alone vs 13/20 as a team (Fisher p 1e-10), furthest level up on 18/25 games. It is concentrated in 4 games. Its own null marks the boundary: it works when progress is VERIFIABLE. |
 
 ## What a reader of this literature should carry
 
