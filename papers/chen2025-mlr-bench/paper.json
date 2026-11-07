@@ -1,0 +1,68 @@
+{
+ "schema_version": "1.7",
+ "id": "chen2025-mlr-bench",
+ "title": "MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research",
+ "authors": ["Hui Chen", "Miao Xiong", "Yujie Lu", "Wei Han", "Ailin Deng", "Yufei He", "Jiaying Wu", "Yibo Li", "Yue Liu", "Bryan Hooi"],
+ "year": 2025,
+ "venue": "arXiv:2505.19955; NUS, UCSB, SUTD (cited by MASS as NeurIPS 38)",
+ "area": ["self-improving-agents-and-workflow-search", "clinical-ai-evaluation-and-agent-oversight"],
+ "identifiers": {"arxiv": "2505.19955", "url": "https://github.com/chchenhui/mlrbench"},
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {"class": "chain", "evidence": "MASS's largest public-benchmark gain is on MLR-Bench, scored with the 'official MLR-Judge overall-review rubric'. Read to see what validates that rubric.", "recorded": "at-selection"},
+ "cost": {"tool_calls": 12, "bytes_downloaded": 3600000, "compute_notes": "49-page PDF: body, Sec 4 judge validation, App. E and hallucination analysis read. human_eval/ fetched at commit f728d57 (5 files, 223 KB). b01 ran in 35 s (1000 permutations).", "session": "2026-11-07 maria, MASS citation chain"},
+ "curation": {"author": "maria", "created": "2026-11-07", "verified": "2026-11-07", "notes_file": "NOTES.md"},
+ "triggers": ["LLM judge validated against human reviewers", "Mann-Whitney test of absolute score differences", "constant judge passes validation", "AI research agent fabricates results", "MLR-Judge rubric validity", "AI Scientist v2 hallucination"],
+ "claims": [
+  {
+   "id": "c1", "origin": "paper",
+   "statement": "MLR-Judge is well aligned with expert reviewers: on five criteria, |LLM - human| score differences are not significantly larger than |human - human| differences (Mann-Whitney p 0.055-0.981).",
+   "scope": "30 AI-generated papers (10 ICLR-2025 workshop tasks x 3 generating models), 10 expert reviewers, 2 per paper; 24 human pairs and 60 human-LLM pairs per criterion.",
+   "quantities": [
+    {"name": "constant_judge_passes", "value": "5 of 5 criteria (p 0.15-0.89)", "unit": "same Mann-Whitney test; the judge gives every paper the mean human score", "source": "b01 K1 (ours)"},
+    {"name": "constant_vs_mlr_judge_mean_abs_diff_overall", "value": "1.17 vs 1.65", "unit": "points on 1-10, mean |judge - human|", "source": "b01"},
+    {"name": "shuffled_llm_scores_pass_rate", "value": "Novelty 1.00, Clarity 0.48, Soundness 0.99, Significance 1.00, Overall 1.00", "unit": "share of 1000 permutations with p > 0.05", "source": "b01 K2"},
+    {"name": "spearman_mlr_judge_vs_mean_human_overall", "value": -0.184, "n": 30, "ci_low": -0.51, "ci_high": 0.19, "ci_kind": "confidence", "unit": "Spearman r over papers (Fisher-z interval)", "source": "b01"},
+    {"name": "spearman_human_vs_human_overall", "value": 0.477, "n": 27, "ci_low": 0.12, "ci_high": 0.73, "ci_kind": "confidence", "unit": "Spearman r over doubly reviewed papers", "source": "b01"},
+    {"name": "reproduced_p_overall", "value": 0.783, "unit": "Mann-Whitney p from the released merge_data.csv (paper prints 0.981)", "source": "b01"}
+   ],
+   "evidence": ["a1", "a2"],
+   "our_assessment": {
+    "status": "refuted",
+    "patterns": ["nonsignificance-read-as-absence", "estimator-biased-or-insensitive"],
+    "why": "The validation instrument cannot tell a judge that reads the paper from one that does not. A constant judge passes all five criteria and is CLOSER to the humans than MLR-Judge on every criterion. The real LLM scores, shuffled across papers, pass in 99-100% of permutations on four criteria. Measured directly, MLR-Judge's rank agreement with the mean expert score over 30 papers is about zero or negative (Overall -0.18, Soundness -0.18, Significance -0.24), while two experts agree at 0.44-0.54 on four of five criteria (the Overall difference is about 2.5 SE). On this sample there is no evidence that MLR-Judge tracks expert judgment. The reproduced p-values differ from the printed ones (Overall 0.783 vs 0.981); the direction is the same and the reason was not found. Scope: the 2025 judge models. MASS applies the rubric with GPT-5.5 and Opus 4.8, which were never validated against humans."
+   }
+  },
+  {
+   "id": "c2", "origin": "paper",
+   "statement": "Coding agents frequently fabricate experimental results: in 8 of 10 tasks run by Claude Code the reported results came from synthesized or placeholder data, and faked results appear in almost all AI Scientist V2 papers.",
+   "quantities": [
+    {"name": "claude_code_fabricated_tasks", "value": 0.8, "count": 8, "denominator": 10, "ci_low": 0.49, "ci_high": 0.94, "ci_kind": "confidence", "unit": "tasks (Wilson 95%, ours)", "source": "Sec 4"},
+    {"name": "faked_results_in_hallucination_check", "value": "17 of 18 rows Yes (AI Scientist V2 10/10; MLR-Agent 7 of 8 rows present)", "unit": "papers, flagged by LLM judges then verified by humans", "source": "human_eval/Hallucination Check.csv"}
+   ],
+   "evidence": ["a1", "a2"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": ["small-sample-overreach"],
+    "why": "'80% of the cases' in the abstract is 8 of 10 tasks (CI 0.49-0.94). The released check is starker (17/18), but it covers 10 trustworthy-AI workshop tasks, flagged first by LLM judges. The mechanism traced in the logs is decisive: after an execution failure the agent writes a 'simulated results file'. For any benchmark that scores DELIVERED papers, a rise in delivery rate is not evidence of better research unless fabrication is checked."
+   }
+  }
+ ],
+ "methods": ["exact-reproduction-from-deposit", "known-answer-structural-null", "llm-as-judge-audit", "exact-permutation-test"],
+ "instrument_checks": [
+  {"instrument": "Mann-Whitney U on |human-human| vs |human-judge| differences (MLR-Judge validation)", "world": "constant judge: every paper scored at the mean human score", "design": "the released 30-paper human study", "statistic": "criteria passing (p > 0.05), of 5", "value": 5, "verdict": "artifact", "source": "reanalysis/b01_judge_validation_known_answer.py"},
+  {"instrument": "Mann-Whitney U on |human-human| vs |human-judge| differences", "world": "MLR-Judge scores permuted across papers (no link to content)", "design": "1000 permutations", "statistic": "share passing, Overall criterion", "value": 0.999, "n_sims": 1000, "verdict": "artifact", "source": "reanalysis/b01_judge_validation_known_answer.py"}
+ ],
+ "artifacts": [
+  {"id": "a1", "role": "in-paper-table", "locator": "arXiv:2505.19955 Sec 4, Fig 4, App. E", "status": "verified-usable", "fetch_cmd": "curl -sL -o paper.pdf https://arxiv.org/pdf/2505.19955",
+   "checked": {"on": "2026-11-07", "by": "maria", "how": "PyMuPDF text, read", "result": "Judge-validation method and the 8/10 fabrication count read from the primary text."}},
+  {"id": "a2", "role": "human-labels", "locator": "github.com/chchenhui/mlrbench @ f728d571, human_eval/ (merge_data.csv, human_review.csv, llm_judge.csv, Hallucination Check.csv, compute_agreement_score.ipynb)", "status": "verified-usable", "bytes": 223000,
+   "fetch_cmd": "curl -sLO https://raw.githubusercontent.com/chchenhui/mlrbench/f728d571a992d71c8b526eeb4d9ab6bb5c8cc824/human_eval/merge_data.csv (same pattern for the other four files)",
+   "checked": {"on": "2026-11-07", "by": "maria", "how": "python reanalysis/b01_judge_validation_known_answer.py merge_data.csv (re-implements the notebook's test exactly, then adds known-answer judges)", "result": "60 reviews of 30 papers. The test reproduces in structure, but the p-values differ from the printed ones."}}
+ ],
+ "relations": [],
+ "open_questions": [
+  "Why do the released data give different Mann-Whitney p-values from the paper (Overall 0.783 vs 0.981)? Is the CSV a later version?",
+  "Was MLR-Judge with GPT-5.5 or Opus 4.8 (as used by MASS) ever validated against human reviewers? What is the fabrication rate among MASS's delivered MLR-Bench papers?"
+ ]
+}

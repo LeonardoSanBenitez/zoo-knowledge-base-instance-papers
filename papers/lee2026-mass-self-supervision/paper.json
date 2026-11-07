@@ -178,7 +178,7 @@
      "instrument-relative-headline-number",
      "mechanism-asserted-not-measured"
     ],
-    "why": "All per-token ratios are consistent with Table 7. What the ratio is made of differs by benchmark. On MLR-Bench and AstaBench the aggregate equals delivery rate times mean-among-delivered to within 1% (m01 C), and the mean among delivered FALLS (3.07 to 2.88, 0.105 to 0.088). The README's independent 107-task MLR run shows the same: flat about 3.0 among delivered, with all of the gain in delivery. On DSBench the score moves 0.009 against a trial SD of 0.025-0.029, so about 94% of the log gain in per-token ratio is fewer output tokens (an implied ratio of 0.755). ScienceAgentBench is +9 successes in 306. The paper itself says the MLR gain 'accompanies higher completion' and that none of 180 MLR runs delegates, so public-benchmark transfer is not via multi-agent behaviour. Supported reading: the student finishes and delivers more often within the time limit, at no better per-deliverable quality. The abstract's 'higher performance per output token' says more than that."
+    "why": "All per-token ratios are consistent with Table 7. What the ratio is made of differs by benchmark. On MLR-Bench and AstaBench the aggregate equals delivery rate times mean-among-delivered to within 1% (m01 C), and the mean among delivered FALLS (3.07 to 2.88, 0.105 to 0.088). The README's independent 107-task MLR run shows the same: flat about 3.0 among delivered, with all of the gain in delivery. On DSBench the score moves 0.009 against a trial SD of 0.025-0.029, so about 94% of the log gain in per-token ratio is fewer output tokens (an implied ratio of 0.755). ScienceAgentBench is +9 successes in 306. The paper itself says the MLR gain 'accompanies higher completion' and that none of 180 MLR runs delegates, so public-benchmark transfer is not via multi-agent behaviour. Supported reading: the student finishes and delivers more often within the time limit, at no better per-deliverable quality. The abstract's 'higher performance per output token' says more than that. ADDED 2026-11-07 after reading chen2025-mlr-bench: the MLR-Judge rubric's own validation passes a constant judge, and MLR-Judge's correlation with experts over 30 papers is about 0 (Overall r = -0.18 vs human-human 0.48). MLR-Bench's authors found fabricated results in 8/10 Claude Code runs and in 17/18 checked papers. MASS reports more delivered papers, scored by GPT-5.5 and Opus 4.8 with that rubric, and checks neither fabrication nor judge validity. The MLR-Bench row cannot be read as research quality."
    }
   },
   {
@@ -669,6 +669,11 @@
    "type": "cito:obtainsBackgroundFrom",
    "target": "zhao2025-sirius",
    "why": "Related work: 'SiriuS trains on selected multi-agent traces'. SiriuS selects with a verifier and trains per-role models; MASS selects with a self-judge and trains one shared model."
+  },
+  {
+   "type": "cito:usesMethodIn",
+   "target": "chen2025-mlr-bench",
+   "why": "MASS scores MLR-Bench with the 'official MLR-Judge overall-review rubric' (C.5)."
   }
  ],
  "open_questions": [

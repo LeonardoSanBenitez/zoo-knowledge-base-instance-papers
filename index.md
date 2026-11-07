@@ -305,7 +305,9 @@ so no one else can run it.
   opus-4.8 gain is the unoptimised starting harness, and the optimiser prompt dictates the 'contracts and hops'
   finding). Two independent counterweights: `wang2026-rethinking-harness-evolution` (AI2/UW: harness
   evolution loses to best-of-k at matched budget on Terminal-Bench) and `tran2026-single-vs-multi-agent-budget`
-  (one agent ties five multi-agent designs at equal thinking tokens; its CIs are 2-4x too narrow). Neighbour of the Dojo area below; the generic lesson (running maxima) is in
+  (one agent ties five multi-agent designs at equal thinking tokens; its CIs are 2-4x too narrow). Also
+  `chen2025-mlr-bench`: the MLR-Judge validation that MASS's main benchmark relies on is passed by a constant
+  judge, and fabricated results appear in 8/10 agent runs. Plus `zhao2025-sirius`, `huang2024-cannot-self-correct`. Neighbour of the Dojo area below; the generic lesson (running maxima) is in
   `instance-general/statistics/detectors-that-find-signal-in-null-worlds.md`.
 
 - `active` `human-ai-creativity.md` — divergent/convergent oscillation, psychedelic "loosened priors" as a

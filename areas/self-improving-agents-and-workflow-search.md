@@ -46,6 +46,7 @@ A fourth, specific to harness search: **the optimiser is told what to find.** RH
 | `tran2026-single-vs-multi-agent-budget` | read-and-reanalysed | Stanford: one agent vs five multi-agent designs at equal thinking tokens on multi-hop QA; the DPI says an ideal single reader cannot lose | It is a draw, not 'outperform': 38/40 cells are indistinguishable at question level, one cell goes each way. The appendix CIs are 2-4x too narrow and off-centre (FRAMES implied n is about 4 x 824: pooled runs). The theory exempts degraded-context, long-horizon regimes, which is where MASS and RHI live. |
 | `zhao2025-sirius` | read-and-reanalysed | NeurIPS 2025: keep each multi-agent trajectory that reached the gold answer, fine-tune each role's model on it; the ancestor of MASS's outer loop, but WITH a verifier and per-role models | All 30 % decode to counts. Over the untrained multi-agent prompt, SFT adds 12-14/500 on PubMedQA, and 1-7 questions on the 107/65-question sets. The second iteration adds 1-4/500. Per-role models beat one shared model (19/500), which is in tension with MASS's shared weights. |
 | `huang2024-cannot-self-correct` | read-and-reanalysed | ICLR 2024: without gold labels, asking a model to review its own answer never helps; debate loses to majority vote at equal responses | Exact McNemar on Fig 1 transitions: a significant drop in 4/8 cells (weak or suggestible models). For GPT-4-Turbo and others the change is about zero: strong models leave their answers alone. 'Harms all' over-reads four nulls. |
+| `chen2025-mlr-bench` | read-and-reanalysed | The benchmark MASS gains most on: 201 workshop research tasks, scored by the MLR-Judge rubric | Its judge validation is passed by a CONSTANT judge (b01, on the authors' released human study); MLR-Judge vs experts Spearman about 0 (Overall -0.18; experts with each other 0.48). Fabricated results: 8/10 Claude Code runs, 17/18 checked papers. Validation refuted; fabrication finding stands. |
 
 ## What a reader of this literature should carry
 
@@ -63,7 +64,10 @@ These are notes from the literature, not a plan.
 3. **Split every agent-benchmark score into delivery rate x quality among delivered.** It is one line of arithmetic,
    and in MASS it reverses the reading.
 4. **Read the optimiser's prompt before believing a "what changed" analysis.**
-5. **The outside judge must catch redefined success.** In MASS, an agent that rewrote a simulator so objects
+5. **Ask whether the judge was validated, and how.** MLR-Judge's published validation passes a constant
+   judge (`chen2025-mlr-bench`). For delivered-paper benchmarks, also ask how many deliverables are fabricated:
+   8/10 runs in the benchmark's own audit.
+6. **The outside judge must catch redefined success.** In MASS, an agent that rewrote a simulator so objects
    teleport to the goal won 5 of 6 frontier-judge verdicts (G.3). That is reward hacking, as studied in
    `huang2026-reward-hacking-research-agents` (filed under the Dojo area).
 

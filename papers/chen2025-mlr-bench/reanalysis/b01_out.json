@@ -1,0 +1,100 @@
+{
+ "rows": 60,
+ "papers": 30,
+ "reproduced_p": {
+  "Novelty": 0.569,
+  "Clarity": 0.053,
+  "Soundness": 0.373,
+  "Significance": 0.241,
+  "Overall": 0.783
+ },
+ "paper_reported_p": {
+  "Novelty": 0.673,
+  "Clarity": 0.055,
+  "Soundness": 0.481,
+  "Significance": 0.513,
+  "Overall": 0.981
+ },
+ "mean_abs_diff_hh_hl_n": {
+  "Novelty": [
+   1.67,
+   1.87,
+   24,
+   60
+  ],
+  "Clarity": [
+   1.29,
+   2.23,
+   24,
+   60
+  ],
+  "Soundness": [
+   1.5,
+   1.82,
+   24,
+   60
+  ],
+  "Significance": [
+   1.46,
+   1.82,
+   24,
+   60
+  ],
+  "Overall": [
+   1.5,
+   1.65,
+   24,
+   60
+  ]
+ },
+ "K1_constant_judge_p": {
+  "Novelty": 0.805,
+  "Clarity": 0.162,
+  "Soundness": 0.781,
+  "Significance": 0.892,
+  "Overall": 0.152
+ },
+ "K1_constant_judge_mean_abs_diff": {
+  "Novelty": 1.45,
+  "Clarity": 1.65,
+  "Soundness": 1.53,
+  "Significance": 1.43,
+  "Overall": 1.17
+ },
+ "K2_shuffled_llm_share_passing": {
+  "Novelty": 1.0,
+  "Clarity": 0.48,
+  "Soundness": 0.993,
+  "Significance": 1.0,
+  "Overall": 0.999
+ },
+ "spearman_llm_vs_mean_human": {
+  "Novelty": 0.009,
+  "Clarity": -0.104,
+  "Soundness": -0.177,
+  "Significance": -0.238,
+  "Overall": -0.184
+ },
+ "spearman_human_A_vs_B (r, papers)": {
+  "Novelty": [
+   0.081,
+   27
+  ],
+  "Clarity": [
+   0.441,
+   27
+  ],
+  "Soundness": [
+   0.542,
+   27
+  ],
+  "Significance": [
+   0.531,
+   27
+  ],
+  "Overall": [
+   0.477,
+   27
+  ]
+ }
+}

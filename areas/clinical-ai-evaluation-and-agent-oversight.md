@@ -47,6 +47,7 @@ them is agreement within a group, and it is weighed accordingly
 | `arslan2026-bodhi-engineering` | read-and-reanalysed | Two-pass "humble and curious" prompt: +16.6 pp HealthBench Hard, context-seeking 7.8% to 97.3% | **All eight printed d values are standardised by seed-to-seed SD** (n = 5). Per response, humility d = 0.66, not 5.80. The curiosity metric is largely a manipulation check. |
 | `xiang2026-dojo` | read-full-text | DOJO platform proposal: data/model/workflow planes plus decoy-based evaluator calibration | Position paper; `dojo-health` is not on PyPI (control-checked). Cites BODHI as 1,800 observations where the source says 2,000. |
 | `cajas2026-creativity-constraint` | read-and-ran-artifacts | Filed under `human-ai-creativity`, listed here for the shared group | Screening log shows 2/3 majority votes where the text describes two humans. |
+| `chen2025-mlr-bench` | read-and-reanalysed | Filed under `self-improving-agents-and-workflow-search`, listed here because it is a judge-validation study | The 'LLM judge agrees with experts' test is passed by a constant judge; the actual judge-expert correlation is about 0 on 30 papers. The DOJO decoy-calibration idea (`xiang2026-dojo`) is the right kind of control. |
 
 ## What a Dojo ticket that benchmarks a model should inherit from this file
 
