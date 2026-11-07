@@ -1,0 +1,239 @@
+{
+ "A_table5_sums": {
+  "train": {
+   "wins": 315,
+   "losses": 165,
+   "reported": [
+    315,
+    165
+   ],
+   "match": true,
+   "share": 0.6562
+  },
+  "test": {
+   "wins": 97,
+   "losses": 83,
+   "reported": [
+    97,
+    83
+   ],
+   "match": true,
+   "share": 0.5389
+  }
+ },
+ "B_test_unit": {
+  "per_task_share": [
+   0.483,
+   0.45,
+   0.683
+  ],
+  "judgment_unit_n180_wilson95": [
+   0.466,
+   0.61
+  ],
+  "pair_unit_n30_wilson95_upper_bound_on_width": [
+   0.361,
+   0.698
+  ],
+  "task_unit_n3_mean": 0.539,
+  "task_unit_t95": [
+   0.225,
+   0.852
+  ],
+  "train_tasks_below_50pct": [
+   205
+  ],
+  "test_tasks_below_50pct": [
+   60,
+   207
+  ]
+ },
+ "C_delivery_decomposition": {
+  "MLR-Bench (12x5)": {
+   "rows": [
+    {
+     "gen": 0,
+     "delivery": 0.517,
+     "cond_mean": 3.07,
+     "delivery_x_cond": 1.5862,
+     "reported_aggregate": 1.58,
+     "rel_err": 0.004
+    },
+    {
+     "gen": 1,
+     "delivery": 0.6,
+     "cond_mean": 3.0,
+     "delivery_x_cond": 1.8,
+     "reported_aggregate": 1.8,
+     "rel_err": 0.0
+    },
+    {
+     "gen": 2,
+     "delivery": 0.833,
+     "cond_mean": 2.88,
+     "delivery_x_cond": 2.4,
+     "reported_aggregate": 2.4,
+     "rel_err": 0.0
+    }
+   ],
+   "aggregate_ratio_L2_L0": 1.519,
+   "delivery_ratio": 1.613,
+   "cond_mean_ratio": 0.938,
+   "fisher_style_note": "aggregate ratio ~= delivery ratio x cond ratio; cond ratio < 1"
+  },
+  "AstaBench E2E-Hard (40x3)": {
+   "rows": [
+    {
+     "gen": 0,
+     "delivery": 0.5,
+     "cond_mean": 0.105,
+     "delivery_x_cond": 0.0525,
+     "reported_aggregate": 0.053,
+     "rel_err": 0.009
+    },
+    {
+     "gen": 1,
+     "delivery": 0.575,
+     "cond_mean": 0.095,
+     "delivery_x_cond": 0.0546,
+     "reported_aggregate": 0.055,
+     "rel_err": 0.007
+    },
+    {
+     "gen": 2,
+     "delivery": 0.758,
+     "cond_mean": 0.088,
+     "delivery_x_cond": 0.0667,
+     "reported_aggregate": 0.067,
+     "rel_err": 0.004
+    }
+   ],
+   "aggregate_ratio_L2_L0": 1.264,
+   "delivery_ratio": 1.517,
+   "cond_mean_ratio": 0.838,
+   "fisher_style_note": "aggregate ratio ~= delivery ratio x cond ratio; cond ratio < 1"
+  }
+ },
+ "D_scienceagentbench": {
+  "pooled": {
+   "L0": [
+    88,
+    306,
+    0.2876
+   ],
+   "L1": [
+    93,
+    306,
+    0.3039
+   ],
+   "L2": [
+    97,
+    306,
+    0.317
+   ]
+  },
+  "L2_minus_L0_pp": 2.94,
+  "z_independent_runs": 0.79,
+  "note": "z treats 306 runs as independent; the same 102 tasks recur, so the true SE is larger for task-heterogeneous outcomes; the paper itself makes no significance claim here",
+  "trial_means_pct": {
+   "L0": 28.76,
+   "L1": 30.39,
+   "L2": 31.7
+  },
+  "text_says": "28.7 -> 31.8 (p.6 body) vs 28.8 -> 31.7 (Table 7): rounding inconsistency"
+ },
+ "E_fig6_interpolation": {
+  "M_gap_pp": 8.26,
+  "Mplus_gap_pp": 6.3,
+  "reported": [
+   8.3,
+   6.3
+  ],
+  "token_ratio_Spp_over_Mplus": 1.457,
+  "pct_fewer_tokens_Mplus": 31.4,
+  "S_below_base": "S (17 single-agent episodes) scores 44.0% vs base: the lower interpolation anchor is a model made WORSE than base by fine-tuning, which lifts every gap measured from that line",
+  "gap_if_anchor_were_base_50pct_at_S_tokens": 3.75
+ },
+ "F_per_token": {
+  "MLR-Bench": {
+   "score_ratio": 1.519,
+   "per_token_ratio": 1.6,
+   "implied_token_ratio_L2_over_L0": 0.949,
+   "share_of_log_gain_from_fewer_tokens": 0.11
+  },
+  "DSBench": {
+   "score_ratio": 1.019,
+   "per_token_ratio": 1.35,
+   "implied_token_ratio_L2_over_L0": 0.755,
+   "share_of_log_gain_from_fewer_tokens": 0.94
+  },
+  "ScienceAgentBench": {
+   "score_ratio": 1.101,
+   "per_token_ratio": 1.2,
+   "implied_token_ratio_L2_over_L0": 0.917,
+   "share_of_log_gain_from_fewer_tokens": 0.47
+  },
+  "AstaBench": {
+   "score_ratio": 1.264,
+   "per_token_ratio": 1.28,
+   "implied_token_ratio_L2_over_L0": 0.988,
+   "share_of_log_gain_from_fewer_tokens": 0.05
+  },
+  "Terminal-Bench 2.0": {
+   "score_ratio": 0.939,
+   "per_token_ratio": 0.96,
+   "implied_token_ratio_L2_over_L0": 0.978,
+   "share_of_log_gain_from_fewer_tokens": null
+  },
+  "SWE-bench Verified": {
+   "score_ratio": 0.976,
+   "per_token_ratio": 0.94,
+   "implied_token_ratio_L2_over_L0": 1.038,
+   "share_of_log_gain_from_fewer_tokens": null
+  },
+  "_note": "abstract reports 1.2-1.6x on the four 'research' benchmarks; the two remaining benchmarks are 0.94x and 0.96x. On DSBench the score change (+0.009, trial SD 0.025-0.029) is noise-size and ~94% of the log per-token gain is fewer output tokens."
+ },
+ "G_student_comparisons": {
+  "Mplus_vs_Spp_judgment_unit_n300": [
+   0.043,
+   0.039,
+   1.11
+  ],
+  "Mplus_vs_Spp_pair_unit_n50": [
+   0.043,
+   0.095,
+   0.45
+  ],
+  "M_vs_S_judgment_unit": [
+   0.12,
+   0.041,
+   2.96
+  ],
+  "M_vs_S_pair_unit": [
+   0.12,
+   0.099,
+   1.21
+  ],
+  "note": "S++ n not printed (Table 8 dashes); 50 pairs assumed like its siblings. Also S/M/X/S+ checkpoints were chosen by external judgments on tasks 51/53/56/307, which are 4 of the 5 evaluation tasks (App. D.1): selection on the evaluation set, and it fixes the x-coordinate (processed tokens) of Fig 6 as well as the y."
+ },
+ "H_readme_mlr107": {
+  "aggregate": [
+   1.71,
+   1.77,
+   2.25
+  ],
+  "delivered": [
+   0.57,
+   0.59,
+   0.76
+  ],
+  "implied_mean_among_delivered": [
+   3.0,
+   3.0,
+   2.961
+  ],
+  "aggregate_ratio_L2_L0": 1.316,
+  "delivery_ratio_L2_L0": 1.333,
+  "note": "Independent replication of section C on 107 tasks: implied quality among delivered papers is flat (about 3.0 at every generation); the whole aggregate gain is the delivery rate. Implied values are approximate because delivered % is rounded to whole percent."
+ }
+}

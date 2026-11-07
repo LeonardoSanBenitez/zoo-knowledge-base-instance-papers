@@ -1,0 +1,72 @@
+{
+ "A_execution_noise_sd": {
+  "mean0.5_conc2": 2.24,
+  "mean0.5_conc5": 2.5,
+  "mean0.5_conc1e+06": 2.74,
+  "mean0.67_conc2": 2.1,
+  "mean0.67_conc5": 2.35,
+  "mean0.67_conc1e+06": 2.58,
+  "note": "Execution-noise SD of a 30-task win count is 2.0-2.7 wins unless outcomes are near-deterministic per task; the SD of a DIFFERENCE between two iterations is about 1.4x that. The paper's error bars (judge seeds) are 0-2.7 and do not include it."
+ },
+ "B_decomposition": {
+  "opus48_vs_xhigh_gpt-5.5-max": {
+   "bare_to_H0": 8.5,
+   "H0_to_H2": 6.7,
+   "share_from_unoptimised_harness": 0.56
+  },
+  "opus48_vs_xhigh_opus-4.8-xhigh": {
+   "bare_to_H0": 12.8,
+   "H0_to_H2": 5.0,
+   "share_from_unoptimised_harness": 0.72
+  },
+  "opus48_vs_ultracode_gpt-5.5-max": {
+   "bare_to_H0": 4.5,
+   "H0_to_H2": 11.0,
+   "share_from_unoptimised_harness": 0.29
+  },
+  "opus48_vs_ultracode_opus-4.8-xhigh": {
+   "bare_to_H0": 6.5,
+   "H0_to_H2": 9.3,
+   "share_from_unoptimised_harness": 0.41
+  },
+  "opus48_vs_max_gpt-5.5-max": {
+   "bare_to_H0": 7.0,
+   "H0_to_H2": 9.0,
+   "share_from_unoptimised_harness": 0.44
+  },
+  "opus48_vs_max_opus-4.8-xhigh": {
+   "bare_to_H0": 14.0,
+   "H0_to_H2": 5.7,
+   "share_from_unoptimised_harness": 0.71
+  },
+  "_mean_share_from_H0": 0.52
+ },
+ "C_sonnet_trend_null": {
+  "observed": [
+   14.0,
+   16.0,
+   20.3,
+   20.3,
+   22.3
+  ],
+  "observed_tau": 0.9,
+  "observed_gap_W4_W0": 8.3,
+  "null_homog": {
+   "P(tau>=obs)": 0.0114,
+   "P(tau>=obs and gap>=obs)": 0.0041
+  },
+  "null_conc2": {
+   "P(tau>=obs)": 0.0083,
+   "P(tau>=obs and gap>=obs)": 0.0014
+  },
+  "trend_0.3logit_conc2": {
+   "P(tau>=obs)": 0.1552,
+   "P(tau>=obs and gap>=obs)": 0.096
+  },
+  "trend_0.15logit_conc2": {
+   "P(tau>=obs)": 0.0512,
+   "P(tau>=obs and gap>=obs)": 0.0172
+  },
+  "reading": "Under the null the sonnet sequence is rare (a few per thousand at most) -> the sonnet trend is unlikely to be pure execution noise, even with single executions. The opus-4.8 H0->H1 step (+0.3 / -2.0 wins vs xhigh) is inside noise; only H2 separates."
+ }
+}

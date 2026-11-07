@@ -1,0 +1,34 @@
+{
+ "random_judge_s0": {
+  "s": 0.0,
+  "mean_gain_SD_top15_minus_all18": -0.0003,
+  "sd_of_gain": 0.1051,
+  "pairs_per_task": 54
+ },
+ "acc0.60": {
+  "s": 0.3691254760951779,
+  "mean_gain_SD_top15_minus_all18": 0.108,
+  "sd_of_gain": 0.0973,
+  "pairs_per_task": 54
+ },
+ "acc0.73": {
+  "s": 1.0377898812976127,
+  "mean_gain_SD_top15_minus_all18": 0.2056,
+  "sd_of_gain": 0.0844,
+  "pairs_per_task": 54
+ },
+ "acc0.93": {
+  "s": 5.508434793296146,
+  "mean_gain_SD_top15_minus_all18": 0.2579,
+  "sd_of_gain": 0.0587,
+  "pairs_per_task": 54
+ },
+ "perfect": {
+  "s": 1000000000.0,
+  "mean_gain_SD_top15_minus_all18": 0.2599,
+  "sd_of_gain": 0.057,
+  "pairs_per_task": 54
+ },
+ "order_statistic_ceiling": 0.2818,
+ "note": "Gain is in SD units of WITHIN-workflow trajectory quality; it says nothing about how large that SD is relative to the between-model differences the paper reports."
+}

@@ -1,0 +1,291 @@
+{
+ "schema_version": "1.7",
+ "id": "lee2026-rhi",
+ "title": "Recursive Harness Self-Improvement",
+ "authors": [
+  "Hyunin Lee",
+  "Jinglue Xu",
+  "Jeffrey Seely",
+  "Donghyun Lee",
+  "Matei Zaharia",
+  "Yujin Tang"
+ ],
+ "year": 2026,
+ "venue": "arXiv:2607.15524 (dated 2026-07-20), preprint; Sakana AI and UC Berkeley",
+ "area": [
+  "self-improving-agents-and-workflow-search"
+ ],
+ "identifiers": {
+  "arxiv": "2607.15524"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "chain",
+  "evidence": "Inner loop of lee2026-mass-self-supervision (MASS cites it for the workflow-search method and for the information-flow motivation). Read second in the citation chain Leonardo asked for on 2026-11-07.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 14,
+  "bytes_downloaded": 4500000,
+  "compute_notes": "88-page PDF. Read in full: pp. 1-30 (body, ablations, related work, conclusion) and the QnA appendix; skimmed: harness examples App. B, optimiser and evaluator prompts App. C and E. Figs 5-7 rendered at 150-400 dpi to read win counts (+-0.5). r01 runs in 7 s. No code for RHI as such; an implementation ships inside github.com/SakanaAI/mass (harness_improvement/), and that repo says its rule differs from MASS Algorithm 1.",
+  "session": "2026-11-07 maria, MASS citation chain"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-07",
+  "verified": "2026-11-07",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "harness optimization prompt-level",
+  "multi-agent harness beats more reasoning effort",
+  "test-time scaling ceiling",
+  "pairwise LLM judge win counts over 30 tasks",
+  "contracts and hops",
+  "Claude ultracode comparison",
+  "harness as prompt"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "origin": "paper",
+   "statement": "A few RHI iterations on a high-effort agent beat the same model at higher test-time effort: sonnet-4.6-high+H[2] wins 20 of 30 against sonnet-4.6-max, and opus-4.8-high+H[2] beats opus-4.8 xhigh, max and ultracode.",
+   "scope": "30 LLM-generated ML research tasks (10 each in quant finance, robotics, pharmacy, written from three job postings). Pairwise judging by gpt-5.5-max and an Opus model, 3 seeds each. ONE execution per task per harness iteration and per baseline.",
+   "quantities": [
+    {
+     "name": "sonnet46_vs_max_wins_by_iteration_gpt_judge",
+     "value": "H0 14, H1 16, H2 20.3, H3 20.3, H4 22.3 (of 30)",
+     "unit": "tasks won, mean over 3 judge seeds",
+     "source": "Fig 5a, read at 400 dpi"
+    },
+    {
+     "name": "sonnet46_vs_max_wins_by_iteration_opus_judge",
+     "value": "H0 14, H1 16, H2 21.3, H3 20.0, H4 18.7",
+     "unit": "tasks won",
+     "source": "Fig 5a"
+    },
+    {
+     "name": "opus48_vs_xhigh_wins",
+     "value": "bare 7.5, H0 16.0, H1 16.3, H2 22.7 (gpt judge); 7.2, 20.0, 18.0, 25.0 (opus judge)",
+     "unit": "tasks won of 30",
+     "source": "Fig 7a-d"
+    },
+    {
+     "name": "execution_noise_sd_of_30_task_win_count",
+     "value": "2.1-2.7",
+     "unit": "wins",
+     "source": "r01 A (ours); absent from the paper's error bars"
+    },
+    {
+     "name": "P_sonnet_sequence_under_no_improvement_null",
+     "value": "0.0014-0.0041",
+     "unit": "P(Kendall tau >= 0.9 and W4-W0 >= 8.3)",
+     "source": "r01 C"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "instrument-relative-headline-number",
+     "units-of-analysis-inflated"
+    ],
+    "why": "The error bars are SDs over judge seeds on ONE execution per task. The MASS follow-up shows execution noise dominates: an identical workflow went 6-0 then 0-6. So the bars understate uncertainty by about 2-2.7 wins per bar. Even so, the sonnet sequence 14 -> 22.3 is rare under a no-improvement null (p about 0.001-0.004, r01 C), so a real gain over iterations is likely for sonnet. For opus-4.8, H0 -> H1 is flat (+0.3 and -2.0 vs xhigh) and only H2 separates. The judge also scores 'deliverable coverage' as its first criterion (Sec 4.2), so 'beats max' partly means 'delivers the listed files more completely'. Scope: one benchmark, LLM-written, judged only by LLMs, all Anthropic agents."
+   }
+  },
+  {
+   "id": "c2",
+   "origin": "reader",
+   "statement": "About half of RHI's headline gain over test-time scaling comes from adding ANY multi-agent harness: the unoptimised starting harness H[0]. For opus-4.8, bare -> H[0] supplies on average 52% of the bare -> H[2] improvement across three comparators and two judges (range 29-72%).",
+   "quantities": [
+    {
+     "name": "share_of_gain_from_H0_opus48",
+     "value": 0.52,
+     "unit": "(W_H0 - W_bare)/(W_H2 - W_bare), mean of 6 comparator x judge cells",
+     "source": "r01 B"
+    },
+    {
+     "name": "opus47_H0_vs_bare_high_gpt_gemini_judges",
+     "value": "about 13-14 wins vs 15-16 losses",
+     "unit": "of 30",
+     "source": "Fig 6a"
+    },
+    {
+     "name": "opus47_H0_vs_bare_high_opus_judges",
+     "value": "about 20 wins vs 9 losses",
+     "unit": "of 30",
+     "source": "Fig 6a"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "patterns": [],
+    "why": "Our arithmetic on transcribed bars (+-0.5 per bar). The paper's QnA appendix (Fig 13) also shows that a prompt-specified multi-agent harness beats both the built-in 'create an agent team' mode and a single-agent version with the same roles. So the paper knows the harness itself is the lever. What the headline 'a few RHI iterations' conflates is the effect of the harness with the effect of iterating on it. For opus-4.7, judges from the agent's own family (opus) prefer H[0] over bare high by about 20-9, and gpt and gemini judges prefer bare by about 15-13: a judge-family split on the same outputs."
+   }
+  },
+  {
+   "id": "c3",
+   "origin": "paper",
+   "statement": "RHI gains are not explained by more output tokens: normalised output stays at 1.71-1.86 (sonnet) and 1.42-1.81 (opus-4.8) across iterations while wins rise; costs fall up to 60% versus ultracode via fewer cache reads/writes.",
+   "quantities": [
+    {
+     "name": "opus48_cost_H2_vs_ultracode",
+     "value": "1.69 vs 4.15",
+     "unit": "cost normalised to opus-4.8-high",
+     "source": "Fig 7e"
+    },
+    {
+     "name": "opus47_output_tokens_H0_H1",
+     "value": "1.15 -> 2.06",
+     "unit": "normalised output",
+     "source": "Fig 6c; the paper calls this case inconclusive"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "mechanism-asserted-not-measured"
+    ],
+    "why": "The cost and token means are read from the agent's internal accounting and are plausible. 'Context management via contracts' is an interpretation. No experiment manipulates contracts while holding the rest fixed, and the paper calls its embedding analysis correlational. For opus-4.7, tokens double with the gain, as the paper itself says."
+   }
+  },
+  {
+   "id": "c4",
+   "origin": "paper",
+   "statement": "RHI's harness evolution concentrates task-specific change in contracts and hops (embedding clustering, MI proxies), consistent with an implicit objective that raises component-task information and lowers redundancy.",
+   "quantities": [
+    {
+     "name": "consecutive_full_harness_cosine",
+     "value": "0.82, 0.97, 0.98, 0.99",
+     "unit": "cos(H[i], H[i+1]), sonnet-4.6",
+     "source": "Fig 9c"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "circular-analysis",
+     "mechanism-asserted-not-measured"
+    ],
+    "why": "The harness optimiser's system prompt (App. C) literally instructs 'Prioritize two improvements: stronger agent-to-agent communication contracts ... more orchestrator-subagent hops'. The paper says so itself (Sec 6.2.2: 'Their prominence is expected because the harness optimizer's system prompt explicitly emphasizes ... contracts and hops'). Contracts and hops gaining task-specific text is therefore what the optimiser was told to write, not something RHI discovered. The same applies to MASS c7, which reuses this prompt emphasis."
+   }
+  },
+  {
+   "id": "c5",
+   "origin": "reader",
+   "statement": "The paper never states which model is the in-loop evaluator L_eval during harness optimisation. Sec 4.2 says the reporting protocol 'corresponds to Step 3 of the RHI algorithm' and uses the same x_eval rubric. If the in-loop judge is one of the reporting judges, the harness is tuned against the instrument that later scores it.",
+   "quantities": [],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "not-identifiable",
+    "patterns": [
+     "circular-analysis"
+    ],
+    "why": "Not determinable from the text. It matters for c1: the reported gains are judged under the same rubric and possibly the same judge whose pairwise feedback shaped the harness. MASS, the follow-up, separates them deliberately (Qwen self-judges in the loop, frontier models report), which is the design this paper needed."
+   }
+  },
+  {
+   "id": "c6",
+   "origin": "reader",
+   "statement": "Fig 5a's H[0] bars are visually identical in the gpt-5.5-max and opus-4.7-xhigh panels, including the error bars (14 +- 2.6 vs 16 +- 2.6 in both). This may be a coincidence or a duplicated series.",
+   "quantities": [],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "patterns": [],
+    "why": "Seen at 400 dpi. Two judges producing identical 3-seed triples is possible but improbable. Recorded as a question, not an accusation; no data are available to check it."
+   }
+  }
+ ],
+ "methods": [
+  "in-paper-table-transcription",
+  "power-simulation",
+  "synthetic-injected-effect-control",
+  "known-answer-structural-null"
+ ],
+ "instrument_checks": [
+  {
+   "instrument": "Kendall-tau + range test on 5 single-execution 30-task win counts",
+   "world": "no improvement after H0, heterogeneous p_t (Beta conc 2)",
+   "design": "30 tasks x 5 iterations, 20000 sims",
+   "statistic": "P(tau >= 0.9 and gap >= 8.3)",
+   "value": 0.0014,
+   "n_sims": 20000,
+   "verdict": "calibrated",
+   "source": "reanalysis/r01_win_counts_execution_noise.py"
+  },
+  {
+   "instrument": "Kendall-tau + range test on 5 single-execution 30-task win counts",
+   "world": "true trend +0.3 logit per iteration",
+   "design": "30 tasks x 5 iterations, 20000 sims",
+   "statistic": "P(tau >= 0.9 and gap >= 8.3)",
+   "value": 0.096,
+   "n_sims": 20000,
+   "verdict": "underpowered",
+   "source": "reanalysis/r01_win_counts_execution_noise.py"
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "in-paper-table",
+   "locator": "arXiv:2607.15524, Figs 5-9, 13; Sec 4.2; App. C (optimiser prompt), App. E (evaluator prompt)",
+   "status": "verified-usable",
+   "fetch_cmd": "curl -sL -o paper.pdf https://arxiv.org/pdf/2607.15524",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "PyMuPDF text of 88 pages; figs rendered at 150-400 dpi; python reanalysis/r01_win_counts_execution_noise.py",
+    "result": "Win counts transcribed to +-0.5. No numeric tables; every quantitative claim is a bar chart."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "github.com/SakanaAI/mass, harness_improvement/iterate_multi_agent_prompt.py (2535 lines)",
+   "status": "present-but-insufficient",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "Read the MASS repo docs (reproduction.md: 'The current RHI driver uses a fixed bare-task reference ... not an exact implementation')",
+    "result": "A related implementation exists, but none was released for this paper's experiments. No harness histories, outputs or judgments are released."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "benchmark",
+   "locator": "30 synthetic ML research tasks (3 printed in App. D)",
+   "status": "absent",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "Searched the PDF for links; MASS repo ships a 12-task subset only",
+    "result": "The 30-task set is not released; 12 of the tasks may be the MASS set (unverified)."
+   }
+  }
+ ],
+ "relations": [],
+ "open_questions": [
+  "Which model was L_eval inside the RHI loop, and was it one of the reporting judges?",
+  "Repeat each harness iteration's execution 3-5 times per task: how much of the H0 -> H2 gain survives execution noise for opus-4.8, where H1 was flat?",
+  "Is the H[0] bar in Fig 5a duplicated across judge panels?",
+  "Rerun the optimiser with a neutral system prompt (no 'stronger contracts, more hops'). Do contracts and hops still carry the task-specific change?",
+  "Is the 30-task benchmark a superset of MASS's 12 tasks? If so, MASS's 'held-out' tasks were also RHI development tasks for the same group."
+ ]
+}

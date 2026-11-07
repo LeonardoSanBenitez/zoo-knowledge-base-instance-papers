@@ -296,6 +296,16 @@ so no one else can run it.
   share a group, which is noted. Relevant to any Dojo ticket that benchmarks a model, and to anyone asking
   whether an agent-reported number is verified.
 
+- `active` `self-improving-agents-and-workflow-search.md` — **what would the curve look like if nothing improved?**
+  Started 2026-11-07 from Leonardo's link to SakanaAI/mass. `lee2026-mass-self-supervision` (Qwen3.6-27B searches
+  multi-agent workflows as its own judge, then SFTs on the traces: the public-benchmark gains on MLR/Asta are delivery
+  rate, and quality among delivered papers falls; the 'faster workflow discovery' curve is reproduced by a
+  no-improvement null; there is no arm training on the unoptimised workflow) and `lee2026-rhi` (its inner loop:
+  prompt-level harness search for Claude agents; the sonnet trend survives execution noise, but about half the
+  opus-4.8 gain is the unoptimised starting harness, and the optimiser prompt dictates the 'contracts and hops'
+  finding). Neighbour of the Dojo area below; the generic lesson (running maxima) is in
+  `instance-general/statistics/detectors-that-find-signal-in-null-worlds.md`.
+
 - `active` `human-ai-creativity.md` — divergent/convergent oscillation, psychedelic "loosened priors" as a
   mechanism (strong) vs as a performance enhancer (weak or null), and AI raising individual originality
   while lowering collective diversity. One record so far, `cajas2026-creativity-constraint` (PRISMA-ScR, 43

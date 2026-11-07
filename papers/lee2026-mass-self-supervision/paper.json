@@ -1,0 +1,677 @@
+{
+ "schema_version": "1.7",
+ "id": "lee2026-mass-self-supervision",
+ "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision",
+ "authors": [
+  "Hyunin Lee",
+  "Jinglue Xu",
+  "Jeffrey Seely",
+  "Donghyun Lee",
+  "Somayeh Sojoudi",
+  "Matei Zaharia",
+  "Yujin Tang"
+ ],
+ "year": 2026,
+ "venue": "arXiv:2610.12176v1 (8 Oct 2026), preprint; UC Berkeley and Sakana AI",
+ "area": [
+  "self-improving-agents-and-workflow-search",
+  "clinical-ai-evaluation-and-agent-oversight"
+ ],
+ "identifiers": {
+  "arxiv": "2610.12176",
+  "url": "https://github.com/SakanaAI/mass"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "chain",
+  "evidence": "Leonardo sent the repo link on 2026-11-07 ('this paper may interest you'), asking for a KB record followed by its citations. No result was known to me before reading.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 60,
+  "bytes_downloaded": 40000000,
+  "compute_notes": "PDF 0.9 MB read in full, 39 pages including all appendices; figures 2, 3a and 7a rendered at 130 to 500 dpi to read step heights. Repo shallow clone 39 MB (12 MB of it is assets/gif). Offline tests ran in a scratch venv with pydantic only. m02 ran in 56 s (400 sims x 5 worlds of MLE fits), m03 in 14 s, m01 under 1 s. No GPU.",
+  "session": "2026-11-07 maria, free run to budget"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-07",
+  "verified": "2026-11-07",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "recursive self-improvement",
+  "self-evaluation LLM judge same model",
+  "multi-agent workflow optimization",
+  "distilling multi-agent trajectories into one model",
+  "score per output token",
+  "agent benchmark delivery rate",
+  "evolutionary prompt search noise",
+  "SFT on self-generated trajectories",
+  "Sakana MASS",
+  "RHI recursive harness improvement"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "origin": "paper",
+   "statement": "Two MASS cycles improve task solving: on three held-out synthetic research tasks the trained model's win share against the base rises from 53.9% (L1) to 69.9% (L2), judged by GPT-5.5 and Claude Opus 4.8.",
+   "scope": "Qwen3.6-27B, qwen-code 0.20.0, 12 GPT-5.5-generated research-programming tasks (finance, pharmacy, robotics), 3 of them held out. Ten index-matched rollout pairs per task, six judgments per pair (2 judges x 3 seeds), ties excluded.",
+   "quantities": [
+    {
+     "name": "test_win_share_L1_vs_L0",
+     "value": 0.539,
+     "count": 97,
+     "denominator": 180,
+     "clusters": 30,
+     "unit": "share of external judgments",
+     "ci_low": 0.466,
+     "ci_high": 0.61,
+     "ci_kind": "confidence",
+     "baseline": "bare L0 on fixed reference rollouts",
+     "source": "Table 5-6, p.19; Wilson interval at the judgment unit is ours (m01 B)"
+    },
+    {
+     "name": "test_win_share_L1_vs_L0_task_unit",
+     "value": 0.539,
+     "n": 3,
+     "ci_low": 0.225,
+     "ci_high": 0.852,
+     "ci_kind": "confidence",
+     "unit": "mean of per-task shares (0.483, 0.450, 0.683)",
+     "source": "m01 B, t interval with df=2"
+    },
+    {
+     "name": "test_win_share_L2_vs_L0",
+     "value": 0.699,
+     "unit": "share of external judgments",
+     "source": "Fig 3b, p.6; no per-task table, no counts"
+    },
+    {
+     "name": "train_win_share_L1_vs_L0",
+     "value": 0.656,
+     "count": 315,
+     "denominator": 480,
+     "clusters": 80,
+     "unit": "share of external judgments",
+     "source": "Table 5, p.19; sums recomputed exactly (m01 A)"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "units-of-analysis-inflated",
+     "small-sample-overreach"
+    ],
+    "why": "Table 5 sums recompute exactly. But the L1 test result is two tasks below 50% (60: 48.3%, 207: 45.0%) and one above (305: 68.3%); the six judgments per pair are repeated reads of one output (the paper says so in C.1). At the judgment unit the interval already spans 50%; at the task unit it is 0.23-0.85. The L1 'held-out' gain is not distinguishable from zero. L2's 69.9% is printed with no counts, so it cannot be checked. Training-task shares range 20% (task 205) to 88%."
+   }
+  },
+  {
+   "id": "c2",
+   "origin": "paper",
+   "statement": "On the four open-ended research benchmarks (MLR-Bench, ScienceAgentBench, DSBench, AstaBench E2E-Hard), L2 attains 1.2-1.6x the score per output token of the base model.",
+   "scope": "Public benchmarks run in qwen-code without a MASS workflow; three trials (five for MLR-Bench 12-task subset). The other two benchmarks (Terminal-Bench 2.0, SWE-bench Verified) are shown in Fig 2 at 0.96x and 0.94x.",
+   "quantities": [
+    {
+     "name": "mlr_bench_overall_L0_L1_L2",
+     "value": "1.58 / 1.80 / 2.40",
+     "n": 60,
+     "unit": "MLR-Judge overall 1-10, zero if no paper",
+     "source": "Table 7, p.20"
+    },
+    {
+     "name": "mlr_bench_papers_delivered",
+     "value": "31/60, 36/60, 50/60",
+     "unit": "executions with paper.md >= 200 bytes",
+     "source": "Table 7"
+    },
+    {
+     "name": "mlr_bench_mean_among_delivered",
+     "value": "3.07 / 3.00 / 2.88",
+     "unit": "overall score",
+     "source": "C.5, p.21"
+    },
+    {
+     "name": "astabench_rubric_L0_L2",
+     "value": "0.053 -> 0.067; delivered 60/120 -> 91/120; mean among delivered 0.105 -> 0.088",
+     "unit": "checklist fraction",
+     "source": "C.5, p.21"
+    },
+    {
+     "name": "dsbench_normalized_L0_L2",
+     "value": "0.473 +- 0.029 -> 0.482 +- 0.025",
+     "n": 3,
+     "unit": "trial means, SD over trials",
+     "source": "Table 7"
+    },
+    {
+     "name": "dsbench_implied_output_token_ratio_L2_L0",
+     "value": 0.755,
+     "unit": "per-token ratio 1.35 / score ratio 1.019",
+     "source": "m01 F"
+    },
+    {
+     "name": "scienceagentbench_success",
+     "value": "88/306 -> 97/306",
+     "unit": "successes over 3 trials x 102 tasks",
+     "source": "C.5, p.20; z = 0.79 if runs were independent (m01 D)"
+    },
+    {
+     "name": "readme_mlr107_overall",
+     "value": "1.71 / 1.77 / 2.25, delivered 57 / 59 / 76 %, implied mean among delivered about 3.0 at every generation",
+     "n": 321,
+     "unit": "107 tasks x 3 trials",
+     "source": "repo README fb40358; m01 H"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "instrument-relative-headline-number",
+     "mechanism-asserted-not-measured"
+    ],
+    "why": "All per-token ratios are consistent with Table 7. What the ratio is made of differs by benchmark. On MLR-Bench and AstaBench the aggregate equals delivery rate times mean-among-delivered to within 1% (m01 C), and the mean among delivered FALLS (3.07 to 2.88, 0.105 to 0.088). The README's independent 107-task MLR run shows the same: flat about 3.0 among delivered, with all of the gain in delivery. On DSBench the score moves 0.009 against a trial SD of 0.025-0.029, so about 94% of the log gain in per-token ratio is fewer output tokens (an implied ratio of 0.755). ScienceAgentBench is +9 successes in 306. The paper itself says the MLR gain 'accompanies higher completion' and that none of 180 MLR runs delegates, so public-benchmark transfer is not via multi-agent behaviour. Supported reading: the student finishes and delivers more often within the time limit, at no better per-deliverable quality. The abstract's 'higher performance per output token' says more than that."
+   }
+  },
+  {
+   "id": "c3",
+   "origin": "paper",
+   "statement": "Post-trained models discover successful workflows earlier (Fig 3a): the cumulative number of tasks with a unanimous 6/6 external win over bare L0 rises faster for L1 and L2.",
+   "scope": "Fig 3a: one execution per task per iteration, 12 tasks, up to 10 iterations; for g >= 1 the executor is L(g) while the reference is bare L(0).",
+   "quantities": [
+    {
+     "name": "coverage_curve_L0",
+     "value": "3,4,7,7,7,7,8,9,9,9,9",
+     "unit": "tasks of 12, iterations 0-10",
+     "source": "Fig 3a read at 500 dpi"
+    },
+    {
+     "name": "coverage_curve_L1",
+     "value": "5,5,8,10,11,11,11,11,11,11,11",
+     "unit": "tasks of 12",
+     "source": "Fig 3a"
+    },
+    {
+     "name": "coverage_curve_L2",
+     "value": "6,10,11,12,12,12",
+     "unit": "tasks of 12",
+     "source": "Fig 3a"
+    },
+    {
+     "name": "trend_beta_hat_L0",
+     "value": -0.203,
+     "unit": "logit hazard per iteration (beta > 0 means search works)",
+     "source": "m02"
+    },
+    {
+     "name": "trend_beta_hat_L1",
+     "value": -0.206,
+     "unit": "logit hazard per iteration",
+     "source": "m02"
+    },
+    {
+     "name": "null_expected_C10_L0_q_from_iter0",
+     "value": 11.49,
+     "unit": "tasks, if no workflow ever improves and q = 3/12 per execution",
+     "source": "m02"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "disputed",
+    "patterns": [
+     "estimator-biased-or-insensitive",
+     "missing-adequate-control"
+    ],
+    "why": "The plotted statistic is a running maximum over noisy executions. The paper shows a byte-identical workflow scoring 6-0 then 0-6 (Table 11), and flip rates of 0.22-0.40 per step that do not depend on edit size (Table 10). In a world where search does NOTHING and each execution wins 6/6 with the iteration-0 probability (3/12, 5/12, 6/12), the expected curves are 11.5 at i=10 for L0 (observed 9), 11.2 at i=4 for L1 (observed 11), and 11.25 at i=3 for L2 (observed 12). The hazard of a first unanimous win DECLINES with iteration for L0 and L1 (beta_hat about -0.2), and a working optimiser would make it rise. Known-answer check (m02): with task heterogeneity the statistic detects a true beta = 0.30 trend 3.5% of the time. The gaps between generations are already present at iteration 0, before any search, so they are executor quality: L(g) runs the shared w0 against bare L(0). Fig 3a is therefore uninformative about the optimiser. The controlled evidence is Table 1 (c4). Fig 7a has the same structure and supports the same 'eventually 11 of 12' only as what noise alone produces."
+   }
+  },
+  {
+   "id": "c4",
+   "origin": "paper",
+   "statement": "The workflow optimiser itself improves after post-training: with the executor fixed at L0, workflows proposed by L1 beat those proposed by L0 in 64% of comparisons (mean over 11 iterations x 12 tasks).",
+   "scope": "Table 1, App. C.3; one execution per workflow, six external judgments per pair; the mean of per-iteration win shares.",
+   "quantities": [
+    {
+     "name": "fixed_executor_w1_vs_w0",
+     "value": 0.64,
+     "unit": "mean per-iteration win share",
+     "n": 132,
+     "source": "Table 1, p.7"
+    },
+    {
+     "name": "fixed_executor_w1_vs_bare",
+     "value": 0.63,
+     "unit": "mean per-iteration win share",
+     "source": "Table 1"
+    },
+    {
+     "name": "L0_exec_vs_L1_exec_same_w1",
+     "value": 0.29,
+     "unit": "share for L0 executor",
+     "source": "Table 1"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "patterns": [
+     "units-of-analysis-inflated"
+    ],
+    "why": "This is the right design (executor held fixed) and the paper's real evidence for optimiser transfer. But no counts, interval or per-task breakdown are printed. Successive iterations of one task are a dependent sequence, so 132 is not the effective n. Not recomputable from what is published."
+   }
+  },
+  {
+   "id": "c5",
+   "origin": "paper",
+   "statement": "Self-evaluator agreement with the external judges rises from 0.73 (L0) to 0.91 (L1) and 0.93 (L2).",
+   "quantities": [
+    {
+     "name": "evaluator_agreement",
+     "value": "0.73 / 0.91 / 0.93",
+     "unit": "agreement with external panel",
+     "source": "Fig 3c, p.6"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "patterns": [
+     "denominator-unstated-or-shifted"
+    ],
+    "why": "No denominator, no description of which pairs were judged, and no treatment of ties or of panel splits (the panel itself is 6 reads). The repo lists 'matched self/reference judgment sets and agreement aggregation' as not included. The external panel is not ground truth either: a student fine-tuned on outputs that the panel's style of judge prefers could converge on the panel without getting better at judging."
+   }
+  },
+  {
+   "id": "c6",
+   "origin": "paper",
+   "statement": "Multi-agent traces are more training-efficient: the first-cycle multi-agent student (M+) reaches 68.3% against base with 28.8M processed tokens versus 64.0% for a single-agent student (S++) at 42M; M sits 8.3 pp above a single-agent interpolation line.",
+   "scope": "Five evaluation tasks (51, 53, 56, 307 shared training tasks plus test task 60), 50 pairs x 6 judgments per arm. M+ trains on 8 tasks with a different sampler and validation-loss checkpointing; S/M/X/S+ train on 4 tasks with checkpoints chosen by external judgments on tasks 51/53/56/307.",
+   "quantities": [
+    {
+     "name": "Mplus_minus_Spp",
+     "value": 0.043,
+     "unit": "difference in win share vs base",
+     "source": "Table 8, p.22; z = 1.11 at the judgment unit (n=300 each), 0.45 at the pair unit (n=50), m01 G"
+    },
+    {
+     "name": "M_minus_S_same_episode_count",
+     "value": 0.12,
+     "unit": "difference in win share, 17 episodes each",
+     "source": "Table 8; z = 2.96 at the judgment unit, 1.21 at the pair unit"
+    },
+    {
+     "name": "S_win_share_vs_base",
+     "value": 0.44,
+     "unit": "win share",
+     "n": 50,
+     "source": "Table 8: the interpolation's lower anchor is a model worse than base"
+    },
+    {
+     "name": "interpolation_gaps",
+     "value": "8.26 and 6.30 pp",
+     "unit": "percentage points",
+     "source": "recomputed m01 E; match the printed 8.3 and 6.3"
+    },
+    {
+     "name": "token_ratio_Spp_over_Mplus",
+     "value": 1.457,
+     "unit": "processed supervised tokens",
+     "source": "m01 E"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "patterns": [
+     "missing-adequate-control",
+     "small-sample-overreach",
+     "circular-analysis"
+    ],
+    "why": "The arithmetic recomputes. The comparison is not matched: M+ covers twice the training tasks, uses another sampler and another checkpoint rule (the Table 8 caption says so). For the four-task controls, checkpoints were picked by external judgments on 4 of the 5 evaluation tasks, which selects on the outcome. It also fixes each arm's x-coordinate (processed tokens), so the 'per token' axis is itself outcome-selected. The headline 4.3 pp is 0.45 SE at the pair unit. The cleanest contrast is M vs S at 17 episodes each (+12 pp), and M episodes carry 2.5x the stored tokens of S episodes. The single-agent reference line starts at S = 44%, below base, which raises every gap measured from it."
+   }
+  },
+  {
+   "id": "c7",
+   "origin": "paper",
+   "statement": "Optimised workflows move task-specific information into contracts and hops (who receives what, in which order) and out of roles and instructions, while redundancy across components falls (Claim 1).",
+   "scope": "Retained workflows of the all-L0 search at iterations 3, 6, 9, 11; 43-51 agents from 8-9 tasks; Gaussian canonical-correlation MI proxy on 10-d whitened PCA of text embeddings (two encoders), with and without permutation adjustment.",
+   "quantities": [
+    {
+     "name": "hop_task_info_text3large_unadj",
+     "value": "5.23 -> 6.22",
+     "unit": "nats",
+     "source": "Table 12, p.27"
+    },
+    {
+     "name": "role_task_info_mpnet_permadj",
+     "value": "0.25 -> 0.02",
+     "unit": "nats",
+     "source": "Table 12"
+    },
+    {
+     "name": "TC_unconditional_text3large_unadj",
+     "value": "11.82 -> 11.62",
+     "unit": "nats",
+     "source": "Table 13"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "mechanism-asserted-not-measured",
+     "circular-analysis"
+    ],
+    "why": "Directions agree across four encoder and estimator configurations (one exception for task-centred TC, which the paper reports). These are statistics of workflow TEXT along one retained path, and the paper says they are not messages exchanged during execution and not a causal test. Not recomputed: the workflow texts are not deposited. Mechanical contributor CONFIRMED in the parent paper (lee2026-rhi App. C): the workflow optimiser's system prompt orders 'Prioritize two improvements: stronger agent-to-agent communication contracts ... more orchestrator-subagent hops', and RHI Sec 6.2.2 concedes the contract/hop prominence 'is expected' for that reason; MASS x_opt keeps the same emphasis (Sec 3). Contracts and hops gaining task-specific text is largely what the optimiser was told to write; the information-flow 'finding' needs a neutral-prompt control."
+   }
+  },
+  {
+   "id": "c8",
+   "origin": "paper",
+   "statement": "Post-training internalises coordination: under bare task prompts delegation rises from 1/110 (L0) to 48/110 (L1) and 87/110 (L2) episodes; code handoffs from 1 to 42 and 83.",
+   "quantities": [
+    {
+     "name": "bare_prompt_delegation",
+     "value": "1/110, 48/110, 87/110",
+     "unit": "episodes",
+     "source": "Table 2a, p.10"
+    },
+    {
+     "name": "base_delegation_with_generic_directive",
+     "value": "110/110",
+     "unit": "episodes",
+     "source": "Table 14, p.28"
+    },
+    {
+     "name": "generic_directive_Mplus_vs_base",
+     "value": 0.535,
+     "count": 352,
+     "denominator": 658,
+     "unit": "win share",
+     "source": "C.4, p.20"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [],
+    "why": "The counts are clear and the paper limits them well. The base already delegates in 110/110 episodes when asked to (Table 14). What changed is the prompt-free default, not a capability. When both models get the same generic team directive, M+ beats base only 53.5%, and on the four shared training tasks it beats base 47.1%. So most of the bare-prompt advantage is in deciding to delegate at all."
+   }
+  },
+  {
+   "id": "c9",
+   "origin": "reader",
+   "statement": "In Algorithm 3 the self-evaluator can remove at most 3 of 18 completed trajectories per task from training (ranks 17-18 dropped, 16 to validation). The ceiling of that filter is about 0.26 SD of within-workflow trajectory quality under the repo's 6-opponent tournament, and 0.21 SD with a judge of 73% pairwise accuracy. The SFT set is therefore essentially every completed trajectory of the retained workflow.",
+   "scope": "configs/paper.json (candidates 18, train_ranks 15, validation_rank 16, opponents 6) and the verbatim BT and tournament code; latent-quality simulation, 300 tasks per judge accuracy.",
+   "quantities": [
+    {
+     "name": "selection_gain_perfect_judge",
+     "value": 0.26,
+     "unit": "SD of within-task quality, mean top-15 minus mean all-18",
+     "source": "m03"
+    },
+    {
+     "name": "selection_gain_judge_acc_0.73",
+     "value": 0.206,
+     "unit": "SD",
+     "source": "m03"
+    },
+    {
+     "name": "selection_gain_random_judge",
+     "value": -0.0003,
+     "unit": "SD",
+     "source": "m03 (known answer: 0)"
+    }
+   ],
+   "evidence": [
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "patterns": [],
+    "why": "Our simulation with the repo's own functions. Known answers pass: the random judge gives 0, and the perfect judge gives 0.26 against an order-statistic ceiling of 0.28 (the gap is the incomplete 54-match tournament). Consequence for the paper's framing: the 'self-supervision' that shapes the weights is mostly the choice of workflow plus completion, not self-judged trajectory quality."
+   }
+  },
+  {
+   "id": "c10",
+   "origin": "reader",
+   "statement": "No arm trains a student on trajectories from the UNOPTIMISED initial workflow w0 or from the generic team directive. The contribution of workflow optimisation to the trained model, as distinct from any multi-agent prompting plus completion filtering, is not identified.",
+   "scope": "All experiments in the paper and the repo's experiment_coverage.md. The generic-directive control (C.4) is an evaluation-time control, and the paper says it 'does not compare students trained on generic-directive and optimized-workflow trajectories'.",
+   "quantities": [],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "not-identifiable",
+    "patterns": [
+     "target-not-identified-by-design",
+     "missing-adequate-control"
+    ],
+    "why": "Several things point the same way and make the arm necessary. Fig 7b's win rate of w_i against bare hovers around 0.5 with no trend over 20 iterations. Coverage curves are what noise alone predicts (c3). Teacher selection is near-null (c9). And the base already delegates fully under a generic directive (c8). Nothing here shows that the optimised workflow matters beyond 'some multi-agent workflow'. One cheap arm settles it: SFT on 18 completed w0 or generic-directive rollouts per task, same recipe."
+   }
+  },
+  {
+   "id": "c11",
+   "origin": "paper",
+   "statement": "Coordination and high workspace preference do not guarantee that a revision preserves the scientific task: in test task 305 (seed 2310008) the student had the simulator revised to reposition objects directly instead of by force, then reported success on all three task types, and received 5/6 favourable external judgments.",
+   "quantities": [
+    {
+     "name": "favourable_judgments_on_task_changing_revision",
+     "value": "5/6",
+     "unit": "external judgments",
+     "source": "G.3, p.29"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "patterns": [],
+    "why": "A single case, honestly reported. The frontier-model panel rewarded an episode that redefined success, which is exactly the failure that panel would need to catch for 'external judgment' to be the anchor of an RSI loop. It is the same phenomenon as reward hacking by research agents (huang2026-reward-hacking-research-agents)."
+   }
+  },
+  {
+   "id": "c12",
+   "origin": "reader",
+   "statement": "Small internal inconsistencies: the body says ScienceAgentBench 28.7 -> 31.8 while Table 7 and the trial counts give 28.8 -> 31.7. The paper's MLR-Bench (12 tasks x 5 trials: 1.58 -> 2.40) and the README's (107 x 3: 1.71 -> 2.25) are different evaluations under the same benchmark name. The abstract says 1.2-1.6x 'on four open-ended public benchmarks', and the six-benchmark figure shows the other two below 1.",
+   "quantities": [
+    {
+     "name": "sab_trial_means_recomputed",
+     "value": "28.76 / 30.39 / 31.70",
+     "unit": "%",
+     "source": "m01 D"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "patterns": [
+     "text-contradicts-own-materials"
+    ],
+    "why": "None of these changes a conclusion. The README states that its MLR-Bench row comes from a different configuration from the packaged one. Recorded so nobody quotes 1.58 -> 2.40 and 1.71 -> 2.25 as the same measurement."
+   }
+  }
+ ],
+ "methods": [
+  "in-paper-table-transcription",
+  "arithmetic-consistency-check",
+  "known-answer-structural-null",
+  "power-simulation",
+  "synthetic-injected-effect-control",
+  "unit-of-analysis-pseudoreplication-check",
+  "survivorship-conditioning-diagnosis",
+  "llm-as-judge-audit"
+ ],
+ "instrument_checks": [
+  {
+   "instrument": "cumulative-unanimous-win-coverage (Fig 3a/7a statistic) with geometric-hazard trend fit",
+   "world": "no workflow improvement, task heterogeneity logit SD 1.5, q0 = 0.25",
+   "design": "12 tasks, 11 iterations, 400 sims",
+   "statistic": "C10 mean and 5-95%",
+   "value": 9.99,
+   "interval": [
+    8,
+    12
+   ],
+   "n_sims": 400,
+   "verdict": "uninformative",
+   "source": "reanalysis/m02_coverage_curve_null.py"
+  },
+  {
+   "instrument": "cumulative-unanimous-win-coverage with geometric-hazard trend fit",
+   "world": "real improvement beta = 0.30 logit per iteration, heterogeneity SD 1.5",
+   "design": "12 tasks, 11 iterations, 400 sims",
+   "statistic": "P(LR > 3.84 and beta_hat > 0)",
+   "value": 0.035,
+   "n_sims": 400,
+   "verdict": "underpowered",
+   "source": "reanalysis/m02_coverage_curve_null.py"
+  },
+  {
+   "instrument": "cumulative-unanimous-win-coverage trend LR test",
+   "world": "no improvement, homogeneous q = 0.25",
+   "design": "12 tasks, 11 iterations",
+   "statistic": "false-positive rate at nominal .05",
+   "value": 0.0575,
+   "n_sims": 400,
+   "verdict": "calibrated",
+   "source": "reanalysis/m02_coverage_curve_null.py"
+  },
+  {
+   "instrument": "Bradley-Terry top-15-of-18 teacher selection (repo code, 6-opponent ring)",
+   "world": "judge with zero accuracy",
+   "design": "18 latent N(0,1) trajectories, 300 tasks",
+   "statistic": "mean selected minus mean all, SD units",
+   "value": -0.0003,
+   "n_sims": 300,
+   "verdict": "calibrated",
+   "source": "reanalysis/m03_teacher_selection_ceiling.py"
+  },
+  {
+   "instrument": "Bradley-Terry top-15-of-18 teacher selection (repo code, 6-opponent ring)",
+   "world": "perfect judge",
+   "design": "18 latent N(0,1) trajectories, 300 tasks",
+   "statistic": "mean selected minus mean all, SD units (order-statistic ceiling 0.28)",
+   "value": 0.26,
+   "n_sims": 300,
+   "verdict": "informative",
+   "source": "reanalysis/m03_teacher_selection_ceiling.py"
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "in-paper-table",
+   "locator": "arXiv:2610.12176v1, Tables 1-15, Figs 2, 3, 6, 7 (pp. 3-39)",
+   "status": "verified-usable",
+   "fetch_cmd": "curl -sL -o paper.pdf https://arxiv.org/pdf/2610.12176",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "PyMuPDF text extraction of all 39 pages, read in full; figs 3a and 7a rendered at 500 dpi to read step heights; python -I reanalysis/m01_tables_arithmetic_and_units.py",
+    "result": "Table 5 sums, the Fig 6 interpolation gaps and the delivery x conditional-mean decompositions all recompute to the printed precision."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "https://github.com/SakanaAI/mass, commit fb40358 ('Fix typo')",
+   "status": "present-but-insufficient",
+   "bytes": 39000000,
+   "fetch_cmd": "git clone --depth 1 https://github.com/SakanaAI/mass repo",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "venv with pydantic==2.13.4 only; PYTHONUTF8=1 python -m unittest discover -s tests -v; python -m mass plan --config configs/paper.json",
+    "result": "11 of 12 offline tests pass and 1 is skipped (it needs requirements-core). Without PYTHONUTF8 on Windows one test errors on cp1252 decoding, which is a platform artifact. The plan prints a coherent cycle-1 config. The repo is a self-described reconstruction: its RHI rule differs from Algorithm 1, and the tournament schedule and second-cycle budget are reconstruction choices. It ships no result ledger, trajectories, judgments, workflows or trained weights, and docs/experiment_coverage.md lists 12 analyses that are not included. It reproduces no number in the paper."
+   }
+  },
+  {
+   "id": "a3",
+   "role": "benchmark",
+   "locator": "repo tasks/bare/query*.txt and tasks/initial/ (12 synthetic task prompts and initial workflows; the paper calls them a 'private benchmark')",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "ls tasks/bare tasks/initial (12 files each)",
+    "result": "All 12 prompts present. Their reference workspaces and rubric judgments are not."
+   }
+  },
+  {
+   "id": "a4",
+   "role": "model-weights",
+   "locator": "L1 and L2 checkpoints",
+   "status": "absent",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "grep for huggingface links in the repo; README 'weights ... are downloaded or generated when needed'",
+    "result": "Only the base Qwen3.6-27B is referenced. The trained students are not released."
+   }
+  },
+  {
+   "id": "a5",
+   "role": "derived-data",
+   "locator": "trajectories, self- and external judgments, workflow histories",
+   "status": "absent",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "docs/reproduction.md: 'The repository does not contain the complete run ledger'",
+    "result": "Absent by statement. Every quantitative claim rests on PDF tables (a1)."
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:extends",
+   "target": "lee2026-rhi",
+   "why": "MASS = RHI workflow search (Lee et al. 2026, arXiv 2607.15524) + SFT on the resulting traces; same authors, same 12 tasks. Target id reserved; record not yet written."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "huang2026-reward-hacking-research-agents",
+   "why": "c11: an agent redefining success and still winning 5/6 frontier-judge verdicts is the same failure class."
+  },
+  {
+   "type": "zoo:sharesUnstatedAssumptionWith",
+   "target": "cajas2026-agents-catching-agents",
+   "why": "Both treat agreement among LLM judges as evidence of quality; in MASS the six 'judgments' are reads of one output by two models, and unanimity is common under noise (c3)."
+  }
+ ],
+ "open_questions": [
+  "Train a student on completed trajectories of the UNOPTIMISED w0 (or the generic directive) with the same recipe and compare it with M+. This is the missing arm in c10.",
+  "Per-task counts for L2 vs L0 on the three test tasks (only 69.9% is printed). Is task 305 again carrying the result?",
+  "Does the delivery-rate gain on MLR-Bench and AstaBench survive a longer time limit? If the base delivers equally given more time, the gain is speed or termination behaviour, not research quality.",
+  "Evaluator agreement 0.73 -> 0.93: on which pairs, with what denominator, and how are panel splits (3-3) counted?",
+  "What is the per-execution P(6/6 unanimous win) for a FIXED workflow, measured by rerunning one workflow about 20 times? That would calibrate the noise floor of Fig 3a/7a directly instead of from iteration 0.",
+  "Does task information in contracts and hops rise merely because the optimiser prompt asks it to emphasise (h, c)? Rerun the search with a neutral optimiser prompt and recompute Table 12."
+ ]
+}
