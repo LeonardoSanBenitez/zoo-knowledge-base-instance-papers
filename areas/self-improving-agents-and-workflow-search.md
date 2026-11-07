@@ -42,11 +42,17 @@ A fourth, specific to harness search: **the optimiser is told what to find.** RH
 |---|---|---|---|
 | `lee2026-mass-self-supervision` | read-and-reanalysed | Qwen3.6-27B searches multi-agent workflows with itself as judge, then SFTs on the traces; two cycles | Gains on MLR/Asta = delivery rate (quality among delivered falls). Fig 3a "faster discovery" is reproduced by a no-improvement null. L1 held-out gain: 2 of 3 tasks below 50%. The arm that would show the optimisation matters, SFT on the *unoptimised* workflow's traces, was never run. Teacher selection can drop only 3 of 18 runs (ceiling 0.26 SD). |
 | `lee2026-rhi` | read-and-reanalysed | Prompt-level multi-agent harness, revised from pairwise self-comparison; Claude agents beat their own higher-effort settings on 30 LLM-written tasks | The sonnet trend survives execution noise (p about 0.001-0.004). For opus-4.8, about half of the gain is the *unoptimised* starting harness. The in-loop judge is never named. The optimiser prompt orders the "contracts and hops" result. |
+| `wang2026-rethinking-harness-evolution` | read-and-reanalysed | AI2/UW, independent: at matched budget on Terminal-Bench 2.1, harness evolution loses to parallel sampling and sequential refinement, and gains nothing on 34 held-out tasks; it wins in long-horizon games with verifiable feedback | Its own tables carry a free replicate: the same procedure run twice moves 0 / 0.6 / 2.5 pp. 'Overfitting' has no in-sample pass@1 gain to lose (-0.8 / +2.1). The held-out test detects +5 pp per model with probability 0.75-0.95, depending on task determinism. |
+| `tran2026-single-vs-multi-agent-budget` | read-and-reanalysed | Stanford: one agent vs five multi-agent designs at equal thinking tokens on multi-hop QA; the DPI says an ideal single reader cannot lose | It is a draw, not 'outperform': 38/40 cells are indistinguishable at question level, one cell goes each way. The appendix CIs are 2-4x too narrow and off-centre (FRAMES implied n is about 4 x 824: pooled runs). The theory exempts degraded-context, long-horizon regimes, which is where MASS and RHI live. |
 
 ## What a reader of this literature should carry
 
 These are notes from the literature, not a plan.
 
+0. **Ask for the equal-compute baseline.** Best-of-k or sequential refinement at the same cost beat harness
+   evolution on Terminal-Bench (`wang2026-rethinking-harness-evolution`), and one agent matches five multi-agent
+   designs at equal thinking tokens (`tran2026-single-vs-multi-agent-budget`). RHI compares only against higher
+   reasoning effort, and MASS's multi-agent teachers spend 2.4x the tokens of its single-agent ones.
 1. **Ask for the unoptimised-workflow arm.** Most of what "self-improvement" buys may be "some reasonable
    multi-agent prompt" plus "keep the completed runs". RHI's H[0] carries about half of its opus-4.8 gain; MASS
    never trains on H[0] traces.
@@ -68,4 +74,4 @@ SiriuS (Zhao et al., NeurIPS 2025/26: SFT on selected multi-agent traces, the cl
 "LLMs cannot self-correct reasoning yet" (MASS's premise); TTHE 2607.08124; SIA 2605.27276; HASE 2607.03935;
 HELIX 2608.13951; Squeeze Evolve 2604.07725; Park et al. 2609.21032 (test-time communication); Multi-Agent Evolve
 2510.23595; Wang et al. 2026 (harness evolution vs test-time-scaling baselines at equal budget: cited by RHI as a
-negative result); ADAS, AFlow, GPTSwarm; Self-Rewarding LMs; STaR; ReST-EM.
+negative result -- READ, see records); ADAS, AFlow, GPTSwarm; Self-Rewarding LMs; STaR; ReST-EM.

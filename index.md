@@ -303,7 +303,9 @@ so no one else can run it.
   no-improvement null; there is no arm training on the unoptimised workflow) and `lee2026-rhi` (its inner loop:
   prompt-level harness search for Claude agents; the sonnet trend survives execution noise, but about half the
   opus-4.8 gain is the unoptimised starting harness, and the optimiser prompt dictates the 'contracts and hops'
-  finding). Neighbour of the Dojo area below; the generic lesson (running maxima) is in
+  finding). Two independent counterweights: `wang2026-rethinking-harness-evolution` (AI2/UW: harness
+  evolution loses to best-of-k at matched budget on Terminal-Bench) and `tran2026-single-vs-multi-agent-budget`
+  (one agent ties five multi-agent designs at equal thinking tokens; its CIs are 2-4x too narrow). Neighbour of the Dojo area below; the generic lesson (running maxima) is in
   `instance-general/statistics/detectors-that-find-signal-in-null-worlds.md`.
 
 - `active` `human-ai-creativity.md` — divergent/convergent oscillation, psychedelic "loosened priors" as a

@@ -1,0 +1,95 @@
+{
+ "parsed_cells": 168,
+ "FRAMES": {
+  "label": "FRAMES (n should be 824)",
+  "cells": 84,
+  "point_outside_CI": 1,
+  "position_median": 0.75,
+  "position_frac_in_outer_10pct": 0.155,
+  "n_implied_median": 3255,
+  "n_implied_p10_p90": [
+   1288,
+   7761
+  ]
+ },
+ "MuSiQue": {
+  "label": "MuSiQue 4-hop (n 405 if full dev 4-hop)",
+  "cells": 84,
+  "point_outside_CI": 1,
+  "position_median": 0.374,
+  "position_frac_in_outer_10pct": 0.095,
+  "n_implied_median": 6073,
+  "n_implied_p10_p90": [
+   2745,
+   26027
+  ]
+ },
+ "control_our_bootstrap_n824": {
+  "label": "our percentile bootstrap, n=824",
+  "cells": 200,
+  "point_outside_CI": 0,
+  "position_median": 0.5,
+  "position_frac_in_outer_10pct": 0.0,
+  "n_implied_median": 827,
+  "n_implied_p10_p90": [
+   761,
+   906
+  ]
+ },
+ "examples": [
+  {
+   "table": 3,
+   "dataset": "FRAMES",
+   "system": "SAS",
+   "budget_idx": 0,
+   "p": 0.191,
+   "lo": 0.158,
+   "hi": 0.201
+  },
+  {
+   "table": 3,
+   "dataset": "FRAMES",
+   "system": "SAS",
+   "budget_idx": 1,
+   "p": 0.24,
+   "lo": 0.238,
+   "hi": 0.268
+  },
+  {
+   "table": 3,
+   "dataset": "FRAMES",
+   "system": "SAS",
+   "budget_idx": 2,
+   "p": 0.252,
+   "lo": 0.251,
+   "hi": 0.282
+  },
+  {
+   "table": 3,
+   "dataset": "FRAMES",
+   "system": "SAS",
+   "budget_idx": 3,
+   "p": 0.25,
+   "lo": 0.248,
+   "hi": 0.275
+  },
+  {
+   "table": 3,
+   "dataset": "FRAMES",
+   "system": "SAS",
+   "budget_idx": 4,
+   "p": 0.26,
+   "lo": 0.247,
+   "hi": 0.295
+  },
+  {
+   "table": 3,
+   "dataset": "FRAMES",
+   "system": "SAS",
+   "budget_idx": 5,
+   "p": 0.263,
+   "lo": 0.252,
+   "hi": 0.299
+  }
+ ]
+}

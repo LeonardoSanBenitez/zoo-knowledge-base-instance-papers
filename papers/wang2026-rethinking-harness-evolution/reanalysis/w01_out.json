@@ -1,0 +1,69 @@
+{
+ "A_same_procedure_two_runs_pp": {
+  "opus46": 0.0,
+  "gpt54": 0.6,
+  "gpt54mini": -2.5
+ },
+ "A_note": "Same configuration, two separate evaluations: differences 0.0, +0.6, -2.5 pp. Method differences of about 2 pp on one model are inside this floor.",
+ "B_heldout_power": {
+  "true_gain_0pp": {
+   "sd_of_observed_gain_pp": 6.39,
+   "P(observed<=+1.2)": 0.543,
+   "P(observed<=0)": 0.543
+  },
+  "true_gain_3pp": {
+   "sd_of_observed_gain_pp": 6.4,
+   "P(observed<=+1.2)": 0.363,
+   "P(observed<=0)": 0.363
+  },
+  "true_gain_5pp": {
+   "sd_of_observed_gain_pp": 6.31,
+   "P(observed<=+1.2)": 0.249,
+   "P(observed<=0)": 0.249
+  },
+  "true_gain_8pp": {
+   "sd_of_observed_gain_pp": 6.26,
+   "P(observed<=+1.2)": 0.123,
+   "P(observed<=0)": 0.123
+  },
+  "three_model_average_true_5pp": {
+   "sd": 3.66,
+   "P(avg<=0)": 0.096
+  },
+  "calibration": {
+   "rms_replicate_pp": 1.48,
+   "implied_E_p1mp": 0.0196,
+   "implied_beta_conc": 0.092,
+   "caveat": "three replicate pairs only; the identical 69.9 for opus may be a reused run, which would make tasks look more deterministic than they are"
+  },
+  "calibrated_true_gain_0pp": {
+   "sd_of_observed_gain_pp": 2.46,
+   "P(observed<=+1.2)": 0.636
+  },
+  "calibrated_true_gain_5pp": {
+   "sd_of_observed_gain_pp": 2.58,
+   "P(observed<=+1.2)": 0.045
+  }
+ },
+ "C_overfitting_contrast": {
+  "in_sample_gain_no_tests_pp": {
+   "opus46": 1.5,
+   "gpt54": -5.6,
+   "gpt54mini": 1.9,
+   "avg": -0.8
+  },
+  "in_sample_gain_with_tests_pass1_pp": {
+   "opus46": 3.1,
+   "gpt54": 2.7,
+   "gpt54mini": 0.5,
+   "avg": 2.1
+  },
+  "heldout_gain_pp": {
+   "opus46": 1.2,
+   "gpt54": 0.0,
+   "gpt54mini": -1.4,
+   "avg": 0.0
+  },
+  "reading": "In-sample pass@1 gains of Harness Evolution are -0.8 (no tests) and +2.1 (tests) on average, both inside the replicate floor; held-out is 0.0. There is no in-sample gain for overfitting to explain. 'Fails to generalize' is supported as 'no gain anywhere at pass@1', not as a train/test gap. The in-sample gain the paper contrasts with is pass@5 (79.0 vs pass@1 base), which measures selection among 5 tries, not a better harness."
+ }
+}

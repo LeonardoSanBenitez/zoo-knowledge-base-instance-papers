@@ -1,0 +1,249 @@
+{
+ "schema_version": "1.7",
+ "id": "wang2026-rethinking-harness-evolution",
+ "title": "Rethinking the Evaluation of Harness Evolution for Agents",
+ "authors": [
+  "Yike Wang",
+  "Huaisheng Zhu",
+  "Zhengyu Hu",
+  "Yige Yuan",
+  "Zhengyu Chen",
+  "Shakti Senthil",
+  "Hannaneh Hajishirzi",
+  "Yulia Tsvetkov",
+  "Noah A. Smith",
+  "Pradeep Dasigi",
+  "Teng Xiao"
+ ],
+ "year": 2026,
+ "venue": "arXiv:2607.12227v4 (5 Oct 2026), preprint; Allen Institute for AI and University of Washington",
+ "area": [
+  "self-improving-agents-and-workflow-search"
+ ],
+ "identifiers": {
+  "arxiv": "2607.12227",
+  "url": "https://github.com/rethinking-harness-evolution/code"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "chain",
+  "evidence": "Cited by lee2026-rhi as the negative result ('automatic harness evolution fails to consistently outperform simple test-time scaling'). Chosen as the independent counterweight to the two Sakana records, from another group with code.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 9,
+  "bytes_downloaded": 3000000,
+  "compute_notes": "26-page PDF: body read in full (Secs 1-5, Tables 1-4), appendix not read. Code repo cloned (203 files, no per-task results). w01 ran in 39 s plus 20 s.",
+  "session": "2026-11-07 maria, MASS citation chain"
+ },
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-07",
+  "verified": "2026-11-07",
+  "notes_file": "NOTES.md"
+ },
+ "triggers": [
+  "harness evolution vs test-time scaling",
+  "matched budget baseline",
+  "parallel sampling beats harness search",
+  "train test separation in agent search",
+  "Terminal-Bench harness overfitting",
+  "ARC-AGI-3 harness",
+  "self-judge without unit tests"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "origin": "paper",
+   "statement": "On Terminal-Bench 2.1 without unit tests, automatic harness evolution (AHE) does not beat direct sampling on average (67.4 vs 68.2 pass@1) and falls below parallel sampling with self-selection (72.3); on GPT-5.4 it drops 75.3 -> 69.7.",
+   "scope": "89 tasks, 2 runs each, K = 5 budget for every method, three models (Opus 4.6, GPT-5.4, GPT-5.4 mini). AHE with its explore agent disabled, m = 1 rollout per task per harness.",
+   "quantities": [
+    {
+     "name": "pass1_no_tests_direct_parallel_seq_evo_scaling_avg",
+     "value": "68.2 / 72.3 / 69.3 / 67.4 / 71.8",
+     "unit": "% pass@1, mean of 3 models",
+     "source": "Table 1"
+    },
+    {
+     "name": "gpt54_harness_evolution_drop",
+     "value": -5.6,
+     "unit": "pp",
+     "source": "Table 1 (75.3 -> 69.7)"
+    },
+    {
+     "name": "same_procedure_replicate_difference",
+     "value": "0.0, +0.6, -2.5",
+     "unit": "pp: direct sampling in Table 2 minus Table 1, per model",
+     "source": "w01 A (ours)"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "nonsignificance-read-as-absence"
+    ],
+    "why": "The direction is credible and the design (matched K, same seed harness) is the right one. No intervals are given. The paper's own replicate of an identical procedure moves by up to 2.5 pp, so per-model differences of about 2 pp are not resolved. The GPT-5.4 drop (-5.6) and the parallel-sampling advantage (+4.1 on average) are larger than that floor. 'Fails to outperform' is supported. 'Self-feedback is noisy and compounds mistakes' is an interpretation."
+   }
+  },
+  {
+   "id": "c2",
+   "origin": "paper",
+   "statement": "With unit tests, harness evolution still trails test-time scaling: pass@1 69.7 vs parallel sampling 82.0; pass@5 79.0 vs sequential refinement 87.1. Its gains appear only when selecting among several attempts.",
+   "quantities": [
+    {
+     "name": "pass1_with_tests_avg",
+     "value": "direct 67.6, parallel 82.0, sequential 76.9, evolution 69.7, scaling 75.5",
+     "unit": "%",
+     "source": "Table 2"
+    },
+    {
+     "name": "pass5_with_tests_avg",
+     "value": "parallel 82.0, sequential 87.1, evolution 79.0, scaling 85.6",
+     "unit": "%",
+     "source": "Table 2"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted",
+    "patterns": [],
+    "why": "The gaps (12 pp at pass@1, 8 pp at pass@5) are well above the replicate floor. A clean matched-budget result."
+   }
+  },
+  {
+   "id": "c3",
+   "origin": "paper",
+   "statement": "Harness evolution fails to generalise: on 34 held-out tasks the evolved harness gains +1.2, 0.0 and -1.4 pp (average 0.0), which 'stands in sharp contrast' to its in-sample improvements and indicates overfitting to the search set.",
+   "scope": "45 train / 10 validation / 34 test split of Terminal-Bench 2.1, 2 runs.",
+   "quantities": [
+    {
+     "name": "heldout_gain_avg",
+     "value": 0.0,
+     "unit": "pp pass@1",
+     "n": 34,
+     "source": "Table 3"
+    },
+    {
+     "name": "in_sample_pass1_gain_avg",
+     "value": "-0.8 (no tests), +2.1 (with tests)",
+     "unit": "pp",
+     "source": "w01 C from Tables 1-2"
+    },
+    {
+     "name": "heldout_P_obs_le_1.2_if_true_gain_5pp",
+     "value": "0.045 (tasks calibrated near-deterministic) to 0.25 (Beta conc 1.5)",
+     "unit": "probability per model",
+     "source": "w01 B"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "text-contradicts-own-materials"
+    ],
+    "why": "'No gain on held-out' holds. A +5 pp per-model gain would be missed 5-25% of the time, depending on how deterministic tasks are (w01 B). 'Overfitting' does not hold: overfitting needs an in-sample gain to lose, and the in-sample pass@1 gains are -0.8 and +2.1, inside the replicate floor. The 'improvements on the same tasks' being contrasted are pass@5 or selection gains, not a better harness at pass@1. The supported reading is that the evolved harness does not help anywhere at pass@1; nothing shows a train/test gap."
+   }
+  },
+  {
+   "id": "c4",
+   "origin": "paper",
+   "statement": "In long-horizon games with rich feedback, task-specific harness evolution ('harness scaling') beats sequential refinement at matched budget: ARC-AGI-3 RHAE 43.3 -> 77.5 (Opus 4.8) and 21.1 -> 38.2 (GPT-5.6 Terra) when allowed to evolve skills and tools; +11% on EdgeBench games.",
+   "scope": "25 public ARC-AGI-3 games, 2,000-action budget, best score over the run; starting from the strong VISTA harness with memory evolution off.",
+   "quantities": [
+    {
+     "name": "arc_agi3_rhae_vista_star_to_full_opus48",
+     "value": "43.3 -> 77.5",
+     "unit": "RHAE (0-100)",
+     "n": 25,
+     "source": "Table 4, Sec 5.2"
+    },
+    {
+     "name": "arc_agi3_rhae_vista_star_to_full_gpt56terra",
+     "value": "21.1 -> 38.2",
+     "unit": "RHAE",
+     "n": 25,
+     "source": "Table 4"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "patterns": [],
+    "why": "Large effects, but single runs per game are implied and not stated, and the per-game scores swing 0-100 (e.g. tr87 11.8 -> 100). The comparison is to sequential refinement, not to parallel sampling. Not recomputed: no per-run logs."
+   }
+  }
+ ],
+ "methods": [
+  "in-paper-table-transcription",
+  "power-simulation",
+  "synthetic-injected-effect-control"
+ ],
+ "instrument_checks": [
+  {
+   "instrument": "34-task x 2-run held-out pass@1 comparison",
+   "world": "true harness gain +5 pp, task determinism calibrated to the paper's replicate",
+   "design": "34 tasks, 2 runs per arm, 20000 sims",
+   "statistic": "P(observed gain <= +1.2)",
+   "value": 0.045,
+   "n_sims": 20000,
+   "verdict": "powered",
+   "source": "reanalysis/w01_noise_floor_and_heldout_power.py"
+  },
+  {
+   "instrument": "34-task x 2-run held-out pass@1 comparison",
+   "world": "true gain +5 pp, Beta(conc 1.5) task heterogeneity",
+   "design": "34 tasks, 2 runs, 20000 sims",
+   "statistic": "P(observed gain <= +1.2)",
+   "value": 0.249,
+   "n_sims": 20000,
+   "verdict": "underpowered",
+   "source": "reanalysis/w01_noise_floor_and_heldout_power.py"
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "in-paper-table",
+   "locator": "arXiv:2607.12227v4 Tables 1-4",
+   "status": "verified-usable",
+   "fetch_cmd": "curl -sL -o paper.pdf https://arxiv.org/pdf/2607.12227",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "PyMuPDF text, Tables 1-4 transcribed; python reanalysis/w01_noise_floor_and_heldout_power.py",
+    "result": "Tables internally consistent; averages recompute."
+   }
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "github.com/rethinking-harness-evolution/code @ be1507a",
+   "status": "present-but-insufficient",
+   "bytes": 400000,
+   "fetch_cmd": "git clone --depth 1 https://github.com/rethinking-harness-evolution/code repo",
+   "checked": {
+    "on": "2026-11-07",
+    "by": "maria",
+    "how": "clone; find -type f (203 files); search for result files",
+    "result": "Agent and evolve-agent code (nexau framework) only; no per-task outcomes, so no number in the paper can be recomputed."
+   }
+  }
+ ],
+ "relations": [],
+ "open_questions": [
+  "Do RHI's sonnet and opus gains survive a parallel-sampling baseline at equal cost (best-of-k with the same frontier judge)? RHI never ran it.",
+  "Is the identical 69.9 for Opus 4.6 direct sampling in Tables 1 and 2 a reused run? If so, the replicate floor is 2 pairs, not 3.",
+  "ARC-AGI-3: repeat runs per game -- how much of 43.3 -> 77.5 is one lucky trajectory on a few games?"
+ ]
+}

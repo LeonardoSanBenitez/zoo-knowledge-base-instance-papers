@@ -1,0 +1,79 @@
+{
+ "schema_version": "1.7",
+ "id": "tran2026-single-vs-multi-agent-budget",
+ "title": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+ "authors": ["Dat Tran", "Douwe Kiela"],
+ "year": 2026,
+ "venue": "arXiv:2604.02460v2 (11 Apr 2026), preprint under review; Stanford",
+ "area": ["self-improving-agents-and-workflow-search"],
+ "identifiers": {"arxiv": "2604.02460"},
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {"class": "chain", "evidence": "Cited by lee2026-rhi (related work) for the claim that multi-agent gains can reflect extra compute. Chosen because it tests the premise of MASS ('multi-agent topologies excel at complex reasoning') under a matched budget.", "recorded": "at-selection"},
+ "cost": {"tool_calls": 9, "bytes_downloaded": 1100000, "compute_notes": "27-page PDF: body and Appendix A-B read, Tables 3-10 parsed by script. No code released. t01 and t02 each run under 10 s.", "session": "2026-11-07 maria, MASS citation chain"},
+ "curation": {"author": "maria", "created": "2026-11-07", "verified": "2026-11-07", "notes_file": "NOTES.md"},
+ "triggers": ["single agent vs multi-agent equal budget", "thinking token budget matched", "data processing inequality multi-agent", "multi-agent gains are extra compute", "FRAMES MuSiQue multi-hop", "bootstrap confidence interval too narrow", "Gemini thinking budget artifact"],
+ "claims": [
+  {
+   "id": "c1", "origin": "paper",
+   "statement": "Under matched thinking-token budgets, a single agent is the best system or statistically indistinguishable from the best in every cell except the 100-token budget, across Qwen3-30B-A3B, DeepSeek-R1-Distill-Llama-70B, Gemini 2.5 Flash and Pro on FRAMES and MuSiQue 4-hop.",
+   "scope": "Short-answer multi-hop QA, LLM-judged correctness, budgets of 100-10k thinking tokens, five MAS designs (sequential, subtask-parallel, parallel roles, debate, ensemble).",
+   "quantities": [
+    {"name": "cells_SA_sig_better_question_level", "value": 1, "denominator": 40, "unit": "cells (excluding 100-token), unpaired binomial z > 1.96", "source": "t02 (ours; n assumed 824 FRAMES, 405 MuSiQue)"},
+    {"name": "cells_MA_sig_better_question_level", "value": 1, "denominator": 40, "unit": "cells (Gemini-2.5-Pro FRAMES at 500: SA 0.600 vs MA 0.660, z = -2.53)", "source": "t02"},
+    {"name": "average_accuracy_10k_SAS_vs_Seq", "value": "0.426 vs 0.387", "unit": "mean over 8 rows", "source": "Table 1"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "patterns": ["nonsignificance-read-as-absence", "text-contradicts-own-materials"],
+    "why": "With question-level SEs, 38 of 40 cells show no detectable difference. Single-agent is better in one (DeepSeek MuSiQue 1k, part of a consistent DeepSeek-MuSiQue pattern at every budget), and multi-agent is better in one, which the paper's blanket sentence contradicts. Supported: 'single agent MATCHES multi-agent at equal thinking tokens' for short-answer multi-hop QA. The title's 'outperform' holds only for DeepSeek on MuSiQue and against the Sequential design specifically. Scope is far from long-horizon coding or research, where MASS and RHI live: there the context-degradation exception the paper itself derives (c3) is the expected regime."
+   }
+  },
+  {
+   "id": "c2", "origin": "reader",
+   "statement": "The appendix 95% bootstrap CIs (Tables 3-10, 168 cells) are 2-4x narrower than the binomial width at the question count, and they are not centred on their own point estimates. FRAMES widths imply n = 3,255 (median; FRAMES has 824 questions), MuSiQue widths imply n = 6,073. Point estimates sit in the outer 10% of their interval in 15% (FRAMES) and 10% (MuSiQue) of cells, and 2 lie outside it.",
+   "quantities": [
+    {"name": "frames_n_implied_by_ci_width", "value": 3255, "unit": "median over 84 cells (p10-p90 1288-7761)", "source": "t01"},
+    {"name": "musique_n_implied_by_ci_width", "value": 6073, "unit": "median over 84 cells", "source": "t01"},
+    {"name": "control_n_implied_our_bootstrap", "value": 827, "unit": "median, 200 simulated cells at n = 824", "source": "t01 known-answer control"},
+    {"name": "frames_point_position_median", "value": 0.75, "unit": "(p - lo)/(hi - lo); 0.5 expected", "source": "t01"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "accepted",
+    "patterns": ["units-of-analysis-inflated", "text-contradicts-own-materials"],
+    "why": "Our percentile bootstrap at n = 824 recovers n = 827 and a centred position of 0.50, so the check is calibrated. The FRAMES implied n is about 4 x 824, consistent with pooling repeated runs as if they were independent questions, with point estimates from a different sample. This is a hypothesis; the paper does not describe its bootstrap. Direction of the consequence: correct intervals would be wider, so MORE systems would be 'indistinguishable from the best'. That strengthens 'matches' and weakens 'outperforms'."
+   }
+  },
+  {
+   "id": "c3", "origin": "paper",
+   "statement": "By the data processing inequality, a single agent with perfect use of the full context can do no worse than a multi-agent system that passes messages derived from that context. Multi-agent systems become competitive when single-agent context use degrades, or when they get extra compute.",
+   "quantities": [],
+   "evidence": ["a1"],
+   "our_assessment": {"status": "accepted", "patterns": [], "why": "The bound is correct and the paper states its own key assumption: perfect context utilisation. It is a statement about an ideal reader. Every long-horizon agent task (MASS, RHI) violates that assumption by design, so the theorem does not bear on them, and the authors say as much."}
+  },
+  {
+   "id": "c4", "origin": "paper",
+   "statement": "API budget control is unreliable: Gemini 2.5's visible thinking plateaus well below the requested budget for a single call, so multi-call MAS gets more effective thinking under the same nominal budget.",
+   "quantities": [{"name": "qwen3_frames_sas_avg_thinking_at_10k", "value": 1307, "unit": "tokens used of 10,000 allowed", "source": "Table 3"}],
+   "evidence": ["a1"],
+   "our_assessment": {"status": "accepted", "patterns": [], "why": "Visible in the appendix token columns. SAS uses about 1.3k of a 10k budget while Seq uses about 1.8k: 'matched budget' means matched caps, not matched spend. That favours MAS, which strengthens the 'matches' result."}
+  }
+ ],
+ "methods": ["in-paper-table-transcription", "arithmetic-consistency-check", "known-answer-structural-null", "unit-of-analysis-pseudoreplication-check"],
+ "instrument_checks": [
+  {"instrument": "CI width -> implied n, and point position within CI", "world": "percentile bootstrap of simulated 0/1 outcomes, n = 824", "design": "200 cells, 1000 resamples each", "statistic": "median implied n", "value": 827, "n_sims": 200, "verdict": "calibrated", "source": "reanalysis/t01_bootstrap_ci_consistency.py"}
+ ],
+ "artifacts": [
+  {"id": "a1", "role": "in-paper-table", "locator": "arXiv:2604.02460v2 Table 1 and appendix Tables 3-10 (168 point estimates with 95% CIs)", "status": "verified-usable", "fetch_cmd": "curl -sL -o paper.pdf https://arxiv.org/pdf/2604.02460",
+   "checked": {"on": "2026-11-07", "by": "maria", "how": "python t01_bootstrap_ci_consistency.py <paper.txt> (parses all 168 CI cells); python t02_recount_with_question_level_se.py", "result": "All 168 cells parsed; Table 1 transcribed (48 cells x 7 systems)."}},
+  {"id": "a2", "role": "code", "locator": "none released", "status": "absent", "checked": {"on": "2026-11-07", "by": "maria", "how": "Searched the PDF for repository links", "result": "Only a GitHub issue link (python-genai #782) about the Gemini budget artifact."}}
+ ],
+ "relations": [],
+ "open_questions": [
+  "How were the bootstrap CIs computed (over questions? over pooled repeated runs?), and how many runs per cell?",
+  "How many MuSiQue 4-hop questions were used? We assumed the 405 of the answerable dev set.",
+  "Does the SAS >= MAS result hold for long-horizon tasks with artifacts, the regime MASS and RHI target, where the paper's own theory predicts it may not?"
+ ]
+}
