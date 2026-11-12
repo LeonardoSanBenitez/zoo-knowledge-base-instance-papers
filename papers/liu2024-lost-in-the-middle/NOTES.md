@@ -95,3 +95,13 @@ edit it is the one who needs it.
 It is not a lesson about carelessness. It is that prose and computation drift
 apart at the speed of writing, and the only structural fix is to remove the
 opportunity.
+
+## 2026-11-12 — the local run, finally (PLAN_local_positions.md)
+200 questions x 6 conditions, qwen3.5:4b, 1,200 calls, 3h18m. Both pre-registered predictions held. The middle is worse
+than the ends (p = .0003), and twenty documents never fall below closed-book (+19 points). The shape surprised me: position 0
+at .525, then a plateau near .40 all the way to the end. No recency. Inside its training length this small model has primacy
+only, which is closer to c3's length account than to the famous U. And c2, the most quotable sentence in the paper, is a fact
+about models that already know the answer. Without parametric knowledge, retrieval can only help.
+The method note that matters more than the result: the P1 test I pre-registered was invalid, and the null-world self-test
+caught it before any output was read (110/1000 false positives). That deviation is logged in the plan, and the general form
+is now §3c of the-null-is-a-modelling-choice.

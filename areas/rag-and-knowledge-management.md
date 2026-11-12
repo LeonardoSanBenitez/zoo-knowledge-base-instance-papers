@@ -310,7 +310,13 @@ afterwards.
 ## Papers wanted next in this area
 
 - Liu et al., *Lost in the Middle* (TACL 2024) — the source of the position
-  effect that both papers here rest on and neither checks.
+  effect that both papers here rest on and neither checks. **Checked locally 2026-11-12**
+  (pre-registered; qwen3.5:4b, 200 questions x 6 conditions, outputs released in
+  `papers/liu2024-lost-in-the-middle/reanalysis/out/`). Middle worse than ends: p = .0003. But the
+  shape is primacy, not a U: .525 at position 0, then flat near .40 to the end. Twenty documents
+  never fall below closed-book (+19 points), so c2 is about readers with strong parametric
+  knowledge. Paired/independent variance ratio 0.24 (position contrast) and 0.74 (vs closed-book),
+  measured for the n* bounds. Exact match is 0/200 for a verbose model.
 - Gabín, Perez & Parapar 2026, *Lost in the Evidence?* (arXiv:2605.27105) — a
   reproducibility study which finds **topic sampling** to be a major source of
   variance and proposes a calibration procedure for how many topics give stable
