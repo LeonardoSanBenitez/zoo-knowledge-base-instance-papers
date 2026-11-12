@@ -125,7 +125,7 @@
  ],
  "open_questions": [
   "ANSWERED 2026-11-12 (reanalysis/n2, OSF deposit a1): restricted to prefix-respecting hypothetical systems, the exact-restricted comparison has zero discriminating power. 15/17 attested systems coincide with the frontier by construction, and the 2 with composed numerals (Hup, Waskia) are dominated. See c1.",
-  "Does efficiency discriminate WHICH k languages choose (3 vs 4 vs 6) beyond the prefix shape? With cost falling monotonically in k and complexity rising, any k is on the frontier -- variation across languages is not explained by the model.",
+  "ANSWERED 2026-11-12 (reanalysis/n2, deposit code): no. Under the deposit's own cost and complexity, every prefix system (k = 1..99) is Pareto-optimal among prefix systems (checked: True), so the model ranks no stopping point above another; which k a language chooses is outside what it explains. Does efficiency discriminate WHICH k languages choose (3 vs 4 vs 6) beyond the prefix shape? With cost falling monotonically in k and complexity rising, any k is on the frontier -- variation across languages is not explained by the model.",
   "ANSWERED 2026-10-16 (no correction): Crossref filter=updates:10.1162/opmi_a_00034 -> 0 items.",
   "The deposit codes 25 of the 30 languages in Table 1 (absent: Krenak, Chiquitano, Fuyuge, French, Spanish), yet Figures 3-5 plot all 30. Were the other five scored by code that is not in the deposit? Figure points cannot be regenerated for them from a1.",
   "Figure 3's caption says Rama, Barasano, Imonda and Yidiny have 'terms for the first six numerals and a higher term'; the deposit gives all four ulim = 5 (exact 1..5, 'higher' from 6). Caption wording, or a different coding from the one plotted?",
