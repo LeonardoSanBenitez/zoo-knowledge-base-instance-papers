@@ -95,6 +95,12 @@ a future direction, synthetic and machine-to-machine codes ("neuralese").
   model cannot say why a language stops at 3 rather than 6. Need is estimated from English
   numeral frequencies, so the circle is visible (the result fails under uniform need, as the
   authors show). Sixth instance of the class-defining structure carrying the efficiency.
+  **With the deposit (2026-11-12, OSF jmrqw, reanalysis/n2):** in the authors' own code an
+  attested exact-restricted language is scored by the same function of its upper limit that
+  draws the hypothetical frontier. So 15 of the 17 coded languages are frontier points by
+  construction. The two whose grammars compose numerals (Hup, Waskia) are dominated by
+  prefix systems. Restricted to systems that count from one, the comparison discriminates
+  nothing. The deposit codes 25 of the 30 plotted languages.
 - **The through-line, three domains (colour, indefinites, quantifiers):** what is reported as
   the efficiency of natural systems is mostly the efficiency of any system obeying a simple
   structural constraint (convexity; no synonymy; monotone+conservative). Where a residual

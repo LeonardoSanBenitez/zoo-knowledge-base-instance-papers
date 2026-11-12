@@ -1,0 +1,49 @@
+[Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/u'), Node('/v'), Node('/w')]
+[Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/u'), Node('/v'), Node('/w'), Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/w'), Node('/v'), Node('/u')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/u'), Node('/v'), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/u'), Node('/v'), Node('/w')]
+[Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/u')]
+[Node('/='), Node('/='), Node('/='), Node('/=')]
+[Node('/='), Node('/='), Node('/='), Node('/='), Node('/='), Node('/=')]
+need mass 1..3 = 0.838, 1..5 = 0.899, 1..10 = 0.950
+
+exact-restricted (num_type 1): ulim | attested complexity | frontier complexity at same ulim | cost (bits)
+  acg: ulim   3 |   13 |   13 | 0.6938 | prefix systems dominating it: 0
+  ana: ulim   3 |   13 |   13 | 0.6938 | prefix systems dominating it: 0
+  awp: ulim   4 |   17 |   17 | 0.5672 | prefix systems dominating it: 0
+  bae: ulim   3 |   13 |   13 | 0.6938 | prefix systems dominating it: 0
+  brs: ulim   5 |   21 |   21 | 0.4792 | prefix systems dominating it: 0
+  hix: ulim   3 |   13 |   13 | 0.6938 | prefix systems dominating it: 0
+  hpd: ulim  20 |   89 |   81 | 0.1279 | prefix systems dominating it: 2 (k = [21, 22])
+  imo: ulim   5 |   21 |   21 | 0.4792 | prefix systems dominating it: 0
+  kay: ulim   4 |   17 |   17 | 0.5672 | prefix systems dominating it: 0
+  mrt: ulim   3 |   13 |   13 | 0.6938 | prefix systems dominating it: 0
+  myi: ulim   3 |   13 |   13 | 0.6938 | prefix systems dominating it: 0
+  pit: ulim   3 |   13 |   13 | 0.6938 | prefix systems dominating it: 0
+  ram: ulim   5 |   21 |   21 | 0.4792 | prefix systems dominating it: 0
+  wch: ulim  10 |   41 |   41 | 0.2646 | prefix systems dominating it: 0
+  wsk: ulim  10 |   69 |   41 | 0.2646 | prefix systems dominating it: 7 (k = [11, 12, 13, 14, 15]...)
+  xoo: ulim   3 |   13 |   13 | 0.6938 | prefix systems dominating it: 0
+  yid: ulim   5 |   21 |   21 | 0.4792 | prefix systems dominating it: 0
+
+all languages built: acg(type 1, ulim 3, comp 13), ain(type 4, ulim None, comp 121), ana(type 1, ulim 3, comp 13), awp(type 1, ulim 4, comp 17), bae(type 1, ulim 3, comp 13), brs(type 1, ulim 5, comp 21), eng(type 6, ulim None, comp 126), geo(type 5, ulim None, comp 167), goo(type 0, ulim None, comp 15), hix(type 1, ulim 3, comp 13), hpd(type 1, ulim 20, comp 89), imo(type 1, ulim 5, comp 21), kay(type 1, ulim 4, comp 17), mnd(type 6, ulim None, comp 92), mrt(type 1, ulim 3, comp 13), myi(type 1, ulim 3, comp 13), myu(type 0, ulim None, comp 18), pit(type 1, ulim 3, comp 13), prh(type 0, ulim None, comp 9), ram(type 1, ulim 5, comp 21), war(type 0, ulim None, comp 9), wch(type 1, ulim 10, comp 41), wsk(type 1, ulim 10, comp 69), xoo(type 1, ulim 3, comp 13), yid(type 1, ulim 5, comp 21)
+
+prefix frontier: every k is Pareto-optimal among prefix systems?  True

@@ -1,0 +1,3 @@
+as deposited (HIG reuses 'matalii')      complexity = 13
+distinct invented higher form            complexity = 13
+langstrategy.acg() itself                complexity = 13

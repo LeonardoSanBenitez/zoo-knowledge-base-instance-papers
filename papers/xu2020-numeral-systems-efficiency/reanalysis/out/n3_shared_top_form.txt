@@ -1,0 +1,18 @@
+lang | ulim | n forms | exact forms (by rule) | HIG form | shared? | cost as coded | consistent cost | complexity | frontier at consistent k | dominated?
+acg | 3 | 3 | [1, 2, 3] | 'matalii' | SHARED | 0.6938 | 0.8940 | 13 | 10 | 1
+ana | 3 | 3 | [1, 2, 3] | ['quimsha', 'beta'] | no | 0.6938 | 0.6938 | 13 | 13 | 0
+awp | 4 | 4 | [1, 2, 3, 4] | 'ambara' | SHARED | 0.5672 | 0.6938 | 17 | 13 | 1
+brs | 5 | 5 | [1, 2, 3, 4, 5] | 'kohobokarak-u/o' | SHARED | 0.4792 | 0.5672 | 21 | 17 | 1
+bae | 3 | 3 | [1, 2, 3] | 'kijiku-nama' | SHARED | 0.6938 | 0.8940 | 13 | 10 | 1
+hix | 3 | 3 | [1, 2, 3] | 'osorwawo' | SHARED | 0.6938 | 0.8940 | 13 | 10 | 1
+hpd | 20 | 5 | [1, 2, 3, 4, 5] | 'jib ni-hu?' | no | 0.1279 | 0.1279 | 89 | 81 | 2
+imo | 5 | 5 | [1, 2, 3, 4, 5] | 'sabla sabla mugo' | SHARED | 0.4792 | 0.5672 | 21 | 17 | 1
+kay | 4 | 5 | [1, 2, 3, 4] | 'muthaa' | no | 0.5672 | 0.5672 | 17 | 17 | 0
+myi | 3 | 3 | [1, 2, 3] | 'yabalawa' | SHARED | 0.6938 | 0.8940 | 13 | 10 | 1
+mrt | 3 | 4 | [1, 2, 3] | 'maruwarla' | no | 0.6938 | 0.6938 | 13 | 13 | 0
+pit | 3 | 3 | [1, 2, 3] | 'mankurpa' | SHARED | 0.6938 | 0.8940 | 13 | 10 | 1
+ram | 5 | 5 | [1, 2, 3, 4, 5] | 'kwikistar' | SHARED | 0.4792 | 0.5672 | 21 | 17 | 1
+wch | 10 | 10 | [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] | 'ipofwusfwantes ihi' | no | 0.2646 | 0.2646 | 41 | 41 | 0
+wsk | 10 | 3 | [1, 2, 3] | 'kuting dilisan-dilisan' | no | 0.2646 | 0.2646 | 69 | 41 | 7
+yid | 5 | 5 | [1, 2, 3, 4, 5] | 'mala' | SHARED | 0.4792 | 0.5672 | 21 | 17 | 1
+xoo | 3 | 3 | [1, 2, 3] | 'ae(p)' | SHARED | 0.6938 | 0.8940 | 13 | 10 | 1
