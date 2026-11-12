@@ -1,0 +1,28 @@
+{
+ "V_types_body": 8903,
+ "V_types_body_plus_notes": 14456,
+ "V_types_all_tei_text": 17486,
+ "paper_types": 11515,
+ "at_V_full_size": {
+  "size": 8903,
+  "V": {
+   "BTN": 0.5126,
+   "BT": 0.482
+  },
+  "NV": {
+   "BTN": [
+    0.462,
+    0.4356,
+    0.485
+   ],
+   "BT": [
+    0.4283,
+    0.4032,
+    0.4492
+   ]
+  },
+  "excess_BTN": 0.0506,
+  "excess_BT": 0.0537,
+  "V_above_NV_p97.5_BTN": true
+ }
+}

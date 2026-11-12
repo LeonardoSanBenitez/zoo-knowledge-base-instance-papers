@@ -20,6 +20,12 @@ text scores on the same statistic.
   of their vocabulary inside the Theravada Vinaya's, at the size where the paper reads 49% as
   "shared legal heritage". The Theravada Sutta overlaps the Vinaya more than the
   Mulasarvastivada Vinaya does. `bose2026#c1`.
+  **Decomposed (2026-11-12, three baselines, same tokenizer).** Of the ~0.5, about 0.33 is any
+  English, about 0.13 is Buddhist English (non-Vinaya, 0.46-0.48), and about 0.05 is specific to
+  the Vinaya: 84000's Vinaya 0.513 vs 84000's non-Vinaya 0.462 [0.436, 0.485] at the same size and
+  translation house. The legal signal is real, and a tenth of what the paper reports. The
+  translation house matters on its own: SuttaCentral suttas reach 0.48 and 84000 non-Vinaya texts
+  0.41 against the same Vinaya. Open: is the 0.05 law, or mainstream-vs-Mahayana vocabulary?
 - **Know the layer.** In the PDF edition, about half of the Vinaya's vocabulary is the
   translator's notes. `bose2026#c2`.
 - **How repetitive is a sutta, and whose number is it?** Allon's famous 87% (DN 25, hand count)

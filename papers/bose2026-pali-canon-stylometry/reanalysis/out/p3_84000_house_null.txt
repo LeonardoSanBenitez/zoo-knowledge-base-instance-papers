@@ -1,0 +1,4 @@
+BT 7418 types (p1: 7,418); BTN 15170 types (p1: 15,170); sutta files 4168, 850111 tokens, 12874 types
+{"V_files": 5, "V_tokens": 204059, "V_types": 8903, "paper_mulasarvastivada_types": 11515, "NV_files": 120, "NV_tokens": 615228, "NV_types": 19008}
+2282 {"V": {"BTN": [0.7217, 0.695, 0.7388], "BT": [0.6954, 0.6691, 0.7143]}, "NV": {"BTN": [0.6622, 0.5316, 0.7191], "BT": [0.6328, 0.5083, 0.6871]}, "excess_V_minus_NV_BTN": 0.0595, "excess_V_minus_NV_BT": 0.0626}
+11515 {"NV": {"BTN": [0.4089, 0.3928, 0.4247], "BT": [0.3761, 0.3609, 0.3898]}}
