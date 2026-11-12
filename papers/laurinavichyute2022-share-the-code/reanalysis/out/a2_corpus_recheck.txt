@@ -1,0 +1,116 @@
+CONTROLS {"invented osf zz8qv": true, "invented osf p0w9j": true, "invented github": true, "openai/codex": true, "jmrqw node with key": true, "ky37d file guid": true, "hf297 preprint": true}
+allon2022-early-buddhist-texts-repetition  a1   github recorded verified-usable          now alive        size 996911KB archived false
+arslan2026-bodhi-engineering               a2   github recorded present-but-insufficient now alive        size 9379KB archived false
+bose2026-pali-canon-stylometry             a1   github recorded verified-usable          now alive        size 996911KB archived false
+botviniknezer2020-narps                    a2   github recorded verified-usable          now alive        size 164064KB archived false (repo_commit is not a SHA: 'shallow clone 2026-09-09')
+breznau2022-hidden-universe                a1   github recorded verified-usable          now alive        size 167426KB archived false pinned dd5dcb27a1 ok
+cajas2026-agents-catching-agents           a2   github recorded verified-usable          now alive        size 46621KB archived false pinned d5b5c33 ok
+cajas2026-creativity-constraint            a2   github recorded present-but-insufficient now alive        size 357KB archived false
+cajas2026-modalens                         a2   github recorded dangling                 now gone         gh: Not Found (HTTP 404)
+cassotti2023-xl-lexeme                     a2   github recorded verified-usable          now alive        size 131773KB archived false
+caviola2022-population-ethical-intuitions  a1   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 10} children 0
+caviola2022-population-ethical-intuitions  a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 10} children 0
+caviola2022-population-ethical-intuitions  a3   osf    recorded not-checked              now alive        nodes providers {'osfstorage': 10} children 0
+caviola2022-population-ethical-intuitions  a4   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 10} children 0
+chaabouni2021-emergent-colour-naming       a1   github recorded dangling                 now alive        size 1706KB archived false
+chaabouni2021-emergent-colour-naming       a2   github recorded present-but-insufficient now alive        size 1706KB archived false
+chen2025-mlr-bench                         a2   github recorded verified-usable          now alive        size 87743KB archived false
+coupe2019-information-rate                 a1   github recorded present-but-insufficient now alive        size 55570KB archived false pinned 00798db168 ok
+coupe2019-information-rate                 a2   github recorded verified-usable          now alive        size 55570KB archived false pinned 00798db168 ok
+cuconasu2024-power-of-noise                a2   github recorded not-checked              now alive        size 112710KB archived false
+denic2022-indefinites-simplicity-informati a1   github recorded verified-usable          now alive        size 2318KB archived false pinned 1e5c5cc78e ok
+faivre2014-multisensory-integration-unawar a2   osf    recorded present-but-insufficient now alive        nodes providers {'osfstorage': 3} children 0
+fedorova2024-axolotl24-overview            a1   github recorded verified-usable          now alive        size 10040KB archived false
+gabin2026-lost-in-the-evidence             a2   github recorded present-but-insufficient now alive        size 1819KB archived false (repo_commit is not a SHA: 'cloned at HEAD 2026-08-13, depth 1'
+gamma2021-mpe92m                           a1   osf    recorded verified-usable          now alive        file 200 size 1301939
+gamma2021-mpe92m                           a2   osf    recorded verified-usable          now alive        file 200 size 1301939
+gamma2021-mpe92m                           a3   osf    recorded dangling                 now gone         file 410 size None
+gaskell2014-sleep-language-production      a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+gaskell2014-sleep-language-production      a3   osf    recorded present-but-insufficient now alive        nodes providers {'osfstorage': 1} children 0
+gaskell2014-sleep-language-production      a4   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+gaskell2014-sleep-language-production      a5   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+gaskell2014-sleep-language-production      a6   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+goldberg2022-meditation-adverse-effects-po a2   osf    recorded not-checked              now empty        registrations providers {'osfstorage': 0} children 0
+grace2024-thousands-ai-authors             a1   osf    recorded present-but-insufficient now alive        nodes providers {'osfstorage': 3} children 0
+hardwicke2018-cognition-open-data          a2   osf    recorded verified-usable          now alive        file 200 size 96433
+hardwicke2018-cognition-open-data          a3   osf    recorded verified-usable          now alive        file 200 size 6208
+hardwicke2018-cognition-open-data          a4   osf    recorded verified-usable          now alive        file 200 size 13963
+hardwicke2018-cognition-open-data          a6   osf    recorded not-checked              now alive        file 200 size 540854
+imel2026-modal-typology-efficiency         a1   github recorded present-but-insufficient now alive        size 937016KB archived false pinned dbe09dc ok
+jaraettinger2015-not-so-innocent           a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 2} children 0
+jaraettinger2015-not-so-innocent           a3   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 2} children 0
+jaraettinger2015-not-so-innocent           a4   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 8} children 0
+joel2014-overestimate-rejecting-partners   a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 7} children 0
+killingsworth2021-experienced-wellbeing    a1   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 2} children 0
+kim2025-correlated-errors                  a1   github recorded dangling                 now alive        size 40306KB archived false pinned 30a2c0aa88 ok
+kim2025-correlated-errors                  a2   github recorded present-but-insufficient now alive        size 40306KB archived false pinned 30a2c0aa88 ok
+kim2025-correlated-errors                  a3   github recorded verified-usable          now alive        size 40306KB archived false pinned 30a2c0aa88 ok
+kim2025-correlated-errors                  a4   github recorded verified-usable          now alive        size 40306KB archived false pinned 30a2c0aa88 ok
+kim2025-correlated-errors                  a6   github recorded not-checked              now alive        size 40306KB archived false pinned 30a2c0aa88 ok
+kim2025-correlated-errors                  a8   github recorded present-but-insufficient now alive        size 40306KB archived false pinned 30a2c0aa88 ok
+kim2025-correlated-errors                  a9   github recorded verified-usable          now alive        size 40306KB archived false pinned 30a2c0aa88 ok
+kkm2023-conflict-resolved                  a1   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+laurinavichyute2022-share-the-code         a1   osf    recorded verified-usable          now alive        preprint primary file size 517439
+laurinavichyute2022-share-the-code         a2   osf    recorded dangling                 now empty        nodes providers {'osfstorage': 0, 'github': 0} children 0
+laurinavichyute2022-share-the-code         a3   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 3} children 59
+lee2026-mass-self-supervision              a2   github recorded present-but-insufficient now alive        size 16807KB archived false
+lee2026-rhi                                a2   github recorded present-but-insufficient now alive        size 16807KB archived false
+liu2024-lost-in-the-middle                 a2   github recorded verified-usable          now alive        size 510967KB archived false
+liu2024-lost-in-the-middle                 a3   github recorded verified-usable          now alive        size 510967KB archived false
+maglio2014-spatial-orientation-psychologic a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 6} children 0
+maglio2014-spatial-orientation-psychologic a3   osf    recorded not-checked              now alive        nodes providers {'osfstorage': 9} children 0
+mathur2023-effect-sizes                    a1   github recorded not-checked              now alive        size 273KB archived false
+mazuryk2026-powerless-noise                a2   github recorded present-but-insufficient now alive        size 114512KB archived false pinned f5a482d92e ok
+mazuryk2026-powerless-noise                a3   github recorded verified-usable          now alive        size 114512KB archived false pinned f5a482d92e ok
+mcnulty2014-implicit-self-partner-evaluati a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+mcnulty2014-implicit-self-partner-evaluati a3   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+menkveld2024-nonstandard-errors            a1   osf    recorded not-checked              now alive        file 200 size 390848
+mills2021-differences-in-variance          a2   github recorded verified-usable          now alive        size 25KB archived false
+mills2021-differences-in-variance          a3   github recorded not-checked              now alive        size 25KB archived false
+mosolova2026-wsi-llm-era                   a2   github recorded verified-usable          now alive        size 20857KB archived false
+munkholm2020-antidepressant-variability    a2   osf    recorded present-but-insufficient now alive        nodes providers {'osfstorage': 4} children 0
+nave2021-self-boundary-dissolution         a1   osf    recorded not-checked              now alive        nodes providers {'osfstorage': 3} children 1
+obels2020-registered-reports               a1   osf    recorded verified-usable          now alive        preprint primary file size 232080
+periti2024-systematic-comparison-cwe-lsc   a1   github recorded not-checked              now alive        size 2471KB archived false
+petrini2023-compression-word-lengths       a1   github recorded verified-usable          now alive        size 222357KB archived false pinned e8c15fd67b ok
+petrini2023-compression-word-lengths       a2   github recorded verified-usable          now alive        size 222357KB archived false pinned e8c15fd67b ok
+petrini2023-compression-word-lengths       a3   github recorded present-but-insufficient now alive        size 222357KB archived false pinned e8c15fd67b ok
+petrini2023-compression-word-lengths       a4   github recorded verified-usable          now alive        size 222357KB archived false pinned e8c15fd67b ok
+ploderl2019-personalised-antidepressants   a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 17} children 0
+ploderl2019-personalised-antidepressants   a3   osf    recorded dangling                 now alive        nodes providers {'osfstorage': 17} children 0
+ploderl2019-personalised-antidepressants   a4   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 17} children 0
+ploderl2019-personalised-antidepressants   a6   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 17} children 0
+roseler2023-zcurve-validation              a1   osf    recorded verified-usable          now alive        file 200 size 399976
+roseler2023-zcurve-validation              a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 3} children 0
+roseler2023-zcurve-validation              a3   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 3} children 0
+roseler2024-replication-database           a2   osf    recorded verified-usable          now alive        file 200 size 1080042
+roseler2024-replication-database           a3   github recorded verified-usable          now alive        size 178504KB archived false
+samuel2024-jupyter-pmc                     a2   github recorded verified-usable          now alive        size 20903KB archived false pinned 138cc62913 ok
+schlosser2019-unpleasant-meditation        a1   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 2} children 0
+schlosser2019-unpleasant-meditation        a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+schubert2019-psychology-existential-risk   a1   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 3} children 0
+schubert2019-psychology-existential-risk   a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 3} children 0
+schubert2019-psychology-existential-risk   a3   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 3} children 0
+shi2023-llm-distracted-irrelevant-context  a1   github recorded verified-usable          now alive        size 4494KB archived true
+steinertthrelkeld2021-quantifiers-degrees- a1   github recorded verified-usable          now alive        size 4468KB archived false pinned a0df2a5366 ok
+steinertthrelkeld2021-quantifiers-degrees- a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1, 'github': 8} children 0
+trisovic2022-code-execution                a2   github recorded verified-usable          now alive        size 8667KB archived false pinned c2f0b0c5ca ok
+vandam2024-ime-psychometrics               a1   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 5} children 2
+vandam2024-ime-psychometrics               a2   osf    recorded present-but-insufficient now alive        nodes providers {'osfstorage': 5} children 0
+vandam2024-ime-psychometrics               a5   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 5} children 0
+vandam2025-meditation-adverse-effects-repr a1   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 5} children 2
+vandam2025-meditation-adverse-effects-repr a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 5} children 2
+vandam2025-meditation-adverse-effects-repr a3   osf    recorded present-but-insufficient now alive        nodes providers {'osfstorage': 3} children 0
+vandam2025-meditation-adverse-effects-repr a8   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 5} children 0
+vandam2025-meditation-adverse-effects-repr a9   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 3} children 0
+walasek2015-income-inequality-status-seeki a1   osf    recorded present-but-insufficient now alive        nodes providers {'osfstorage': 1} children 0
+walasek2015-income-inequality-status-seeki a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+walasek2015-income-inequality-status-seeki a3   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1} children 0
+wang2026-rethinking-harness-evolution      a2   github recorded present-but-insufficient now alive        size 400KB archived false
+winkelbeiner2019-antipsychotic-variability a1   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 6, 'gitlab': 0} children 0
+winkelbeiner2019-antipsychotic-variability a2   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 6, 'gitlab': 0} children 0
+winkelbeiner2019-antipsychotic-variability a4   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 6, 'gitlab': 0} children 0
+xiang2026-dojo                             a2   github recorded absent                   now alive        size 1392KB archived false
+xu2020-numeral-systems-efficiency          a1   osf    recorded verified-usable          now alive        nodes providers {'osfstorage': 1, 'github': 0} children 0
+zaslavsky2018-color-naming-ib              a1   github recorded present-but-insufficient now alive        size 72KB archived false pinned 0b8ad05f4f ok
+zhao2025-sirius                            a2   github recorded present-but-insufficient now alive        size 230KB archived false

@@ -723,7 +723,7 @@
    "id": "a2",
    "role": "code",
    "locator": "https://github.com/poldrack/narps",
-   "repo_commit": "shallow clone 2026-09-09",
+   "repo_commit": "0a9d71a5ab435b40dcd50fea82d2961a43f0a3fc",
    "status": "verified-usable",
    "bytes": 4800000,
    "local_path": "artifacts/narps-repo/",
@@ -732,7 +732,7 @@
     "on": "2026-09-09",
     "by": "maria",
     "how": "read DecisionAnalysis.Rmd to find how Table1.tsv is generated; not executed (the full pipeline wants the 1 GB image deposit and ~12 GB of scratch)",
-    "result": "Confirms Table1.tsv emits medianSimilar before medianConfidence, which is the likely origin of the transposition in c10. 61 files, no data."
+    "result": "Confirms Table1.tsv emits medianSimilar before medianConfidence, which is the likely origin of the transposition in c10. 61 files, no data. [repo_commit was \"shallow clone 2026-09-09\"; reconstructed 2026-11-12 as HEAD at that date -- the repo has no commit after 2020-03-12, so it is the commit that was cloned]"
    }
   },
   {

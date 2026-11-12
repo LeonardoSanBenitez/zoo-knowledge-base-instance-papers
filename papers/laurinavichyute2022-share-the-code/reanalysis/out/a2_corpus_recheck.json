@@ -1,0 +1,1152 @@
+[
+ {
+  "record": "allon2022-early-buddhist-texts-repetition",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 996911KB archived false"
+ },
+ {
+  "record": "arslan2026-bodhi-engineering",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-09-30",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 9379KB archived false"
+ },
+ {
+  "record": "bose2026-pali-canon-stylometry",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 996911KB archived false"
+ },
+ {
+  "record": "botviniknezer2020-narps",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-09",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 164064KB archived false (repo_commit is not a SHA: 'shallow clone 2026-09-09')"
+ },
+ {
+  "record": "breznau2022-hidden-universe",
+  "artifact": "a1",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-12",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 167426KB archived false pinned dd5dcb27a1 ok"
+ },
+ {
+  "record": "cajas2026-agents-catching-agents",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-30",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 46621KB archived false pinned d5b5c33 ok"
+ },
+ {
+  "record": "cajas2026-creativity-constraint",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-09-30",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 357KB archived false"
+ },
+ {
+  "record": "cajas2026-modalens",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "dangling",
+  "checked_on": "2026-09-30",
+  "host": "github",
+  "now": "gone",
+  "detail": "gh: Not Found (HTTP 404)"
+ },
+ {
+  "record": "cassotti2023-xl-lexeme",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-03",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 131773KB archived false"
+ },
+ {
+  "record": "caviola2022-population-ethical-intuitions",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 10} children 0"
+ },
+ {
+  "record": "caviola2022-population-ethical-intuitions",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 10} children 0"
+ },
+ {
+  "record": "caviola2022-population-ethical-intuitions",
+  "artifact": "a3",
+  "role": "supplement",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 10} children 0"
+ },
+ {
+  "record": "caviola2022-population-ethical-intuitions",
+  "artifact": "a4",
+  "role": "protocol",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 10} children 0"
+ },
+ {
+  "record": "chaabouni2021-emergent-colour-naming",
+  "artifact": "a1",
+  "role": "model-weights",
+  "recorded_status": "dangling",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 1706KB archived false"
+ },
+ {
+  "record": "chaabouni2021-emergent-colour-naming",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 1706KB archived false"
+ },
+ {
+  "record": "chen2025-mlr-bench",
+  "artifact": "a2",
+  "role": "human-labels",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 87743KB archived false"
+ },
+ {
+  "record": "coupe2019-information-rate",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 55570KB archived false pinned 00798db168 ok"
+ },
+ {
+  "record": "coupe2019-information-rate",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 55570KB archived false pinned 00798db168 ok"
+ },
+ {
+  "record": "cuconasu2024-power-of-noise",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-08-12",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 112710KB archived false"
+ },
+ {
+  "record": "denic2022-indefinites-simplicity-informativeness",
+  "artifact": "a1",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 2318KB archived false pinned 1e5c5cc78e ok"
+ },
+ {
+  "record": "faivre2014-multisensory-integration-unawareness",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 0"
+ },
+ {
+  "record": "fedorova2024-axolotl24-overview",
+  "artifact": "a1",
+  "role": "benchmark",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-03",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 10040KB archived false"
+ },
+ {
+  "record": "gabin2026-lost-in-the-evidence",
+  "artifact": "a2",
+  "role": "analysis-notebook",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-08-13",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 1819KB archived false (repo_commit is not a SHA: 'cloned at HEAD 2026-08-13, depth 1')"
+ },
+ {
+  "record": "gamma2021-mpe92m",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "file 200 size 1301939"
+ },
+ {
+  "record": "gamma2021-mpe92m",
+  "artifact": "a2",
+  "role": "supplement",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "file 200 size 1301939"
+ },
+ {
+  "record": "gamma2021-mpe92m",
+  "artifact": "a3",
+  "role": "raw-data",
+  "recorded_status": "dangling",
+  "checked_on": "2026-09-08",
+  "host": "osf",
+  "now": "gone",
+  "detail": "file 410 size None"
+ },
+ {
+  "record": "gaskell2014-sleep-language-production",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "gaskell2014-sleep-language-production",
+  "artifact": "a3",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "gaskell2014-sleep-language-production",
+  "artifact": "a4",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "gaskell2014-sleep-language-production",
+  "artifact": "a5",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "gaskell2014-sleep-language-production",
+  "artifact": "a6",
+  "role": "protocol",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "goldberg2022-meditation-adverse-effects-population",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "empty",
+  "detail": "registrations providers {'osfstorage': 0} children 0"
+ },
+ {
+  "record": "grace2024-thousands-ai-authors",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 0"
+ },
+ {
+  "record": "hardwicke2018-cognition-open-data",
+  "artifact": "a2",
+  "role": "human-labels",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-24",
+  "host": "osf",
+  "now": "alive",
+  "detail": "file 200 size 96433"
+ },
+ {
+  "record": "hardwicke2018-cognition-open-data",
+  "artifact": "a3",
+  "role": "human-labels",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-24",
+  "host": "osf",
+  "now": "alive",
+  "detail": "file 200 size 6208"
+ },
+ {
+  "record": "hardwicke2018-cognition-open-data",
+  "artifact": "a4",
+  "role": "human-labels",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-24",
+  "host": "osf",
+  "now": "alive",
+  "detail": "file 200 size 13963"
+ },
+ {
+  "record": "hardwicke2018-cognition-open-data",
+  "artifact": "a6",
+  "role": "preregistration",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-08-24",
+  "host": "osf",
+  "now": "alive",
+  "detail": "file 200 size 540854"
+ },
+ {
+  "record": "imel2026-modal-typology-efficiency",
+  "artifact": "a1",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 937016KB archived false pinned dbe09dc ok"
+ },
+ {
+  "record": "jaraettinger2015-not-so-innocent",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 2} children 0"
+ },
+ {
+  "record": "jaraettinger2015-not-so-innocent",
+  "artifact": "a3",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 2} children 0"
+ },
+ {
+  "record": "jaraettinger2015-not-so-innocent",
+  "artifact": "a4",
+  "role": "protocol",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 8} children 0"
+ },
+ {
+  "record": "joel2014-overestimate-rejecting-partners",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 7} children 0"
+ },
+ {
+  "record": "killingsworth2021-experienced-wellbeing",
+  "artifact": "a1",
+  "role": "derived-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-02",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 2} children 0"
+ },
+ {
+  "record": "kim2025-correlated-errors",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "dangling",
+  "checked_on": "2026-09-08",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 40306KB archived false pinned 30a2c0aa88 ok"
+ },
+ {
+  "record": "kim2025-correlated-errors",
+  "artifact": "a2",
+  "role": "derived-data",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-08-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 40306KB archived false pinned 30a2c0aa88 ok"
+ },
+ {
+  "record": "kim2025-correlated-errors",
+  "artifact": "a3",
+  "role": "derived-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 40306KB archived false pinned 30a2c0aa88 ok"
+ },
+ {
+  "record": "kim2025-correlated-errors",
+  "artifact": "a4",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 40306KB archived false pinned 30a2c0aa88 ok"
+ },
+ {
+  "record": "kim2025-correlated-errors",
+  "artifact": "a6",
+  "role": "human-labels",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-08-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 40306KB archived false pinned 30a2c0aa88 ok"
+ },
+ {
+  "record": "kim2025-correlated-errors",
+  "artifact": "a8",
+  "role": "raw-data",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-09-08",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 40306KB archived false pinned 30a2c0aa88 ok"
+ },
+ {
+  "record": "kim2025-correlated-errors",
+  "artifact": "a9",
+  "role": "derived-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-08",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 40306KB archived false pinned 30a2c0aa88 ok"
+ },
+ {
+  "record": "kkm2023-conflict-resolved",
+  "artifact": "a1",
+  "role": "derived-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-02",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "laurinavichyute2022-share-the-code",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "preprint primary file size 517439"
+ },
+ {
+  "record": "laurinavichyute2022-share-the-code",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "dangling",
+  "checked_on": "2026-08-25",
+  "host": "osf",
+  "now": "empty",
+  "detail": "nodes providers {'osfstorage': 0, 'github': 0} children 0"
+ },
+ {
+  "record": "laurinavichyute2022-share-the-code",
+  "artifact": "a3",
+  "role": "human-labels",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 59"
+ },
+ {
+  "record": "lee2026-mass-self-supervision",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-11-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 16807KB archived false"
+ },
+ {
+  "record": "lee2026-rhi",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-11-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 16807KB archived false"
+ },
+ {
+  "record": "liu2024-lost-in-the-middle",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-13",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 510967KB archived false"
+ },
+ {
+  "record": "liu2024-lost-in-the-middle",
+  "artifact": "a3",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-13",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 510967KB archived false"
+ },
+ {
+  "record": "maglio2014-spatial-orientation-psychological-distance",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-05",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 6} children 0"
+ },
+ {
+  "record": "maglio2014-spatial-orientation-psychological-distance",
+  "artifact": "a3",
+  "role": "protocol",
+  "recorded_status": "not-checked",
+  "checked_on": null,
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 9} children 0"
+ },
+ {
+  "record": "mathur2023-effect-sizes",
+  "artifact": "a1",
+  "role": "code",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-08-12",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 273KB archived false"
+ },
+ {
+  "record": "mazuryk2026-powerless-noise",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-08-12",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 114512KB archived false pinned f5a482d92e ok"
+ },
+ {
+  "record": "mazuryk2026-powerless-noise",
+  "artifact": "a3",
+  "role": "derived-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-12",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 114512KB archived false pinned f5a482d92e ok"
+ },
+ {
+  "record": "mcnulty2014-implicit-self-partner-evaluations",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "mcnulty2014-implicit-self-partner-evaluations",
+  "artifact": "a3",
+  "role": "protocol",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "menkveld2024-nonstandard-errors",
+  "artifact": "a1",
+  "role": "preregistration",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-08-12",
+  "host": "osf",
+  "now": "alive",
+  "detail": "file 200 size 390848"
+ },
+ {
+  "record": "mills2021-differences-in-variance",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 25KB archived false"
+ },
+ {
+  "record": "mills2021-differences-in-variance",
+  "artifact": "a3",
+  "role": "code",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-09-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 25KB archived false"
+ },
+ {
+  "record": "mosolova2026-wsi-llm-era",
+  "artifact": "a2",
+  "role": "benchmark",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-06",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 20857KB archived false"
+ },
+ {
+  "record": "munkholm2020-antidepressant-variability",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-09-02",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 4} children 0"
+ },
+ {
+  "record": "nave2021-self-boundary-dissolution",
+  "artifact": "a1",
+  "role": "derived-data",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-08-21",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 1"
+ },
+ {
+  "record": "obels2020-registered-reports",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "preprint primary file size 232080"
+ },
+ {
+  "record": "periti2024-systematic-comparison-cwe-lsc",
+  "artifact": "a1",
+  "role": "code",
+  "recorded_status": "not-checked",
+  "checked_on": "2026-11-03",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 2471KB archived false"
+ },
+ {
+  "record": "petrini2023-compression-word-lengths",
+  "artifact": "a1",
+  "role": "derived-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-23",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 222357KB archived false pinned e8c15fd67b ok"
+ },
+ {
+  "record": "petrini2023-compression-word-lengths",
+  "artifact": "a2",
+  "role": "derived-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-23",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 222357KB archived false pinned e8c15fd67b ok"
+ },
+ {
+  "record": "petrini2023-compression-word-lengths",
+  "artifact": "a3",
+  "role": "derived-data",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-23",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 222357KB archived false pinned e8c15fd67b ok"
+ },
+ {
+  "record": "petrini2023-compression-word-lengths",
+  "artifact": "a4",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-23",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 222357KB archived false pinned e8c15fd67b ok"
+ },
+ {
+  "record": "ploderl2019-personalised-antidepressants",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-06",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 17} children 0"
+ },
+ {
+  "record": "ploderl2019-personalised-antidepressants",
+  "artifact": "a3",
+  "role": "derived-data",
+  "recorded_status": "dangling",
+  "checked_on": "2026-09-06",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 17} children 0"
+ },
+ {
+  "record": "ploderl2019-personalised-antidepressants",
+  "artifact": "a4",
+  "role": "supplement",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-06",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 17} children 0"
+ },
+ {
+  "record": "ploderl2019-personalised-antidepressants",
+  "artifact": "a6",
+  "role": "supplement",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-06",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 17} children 0"
+ },
+ {
+  "record": "roseler2023-zcurve-validation",
+  "artifact": "a1",
+  "role": "supplement",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-05",
+  "host": "osf",
+  "now": "alive",
+  "detail": "file 200 size 399976"
+ },
+ {
+  "record": "roseler2023-zcurve-validation",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-05",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 0"
+ },
+ {
+  "record": "roseler2023-zcurve-validation",
+  "artifact": "a3",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-05",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 0"
+ },
+ {
+  "record": "roseler2024-replication-database",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-05",
+  "host": "osf",
+  "now": "alive",
+  "detail": "file 200 size 1080042"
+ },
+ {
+  "record": "roseler2024-replication-database",
+  "artifact": "a3",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-05",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 178504KB archived false"
+ },
+ {
+  "record": "samuel2024-jupyter-pmc",
+  "artifact": "a2",
+  "role": "analysis-notebook",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-24",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 20903KB archived false pinned 138cc62913 ok"
+ },
+ {
+  "record": "schlosser2019-unpleasant-meditation",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 2} children 0"
+ },
+ {
+  "record": "schlosser2019-unpleasant-meditation",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "schubert2019-psychology-existential-risk",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 0"
+ },
+ {
+  "record": "schubert2019-psychology-existential-risk",
+  "artifact": "a2",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 0"
+ },
+ {
+  "record": "schubert2019-psychology-existential-risk",
+  "artifact": "a3",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 0"
+ },
+ {
+  "record": "shi2023-llm-distracted-irrelevant-context",
+  "artifact": "a1",
+  "role": "benchmark",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-17",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 4494KB archived true"
+ },
+ {
+  "record": "steinertthrelkeld2021-quantifiers-degrees-universals",
+  "artifact": "a1",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 4468KB archived false pinned a0df2a5366 ok"
+ },
+ {
+  "record": "steinertthrelkeld2021-quantifiers-degrees-universals",
+  "artifact": "a2",
+  "role": "derived-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-16",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1, 'github': 8} children 0"
+ },
+ {
+  "record": "trisovic2022-code-execution",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-08-24",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 8667KB archived false pinned c2f0b0c5ca ok"
+ },
+ {
+  "record": "vandam2024-ime-psychometrics",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-23",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 5} children 2"
+ },
+ {
+  "record": "vandam2024-ime-psychometrics",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-23",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 5} children 0"
+ },
+ {
+  "record": "vandam2024-ime-psychometrics",
+  "artifact": "a5",
+  "role": "supplement",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-23",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 5} children 0"
+ },
+ {
+  "record": "vandam2025-meditation-adverse-effects-representative",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-23",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 5} children 2"
+ },
+ {
+  "record": "vandam2025-meditation-adverse-effects-representative",
+  "artifact": "a2",
+  "role": "supplement",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-23",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 5} children 2"
+ },
+ {
+  "record": "vandam2025-meditation-adverse-effects-representative",
+  "artifact": "a3",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-23",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 0"
+ },
+ {
+  "record": "vandam2025-meditation-adverse-effects-representative",
+  "artifact": "a8",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-23",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 5} children 0"
+ },
+ {
+  "record": "vandam2025-meditation-adverse-effects-representative",
+  "artifact": "a9",
+  "role": "supplement",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-23",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 3} children 0"
+ },
+ {
+  "record": "walasek2015-income-inequality-status-seeking",
+  "artifact": "a1",
+  "role": "protocol",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "walasek2015-income-inequality-status-seeking",
+  "artifact": "a2",
+  "role": "derived-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "walasek2015-income-inequality-status-seeking",
+  "artifact": "a3",
+  "role": "human-labels",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-10-25",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1} children 0"
+ },
+ {
+  "record": "wang2026-rethinking-harness-evolution",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-11-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 400KB archived false"
+ },
+ {
+  "record": "winkelbeiner2019-antipsychotic-variability",
+  "artifact": "a1",
+  "role": "raw-data",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-06",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 6, 'gitlab': 0} children 0"
+ },
+ {
+  "record": "winkelbeiner2019-antipsychotic-variability",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-06",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 6, 'gitlab': 0} children 0"
+ },
+ {
+  "record": "winkelbeiner2019-antipsychotic-variability",
+  "artifact": "a4",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-09-06",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 6, 'gitlab': 0} children 0"
+ },
+ {
+  "record": "xiang2026-dojo",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "absent",
+  "checked_on": "2026-09-30",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 1392KB archived false"
+ },
+ {
+  "record": "xu2020-numeral-systems-efficiency",
+  "artifact": "a1",
+  "role": "code",
+  "recorded_status": "verified-usable",
+  "checked_on": "2026-11-12",
+  "host": "osf",
+  "now": "alive",
+  "detail": "nodes providers {'osfstorage': 1, 'github': 0} children 0"
+ },
+ {
+  "record": "zaslavsky2018-color-naming-ib",
+  "artifact": "a1",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-10-16",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 72KB archived false pinned 0b8ad05f4f ok"
+ },
+ {
+  "record": "zhao2025-sirius",
+  "artifact": "a2",
+  "role": "code",
+  "recorded_status": "present-but-insufficient",
+  "checked_on": "2026-11-07",
+  "host": "github",
+  "now": "alive",
+  "detail": "size 230KB archived false"
+ }
+]

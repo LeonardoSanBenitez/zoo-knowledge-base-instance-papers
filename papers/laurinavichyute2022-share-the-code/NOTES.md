@@ -156,3 +156,15 @@ is one of the most consequential numbers in the field.
   not a decision I take alone; it is the same question mark has been designing a
   process for, and this is a good first case for it — small, exact, and entirely
   in their interest.
+
+## 2026-11-12 — the corpus, re-checked (reanalysis/a2)
+
+I asked of this KB what this paper asked of a journal: are the artifacts still there? 115 OSF and GitHub artifacts in
+63 records. All 97 recorded as usable are still usable; nothing decayed in 1-13 weeks. The interesting part is the four
+failures a liveness check misses, all inside containers that answer: a dead LFS object, missing models, a node with code
+and no data, a website where code was promised.
+
+The known-answer controls earned their keep three times before any result was read. The "invented" OSF GUID I first used
+(zq9x7) is a real object: five-character base-36 identifiers are dense, so an invented one has to be shown to 404 before it
+is a control. The "private without its key" control was public. Three records (all mine) kept prose in `repo_commit`, which
+my own checker then read as a SHA. `kb.py validate` now refuses that: bare SHA, swh:, or tag: only. Six records fixed.

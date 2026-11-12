@@ -20,7 +20,12 @@
  },
  "record_status": "active",
  "read_depth": "read-and-reanalysed",
- "selection": {"class": "blind", "evidence": "SESSION_2026-08-07: first LLM-monoculture reading, topic; no suspicion recorded in NOTES opening. [Evidence written after the finding.]", "recorded": "retrospective", "by": "maria, 2026-10-22"},
+ "selection": {
+  "class": "blind",
+  "evidence": "SESSION_2026-08-07: first LLM-monoculture reading, topic; no suspicion recorded in NOTES opening. [Evidence written after the finding.]",
+  "recorded": "retrospective",
+  "by": "maria, 2026-10-22"
+ },
  "cost": {
   "tool_calls": 14,
   "bytes_downloaded": 66000000,
@@ -85,7 +90,10 @@
     "a3"
    ],
    "our_assessment": {
-    "status": "not-identifiable", "patterns": ["null-model-misspecified"],
+    "status": "not-identifiable",
+    "patterns": [
+     "null-model-misspecified"
+    ],
     "why": "The number replicates (we measured 0.5528 on an independently rebuilt 22-model x 2918-item HELM sample). What does not survive is its interpretation as evidence of dependence between models. The uniform-over-wrong baseline assumes all distractors are equally attractive, which is false for professionally written MCQ items and false in an ability-graded way: corr(model accuracy, P(picks the modal wrong answer | wrong)) = +0.835. Two models conditionally independent given the item can produce this number. Per jo2026-subjectivity Thm 1 there is no null-free fact of the matter here, so the honest status is not-identifiable rather than refuted.",
     "by": "maria2026-marginal-competence"
    }
@@ -136,7 +144,10 @@
     "a3"
    ],
    "our_assessment": {
-    "status": "accepted-narrower-scope", "patterns": ["null-model-misspecified"],
+    "status": "accepted-narrower-scope",
+    "patterns": [
+     "null-model-misspecified"
+    ],
     "why": "The provider/architecture part survives our item-corrected reanalysis: same-provider pairs retain a residual (+0.066 vs +0.007 cross-provider under a leave-provider-out null), and the largest genuine residual is llama-3.1-405b/llama-3.1-70b (+0.274). Family kinship is real. The accuracy part is the problem: any null estimated from a mixed-ability population scores high-accuracy pairs as excessively correlated almost mechanically. Our anchored nulls are antisymmetric at nearly equal magnitude (weak-anchor -> strong-target +0.212, strong-anchor -> weak-target -0.206), which is the signature of a capability-gap artifact rather than kinship.",
     "by": "maria2026-marginal-competence"
    }
@@ -214,10 +225,10 @@
     "on": "2026-09-08",
     "by": "maria",
     "how": "urllib GET of raw.githubusercontent.com/nikhgarg/llm_correlated_errors_public/30a2c0a/data/helm/all_mmlu_data_limitedcols.csv AND of the media.githubusercontent.com/media/... equivalent AND api.github.com/.../git/trees/30a2c0a?recursive=1",
-    "result": "STILL DEAD, and re-checked at ENDPOINT level rather than through git-lfs's error message. raw.githubusercontent returns HTTP 200 with 134 bytes -- the LFS pointer, whose text is `version https://git-lfs.github.com/spec/v1 / oid sha256:a3f099c49c... / size 335231032`. media.githubusercontent.com/media/... returns HTTP 404: the object. GitHub's tree API reports the blob size as 134. THE POINT: a check phrased as `the identifier resolves and the target holds bytes` PASSES here. A pointer is present, non-empty, hashable and useless, and every LFS-using repository on GitHub has this shape. The check that decides: if a path's first line is the LFS spec line, fetch the media endpoint and require HTTP 200 with Content-Length equal to the pointer's own `size`. Also measured today: four of the twenty code files in the repo read this path (download_helm_data.py, helm_data_generation.py, helm_regression.py, plot_helm.py), so the whole HELM half of the analysis is gated on it. PREVIOUS RESULT TEXT, kept: Git LFS pointer present in tree (oid a3f099c49c...), object 404s: 'Object does not exist on the server'. Also 404 via media.githubusercontent.com/media/. This is the per-question x per-model response matrix from which every other HELM artifact in the repo is derived. Its loss makes the paper re-executable but not reanalysable: a critic cannot change the null model, which is the only thing worth changing."
+    "result": "STILL DEAD, and re-checked at ENDPOINT level rather than through git-lfs's error message. raw.githubusercontent returns HTTP 200 with 134 bytes -- the LFS pointer, whose text is `version https://git-lfs.github.com/spec/v1 / oid sha256:a3f099c49c... / size 335231032`. media.githubusercontent.com/media/... returns HTTP 404: the object. GitHub's tree API reports the blob size as 134. THE POINT: a check phrased as `the identifier resolves and the target holds bytes` PASSES here. A pointer is present, non-empty, hashable and useless, and every LFS-using repository on GitHub has this shape. The check that decides: if a path's first line is the LFS spec line, fetch the media endpoint and require HTTP 200 with Content-Length equal to the pointer's own `size`. Also measured today: four of the twenty code files in the repo read this path (download_helm_data.py, helm_data_generation.py, helm_regression.py, plot_helm.py), so the whole HELM half of the analysis is gated on it. PREVIOUS RESULT TEXT, kept: Git LFS pointer present in tree (oid a3f099c49c...), object 404s: 'Object does not exist on the server'. Also 404 via media.githubusercontent.com/media/. This is the per-question x per-model response matrix from which every other HELM artifact in the repo is derived. Its loss makes the paper re-executable but not reanalysable: a critic cannot change the null model, which is the only thing worth changing. [repo_commit was \"30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)\"; the date moved here so the field is a bare SHA (2026-11-12)]"
    },
    "license": "unstated",
-   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176"
   },
   {
    "id": "a2",
@@ -230,10 +241,10 @@
     "on": "2026-08-07",
     "by": "maria",
     "how": "head -1; wc -l",
-    "result": "1,080,186 rows of per-model resume/job ratings + human labels. Present and usable for the market half. Inspected then deleted locally under the >50MB disk policy; restorable with `git checkout -- data/final.csv` (plain git object, not LFS)."
+    "result": "1,080,186 rows of per-model resume/job ratings + human labels. Present and usable for the market half. Inspected then deleted locally under the >50MB disk policy; restorable with `git checkout -- data/final.csv` (plain git object, not LFS). [repo_commit was \"30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)\"; the date moved here so the field is a bare SHA (2026-11-12)]"
    },
    "derived_from": [],
-   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176"
   },
   {
    "id": "a3",
@@ -246,12 +257,12 @@
     "on": "2026-08-07",
     "by": "maria",
     "how": "head -2",
-    "result": "Pair-level: chi_square, p_value, overall_agreement_rate, both_correct_rate, agreement_rate_when_either_wrong, agreement_rate_when_both_wrong, and a full k x k contingency table of answer LETTERS per pair. Enough to reproduce Table 1 and the heatmaps; not enough to change the null, because it is marginalised over items."
+    "result": "Pair-level: chi_square, p_value, overall_agreement_rate, both_correct_rate, agreement_rate_when_either_wrong, agreement_rate_when_both_wrong, and a full k x k contingency table of answer LETTERS per pair. Enough to reproduce Table 1 and the heatmaps; not enough to change the null, because it is marginalised over items. [repo_commit was \"30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)\"; the date moved here so the field is a bare SHA (2026-11-12)]"
    },
    "derived_from": [
     "a1"
    ],
-   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176"
   },
   {
    "id": "a4",
@@ -262,10 +273,10 @@
     "on": "2026-08-07",
     "by": "maria",
     "how": "clone + read scripts/ and notebooks/",
-    "result": "Complete and legible: download_helm_data.py (the upstream fetcher, which is what let us rebuild a1), helm_data_generation.py, regressions, plotting, deferred_acceptance.py, experiments.py. Regeneration of the LLM outputs themselves needs AWS Bedrock + OpenAI + Anthropic credentials."
+    "result": "Complete and legible: download_helm_data.py (the upstream fetcher, which is what let us rebuild a1), helm_data_generation.py, regressions, plotting, deferred_acceptance.py, experiments.py. Regeneration of the LLM outputs themselves needs AWS Bedrock + OpenAI + Anthropic credentials. [repo_commit was \"30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)\"; the date moved here so the field is a bare SHA (2026-11-12)]"
    },
    "license": "unstated",
-   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176"
   },
   {
    "id": "a5",
@@ -297,12 +308,12 @@
     "on": "2026-08-07",
     "by": "maria",
     "how": "noted from paper sec 3.1, not opened",
-    "result": "450 hand-labelled resume-job pairs (30 resumes x 15 job descriptions) used as ground truth for the market experiments. Inside data/final.csv."
+    "result": "450 hand-labelled resume-job pairs (30 resumes x 15 job descriptions) used as ground truth for the market experiments. Inside data/final.csv. [repo_commit was \"30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)\"; the date moved here so the field is a bare SHA (2026-11-12)]"
    },
    "derived_from": [
     "a2"
    ],
-   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176 (2026-03-29)"
+   "repo_commit": "30a2c0aa88af3f428f1f7034538373d24c209176"
   },
   {
    "id": "a7",
