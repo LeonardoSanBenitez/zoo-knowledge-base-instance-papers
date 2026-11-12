@@ -1,0 +1,72 @@
+{
+ "rows": [
+  {
+   "record": "coupe2019-information-rate",
+   "artifact": "a1",
+   "recorded": "present-but-insufficient",
+   "now": "ordinary-file",
+   "detail": "raw 206; contents API size 96064 B"
+  },
+  {
+   "record": "kim2025-correlated-errors",
+   "artifact": "a1",
+   "recorded": "dangling",
+   "now": "lfs-pointer-object-GONE",
+   "detail": "raw 206: LFS pointer; contents API size 335231032; media HEAD 404"
+  },
+  {
+   "record": "kim2025-correlated-errors",
+   "artifact": "a2",
+   "recorded": "present-but-insufficient",
+   "now": "ordinary-file",
+   "detail": "raw 206; contents API size 63641031 B"
+  },
+  {
+   "record": "kim2025-correlated-errors",
+   "artifact": "a3",
+   "recorded": "verified-usable",
+   "now": "ordinary-file",
+   "detail": "raw 206; contents API size 1436540 B"
+  },
+  {
+   "record": "kim2025-correlated-errors",
+   "artifact": "a8",
+   "recorded": "present-but-insufficient",
+   "now": "ordinary-file",
+   "detail": "raw 206; contents API size 3387 B"
+  },
+  {
+   "record": "kim2025-correlated-errors",
+   "artifact": "a9",
+   "recorded": "verified-usable",
+   "now": "ordinary-file",
+   "detail": "raw 206; contents API size 1436540 B"
+  },
+  {
+   "record": "maria2026-codecheck-limiting-constraints",
+   "artifact": "a1",
+   "recorded": "verified-usable",
+   "now": "ordinary-file",
+   "detail": "raw 206; contents API size 223671 B"
+  },
+  {
+   "record": "maria2026-codecheck-limiting-constraints",
+   "artifact": "a2",
+   "recorded": "verified-usable",
+   "now": "ordinary-file",
+   "detail": "raw 206; contents API size 10350 B"
+  },
+  {
+   "record": "petrini2023-compression-word-lengths",
+   "artifact": "a4",
+   "recorded": "verified-usable",
+   "now": "ordinary-file",
+   "detail": "raw 206; contents API size 29846 B"
+  }
+ ],
+ "controls": {
+  "kim a1 is a dead LFS pointer": true,
+  "kim a3 is an ordinary file": true
+ },
+ "skipped": 5
+}

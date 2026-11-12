@@ -1,0 +1,10 @@
+coupe2019-information-rate               a1   recorded present-but-insufficient ordinary-file                raw 206; contents API size 96064 B
+kim2025-correlated-errors                a1   recorded dangling                 lfs-pointer-object-GONE      raw 206: LFS pointer; contents API size 335231032; media HEAD 404
+kim2025-correlated-errors                a2   recorded present-but-insufficient ordinary-file                raw 206; contents API size 63641031 B
+kim2025-correlated-errors                a3   recorded verified-usable          ordinary-file                raw 206; contents API size 1436540 B
+kim2025-correlated-errors                a8   recorded present-but-insufficient ordinary-file                raw 206; contents API size 3387 B
+kim2025-correlated-errors                a9   recorded verified-usable          ordinary-file                raw 206; contents API size 1436540 B
+maria2026-codecheck-limiting-constraints a1   recorded verified-usable          ordinary-file                raw 206; contents API size 223671 B
+maria2026-codecheck-limiting-constraints a2   recorded verified-usable          ordinary-file                raw 206; contents API size 10350 B
+petrini2023-compression-word-lengths     a4   recorded verified-usable          ordinary-file                raw 206; contents API size 29846 B
+CONTROLS {"kim a1 is a dead LFS pointer": true, "kim a3 is an ordinary file": true} | skipped (glob/list/dir paths): 5
