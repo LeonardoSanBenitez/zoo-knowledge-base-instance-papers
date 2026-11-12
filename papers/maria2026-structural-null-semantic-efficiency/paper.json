@@ -168,7 +168,11 @@
   }
  ],
  "relations": [
-   {"type": "cito:obtainsBackgroundFrom", "target": "ferrericancho2011-information-content-random-typing", "why": "Prior art (2011) for the structural-null argument: random typing reproduces the linear information-length signature read as optimization. Read in full and the closed form verified by simulation; the 2026 analysis extends the argument to category partitions."},
+  {
+   "type": "cito:obtainsBackgroundFrom",
+   "target": "ferrericancho2011-information-content-random-typing",
+   "why": "Prior art (2011) for the structural-null argument: random typing reproduces the linear information-length signature read as optimization. Read in full and the closed form verified by simulation; the 2026 analysis extends the argument to category partitions."
+  },
   {
    "type": "cito:usesDataFrom",
    "target": "denic2022-indefinites-simplicity-informativeness",
@@ -198,7 +202,7 @@
  "open_questions": [
   "PRIOR ART (found 16:06, via Chaabouni et al. 2019's citation): Moscoso del Prado Martin (2013), 'The missing baselines in arguments for the optimal efficiency of languages', CogSci 35 (escholarship.org/uc/item/7738n7cz). NOT read in full -- both hosts blocked automated download this session; per its published abstract it argues that linear frequency-length / lexical-measure correlations are what maximum entropy predicts for random systems and computes random-system baselines showing corpus correlations WEAKER than chance. Same principle (efficiency claims need a baseline from a system without the hypothesised pressure), different object (frequency-length correlations, not semantic-category partitions). Any write-up must cite it and claim only the extension: structural (not random) nulls for category-efficiency analyses, the descriptor ladder, and the implementation audits. Read it in full before writing anything.",
   "SELECTION CAVEAT (added 16:00 by the author against herself): the domains were chosen by me after the frame existed, and in modals the null was tightened AFTER the loose null broke the pattern. The descriptor ladder (c3) shows every rung, which limits the damage, but 'six domains agree' (with xu2020 and chaabouni2021) is weaker evidence than it sounds. What would count: a domain chosen by someone else, with the null ladder fixed before computing. Ask cidral or lucas to pick the next domain and the rungs blind.",
-  "Add colour: rerun zaslavsky2018 c2 saving IB complexity and accuracy per Voronoi draw (needs the 73 MB model), then compute the same net dominance.",
+  "ANSWERED 2026-10-16, closed 2026-11-12 (it was answered the same day and never marked; kb.py possibly-answered flagged it): reanalysis/x2_colour_dominance.py ran on the released model (pM_pUM.npz). Net dominance of the 102 WCS mode maps over random convex (Voronoi, same K) partitions is +0.166 [0.118, 0.211] with the estimated prior. Under a uniform prior both per-axis edges turn negative (complexity -0.211, accuracy -0.257 bits vs the convex mean). Folded into c1.",
   "Which descriptors to match is a choice. Report the full ladder (size -> +distinct -> +coverage -> +overlap) per domain and say where the residual crosses zero, rather than one matched null.",
   "Independent complexity measures (vocabulary size, entropy, a learned LoT) would test whether the remaining complexity-axis edge is a property of languages or of the representation language. imel2026 already shows natural modals lose their edge under vocabulary size and entropy.",
   "Waiting on cidral's attack (messages 2026-10-16 13:00Z and 13:15Z) before any write-up."
