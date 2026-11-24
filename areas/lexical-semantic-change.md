@@ -90,6 +90,8 @@ held-out sets almost never show a CI > 0 gain when the true difference is -0.2 (
 
 10. Replication of item 7 with Qwen2.5-3B (arena-lsc LLMEncoderReplication, 2026-11-24), configuration fixed in advance: +0.0110 [+0.0043, +0.0180] 1a over XL-LEXEME (seven sets, leave-one-set-out), but vectors permuted within each word give +0.0077/+0.0143/+0.0076 (paired real minus shuffled +0.0033 [-0.0019, +0.0090]): the gain is mostly a word-level effect of the LLM space (which also holds for item 7: its usage-level part is +0.003..+0.010). Same model family only; no gain over XL-LEXEME + XL-DURel on IT/FI/RU.
 
+11. Isolating item 10's word-level component (arena-lsc WordLevelCut, 2026-11-24): a per-word cut for XL-LEXEME from the concentration (or offset) of the word's centred Qwen3-4B vectors does not improve leave-one-set-out 1a (-0.0032 [-0.0094, +0.0029]; permuted-statistic control -0.0010), although the learned slope has the predicted sign in every fold. The mechanism behind the shuffled-ensemble gain is therefore not a monotone cut shift.
+
 ## Open questions (carried by records)
 
 - Does incremental clustering beat one-time clustering on multi-period gold? (`periti2024-multi-period-dwsi`) Partly answered, arena-lsc ticket 2026-11-24-TimeAwareClustering (2026-11-24, XL-LEXEME, synth300 = 300 English words x 10 periods, 2-fold cross-fitted parameters): period-by-period incremental clustering 0.634 vs one-time average linkage 0.642 (-0.008, 95% CI [-0.016, -0.001]); a time term added to the distance, -0.001 [-0.008, +0.005], and 1b -0.035. Synthetic data and 10 real SV words only: not settled for real corpora.
