@@ -82,6 +82,6 @@ held-out sets almost never show a CI > 0 gain when the true difference is -0.2 (
 
 ## Open questions (carried by records)
 
-- Does incremental clustering beat one-time clustering on multi-period gold? (`periti2024-multi-period-dwsi`)
+- Does incremental clustering beat one-time clustering on multi-period gold? (`periti2024-multi-period-dwsi`) Partly answered, arena-lsc ticket 2026-11-24-TimeAwareClustering (2026-11-24, XL-LEXEME, synth300 = 300 English words x 10 periods, 2-fold cross-fitted parameters): period-by-period incremental clustering 0.634 vs one-time average linkage 0.642 (-0.008, 95% CI [-0.016, -0.001]); a time term added to the distance, -0.001 [-0.008, +0.005], and 1b -0.035. Synthetic data and 10 real SV words only: not settled for real corpora.
 - What F1 does the organisers' prototype-cosine Subtask-2 method get? (`cassotti2025-hypothesis-driven-lsc`)
 - Why does PRT not reproduce? (`saponara2026-synthetic-multi-period-lsc`)
