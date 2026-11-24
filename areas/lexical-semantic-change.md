@@ -86,6 +86,8 @@ held-out sets almost never show a CI > 0 gain when the true difference is -0.2 (
 
 8. LLM-induced inventory vs clustering on 1b with 10 periods (arena-lsc InventoryMultiPeriod, 2026-11-24): 40 fresh synthetic words, +0.028 [-0.166, +0.228]; with the earlier 20 pooled -0.049 [-0.188, +0.099]; both systems below the random-labels-within-gold-k 1b. The 10-period question the held-out two-period sets cannot answer is still open; the CI is too wide at this size.
 
+9. A second LLM in the Subtask-2 pipeline (arena-lsc SecondLLM, 2026-11-24): Qwen3-14B Q4 with the prompts tuned on Gemma 4 12B Q4 scores below it on SV dev, DE sense and RU (per-word macro F1 .503/.708/.600 vs .622/.894/.646), and mean-score, AND and OR combinations are not better than Gemma alone (pooled -0.033 [-0.067, +0.001] for the mean score). The two models' errors are correlated (phi .32-.39 on SV dev and RU), so agreement between them is not independent evidence.
+
 ## Open questions (carried by records)
 
 - Does incremental clustering beat one-time clustering on multi-period gold? (`periti2024-multi-period-dwsi`) Partly answered, arena-lsc ticket 2026-11-24-TimeAwareClustering (2026-11-24, XL-LEXEME, synth300 = 300 English words x 10 periods, 2-fold cross-fitted parameters): period-by-period incremental clustering 0.634 vs one-time average linkage 0.642 (-0.008, 95% CI [-0.016, -0.001]); a time term added to the distance, -0.001 [-0.008, +0.005], and 1b -0.035. Synthetic data and 10 real SV words only: not settled for real corpora.
