@@ -79,6 +79,7 @@ held-out sets almost never show a CI > 0 gain when the true difference is -0.2 (
 3. Benchmarks with one period pair per word cannot separate change modelling from polysemy counting.
 4. On a 132-word test, 1b differences under ~0.07 rho and 1a differences under ~0.01-0.02 are within word-sampling
    noise (arena-lsc Ceiling, test-like resampling).
+5. Multi-label output (arena-lsc MultiLabelAssign, 2026-11-24): 13.2% of SV-dev gold usages (task protocol) carry 2-3 sense labels, public DWUG/AXOLOTL conversions none. Adding the nearest other cluster as a second label lowers 1a monotonically on SV dev, and an oracle choice of which usages get it gains only +0.0025 (10 words, one clustering system).
 
 ## Open questions (carried by records)
 
