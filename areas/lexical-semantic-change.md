@@ -88,6 +88,8 @@ held-out sets almost never show a CI > 0 gain when the true difference is -0.2 (
 
 9. A second LLM in the Subtask-2 pipeline (arena-lsc SecondLLM, 2026-11-24): Qwen3-14B Q4 with the prompts tuned on Gemma 4 12B Q4 scores below it on SV dev, DE sense and RU (per-word macro F1 .503/.708/.600 vs .622/.894/.646), and mean-score, AND and OR combinations are not better than Gemma alone (pooled -0.033 [-0.067, +0.001] for the mean score). The two models' errors are correlated (phi .32-.39 on SV dev and RU), so agreement between them is not independent evidence.
 
+10. Replication of item 7 with Qwen2.5-3B (arena-lsc LLMEncoderReplication, 2026-11-24), configuration fixed in advance: +0.0110 [+0.0043, +0.0180] 1a over XL-LEXEME (seven sets, leave-one-set-out), but vectors permuted within each word give +0.0077/+0.0143/+0.0076 (paired real minus shuffled +0.0033 [-0.0019, +0.0090]): the gain is mostly a word-level effect of the LLM space (which also holds for item 7: its usage-level part is +0.003..+0.010). Same model family only; no gain over XL-LEXEME + XL-DURel on IT/FI/RU.
+
 ## Open questions (carried by records)
 
 - Does incremental clustering beat one-time clustering on multi-period gold? (`periti2024-multi-period-dwsi`) Partly answered, arena-lsc ticket 2026-11-24-TimeAwareClustering (2026-11-24, XL-LEXEME, synth300 = 300 English words x 10 periods, 2-fold cross-fitted parameters): period-by-period incremental clustering 0.634 vs one-time average linkage 0.642 (-0.008, 95% CI [-0.016, -0.001]); a time term added to the distance, -0.001 [-0.008, +0.005], and 1b -0.035. Synthetic data and 10 real SV words only: not settled for real corpora.
