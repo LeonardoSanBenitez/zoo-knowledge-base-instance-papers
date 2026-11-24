@@ -84,6 +84,8 @@ held-out sets almost never show a CI > 0 gain when the true difference is -0.2 (
 
 7. A decoder LLM as a third encoder (arena-lsc LLMHiddenEncoder, 2026-11-24): Qwen3-4B-Base hidden state of the last token after a one-line prompt (layer 30), concatenated at weight 0.25 with XL-LEXEME, raises leave-one-set-out 1a over seven public sets from 0.7455 to 0.7612 (+0.0157 [+0.0083, +0.0233]) and lowers 1b (0.554 to 0.487); a within-word-shuffled copy of the LLM vectors already gives +0.006..+0.009, so the usage-level part is about +0.010. It did not beat XL-LEXEME + XL-DURel on IT/FI/RU (+0.032/-0.059/-0.001).
 
+8. LLM-induced inventory vs clustering on 1b with 10 periods (arena-lsc InventoryMultiPeriod, 2026-11-24): 40 fresh synthetic words, +0.028 [-0.166, +0.228]; with the earlier 20 pooled -0.049 [-0.188, +0.099]; both systems below the random-labels-within-gold-k 1b. The 10-period question the held-out two-period sets cannot answer is still open; the CI is too wide at this size.
+
 ## Open questions (carried by records)
 
 - Does incremental clustering beat one-time clustering on multi-period gold? (`periti2024-multi-period-dwsi`) Partly answered, arena-lsc ticket 2026-11-24-TimeAwareClustering (2026-11-24, XL-LEXEME, synth300 = 300 English words x 10 periods, 2-fold cross-fitted parameters): period-by-period incremental clustering 0.634 vs one-time average linkage 0.642 (-0.008, 95% CI [-0.016, -0.001]); a time term added to the distance, -0.001 [-0.008, +0.005], and 1b -0.035. Synthetic data and 10 real SV words only: not settled for real corpora.
