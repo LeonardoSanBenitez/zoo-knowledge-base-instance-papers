@@ -80,6 +80,7 @@ held-out sets almost never show a CI > 0 gain when the true difference is -0.2 (
 4. On a 132-word test, 1b differences under ~0.07 rho and 1a differences under ~0.01-0.02 are within word-sampling
    noise (arena-lsc Ceiling, test-like resampling).
 5. Multi-label output (arena-lsc MultiLabelAssign, 2026-11-24): 13.2% of SV-dev gold usages (task protocol) carry 2-3 sense labels, public DWUG/AXOLOTL conversions none. Adding the nearest other cluster as a second label lowers 1a monotonically on SV dev, and an oracle choice of which usages get it gains only +0.0025 (10 words, one clustering system).
+6. Post-processing of XL-LEXEME vectors before average linkage (arena-lsc EmbeddingPostprocess, 2026-11-24; leave-one-set-out over seven public sets): set-mean centring +0.0006, removing 1/3/10 principal components -0.001/-0.003/-0.020, a consensus over thresholds +0.0005; centring helps EN/ES/IT (+0.02..+0.03) and hurts FI (-0.05), so the effects cancel and no oracle-threshold macro improves.
 
 ## Open questions (carried by records)
 
