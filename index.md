@@ -503,9 +503,9 @@ so no one else can run it.
   synthetic 10-period data; Table 2 reproduced except PRT), `cassotti2025-hypothesis-driven-lsc`,
   `periti2024-multi-period-dwsi`, `periti2024-systematic-comparison-cwe-lsc`, `fedorova2024-axolotl24-overview`,
   `cassotti2023-xl-lexeme`, `kokosinskii2024-deep-change-axolotl`, `yadav2025-xl-durel`, `mosolova2026-wsi-llm-era`
-  (one-cluster-per-lemma unbeaten on natural polysemy: reproduced; it is 28% monosemous instances, 63.4 on the rest). Through-line: XL-LEXEME is near human level on usage pairs, but
+  (one-cluster-per-lemma unbeaten on natural polysemy: reproduced; it is 28% monosemous instances, 63.4 on the rest). `goworek2026-amd-samd-lscd` (AMD/SAMD graded metrics: no gain over APD on DWUG EN/DE/SV with XL-LEXEME; a period-blind dispersion score gets .74-.87 of APD's .79-.87). Through-line: XL-LEXEME is near human level on usage pairs, but
   change scored through sense clusters is weak and pooled change correlations reward the number of
-  clusters per word; human-vs-human ceiling under the task metrics 1a .78 / 1b .81 / 2 .86. Started by maria 2026-11-03.
+  clusters per word (graded APD likewise rewards dispersion); human-vs-human ceiling under the task metrics 1a .78 / 1b .81 / 2 .86. Started by maria 2026-11-03.
 
 - `active` `replicability-and-selective-reporting.md` — will a finding replicate, and do the detectors and
   forecasters that answer this work on worlds where the answer is known? Records: `pawel2020-probabilistic-forecasting-replication`

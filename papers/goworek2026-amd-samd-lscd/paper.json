@@ -1,0 +1,159 @@
+{
+ "schema_version": "1.6",
+ "id": "goworek2026-amd-samd-lscd",
+ "title": "Rethinking Metrics for Lexical Semantic Change Detection",
+ "authors": [
+  "Roksana Goworek",
+  "Haim Dubossarsky"
+ ],
+ "year": 2026,
+ "venue": "LChange 2026 Workshop (EACL 2026); arXiv 2602.15716v1",
+ "area": [
+  "lexical-semantic-change"
+ ],
+ "identifiers": {
+  "arxiv": "2602.15716",
+  "url": "https://arxiv.org/abs/2602.15716v1"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "census",
+  "evidence": "Found 2026-11-24 in a literature scan for arena-lsc (LChange'26 proceedings); flagged in the stewardship log 11-24 and 11-25 as 'not in the KB; graded change, not the arena's 1b'. Opened 2026-11-26 for the arena paper's related work, before any suspicion about its results.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 9,
+  "bytes_downloaded": 965150,
+  "compute_notes": "PDF (12 pp incl. appendix A) read in full from page images; appendices B-D not read. Reanalysis on CPU with XL-LEXEME embeddings already on disk for arena-lsc (DWUG EN/DE/SV in the SemEval-2027 Task 3 format): amd_check.py ~15 min, period_blind.py ~2 min. Authors' code (github.com/roksanagow/Rethinking_LSCD_Metrics) not cloned.",
+  "session": "2026-11-26 maria, arena-lsc 12 h session"
+ },
+ "triggers": [
+  "AMD SAMD average minimum distance semantic change metric",
+  "APD vs PRT which graded change metric",
+  "does APD measure polysemy rather than change",
+  "semantic change metric under PCA dimensionality reduction",
+  "definition-space projection of usage embeddings"
+ ],
+ "methods": [
+  "known-answer-structural-null",
+  "manual-reanalysis-from-shared-materials"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Averaged over eight LSCD datasets (SemEval-2020 EN/DE/SV/LA, LSCDiscovery ES, NorDiaChange x2, Chinese) and all encoders, Spearman with graded change on FULL embeddings: APD .405, PRT .395, AMD .442, SAMD .444; AMD in the definition space .519; under per-word PCA AMD .542, SAMD .550 (APD .190, PRT .093). Correspondence metrics are 'the best performance and the most stable'.",
+   "origin": "paper",
+   "scope": "Figure 2; std in brackets is across languages x encoders (.12-.27). No significance test or per-dataset uncertainty is reported; datasets have 31-100 words, where one Spearman has a standard error near 0.15.",
+   "quantities": [
+    {"name": "APD_FULL_avg", "value": 0.405, "unit": "Spearman", "source": "Figure 2"},
+    {"name": "AMD_FULL_avg", "value": 0.442, "unit": "Spearman", "source": "Figure 2"},
+    {"name": "SAMD_FULL_avg", "value": 0.444, "unit": "Spearman", "source": "Figure 2"},
+    {"name": "AMD_PCA_avg", "value": 0.542, "unit": "Spearman", "source": "Figure 2"},
+    {"name": "SAMD_PCA_avg", "value": 0.55, "unit": "Spearman", "source": "Figure 2"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "disputed",
+    "why": "With XL-LEXEME on DWUG EN/DE/SV (46/50/44 words, cluster-JSD gold) the FULL-space differences vs APD are AMD -0.05/+0.02/-0.00 and SAMD -0.02/+0.02/-0.01, every 95% bootstrap CI spans 0 (reanalysis/amd_check.json). The averaged advantage is driven by weak non-specialised encoders, where all metrics are low; it is not shown with uncertainty.",
+    "by": "maria, 2026-11-26"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "With XL-LEXEME, SAMD on per-word PCA reaches .694 averaged over languages, above APD (.635) and PRT (.643) on full embeddings; AMD and SAMD stay robust under PCA and random dimension selection while APD and PRT degrade.",
+   "origin": "paper",
+   "scope": "Section 4 'Specialised encoder' and Figure 3; K (PCA components) = the number of LLM-generated definitions for that word (EN 11, DE 3.75, SV 4.26 on average, Table 1).",
+   "quantities": [
+    {"name": "SAMD_PCA_xllexeme", "value": 0.694, "unit": "Spearman", "source": "Section 4"},
+    {"name": "APD_FULL_xllexeme", "value": 0.635, "unit": "Spearman", "source": "Section 4"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "disputed",
+    "why": "Not reproduced at K = 4 on DWUG EN/DE/SV with XL-LEXEME: SAMD_PCA4 .44/.63/.32 vs APD_FULL .79/.83/.87, and AMD collapses under PCA (.16/.33/.11) rather than staying robust. Scope differs (fixed K = 4 vs the paper's per-word K; DWUG conversions with cluster-JSD gold vs the official SemEval graded scores), so 'disputed', not 'refuted'.",
+    "by": "maria, 2026-11-26"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "On DWUG EN/DE/SV with XL-LEXEME, most of APD's graded-change correlation is period-blind: the word's mean pairwise usage distance with periods ignored (dispersion) gives Spearman .74/.80/.87 against APD's .79/.83/.87; APD with period labels permuted within word gives .74/.80/.87; the gold number of senses alone gives .77/.42/.91. APD beats dispersion only on EN, +0.05 [+0.001, +0.137].",
+   "origin": "reader",
+   "scope": "Two-period sets, cluster-JSD gold computed from the DWUG clusterings (gold JSD itself grows with the number of senses), one encoder. The period-specific part (APD minus dispersion) still correlates .59/.75/.57, so APD does carry change signal; the headline number does not isolate it.",
+   "quantities": [
+    {"name": "rho_DISP_en", "value": 0.739, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
+    {"name": "rho_DISP_de", "value": 0.803, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
+    {"name": "rho_DISP_sv", "value": 0.869, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
+    {"name": "rho_APD_en", "value": 0.792, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
+    {"name": "rho_APD_de", "value": 0.826, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
+    {"name": "rho_APD_sv", "value": 0.875, "unit": "Spearman", "source": "reanalysis/period_blind.json"}
+   ],
+   "evidence": ["a2", "a3"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Own measurement with a known-answer control (within-word period shuffle). Same mechanism as arena-lsc F1 (random labels within the gold k score high on 1b): two-period graded benchmarks reward polysemy/dispersion. Any graded-change metric comparison (this paper's included) should report the period-shuffled score beside the real one.",
+    "by": "maria, 2026-11-26"
+   }
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "code",
+   "locator": "https://github.com/roksanagow/Rethinking_LSCD_Metrics",
+   "status": "not-checked",
+   "checked": {
+    "on": "2026-11-26",
+    "by": "maria",
+    "how": "not cloned; the reanalysis reimplements the four metrics from Section 3.2",
+    "result": "not checked"
+   }
+  },
+  {
+   "id": "a2",
+   "role": "analysis-notebook",
+   "locator": "instance-papers/papers/goworek2026-amd-samd-lscd/reanalysis/amd_check.py (+ amd_check.json, amd_check.log)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-26",
+    "by": "maria",
+    "how": "python amd_check.py --set dwug_en <gold>/dwug_en/EN/subtask1.jsonl <emb>/xl-lexeme/dwug_en/EN --set dwug_de <gold>/dwug_de/NL/subtask1.jsonl <emb>/xl-lexeme/dwug_de/NL --set dwug_sv <gold>/dwug_sv/SV/subtask1.jsonl <emb>/xl-lexeme/dwug_sv/SV --out amd_check.json   (<gold>, <emb> = arena-lsc asset root arena-lsc-public/{gold,emb}; built by .claude/memory/maria/arena-lsc/tooling/convert_public.py and embed.py)",
+    "result": "APD/PRT/AMD/SAMD FULL and PCA4 Spearman per set, shuffled-period control, bootstrap CIs vs APD"
+   }
+  },
+  {
+   "id": "a3",
+   "role": "analysis-notebook",
+   "locator": "instance-papers/papers/goworek2026-amd-samd-lscd/reanalysis/period_blind.py (+ period_blind.json)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-26",
+    "by": "maria",
+    "how": "python period_blind.py (same three --set arguments) --out period_blind.json",
+    "result": "rho of APD, period-blind dispersion, gold K and APD minus dispersion; partial rho of APD given dispersion .51/.33/.20"
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:usesMethodIn",
+   "target": "periti2024-systematic-comparison-cwe-lsc",
+   "why": "Same APD/PRT comparison frame; periti2024 report APD .751 with XL-LEXEME on the same SemEval-2020 family."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "saponara2026-synthetic-multi-period-lsc",
+   "why": "Both find the 'robust' metric claim (PRT there, AMD/SAMD here) fragile under an independent check."
+  }
+ ],
+ "open_questions": [
+  "Does SAMD-PCA's .694 reproduce with the authors' per-word K (number of generated definitions) and the official SemEval-2020 graded scores? Needs the definitions from their repository.",
+  "How much of each metric's score survives the within-word period shuffle on the official SemEval-2020 graded gold (not cluster JSD)?"
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-26",
+  "verified": "2026-11-26",
+  "notes_file": "NOTES.md"
+ }
+}

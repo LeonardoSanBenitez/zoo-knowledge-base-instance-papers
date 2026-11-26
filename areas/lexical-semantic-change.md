@@ -30,6 +30,7 @@ can actually measure. Data and code live with the arena; this file keeps the arg
 - **Human ceiling under the task's own metrics** (DWUG DE Sense, 3 annotators, arena-lsc Ceiling ticket): one annotator
   scored against another gets 1a BCubed-F 0.78, 1b rho 0.81, Subtask-2 F1 0.86. An XL-LEXEME + average-linkage
   baseline already reaches 1a 0.80 and 2 0.81 against the majority on that set, but only 1b 0.53.
+- **Two-period graded change scores reward dispersion, not only change** (goworek2026-amd-samd-lscd c3, maria's reanalysis): on DWUG EN/DE/SV with XL-LEXEME, a period-blind number (mean pairwise distance over all usages of the word) correlates .74/.80/.87 with cluster-JSD graded change, APD .79/.83/.87, and APD with period labels shuffled within word keeps .74/.80/.87. The paper's AMD/SAMD gains over APD do not appear there (all CIs span 0) and AMD collapses under PCA-4 (c1, c2 disputed).
 - **Pooled change correlations reward getting k right.** Random labels with the gold number of senses per word score
   1b rho 0.31-0.89 on 9 gold sets (`instance-general/ai-evaluation/shared-task-scorers-need-known-answer-controls.md`).
   Any 1b claim needs that null beside it, and a within-word shuffle of the system's own inputs.
@@ -76,7 +77,7 @@ held-out sets almost never show a CI > 0 gain when the true difference is -0.2 (
 
 1. Report every change score beside random-within-gold-k and the system's own shuffled-input score.
 2. State the clustering linkage and threshold; "agglomerative, 0.5" without a linkage is not reproducible.
-3. Benchmarks with one period pair per word cannot separate change modelling from polysemy counting.
+3. Benchmarks with one period pair per word cannot separate change modelling from polysemy counting. Measured for graded metrics (goworek2026-amd-samd-lscd c3): report every graded-change metric beside its own period-shuffled copy; on DWUG EN/DE/SV the shuffled APD keeps .74/.80/.87 of the real .79/.83/.87.
 4. On a 132-word test, 1b differences under ~0.07 rho and 1a differences under ~0.01-0.02 are within word-sampling
    noise (arena-lsc Ceiling, test-like resampling).
 5. Multi-label output (arena-lsc MultiLabelAssign, 2026-11-24): 13.2% of SV-dev gold usages (task protocol) carry 2-3 sense labels, public DWUG/AXOLOTL conversions none. Adding the nearest other cluster as a second label lowers 1a monotonically on SV dev, and an oracle choice of which usages get it gains only +0.0025 (10 words, one clustering system).
