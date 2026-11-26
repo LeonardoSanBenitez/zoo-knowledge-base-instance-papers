@@ -1,0 +1,136 @@
+{
+ "schema_version": "1.6",
+ "id": "card2023-substitution-scd",
+ "title": "Substitution-based Semantic Change Detection using Contextual Embeddings",
+ "authors": [
+  "Dallas Card"
+ ],
+ "year": 2023,
+ "venue": "ACL 2023 (short); arXiv 2309.02403v2",
+ "area": [
+  "lexical-semantic-change"
+ ],
+ "identifiers": {
+  "arxiv": "2309.02403",
+  "url": "https://arxiv.org/abs/2309.02403"
+ },
+ "record_status": "active",
+ "read_depth": "read-full-text",
+ "selection": {
+  "class": "chain",
+  "evidence": "Found 2026-11-26 night by a search for small-sample JSD bias in LSC (arena-lsc F37 follow-up); the only LSC method I know that explicitly corrects JSD against an empirical null of same-frequency terms.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 7,
+  "bytes_downloaded": 850000,
+  "compute_notes": "PDF via pdftotext + page images of pp. 3-4 (Table 1 did not survive text extraction). Appendices skimmed. Repo inspected via gh api (scripts only, no outputs).",
+  "session": "2026-11-27 maria, arena-lsc night session"
+ },
+ "triggers": [
+  "masked language model substitutes for semantic change",
+  "frequency correction of JSD change scores",
+  "raw JSD correlates with word frequency",
+  "quantile rescaling against background terms",
+  "SemEval-2020 Task 1 GEMS COHA graded change baselines"
+ ],
+ "methods": [
+  "known-answer-structural-null"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Scaled JSD of top-5 BERT substitutes gives Spearman .535 GEMS (96 words), .547 SE English (37), .563 SE German (40), .533 SE Latin (48), .310 SE Swedish (31); average .498 and weighted average .514, the best averages in Table 1 (Montariol et al. 2021 static .477/.452, contextual .432/.422).",
+   "origin": "paper",
+   "scope": "Table 1; BERT fine-tuned (continued MLM) on each language's two corpora; up to 4,000 sampled mentions per term; 10,000 background terms; F = 2. Pomsl and Lyapin (2020) lack GEMS, so the averages cover different sets.",
+   "quantities": [
+    {
+     "name": "rho_scaledJSD_SE_Eng",
+     "value": 0.547,
+     "unit": "Spearman",
+     "n": 37,
+     "source": "Table 1"
+    },
+    {
+     "name": "rho_scaledJSD_SE_Swe",
+     "value": 0.31,
+     "unit": "Spearman",
+     "n": 31,
+     "source": "Table 1"
+    },
+    {
+     "name": "rho_scaledJSD_avg",
+     "value": 0.498,
+     "unit": "Spearman",
+     "source": "Table 1"
+    }
+   ],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "unverified",
+    "why": "Not rerun. The ranking claim (best on average) rests on average gaps of .02-.07 between methods, each per-set Spearman on 31-96 words having a standard error near .1-.15; no uncertainty is reported.",
+    "by": "maria, 2026-11-27"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "Raw JSD between a term's substitute distributions in the two periods is strongly correlated with term frequency (rarer terms score higher), so raw scores are converted to the quantile of the term among background terms within a factor F of its frequency.",
+   "origin": "paper",
+   "scope": "Figure 1 (top), SE English; Section 3 eq. 3-4. No Spearman for raw (unscaled) JSD is reported, so the size of the correction's benefit is not shown.",
+   "quantities": [],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The mechanism is the plug-in divergence bias: with thousands of substitute types (large K) and n mentions, the no-change JSD scales like (K-1)/n (instance-general statistics/divergence-between-small-samples-under-no-change.md), so it falls with frequency exactly as Figure 1 shows. The frequency quantile is an empirical null conditioned on n but not on K (a term's substitute diversity), which the same formula says matters as much. Whether the rescaling improves ranking is not reported.",
+    "by": "maria, 2026-11-27"
+   }
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "in-paper-table",
+   "locator": "Table 1 and Figure 1, arXiv 2309.02403v2 p. 3-4",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-27",
+    "by": "maria",
+    "how": "Read tool on paper.pdf pages 3-4 (image)",
+    "result": "Table 1 transcribed"
+   }
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "https://github.com/dallascard/SBSCD",
+   "status": "present-but-insufficient",
+   "checked": {
+    "on": "2026-11-27",
+    "by": "maria",
+    "how": "gh api repos/dallascard/SBSCD/git/trees/HEAD?recursive=1 (159 KB; last push 2025-05-19)",
+    "result": "full pipeline scripts per dataset (semeval/, coha/, general/); no scores, substitutes or fine-tuned models, so every number requires rerunning MLM fine-tuning and substitute extraction"
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:agreesWith",
+   "target": "schlechtweg2024-more-dwugs",
+   "why": "Both show change scores carry sample-size effects; here as a frequency confound of raw JSD over substitutes."
+  }
+ ],
+ "open_questions": [
+  "How much does the frequency-quantile rescaling improve Spearman over raw JSD? Needs the pipeline rerun (planned, reduced scale, SE English; see NOTES).",
+  "Does conditioning the null on substitute diversity (K) as well as frequency improve it further?"
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-27",
+  "verified": "2026-11-27",
+  "notes_file": "NOTES.md"
+ }
+}

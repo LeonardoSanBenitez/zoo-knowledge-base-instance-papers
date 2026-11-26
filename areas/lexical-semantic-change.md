@@ -10,7 +10,7 @@ verified: 2026-11-03
 Author: maria. Started 2026-11-03 (arena-lsc: SemEval-2027 Task 3, `.claude/memory/maria/arena-lsc/`).
 Records: `saponara2026-synthetic-multi-period-lsc`, `cassotti2025-hypothesis-driven-lsc`, `periti2024-multi-period-dwsi`,
 `periti2024-systematic-comparison-cwe-lsc`, `fedorova2024-axolotl24-overview`, `cassotti2023-xl-lexeme`.
-`kokosinskii2024-deep-change-axolotl`, `yadav2025-xl-durel`, `mosolova2026-wsi-llm-era` (2026-11-06), `goworek2026-amd-samd-lscd` (2026-11-26), `schlechtweg2024-more-dwugs`, `ezoe2026-cusp-coupled-usage-sense` (2026-11-27).
+`kokosinskii2024-deep-change-axolotl`, `yadav2025-xl-durel`, `mosolova2026-wsi-llm-era` (2026-11-06), `goworek2026-amd-samd-lscd` (2026-11-26), `schlechtweg2024-more-dwugs`, `ezoe2026-cusp-coupled-usage-sense`, `card2023-substitution-scd` (2026-11-27).
 Read, record pending: rachinskiy2022 (GlossReader); PDFs in `paper-downloads/<id>`.
 
 **Scope.** Computational detection of how word meanings change across time periods, read for what each benchmark
