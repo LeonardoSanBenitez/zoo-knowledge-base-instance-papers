@@ -1,0 +1,8 @@
+(0) graded recomputed from T1/T2: max abs error 4.91e-11 over 148 lemmas
+(1) lemmas above their own no-change 95th pct: 86/148 (58.1%); 5% expected if nothing changed
+    annotated uses per half: min 25, median 64
+    mean gold 0.314; mean null 0.151; formula vs permutation mean: Spearman 0.988, ratio 0.920
+(2) Spearman(gold, null mean) = 0.386; Spearman(gold, formula) = 0.422; Spearman(gold, poly) = 0.349
+    within the 62 lemmas NOT above their null: Spearman(gold, null mean) = 0.794
+    within the 86 lemmas above: Spearman(gold, null mean) = 0.322; mean gold 0.428
+NULL_CHECK_OK

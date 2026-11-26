@@ -1,0 +1,191 @@
+{
+ "schema_version": "1.6",
+ "id": "schlechtweg2020-simulating-lsc",
+ "title": "Simulating Lexical Semantic Change from Sense-Annotated Data",
+ "authors": [
+  "Dominik Schlechtweg",
+  "Sabine Schulte im Walde"
+ ],
+ "year": 2020,
+ "venue": "EvoLang13 (The Evolution of Language: Proceedings of the 13th International Conference); arXiv 2001.03216",
+ "area": [
+  "lexical-semantic-change"
+ ],
+ "identifiers": {
+  "arxiv": "2001.03216",
+  "url": "https://arxiv.org/abs/2001.03216"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "hypothesis-test",
+  "evidence": "Opened 2026-11-26 night (arena-lsc session) as the origin of the graded/binary JSD definitions used by DWUG and SemEval-2027 Task 3, to see how its own gold treats sampling noise (arena-lsc F37). Chosen before reading results.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 9,
+  "bytes_downloaded": 1700000,
+  "compute_notes": "PDF read in full (12 pp; Table 4 from the page image). semcor_lsc.zip (1.6 MB) from IMS; null_check.py < 1 min CPU.",
+  "session": "2026-11-27 maria, arena-lsc night session"
+ },
+ "triggers": [
+  "definition of graded and binary lexical semantic change",
+  "sense frequency distribution Jensen-Shannon distance gold",
+  "SemCor simulated semantic change testset",
+  "polysemy and frequency baselines for change detection",
+  "synthetic LSC by splitting sense-annotated corpus"
+ ],
+ "methods": [
+  "known-answer-structural-null",
+  "exact-reproduction-from-deposit",
+  "manual-reanalysis-from-shared-materials"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Graded LSC of a word is G(w) = Jensen-Shannon distance between its sense frequency distributions in the two corpora; binary LSC B(w) = 1 if some sense has probability >= 0.1 in one corpus and 0 in the other.",
+   "origin": "paper",
+   "scope": "Section 3.2. The definition the DWUG datasets and SemEval-2027 Task 3 Subtask 1b inherit (as cluster-JSD).",
+   "quantities": [],
+   "evidence": [
+    "a1"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "A definition, recomputed exactly from the deposit (max abs error 4.9e-11 over 148 lemmas). As a population quantity it is sound; applied to observed counts it is a plug-in estimate whose no-change expectation is far from 0 at these sizes (c3), which the definition does not mention. The paper names polysemy and frequency as confounds, not sample size.",
+    "by": "maria, 2026-11-27"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "On the 148-lemma SemCor-LSC testset, vector-space models reach graded Spearman mean .159, best .451 (SGNS+OP+CD); the polysemy baseline .349 and the frequency baseline .120; the best models outperform both baselines.",
+   "origin": "paper",
+   "scope": "Table 4; best = maximum over many model x alignment x measure configurations, averaged over five runs.",
+   "quantities": [
+    {
+     "name": "rho_models_mean",
+     "value": 0.159,
+     "unit": "Spearman",
+     "n": 148,
+     "source": "Table 4"
+    },
+    {
+     "name": "rho_best_model",
+     "value": 0.451,
+     "unit": "Spearman",
+     "n": 148,
+     "source": "Table 4"
+    },
+    {
+     "name": "rho_POLY",
+     "value": 0.349,
+     "unit": "Spearman",
+     "n": 148,
+     "source": "Table 4"
+    },
+    {
+     "name": "rho_FREQ",
+     "value": 0.12,
+     "unit": "Spearman",
+     "n": 148,
+     "source": "Table 4"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Both baselines reproduced exactly from the deposited poly.tsv and freq.tsv (.349, .120). A third baseline the paper lacks, the no-change expectation of the plug-in distance (knows only each lemma's sense count K and the two sample sizes), reaches .422 (c3): above the mean model and the polysemy baseline, .03 below the best configuration, which is a maximum over many. The conclusion that the best models measure more than polysemy or frequency holds only against the two baselines reported.",
+    "by": "maria, 2026-11-27"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Sampling noise in the SemCor-LSC gold: re-splitting each lemma's annotated uses at random between the halves (500 draws) gives a mean no-change distance of 0.151 against a mean gold of 0.314; 86/148 lemmas (58%) exceed their own null 95th percentile. The chi-square formula matches the permutation mean (Spearman .988, 8% low). Spearman(gold, formula) = .422, (gold, permutation mean) = .386; among the 62 lemmas not above their null, gold ranks like its null at .794.",
+   "origin": "reader",
+   "scope": "Annotated uses per half: min 25, median 64. Which lemmas were deliberately changed (targets of step i) is not released, so changed here means above its own null.",
+   "quantities": [
+    {
+     "name": "share_above_null95",
+     "value": 0.581,
+     "unit": "proportion",
+     "n": 148,
+     "count": 86,
+     "source": "reanalysis/null_check.out.txt"
+    },
+    {
+     "name": "rho_gold_vs_noise_formula",
+     "value": 0.422,
+     "unit": "Spearman",
+     "n": 148,
+     "source": "reanalysis/null_check.out.txt"
+    },
+    {
+     "name": "rho_gold_vs_null_within_noise_only",
+     "value": 0.794,
+     "unit": "Spearman",
+     "n": 62,
+     "source": "reanalysis/null_check.out.txt"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Own measurement from the deposit; one synthetic set. A third of the testset carries no change distinguishable from re-splitting, and that part of the gold is ordered by K and n.",
+    "by": "maria, 2026-11-27"
+   }
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "benchmark",
+   "locator": "https://www.ims.uni-stuttgart.de/documents/ressourcen/experiment-daten/semcor_lsc.zip",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-27",
+    "by": "maria",
+    "how": "unzip; testset/testset.tsv (lemma, T1, T2, freq1, freq2, freq_error, poly, freq, graded, binary), poly.tsv, freq.tsv",
+    "result": "graded recomputed from T1/T2 exactly; baselines .349/.120 reproduced"
+   }
+  },
+  {
+   "id": "a2",
+   "role": "analysis-notebook",
+   "locator": "instance-papers/papers/schlechtweg2020-simulating-lsc/reanalysis/null_check.py (+ .out.txt)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-27",
+    "by": "maria",
+    "how": "python papers/schlechtweg2020-simulating-lsc/reanalysis/null_check.py > papers/schlechtweg2020-simulating-lsc/reanalysis/null_check.out.txt",
+    "result": "see c3"
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:agreesWith",
+   "target": "schlechtweg2024-more-dwugs",
+   "why": "Same research line; the later paper measures annotation robustness, this one defines the JSD gold; neither reports the plug-in no-change expectation."
+  },
+  {
+   "type": "cito:qualifies",
+   "target": "goworek2026-amd-samd-lscd",
+   "why": "Another graded gold whose ranking is partly set by K and n (here .42 from the noise formula alone)."
+  }
+ ],
+ "open_questions": [
+  "Which lemmas were step-(i) targets? With that list, does the noise formula still order the non-targets at ~.8, and how many non-targets exceed their null through sentence-level co-assignment with targets?"
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-27",
+  "verified": "2026-11-27",
+  "notes_file": "NOTES.md"
+ }
+}
