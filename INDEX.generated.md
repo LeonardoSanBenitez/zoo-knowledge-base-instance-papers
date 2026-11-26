@@ -468,7 +468,7 @@
   - methods: `leaderboard-secondary-analysis`
   - notes: `instance-papers/papers/fedorova2024-axolotl24-overview/`
 - **`goworek2026-amd-samd-lscd`** (2026, LChange 2026 Workshop (EACL 2026); arXiv 2602.15716v1) — Rethinking Metrics for Lexical Semantic Change Detection
-  - depth: `read-and-reanalysed` · 3 claims · 13 quantities · 3 artifacts
+  - depth: `read-and-reanalysed` · 3 claims · 16 quantities · 4 artifacts
   - methods: `known-answer-structural-null`, `manual-reanalysis-from-shared-materials`
   - cito:usesMethodIn → `periti2024-systematic-comparison-cwe-lsc`; cito:agreesWith → `saponara2026-synthetic-multi-period-lsc`
   - notes: `instance-papers/papers/goworek2026-amd-samd-lscd/`

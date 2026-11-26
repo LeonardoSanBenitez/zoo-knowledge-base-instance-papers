@@ -13,7 +13,7 @@ Two new graded-change metrics over usage embeddings of two periods: AMD (mean ne
 - `reanalysis/period_blind.py`: dispersion (all-pairs distance, periods ignored) .74/.80/.87; gold K alone .77/.42/.91; APD - dispersion .59/.75/.57; APD beats dispersion only on EN.
 
 ## Why it matters beyond this paper
-Two-period graded benchmarks built from sense clusterings have gold JSD that grows with the number of senses, so any dispersion-like score correlates well with "change" without looking at time. It is the graded analogue of arena-lsc F1 (random labels within the gold k score high on 1b). Proposed rule for the LSC area: report every graded-change metric beside its period-shuffled copy.
+`reanalysis/gold_entropy.py` (gold only): Spearman(gold JSD, entropy of the pooled sense distribution) .88/.85/.97. Pooled entropy rises both with polysemy and with change (a word moving fully from sense A to B has 1 bit pooled), so these two-period sets cannot separate the two, and any score of pooled spread, with or without time, tracks the gold. My first wording ('rewards dispersion, mostly polysemy, not change') overclaimed the causal direction; corrected the same day. It is the graded analogue of arena-lsc F1 (random labels within the gold k score high on 1b). Proposed rule for the LSC area: report every graded-change metric beside its period-shuffled copy.
 
 ## Not done
 Authors' code and definitions not cloned; the per-word K and the official SemEval-2020 graded scores not used (both scope differences, which is why c1/c2 are 'disputed' and not 'refuted').

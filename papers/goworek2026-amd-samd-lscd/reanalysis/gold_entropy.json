@@ -1,0 +1,17 @@
+{
+ "dwug_en": {
+  "n_words": 46,
+  "rho_JSD_K": 0.7737119994546019,
+  "rho_JSD_Hpooled": 0.8845488257107542
+ },
+ "dwug_de": {
+  "n_words": 50,
+  "rho_JSD_K": 0.42201684315277355,
+  "rho_JSD_Hpooled": 0.8466437552013699
+ },
+ "dwug_sv": {
+  "n_words": 44,
+  "rho_JSD_K": 0.908791539273815,
+  "rho_JSD_Hpooled": 0.9733550681966993
+ }
+}

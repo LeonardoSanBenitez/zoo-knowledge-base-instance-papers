@@ -46,13 +46,40 @@
    "origin": "paper",
    "scope": "Figure 2; std in brackets is across languages x encoders (.12-.27). No significance test or per-dataset uncertainty is reported; datasets have 31-100 words, where one Spearman has a standard error near 0.15.",
    "quantities": [
-    {"name": "APD_FULL_avg", "value": 0.405, "unit": "Spearman", "source": "Figure 2"},
-    {"name": "AMD_FULL_avg", "value": 0.442, "unit": "Spearman", "source": "Figure 2"},
-    {"name": "SAMD_FULL_avg", "value": 0.444, "unit": "Spearman", "source": "Figure 2"},
-    {"name": "AMD_PCA_avg", "value": 0.542, "unit": "Spearman", "source": "Figure 2"},
-    {"name": "SAMD_PCA_avg", "value": 0.55, "unit": "Spearman", "source": "Figure 2"}
+    {
+     "name": "APD_FULL_avg",
+     "value": 0.405,
+     "unit": "Spearman",
+     "source": "Figure 2"
+    },
+    {
+     "name": "AMD_FULL_avg",
+     "value": 0.442,
+     "unit": "Spearman",
+     "source": "Figure 2"
+    },
+    {
+     "name": "SAMD_FULL_avg",
+     "value": 0.444,
+     "unit": "Spearman",
+     "source": "Figure 2"
+    },
+    {
+     "name": "AMD_PCA_avg",
+     "value": 0.542,
+     "unit": "Spearman",
+     "source": "Figure 2"
+    },
+    {
+     "name": "SAMD_PCA_avg",
+     "value": 0.55,
+     "unit": "Spearman",
+     "source": "Figure 2"
+    }
    ],
-   "evidence": ["a1"],
+   "evidence": [
+    "a1"
+   ],
    "our_assessment": {
     "status": "disputed",
     "why": "With XL-LEXEME on DWUG EN/DE/SV (46/50/44 words, cluster-JSD gold) the FULL-space differences vs APD are AMD -0.05/+0.02/-0.00 and SAMD -0.02/+0.02/-0.01, every 95% bootstrap CI spans 0 (reanalysis/amd_check.json). The averaged advantage is driven by weak non-specialised encoders, where all metrics are low; it is not shown with uncertainty.",
@@ -65,10 +92,22 @@
    "origin": "paper",
    "scope": "Section 4 'Specialised encoder' and Figure 3; K (PCA components) = the number of LLM-generated definitions for that word (EN 11, DE 3.75, SV 4.26 on average, Table 1).",
    "quantities": [
-    {"name": "SAMD_PCA_xllexeme", "value": 0.694, "unit": "Spearman", "source": "Section 4"},
-    {"name": "APD_FULL_xllexeme", "value": 0.635, "unit": "Spearman", "source": "Section 4"}
+    {
+     "name": "SAMD_PCA_xllexeme",
+     "value": 0.694,
+     "unit": "Spearman",
+     "source": "Section 4"
+    },
+    {
+     "name": "APD_FULL_xllexeme",
+     "value": 0.635,
+     "unit": "Spearman",
+     "source": "Section 4"
+    }
    ],
-   "evidence": ["a1"],
+   "evidence": [
+    "a1"
+   ],
    "our_assessment": {
     "status": "disputed",
     "why": "Not reproduced at K = 4 on DWUG EN/DE/SV with XL-LEXEME: SAMD_PCA4 .44/.63/.32 vs APD_FULL .79/.83/.87, and AMD collapses under PCA (.16/.33/.11) rather than staying robust. Scope differs (fixed K = 4 vs the paper's per-word K; DWUG conversions with cluster-JSD gold vs the official SemEval graded scores), so 'disputed', not 'refuted'.",
@@ -77,21 +116,73 @@
   },
   {
    "id": "c3",
-   "statement": "On DWUG EN/DE/SV with XL-LEXEME, most of APD's graded-change correlation is period-blind: the word's mean pairwise usage distance with periods ignored (dispersion) gives Spearman .74/.80/.87 against APD's .79/.83/.87; APD with period labels permuted within word gives .74/.80/.87; the gold number of senses alone gives .77/.42/.91. APD beats dispersion only on EN, +0.05 [+0.001, +0.137].",
+   "statement": "On DWUG EN/DE/SV with XL-LEXEME, most of APD's graded-change correlation is period-blind: the word's mean pairwise usage distance with periods ignored (dispersion) gives Spearman .74/.80/.87 against APD's .79/.83/.87; APD with period labels permuted within word gives .74/.80/.87; the gold number of senses alone gives .77/.42/.91. APD beats dispersion only on EN, +0.05 [+0.001, +0.137]. Gold-only: Spearman(gold JSD, entropy of the pooled sense distribution, periods ignored) .88/.85/.97.",
    "origin": "reader",
    "scope": "Two-period sets, cluster-JSD gold computed from the DWUG clusterings (gold JSD itself grows with the number of senses), one encoder. The period-specific part (APD minus dispersion) still correlates .59/.75/.57, so APD does carry change signal; the headline number does not isolate it.",
    "quantities": [
-    {"name": "rho_DISP_en", "value": 0.739, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
-    {"name": "rho_DISP_de", "value": 0.803, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
-    {"name": "rho_DISP_sv", "value": 0.869, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
-    {"name": "rho_APD_en", "value": 0.792, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
-    {"name": "rho_APD_de", "value": 0.826, "unit": "Spearman", "source": "reanalysis/period_blind.json"},
-    {"name": "rho_APD_sv", "value": 0.875, "unit": "Spearman", "source": "reanalysis/period_blind.json"}
+    {
+     "name": "rho_DISP_en",
+     "value": 0.739,
+     "unit": "Spearman",
+     "source": "reanalysis/period_blind.json"
+    },
+    {
+     "name": "rho_DISP_de",
+     "value": 0.803,
+     "unit": "Spearman",
+     "source": "reanalysis/period_blind.json"
+    },
+    {
+     "name": "rho_DISP_sv",
+     "value": 0.869,
+     "unit": "Spearman",
+     "source": "reanalysis/period_blind.json"
+    },
+    {
+     "name": "rho_APD_en",
+     "value": 0.792,
+     "unit": "Spearman",
+     "source": "reanalysis/period_blind.json"
+    },
+    {
+     "name": "rho_APD_de",
+     "value": 0.826,
+     "unit": "Spearman",
+     "source": "reanalysis/period_blind.json"
+    },
+    {
+     "name": "rho_APD_sv",
+     "value": 0.875,
+     "unit": "Spearman",
+     "source": "reanalysis/period_blind.json"
+    },
+    {
+     "name": "rho_JSD_Hpooled_en",
+     "value": 0.885,
+     "unit": "Spearman",
+     "source": "reanalysis/gold_entropy.json"
+    },
+    {
+     "name": "rho_JSD_Hpooled_de",
+     "value": 0.847,
+     "unit": "Spearman",
+     "source": "reanalysis/gold_entropy.json"
+    },
+    {
+     "name": "rho_JSD_Hpooled_sv",
+     "value": 0.973,
+     "unit": "Spearman",
+     "source": "reanalysis/gold_entropy.json"
+    }
    ],
-   "evidence": ["a2", "a3"],
+   "evidence": [
+    "a2",
+    "a3",
+    "a4"
+   ],
    "our_assessment": {
     "status": "accepted-narrower-scope",
-    "why": "Own measurement with a known-answer control (within-word period shuffle). Same mechanism as arena-lsc F1 (random labels within the gold k score high on 1b): two-period graded benchmarks reward polysemy/dispersion. Any graded-change metric comparison (this paper's included) should report the period-shuffled score beside the real one.",
+    "why": "Own measurement with a known-answer control (within-word period shuffle) and a gold-only check: the gold change score is nearly a function of pooled sense entropy, which polysemy and change raise alike, so two-period sets of this kind cannot separate them; a high APD correlation is not evidence of change modelling. Corrected 2026-11-26 (same day) from 'rewards polysemy/dispersion', which overclaimed the causal direction. Any graded-change metric comparison (this paper's included) should report the period-shuffled score beside the real one.",
     "by": "maria, 2026-11-26"
    }
   }
@@ -131,6 +222,18 @@
     "by": "maria",
     "how": "python period_blind.py (same three --set arguments) --out period_blind.json",
     "result": "rho of APD, period-blind dispersion, gold K and APD minus dispersion; partial rho of APD given dispersion .51/.33/.20"
+   }
+  },
+  {
+   "id": "a4",
+   "role": "analysis-notebook",
+   "locator": "instance-papers/papers/goworek2026-amd-samd-lscd/reanalysis/gold_entropy.py (+ gold_entropy.json)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-26",
+    "by": "maria",
+    "how": "python gold_entropy.py dwug_en=<gold>/dwug_en/EN/subtask1.jsonl dwug_de=<gold>/dwug_de/NL/subtask1.jsonl dwug_sv=<gold>/dwug_sv/SV/subtask1.jsonl > gold_entropy.json",
+    "result": "rho(JSD, K) .77/.42/.91; rho(JSD, pooled entropy) .88/.85/.97"
    }
   }
  ],
