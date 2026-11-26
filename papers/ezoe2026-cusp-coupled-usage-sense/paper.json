@@ -1,0 +1,93 @@
+{
+ "schema_version": "1.6",
+ "id": "ezoe2026-cusp-coupled-usage-sense",
+ "title": "Coupled Usage-Sense Processes: Temporal and Attributable Lexical Semantic Change",
+ "authors": ["Haruka Ezoe", "Ryohei Hisano"],
+ "year": 2026,
+ "venue": "arXiv 2609.30974v1 (25 Sep 2026), preprint",
+ "area": ["lexical-semantic-change"],
+ "identifiers": {"arxiv": "2609.30974", "url": "https://arxiv.org/abs/2609.30974"},
+ "record_status": "active",
+ "read_depth": "read-full-text",
+ "selection": {
+  "class": "census",
+  "evidence": "Returned by a web search for LSC sample-size bias on 2026-11-26 night (arena-lsc session); the only recent multi-period, timing-oriented LSC method found, so relevant to SemEval-2027 Task 3 Subtask 1b. Opened before reading results.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 6,
+  "bytes_downloaded": 1500000,
+  "compute_notes": "PDF via pdftotext; read: abstract, introduction, Section 4 (all experiments), Appendix I.2-I.3 (DWUG and Janus protocols). Theory sections and proofs (Sec. 2-3, Appendices A-H) skimmed only. Code repository 404 on 2026-11-27, so nothing run.",
+  "session": "2026-11-27 maria, arena-lsc night session"
+ },
+ "triggers": [
+  "multi-period lexical semantic change timing method",
+  "optimal transport between usage components across periods",
+  "Gaussian mixture per period semantic change decomposition",
+  "Janus synthetic diachronic sentences evaluation",
+  "when did a word change, not only how much"
+ ],
+ "methods": ["known-answer-structural-null"],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "On DWUG EN/DE (46/50 two-period words, XL-LEXEME, leading direction removed), the CUSP full trace correlates with human graded change at Spearman .746 [.536, .883] / .815 [.664, .903], against APD .706 / .815, usage-level OT .718 / .827, fSUS .726 / .782, prototype .636 / .801, AP-JSD .531 / .578: 'competitive scalar validity rather than uniform superiority'.",
+   "origin": "paper",
+   "scope": "Table 1 (k = 1 preprocessing); Table 6 sensitivity k = 0: .772 / .857, k = 3: .762 / .804. Paired word-bootstrap CIs, 3,000 draws.",
+   "quantities": [
+    {"name": "rho_CUSP_full_EN", "value": 0.746, "unit": "Spearman", "ci": "[0.536, 0.883]", "ci_kind": "confidence", "n": 46, "source": "Table 1"},
+    {"name": "rho_CUSP_full_DE", "value": 0.815, "unit": "Spearman", "ci": "[0.664, 0.903]", "ci_kind": "confidence", "n": 50, "source": "Table 1"},
+    {"name": "rho_APD_EN", "value": 0.706, "unit": "Spearman", "n": 46, "source": "Table 1"}
+   ],
+   "evidence": ["a1"],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "The authors' own wording (competitive, overlapping intervals) is supported by their table. What it does not show is change modelling beyond sense structure: on the same DWUG EN/DE with XL-LEXEME a PERIOD-BLIND dispersion score (mean pairwise distance, periods ignored) reaches .74 / .80 (goworek2026-amd-samd-lscd c3, different preprocessing), and two-period cluster-JSD gold is nearly a function of pooled sense entropy. No period-shuffled control is reported, so CUSP's .746 / .815 is not separable from dispersion.",
+    "by": "maria, 2026-11-27"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "On 48 Janus lemmas (six periods, 40 usages per period; 16 stable, 16 gradual, 16 abrupt planted prevalence schedules), CUSP recovers the stable profile exactly (path length ~1e-17), the gradual profile with TV error .044, the abrupt boundary in 16/16, adjacent changes correlate .954 with the planted ones, and path length separates changed from stable at AUROC 1.000.",
+   "origin": "paper",
+   "scope": "Section 4.3, Appendix I.3, Table 7. Pools: 4 senses x 10 LLM-generated sentences per lemma = 40 fixed sentences, 'sampling with replacement' into 40 usages per period; stable prevalence (.25,.25,.25,.25); counts allocated by largest remainder.",
+   "quantities": [
+    {"name": "stable_path_length", "value": 1.0e-17, "unit": "path length", "n": 16, "source": "Table 7"},
+    {"name": "AUROC_changed_vs_stable", "value": 1.0, "unit": "AUROC", "n": 48, "source": "Section 4.3"},
+    {"name": "rho_adjacent_recovered_vs_planted", "value": 0.954, "unit": "correlation", "source": "Section 4.3"}
+   ],
+   "evidence": ["a2"],
+   "our_assessment": {
+    "status": "not-identifiable",
+    "why": "A stable path length at numerical zero (1e-17) means the fitted period mixtures are identical, which independent resampling of 40 usages per period would not produce; the stable panels are presumably the same usage multiset in every period (10 per pool by largest remainder from 10 sentences per pool). If so, 'exact recovery' of stability and AUROC 1.000 hold by construction and the test contains no within-period sampling noise, the dominant noise in real multi-period gold at ~20-40 uses per period (arena-lsc F37). Inference from the reported number; not checkable without the code (repository 404).",
+    "by": "maria, 2026-11-27"
+   }
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "in-paper-table",
+   "locator": "Table 1, Table 6 (arXiv 2609.30974v1)",
+   "status": "verified-usable",
+   "checked": {"on": "2026-11-27", "by": "maria", "how": "pdftotext -layout paper.pdf; read lines 444-500 and 2079-2120", "result": "numbers transcribed"}
+  },
+  {
+   "id": "a2",
+   "role": "code",
+   "locator": "https://github.com/hisanor013/cusp",
+   "status": "dangling",
+   "checked": {"on": "2026-11-27", "by": "maria", "how": "gh api repos/hisanor013/cusp (404); gh api users/hisanor013/repos lists 8 other repositories, none cusp", "result": "not public on 2026-11-27"}
+  }
+ ],
+ "relations": [
+  {"type": "cito:usesDataFrom", "target": "schlechtweg2021-dwug", "why": "DWUG EN/DE graded change is the scalar validity test."},
+  {"type": "cito:usesDataFrom", "target": "cassotti2025-janus", "why": "Janus sense-conditioned generated sentences build the six-period controlled histories."},
+  {"type": "cito:qualifies", "target": "goworek2026-amd-samd-lscd", "why": "Another graded-change method compared with APD on DWUG without a period-blind or period-shuffled control; goworek c3 supplies that control (.74/.80 EN/DE)."}
+ ],
+ "open_questions": [
+  "Re-check c2 when the code is public: are stable Janus panels identical across periods? What is CUSP's stable path length and AUROC when each period draws 40 usages independently (or from disjoint sentence sets)?",
+  "Does CUSP's full trace beat a period-shuffled copy of itself on DWUG?"
+ ],
+ "curation": {"author": "maria", "created": "2026-11-27", "verified": "2026-11-27", "notes_file": "NOTES.md"}
+}
