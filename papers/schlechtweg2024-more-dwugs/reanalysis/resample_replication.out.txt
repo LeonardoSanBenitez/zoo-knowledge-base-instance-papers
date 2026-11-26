@@ -1,0 +1,66 @@
+== EN: 15 shared words; resampled uses per period min/median/max 8/25/25; V3 per period median 99
+  (1) Spearman(V3, resampled) = 0.786 (p=0.001), word-bootstrap 95% CI [0.410, 0.931]
+  (2) mean change_graded V3 0.345, resampled 0.318, diff -0.027
+  (3) usage-sampling only (V3 distributions, 25+25 multinomial, 2000 draws): expected mean JSD 0.371; expected Spearman(V3, replicate) median 0.839 [2.5-97.5%: 0.642, 0.947]; observed rho is at the 26th percentile of that distribution
+      Spearman(resampled observed, simulated expected) = 0.835
+  (3b) both replicates simulated (V3-sized vs 25+25): expected Spearman median 0.818 [0.612, 0.940]; observed at the 36th percentile
+      attack_nn          V3 0.249  resampled 0.127  expected@25 0.286  K_V3 12  K_res 2
+      bit_nn             V3 0.404  resampled 0.389  expected@25 0.459  K_V3 24  K_res 8
+      circle_vb          V3 0.314  resampled 0.312  expected@25 0.309  K_V3 12  K_res 7
+      edge_nn            V3 0.367  resampled 0.286  expected@25 0.422  K_V3 13  K_res 6
+      graft_nn           V3 0.633  resampled 0.547  expected@25 0.653  K_V3 8  K_res 4
+      head_nn            V3 0.285  resampled 0.386  expected@25 0.356  K_V3 13  K_res 7
+      lane_nn            V3 0.202  resampled 0.000  expected@25 0.184  K_V3 8  K_res 1
+      multitude_nn       V3 0.237  resampled 0.214  expected@25 0.222  K_V3 9  K_res 2
+      ounce_nn           V3 0.323  resampled 0.000  expected@25 0.335  K_V3 5  K_res 1
+      part_nn            V3 0.216  resampled 0.287  expected@25 0.314  K_V3 11  K_res 5
+      player_nn          V3 0.409  resampled 0.296  expected@25 0.419  K_V3 13  K_res 6
+      record_nn          V3 0.437  resampled 0.448  expected@25 0.432  K_V3 7  K_res 3
+      stab_nn            V3 0.461  resampled 0.655  expected@25 0.487  K_V3 11  K_res 8
+      thump_nn           V3 0.146  resampled 0.203  expected@25 0.148  K_V3 6  K_res 2
+      twist_nn           V3 0.494  resampled 0.621  expected@25 0.545  K_V3 15  K_res 10
+== DE: 15 shared words; resampled uses per period min/median/max 19/24/25; V3 per period median 93
+  (1) Spearman(V3, resampled) = 0.799 (p=0.000), word-bootstrap 95% CI [0.363, 0.941]
+  (2) mean change_graded V3 0.303, resampled 0.328, diff +0.025
+  (3) usage-sampling only (V3 distributions, 25+25 multinomial, 2000 draws): expected mean JSD 0.308; expected Spearman(V3, replicate) median 0.937 [2.5-97.5%: 0.874, 0.982]; observed rho is at the 0th percentile of that distribution
+      Spearman(resampled observed, simulated expected) = 0.792
+  (3b) both replicates simulated (V3-sized vs 25+25): expected Spearman median 0.926 [0.860, 0.981]; observed at the 0th percentile
+      Abgesang           V3 0.800  resampled 1.000  expected@25 0.813  K_V3 4  K_res 5
+      Frechheit          V3 0.100  resampled 0.149  expected@25 0.062  K_V3 3  K_res 2
+      Kubikmeter         V3 0.000  resampled 0.000  expected@25 0.000  K_V3 1  K_res 1
+      Manschette         V3 0.359  resampled 0.491  expected@25 0.410  K_V3 13  K_res 6
+      Mulatte            V3 0.143  resampled 0.000  expected@25 0.112  K_V3 5  K_res 1
+      Naturschönheit     V3 0.159  resampled 0.000  expected@25 0.130  K_V3 6  K_res 1
+      Ohrwurm            V3 0.887  resampled 0.884  expected@25 0.894  K_V3 2  K_res 3
+      Rezeption          V3 0.513  resampled 0.437  expected@25 0.528  K_V3 9  K_res 5
+      Schmiere           V3 0.415  resampled 0.663  expected@25 0.458  K_V3 8  K_res 7
+      Unentschlossenheit V3 0.000  resampled 0.000  expected@25 0.000  K_V3 1  K_res 1
+      verbauen           V3 0.577  resampled 0.569  expected@25 0.621  K_V3 9  K_res 8
+      vergönnen          V3 0.124  resampled 0.000  expected@25 0.089  K_V3 4  K_res 1
+      vorweisen          V3 0.112  resampled 0.142  expected@25 0.076  K_V3 3  K_res 2
+      weitgreifend       V3 0.000  resampled 0.246  expected@25 0.000  K_V3 1  K_res 4
+      überspannen        V3 0.357  resampled 0.339  expected@25 0.434  K_V3 14  K_res 6
+== SV: 15 shared words; resampled uses per period min/median/max 19/25/25; V3 per period median 96
+  (1) Spearman(V3, resampled) = 0.646 (p=0.009), word-bootstrap 95% CI [0.088, 0.945]
+  (2) mean change_graded V3 0.277, resampled 0.436, diff +0.159
+  (3) usage-sampling only (V3 distributions, 25+25 multinomial, 2000 draws): expected mean JSD 0.291; expected Spearman(V3, replicate) median 0.914 [2.5-97.5%: 0.803, 0.974]; observed rho is at the 0th percentile of that distribution
+      Spearman(resampled observed, simulated expected) = 0.606
+  (3b) both replicates simulated (V3-sized vs 25+25): expected Spearman median 0.901 [0.774, 0.971]; observed at the 0th percentile
+      aktiv              V3 0.247  resampled 0.461  expected@25 0.235  K_V3 11  K_res 8
+      antyda             V3 0.248  resampled 0.884  expected@25 0.237  K_V3 13  K_res 2
+      bearbeta           V3 0.219  resampled 0.346  expected@25 0.274  K_V3 11  K_res 7
+      bedömande          V3 0.000  resampled 0.000  expected@25 0.000  K_V3 1  K_res 1
+      blockera           V3 0.000  resampled 0.000  expected@25 0.000  K_V3 1  K_res 1
+      färg               V3 0.213  resampled 0.438  expected@25 0.196  K_V3 6  K_res 8
+      granskare          V3 0.491  resampled 0.556  expected@25 0.514  K_V3 27  K_res 4
+      kemisk             V3 0.284  resampled 0.748  expected@25 0.396  K_V3 19  K_res 11
+      konduktör          V3 0.265  resampled 0.779  expected@25 0.258  K_V3 2  K_res 3
+      krita              V3 0.474  resampled 0.539  expected@25 0.487  K_V3 19  K_res 4
+      ledning            V3 0.472  resampled 0.427  expected@25 0.481  K_V3 22  K_res 7
+      medium             V3 0.624  resampled 0.683  expected@25 0.681  K_V3 33  K_res 13
+      motiv              V3 0.338  resampled 0.242  expected@25 0.345  K_V3 4  K_res 2
+      uppfattning        V3 0.157  resampled 0.292  expected@25 0.165  K_V3 6  K_res 4
+      vegetation         V3 0.123  resampled 0.142  expected@25 0.090  K_V3 2  K_res 2
+== pooled 45 words: Spearman(V3, resampled) = 0.756
+(4) known answer, no change, K=3 equal, 25+25: simulated E[JSD] 0.1537 vs chi-square formula 0.1521
+RESAMPLE_REPLICATION_OK

@@ -1,0 +1,255 @@
+{
+ "schema_version": "1.6",
+ "id": "schlechtweg2024-more-dwugs",
+ "title": "More DWUGs: Extending and Evaluating Word Usage Graph Datasets in Multiple Languages",
+ "authors": [
+  "Dominik Schlechtweg",
+  "Pierluigi Cassotti",
+  "Bill Noble",
+  "David Alfter",
+  "Sabine Schulte im Walde",
+  "Nina Tahmasebi"
+ ],
+ "year": 2024,
+ "venue": "EMNLP 2024 (main), pages 14379-14393",
+ "area": [
+  "lexical-semantic-change"
+ ],
+ "identifiers": {
+  "url": "https://aclanthology.org/2024.emnlp-main.796/"
+ },
+ "record_status": "active",
+ "read_depth": "read-and-reanalysed",
+ "selection": {
+  "class": "hypothesis-test",
+  "evidence": "Opened 2026-11-26 night to test arena-lsc F37 (task-size change gold is mostly sampling noise) against an independent human replication: the paper's DWUG 'resampled' sets annotate 15 words per language with 25 new usages per period, the SemEval-2027 Task 3 sample size. Chosen because it ships the data (Zenodo), before reading its results.",
+  "recorded": "at-selection"
+ },
+ "cost": {
+  "tool_calls": 22,
+  "bytes_downloaded": 2549495,
+  "compute_notes": "PDF text via pdftotext, read in full (main text, Tables 2-5, Appendices A-C); figures 3, 5-7 not read as images. Zip downloads: DWUG EN/DE/SV V3 and resampled already on disk for arena-lsc; V1/V2 fetched three times (~140 MB each time) because two extractions failed, keeping only the stats CSVs (fetch_versions.py). All analyses CPU, under 1 min each.",
+  "session": "2026-11-26/27 maria, arena-lsc 12 h night session"
+ },
+ "triggers": [
+  "do graded semantic change scores replicate when usages are resampled",
+  "how reliable is DWUG change gold at 25 usages per period",
+  "DWUG V3 resampled annotation rounds",
+  "word usage graph annotation density versus number of usages",
+  "Jensen-Shannon distance sense distribution sampling noise"
+ ],
+ "methods": [
+  "known-answer-structural-null",
+  "manual-reanalysis-from-shared-materials",
+  "exact-reproduction-from-deposit"
+ ],
+ "claims": [
+  {
+   "id": "c1",
+   "statement": "Sense distributions of the resampled data (15 words per language, 25 new uses per period, densely annotated) are close to those of DWUG V1/V2: mean JS distance 0.08-0.22, maximum 0.48, some words at 0; hence the costly SemEval annotation can be approximated with a simpler, cheaper procedure.",
+   "origin": "paper",
+   "scope": "Section 6.3, Table 4 (columns read as min / mean / max). 'Trimming the longer distribution to match the shorter one'; which distribution (pooled or per period) is not stated.",
+   "quantities": [
+    {
+     "name": "JSD_mean_DE_V1",
+     "value": 0.1,
+     "unit": "JS distance base 2",
+     "source": "Table 4"
+    },
+    {
+     "name": "JSD_mean_DE_V2",
+     "value": 0.08,
+     "unit": "JS distance base 2",
+     "source": "Table 4"
+    },
+    {
+     "name": "JSD_mean_EN_V1",
+     "value": 0.22,
+     "unit": "JS distance base 2",
+     "source": "Table 4"
+    },
+    {
+     "name": "JSD_mean_EN_V2",
+     "value": 0.19,
+     "unit": "JS distance base 2",
+     "source": "Table 4"
+    },
+    {
+     "name": "JSD_mean_SV_V1",
+     "value": 0.19,
+     "unit": "JS distance base 2",
+     "source": "Table 4"
+    },
+    {
+     "name": "JSD_mean_SV_V2",
+     "value": 0.1,
+     "unit": "JS distance base 2",
+     "source": "Table 4"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a4"
+   ],
+   "our_assessment": {
+    "status": "disputed",
+    "why": "Approximately reproduced from the deposited stats with per-period trimmed distributions (DE .11/.09, EN .18/.17, SV .19/.16 vs printed .10/.08, .22/.19, .19/.10; SV V2 and EN V1 min differ). But the distance compares frequency-SORTED profiles, not senses: every zero comes from a side with a single cluster (6/15 DE, 2/15 EN, 3-4/15 SV), and pairing each resampled word with a DIFFERENT word gives 0.13 DE, 0.19-0.20 EN, 0.21-0.23 SV (pooled variant; same-word 0.07, 0.13, 0.18-0.22). For SV the same-word distance is not below the different-word control, so Table 4 cannot show that the same senses were recovered there; for DE and EN it shows similar sense-frequency profiles, not matched senses.",
+    "by": "maria, 2026-11-27"
+   }
+  },
+  {
+   "id": "c2",
+   "statement": "Change scores of the densely annotated resampled graphs are robust to added random edges: Spearman with the unperturbed scores stays 0.81-1.00 (DE, SV) and 0.61-0.80 (EN) at 40% noisy edges, vs 0.21-0.60 for V1-V3.",
+   "origin": "paper",
+   "scope": "Appendix B, Figure 5 (figure not read as an image; numbers from the appendix text).",
+   "quantities": [],
+   "evidence": [],
+   "our_assessment": {
+    "status": "unverified",
+    "why": "Would need the WUG clustering pipeline rerun on perturbed graphs; not done. Note it measures robustness to annotation noise within one usage sample, not replication across usage samples (c4).",
+    "by": "maria, 2026-11-27"
+   }
+  },
+  {
+   "id": "c3",
+   "statement": "Graded change scores replicate only partly across independent usage samples: Spearman of change_graded between DWUG V3 (~100 uses per period) and the resampled sets (25 per period, new annotators) is 0.79 EN [0.41, 0.93], 0.80 DE [0.36, 0.94], 0.65 SV [0.09, 0.95], pooled 45 words 0.76. Usage sampling alone (V3 period distributions taken as truth, both a V3-sized and a 25+25 multinomial replicate drawn) predicts 0.82 [0.61, 0.94], 0.93 [0.86, 0.98], 0.90 [0.77, 0.97]; observed DE and SV fall at the 0th percentile, EN at the 36th. SV resampled scores are higher on average by +0.16 (0.44 vs 0.28; usage sampling predicts +0.01), e.g. antyda 0.25 -> 0.88, konduktör 0.27 -> 0.78.",
+   "origin": "reader",
+   "scope": "15 words per language, two periods, between-word ranking only. The simulation treats V3's clusters (many singletons: K up to 33) as true senses, so it is a lower bound on usage-sampling noise only in the sense of being computed from the estimated distributions. The SV resample was annotated twice after low agreement (paper Sec. 5.3) and resampled K is much smaller than V3 K throughout, so annotation design and clustering differ along with the usages.",
+   "quantities": [
+    {
+     "name": "rho_V3_vs_resampled_EN",
+     "value": 0.786,
+     "unit": "Spearman",
+     "ci": "[0.41, 0.931]",
+     "ci_kind": "confidence",
+     "n": 15,
+     "source": "reanalysis/resample_replication.out.txt"
+    },
+    {
+     "name": "rho_V3_vs_resampled_DE",
+     "value": 0.799,
+     "unit": "Spearman",
+     "ci": "[0.363, 0.941]",
+     "ci_kind": "confidence",
+     "n": 15,
+     "source": "reanalysis/resample_replication.out.txt"
+    },
+    {
+     "name": "rho_V3_vs_resampled_SV",
+     "value": 0.646,
+     "unit": "Spearman",
+     "ci": "[0.088, 0.945]",
+     "ci_kind": "confidence",
+     "n": 15,
+     "source": "reanalysis/resample_replication.out.txt"
+    },
+    {
+     "name": "rho_expected_usage_sampling_DE",
+     "value": 0.926,
+     "unit": "Spearman",
+     "ci": "[0.86, 0.981]",
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "reanalysis/resample_replication.out.txt"
+    },
+    {
+     "name": "rho_expected_usage_sampling_SV",
+     "value": 0.901,
+     "unit": "Spearman",
+     "ci": "[0.774, 0.971]",
+     "ci_kind": "monte-carlo-sampling-distribution",
+     "source": "reanalysis/resample_replication.out.txt"
+    },
+    {
+     "name": "mean_shift_SV_resampled_minus_V3",
+     "value": 0.159,
+     "unit": "JS distance base 2",
+     "n": 15,
+     "source": "reanalysis/resample_replication.out.txt"
+    }
+   ],
+   "evidence": [
+    "a1",
+    "a2",
+    "a3"
+   ],
+   "our_assessment": {
+    "status": "accepted-narrower-scope",
+    "why": "Own measurement from the deposits; holds for these 45 words and the deposited opt clusterings. Reading: at 25 uses per period, pure usage sampling would still let graded change replicate at ~0.82-0.93 between words; the observed shortfall in DE and SV is the graph (annotators, edge sampling, clustering), not the usage sample.",
+    "by": "maria, 2026-11-27"
+   }
+  }
+ ],
+ "artifacts": [
+  {
+   "id": "a1",
+   "role": "human-labels",
+   "locator": "Zenodo 14025941 (DWUG EN resampled 1.0.0), 12670698 (DE), 14026615 (SV); DWUG V3.0.0 14028531/14028509/14028906; V1/V2 5544444, 7387261 (EN), 5544198, 7441645 (DE), 5090648, 7389506 (SV)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-27",
+    "by": "maria",
+    "how": "unzip; stats/opt/stats_groupings.csv per dataset (tab-separated, change_graded and cluster_freq_dist1/2 per lemma); 15 shared lemmas per language in every version",
+    "result": "usable; V1/V2 kept as stats CSVs only under asset paper-downloads/schlechtweg2024-more-dwugs/data (fetch_versions.py regenerates)"
+   }
+  },
+  {
+   "id": "a2",
+   "role": "analysis-notebook",
+   "locator": "instance-papers/papers/schlechtweg2024-more-dwugs/reanalysis/resample_replication.py (+ .out.txt)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-27",
+    "by": "maria",
+    "how": "python papers/schlechtweg2024-more-dwugs/reanalysis/resample_replication.py > papers/schlechtweg2024-more-dwugs/reanalysis/resample_replication.out.txt",
+    "result": "per-language Spearman V3 vs resampled, mean shift, usage-sampling simulation (two variants), per-word table; known-answer check (4): no-change K=3 25+25 simulated E[JSD] 0.1537 vs chi-square formula 0.1521"
+   }
+  },
+  {
+   "id": "a3",
+   "role": "code",
+   "locator": "instance-papers/papers/schlechtweg2024-more-dwugs/reanalysis/fetch_versions.py",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-27",
+    "by": "maria",
+    "how": "python papers/schlechtweg2024-more-dwugs/reanalysis/fetch_versions.py",
+    "result": "six V1/V2 stats folders extracted, zips deleted after verification"
+   }
+  },
+  {
+   "id": "a4",
+   "role": "analysis-notebook",
+   "locator": "instance-papers/papers/schlechtweg2024-more-dwugs/reanalysis/table4.py (+ table4.out.txt)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-27",
+    "by": "maria",
+    "how": "python papers/schlechtweg2024-more-dwugs/reanalysis/table4.py > papers/schlechtweg2024-more-dwugs/reanalysis/table4.out.txt",
+    "result": "Table 4 under two readings (pooled / per-period trimmed), zero counts vs single-cluster counts, different-word control (200 derangements)"
+   }
+  }
+ ],
+ "relations": [
+  {
+   "type": "cito:extends",
+   "target": "schlechtweg2021-dwug",
+   "why": "Adds annotation rounds 5-6 (V2, V3) and an independent resample to the DWUG datasets recorded there."
+  },
+  {
+   "type": "cito:agreesWith",
+   "target": "goworek2026-amd-samd-lscd",
+   "why": "Independent support for goworek c3 / arena-lsc F37: the change gold depends on sense structure and annotation as much as on change; here graded change replicates at .65-.80 across usage samples."
+  }
+ ],
+ "open_questions": [
+  "Does the SemEval-2027 Task 3 gold (about 20 uses per period, several periods) replicate across independent usage samples? This paper's resample is the only human replication I know of, and it has two periods and 15 words per language.",
+  "Is the SV shift (+0.16) from the new annotators, the random edge sampling, or the clustering? Separable only by reclustering the resampled graphs with the V3 pipeline parameters, or by using the judgments directly.",
+  "c2 (robustness to noisy edges) not checked: rerun the WUG pipeline on perturbed resampled graphs."
+ ],
+ "curation": {
+  "author": "maria",
+  "created": "2026-11-27",
+  "verified": "2026-11-27",
+  "notes_file": "NOTES.md"
+ }
+}
