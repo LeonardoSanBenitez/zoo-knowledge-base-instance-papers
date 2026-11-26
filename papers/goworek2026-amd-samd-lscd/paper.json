@@ -116,7 +116,7 @@
   },
   {
    "id": "c3",
-   "statement": "On DWUG EN/DE/SV with XL-LEXEME, most of APD's graded-change correlation is period-blind: the word's mean pairwise usage distance with periods ignored (dispersion) gives Spearman .74/.80/.87 against APD's .79/.83/.87; APD with period labels permuted within word gives .74/.80/.87; the gold number of senses alone gives .77/.42/.91. APD beats dispersion only on EN, +0.05 [+0.001, +0.137]. Gold-only: Spearman(gold JSD, entropy of the pooled sense distribution, periods ignored) .88/.85/.97.",
+   "statement": "On DWUG EN/DE/SV with XL-LEXEME, most of APD's graded-change correlation is period-blind: the word's mean pairwise usage distance with periods ignored (dispersion) gives Spearman .74/.80/.87 against APD's .79/.83/.87; APD with period labels permuted within word gives .74/.80/.87; the gold number of senses alone gives .77/.42/.91. APD beats dispersion only on EN, +0.05 [+0.001, +0.137]. Gold-only: Spearman(gold JSD, entropy of the pooled sense distribution, periods ignored) .88/.85/.97. No-change null (period labels permuted within word, 50 draws): Spearman(gold JSD, null mean JSD) 0.78/0.38/0.91; words above their null 95th percentile 59%/52%/50%.",
    "origin": "reader",
    "scope": "Two-period sets, cluster-JSD gold computed from the DWUG clusterings (gold JSD itself grows with the number of senses), one encoder. The period-specific part (APD minus dispersion) still correlates .59/.75/.57, so APD does carry change signal; the headline number does not isolate it.",
    "quantities": [
@@ -178,7 +178,8 @@
    "evidence": [
     "a2",
     "a3",
-    "a4"
+    "a4",
+    "a5"
    ],
    "our_assessment": {
     "status": "accepted-narrower-scope",
@@ -234,6 +235,18 @@
     "by": "maria",
     "how": "python gold_entropy.py dwug_en=<gold>/dwug_en/EN/subtask1.jsonl dwug_de=<gold>/dwug_de/NL/subtask1.jsonl dwug_sv=<gold>/dwug_sv/SV/subtask1.jsonl > gold_entropy.json",
     "result": "rho(JSD, K) .77/.42/.91; rho(JSD, pooled entropy) .88/.85/.97"
+   }
+  },
+  {
+   "id": "a5",
+   "role": "analysis-notebook",
+   "locator": "instance-papers/papers/goworek2026-amd-samd-lscd/reanalysis/null_jsd.py (+ null_jsd.json, jsd_decomposition.py/.json)",
+   "status": "verified-usable",
+   "checked": {
+    "on": "2026-11-26",
+    "by": "maria",
+    "how": "python null_jsd.py dwug_en=<gold>/dwug_en/EN/subtask1.jsonl dwug_de=<gold>/dwug_de/NL/subtask1.jsonl dwug_sv=<gold>/dwug_sv/SV/subtask1.jsonl > null_jsd.json; same args for jsd_decomposition.py",
+    "result": "gold JSD ranks like its own no-change null mean (.78/.38/.91); JSD = H(mixture) - mean H(period) holds to 1e-15 and JSD correlates with the within-period entropy too (.85/.71/.96)"
    }
   }
  ],

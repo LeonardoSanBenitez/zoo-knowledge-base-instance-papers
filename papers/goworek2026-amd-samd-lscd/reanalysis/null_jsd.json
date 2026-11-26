@@ -1,0 +1,23 @@
+{
+ "dwug_en": {
+  "n_words": 46,
+  "rho_gold_vs_nullmean": 0.7763906056860322,
+  "mean_gold": 0.29455076768872634,
+  "mean_null": 0.18316898443127605,
+  "share_gold_above_null95": 0.5869565217391305
+ },
+ "dwug_de": {
+  "n_words": 50,
+  "rho_gold_vs_nullmean": 0.37543859649122807,
+  "mean_gold": 0.3615163191142638,
+  "mean_null": 0.15580030767964462,
+  "share_gold_above_null95": 0.52
+ },
+ "dwug_sv": {
+  "n_words": 44,
+  "rho_gold_vs_nullmean": 0.9093222703615113,
+  "mean_gold": 0.2805574805722637,
+  "mean_null": 0.19869512318328592,
+  "share_gold_above_null95": 0.5
+ }
+}
